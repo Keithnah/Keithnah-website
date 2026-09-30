@@ -1,0 +1,2244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Journal — Malaysia Property Insights | Keith Nah</title>
+<meta name="description" content="Latest news and insights on the Malaysia property market — KL investment, foreign buyer guides, the JB-Singapore RTS Link, and more, from Keith Nah.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F9F8F6;
+    --ivory:#FBFAF7;
+    --gold:#5E60CE;
+    --ink:#111111;
+    --grey:#5A5A5A;
+    --line:rgba(17,17,17,0.08);
+    --black:#0C0C0C;
+    --ease:cubic-bezier(.22,.7,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; font-weight:600;
+    line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:0.01em;}
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .eyebrow{font-family:'Inter',sans-serif; text-transform:uppercase; letter-spacing:0.28em; font-size:11px; color:var(--gold); font-weight:500;}
+
+  /* ---------- NAV (matches main site) ---------- */
+  header{
+    position:fixed; top:0; left:0; width:100%; z-index:50;
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+    padding:16px 5vw; background:var(--gold); border-bottom:1px solid rgba(0,0,0,0.12);
+    box-shadow:0 2px 18px rgba(17,17,17,0.08);
+  }
+  .logo{font-family:'Playfair Display',serif; font-size:19px; display:flex; align-items:center; gap:11px; color:#fff;}
+  .logo-mark-img{width:42px; height:42px; border-radius:50%; object-fit:contain;}
+  .logo-text{display:flex; flex-direction:column; line-height:1.15;}
+  .logo-text b{font-weight:800; font-size:21px; color:#fff;}
+  .logo-text small{font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.8); font-weight:500;}
+  nav{display:flex; align-items:center; gap:26px;}
+  nav a{font-size:15px; font-weight:500; position:relative; padding-bottom:4px; white-space:nowrap; color:#fff;}
+  nav a::after{content:''; position:absolute; left:0; bottom:0; width:0; height:2px; background:#fff; transition:width .35s var(--ease);}
+  nav a:hover::after{width:100%;}
+  nav a.active::after{width:100%;}
+  .nav-right{display:flex; align-items:center; gap:12px;}
+  .whatsapp-btn{
+    display:flex; align-items:center; gap:8px; background:#25D366; color:#fff !important;
+    padding:11px 22px; border-radius:100px; font-size:12px; font-weight:600;
+    transition:transform .3s var(--ease), box-shadow .3s; white-space:nowrap;
+  }
+  .whatsapp-btn:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(37,211,102,0.35);}
+  .hamburger{display:none;}
+  .nav-right{display:flex; align-items:center; gap:12px; flex-shrink:0;}
+  .selector{
+    display:flex; align-items:center; gap:6px;
+    font-size:12px; letter-spacing:0.02em; opacity:0.95; cursor:pointer;
+    background:rgba(255,255,255,0.35); border:1px solid rgba(17,17,17,0.15);
+    color:#111;
+    padding:8px 14px; border-radius:100px; white-space:nowrap;
+  }
+  .selector svg{width:13px; height:13px; stroke:#111; fill:none; stroke-width:1.6;}
+  .lang-switch{position:relative;}
+  .lang-menu{
+    display:none; position:absolute; top:calc(100% + 8px); right:0; background:#fff;
+    border:1px solid var(--line); border-radius:12px; box-shadow:0 16px 40px rgba(17,17,17,0.14);
+    min-width:170px; padding:8px; z-index:80;
+  }
+  .lang-menu.open{display:block;}
+  .lang-menu a{
+    display:block; padding:9px 14px; font-size:13px; color:var(--ink); border-radius:8px;
+    cursor:pointer; font-weight:500; transition:background .2s;
+  }
+  .lang-menu a:hover{background:var(--bg);}
+  .lang-menu a.active{color:var(--gold); font-weight:700;}
+
+  /* ---------- HERO ---------- */
+  .journal-hero{
+    padding:170px 5vw 70px; text-align:center; background:#fff;
+    border-bottom:1px solid var(--line);
+  }
+  .journal-hero .eyebrow{display:block; margin-bottom:16px;}
+  .journal-hero h1{font-size:clamp(32px,5vw,58px); margin-bottom:18px;}
+  .journal-hero h1 span{color:var(--gold); font-style:italic;}
+  .journal-hero p{color:var(--grey); font-size:15px; max-width:560px; margin:0 auto; font-weight:500;}
+
+  /* ---------- FILTERS ---------- */
+  .filters{
+    display:flex; gap:10px; flex-wrap:wrap; justify-content:center;
+    padding:26px 5vw; background:var(--ivory); border-bottom:1px solid var(--line);
+    position:sticky; top:74px; z-index:20;
+  }
+  .filter-btn{
+    font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em;
+    padding:9px 18px; border-radius:100px; border:1px solid var(--line); background:#fff;
+    cursor:pointer; transition:all .3s var(--ease); color:var(--ink);
+  }
+  .filter-btn.active, .filter-btn:hover{background:#111; border-color:#111; color:#fff;}
+
+  /* ---------- ARTICLE GRID ---------- */
+  .journal-grid{
+    max-width:1240px; margin:0 auto; padding:70px 5vw 110px;
+    display:grid; grid-template-columns:repeat(3,1fr); gap:32px;
+  }
+  .article-card{
+    background:var(--ivory); border:1px solid var(--line); border-top:3px solid var(--gold); border-radius:6px; overflow:hidden;
+    display:flex; flex-direction:column; transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+  }
+  .article-card:hover{transform:translateY(-6px); box-shadow:0 20px 40px rgba(17,17,17,0.1);}
+  .icon-art{width:100%; height:auto; display:block;}
+  .article-cat-text{
+    font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold);
+  }
+
+  /* ---------- ARTICLE READER MODAL ---------- */
+  .reader-overlay{
+    position:fixed; inset:0; z-index:90; background:rgba(12,12,12,0.78);
+    display:none; align-items:flex-start; justify-content:center; padding:70px 20px;
+    overflow-y:auto; backdrop-filter:blur(4px);
+  }
+  .reader-overlay.open{display:flex;}
+  .reader-card{
+    background:#fff; max-width:720px; width:100%; border-radius:8px; overflow:hidden; position:relative;
+    border-top:4px solid var(--gold);
+    box-shadow:0 30px 80px rgba(0,0,0,0.4); animation:readerIn .4s var(--ease) both;
+  }
+  @keyframes readerIn{from{opacity:0; transform:translateY(24px);} to{opacity:1; transform:translateY(0);}}
+  .reader-close{
+    position:absolute; top:18px; right:18px; z-index:3; width:38px; height:38px; border-radius:50%;
+    background:var(--bg); border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
+    cursor:pointer; font-size:18px; font-weight:700; color:#111; transition:background .3s, color .3s;
+  }
+  .reader-close:hover{background:var(--gold); color:#fff;}
+  .reader-content{padding:48px 40px 40px;}
+  .reader-cat{font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--gold); font-weight:700; margin-bottom:10px; display:block;}
+  .reader-content h2{font-size:clamp(24px,3vw,32px); line-height:1.25; margin-bottom:12px;}
+  .reader-date{font-size:12px; color:var(--grey); font-weight:600; margin-bottom:26px; display:block;}
+  .reader-intro{font-size:17px; line-height:1.75; color:#111; font-weight:500; margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid var(--line);}
+  .reader-body p{font-size:15px; line-height:1.85; color:#333; margin-bottom:18px;}
+  .reader-body h3.reader-h2{
+    font-family:'Playfair Display',serif; font-weight:700; font-size:clamp(18px,2.2vw,21px);
+    line-height:1.3; color:#111; margin:30px 0 12px;
+  }
+  .reader-stats{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+    margin:26px 0; padding:20px; background:var(--bg); border:1px solid var(--line); border-radius:8px;
+  }
+  .reader-stat{text-align:center;}
+  .reader-stat-value{font-family:'Playfair Display',serif; font-weight:700; font-size:clamp(18px,2.4vw,24px); color:var(--gold); display:block;}
+  .reader-stat-label{font-size:10.5px; text-transform:uppercase; letter-spacing:0.06em; color:var(--grey); font-weight:600; display:block; margin-top:4px;}
+  .reader-takeaway{
+    margin:28px 0 6px; padding:20px 22px; background:linear-gradient(135deg,#1c1a17,#3a3226);
+    border-radius:8px; color:#fff;
+  }
+  .reader-takeaway-label{font-size:10.5px; text-transform:uppercase; letter-spacing:0.12em; color:var(--gold); font-weight:700; display:block; margin-bottom:8px;}
+  .reader-takeaway p{font-size:14.5px; line-height:1.75; color:rgba(255,255,255,0.92); margin:0;}
+  .reader-cta{
+    margin-top:20px; padding-top:24px; border-top:1px solid var(--line);
+    display:flex; gap:14px; flex-wrap:wrap;
+  }
+
+  @media(max-width:640px){
+    .reader-overlay{padding:0;}
+    .reader-card{border-radius:0; min-height:100vh;}
+    .reader-content{padding:44px 22px 28px;}
+    .reader-stats{grid-template-columns:1fr; gap:10px;}
+  }
+  .article-body{padding:24px; display:flex; flex-direction:column; gap:10px; flex:1;}
+  .article-date{font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold); font-weight:700;}
+  .article-body h3{font-size:18px; line-height:1.32;}
+  .article-body p{font-size:13px; color:var(--grey); line-height:1.55; flex:1;}
+  .article-read{
+    font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--ink); font-weight:700;
+    display:flex; align-items:center; gap:6px; margin-top:6px; cursor:pointer; width:fit-content;
+    border-bottom:1px solid var(--ink); padding-bottom:2px; transition:all .3s;
+  }
+  .article-read:hover{color:var(--gold); border-color:var(--gold);}
+
+  /* ---------- SUBSCRIBE STRIP ---------- */
+  .subscribe{background:var(--black); color:#f2ede2; padding:80px 5vw; text-align:center;}
+  .subscribe h2{color:#fff; font-size:clamp(26px,3.4vw,38px); margin-bottom:16px;}
+  .subscribe p{color:rgba(255,255,255,0.62); font-size:14px; max-width:480px; margin:0 auto 30px; font-weight:500;}
+  .subscribe-actions{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .btn{
+    padding:14px 30px; font-size:12px; text-transform:uppercase; letter-spacing:0.14em; font-weight:700;
+    border-radius:100px; cursor:pointer; border:1px solid transparent; transition:all .35s var(--ease); display:inline-block;
+  }
+  .btn-gold{background:var(--gold); color:#fff;}
+  .btn-gold:hover{background:#fff;}
+  .btn-outline{border-color:rgba(255,255,255,0.4); color:#fff; background:transparent;}
+  .btn-outline:hover{border-color:var(--gold); color:var(--gold);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:#080808; color:rgba(255,255,255,0.5); padding:56px 5vw 30px;}
+  .footer-top{max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; flex-wrap:wrap; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,0.08);}
+  .footer-logo{font-family:'Playfair Display',serif; font-size:20px; color:#fff; display:flex; align-items:center; gap:10px;}
+  .footer-logo-img{width:34px; height:34px; border-radius:50%; object-fit:contain;}
+  .footer-logo em{color:var(--gold); font-style:italic;}
+  .footer-col h5{font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:#fff; margin-bottom:16px;}
+  .footer-col a{display:block; font-size:13px; margin-bottom:10px; color:rgba(255,255,255,0.5); transition:color .3s;}
+  .footer-col a:hover{color:var(--gold);}
+  .footer-bottom{max-width:1180px; margin:24px auto 0; display:flex; justify-content:space-between; font-size:11px; flex-wrap:wrap; gap:10px;}
+
+  .float-wa{
+    position:fixed; bottom:24px; right:24px; z-index:55; background:#25D366; color:#fff;
+    width:54px; height:54px; border-radius:50%; display:none; align-items:center; justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,0.25);
+  }
+
+  @media(max-width:920px){
+    nav, .nav-right .selector{display:none;}
+    .hamburger{display:block; font-size:22px; cursor:pointer; color:#111;}
+    .journal-grid{grid-template-columns:repeat(2,1fr);}
+    .filters{top:64px;}
+    section, .journal-hero{padding-left:6vw; padding-right:6vw;}
+    .float-wa{display:flex;}
+  }
+  @media(max-width:640px){
+    .journal-grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:480px){
+    header{padding:14px 5vw;}
+    .logo-text small{display:none;}
+  }
+  /* ---------- WHATSAPP FLOAT ---------- */
+  .float-wa{
+    position:fixed; bottom:24px; right:24px; z-index:55; background:#25D366; color:#fff;
+    width:54px; height:54px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,0.25); transition:transform .3s cubic-bezier(.22,.7,.2,1);
+  }
+  .float-wa:hover{transform:scale(1.08);}
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="logo">
+    <img class="logo-mark-img" src="data:image/png;base64,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" alt="Keith Nah logo">
+    <div class="logo-text"><b>Keith Nah</b><small>Keith Nah Real Estate</small></div>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">View Projects</a>
+    <a href="compare.html">Compare Projects</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="mm2h.html">MM2H 第二家园</a>
+    <a href="about-keith.html">About Keith</a>
+  </nav>
+  <div class="nav-right">
+    <div class="lang-switch" id="langSwitch">
+      <span class="selector" id="langSelectorBtn" onclick="toggleLangMenu(event)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9z"/></svg><span id="langSelectorLabel">English</span></span>
+      <div class="lang-menu" id="langMenu">
+        <a onclick="setLanguage('en')">English</a>
+        <a onclick="setLanguage('zh-CN')">简体中文</a>
+        <a onclick="setLanguage('zh-TW')">繁體中文</a>
+        <a onclick="setLanguage('ms')">Bahasa Malaysia</a>
+        <a onclick="setLanguage('ta')">தமிழ்</a>
+        <a onclick="setLanguage('ja')">日本語</a>
+        <a onclick="setLanguage('ko')">한국어</a>
+        <a onclick="setLanguage('ar')">العربية</a>
+      </div>
+    </div>
+    <div class="lang-switch" id="currSwitch">
+      <span class="selector" id="currSelectorBtn" onclick="toggleCurrMenu(event)"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="5"/><circle cx="16" cy="16" r="5"/></svg><span id="currSelectorLabel">MYR</span></span>
+      <div class="lang-menu" id="currMenu">
+        <a onclick="setCurrency('MYR')">MYR — Malaysian Ringgit</a>
+        <a onclick="setCurrency('USD')">USD — US Dollar</a>
+        <a onclick="setCurrency('SGD')">SGD — Singapore Dollar</a>
+        <a onclick="setCurrency('CNY')">CNY — Chinese Yuan</a>
+        <a onclick="setCurrency('JPY')">JPY — Japanese Yen</a>
+        <a onclick="setCurrency('KRW')">KRW — Korean Won</a>
+      </div>
+    </div>
+    <a class="whatsapp-btn wa-link" data-wa-msg="(Web) Hi Keith, I would like to explore more on Malaysia Property." href="https://wa.me/60102821568" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.2L2 22l4.9-1.3c1.5.8 3.3 1.3 5.1 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4.4 15 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/></svg>
+      WhatsApp Keith
+    </a>
+    <span class="hamburger" onclick="alert('Menu: Home · View Projects · Compare Projects · Blog · MM2H 第二家园 · About Keith')">&#9776;</span>
+  </div>
+</header>
+
+<!-- ===================== JOURNAL HERO ===================== -->
+<section class="journal-hero">
+  <span class="eyebrow">The Journal</span>
+  <h1>Insights on <span>Malaysia's</span> Property Market</h1>
+  <p>Market news, investment guides, and cross-border buying advice for KLCC, TRX, Johor Bahru and beyond — curated by Keith Nah.</p>
+</section>
+
+<!-- ===================== FILTERS ===================== -->
+<div class="filters" id="filters">
+  <button class="filter-btn active" data-filter="all">All Articles</button>
+  <button class="filter-btn" data-filter="Buying Guide">Buying Guide</button>
+  <button class="filter-btn" data-filter="Projects News">Projects News</button>
+  <button class="filter-btn" data-filter="Market Trend">Market Trend</button>
+  <button class="filter-btn" data-filter="Foreign Buyers">Foreign Buyers</button>
+  <button class="filter-btn" data-filter="Johor News">Johor News</button>
+  <button class="filter-btn" data-filter="Penang News">Penang News</button>
+</div>
+
+<!-- ===================== ARTICLE GRID ===================== -->
+<div class="journal-grid" id="journalGrid">
+  <div class="article-card" data-cat="Penang News" data-id="a30" onclick="openArticle('a30')">
+    <div class="article-body">
+      <span class="article-cat-text">Penang News</span>
+      <span class="article-date">30 Sep 2026</span>
+      <h3>Andaman Island by E&amp;O: Penang&#x27;s Best Holiday Home Location?</h3>
+      <p>E&amp;O&#x27;s marina-fronting island development leans on decades of hospitality brand equity. Here&#x27;s what actually makes it a strong holiday-home bet.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Penang News" data-id="a31" onclick="openArticle('a31')">
+    <div class="article-body">
+      <span class="article-cat-text">Penang News</span>
+      <span class="article-date">30 Sep 2026</span>
+      <h3>Avea Residence: Penang&#x27;s Latest New Launch</h3>
+      <p>A fresh name has entered Penang&#x27;s launch calendar. Here&#x27;s how to evaluate it against everything else already on the market.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Penang News" data-id="a27" onclick="openArticle('a27')">
+    <div class="article-body">
+      <span class="article-cat-text">Penang News</span>
+      <span class="article-date">30 Sep 2026</span>
+      <h3>Latest Airbnb Ban in Penang Residential Developments</h3>
+      <p>Penang has tightened restrictions on short-term rentals in purely residential strata schemes. Here&#x27;s what it means for owners and buyers.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Penang News" data-id="a28" onclick="openArticle('a28')">
+    <div class="article-body">
+      <span class="article-cat-text">Penang News</span>
+      <span class="article-date">30 Sep 2026</span>
+      <h3>Is The Light City a Great Investment Opportunity?</h3>
+      <p>Penang&#x27;s ambitious waterfront masterplan is drawing serious investor attention. Here&#x27;s what&#x27;s actually driving demand, and what to weigh first.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Penang News" data-id="a29" onclick="openArticle('a29')">
+    <div class="article-body">
+      <span class="article-cat-text">Penang News</span>
+      <span class="article-date">30 Sep 2026</span>
+      <h3>Is the Penang LRT Finally Operating Soon?</h3>
+      <p>One of Penang&#x27;s most talked-about infrastructure projects keeps making headlines. Here&#x27;s how close it actually is, and what that means for nearby property.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Buying Guide" data-id="a24" onclick="openArticle('a24')">
+    <div class="article-body">
+      <span class="article-cat-text">Buying Guide</span>
+      <span class="article-date">29 Sep 2026</span>
+      <h3>Long-Term Rental vs Short-Term Rental: Which Actually Makes More Money?</h3>
+      <p>Short-term letting shows a flashier headline yield. Here&#x27;s what that number hides, and which strategy actually suits which investor.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Projects News" data-id="a25" onclick="openArticle('a25')">
+    <div class="article-body">
+      <span class="article-cat-text">Projects News</span>
+      <span class="article-date">27 Sep 2026</span>
+      <h3>Golden Crown Residence: The Most Valuable Investment Opportunity in TRX?</h3>
+      <p>TRX commands a premium address. Here&#x27;s what actually determines whether a specific launch like Golden Crown Residence lives up to that.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Projects News" data-id="a26" onclick="openArticle('a26')">
+    <div class="article-body">
+      <span class="article-cat-text">Projects News</span>
+      <span class="article-date">25 Sep 2026</span>
+      <h3>Merdeka 118 Renamed Menara Merdeka Maybank — What&#x27;s Actually Inside?</h3>
+      <p>The tower&#x27;s naming has shifted following a corporate naming-rights arrangement. Here&#x27;s what the building actually contains, beyond the new name.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Projects News" data-id="a21" onclick="openArticle('a21')">
+    <div class="article-body">
+      <span class="article-cat-text">Projects News</span>
+      <span class="article-date">24 Sep 2026</span>
+      <h3>Can ParkCity Damansara Become Desa ParkCity 2.0?</h3>
+      <p>Perdana ParkCity built its reputation on Desa ParkCity&#x27;s premium. Here&#x27;s whether ParkCity Damansara can realistically repeat that formula.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Projects News" data-id="a22" onclick="openArticle('a22')">
+    <div class="article-body">
+      <span class="article-cat-text">Projects News</span>
+      <span class="article-date">20 Sep 2026</span>
+      <h3>Is Kwasa Damansara the Next Investment Hotspot?</h3>
+      <p>A 2,300-acre township anchored by a rare two-line MRT interchange. Here&#x27;s what&#x27;s genuinely driving interest, and what&#x27;s still unproven.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Projects News" data-id="a23" onclick="openArticle('a23')">
+    <div class="article-body">
+      <span class="article-cat-text">Projects News</span>
+      <span class="article-date">16 Sep 2026</span>
+      <h3>Accent PJ: Is a Private Lift Lobby the New Condo Standard?</h3>
+      <p>Private lift lobby access is showing up in more PJ launches. Here&#x27;s what it actually changes for buyers, beyond the marketing appeal.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Market Trend" data-id="a1" onclick="openArticle('a1')">
+    <div class="article-body">
+      <span class="article-cat-text">Market Trend</span>
+      <span class="article-date">14 Jul 2026</span>
+      <h3>Why Kuala Lumpur Is Malaysia's Top Choice for Property Investors in 2026</h3>
+      <p>Infrastructure growth, rental demand and price stability keep pulling investors toward KL over other Southeast Asian capitals.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Buying Guide" data-id="a2" onclick="openArticle('a2')">
+    <div class="article-body">
+      <span class="article-cat-text">Buying Guide</span>
+      <span class="article-date">10 Jul 2026</span>
+      <h3>KLCC vs TRX: Which Address Offers Better Long-Term Value?</h3>
+      <p>We compare pricing trends, tenant profiles and upcoming supply across Malaysia's two most talked-about financial districts.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Buying Guide" data-id="a3" onclick="openArticle('a3')">
+    <div class="article-body">
+      <span class="article-cat-text">Buying Guide</span>
+      <span class="article-date">6 Jul 2026</span>
+      <h3>Understanding Rental Yields in Kuala Lumpur's Prime Districts</h3>
+      <p>A district-by-district breakdown of gross rental yields, and why yield alone shouldn't drive your buying decision.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Buying Guide" data-id="a4" onclick="openArticle('a4')">
+    <div class="article-body">
+      <span class="article-cat-text">Buying Guide</span>
+      <span class="article-date">2 Jul 2026</span>
+      <h3>A Beginner's Guide to Investing in Malaysian Property as a Foreigner</h3>
+      <p>Eligibility, minimum purchase thresholds and the step-by-step process international buyers should expect.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Foreign Buyers" data-id="a5" onclick="openArticle('a5')">
+    <div class="article-body">
+      <span class="article-cat-text">Foreign Buyers</span>
+      <span class="article-date">28 Jun 2026</span>
+      <h3>MM2H 2026: What Changed and What It Means for Property Buyers</h3>
+      <p>A plain-English look at the latest MM2H visa requirements and how they connect to property purchase decisions.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Foreign Buyers" data-id="a6" onclick="openArticle('a6')">
+    <div class="article-body">
+      <span class="article-cat-text">Foreign Buyers</span>
+      <span class="article-date">24 Jun 2026</span>
+      <h3>Why Singaporeans Are Turning to Malaysia for Property Investment</h3>
+      <p>Currency advantage, proximity and lifestyle upgrades are driving a steady rise in Singaporean buyers.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Johor News" data-id="a7" onclick="openArticle('a7')">
+    <div class="article-body">
+      <span class="article-cat-text">Johor News</span>
+      <span class="article-date">20 Jun 2026</span>
+      <h3>Johor Bahru Property Boom: How the RTS Link Is Reshaping the Market</h3>
+      <p>Transit-oriented developments near future RTS stations are seeing some of the fastest price appreciation in the country.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Johor News" data-id="a8" onclick="openArticle('a8')">
+    <div class="article-body">
+      <span class="article-cat-text">Johor News</span>
+      <span class="article-date">16 Jun 2026</span>
+      <h3>RTS Link Explained: What Singapore-JB Commuters Need to Know</h3>
+      <p>Journey times, station locations and what the cross-border rail link means for daily commuters and property values alike.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Market Trend" data-id="a9" onclick="openArticle('a9')">
+    <div class="article-body">
+      <span class="article-cat-text">Market Trend</span>
+      <span class="article-date">12 Jun 2026</span>
+      <h3>Comparing Property Prices: Singapore vs Kuala Lumpur vs Johor Bahru</h3>
+      <p>A side-by-side look at price per square foot across the three markets, and what it buys in each city.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Foreign Buyers" data-id="a10" onclick="openArticle('a10')">
+    <div class="article-body">
+      <span class="article-cat-text">Foreign Buyers</span>
+      <span class="article-date">8 Jun 2026</span>
+      <h3>Foreign Ownership Rules in Malaysia: A State-by-State Breakdown</h3>
+      <p>Minimum purchase prices and consent requirements vary by state — here's what applies where you're looking to buy.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Buying Guide" data-id="a11" onclick="openArticle('a11')">
+    <div class="article-body">
+      <span class="article-cat-text">Buying Guide</span>
+      <span class="article-date">4 Jun 2026</span>
+      <h3>Freehold vs Leasehold: What International Buyers Should Know</h3>
+      <p>Tenure type affects resale value, financing and inheritance planning — here's how to weigh the trade-offs.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Projects News" data-id="a12" onclick="openArticle('a12')">
+    <div class="article-body">
+      <span class="article-cat-text">Projects News</span>
+      <span class="article-date">30 May 2026</span>
+      <h3>Bukit Bintang's Transformation: From Shopping Belt to Residential Hotspot</h3>
+      <p>New residential towers are redefining KL's retail heartland into a 24-hour live-work-play district.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Market Trend" data-id="a13" onclick="openArticle('a13')">
+    <div class="article-body">
+      <span class="article-cat-text">Market Trend</span>
+      <span class="article-date">26 May 2026</span>
+      <h3>Bangsar's Enduring Appeal for Expat and Investor Buyers</h3>
+      <p>Leafy streets, established schools and a mature rental market keep Bangsar near the top of every shortlist.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Projects News" data-id="a14" onclick="openArticle('a14')">
+    <div class="article-body">
+      <span class="article-cat-text">Projects News</span>
+      <span class="article-date">22 May 2026</span>
+      <h3>TRX: Inside Malaysia's New Financial District and Its Property Market</h3>
+      <p>A look at the developments, tenants and pricing shaping Kuala Lumpur's newest business address.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Buying Guide" data-id="a15" onclick="openArticle('a15')">
+    <div class="article-body">
+      <span class="article-cat-text">Buying Guide</span>
+      <span class="article-date">18 May 2026</span>
+      <h3>Financing Property in Malaysia as a Non-Resident: What You Need to Know</h3>
+      <p>Margin of financing, eligible income documents and which banks are most active with foreign borrowers.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Projects News" data-id="a16" onclick="openArticle('a16')">
+    <div class="article-body">
+      <span class="article-cat-text">Projects News</span>
+      <span class="article-date">14 May 2026</span>
+      <h3>Branded Residences in KL: Are They Worth the Premium?</h3>
+      <p>We break down what buyers actually get for the branded premium — and where it pays off at resale.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Market Trend" data-id="a17" onclick="openArticle('a17')">
+    <div class="article-body">
+      <span class="article-cat-text">Market Trend</span>
+      <span class="article-date">10 May 2026</span>
+      <h3>Bukit Jalil's Rise as a Family-Friendly Investment Hub</h3>
+      <p>New MRT connectivity and school clusters are turning Bukit Jalil into a favourite for young families and landlords alike.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Market Trend" data-id="a18" onclick="openArticle('a18')">
+    <div class="article-body">
+      <span class="article-cat-text">Market Trend</span>
+      <span class="article-date">6 May 2026</span>
+      <h3>Mont Kiara: Why It Remains a Favourite Among Expat Renters</h3>
+      <p>International schools and a well-established expat community keep rental demand consistently high.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Buying Guide" data-id="a19" onclick="openArticle('a19')">
+    <div class="article-body">
+      <span class="article-cat-text">Buying Guide</span>
+      <span class="article-date">2 May 2026</span>
+      <h3>Stamp Duty and Legal Fees: A Foreign Buyer's Cost Checklist</h3>
+      <p>A full breakdown of the statutory costs on top of the purchase price, so there are no surprises at signing.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+  <div class="article-card" data-cat="Market Trend" data-id="a20" onclick="openArticle('a20')">
+    <div class="article-body">
+      <span class="article-cat-text">Market Trend</span>
+      <span class="article-date">28 Apr 2026</span>
+      <h3>Malaysia Property Outlook 2026: Trends Every Investor Should Watch</h3>
+      <p>From infrastructure spending to interest rates, here's what's likely to move the market over the next 12 months.</p>
+      <span class="article-read">Read Article →</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SUBSCRIBE / CONTACT STRIP ===================== -->
+<section class="subscribe">
+  <h2>Never miss a market update.</h2>
+  <p>Message Keith directly on WhatsApp for the latest project launches and market insights, or follow along on YouTube.</p>
+  <div class="subscribe-actions">
+    <a href="https://wa.me/60102821568" target="_blank" rel="noopener" class="btn btn-gold wa-link" data-wa-msg="(Web) Hi Keith, I would like to explore more on Malaysia Property.">WhatsApp Keith</a>
+    <a href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener" class="btn btn-outline">Watch on YouTube</a>
+  </div>
+</section>
+
+<!-- ===================== ARTICLE READER ===================== -->
+<div class="reader-overlay" id="readerOverlay" onclick="if(event.target===this) closeArticle()">
+  <div class="reader-card">
+    <div class="reader-close" onclick="closeArticle()">&times;</div>
+    <div class="reader-content">
+      <span class="reader-cat" id="readerCat"></span>
+      <h2 id="readerTitle"></h2>
+      <span class="reader-date" id="readerDate"></span>
+      <div class="reader-body" id="readerBody"></div>
+      <div class="reader-cta">
+        <a href="https://wa.me/60102821568" target="_blank" rel="noopener" class="btn btn-gold wa-link" data-wa-msg="(Web) Hi Keith, I would like to know more about this article.">Ask Keith About This</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">
+        <img src="data:image/png;base64,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" alt="Keith Nah logo" class="footer-logo-img">
+        <span>Keith Nah <em>| Real Estate</em></span>
+      </div>
+      <p style="font-size:12px; max-width:260px; color:rgba(255,255,255,0.4); margin-top:14px;">Premium Kuala Lumpur real estate — KLCC, TRX, Bukit Bintang, Bangsar and beyond.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <a href="index.html#projects">Projects</a>
+      <a href="blog.html">Blog</a>
+      <a href="compare.html">Compare Projects</a>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <a href="#" onclick="return false;">Privacy Policy</a>
+      <a href="#" onclick="return false;">Terms of Use</a>
+    </div>
+    <div class="footer-col">
+      <h5>Follow</h5>
+      <a href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener">YouTube</a>
+      <a href="#" onclick="return false;">Instagram</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Keith Nah Real Estate. All rights reserved.</span>
+    <span>Kuala Lumpur, Malaysia</span>
+  </div>
+</footer>
+
+<a class="float-wa wa-link" data-wa-msg="(Web) Hi Keith, I would like to explore more on Malaysia Property." href="https://wa.me/60102821568" target="_blank" rel="noopener">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.2L2 22l4.9-1.3c1.5.8 3.3 1.3 5.1 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4.4 15 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/></svg>
+</a>
+
+<script>
+  // Shared article cover photo (uploaded by Keith)
+
+  // Full article content
+  const ARTICLES = {
+  "a1": {
+    "cat": "Market Trend",
+    "date": "14 Jul 2026",
+    "title": "Why Kuala Lumpur Is Malaysia's Top Choice for Property Investors in 2026",
+    "intro": "Kuala Lumpur has quietly become one of the most consistent property markets in Southeast Asia. While regional neighbours have swung through boom-and-bust cycles, KL's growth has been steadier — supported by a large domestic middle class, an expanding MRT and LRT network, and a steady pipeline of investment into TRX and the wider Klang Valley. For an investor comparing Southeast Asian cities in 2026, that steadiness is increasingly the headline story, not just the price.",
+    "sections": [
+      {
+        "h2": "A Market Built On Fundamentals, Not Speculation",
+        "paragraphs": [
+          "Unlike markets that have been driven by short-term speculative flipping, KL's growth has largely tracked genuine demand drivers: household formation, rising urbanisation, and a steady stream of professionals relocating into the Klang Valley for work. That matters because fundamentals-driven markets tend to correct more gently when global conditions tighten, and recover faster once they do.",
+          "The city's infrastructure spend has also been unusually consistent for the region. The MRT Kajang and Putrajaya lines, the LRT extensions, and now the developing MRT3 circle line are steadily shrinking commute times across the Klang Valley, which in turn widens the pool of areas that qualify as \"well-connected\" — and well-connected areas are the ones that hold value best over a full cycle."
+        ]
+      },
+      {
+        "h2": "Why Rental Demand Has Stayed Resilient",
+        "paragraphs": [
+          "Rental demand across KLCC, Bangsar and Mont Kiara has held up well against new supply, supported by a large, sticky base of expatriate professionals, regional corporate tenants, and a growing cohort of remote workers choosing KL for its cost of living relative to Singapore or Hong Kong. Tenant demand of this kind tends to be less sensitive to short-term rate cycles than purely speculative demand.",
+          "Prices per square foot in KL's prime districts remain a fraction of what comparable finishes and locations command in Singapore or Hong Kong. That price gap is precisely what has been pulling more first-time overseas buyers into the KL market — not because KL is \"cheap\" in absolute terms, but because the value proposition relative to regional alternatives is unusually wide right now."
+        ]
+      },
+      {
+        "h2": "Accessibility Is The Other Half Of The Story",
+        "paragraphs": [
+          "Malaysia's foreign ownership rules are relatively straightforward compared to many neighbours — there's no need for permanent residency or a work visa to buy, just a valid passport and funds to meet the state's minimum purchase threshold. Financing options for non-residents have also been improving gradually, with more banks willing to lend against Malaysian property to qualified foreign buyers.",
+          "The ringgit's relative pricing against the Singapore dollar and US dollar continues to be a quiet but powerful tailwind for foreign purchasing power. Together, these factors are why more first-time overseas buyers are starting their Southeast Asia property search in KL rather than treating it as a secondary market."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "RM1M",
+        "label": "Typical foreign purchase threshold in KL"
+      },
+      {
+        "value": "3",
+        "label": "Active/expanding rail lines reshaping commute times"
+      },
+      {
+        "value": "Low–Mid",
+        "label": "Rental yield range across prime districts"
+      }
+    ],
+    "takeaway": "None of this means KL is without risk — supply concentration in specific micro-locations and financing costs both still matter. But for an investor weighing Southeast Asian cities against each other, KL in 2026 offers a rare combination: genuine fundamentals, improving accessibility, and a price gap to regional peers that hasn't closed yet.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M60 130V55l6-10 6 10v75M78 130V55l6-10 6 10v75\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M55 130h11V70h-11zM72 130h11V70h-11zM89 130h11V70h-11z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"40\" y=\"95\" width=\"120\" height=\"35\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"40\" y1=\"105\" x2=\"160\" y2=\"105\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"40\" y1=\"115\" x2=\"160\" y2=\"115\" stroke=\"currentColor\" stroke-width=\"1\"/></svg>",
+    "grad": "#1c1a17,#3a3226"
+  },
+  "a2": {
+    "cat": "Buying Guide",
+    "date": "10 Jul 2026",
+    "title": "KLCC vs TRX: Which Address Offers Better Long-Term Value?",
+    "intro": "KLCC and TRX are often mentioned in the same breath, but they serve slightly different buyers and reward slightly different strategies. KLCC is the established address — decades of brand recognition, direct views of the Petronas Towers, and a deep resale market. TRX is the newer story: a purpose-built financial district with fresh infrastructure and a smaller, more curated supply of residences.",
+    "sections": [
+      {
+        "h2": "The Case For KLCC: Proven Liquidity",
+        "paragraphs": [
+          "KLCC's biggest advantage isn't the skyline — it's liquidity. Because the district has decades of resale history, buyers, agents and banks all have a clear reference point for what a unit should be worth, which makes both buying and selling faster and less uncertain. That matters more than most first-time investors expect, especially if a future sale or refinancing event is part of the plan.",
+          "KLCC still commands a premium for units with unobstructed tower views, and that premium has proven durable rather than speculative — it reflects a genuinely limited supply of buildings that will ever enjoy that specific vantage point again, since the surrounding plots are largely built out."
+        ]
+      },
+      {
+        "h2": "The Case For TRX: Capturing The Growth Curve",
+        "paragraphs": [
+          "TRX pricing has been climbing steadily as more corporate tenants move in and the MRT interchange matures into a genuine transit hub rather than a construction site. Rental yields between the two districts are broadly comparable today, though TRX carries an edge with newer buildings, modern M&E systems, and lower near-term maintenance costs — a meaningful consideration over a ten-year hold.",
+          "The trade-off is patience. TRX's resale market is still thin simply because the district is young; there isn't yet the deep multi-decade transaction history that KLCC has. Investors who are comfortable being early to a district that's still filling out its retail, F&B and corporate tenant mix tend to be the ones best suited to TRX."
+        ]
+      },
+      {
+        "h2": "How We Advise Clients To Choose",
+        "paragraphs": [
+          "For a long-term hold prioritising stability and ease of eventual resale, KLCC remains the safer, more liquid choice. For investors comfortable with a five-to-ten-year horizon who want to capture a district's growth curve as it fills out, TRX offers a different kind of upside — one tied to the district maturing rather than to an already-established address.",
+          "In practice, many of our clients end up doing both over time: an established KLCC unit for stability and easy liquidity, paired with a TRX unit specifically to capture growth as the district matures. Neither approach is wrong — the right one depends on your time horizon and how much you value liquidity today versus growth potential over the next decade."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "Decades",
+        "label": "Of KLCC resale price history"
+      },
+      {
+        "value": "5–10 yrs",
+        "label": "Typical TRX investment horizon"
+      },
+      {
+        "value": "Comparable",
+        "label": "Rental yields between the two districts"
+      }
+    ],
+    "takeaway": "There's no universally \"better\" answer between KLCC and TRX — only a better answer for your specific goals. If liquidity and a proven track record matter most, KLCC wins. If you're investing for the next cycle rather than this one, TRX's growth curve is worth the extra patience.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M85 130V30l15-14 15 14v100z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"85\" y1=\"45\" x2=\"115\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"60\" x2=\"115\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"75\" x2=\"115\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"90\" x2=\"115\" y2=\"90\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"105\" x2=\"115\" y2=\"105\" stroke=\"currentColor\" stroke-width=\"1\"/><path d=\"M40 130V80h20v50zM140 130V70h20v60z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg>",
+    "grad": "#20211c,#3f3f2f"
+  },
+  "a3": {
+    "cat": "Buying Guide",
+    "date": "6 Jul 2026",
+    "title": "Understanding Rental Yields in Kuala Lumpur's Prime Districts",
+    "intro": "Gross rental yields across KL's prime districts typically range from the low 3% to mid 5% mark, depending on unit size, age and furnishing standard. It's tempting to chase the highest headline yield on a listing, but that single number rarely tells the whole story of how a unit will actually perform over a full ownership cycle.",
+    "sections": [
+      {
+        "h2": "Why Smaller, Furnished Units Skew The Numbers",
+        "paragraphs": [
+          "Smaller, well-furnished units in KLCC and Mont Kiara tend to sit at the higher end of the yield range, since they appeal to a large pool of expat and corporate tenants who prioritise convenience and turnkey move-in over sheer size. A compact, well-located unit can often out-earn a larger unit on a per-square-foot basis simply because more tenants can afford it.",
+          "That said, smaller units also tend to see more tenant turnover, which brings its own costs — agent commissions, minor refurbishment between tenancies, and periods of vacancy while the unit is re-let. A slightly lower headline yield on a unit with longer average tenancies can, in practice, deliver a more stable net return."
+        ]
+      },
+      {
+        "h2": "Why Headline Yield Can Mislead",
+        "paragraphs": [
+          "A unit with a slightly lower yield in a tightly-held, low-supply building often outperforms a higher-yield unit in an area facing a wave of new completions, simply because vacancy risk is lower and rental rates hold up better over time when supply isn't flooding the market. Chasing the top number on a listing portal without checking what else is being built nearby is one of the most common mistakes we see first-time investors make.",
+          "It's also worth separating gross yield from net yield. Maintenance fees, sinking fund contributions, quit rent, assessment tax and periodic vacancy all eat into the headline number — sometimes by a full percentage point or more. Always ask for the net figure, not just the advertised gross yield, before comparing two properties against each other."
+        ]
+      },
+      {
+        "h2": "The Four Factors We Actually Weigh",
+        "paragraphs": [
+          "We always look at yield alongside three other factors: tenant profile, upcoming supply in the immediate vicinity, and exit liquidity. Tenant profile matters because a building that consistently attracts corporate-leased tenants tends to see more reliable rent collection and lower turnover than one dependent on short-term individual renters.",
+          "A property that ticks all four boxes — solid yield, a resilient tenant profile, manageable upcoming supply, and healthy exit liquidity — is the one that tends to perform best over a full market cycle, even if its headline yield isn't the highest number on the page."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "3–5%",
+        "label": "Typical gross yield range, prime districts"
+      },
+      {
+        "value": "Net > Gross",
+        "label": "Always compare net, not headline, yield"
+      },
+      {
+        "value": "4 Factors",
+        "label": "Yield, tenant profile, supply, exit liquidity"
+      }
+    ],
+    "takeaway": "The highest number on a listing is rarely the whole answer. A disciplined comparison — net yield, tenant quality, nearby supply, and how easily you could exit — will steer you toward properties that perform consistently, not just properties that look good on paper.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M60 130V55l6-10 6 10v75M78 130V55l6-10 6 10v75\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M55 130h11V70h-11zM72 130h11V70h-11zM89 130h11V70h-11z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"40\" y=\"95\" width=\"120\" height=\"35\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"40\" y1=\"105\" x2=\"160\" y2=\"105\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"40\" y1=\"115\" x2=\"160\" y2=\"115\" stroke=\"currentColor\" stroke-width=\"1\"/></svg>",
+    "grad": "#1e1a20,#3a2e3f"
+  },
+  "a4": {
+    "cat": "Buying Guide",
+    "date": "2 Jul 2026",
+    "title": "A Beginner's Guide to Investing in Malaysian Property as a Foreigner",
+    "intro": "Foreigners can legally buy most condominiums in Malaysia, subject to a minimum purchase price that varies by state — in Kuala Lumpur, that threshold currently sits at RM1 million for most property types. There's no need for permanent residency or a work visa to buy; a valid passport and the funds to meet the threshold are the starting point for a first purchase.",
+    "sections": [
+      {
+        "h2": "What You Can — And Can't — Buy",
+        "paragraphs": [
+          "Foreign buyers are generally free to purchase condominiums, serviced apartments and commercial units above the state minimum price, but landed residential property (terrace houses, bungalows, land) is more tightly restricted and, in many states, requires additional state authority consent or is simply off-limits to foreign buyers entirely. This is one of the most common points of confusion for first-time buyers browsing listings without a local guide.",
+          "Some developments are also built specifically as \"Malaysia My Second Home\"-friendly or foreign-quota units within a project, with a portion of units reserved for local buyers under Bumiputera or general local-buyer quotas. Understanding a project's foreign-buyer quota before falling in love with a specific unit will save a lot of disappointment later in the process."
+        ]
+      },
+      {
+        "h2": "The Purchase Process, Step By Step",
+        "paragraphs": [
+          "The process itself follows a familiar structure: sign a booking form and pay a deposit (typically around 2–3% of the price), then move to a formal Sale and Purchase Agreement within a set number of weeks, followed by loan application if financing, and finally the Memorandum of Transfer once the purchase completes and any required state consent has been granted.",
+          "Most transactions take three to six months from booking to completion for secondary market units, and considerably longer for new developer launches, which are governed by a staged progress-payment schedule tied to construction milestones rather than a single lump-sum settlement."
+        ]
+      },
+      {
+        "h2": "Where Most Delays Actually Happen",
+        "paragraphs": [
+          "Where foreign buyers most often need guidance is in coordinating the legal, banking and state consent steps in the right order — getting this sequence wrong is the most common cause of delays, particularly for states that require formal state authority consent before a foreign purchase can be registered, which can add weeks or months if not initiated early.",
+          "Working with an agent and a lawyer experienced specifically in foreign purchases is the easiest way to avoid that. A generalist conveyancing lawyer who rarely handles foreign transactions may not flag a state consent requirement until it's already causing a delay — by which point renegotiating timelines with a developer or seller becomes much harder."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "RM1M",
+        "label": "Typical KL minimum purchase threshold"
+      },
+      {
+        "value": "3–6 mo",
+        "label": "Typical secondary-market completion time"
+      },
+      {
+        "value": "No Visa",
+        "label": "Required to purchase property"
+      }
+    ],
+    "takeaway": "Buying in Malaysia as a foreigner is genuinely accessible compared to many regional alternatives — but the details (quotas, state consent, financing timelines) are where deals slow down or fall through. A local team that has done this before is worth far more than the commission it costs.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M60 130V55l6-10 6 10v75M78 130V55l6-10 6 10v75\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M55 130h11V70h-11zM72 130h11V70h-11zM89 130h11V70h-11z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"40\" y=\"95\" width=\"120\" height=\"35\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"40\" y1=\"105\" x2=\"160\" y2=\"105\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"40\" y1=\"115\" x2=\"160\" y2=\"115\" stroke=\"currentColor\" stroke-width=\"1\"/></svg>",
+    "grad": "#1a201d,#2e3f36"
+  },
+  "a5": {
+    "cat": "Foreign Buyers",
+    "date": "28 Jun 2026",
+    "title": "MM2H 2026: What Changed and What It Means for Property Buyers",
+    "intro": "Malaysia My Second Home (MM2H) has gone through several rounds of revision in recent years, and 2026's framework looks meaningfully different from the version many buyers researched a few years ago. For property buyers specifically, the changes affect not just who qualifies, but how MM2H status interacts with a property purchase.",
+    "sections": [
+      {
+        "h2": "What's Changed In The Current Framework",
+        "paragraphs": [
+          "The current MM2H framework is tiered, with different financial requirements and stay conditions depending on the applicant's chosen tier. Compared to the original long-running programme, today's version generally asks for higher proof of liquid assets and, for some tiers, a minimum property purchase or a fixed deposit placed in Malaysia as part of the qualifying conditions.",
+          "This has narrowed the applicant pool somewhat compared to the programme's earlier, more accessible years, but it has also stabilised the programme's reputation after a period of uncertainty — applicants today generally have more clarity on requirements than during the transitional years when rules were being actively revised."
+        ]
+      },
+      {
+        "h2": "How MM2H Interacts With Property Ownership",
+        "paragraphs": [
+          "MM2H status itself is a long-stay visa programme, not a separate property ownership category — an MM2H participant still purchases property under the same foreign ownership rules and state price thresholds that apply to any other foreign buyer. The main practical link is that some MM2H tiers accept a qualifying property purchase as part of meeting the programme's financial requirements, which can make sense for buyers who were planning to purchase a home in Malaysia regardless.",
+          "For buyers using property to help meet MM2H conditions, it's important to confirm the current minimum qualifying property value and any restrictions on property type before committing, since these thresholds have moved with each revision of the programme and can differ from the general foreign-buyer minimum purchase price for the state."
+        ]
+      },
+      {
+        "h2": "What This Means For Buyers Today",
+        "paragraphs": [
+          "For buyers primarily interested in property as an investment rather than a long-stay visa, the MM2H changes are largely irrelevant — a standard foreign purchase doesn't require MM2H status at all. But for buyers weighing a longer-term relocation alongside their purchase, it's worth having an MM2H-current advisor confirm the latest tier requirements before finalising a unit, since qualifying property values and financial thresholds have shifted more than once in recent years.",
+          "We coordinate with MM2H-focused advisors for clients exploring this path, since property selection and visa eligibility are genuinely separate processes that happen to intersect — and getting the sequencing wrong (buying before confirming a property qualifies, for instance) can create avoidable complications."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "Tiered",
+        "label": "Current MM2H structure by financial capacity"
+      },
+      {
+        "value": "Separate",
+        "label": "Property purchase rules vs MM2H visa rules"
+      },
+      {
+        "value": "Confirm First",
+        "label": "Always verify current tier thresholds"
+      }
+    ],
+    "takeaway": "MM2H and property buying are related but distinct processes. If a long-stay visa is part of your plan, confirm the current tier requirements with an MM2H specialist before you commit to a specific unit — the qualifying thresholds have changed more than once and are worth double-checking against the latest rules rather than older articles.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M60 130V55l6-10 6 10v75M78 130V55l6-10 6 10v75\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M55 130h11V70h-11zM72 130h11V70h-11zM89 130h11V70h-11z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"40\" y=\"95\" width=\"120\" height=\"35\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"40\" y1=\"105\" x2=\"160\" y2=\"105\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"40\" y1=\"115\" x2=\"160\" y2=\"115\" stroke=\"currentColor\" stroke-width=\"1\"/></svg>",
+    "grad": "#201c1a,#3f2e26"
+  },
+  "a6": {
+    "cat": "Foreign Buyers",
+    "date": "24 Jun 2026",
+    "title": "Why Singaporeans Are Turning to Malaysia for Property Investment",
+    "intro": "Singaporean buyers have become one of the most consistent sources of foreign demand in the KL and JB property markets, and the reasons go well beyond simple currency arbitrage. For many Singaporean buyers, Malaysia now represents a genuine lifestyle and portfolio diversification decision, not just a bargain hunt.",
+    "sections": [
+      {
+        "h2": "The Currency And Cost-Of-Living Gap",
+        "paragraphs": [
+          "The Singapore dollar's strength against the ringgit means Singaporean buyers' purchasing power in KL stretches considerably further than it would locally — a budget that buys a modest unit in Singapore's suburbs can secure a substantially larger, higher-finish unit in KLCC, Bangsar or Mont Kiara. That gap has been a consistent draw for years, but it's widened the appeal recently as Singapore's own property cooling measures have pushed local buyers to look beyond their own market for both investment and lifestyle purchases.",
+          "Singapore's Additional Buyer's Stamp Duty (ABSD) regime, which adds a significant surcharge on second and subsequent property purchases for Singaporean citizens and an even steeper one for foreigners buying in Singapore, has no direct equivalent for Singaporeans buying in Malaysia — making a Malaysian second property meaningfully cheaper to acquire than a second property back home."
+        ]
+      },
+      {
+        "h2": "Proximity Changes The Calculation",
+        "paragraphs": [
+          "Unlike buyers coming from further afield, Singaporean buyers can drive to KL in under four hours or fly in under an hour, and JB is effectively a short causeway crossing away. That proximity turns a Malaysian property from a purely passive investment into something genuinely usable — a weekend home, a retirement base, or a property that can be self-managed with occasional visits rather than requiring full reliance on a property manager.",
+          "For JB specifically, the improving RTS Link connection to Singapore (covered in more detail in our JB & RTS series) has made property just across the causeway increasingly attractive to Singaporean buyers who work in Singapore but want meaningfully lower housing costs, treating JB almost as an extended commuter suburb rather than a separate country."
+        ]
+      },
+      {
+        "h2": "What Singaporean Buyers Prioritise Differently",
+        "paragraphs": [
+          "In our experience, Singaporean buyers tend to prioritise build quality, developer track record and management standards more heavily than price alone — having grown up in a market with consistently high construction and estate management standards, they're less willing to compromise on these factors than buyers from markets with wider quality variance.",
+          "They also tend to ask sharper questions about maintenance fee structures, sinking fund adequacy, and strata management quality than first-time foreign buyers from other markets — questions we're always glad to get, since a building's ongoing management is just as important to long-term value as its initial finishes."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "<4 hrs",
+        "label": "Drive time from Singapore to KL"
+      },
+      {
+        "value": "No ABSD",
+        "label": "Equivalent surcharge for Malaysia purchases"
+      },
+      {
+        "value": "Growing",
+        "label": "Demand via improving RTS Link access"
+      }
+    ],
+    "takeaway": "For Singaporean buyers, Malaysia offers a rare combination: genuine proximity, a meaningful cost-of-living gap, and none of the additional stamp duty surcharges that make a second property back home expensive. It's less a bargain hunt and more a considered second-market strategy.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M55 130V60h14v70zM82 130V45h14v85zM109 130V60h14v70z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><path d=\"M50 60q39-22 78 0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M30 130V95h16v35zM154 130V95h16v35z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"/></svg>",
+    "grad": "#1c1a17,#3a3226"
+  },
+  "a7": {
+    "cat": "Johor News",
+    "date": "20 Jun 2026",
+    "title": "Johor Bahru Property Boom: How the RTS Link Is Reshaping the Market",
+    "intro": "The Johor Bahru property market has been on a multi-year upswing, and the single biggest catalyst behind it is the Rapid Transit System (RTS) Link — the rail connection designed to cut the Singapore-JB crossing from a congested causeway queue to a fixed, predictable commute. Property near planned stations has already re-rated meaningfully ahead of full operations.",
+    "sections": [
+      {
+        "h2": "From Causeway Bottleneck To Fixed-Time Commute",
+        "paragraphs": [
+          "For years, the single biggest friction point for anyone commuting or shopping between JB and Singapore has been the causeway itself — queues that can stretch well over an hour during peak periods, with no reliable way to predict exact crossing times. The RTS Link is designed to solve exactly that problem, offering a fixed-schedule rail crossing that removes the causeway's unpredictability entirely.",
+          "That predictability is, in many ways, more valuable to daily commuters than the raw time saving. Knowing a crossing will reliably take a set number of minutes — rather than anywhere from twenty minutes to over an hour depending on traffic — is what turns JB from an occasional cross-border trip destination into a genuinely viable daily commuter base for people working in Singapore."
+        ]
+      },
+      {
+        "h2": "How The Market Has Already Reacted",
+        "paragraphs": [
+          "Property developers and buyers alike have priced in RTS-driven demand well ahead of the line's full operational date — projects near planned interchange stations have seen some of the strongest price appreciation in the JB market over recent launch cycles, as both local and Singaporean buyers position themselves ahead of the connectivity improvement.",
+          "This kind of pre-completion re-rating is a familiar pattern from other transit-driven markets: value often accrues in the anticipation phase as much as in the years immediately after a line opens, because early buyers who understand the connectivity story move before the broader market catches on."
+        ]
+      },
+      {
+        "h2": "What To Watch Going Forward",
+        "paragraphs": [
+          "For investors evaluating JB today, proximity to a confirmed station — not just proximity to \"the RTS Link\" in a general sense — is the detail that matters most, since walkable access to an actual interchange carries a meaningfully different value proposition than being a drive away from one. It's worth confirming a specific project's actual walking distance to a named station rather than relying on general area marketing.",
+          "It's also worth watching how JB's broader infrastructure — retail, healthcare, international schools — develops alongside the transit story, since a commuter-friendly location only becomes a genuinely livable one when daily-life amenities keep pace with the connectivity improvements."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "Fixed",
+        "label": "Predictable crossing time vs causeway queues"
+      },
+      {
+        "value": "Pre-Rated",
+        "label": "Station-adjacent projects already appreciating"
+      },
+      {
+        "value": "Station Distance",
+        "label": "The detail that matters most for value"
+      }
+    ],
+    "takeaway": "The RTS Link is already reshaping how the JB property market prices connectivity — and much of that re-rating has happened ahead of the line's full opening. For investors, the discipline now is distinguishing genuinely station-proximate projects from those simply marketed under the RTS halo.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M35 130V95h18v35zM60 130V75h18v55zM88 130V50l10-9 10 9v80zM120 130V80h18v50zM148 130V100h18v30z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"20\" y1=\"130\" x2=\"180\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg>",
+    "grad": "#20211c,#3f3f2f"
+  },
+  "a8": {
+    "cat": "Johor News",
+    "date": "16 Jun 2026",
+    "title": "RTS Link Explained: What Singapore-JB Commuters Need to Know",
+    "intro": "The RTS Link is the rail connection designed to link Bukit Chagar in Johor Bahru with Woodlands North in Singapore, aimed squarely at cutting the daily crossing time for the tens of thousands of people who commute between the two cities. Here's what commuters — and property buyers thinking about commuters as future tenants — actually need to know.",
+    "sections": [
+      {
+        "h2": "The Route And What It Connects",
+        "paragraphs": [
+          "The RTS Link connects a station in central JB directly to Singapore's Woodlands North MRT station, which itself sits on Singapore's Thomson-East Coast Line — meaning a JB-based commuter can, in principle, reach much of central Singapore via a single cross-border rail journey plus a domestic MRT connection, without touching the causeway's road traffic at all.",
+          "On the JB side, the interchange has been designed to integrate with local transport options, which matters for property buyers assessing whether a specific project is genuinely \"RTS-accessible\" or simply within the same general district as the station — the difference between a five-minute walk and a twenty-minute drive to the interchange is significant for both livability and rental appeal."
+        ]
+      },
+      {
+        "h2": "What It Means For Daily Commuters",
+        "paragraphs": [
+          "For Singapore-based workers who live in JB, or JB-based workers commuting into Singapore, the RTS Link's core promise is predictability — replacing a causeway crossing that can vary wildly by time of day with a scheduled rail service. That predictability is what makes a JB base genuinely viable for someone with a fixed start time at a Singapore workplace, in a way that causeway-dependent commuting rarely allows.",
+          "It's worth noting that a rail crossing doesn't eliminate the need to consider onward travel time within each city — a station-adjacent commute in JB still needs to be paired with reasonable onward transport in Singapore, which is where the Thomson-East Coast Line connection becomes relevant to how far into Singapore a JB-based commute genuinely reaches."
+        ]
+      },
+      {
+        "h2": "Why This Matters To Property Buyers, Not Just Commuters",
+        "paragraphs": [
+          "For buyers considering a JB property as a rental investment, understanding the actual commuter experience — not just the marketing description — is essential, since the tenant pool most likely to pay a premium for an RTS-adjacent unit is precisely the cross-border commuter segment this line is built to serve.",
+          "We generally advise clients to think about RTS-adjacent property the way they would think about any transit-oriented investment: the closer and more genuinely walkable the access, the more durable the rental premium tends to be over time, versus units that are merely in the same general area as the connectivity story."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "1 Line",
+        "label": "Direct connection: JB to Woodlands North"
+      },
+      {
+        "value": "Scheduled",
+        "label": "Fixed-time crossing vs causeway traffic"
+      },
+      {
+        "value": "Walk vs Drive",
+        "label": "The detail that decides genuine accessibility"
+      }
+    ],
+    "takeaway": "The RTS Link's real value to commuters — and to property investors — is predictability, not just raw speed. Understanding the genuine walking-distance accessibility of a specific project to the interchange is worth more due diligence than most buyers give it.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M20 100q80-40 160 0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"20\" y1=\"100\" x2=\"20\" y2=\"118\" stroke=\"currentColor\" stroke-width=\"1.4\"/><line x1=\"60\" y1=\"86\" x2=\"60\" y2=\"112\" stroke=\"currentColor\" stroke-width=\"1.4\"/><line x1=\"100\" y1=\"80\" x2=\"100\" y2=\"112\" stroke=\"currentColor\" stroke-width=\"1.4\"/><line x1=\"140\" y1=\"86\" x2=\"140\" y2=\"112\" stroke=\"currentColor\" stroke-width=\"1.4\"/><line x1=\"180\" y1=\"100\" x2=\"180\" y2=\"118\" stroke=\"currentColor\" stroke-width=\"1.4\"/><line x1=\"10\" y1=\"118\" x2=\"190\" y2=\"118\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg>",
+    "grad": "#1e1a20,#3a2e3f"
+  },
+  "a9": {
+    "cat": "Market Trend",
+    "date": "12 Jun 2026",
+    "title": "Comparing Property Prices: Singapore vs Kuala Lumpur vs Johor Bahru",
+    "intro": "For buyers weighing where their money goes furthest, comparing Singapore, Kuala Lumpur and Johor Bahru side by side makes the regional price gap concrete. The differences aren't just about raw price per square foot — financing, ownership rules and ongoing costs all shift the real comparison meaningfully.",
+    "sections": [
+      {
+        "h2": "The Price-Per-Square-Foot Gap",
+        "paragraphs": [
+          "Even in Singapore's more accessible suburban districts, price per square foot for a comparable condominium typically runs at a significant multiple of what the same finish quality and building standard commands in KLCC or Bangsar — and the gap widens further when comparing to JB, where new-launch pricing remains a fraction of both Singapore and KL prime-district levels.",
+          "This gap isn't purely about location desirability — it also reflects fundamentally different land scarcity dynamics. Singapore is a city-state with genuinely finite land; KL and JB both have considerably more room to expand outward, which keeps a lid on land-cost-driven price escalation in a way Singapore structurally cannot replicate."
+        ]
+      },
+      {
+        "h2": "Ownership Rules Change The Real Comparison",
+        "paragraphs": [
+          "Singapore's Additional Buyer's Stamp Duty regime adds a substantial surcharge for foreign buyers on top of the base purchase price, meaningfully changing the effective cost of entry compared to the headline listing price. Malaysia has no direct equivalent surcharge for foreign buyers, though state consent fees and minimum purchase thresholds still apply and vary by state.",
+          "This means a straight price-per-square-foot comparison between the three markets understates the real cost gap for a foreign buyer specifically — once Singapore's additional stamp duty is factored in, the effective premium for buying there versus KL or JB is considerably larger than the headline price difference alone suggests."
+        ]
+      },
+      {
+        "h2": "What This Means For A Cross-Border Portfolio",
+        "paragraphs": [
+          "For investors building a Southeast Asian property portfolio rather than a single home purchase, this price gap is exactly why KL and JB have become increasingly common complements to a Singapore-anchored portfolio — the lower entry cost allows for either a larger footprint per dollar deployed, or capital freed up to diversify across more properties rather than concentrating into a single high-cost Singapore asset.",
+          "The trade-off, as with any cross-border allocation, is liquidity and market depth — Singapore's resale market remains deeper and more liquid than either KL or JB's, which is a genuine consideration for investors who may need to exit a position on a shorter timeline than a full market cycle."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "Significant Gap",
+        "label": "PSF price difference: SG vs KL vs JB"
+      },
+      {
+        "value": "ABSD",
+        "label": "Singapore's added cost for foreign buyers"
+      },
+      {
+        "value": "No Equivalent",
+        "label": "Surcharge for foreign buyers in Malaysia"
+      }
+    ],
+    "takeaway": "The headline price-per-square-foot gap between Singapore, KL and JB is real — but the full comparison, once ownership costs and liquidity are factored in, is more nuanced. For many cross-border investors, the answer isn't choosing one market over the others, but understanding what each contributes to a diversified regional portfolio.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M55 130V60h14v70zM82 130V45h14v85zM109 130V60h14v70z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><path d=\"M50 60q39-22 78 0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M30 130V95h16v35zM154 130V95h16v35z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"/></svg>",
+    "grad": "#1a201d,#2e3f36"
+  },
+  "a10": {
+    "cat": "Foreign Buyers",
+    "date": "8 Jun 2026",
+    "title": "Foreign Ownership Rules in Malaysia: A State-by-State Breakdown",
+    "intro": "Foreign ownership rules in Malaysia aren't uniform across the country — each state sets its own minimum purchase price threshold and, in some cases, additional restrictions on property type. Understanding your target state's specific rules before you start browsing listings will save a significant amount of wasted time.",
+    "sections": [
+      {
+        "h2": "Why Thresholds Differ By State",
+        "paragraphs": [
+          "Malaysia's foreign ownership framework operates at both federal and state level — the federal government sets broad principles, but each state government has authority to set its own minimum purchase price for foreign buyers, and these thresholds can differ substantially between states depending on local market conditions and each state's own housing policy priorities.",
+          "Kuala Lumpur, as a federal territory rather than a state, sets its own threshold directly, which currently sits at RM1 million for most property types — a figure that has remained relatively stable in recent years compared to some states that have adjusted their thresholds more frequently in response to local market conditions."
+        ]
+      },
+      {
+        "h2": "How Selangor, Penang And Johor Compare",
+        "paragraphs": [
+          "Selangor's threshold varies by specific zone within the state, generally sitting in a broadly similar range to KL's for prime areas but with some flexibility for other zones. Penang, given its island geography and land scarcity, has historically maintained one of the higher thresholds among the states, reflecting genuine land constraints on Penang Island specifically versus the more spacious mainland side.",
+          "Johor has structured its rules with particular attention to the JB-Singapore corridor, given the scale of cross-border interest from Singaporean buyers — buyers should confirm the current specific threshold for their target district, since Johor has adjusted its framework more than once in response to demand patterns along the RTS Link corridor."
+        ]
+      },
+      {
+        "h2": "Practical Advice For Cross-State Buyers",
+        "paragraphs": [
+          "If you're comparing properties across multiple states — say, KL and JB side by side — it's worth confirming both thresholds and any additional state consent requirements before shortlisting units, since a property that looks attractively priced against KL's RM1 million benchmark may sit above or below a different state's threshold entirely.",
+          "State consent processing times can also differ meaningfully, with some states processing foreign purchase consent considerably faster than others. This is exactly the kind of detail that a locally experienced agent should be able to walk you through before you commit to a specific unit, rather than discovering it mid-transaction."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "State-Set",
+        "label": "Minimum purchase thresholds vary by state"
+      },
+      {
+        "value": "RM1M",
+        "label": "Current KL threshold for most property types"
+      },
+      {
+        "value": "Confirm First",
+        "label": "Always check the current district-specific rule"
+      }
+    ],
+    "takeaway": "There's no single \"Malaysian\" foreign ownership threshold — it's a state-by-state patchwork, and the details genuinely matter. Confirming the current rule for your specific target district before shortlisting units is one of the simplest ways to avoid wasted time.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M85 130V30l15-14 15 14v100z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"85\" y1=\"45\" x2=\"115\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"60\" x2=\"115\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"75\" x2=\"115\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"90\" x2=\"115\" y2=\"90\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"105\" x2=\"115\" y2=\"105\" stroke=\"currentColor\" stroke-width=\"1\"/><path d=\"M40 130V80h20v50zM140 130V70h20v60z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg>",
+    "grad": "#201c1a,#3f2e26"
+  },
+  "a11": {
+    "cat": "Buying Guide",
+    "date": "4 Jun 2026",
+    "title": "Freehold vs Leasehold: What International Buyers Should Know",
+    "intro": "Freehold and leasehold are two of the first terms every international buyer encounters in Malaysia, and the difference between them affects value, financing and long-term planning in ways that aren't always obvious from a listing description alone.",
+    "sections": [
+      {
+        "h2": "What The Two Terms Actually Mean",
+        "paragraphs": [
+          "Freehold ownership means the buyer owns the property and the underlying land indefinitely, with no expiry date on the title. Leasehold ownership, by contrast, grants ownership for a fixed term — commonly 99 years from the original grant date, though some older leases run shorter — after which the land technically reverts to the state unless the lease is renewed.",
+          "In practice, most leasehold properties in active use do get their leases renewed or extended well before expiry, but the renewal isn't automatic or free, and buyers should understand roughly how many years remain on a lease before purchasing, since a title with a genuinely short remaining term (say, under 30 years) can meaningfully affect both financing and resale."
+        ]
+      },
+      {
+        "h2": "How This Affects Financing And Value",
+        "paragraphs": [
+          "Banks generally view remaining lease tenure as part of their lending risk assessment — a unit with a very short remaining lease can face more restrictive loan terms or lower maximum loan-to-value ratios than an equivalent freehold or long-remaining-lease property, since the bank's collateral value theoretically declines as the lease term shortens.",
+          "This dynamic also shows up in resale pricing: all else equal, freehold and long-remaining-lease properties tend to command a premium over short-remaining-lease equivalents, and that premium tends to widen as a leasehold property's remaining term shrinks toward the point where financing becomes genuinely constrained."
+        ]
+      },
+      {
+        "h2": "What We Advise International Buyers",
+        "paragraphs": [
+          "For a straightforward long-term hold or owner-occupied purchase, a leasehold property with 80+ years remaining is functionally very similar to freehold in practice — the lease-expiry concern is a real one but typically decades away from being relevant. The bigger due-diligence item is confirming the exact remaining term rather than assuming \"leasehold\" always means a near-term concern.",
+          "For buyers specifically prioritising long-term intergenerational holding or maximum resale flexibility, freehold remains the cleaner choice when available and price-comparable. But freehold stock is genuinely scarcer in some of KL's most sought-after districts, so the freehold-versus-leasehold decision often comes down to weighing that preference against location and building quality rather than treating it as an automatic dealbreaker."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "99 yrs",
+        "label": "Common leasehold term from grant date"
+      },
+      {
+        "value": "80+ yrs",
+        "label": "Remaining term where financing is rarely an issue"
+      },
+      {
+        "value": "Confirm Term",
+        "label": "Always check exact years remaining, not just the label"
+      }
+    ],
+    "takeaway": "Freehold versus leasehold isn't a simple better-or-worse choice — it's a trade-off between title permanence and, often, location or price. The single most useful due-diligence step is confirming the exact remaining lease term rather than relying on the freehold/leasehold label alone.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M60 130V55l6-10 6 10v75M78 130V55l6-10 6 10v75\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M55 130h11V70h-11zM72 130h11V70h-11zM89 130h11V70h-11z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"40\" y=\"95\" width=\"120\" height=\"35\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"40\" y1=\"105\" x2=\"160\" y2=\"105\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"40\" y1=\"115\" x2=\"160\" y2=\"115\" stroke=\"currentColor\" stroke-width=\"1\"/></svg>",
+    "grad": "#1c1a17,#3a3226"
+  },
+  "a12": {
+    "cat": "Projects News",
+    "date": "30 May 2026",
+    "title": "Bukit Bintang's Transformation: From Shopping Belt to Residential Hotspot",
+    "intro": "Bukit Bintang has spent the past decade transforming from a purely commercial and tourism-driven shopping belt into a genuine residential address — a shift that's reshaping both who buys there and what they're buying for.",
+    "sections": [
+      {
+        "h2": "From Shopping Belt To Mixed-Use Address",
+        "paragraphs": [
+          "For most of its modern history, Bukit Bintang's identity was built almost entirely around retail and hospitality — Pavilion KL, Fahrenheit88, Berjaya Times Square and a dense concentration of hotels defined the district far more than residential living did. That's changed meaningfully as new mixed-use developments have deliberately integrated residential towers directly above or adjacent to retail podiums.",
+          "This shift hasn't happened by accident — developers have recognised that Bukit Bintang's existing retail and transit infrastructure is a genuine residential amenity, not just a commercial draw, and newer projects are increasingly designed with residents' daily convenience in mind rather than purely as tourist-facing retail destinations."
+        ]
+      },
+      {
+        "h2": "What's Driving Residential Demand Here",
+        "paragraphs": [
+          "The district's transit connectivity is a major factor — Bukit Bintang sits at the intersection of the monorail and MRT lines, giving residents genuinely fast access across the wider KL area without needing a car, which is an increasingly valuable proposition for younger professionals and downsizing empty-nesters alike.",
+          "The other draw is simple convenience density: living in Bukit Bintang means genuine walkability to dining, entertainment, healthcare and daily errands in a way few other KL districts can match, given the sheer concentration of amenities built up over decades of commercial development."
+        ]
+      },
+      {
+        "h2": "Who's Buying — And Why",
+        "paragraphs": [
+          "We're seeing a mix of younger local professionals prioritising lifestyle convenience over space, investors targeting the district's strong short-term and medium-term rental demand from both tourists and corporate visitors, and a growing number of foreign buyers drawn to the combination of an internationally recognisable address and genuine day-to-day livability.",
+          "For investors specifically, Bukit Bintang's dual demand base — tourism-linked short-stay demand alongside genuine long-term residential demand — gives it a rental flexibility that more purely residential districts don't offer, though it's worth confirming a specific building's strata rules around short-term rental before assuming that flexibility applies unit-by-unit."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "2 Lines",
+        "label": "Monorail + MRT intersect in Bukit Bintang"
+      },
+      {
+        "value": "Mixed-Use",
+        "label": "Increasingly the district's dominant format"
+      },
+      {
+        "value": "Dual Demand",
+        "label": "Tourism-linked and long-term residential"
+      }
+    ],
+    "takeaway": "Bukit Bintang's evolution from shopping belt to residential hotspot isn't finished — it's ongoing, and it's being driven by genuine infrastructure and lifestyle advantages rather than pure marketing. For buyers who value walkability and connectivity above almost everything else, it's increasingly hard to beat.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M30 130V90h30v40zM70 130V70h30v60zM110 130V85h30v45zM150 130V60h30v70z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M30 90l15-10 15 10M110 85l15-10 15 10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"/><line x1=\"20\" y1=\"130\" x2=\"180\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg>",
+    "grad": "#20211c,#3f3f2f"
+  },
+  "a13": {
+    "cat": "Market Trend",
+    "date": "26 May 2026",
+    "title": "Bangsar's Enduring Appeal for Expat and Investor Buyers",
+    "intro": "Bangsar has held its position as one of KL's most consistently sought-after expat and investor addresses for well over a decade — a track record that owes as much to its established character as to any single new development.",
+    "sections": [
+      {
+        "h2": "An Established Character That's Hard To Replicate",
+        "paragraphs": [
+          "Unlike newer districts still filling out their identity, Bangsar has had decades to develop a genuinely mature neighbourhood character — leafy streets, a well-established café and restaurant scene, and a mix of housing stock ranging from landed homes to condominiums that gives the area a lived-in feel new developments simply can't replicate overnight.",
+          "This maturity is precisely what appeals to expat families and long-term residents who prioritise a settled, walkable community over the newest finishes — Bangsar offers a sense of place that's genuinely difficult for a brand-new district to compete with, regardless of how impressive the architecture is."
+        ]
+      },
+      {
+        "h2": "Why Expats Keep Choosing Bangsar",
+        "paragraphs": [
+          "International schools within reasonable reach, a strong concentration of expat-oriented amenities (specialty grocers, international dining, established medical facilities) and genuinely good access to both the city centre and Petaling Jaya via major roads all combine to make Bangsar a low-friction choice for relocating families who don't want to spend their first year figuring out where things are.",
+          "For single professionals and couples, Bangsar's café culture and nightlife scene — genuinely one of the more established in KL — adds a lifestyle dimension that pure business-district living doesn't offer, which is part of why the area continues to attract younger expat renters alongside established families."
+        ]
+      },
+      {
+        "h2": "The Investment Case",
+        "paragraphs": [
+          "For investors, Bangsar's appeal is its demand stability — because the tenant base skews toward longer-term expat and local professional renters rather than short-stay tourism, occupancy and rental rates tend to be less volatile than in more tourism-exposed districts, even if headline yields aren't always the highest on paper.",
+          "Bangsar's relatively limited new supply compared to some of KL's newer development corridors also supports long-term value — much of the area's most desirable stock is genuinely finite, since there simply isn't unlimited land for new condominium towers in an already well-established, largely built-out neighbourhood."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "Decades",
+        "label": "Of established expat and family demand"
+      },
+      {
+        "value": "Limited Supply",
+        "label": "Constrains new condominium development"
+      },
+      {
+        "value": "Long-Term",
+        "label": "Tenant profile vs short-stay exposure"
+      }
+    ],
+    "takeaway": "Bangsar's appeal isn't about the newest tower or the highest headline yield — it's about durability. For buyers who value a proven, low-volatility neighbourhood over a growth story, it remains one of KL's most reliable long-term addresses.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M60 130V85l30-22 30 22v45z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"82\" y=\"105\" width=\"16\" height=\"25\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"/><circle cx=\"140\" cy=\"75\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"/><line x1=\"140\" y1=\"93\" x2=\"140\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"1.4\"/><circle cx=\"45\" cy=\"90\" r=\"12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><line x1=\"45\" y1=\"102\" x2=\"45\" y2=\"130\" stroke=\"currentColor\" stroke-width=\"1.2\"/></svg>",
+    "grad": "#1e1a20,#3a2e3f"
+  },
+  "a14": {
+    "cat": "Projects News",
+    "date": "22 May 2026",
+    "title": "TRX: Inside Malaysia's New Financial District and Its Property Market",
+    "intro": "TRX — Tun Razak Exchange — represents Malaysia's most ambitious purpose-built financial district to date, and its property market is still in the relatively early stages of establishing what it will ultimately become as the district fills out over the coming years.",
+    "sections": [
+      {
+        "h2": "A District Built From The Ground Up",
+        "paragraphs": [
+          "Unlike districts that evolved organically over decades, TRX was master-planned from the outset as an integrated financial and lifestyle district — purpose-built office towers for major financial institutions sit alongside residential towers, retail, and green public space, all designed together rather than accumulated piecemeal over time.",
+          "This master-planned approach gives TRX a level of infrastructure cohesion that's genuinely difficult for older, organically-grown districts to match — the MRT interchange, road networks and public spaces were all designed in tandem with the buildings, rather than retrofitted around them after the fact."
+        ]
+      },
+      {
+        "h2": "The Corporate Tenant Base Reshaping The Market",
+        "paragraphs": [
+          "As major financial institutions and multinational corporations have progressively moved staff into TRX's office towers, the district has begun building exactly the kind of corporate tenant base that supports strong residential rental demand — professionals who want to live within walking distance of their workplace, and are often supported by corporate housing allowances that make premium rents more accessible.",
+          "This corporate-driven demand base is qualitatively different from tourism-linked or purely lifestyle-driven demand elsewhere in KL, and it's part of why TRX residential rents have held up well even while the surrounding retail and public amenity mix is still maturing."
+        ]
+      },
+      {
+        "h2": "What Early Investors Are Betting On",
+        "paragraphs": [
+          "Investors buying into TRX today are essentially betting on the district completing its build-out roughly as planned — more office towers reaching occupancy, retail and F&B filling in around the residential base, and the MRT interchange becoming a genuinely central transit node for the wider Klang Valley rather than just a TRX-specific stop.",
+          "That's a reasonable bet given the scale of institutional commitment already made to the district, but it does carry more execution-timeline uncertainty than investing in an already fully-established district like KLCC — which is exactly the trade-off between TRX's growth potential and KLCC's proven stability that we covered in our KLCC vs TRX comparison."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "Master-Planned",
+        "label": "Integrated design vs organic growth"
+      },
+      {
+        "value": "Corporate-Driven",
+        "label": "Tenant demand base"
+      },
+      {
+        "value": "Still Filling In",
+        "label": "Retail and amenity build-out ongoing"
+      }
+    ],
+    "takeaway": "TRX's property market is still writing its own story — the institutional and corporate foundation is genuinely strong, but the district's full character is still emerging. For investors comfortable with that timeline, it offers a growth profile that fully-established districts like KLCC can no longer provide.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M85 130V30l15-14 15 14v100z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"85\" y1=\"45\" x2=\"115\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"60\" x2=\"115\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"75\" x2=\"115\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"90\" x2=\"115\" y2=\"90\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"105\" x2=\"115\" y2=\"105\" stroke=\"currentColor\" stroke-width=\"1\"/><path d=\"M40 130V80h20v50zM140 130V70h20v60z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg>",
+    "grad": "#1a201d,#2e3f36"
+  },
+  "a15": {
+    "cat": "Buying Guide",
+    "date": "18 May 2026",
+    "title": "Financing Property in Malaysia as a Non-Resident: What You Need to Know",
+    "intro": "Financing property in Malaysia as a non-resident is more accessible than many foreign buyers initially assume, but the terms, required documentation and approval process differ meaningfully from what a local buyer would experience — and from what buyers may be used to in their home market.",
+    "sections": [
+      {
+        "h2": "Loan-To-Value Ratios For Non-Residents",
+        "paragraphs": [
+          "Malaysian banks generally offer lower maximum loan-to-value ratios to non-resident foreign buyers than to local buyers or permanent residents — where a local buyer might access financing up to 90% of a property's value, a non-resident foreign buyer should typically expect a meaningfully lower maximum, often requiring a larger cash down payment to bridge the gap.",
+          "This varies by bank and by the buyer's specific financial profile — income source, existing relationship with the bank, and the property itself all factor into the final offer. It's worth approaching multiple banks rather than assuming the first quote reflects the best available terms, since non-resident lending policies can differ meaningfully between institutions."
+        ]
+      },
+      {
+        "h2": "Documentation Non-Residents Should Prepare",
+        "paragraphs": [
+          "Expect to provide more extensive income and asset documentation than a local applicant would — proof of income from overseas employment or business ownership, bank statements covering a meaningful trailing period, and sometimes a reference letter from an existing bank relationship in your home country, since Malaysian banks have no existing credit history to draw on for a first-time non-resident borrower.",
+          "Having these documents translated and, where required, notarised in advance — rather than scrambling to produce them once an application is already underway — is one of the simplest ways to keep a financing timeline on track, particularly given that developer-financed new launches often run on fixed progress-payment schedules that don't flex around a slow loan approval."
+        ]
+      },
+      {
+        "h2": "Alternatives Worth Considering",
+        "paragraphs": [
+          "Some buyers choose to finance a Malaysian purchase through their home-country bank or a private banking relationship instead of a local Malaysian mortgage, particularly if their home bank offers more favourable rates or if the buyer prefers to keep the transaction entirely within a banking relationship they already trust.",
+          "For buyers purchasing through the MM2H programme or with substantial liquid assets, some private banking arrangements in Malaysia can also offer more flexible terms than standard retail mortgage products — worth exploring directly with a private banking relationship manager if that threshold applies to your situation."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "Lower LTV",
+        "label": "Than local buyers typically receive"
+      },
+      {
+        "value": "More Docs",
+        "label": "Income and asset proof required upfront"
+      },
+      {
+        "value": "Shop Around",
+        "label": "Terms vary meaningfully bank to bank"
+      }
+    ],
+    "takeaway": "Financing as a non-resident is absolutely achievable, but it requires more preparation and a larger cash contribution than a local purchase would. Starting the documentation process early — before you've even shortlisted a unit — is the single best way to avoid a financing delay derailing a purchase timeline.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M60 130V55l6-10 6 10v75M78 130V55l6-10 6 10v75\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M55 130h11V70h-11zM72 130h11V70h-11zM89 130h11V70h-11z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"40\" y=\"95\" width=\"120\" height=\"35\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"40\" y1=\"105\" x2=\"160\" y2=\"105\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"40\" y1=\"115\" x2=\"160\" y2=\"115\" stroke=\"currentColor\" stroke-width=\"1\"/></svg>",
+    "grad": "#201c1a,#3f2e26"
+  },
+  "a16": {
+    "cat": "Projects News",
+    "date": "14 May 2026",
+    "title": "Branded Residences in KL: Are They Worth the Premium?",
+    "intro": "Branded residences — units developed in partnership with a recognised hotel or lifestyle brand — have become an increasingly visible segment of KL's luxury property market. The premium they command over comparable non-branded units is real, but whether it's worth paying depends heavily on what a buyer is actually optimising for.",
+    "sections": [
+      {
+        "h2": "What The Premium Actually Buys",
+        "paragraphs": [
+          "A branded residence premium typically reflects several bundled benefits: brand-standard interior finishes and building management, access to hotel-style services (housekeeping, concierge, sometimes room service) on an opt-in basis, and — often most valuable to certain buyer segments — the marketing power of an internationally recognised name when it comes time to sell or rent.",
+          "That last point matters more than it might initially seem: a branded residence often benefits from the hotel operator's own marketing channels and international buyer network, which can genuinely widen the pool of prospective buyers or tenants beyond what a comparable non-branded building would reach on its own."
+        ]
+      },
+      {
+        "h2": "Where The Premium Is Easiest To Justify",
+        "paragraphs": [
+          "For buyers targeting the top end of the short-term and corporate rental market — international executives, affluent tourists seeking hotel-standard service without hotel pricing — a branded residence's premium often pays for itself through genuinely higher achievable rents and stronger occupancy, particularly in districts with strong existing tourism or corporate travel demand.",
+          "The premium is also easier to justify for buyers who place real value on the management standard itself, not just the brand name — branded residences typically come with more rigorous, standardised building management than a comparable independent development, which can matter meaningfully for maintenance quality and long-term building upkeep."
+        ]
+      },
+      {
+        "h2": "Where We'd Advise Caution",
+        "paragraphs": [
+          "For buyers purely optimising for the highest possible rental yield on a pure numbers basis, the branded premium doesn't always translate into a proportionally higher yield — the higher purchase price can, in some cases, offset the rental premium enough that the net yield ends up comparable to or even lower than a well-chosen non-branded alternative in the same district.",
+          "Our general advice: pay the branded premium if you specifically value the service standard, the management consistency, or the brand's marketing reach for a target tenant segment that genuinely pays for it. If pure yield optimisation is the goal, a carefully selected non-branded unit in the same district is often the more efficient allocation of capital."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "Brand Reach",
+        "label": "Wider buyer/tenant network via operator"
+      },
+      {
+        "value": "Higher Entry",
+        "label": "Purchase price vs comparable non-branded"
+      },
+      {
+        "value": "Service-Led",
+        "label": "Value proposition, not pure yield play"
+      }
+    ],
+    "takeaway": "Branded residences aren't automatically a better or worse investment than non-branded alternatives — they're a different kind of investment, optimised for service standard and marketing reach rather than pure yield. Know which one you're actually buying before paying the premium.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M85 130V30l15-14 15 14v100z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"85\" y1=\"45\" x2=\"115\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"60\" x2=\"115\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"75\" x2=\"115\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"90\" x2=\"115\" y2=\"90\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"105\" x2=\"115\" y2=\"105\" stroke=\"currentColor\" stroke-width=\"1\"/><path d=\"M40 130V80h20v50zM140 130V70h20v60z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg>",
+    "grad": "#1c1a17,#3a3226"
+  },
+  "a17": {
+    "cat": "Market Trend",
+    "date": "10 May 2026",
+    "title": "Bukit Jalil's Rise as a Family-Friendly Investment Hub",
+    "intro": "Bukit Jalil has emerged as one of KL's clearest family-friendly investment stories in recent years — a combination of genuinely large-scale retail, sports infrastructure and improving rail connectivity that's reshaping how both owner-occupiers and investors view the district.",
+    "sections": [
+      {
+        "h2": "Retail And Recreation At A Different Scale",
+        "paragraphs": [
+          "Pavilion Bukit Jalil brought a genuinely large-scale retail destination to the district, giving residents mall-anchor convenience without needing to travel into the city centre — a meaningful quality-of-life factor for families who prioritise daily convenience over city-centre proximity.",
+          "The district's sports infrastructure, anchored by the National Sports Complex and Bukit Jalil's broader recreational facilities, adds a genuinely family-oriented dimension that few other KL districts can match at the same scale — a real draw for families prioritising active lifestyle amenities alongside their housing choice."
+        ]
+      },
+      {
+        "h2": "Why Families Specifically Are Drawn Here",
+        "paragraphs": [
+          "Compared to denser city-centre districts, Bukit Jalil generally offers larger unit layouts at a more accessible price point, which matters directly to growing families needing more bedrooms and living space than a compact city-centre unit typically provides at a comparable budget.",
+          "The area's improving school options and generally lower traffic density than the city centre also factor into why families — both local and expat — increasingly consider Bukit Jalil ahead of more central but more cramped alternatives when the priority shifts from lifestyle convenience to raising a family."
+        ]
+      },
+      {
+        "h2": "The Investment Angle",
+        "paragraphs": [
+          "For investors, Bukit Jalil's family-tenant profile tends to mean longer average tenancies than districts dominated by single professionals or short-stay tourism demand — families generally don't move as frequently, which reduces vacancy-related costs and turnover friction even if headline yields sit somewhat below KLCC's more compact-unit-driven averages.",
+          "Bukit Jalil LRT access has also been a meaningful factor in the district's price appreciation, underscoring a pattern that holds across KL more broadly: family-friendly amenities combined with genuine rail connectivity tend to produce more resilient long-term value than either factor alone."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "Large-Scale",
+        "label": "Retail and sports infrastructure"
+      },
+      {
+        "value": "Bigger Layouts",
+        "label": "Vs comparable city-centre budgets"
+      },
+      {
+        "value": "Longer Tenancies",
+        "label": "Typical family-tenant profile"
+      }
+    ],
+    "takeaway": "Bukit Jalil's rise isn't a speculative story — it's built on genuine, large-scale infrastructure that specifically serves families. For investors, that translates into a tenant profile that trades some headline yield for meaningfully lower turnover and vacancy risk.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><ellipse cx=\"100\" cy=\"95\" rx=\"70\" ry=\"28\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><ellipse cx=\"100\" cy=\"95\" rx=\"45\" ry=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><path d=\"M55 95a45 20 0 0190 0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"100\" y1=\"67\" x2=\"100\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"100\" cy=\"35\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"/></svg>",
+    "grad": "#20211c,#3f3f2f"
+  },
+  "a18": {
+    "cat": "Market Trend",
+    "date": "6 May 2026",
+    "title": "Mont Kiara: Why It Remains a Favourite Among Expat Renters",
+    "intro": "Mont Kiara has held its position as one of KL's most consistently favoured expat rental districts for well over a decade, and that consistency — more than any single new development — is exactly what continues to draw both tenants and investors back to the area.",
+    "sections": [
+      {
+        "h2": "A Purpose-Built Expat Ecosystem",
+        "paragraphs": [
+          "Mont Kiara developed, largely organically, into a district with an unusually dense concentration of international schools, expat-oriented grocers and dining, and established medical facilities — an ecosystem that took years to mature and gives the area a genuinely low-friction relocation experience that newer districts still need time to build.",
+          "This ecosystem effect is self-reinforcing: because so many expat families already live in Mont Kiara, the area continues to attract more of the same, sustaining demand for exactly the amenities that made it attractive in the first place — a virtuous cycle that's difficult for competing districts to break into quickly."
+        ]
+      },
+      {
+        "h2": "Why Renters Keep Choosing Mont Kiara",
+        "paragraphs": [
+          "For relocating families specifically, the density of international school options within a short drive is often the single deciding factor — being able to choose from several established international schools without a long daily commute removes one of the biggest sources of relocation stress for families with school-age children.",
+          "The area's condominium stock also tends to offer larger family-oriented layouts and generous facilities — multiple swimming pools, tennis courts, dedicated children's play areas — that cater specifically to family living in a way more compact city-centre developments generally don't prioritise."
+        ]
+      },
+      {
+        "h2": "What This Means For Investors",
+        "paragraphs": [
+          "Mont Kiara's rental demand has proven notably resilient across market cycles, precisely because it's anchored in genuine, sticky family and expat demand rather than more cyclical tourism or short-stay demand — a meaningful consideration for investors prioritising stable, predictable rental income over headline yield maximisation.",
+          "The trade-off is that Mont Kiara's established, mature status means it doesn't offer the kind of growth-curve upside that an emerging district like TRX might — it's a stability play more than a growth play, and investors should choose the district that matches which of those two objectives they're actually prioritising."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "Dense",
+        "label": "International school concentration"
+      },
+      {
+        "value": "Resilient",
+        "label": "Rental demand across market cycles"
+      },
+      {
+        "value": "Stability",
+        "label": "Over growth — the core investment thesis"
+      }
+    ],
+    "takeaway": "Mont Kiara's enduring appeal comes down to one thing: a genuinely mature, self-reinforcing expat ecosystem that's hard to replicate quickly elsewhere. For investors prioritising stable, predictable rental demand over growth potential, it remains one of KL's most dependable choices.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M45 130V60l14-8 14 8v70M95 130V45l14-8 14 8v85M155 130V70l12-7 12 7v60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><line x1=\"45\" y1=\"75\" x2=\"73\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"45\" y1=\"95\" x2=\"73\" y2=\"95\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"95\" y1=\"60\" x2=\"123\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"95\" y1=\"85\" x2=\"123\" y2=\"85\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"95\" y1=\"110\" x2=\"123\" y2=\"110\" stroke=\"currentColor\" stroke-width=\"1\"/></svg>",
+    "grad": "#1e1a20,#3a2e3f"
+  },
+  "a19": {
+    "cat": "Buying Guide",
+    "date": "2 May 2026",
+    "title": "Stamp Duty and Legal Fees: A Foreign Buyer's Cost Checklist",
+    "intro": "Beyond the purchase price itself, foreign buyers need to budget for a specific set of additional costs — stamp duty, legal fees, and a handful of smaller charges — that together can add a meaningful percentage to the total cost of a purchase. Here's the checklist we walk every foreign client through.",
+    "sections": [
+      {
+        "h2": "Stamp Duty On The Memorandum Of Transfer",
+        "paragraphs": [
+          "Stamp duty on the transfer of property is calculated on a tiered scale based on the property's price, with the rate increasing in bands as the value rises — lower bands are charged at a lower rate, with progressively higher rates applying to the portion of the price above each threshold. This tiered structure applies equally to local and foreign buyers; Malaysia does not currently impose an additional foreign-buyer stamp duty surcharge the way some regional markets do.",
+          "For higher-value purchases common among foreign buyers targeting prime KL districts, it's worth having your lawyer calculate the exact tiered stamp duty figure early in the process, since it's one of the larger line items in the total cost checklist and should be budgeted for well before the completion date."
+        ]
+      },
+      {
+        "h2": "Legal Fees And Disbursements",
+        "paragraphs": [
+          "Legal fees for the Sale and Purchase Agreement and, if applicable, the loan agreement are typically calculated on a similar tiered scale based on the property value, though actual rates and any negotiated discounts vary by firm. On top of the scaled fee, expect a range of smaller disbursements — search fees, registration fees, and courier or administrative charges — that add a modest but real amount to the total.",
+          "For foreign buyers specifically, budget additional time and potentially additional fees for document notarisation or translation if any of your supporting documents aren't in English or Bahasa Malaysia, since these requirements can catch first-time foreign buyers off guard if not anticipated early."
+        ]
+      },
+      {
+        "h2": "State Consent Fees And Other State-Specific Costs",
+        "paragraphs": [
+          "States that require formal consent for foreign purchases typically charge a processing fee for that consent application, on top of the stamp duty and legal fees already covered — the exact fee and processing timeline vary by state, which is another reason to confirm state-specific rules early, as covered in our state-by-state foreign ownership breakdown.",
+          "Finally, don't forget ongoing costs that begin from the point of completion — maintenance fees, sinking fund contributions, and quit rent or assessment tax — which aren't one-time transaction costs but do factor into the true total cost of ownership over the property's holding period."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "Tiered",
+        "label": "Stamp duty scale, same for local and foreign buyers"
+      },
+      {
+        "value": "No Surcharge",
+        "label": "No added foreign-buyer stamp duty in Malaysia"
+      },
+      {
+        "value": "State Fees",
+        "label": "Consent charges vary by state"
+      }
+    ],
+    "takeaway": "The purchase price is only part of the total cost — stamp duty, legal fees, state consent charges and ongoing running costs all add up. Budgeting for the full checklist upfront, rather than discovering line items mid-transaction, is one of the simplest ways to avoid an unpleasant surprise at completion.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M60 130V55l6-10 6 10v75M78 130V55l6-10 6 10v75\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M55 130h11V70h-11zM72 130h11V70h-11zM89 130h11V70h-11z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"40\" y=\"95\" width=\"120\" height=\"35\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"40\" y1=\"105\" x2=\"160\" y2=\"105\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"40\" y1=\"115\" x2=\"160\" y2=\"115\" stroke=\"currentColor\" stroke-width=\"1\"/></svg>",
+    "grad": "#1a201d,#2e3f36"
+  },
+  "a20": {
+    "cat": "Market Trend",
+    "date": "28 Apr 2026",
+    "title": "Malaysia Property Outlook 2026: Trends Every Investor Should Watch",
+    "intro": "Three themes are shaping the Malaysian property market heading into the rest of 2026, and understanding how they interact — rather than watching any single one in isolation — is what separates a well-timed purchase from a poorly-timed one.",
+    "sections": [
+      {
+        "h2": "Theme One: Infrastructure-Concentrated Growth",
+        "paragraphs": [
+          "Continued infrastructure spending — particularly around TRX, the wider MRT network, and the JB-Singapore RTS Link — is concentrating price growth in well-connected districts rather than lifting the market uniformly. This is a meaningful shift from earlier cycles where broader market sentiment drove more uniform price movement across districts regardless of individual connectivity.",
+          "For buyers, the practical implication is that district selection now matters more than ever — a property in a district actively benefiting from current infrastructure investment is likely to outperform a comparable property in a district that isn't, even within the same broader city market."
+        ]
+      },
+      {
+        "h2": "Theme Two: Interest Rate Direction",
+        "paragraphs": [
+          "Interest rate direction remains the biggest swing factor for financing costs, both for local and foreign buyers, and is worth watching closely if you're timing a purchase around a specific budget or monthly repayment ceiling. Rate movements affect not just new purchases but also existing variable-rate mortgages, which can shift a buyer's genuine affordability ceiling meaningfully within a single cycle.",
+          "For buyers financing a purchase, it's worth stress-testing an intended purchase against a somewhat higher rate scenario than today's prevailing rate, simply to confirm the purchase remains comfortable if rates move against you during the holding period — a discipline that's easy to skip when rates are favourable but valuable precisely because conditions can shift."
+        ]
+      },
+      {
+        "h2": "Theme Three: Steady Foreign Buyer Demand",
+        "paragraphs": [
+          "Foreign buyer interest — particularly from Singapore, and a steady flow of MM2H-linked purchases — continues to provide a demand floor in the upper-mid segment of the KL and JB markets, helping cushion these segments against broader domestic demand softness during periods of local economic uncertainty.",
+          "This foreign demand floor isn't uniform across all price points and districts, however — it's concentrated in specific districts and price bands that foreign buyers consistently target, which is worth understanding if you're evaluating how resilient a specific property's demand base is likely to be."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "3 Themes",
+        "label": "Infrastructure, rates, and foreign demand"
+      },
+      {
+        "value": "District-Specific",
+        "label": "Growth is concentrated, not uniform"
+      },
+      {
+        "value": "Stress-Test",
+        "label": "Financing against a higher-rate scenario"
+      }
+    ],
+    "takeaway": "Our general read: this remains a market that rewards patience and location discipline over speculation. The districts benefiting most from infrastructure investment today are likely to be the same ones leading price growth over the next several years — which is exactly why district selection deserves more weight than market-timing in most buyers' decision-making.",
+    "icon": "<svg viewBox=\"0 0 200 130\" class=\"icon-art\"><path d=\"M85 130V30l15-14 15 14v100z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"85\" y1=\"45\" x2=\"115\" y2=\"45\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"60\" x2=\"115\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"75\" x2=\"115\" y2=\"75\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"90\" x2=\"115\" y2=\"90\" stroke=\"currentColor\" stroke-width=\"1\"/><line x1=\"85\" y1=\"105\" x2=\"115\" y2=\"105\" stroke=\"currentColor\" stroke-width=\"1\"/><path d=\"M40 130V80h20v50zM140 130V70h20v60z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg>",
+    "grad": "#201c1a,#3f2e26"
+  },
+  "a21": {
+    "cat": "Projects News",
+    "date": "24 Sep 2026",
+    "title": "Can ParkCity Damansara Become Desa ParkCity 2.0?",
+    "intro": "Perdana ParkCity built its reputation on Desa ParkCity — a master-planned township in Kuala Lumpur that turned a former mining outskirt into one of the city's most sought-after addresses, commanding some of the highest per-square-foot values outside the traditional prime belt. With ParkCity Damansara now taking shape on a new landbank in the Klang Valley, the obvious question for investors is whether the developer can repeat that formula, or whether Desa ParkCity's success was a product of timing that's hard to copy twice.",
+    "sections": [
+      {
+        "h2": "What Made Desa ParkCity Work",
+        "paragraphs": [
+          "Desa ParkCity's appeal was never just about the address — it was integrated low-density planning: parks and a central lake, schools within the township, pet-friendly public spaces, retail woven into residential clusters, and a gated-guarded environment maintained consistently across more than a decade of phased launches.",
+          "That consistency compounded over time. Because a single developer controlled the entire masterplan from first phase to last, quality didn't dilute as later phases launched, and resale liquidity stayed strong because buyers trusted the brand — early-phase units went on to appreciate multiple times over as the township matured and amenities filled in."
+        ]
+      },
+      {
+        "h2": "Where ParkCity Damansara Fits In",
+        "paragraphs": [
+          "ParkCity Damansara sits on a newer landbank along the Damansara corridor, with highway connectivity via routes like the LDP and Penchala Link and proximity to already-established neighbourhoods. The masterplan follows a similar low-density mix of landed homes and condominiums with parks and retail woven in, echoing the Desa ParkCity playbook on paper.",
+          "Early-phase pricing here typically sits well below what mature Desa ParkCity units now command, which is exactly the appeal for buyers chasing the same developer pedigree without paying a mature-market premium. The trade-off is the usual early-phase risk: amenities, retail anchors and the sense of an established community all take years to materialise, and buying in now means betting on that build-out happening on schedule."
+        ]
+      },
+      {
+        "h2": "What Would Need to Go Right",
+        "paragraphs": [
+          "Consistent execution across every phase is the biggest variable — Desa ParkCity's value was built on the developer delivering, phase after phase, without the quality or amenity provision tapering off. Delivering the retail and lifestyle anchors early rather than as an afterthought matters just as much, since that's what actually pulls in the walkability and community feel buyers are paying a premium for.",
+          "The other variable is competition. Desa ParkCity largely had the low-density-township-in-KL lane to itself for years. ParkCity Damansara launches into a more crowded field of competing new townships nearby, any of which could dilute the sense of exclusivity that made the original project's resale values so resilient."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "15–20 Yrs",
+        "label": "Desa ParkCity's Maturity Runway"
+      },
+      {
+        "value": "Early-Phase",
+        "label": "ParkCity Damansara's Pricing Stage"
+      },
+      {
+        "value": "Single Developer",
+        "label": "Masterplan Control (Shared Trait)"
+      }
+    ],
+    "takeaway": "The Desa ParkCity brand carries real weight, but ParkCity Damansara is still early in its build-out — the comparison today is more aspiration than proven fact. For buyers, the entry point is really a bet on the developer's execution track record, not a guarantee of repeating Desa ParkCity's trajectory.",
+    "icon": "",
+    "grad": "#1c1a17,#3a3226"
+  },
+  "a22": {
+    "cat": "Projects News",
+    "date": "20 Sep 2026",
+    "title": "Is Kwasa Damansara the Next Investment Hotspot?",
+    "intro": "Kwasa Damansara has been talked about as one of the Klang Valley's biggest township bets for years — a former rubber estate turned into a masterplan spanning over 2,300 acres by Kwasa Land, anchored by an MRT interchange station where the Kajang Line meets the upcoming MRT3 circle line. With MRT3 construction now progressing and more launches coming online, investor interest is picking up. Here's what's actually driving it, and what's still unproven.",
+    "sections": [
+      {
+        "h2": "The Transit Story",
+        "paragraphs": [
+          "The interchange is the headline draw — it gives Kwasa Damansara arguably the best rail access of any new township currently in the pipeline, with two MRT lines meeting on site rather than a single line running nearby. Once MRT3 completes, commute times to both KL city centre and Petaling Jaya should shrink meaningfully for residents.",
+          "That said, transit-oriented value appreciation historically concentrates in a fairly tight radius around the actual station, not evenly across an entire township. Proximity within Kwasa Damansara to the interchange itself matters more for long-term value than the township label alone."
+        ]
+      },
+      {
+        "h2": "Scale Brings Both Opportunity and Supply Risk",
+        "paragraphs": [
+          "The scale here is substantial — multiple developers building out a mix of landed homes and high-rise residences, plus a corporate and office component anchored by EPF's own relocated headquarters campus, which brings a built-in daytime working population to support future retail and rental demand.",
+          "But large multi-phase townships can also see supply released faster than population and amenities catch up. Early buyers should watch how phasing unfolds and keep an eye on vacancy in surrounding new launches before assuming rental demand will be there on day one."
+        ]
+      },
+      {
+        "h2": "Who Kwasa Damansara Suits",
+        "paragraphs": [
+          "This is a better fit for long-term holders prepared to ride out the five-to-ten-year maturation curve typical of large new townships, rather than short-term buyers expecting quick capital appreciation on flip timelines.",
+          "It's particularly relevant for buyers targeting the EPF and corporate workforce moving into the area over the coming years, and for those priced out of more mature, already-established nearby addresses like Bandar Utama or Mutiara Damansara."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "2,300+ Acres",
+        "label": "Township Land Size"
+      },
+      {
+        "value": "2 MRT Lines",
+        "label": "Kajang Line × MRT3 Interchange"
+      },
+      {
+        "value": "5–10 Yrs",
+        "label": "Typical Township Maturation Curve"
+      }
+    ],
+    "takeaway": "Kwasa Damansara's transit access is genuinely rare, but scale cuts both ways — it's a long-term township story, not a quick-flip play. The clearest entry points sit close to the interchange station and the EPF corporate campus, where the demand fundamentals are easiest to underwrite today.",
+    "icon": "",
+    "grad": "#1c1a17,#3a3226"
+  },
+  "a23": {
+    "cat": "Projects News",
+    "date": "16 Sep 2026",
+    "title": "Accent PJ: Is a Private Lift Lobby the New Condo Standard?",
+    "intro": "A growing number of new Petaling Jaya launches are marketing \"private lift lobby\" access — where a lift opens directly into a small landing serving only one or two units per floor, rather than a shared corridor lined with multiple doors. Accent PJ is one of the more visible projects pushing this feature, and it's worth understanding what it actually changes for buyers, beyond the marketing appeal.",
+    "sections": [
+      {
+        "h2": "What Private Lift Lobby Actually Means",
+        "paragraphs": [
+          "A standard condo floor might have six to ten units branching off one shared corridor. Private-lift-lobby designs cut that to two to four units per lift stop, sometimes fewer — effectively borrowing a layout convention from ultra-luxury towers and bringing it into the upper-mid to high-end segment.",
+          "The appeal isn't purely cosmetic. Visitors and deliveries no longer pass a string of other units' front doors on the way in, which is a genuine privacy and security upgrade that buyers who've lived in Singapore or Hong Kong developments often expect as a baseline."
+        ]
+      },
+      {
+        "h2": "The Trade-Offs Developers and Buyers Face",
+        "paragraphs": [
+          "Fewer units sharing each lift core usually means higher land-and-construction cost per saleable square foot. Buyers are effectively paying a premium for that layout efficiency trade-off, not just for finishes or branding.",
+          "Maintenance costs tend to run higher too, since fewer units share the same lift and lobby infrastructure and common-area upkeep. That's worth factoring into service-charge expectations rather than comparing units purely on purchase price."
+        ]
+      },
+      {
+        "h2": "Is It a Lasting Trend or a Launch-Cycle Gimmick",
+        "paragraphs": [
+          "Private lift lobby has moved from a handful of ultra-luxury KLCC towers down into more accessible PJ addresses over the past few launch cycles, which suggests genuine buyer demand rather than a one-off marketing push for a single project.",
+          "That said, not every project needs it. For smaller units or lower price points, the added cost may not translate into a resale premium, so the feature tends to matter most in the mid-to-large unit, higher-price-tier segment where buyers already expect a degree of exclusivity."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "2–4 Units",
+        "label": "Typical Units per Private Lift Lobby"
+      },
+      {
+        "value": "Premium",
+        "label": "Cost vs Standard Corridor Layout"
+      },
+      {
+        "value": "Mid-to-High Tier",
+        "label": "Where the Trend Resonates Most"
+      }
+    ],
+    "takeaway": "Private lift lobby isn't just a marketing line — it's a genuine layout shift with real cost implications on both purchase price and service charges. It matters most for buyers in the higher price tiers who value privacy and are prepared to pay for a lower unit-per-core ratio; it's less essential for entry-level or investment-only purchases.",
+    "icon": "",
+    "grad": "#1c1a17,#3a3226"
+  },
+  "a24": {
+    "cat": "Buying Guide",
+    "date": "29 Sep 2026",
+    "title": "Long-Term Rental vs Short-Term Rental: Which Actually Makes More Money?",
+    "intro": "It's one of the most common questions from new landlords in KL: rent long-term for stability, or go short-term for the higher headline yield? The honest answer is that both numbers are real — they're just measuring different things, and the strategy that wins on paper isn't always the one that wins after costs, occupancy risk and your building's own rules are factored in.",
+    "sections": [
+      {
+        "h2": "The Headline Yield Gap",
+        "paragraphs": [
+          "Short-term letting — Airbnb-style stays — in high-demand areas like KLCC or Bukit Bintang can post gross yields well above what the same unit would earn on a standard long-term lease, especially during peak tourist and business-travel periods. That's the number most short-term rental pitches lead with.",
+          "Long-term rental offers a lower but far more predictable gross yield, with a fraction of the moving parts. One tenant, one lease, one monthly payment — which is exactly why it remains the default choice for landlords who want passive income rather than a second job."
+        ]
+      },
+      {
+        "h2": "What the Headline Number Hides",
+        "paragraphs": [
+          "Short-term rental profitability depends heavily on occupancy rate, platform commission, cleaning and turnover costs between guests, and periodic furnishing refreshes — all of which eat into that attractive gross figure. It's also worth checking local strata bylaws first: a meaningful number of KL condo schemes restrict or outright ban short-term letting, which can make the whole strategy a non-starter regardless of the numbers.",
+          "Long-term rental has its own hidden costs — vacancy gaps between tenants, agent fees on each new lease, and wear and tear that accumulates over multi-year tenancies. But as a share of gross rental collected, these costs are typically far smaller than what a short-term operation absorbs in fees and turnover."
+        ]
+      },
+      {
+        "h2": "Which Strategy Fits Which Investor",
+        "paragraphs": [
+          "Short-term rental suits owners who can actively manage bookings themselves, or who are prepared to hand that work to a management company that typically takes a meaningful cut of gross revenue — and it only really works in buildings with strata rules that explicitly permit it, and locations with consistent traveller demand.",
+          "Long-term rental suits investors who want a lower-effort, lower-volatility income stream and who'd rather not think about occupancy calendars. For most first-time landlords in KL, it also remains the simpler, unambiguously-legal option across the widest range of residential strata schemes."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "15–25%",
+        "label": "Typical Short-Term Management Fee Cut"
+      },
+      {
+        "value": "Strata Rules",
+        "label": "Can Restrict or Ban Short-Term Letting"
+      },
+      {
+        "value": "Lower Volatility",
+        "label": "Long-Term Rental's Core Advantage"
+      }
+    ],
+    "takeaway": "On paper, short-term rental often shows a higher headline yield — but once management fees, occupancy risk and strata restrictions are priced in, the net return gap narrows considerably. Check your building's bylaws before modelling either scenario; that alone can settle the question before yield math even comes into it.",
+    "icon": "",
+    "grad": "#1c1a17,#3a3226"
+  },
+  "a25": {
+    "cat": "Projects News",
+    "date": "27 Sep 2026",
+    "title": "Golden Crown Residence: The Most Valuable Investment Opportunity in TRX?",
+    "intro": "TRX (Tun Razak Exchange) has become one of Kuala Lumpur's most closely watched investment addresses, and Golden Crown Residence is one of the newer residential launches positioning itself inside that growth story. The pitch is straightforward: buy into Malaysia's flagship financial district before it fully matures. Whether that translates into the single most valuable opportunity in TRX depends on more than the address alone.",
+    "sections": [
+      {
+        "h2": "Why TRX Commands a Premium",
+        "paragraphs": [
+          "TRX was purpose-built as a financial district — anchor institutions, an integrated retail and lifestyle mall, and a direct MRT interchange all sitting within the same masterplan, drawing comparisons to other purpose-built financial districts built around the world.",
+          "Proximity to that commercial core tends to support both sides of the investment case at once: rental demand from finance-sector professionals working in the district day to day, and long-term capital appreciation as the remaining development phases complete and the district fills out."
+        ]
+      },
+      {
+        "h2": "Where Golden Crown Residence Fits",
+        "paragraphs": [
+          "Golden Crown Residence positions itself as a residential component within reach of TRX's financial core, aimed at a mix of investors and owner-occupiers, with marketing built around walking proximity to the exchange and the district's retail anchor.",
+          "As with any still-maturing district, pricing for newer residential launches in TRX reflects a bet on the district completing as planned. Early entrants generally get comparatively lower entry pricing than what a fully matured TRX address may command once every remaining phase is delivered — but that discount exists precisely because the maturity isn't guaranteed on any fixed timeline."
+        ]
+      },
+      {
+        "h2": "What 'Most Valuable' Really Depends On",
+        "paragraphs": [
+          "Unit-level factors matter as much as the address itself — floor level and view, actual walking distance to the retail and transit core within the district, and facilities quality relative to other TRX residential launches competing for the same pool of buyers.",
+          "Buyers should also weigh timeline risk. Large financial districts built out in phases can take considerably longer than initial projections to reach full occupancy and everyday vibrancy, which directly affects how soon rental demand and resale premiums actually show up in practice."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "MRT Interchange",
+        "label": "Direct Access Within the District"
+      },
+      {
+        "value": "Phased Completion",
+        "label": "District Still Maturing"
+      },
+      {
+        "value": "Unit-Level",
+        "label": "Value Depends As Much On Unit As Address"
+      }
+    ],
+    "takeaway": "TRX's fundamentals are real, and Golden Crown Residence sits inside a genuinely strong growth story. But \"most valuable in TRX\" is a claim worth testing unit by unit — compare facing, distance to the retail and transit core, and pricing against other TRX launches before treating the address alone as the investment case.",
+    "icon": "",
+    "grad": "#1c1a17,#3a3226"
+  },
+  "a26": {
+    "cat": "Projects News",
+    "date": "25 Sep 2026",
+    "title": "Merdeka 118 Renamed Menara Merdeka Maybank — What's Actually Inside?",
+    "intro": "The naming of Merdeka 118 — one of the tallest towers on Kuala Lumpur's skyline — has shifted again, with the tower reportedly renamed Menara Merdeka Maybank following a corporate naming-rights arrangement. Beyond the name change itself, the more useful question for buyers and tenants nearby is what the tower actually contains, and what a rebrand like this signals for the surrounding district.",
+    "sections": [
+      {
+        "h2": "Why Naming Rights Matter for a Tower Like This",
+        "paragraphs": [
+          "Corporate naming-rights deals on landmark towers are common in major financial centres worldwide, and they typically signal a long-term anchor-tenant commitment rather than a purely cosmetic rebrand — a bank doesn't put its name on a skyline-defining building without intending to occupy it for the long haul.",
+          "For the surrounding property market, a strong, named anchor tenant tends to reinforce the district's positioning as a credible, long-term commercial address. That matters more to nearby investors over time than the name on the building itself."
+        ]
+      },
+      {
+        "h2": "What's Inside the Tower",
+        "paragraphs": [
+          "In line with towers of this scale, the bulk of the built-up area is typically Grade-A office space, with a retail and dining podium anchoring the base of the building and drawing daytime footfall from the surrounding district.",
+          "An observation deck near the top is a common feature of super-tall towers like this one, offering panoramic views of the KL skyline, alongside a hospitality component — hotel floors are typically part of this class of mixed-use development, designed to keep the tower active well beyond standard office hours."
+        ]
+      },
+      {
+        "h2": "What It Means for Buyers Nearby",
+        "paragraphs": [
+          "A fully-leased, well-anchored landmark tower supports footfall and daytime population for surrounding retail and F&B, which in turn supports rental demand for nearby residential and mixed-use developments in the district.",
+          "Buyers evaluating nearby projects should treat the naming and anchor-tenant news as a signal of district confidence, not as a reason alone to pay a premium — the fundamentals of any specific nearby project still need to stand on their own merits."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "Grade-A Offices",
+        "label": "Bulk of the Tower's Built-Up Area"
+      },
+      {
+        "value": "Observation Deck",
+        "label": "Near-Top Public Attraction"
+      },
+      {
+        "value": "Mixed-Use",
+        "label": "Office + Retail + Hospitality Model"
+      }
+    ],
+    "takeaway": "A naming-rights deal on a tower this prominent is a vote of confidence in the district, and worth noting if you're evaluating nearby property. But it's a signal, not a substitute for due diligence — the office, retail and hospitality mix inside the tower matters more to long-term footfall than what the building is called.",
+    "icon": "",
+    "grad": "#1c1a17,#3a3226"
+  },
+  "a27": {
+    "cat": "Penang News",
+    "date": "30 Sep 2026",
+    "title": "Latest Airbnb Ban in Penang Residential Developments",
+    "intro": "Penang has tightened its stance on short-term rentals in residential developments in 2026, moving to restrict Airbnb-style listings within many purely residential strata schemes. For property owners and prospective buyers eyeing entry into short-term rental as an investment strategy, this shift matters more than a single line of news — it reshapes the underlying value proposition of some units entirely.",
+    "sections": [
+      {
+        "h2": "What the Restriction Covers",
+        "paragraphs": [
+          "The restriction targets residential-only zoned strata title developments, differentiating them from hotel-zoned or serviced-residence-zoned developments — SoHo, SoVo, or serviced apartments — which continue to allow short-term letting under their commercial or hotel licence. Pure-residential title condos are where local councils and management corporations have moved to enforce existing residential-use rules more strictly.",
+          "Enforcement generally follows a complaints-driven process at the management corporation or JMB level, working alongside local council bylaws. That means existing operators in strictly residential buildings typically face growing pressure through MC warnings, fines or utility restrictions, rather than a single blanket state-wide law banning short-term rental outright everywhere."
+        ]
+      },
+      {
+        "h2": "Why This Matters for Investors",
+        "paragraphs": [
+          "Units bought specifically for short-term rental yield in purely residential schemes may now need to pivot toward long-term leasing, which resets the yield assumptions many buyers used to justify premium purchase prices during the earlier short-term rental boom.",
+          "Developments explicitly zoned and licensed for short-term or serviced use become comparatively more valuable for that specific investment strategy, since they sit outside the new restriction and continue operating under their existing commercial provisions."
+        ]
+      },
+      {
+        "h2": "What Buyers Should Check Before Committing",
+        "paragraphs": [
+          "Confirm land title and zoning classification — residential versus commercial or hotel — before assuming a unit can legally run short-term rentals, and check the specific management corporation's by-laws rather than relying on general area reputation.",
+          "For existing owners in affected buildings, converting to long-term rental or owner-occupation are the realistic paths forward. It's worth stress-testing whether the original purchase price still makes sense under a long-term-lease yield rather than the short-term assumption it may have been bought under."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "Residential Title",
+        "label": "Zoning Most Affected By Restriction"
+      },
+      {
+        "value": "MC/JMB Level",
+        "label": "Where Enforcement Is Applied"
+      },
+      {
+        "value": "SoHo/Serviced",
+        "label": "Zoning Type Still Permitting STR"
+      }
+    ],
+    "takeaway": "If short-term rental income is core to your investment case in Penang, zoning and title type now matter more than location alone. Confirm a unit sits in a development explicitly licensed for short-term or serviced use before assuming Airbnb-style yields are achievable — a residential-title unit in an affected building may need a long-term-lease model instead.",
+    "icon": "",
+    "grad": "#1c1a17,#3a3226"
+  },
+  "a28": {
+    "cat": "Penang News",
+    "date": "30 Sep 2026",
+    "title": "Is The Light City a Great Investment Opportunity?",
+    "intro": "The Light City is one of Penang's most ambitious waterfront developments — a large-scale mixed masterplan combining residential towers, retail, hospitality and green public space along the island's coastline. With phases progressively coming online, the question investors keep asking is whether it's genuinely a strong long-term bet, or a premium address priced for hype rather than fundamentals.",
+    "sections": [
+      {
+        "h2": "The Scale of the Masterplan",
+        "paragraphs": [
+          "The development spans a waterfront-facing township with multiple residential and commercial components, an integrated retail mall, and a public promenade design intended to create a self-contained lifestyle district rather than a single tower launch.",
+          "This kind of integrated masterplan typically takes many years across multiple phases to fully mature, which means value creation compounds over the full build-out rather than arriving all at once with the first phase."
+        ]
+      },
+      {
+        "h2": "What's Actually Driving Demand",
+        "paragraphs": [
+          "Waterfront positioning and unobstructed sea views remain a genuine scarcity factor on Penang island, where new waterfront land is limited — that scarcity supports long-term pricing specifically for the best-facing units.",
+          "Proximity to established Penang commercial nodes and planned connectivity improvements add to the appeal, though buyers should clearly distinguish between units with direct waterfront exposure and those further inland within the same development that don't carry the same premium justification."
+        ]
+      },
+      {
+        "h2": "Risks Worth Weighing",
+        "paragraphs": [
+          "Large reclamation-linked or waterfront masterplans can be sensitive to environmental and regulatory review timelines, which can extend completion schedules beyond initial projections.",
+          "As with any large multi-phase project, supply released across many towers over several years can outpace absorption if broader demand softens. Buyers should look at the developer's phase-by-phase take-up rates rather than assuming early-phase momentum guarantees the same demand for later phases."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "Waterfront",
+        "label": "Core Scarcity Factor Driving Value"
+      },
+      {
+        "value": "Multi-Phase",
+        "label": "Full Masterplan Build-Out"
+      },
+      {
+        "value": "Facing-Dependent",
+        "label": "Premium Varies Sharply By Unit"
+      }
+    ],
+    "takeaway": "The Light City's waterfront positioning is a genuine long-term advantage that's hard to replicate elsewhere on the island. But \"great investment\" shouldn't be treated as a blanket label across the whole masterplan — it depends heavily on which phase, which tower, and whether the unit actually faces the water.",
+    "icon": "",
+    "grad": "#1c1a17,#3a3226"
+  },
+  "a29": {
+    "cat": "Penang News",
+    "date": "30 Sep 2026",
+    "title": "Is the Penang LRT Finally Operating Soon?",
+    "intro": "The Penang LRT has been one of the state's most talked-about, and most delayed, infrastructure projects for years. With construction milestones reported through 2026, property owners and buyers along the proposed alignment are once again asking the same question: is it actually close to operating, and what should that mean for how they value property near the line today?",
+    "sections": [
+      {
+        "h2": "Where the Project Actually Stands",
+        "paragraphs": [
+          "The Penang LRT, part of the wider Penang Transport Master Plan, has moved through planning, environmental review and progressive construction stages over several years, with the project's scope and alignment having been revised more than once since it was first proposed.",
+          "Large rail infrastructure projects of this scale in Malaysia have historically taken longer than initial announcements suggested, so \"operating soon\" claims are worth treating as directional rather than a fixed delivery date until official commissioning timelines are confirmed by the project owner."
+        ]
+      },
+      {
+        "h2": "How Transit News Typically Affects Nearby Pricing",
+        "paragraphs": [
+          "Property near confirmed transit stations elsewhere in Malaysia has generally moved through two distinct phases — an initial re-rating once the alignment and station locations are confirmed, and a second, larger move closer to actual operational launch once the transit becomes a genuine daily-use amenity rather than a future promise.",
+          "Buying too early, purely on alignment announcements, carries real timeline risk given the project's history of revisions. Buyers who can tolerate a longer holding period are better positioned to capture both phases of that re-rating than those expecting a quick turnaround."
+        ]
+      },
+      {
+        "h2": "What to Check Before Treating It as a Buying Signal",
+        "paragraphs": [
+          "Confirm the current official construction and commissioning timeline directly from the project authority rather than relying on general market chatter, since alignment and station details have shifted before.",
+          "Within any given station catchment, actual walking distance to the platform — not just being \"near\" the line — is what tends to drive the meaningful part of any transit-linked price premium."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "Multi-Phase Review",
+        "label": "Project History Since Original Proposal"
+      },
+      {
+        "value": "Two-Stage Re-Rating",
+        "label": "Typical Pricing Pattern Near New Transit"
+      },
+      {
+        "value": "Walking Distance",
+        "label": "What Actually Drives the Premium"
+      }
+    ],
+    "takeaway": "The Penang LRT's progress is real, but the project's history of revised timelines means \"operating soon\" deserves a healthy dose of caution rather than being treated as a confirmed buying trigger. Verify the current official timeline before pricing in a transit premium, and remember that walking distance to the actual station will matter more than general proximity to the line.",
+    "icon": "",
+    "grad": "#1c1a17,#3a3226"
+  },
+  "a30": {
+    "cat": "Penang News",
+    "date": "30 Sep 2026",
+    "title": "Andaman Island by E&O: Penang's Best Holiday Home Location?",
+    "intro": "Eastern & Oriental's Andaman Island has positioned itself as one of Penang's most exclusive holiday-home addresses — a reclaimed island development built around resort-style living, marina frontage and E&O's long-standing luxury hospitality brand. For buyers weighing where to put a second home or a short-stay investment property on the island, the pitch is compelling. Whether it's genuinely the best holiday-home location in Penang depends on what \"best\" is being measured against.",
+    "sections": [
+      {
+        "h2": "The E&O Brand Advantage",
+        "paragraphs": [
+          "E&O built its reputation on Penang's original luxury hospitality landmark and has carried that positioning into its residential and hospitality-anchored developments since, giving Andaman Island a level of brand recognition among holiday-home buyers that newer, unbranded developments typically lack.",
+          "That brand equity tends to support both rental appeal — branded, well-managed holiday units can command a premium with short-stay guests — and resale confidence, since buyers are backing a developer with a multi-decade track record on the island rather than a first-time entrant."
+        ]
+      },
+      {
+        "h2": "What Makes an Island Address Work as a Holiday Home",
+        "paragraphs": [
+          "Waterfront and marina-adjacent positioning, resort-style amenities, and a genuine sense of destination separate from everyday island life are what typically distinguish a real holiday-home address from an ordinary residential purchase that just happens to be near the coast.",
+          "Proximity to Penang's established hospitality and F&B scene, plus airport accessibility, matters as much as the unit itself — holiday-home buyers are ultimately purchasing convenience and experience for themselves and, often, future guests or tenants."
+        ]
+      },
+      {
+        "h2": "What to Weigh Before Calling It \"The Best\"",
+        "paragraphs": [
+          "Reclaimed island developments typically launch and mature in phases over many years, so early buyers are again betting on the full masterplan — marina, retail, hospitality components — being delivered as planned, similar to other large waterfront projects on the island.",
+          "\"Best\" also depends on use case: a holiday home bought primarily for personal use has different priorities — unit size, privacy, view — than one bought primarily for short-term rental income, where occupancy, management support and nightly-rate positioning matter more than brand prestige alone."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "E&O Legacy",
+        "label": "Multi-Decade Hospitality Track Record"
+      },
+      {
+        "value": "Marina-Fronting",
+        "label": "Core Positioning Advantage"
+      },
+      {
+        "value": "Phased Masterplan",
+        "label": "Full Amenity Build-Out Takes Years"
+      }
+    ],
+    "takeaway": "Andaman Island has a genuinely strong case as a holiday-home address, largely on the strength of E&O's brand and marina-fronting position. But \"best\" is use-case dependent — buyers should separate the appeal of the brand from the practical questions of phasing, unit-level view, and whether the purchase is really about personal use or rental income.",
+    "icon": "",
+    "grad": "#1c1a17,#3a3226"
+  },
+  "a31": {
+    "cat": "Penang News",
+    "date": "30 Sep 2026",
+    "title": "Avea Residence: Penang's Latest New Launch",
+    "intro": "Avea Residence is the newest name to enter Penang's residential launch calendar, joining a busy pipeline of new developments competing for buyer attention on the island. As with any freshly launched project, the useful exercise for buyers isn't just noting that it exists — it's working out where it sits relative to everything else currently on the market.",
+    "sections": [
+      {
+        "h2": "What Buyers Should Look At First",
+        "paragraphs": [
+          "At launch stage, the fundamentals worth checking are consistent regardless of the specific project: location and connectivity, unit mix and sizing relative to comparable nearby launches, developer track record, and indicative pricing versus what's already selling, or reselling, in the immediate area.",
+          "Early-bird or launch-phase pricing is often positioned below where later phases or post-completion resale is expected to land, which is the core appeal of buying at launch — but that pricing advantage only pays off if the project executes on schedule and the surrounding area's fundamentals hold up."
+        ]
+      },
+      {
+        "h2": "How to Evaluate a New Launch Against the Existing Market",
+        "paragraphs": [
+          "Compare the asking price per square foot against recent transactions for comparable completed projects nearby, not just against other new launches, since new-launch pricing across the board tends to run ahead of what the resale market has actually proven out.",
+          "Check what amenities and facilities are promised versus what's typical for the price tier and area — an oversized facilities list on a modestly priced launch is worth scrutinising for what will realistically be delivered and maintained long-term."
+        ]
+      },
+      {
+        "h2": "Where This Fits in a Penang Portfolio",
+        "paragraphs": [
+          "A new launch like this typically suits buyers comfortable with construction-period risk in exchange for launch pricing, rather than those who want a completed, income-producing asset from day one.",
+          "As with any new project on the island, it's worth cross-checking against other Penang launches and established addresses before committing, since relative value across competing new launches is usually clearer than any single project's marketing material makes it look."
+        ]
+      }
+    ],
+    "stats": [
+      {
+        "value": "Launch Pricing",
+        "label": "Typically Below Post-Completion Resale"
+      },
+      {
+        "value": "Compare to Resale",
+        "label": "Best Benchmark, Not Other Launches"
+      },
+      {
+        "value": "Construction-Period Risk",
+        "label": "Trade-Off For Early Pricing"
+      }
+    ],
+    "takeaway": "Avea Residence is worth a look simply for being new to the market, but \"new launch\" isn't itself an investment thesis. Benchmark it against actual resale transactions nearby, check the developer's delivery track record, and be honest about whether you're buying for the launch-price discount or for the finished product — those are different bets.",
+    "icon": "",
+    "grad": "#1c1a17,#3a3226"
+  }
+};
+
+  function openArticle(id){
+    const a = ARTICLES[id];
+    if(!a) return;
+    document.getElementById('readerCat').textContent = a.cat;
+    document.getElementById('readerTitle').textContent = a.title;
+    document.getElementById('readerDate').textContent = a.date;
+
+    let bodyHtml = '<p class="reader-intro">' + a.intro + '</p>';
+    bodyHtml += a.sections.map(sec =>
+      '<h3 class="reader-h2">' + sec.h2 + '</h3>' +
+      sec.paragraphs.map(p => '<p>' + p + '</p>').join('')
+    ).join('');
+    bodyHtml += '<div class="reader-stats">' +
+      a.stats.map(s => '<div class="reader-stat"><span class="reader-stat-value">' + s.value + '</span><span class="reader-stat-label">' + s.label + '</span></div>').join('') +
+      '</div>';
+    bodyHtml += '<div class="reader-takeaway"><span class="reader-takeaway-label">Keith\'s Take</span><p>' + a.takeaway + '</p></div>';
+    document.getElementById('readerBody').innerHTML = bodyHtml;
+
+    const waLink = document.querySelector('.reader-cta .wa-link');
+    waLink.setAttribute('data-wa-msg', '(Web) Hi Keith, I would like to know more about "' + a.title + '".');
+    waLink.href = waLink.href.split('?')[0] + '?text=' + encodeURIComponent(waLink.getAttribute('data-wa-msg'));
+    document.getElementById('readerOverlay').classList.add('open');
+    document.getElementById('readerOverlay').scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeArticle(){
+    document.getElementById('readerOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeArticle(); });
+
+  // WhatsApp links: append pre-filled, URL-encoded message text
+  document.querySelectorAll('.wa-link').forEach(link => {
+    const msg = link.getAttribute('data-wa-msg');
+    if(msg){ link.href = link.href.split('?')[0] + '?text=' + encodeURIComponent(msg); }
+  });
+
+  // Category filters
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.article-card');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-filter');
+      cards.forEach(card => {
+        const show = (filter === 'all' || card.getAttribute('data-cat') === filter);
+        card.style.display = show ? 'flex' : 'none';
+      });
+    });
+  });
+
+  // Deep link: ?article=<id> opens that article directly (used by project pages' "Related Articles")
+  (function openArticleFromQuery(){
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const aid = params.get('article');
+      if(aid && ARTICLES[aid]) openArticle(aid);
+    } catch(e) {}
+  })();
+</script>
+
+<a href="https://api.whatsapp.com/send/?phone=60102821568&text=%28Web%29+Hi+Keith%2C+I+would+like+to+explore+more+on+Malaysia+Property.&type=phone_number&app_absent=0" target="_blank" rel="noopener" class="float-wa" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.44.79 3.06 1.2 4.72 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0012.04 2m0 1.67c2.2 0 4.27.86 5.82 2.42a8.19 8.19 0 012.42 5.82c0 4.55-3.7 8.25-8.25 8.25a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 01-1.26-4.38c0-4.55 3.71-8.25 8.25-8.25M8.53 6.85c-.16 0-.42.06-.64.31s-.85.83-.85 2.02.87 2.35 1 2.51 1.72 2.76 4.24 3.76c2.09.84 2.52.67 2.97.62s1.46-.6 1.66-1.18-.2-1.07-.42-1.16-1.28-.63-1.48-.7-.34-.11-.49.11-.57.7-.7.85-.26.16-.48.05a6.16 6.16 0 01-1.82-1.13 6.86 6.86 0 01-1.26-1.57c-.13-.22-.01-.34.1-.45.1-.1.22-.26.34-.4a1.6 1.6 0 00.22-.37.42.42 0 000-.4c-.06-.11-.49-1.21-.68-1.65-.18-.43-.36-.37-.49-.38h-.42"/></svg>
+</a>
+<script>
+  // ---- Language switcher (site-wide, shared with home page) ----
+  const LANG_NAMES = {"en": "English", "zh-CN": "简体中文", "zh-TW": "繁體中文", "ms": "Bahasa Malaysia", "ta": "தமிழ்", "ja": "日本語", "ko": "한국어", "ar": "العربية"};
+  let currentLang = 'en';
+
+  function setLanguage(lang){
+    currentLang = lang;
+    const label = document.getElementById('langSelectorLabel');
+    if(label) label.textContent = LANG_NAMES[lang] || 'English';
+
+    document.querySelectorAll('.lang-menu a').forEach(a => a.classList.remove('active'));
+    const idx = Object.keys(LANG_NAMES).indexOf(lang);
+    const menuLinks = document.querySelectorAll('#langMenu a');
+    if(menuLinks[idx]) menuLinks[idx].classList.add('active');
+
+    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+    try { localStorage.setItem('kn_lang', lang); } catch(e) {}
+
+    const menu = document.getElementById('langMenu');
+    if(menu) menu.classList.remove('open');
+
+    if (typeof applyCtaLanguage === 'function') applyCtaLanguage();
+  }
+
+  function toggleLangMenu(e){
+    e.stopPropagation();
+    document.getElementById('langMenu').classList.toggle('open');
+  }
+
+  (function initLang(){
+    let saved = 'en';
+    try { saved = localStorage.getItem('kn_lang') || 'en'; } catch(e) {}
+    setLanguage(saved);
+  })();
+
+  // ---- Currency switcher (site-wide, shared with home page) ----
+  const EXCHANGE_RATES = { MYR: 1, USD: 0.21, SGD: 0.285, CNY: 1.52, JPY: 31.5, KRW: 290 };
+  const CURRENCY_SYMBOL = { MYR: 'RM', USD: 'US$', SGD: 'S$', CNY: 'CN¥', JPY: 'JP¥', KRW: '₩' };
+  let currentCurrency = 'MYR';
+
+  function formatPrice(myrValue, currency, approx){
+    const rate = EXCHANGE_RATES[currency] || 1;
+    const converted = myrValue * rate;
+    const symbol = CURRENCY_SYMBOL[currency] || currency;
+    let display;
+    if(converted >= 1000000){ display = (converted/1000000).toFixed(2) + 'M'; }
+    else { display = Math.round(converted/1000) + 'K'; }
+    return (approx ? '~' : '') + symbol + ' ' + display;
+  }
+
+  function setCurrency(cur){
+    currentCurrency = cur;
+    document.querySelectorAll('[data-price-myr]').forEach(el => {
+      const myrValue = parseFloat(el.getAttribute('data-price-myr'));
+      const approx = el.getAttribute('data-approx') === '1';
+      el.textContent = formatPrice(myrValue, cur, approx);
+    });
+    const label = document.getElementById('currSelectorLabel');
+    if(label) label.textContent = cur;
+    document.querySelectorAll('#currMenu a').forEach(a => a.classList.remove('active'));
+    const menuLinks = document.querySelectorAll('#currMenu a');
+    const idx = Object.keys(CURRENCY_SYMBOL).indexOf(cur);
+    if(menuLinks[idx]) menuLinks[idx].classList.add('active');
+    try { localStorage.setItem('kn_currency', cur); } catch(e) {}
+    const menu = document.getElementById('currMenu');
+    if(menu) menu.classList.remove('open');
+  }
+
+  function toggleCurrMenu(e){
+    e.stopPropagation();
+    document.getElementById('currMenu').classList.toggle('open');
+  }
+
+  (function initCurrency(){
+    let saved = 'MYR';
+    try { saved = localStorage.getItem('kn_currency') || 'MYR'; } catch(e) {}
+    setCurrency(saved);
+  })();
+
+  document.addEventListener('click', function(e){
+    const switcher = document.getElementById('langSwitch');
+    if(switcher && !switcher.contains(e.target)){
+      const m = document.getElementById('langMenu');
+      if(m) m.classList.remove('open');
+    }
+    const currSwitcher = document.getElementById('currSwitch');
+    if(currSwitcher && !currSwitcher.contains(e.target)){
+      const m = document.getElementById('currMenu');
+      if(m) m.classList.remove('open');
+    }
+  });
+</script>
+
+</body>
+</html>
