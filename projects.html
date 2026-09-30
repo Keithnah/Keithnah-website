@@ -245,16 +245,10 @@
   }
 
   .pd-layout-fallback{
-    width:100%; height:100%; display:flex; align-items:center; justify-content:center;
+    width:100%; height:100%; min-height:320px; display:flex; align-items:center; justify-content:center;
     background:linear-gradient(135deg,#EDEBFB,#F9F8F6); color:var(--gold);
   }
   .pd-layout-fallback svg{width:32%;}
-  .pd-tap-enlarge{
-    position:absolute; right:10px; bottom:10px; background:rgba(17,17,17,0.82); color:#fff; padding:8px 14px;
-    border-radius:100px; font-size:11px; text-transform:uppercase; letter-spacing:0.06em; font-weight:700;
-    display:flex; align-items:center; gap:5px; transition:background .3s;
-  }
-  .pd-layout-display-media:hover .pd-tap-enlarge{background:var(--gold);}
   .pd-layout-tags{display:flex; gap:8px; flex-wrap:wrap;}
   .pd-layout-tag{padding:6px 13px; border-radius:100px; background:rgba(94,96,206,0.1); color:var(--gold); font-size:11.5px; font-weight:700;}
 
@@ -271,8 +265,8 @@
   .pd-layout-tab-type{font-size:14.5px; font-weight:700; color:var(--ink);}
   .pd-layout-tab-meta{font-size:12.5px; color:var(--grey); font-weight:600;}
   .pd-layout-display{flex:1; min-width:0; background:var(--ivory); border:1px solid var(--line); border-radius:10px; overflow:hidden;}
-  .pd-layout-display-media{position:relative; aspect-ratio:4/3; cursor:pointer; overflow:hidden;}
-  .pd-layout-display-media img{width:100%; height:100%; object-fit:cover; display:block;}
+  .pd-layout-display-media{position:relative; display:flex; align-items:center; justify-content:center; background:#fff; padding:20px;}
+  .pd-layout-display-media img{width:auto; height:auto; max-width:100%; max-height:70vh; object-fit:contain; display:block; margin:0 auto;}
   .pd-layout-display-body{padding:22px 24px 26px;}
   .pd-layout-display-body h4{font-size:20px; margin-bottom:8px;}
   .pd-layout-display-body p{font-size:14.5px; color:var(--grey); margin-bottom:16px; line-height:1.6; font-weight:500;}
@@ -1520,7 +1514,7 @@
   function renderLayoutDisplay(l, i){
     const media = l.img ? '<img src="'+l.img+'" alt="'+pdEscapeHtml(l.type)+'">'
       : '<div class="pd-layout-fallback"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="10" y="10" width="80" height="80"/><line x1="50" y1="10" x2="50" y2="60"/><line x1="10" y1="60" x2="90" y2="60"/><line x1="70" y1="60" x2="70" y2="90"/></svg></div>';
-    return '<div class="pd-layout-display-media" onclick="openLightbox(\'layout\','+i+')">'+media+'<div class="pd-tap-enlarge">Tap to Enlarge</div></div>'
+    return '<div class="pd-layout-display-media">'+media+'</div>'
       + '<div class="pd-layout-display-body"><h4>'+pdEscapeHtml(l.type)+'</h4><p>'+pdEscapeHtml(l.desc)+'</p>'
       + '<div class="pd-layout-tags"><span class="pd-layout-tag">'+pdEscapeHtml(l.size)+'</span><span class="pd-layout-tag">'+pdEscapeHtml(l.rooms)+'</span></div></div>';
   }
