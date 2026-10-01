@@ -333,6 +333,7 @@
   .pd-enquiry-success-icon{width:48px; height:48px; border-radius:50%; background:rgba(94,96,206,0.12); color:var(--gold); display:flex; align-items:center; justify-content:center; margin:0 auto 16px;}
   .pd-enquiry-success h4{font-size:19px; margin-bottom:8px;}
   .pd-enquiry-success p{font-size:14px; color:var(--grey); line-height:1.6; margin-bottom:20px; max-width:440px; margin-left:auto; margin-right:auto;}
+  .pd-enquiry-success-link{display:inline-flex; align-items:center; gap:9px; border:none;}
 
   @media(max-width:720px){
     .pd-points-grid, .pd-fit-grid, .pd-article-grid{grid-template-columns:1fr;}
@@ -1800,7 +1801,8 @@
       + '<div class="pd-enquiry-success" id="pdEnquirySuccess">'
       + '<div class="pd-enquiry-success-icon">' + CHECK_ICON + '</div>'
       + '<h4>Your WhatsApp message is ready</h4>'
-      + '<p>A WhatsApp chat with Keith has opened in a new tab with all your details about ' + pname + ' pre-filled — just hit send there to complete your enquiry.</p>'
+      + '<p>A WhatsApp chat with Keith has opened in a new tab with all your details about ' + pname + ' pre-filled — just hit send there to complete your enquiry. If nothing opened, tap the button below.</p>'
+      + '<a href="#" target="_blank" rel="noopener" class="btn btn-dark pd-enquiry-success-link" id="pdEnquiryWaLink">' + WHATSAPP_ICON + '<span>Open WhatsApp Chat</span></a>'
       + '</div>'
       + '</div>';
   }
@@ -1874,11 +1876,19 @@
       data.preferences ? "What matters most: " + data.preferences : '',
       data.updatesOptIn === 'Yes' ? "Also wants occasional project updates by email." : ''
     ].filter(Boolean);
-    window.open(pdWaLink(waLines.join('\n')), '_blank', 'noopener');
+    const waUrl = pdWaLink(waLines.join('\n'));
+    const waWin = window.open(waUrl, '_blank', 'noopener');
+    if(!waWin || waWin.closed || typeof waWin.closed === 'undefined'){
+      window.location.href = waUrl;
+    }
 
     form.style.display = 'none';
     const success = section.querySelector('.pd-enquiry-success');
-    if(success) success.style.display = 'block';
+    if(success){
+      success.style.display = 'block';
+      const link = success.querySelector('.pd-enquiry-success-link');
+      if(link) link.setAttribute('href', waUrl);
+    }
     return false;
   }
 
