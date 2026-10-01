@@ -311,6 +311,17 @@
   .pd-enquiry-field input:focus, .pd-enquiry-field select:focus, .pd-enquiry-field textarea:focus{outline:none; border-color:var(--gold);}
   .pd-enquiry-field textarea{resize:vertical; min-height:72px; line-height:1.5;}
   .pd-enquiry-field.field-invalid input, .pd-enquiry-field.field-invalid select{border-color:#B2453A;}
+
+  .pd-enquiry-toggle{
+    display:flex; align-items:center; gap:9px; width:100%; margin:22px 0 0; padding:14px 2px;
+    background:none; border:none; border-top:1px solid var(--line); font-family:inherit;
+    font-size:13.5px; font-weight:700; color:var(--ink); cursor:pointer; text-align:left;
+  }
+  .pd-enquiry-toggle:hover{color:var(--gold);}
+  .pd-enquiry-toggle-arrow{flex-shrink:0; transition:transform .25s var(--ease); color:var(--gold);}
+  .pd-enquiry-toggle.open .pd-enquiry-toggle-arrow{transform:rotate(90deg);}
+  .pd-enquiry-optional{border-top:1px solid var(--line); padding-top:22px; margin-top:4px;}
+  .pd-enquiry-optional .pd-enquiry-grid{margin-bottom:18px;}
   .pd-enquiry-checks{display:flex; flex-direction:column; gap:12px; margin:22px 0 22px;}
   .pd-enquiry-check{display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--grey); line-height:1.55; font-weight:500;}
   .pd-enquiry-check input{margin-top:3px; flex-shrink:0; width:16px; height:16px; accent-color:var(--gold);}
@@ -1734,6 +1745,15 @@
       + '<option>Both / Undecided</option>'
       + '</select></div>'
 
+      + '</div>'
+
+      + '<button type="button" class="pd-enquiry-toggle" onclick="toggleEnquiryOptional(this)" aria-expanded="false">'
+      + '<svg class="pd-enquiry-toggle-arrow" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>'
+      + '<span>Add budget, timeline &amp; preferences (optional)</span></button>'
+
+      + '<div class="pd-enquiry-optional" hidden>'
+      + '<div class="pd-enquiry-grid">'
+
       + '<div class="pd-enquiry-field"><label for="eq-budget">Comfortable budget<span class="opt">Optional</span></label>'
       + '<select id="eq-budget" name="budget">'
       + '<option value="">Select budget</option>'
@@ -1758,7 +1778,7 @@
       + '<option>3 – 6 months</option><option>6 – 12 months</option><option>Just exploring</option>'
       + '</select></div>'
 
-      + '<div class="pd-enquiry-field full"><label for="eq-time">Preferred contact time<span class="opt">Optional</span></label>'
+      + '<div class="pd-enquiry-field"><label for="eq-time">Preferred contact time<span class="opt">Optional</span></label>'
       + '<input id="eq-time" name="contactTime" type="text" placeholder="e.g. weekday after 6pm, Malaysia time"></div>'
 
       + '<div class="pd-enquiry-field full"><label for="eq-notes">What matters most?<span class="opt">Optional</span></label>'
@@ -1766,11 +1786,14 @@
 
       + '</div>'
 
+      + '<label class="pd-enquiry-check"><input type="checkbox" name="updatesOptIn">'
+      + '<span>Also send me occasional project updates by email. Optional; I can unsubscribe at any time.</span></label>'
+
+      + '</div>'
+
       + '<div class="pd-enquiry-checks">'
       + '<label class="pd-enquiry-check"><input type="checkbox" name="consent" required>'
       + '<span>I agree to Keith Nah saving my enquiry and contacting me about this request.</span></label>'
-      + '<label class="pd-enquiry-check"><input type="checkbox" name="updatesOptIn">'
-      + '<span>Also send me occasional project updates by email. Optional; I can unsubscribe at any time.</span></label>'
       + '</div>'
 
       + '<button type="submit" class="btn btn-dark">Send Enquiry to Keith</button>'
@@ -1782,6 +1805,18 @@
       + '<p>Keith has received your request for ' + pname + ' and will follow up shortly. A WhatsApp chat should have opened — you can continue the conversation there.</p>'
       + '</div>'
       + '</div>';
+  }
+
+  function toggleEnquiryOptional(btn){
+    const section = btn.closest('.pd-enquiry-section');
+    const panel = section.querySelector('.pd-enquiry-optional');
+    const show = panel.hasAttribute('hidden');
+    if(show){ panel.removeAttribute('hidden'); } else { panel.setAttribute('hidden',''); }
+    btn.setAttribute('aria-expanded', show ? 'true' : 'false');
+    btn.classList.toggle('open', show);
+    btn.querySelector('span').textContent = show
+      ? 'Hide budget, timeline & preferences'
+      : 'Add budget, timeline & preferences (optional)';
   }
 
   function submitEnquiry(evt){
