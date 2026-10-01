@@ -293,6 +293,34 @@
   .pd-modal-cta{padding-top:32px; border-top:1px solid var(--line); text-align:center;}
   .pd-modal-cta p{font-size:15px; color:var(--grey); margin-bottom:18px; font-weight:500;}
 
+  /* Project Enquiry Form */
+  .pd-enquiry-section{background:var(--ivory); border:1px solid var(--line); border-radius:12px; padding:30px 28px 28px; margin-top:28px;}
+  .pd-enquiry-eyebrow{font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--gold); font-weight:700; margin-bottom:8px;}
+  .pd-enquiry-title{font-size:21px; margin-bottom:8px;}
+  .pd-enquiry-sub{font-size:14px; color:var(--grey); line-height:1.65; font-weight:500; margin-bottom:24px; max-width:640px;}
+  .pd-enquiry-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px 18px;}
+  .pd-enquiry-field{display:flex; flex-direction:column; gap:6px;}
+  .pd-enquiry-field.full{grid-column:1 / -1;}
+  .pd-enquiry-field label{font-size:12px; font-weight:700; color:var(--ink); text-transform:uppercase; letter-spacing:0.04em;}
+  .pd-enquiry-field label .req{color:#B2453A; margin-left:3px;}
+  .pd-enquiry-field label .opt{color:var(--grey); font-weight:600; text-transform:none; letter-spacing:0; margin-left:5px; font-size:11.5px;}
+  .pd-enquiry-field input, .pd-enquiry-field select, .pd-enquiry-field textarea{
+    font-family:inherit; font-size:14.5px; padding:12px 13px; border-radius:8px; border:1px solid var(--line);
+    background:#fff; color:var(--ink); transition:border-color .2s;
+  }
+  .pd-enquiry-field input:focus, .pd-enquiry-field select:focus, .pd-enquiry-field textarea:focus{outline:none; border-color:var(--gold);}
+  .pd-enquiry-field textarea{resize:vertical; min-height:72px; line-height:1.5;}
+  .pd-enquiry-field.field-invalid input, .pd-enquiry-field.field-invalid select{border-color:#B2453A;}
+  .pd-enquiry-checks{display:flex; flex-direction:column; gap:12px; margin:22px 0 22px;}
+  .pd-enquiry-check{display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--grey); line-height:1.55; font-weight:500;}
+  .pd-enquiry-check input{margin-top:3px; flex-shrink:0; width:16px; height:16px; accent-color:var(--gold);}
+  .pd-enquiry-check a{color:var(--gold); text-decoration:underline;}
+  .pd-enquiry-error{display:none; background:#FBECEA; border:1px solid #E3B3AC; color:#8C3626; font-size:13px; font-weight:600; padding:12px 15px; border-radius:8px; margin-bottom:18px;}
+  .pd-enquiry-success{display:none; text-align:center; padding:36px 10px 12px;}
+  .pd-enquiry-success-icon{width:48px; height:48px; border-radius:50%; background:rgba(94,96,206,0.12); color:var(--gold); display:flex; align-items:center; justify-content:center; margin:0 auto 16px;}
+  .pd-enquiry-success h4{font-size:19px; margin-bottom:8px;}
+  .pd-enquiry-success p{font-size:14px; color:var(--grey); line-height:1.6; margin-bottom:20px; max-width:440px; margin-left:auto; margin-right:auto;}
+
   @media(max-width:720px){
     .pd-points-grid, .pd-fit-grid, .pd-article-grid{grid-template-columns:1fr;}
     .pd-facts-grid{grid-template-columns:1fr;}
@@ -300,6 +328,8 @@
     .pd-layout-selector{flex-direction:column;}
     .pd-layout-sidebar{flex-direction:row; overflow-x:auto; width:100%; gap:8px; padding-bottom:6px;}
     .pd-layout-tab{flex:0 0 auto; min-width:130px;}
+    .pd-enquiry-grid{grid-template-columns:1fr;}
+    .pd-enquiry-section{padding:24px 20px;}
     .pd-hero{height:200px;}
     .pd-body{padding:24px 20px 30px;}
   }
@@ -1495,6 +1525,14 @@
 
   const BUILDING_ICON = '<svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" style="width:70px;"><path d="M60 190V70l40-30 40 30v120z"/><line x1="60" y1="90" x2="140" y2="90" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke-width="1.6"/></svg>';
 
+  const CHECK_ICON = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>';
+
+  // Google Apps Script Web App URL that appends enquiry submissions to the
+  // "Keith Nah - Project Enquiries" Google Sheet. Set after one-time deployment
+  // (see ENQUIRY_FORM_SETUP.md). Leave as '' to disable sheet logging — the
+  // WhatsApp handoff still works either way.
+  const ENQUIRY_SHEET_ENDPOINT = '';
+
   const FIT_ICONS = [
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>',
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="8" r="2.4"/><path d="M2 21c0-4 3-6.5 7-6.5s7 2.5 7 6.5"/><path d="M15.5 14.6c2.7.4 4.5 2.4 4.5 6.4"/></svg>',
@@ -1652,7 +1690,167 @@
 
       + '<div class="pd-modal-cta"><p>Want Keith\'s take on '+pdEscapeHtml(p.name)+'?</p>'
       + '<a href="'+pdWaLink(msg)+'" target="_blank" rel="noopener" class="btn btn-dark">WhatsApp Keith About This Project</a></div>'
+
+      + buildEnquiryFormHtml(p)
       + '</div>';
+  }
+
+  // ---- Project Enquiry Form (compulsory: name, phone, email, buying purpose) ----
+  function buildEnquiryFormHtml(p){
+    const pname = pdEscapeHtml(p.name);
+    return ''
+      + '<div class="pd-enquiry-section">'
+      + '<div class="pd-enquiry-eyebrow">Project Enquiry</div>'
+      + '<div class="pd-enquiry-title">Need help with ' + pname + '?</div>'
+      + '<p class="pd-enquiry-sub">Share a few details and Keith will follow up personally on WhatsApp or email. Your request is also saved so Keith can prepare before reaching out.</p>'
+      + '<div class="pd-enquiry-error" id="pdEnquiryError"></div>'
+      + '<form class="pd-enquiry-form" onsubmit="return submitEnquiry(event);" novalidate>'
+      + '<input type="hidden" name="project" value="' + pname + '">'
+      + '<div class="pd-enquiry-grid">'
+
+      + '<div class="pd-enquiry-field full"><label for="eq-type">How can Keith help?</label>'
+      + '<select id="eq-type" name="enquiryType">'
+      + '<option>Request current price list and package</option>'
+      + '<option>Book a viewing / showroom visit</option>'
+      + '<option>Compare with similar projects</option>'
+      + '<option>Request floor plans by unit type</option>'
+      + '<option>General enquiry</option>'
+      + '</select></div>'
+
+      + '<div class="pd-enquiry-field"><label for="eq-name">Your name<span class="req">*</span></label>'
+      + '<input id="eq-name" name="fullName" type="text" placeholder="Full name" required></div>'
+
+      + '<div class="pd-enquiry-field"><label for="eq-phone">Phone / WhatsApp<span class="req">*</span></label>'
+      + '<input id="eq-phone" name="phone" type="tel" placeholder="+60 12-345 6789" required></div>'
+
+      + '<div class="pd-enquiry-field"><label for="eq-email">Email<span class="req">*</span></label>'
+      + '<input id="eq-email" name="email" type="email" placeholder="you@example.com" required></div>'
+
+      + '<div class="pd-enquiry-field"><label for="eq-purpose">Buying purpose<span class="req">*</span></label>'
+      + '<select id="eq-purpose" name="purpose" required>'
+      + '<option value="">Select purpose</option>'
+      + '<option>Own stay</option>'
+      + '<option>Investment</option>'
+      + '<option>Both / Undecided</option>'
+      + '</select></div>'
+
+      + '<div class="pd-enquiry-field"><label for="eq-budget">Comfortable budget<span class="opt">Optional</span></label>'
+      + '<select id="eq-budget" name="budget">'
+      + '<option value="">Select budget</option>'
+      + '<option>Below RM 1.0M</option>'
+      + '<option>RM 1.0M – RM 1.5M</option>'
+      + '<option>RM 1.5M – RM 2.5M</option>'
+      + '<option>RM 2.5M – RM 4.0M</option>'
+      + '<option>Above RM 4.0M</option>'
+      + '</select></div>'
+
+      + '<div class="pd-enquiry-field"><label for="eq-bedrooms">Minimum bedrooms<span class="opt">Optional</span></label>'
+      + '<select id="eq-bedrooms" name="bedrooms">'
+      + '<option value="">Select bedrooms</option>'
+      + '<option>Studio</option><option>1 Bedroom</option><option>2 Bedrooms</option>'
+      + '<option>3 Bedrooms</option><option>4+ Bedrooms</option>'
+      + '</select></div>'
+
+      + '<div class="pd-enquiry-field"><label for="eq-timeline">Buying timeline<span class="opt">Optional</span></label>'
+      + '<select id="eq-timeline" name="timeline">'
+      + '<option value="">Select timeline</option>'
+      + '<option>Ready to buy now</option><option>Within 3 months</option>'
+      + '<option>3 – 6 months</option><option>6 – 12 months</option><option>Just exploring</option>'
+      + '</select></div>'
+
+      + '<div class="pd-enquiry-field full"><label for="eq-time">Preferred contact time<span class="opt">Optional</span></label>'
+      + '<input id="eq-time" name="contactTime" type="text" placeholder="e.g. weekday after 6pm, Malaysia time"></div>'
+
+      + '<div class="pd-enquiry-field full"><label for="eq-notes">What matters most?<span class="opt">Optional</span></label>'
+      + '<textarea id="eq-notes" name="preferences" placeholder="Example: near MRT, larger layout, low density or rental demand"></textarea></div>'
+
+      + '</div>'
+
+      + '<div class="pd-enquiry-checks">'
+      + '<label class="pd-enquiry-check"><input type="checkbox" name="consent" required>'
+      + '<span>I agree to Keith Nah saving my enquiry and contacting me about this request.</span></label>'
+      + '<label class="pd-enquiry-check"><input type="checkbox" name="updatesOptIn">'
+      + '<span>Also send me occasional project updates by email. Optional; I can unsubscribe at any time.</span></label>'
+      + '</div>'
+
+      + '<button type="submit" class="btn btn-dark">Send Enquiry to Keith</button>'
+      + '</form>'
+
+      + '<div class="pd-enquiry-success" id="pdEnquirySuccess">'
+      + '<div class="pd-enquiry-success-icon">' + CHECK_ICON + '</div>'
+      + '<h4>Thank you — your enquiry is on its way</h4>'
+      + '<p>Keith has received your request for ' + pname + ' and will follow up shortly. A WhatsApp chat should have opened — you can continue the conversation there.</p>'
+      + '</div>'
+      + '</div>';
+  }
+
+  function submitEnquiry(evt){
+    evt.preventDefault();
+    const form = evt.target;
+    const section = form.closest('.pd-enquiry-section');
+    const errorBox = section.querySelector('.pd-enquiry-error');
+    section.querySelectorAll('.pd-enquiry-field').forEach(f => f.classList.remove('field-invalid'));
+
+    const data = {
+      project: form.project.value,
+      enquiryType: form.enquiryType.value,
+      name: form.fullName.value.trim(),
+      phone: form.phone.value.trim(),
+      email: form.email.value.trim(),
+      purpose: form.purpose.value,
+      budget: form.budget.value,
+      bedrooms: form.bedrooms.value,
+      timeline: form.timeline.value,
+      contactTime: form.contactTime.value.trim(),
+      preferences: form.preferences.value.trim(),
+      consent: form.consent.checked ? 'Yes' : 'No',
+      updatesOptIn: form.updatesOptIn.checked ? 'Yes' : 'No',
+      page: 'projects.html',
+      submittedAt: new Date().toISOString()
+    };
+
+    const missing = [];
+    if(!data.name) missing.push('fullName');
+    if(!data.phone) missing.push('phone');
+    if(!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) missing.push('email');
+    if(!data.purpose) missing.push('purpose');
+    if(!form.consent.checked) missing.push('consent');
+
+    if(missing.length){
+      missing.forEach(name => {
+        const field = form.querySelector('[name="'+name+'"]');
+        if(field){ const wrap = field.closest('.pd-enquiry-field'); if(wrap) wrap.classList.add('field-invalid'); }
+      });
+      errorBox.textContent = 'Please fill in your name, phone, a valid email, buying purpose, and agree to the consent checkbox.';
+      errorBox.style.display = 'block';
+      return false;
+    }
+    errorBox.style.display = 'none';
+
+    const p = PROJECT_DETAILS.find(x => x.name === data.project);
+    const waLines = [
+      "Hi Keith, I'd like to enquire about " + data.project + ".",
+      "Name: " + data.name,
+      "Buying purpose: " + data.purpose,
+      data.budget ? "Budget: " + data.budget : '',
+      data.bedrooms ? "Min. bedrooms: " + data.bedrooms : '',
+      data.timeline ? "Timeline: " + data.timeline : '',
+      data.preferences ? "What matters most: " + data.preferences : '',
+      data.contactTime ? "Preferred contact time: " + data.contactTime : '',
+      "Email: " + data.email
+    ].filter(Boolean);
+    window.open(pdWaLink(waLines.join('\n')), '_blank', 'noopener');
+
+    if(typeof ENQUIRY_SHEET_ENDPOINT === 'string' && ENQUIRY_SHEET_ENDPOINT.indexOf('http') === 0){
+      try{
+        fetch(ENQUIRY_SHEET_ENDPOINT, { method:'POST', mode:'no-cors', body: new URLSearchParams(data) }).catch(function(){});
+      }catch(e){}
+    }
+
+    form.style.display = 'none';
+    const success = section.querySelector('.pd-enquiry-success');
+    if(success) success.style.display = 'block';
+    return false;
   }
 
   function openDetailModal(i){
