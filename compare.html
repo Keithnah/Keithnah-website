@@ -1846,5 +1846,87 @@
   knApplyLanguage();
 })();
 </script>
+
+<script>
+// ---- Project content translation (lazy-loads i18n-projects-<lang>.js next to this page) ----
+(function(){
+  const SCOPE = '';
+  const registry = new Map();
+  const lastSet = new WeakMap();
+  function lang(){ return (typeof currentLang !== 'undefined' && currentLang) ? currentLang : 'en'; }
+  function dict(l){ return (window.KN_TR && window.KN_TR[l]) || null; }
+  function lookup(d, key){
+    if(d[key]) return d[key];
+    let m, base, n;
+    if((m = key.match(/^(\d) \/ 3 Selected$/))){ base = '0 / 3 Selected'; n = m[1]; }
+    else if((m = key.match(/^(\d) projects? selected$/))){ base = '0 projects selected'; n = m[1]; }
+    else if((m = key.match(/^Compare Projects \((\d) \/ 3 Selected\)$/))){ base = 'Compare Projects (0 / 3 Selected)'; n = m[1]; }
+    if(base && d[base]) return d[base].replace('0', n);
+    return null;
+  }
+  function collectUnits(){
+    const BLOCK = /^(DIV|P|UL|OL|LI|H1|H2|H3|H4|H5|H6|SECTION|ARTICLE|TABLE|TR|TD|TH|THEAD|TBODY|FORM|HEADER|FOOTER|NAV|MAIN|ASIDE|BLOCKQUOTE|BUTTON|SELECT|INPUT|IMG|SVG|CANVAS|VIDEO|IFRAME)$/i;
+    const SKIP = /^(SCRIPT|STYLE|NOSCRIPT|SVG|TEXTAREA|INPUT|SELECT|OPTION|CODE|PRE)$/i;
+    const out = [];
+    function hasBlockDesc(el){ for(const c of el.children){ if(BLOCK.test(c.nodeName) || hasBlockDesc(c)) return true; } return false; }
+    function visit(el){
+      if(SKIP.test(el.nodeName)) return;
+      if(el.closest && el.closest('header,footer,.lang-menu,#currMenu,#langSwitch,#currSwitch,.float-wa,.whatsapp-btn')) return;
+      if(!/[A-Za-z]{2}/.test(el.textContent || '') && !/^\d \/ 3/.test(el.textContent || '')) return;
+      if(!hasBlockDesc(el) && el.childNodes.length){
+        if(el.querySelector && el.querySelector('svg,img')){ for(const c of el.children) visit(c); }
+        else out.push(el);
+        return;
+      }
+      for(const c of el.children) visit(c);
+    }
+    const roots = SCOPE ? Array.from(document.querySelectorAll(SCOPE)) : [document.body];
+    roots.forEach(visit);
+    return out;
+  }
+  function setHtml(el, html){ el.innerHTML = html; lastSet.set(el, el.innerHTML); }
+  window.knApplyProjectContent = function(){
+    const l = lang(), d = dict(l);
+    if(l === 'en' && registry.size === 0) return;
+    if(typeof knApplyCurrency === 'function') knApplyCurrency(document.body, 'MYR');
+    Array.from(registry.keys()).forEach(function(el){
+      const key = registry.get(el);
+      if(!el.isConnected || el.innerHTML !== lastSet.get(el)){ registry.delete(el); return; }
+      if(l === 'en' || !d){ setHtml(el, key); registry.delete(el); return; }
+      const t = lookup(d, key);
+      if(t) setHtml(el, t);
+    });
+    if(l !== 'en' && d){
+      collectUnits().forEach(function(el){
+        if(registry.has(el)) return;
+        const key = el.innerHTML.trim();
+        const t = lookup(d, key);
+        if(t){ registry.set(el, key); setHtml(el, t); }
+      });
+    }
+    if(typeof knApplyCurrency === 'function') knApplyCurrency();
+  };
+  function ensure(cb){
+    const l = lang();
+    if(l === 'en' || dict(l)) return cb();
+    const s = document.createElement('script');
+    s.src = 'i18n-projects-' + l + '.js';
+    s.onload = cb; s.onerror = cb;
+    document.head.appendChild(s);
+  }
+  function wrap(name, loadFirst){
+    if(typeof window[name] !== 'function') return;
+    const f = window[name];
+    window[name] = function(){
+      const r = f.apply(this, arguments);
+      try{ loadFirst ? ensure(knApplyProjectContent) : knApplyProjectContent(); }catch(e){}
+      return r;
+    };
+  }
+  wrap('setLanguage', true);
+  ['openDetailModal','selectLayout','renderTable','renderSelection','applyProjFilter','applyFilters'].forEach(function(n){ wrap(n, false); });
+  ensure(knApplyProjectContent);
+})();
+</script>
 </body>
 </html>
