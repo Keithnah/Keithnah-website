@@ -189,31 +189,36 @@
   }
   .pd-modal-close{
     position:absolute; top:20px; right:20px; z-index:5; width:42px; height:42px; border-radius:50%;
-    background:rgba(17,17,17,0.55); color:#fff; display:flex; align-items:center; justify-content:center;
-    cursor:pointer; font-size:22px; transition:background .3s; backdrop-filter:blur(4px);
+    background:#fff; color:var(--ink); border:1px solid var(--line); box-shadow:0 4px 14px rgba(17,17,17,0.12); display:flex; align-items:center; justify-content:center;
+    cursor:pointer; font-size:22px; transition:background .3s,color .3s;
   }
-  .pd-modal-close:hover{background:var(--gold);}
+  .pd-modal-close:hover{background:var(--gold); color:#fff;}
 
-  .pd-hero{position:relative; height:380px; overflow:hidden;}
-  .pd-hero img{width:100%; height:100%; object-fit:cover; display:block;}
-  .pd-hero-fallback{
-    width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;
-  }
-  .pd-hero-badges{position:absolute; top:24px; left:32px; display:flex; gap:10px; z-index:2;}
-  .pd-badge{padding:8px 18px; border-radius:100px; font-size:12.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; backdrop-filter:blur(6px);}
-  .badge-status{background:rgba(17,17,17,0.72); color:#fff;}
-  .badge-tag{background:rgba(94,96,206,0.85); color:#fff;}
+  .pd-head{position:relative; padding:44px 48px 34px; background:linear-gradient(180deg,#FBFAF7 0%,#fff 100%); border-bottom:1px solid var(--line); border-top:4px solid var(--gold);}
+  .pd-head-badges{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:18px; padding-right:56px;}
+  .pd-badge{padding:7px 16px; border-radius:100px; font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em;}
+  .badge-status{background:#111; color:#fff;}
+  .badge-tag{background:rgba(94,96,206,0.12); color:var(--gold);}
+  .pd-head h2.pd-name{font-size:42px; line-height:1.1; margin-bottom:10px;}
+  .pd-head .pd-loc{display:flex; align-items:center; gap:8px; color:var(--grey); font-size:15.5px; font-weight:500; margin:0 0 26px;}
+  .pd-head .pd-loc svg{width:16px; height:16px; color:var(--gold); flex-shrink:0;}
+  .pd-stats{display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:12px; overflow:hidden;}
+  .pd-stat{background:#fff; padding:16px 18px;}
+  .pd-stat span{display:block; font-size:10.5px; text-transform:uppercase; letter-spacing:0.1em; color:var(--grey); font-weight:700; margin-bottom:6px;}
+  .pd-stat strong{display:block; font-family:'Playfair Display',serif; font-size:16px; line-height:1.3; font-weight:700; color:var(--ink);}
+  .pd-stat.price strong{color:var(--gold); font-size:18px;}
 
-  .pd-body{padding:40px 48px 52px;}
-  .pd-body h2.pd-name{font-size:36px; margin-bottom:8px;}
-  .pd-body .pd-loc{color:var(--grey); font-size:15.5px; font-weight:500; margin-bottom:22px;}
+  .pd-body{padding:34px 48px 52px;}
   .pd-body .pd-overview-text{color:var(--grey); font-size:16px; line-height:1.8; margin-bottom:36px;}
 
   .pd-modal-section{margin-bottom:46px;}
   .pd-modal-section:last-child{margin-bottom:0;}
   .pd-modal-h3{font-size:14px; text-transform:uppercase; letter-spacing:0.12em; color:var(--gold); font-weight:700; margin-bottom:20px;}
 
-  .pd-points-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .pd-points-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:18px;}
+  .pd-points-grid .pd-point-card{grid-column:span 2;}
+  .pd-points-grid .pd-point-card:last-child:nth-child(3n+1){grid-column:span 6;}
+  .pd-points-grid .pd-point-card:nth-last-child(2):nth-child(3n+1), .pd-points-grid .pd-point-card:last-child:nth-child(3n+2){grid-column:span 3;}
   .pd-point-card{background:var(--ivory); border:1px solid var(--line); border-radius:10px; padding:22px 20px;}
   .pd-point-num{
     width:32px; height:32px; border-radius:50%; background:rgba(94,96,206,0.12); border:1px solid rgba(94,96,206,0.4);
@@ -224,6 +229,7 @@
 
   .pd-facts-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden;}
   .pd-fact{background:#fff; padding:18px 24px;}
+  .pd-fact:last-child:nth-child(odd){grid-column:1 / -1;}
   .pd-fact span{display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--grey); margin-bottom:6px; font-weight:700;}
   .pd-fact strong{font-size:16px; font-family:'Playfair Display',serif; font-weight:700;}
 
@@ -295,12 +301,16 @@
 
   @media(max-width:720px){
     .pd-points-grid, .pd-fit-grid, .pd-article-grid{grid-template-columns:1fr;}
+    .pd-points-grid .pd-point-card{grid-column:auto !important;}
     .pd-facts-grid{grid-template-columns:1fr;}
     .pd-facility-grid{grid-template-columns:repeat(2,1fr);}
     .pd-layout-selector{flex-direction:column;}
     .pd-layout-sidebar{flex-direction:row; overflow-x:auto; width:100%; gap:8px; padding-bottom:6px;}
     .pd-layout-tab{flex:0 0 auto; min-width:130px;}
-    .pd-hero{height:200px;}
+    .pd-head{padding:34px 20px 24px;}
+    .pd-head h2.pd-name{font-size:30px;}
+    .pd-stats{grid-template-columns:repeat(2,1fr);}
+    .pd-stat:last-child:nth-child(odd){grid-column:1 / -1;}
     .pd-body{padding:24px 20px 30px;}
   }
 
@@ -1614,19 +1624,18 @@
   }
 
   function buildModalHtml(p){
-    const heroInner = p.photo
-      ? '<img src="'+p.photo+'" alt="'+pdEscapeHtml(p.name)+'">'
-      : '<div class="pd-hero-fallback" style="background:linear-gradient(135deg,#1c1a17,#3a3226);color:rgba(255,255,255,.85);">'+BUILDING_ICON+'</div>';
+    const statDefs = [['Starting Price',p.price,'price'],['Size',p.size,''],['Bedrooms',p.rooms,''],['Tenure',p.tenure,''],['Completion',p.completion,'']];
+    const statsHtml = statDefs.filter(s => s[1]).map(s =>
+      '<div class="pd-stat '+s[2]+'"><span>'+s[0]+'</span><strong>'+pdEscapeHtml(s[1])+'</strong></div>'
+    ).join('');
 
     const pointsHtml = p.selling_points.map((pt,i) =>
       '<div class="pd-point-card"><div class="pd-point-num">'+(i+1)+'</div><p>'+pdEscapeHtml(pt)+'</p></div>'
     ).join('');
 
-    let facts = [
-      ['Tenure', p.tenure], ['Status', p.status], ['Size Range', p.size], ['Bedroom Range', p.rooms],
-      ['Starting Price', p.price], ['Completion', p.completion], ['Location', p.loc]
-    ];
+    let facts = [];
     if(p.details_extra){ Object.keys(p.details_extra).forEach(k => facts.push([k, p.details_extra[k]])); }
+
     const factsHtml = facts.map(([label,val]) =>
       '<div class="pd-fact"><span>'+pdEscapeHtml(label)+'</span><strong>'+pdEscapeHtml(val)+'</strong></div>'
     ).join('');
@@ -1661,16 +1670,17 @@
     const msg = "Hi Keith, I'm interested in " + p.name + " and would like to find out more.";
 
     return ''
-      + '<div class="pd-hero">'+heroInner
-      + '<div class="pd-hero-badges"><span class="pd-badge badge-status">'+pdEscapeHtml(p.status)+'</span><span class="pd-badge badge-tag">'+pdEscapeHtml(p.tag)+'</span></div>'
+      + '<div class="pd-head">'
+      + '<div class="pd-head-badges"><span class="pd-badge badge-status">'+pdEscapeHtml(p.status)+'</span><span class="pd-badge badge-tag">'+pdEscapeHtml(p.tag)+'</span></div>'
+      + '<h2 class="pd-name">'+pdEscapeHtml(p.name)+'</h2>'
+      + '<p class="pd-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>'+pdEscapeHtml(p.loc)+'</p>'
+      + '<div class="pd-stats">'+statsHtml+'</div>'
       + '</div>'
       + '<div class="pd-body">'
-      + '<h2 class="pd-name">'+pdEscapeHtml(p.name)+'</h2>'
-      + '<p class="pd-loc">'+pdEscapeHtml(p.loc)+'</p>'
       + '<p class="pd-overview-text">'+pdEscapeHtml(p.overview)+'</p>'
 
       + '<div class="pd-modal-section"><div class="pd-modal-h3">Project Overview — Top 3 Highlights</div><div class="pd-points-grid">'+pointsHtml+'</div></div>'
-      + '<div class="pd-modal-section"><div class="pd-modal-h3">Project Details</div><div class="pd-facts-grid">'+factsHtml+'</div></div>'
+      + (factsHtml ? '<div class="pd-modal-section"><div class="pd-modal-h3">Project Details</div><div class="pd-facts-grid">'+factsHtml+'</div></div>' : '')
       + '<div class="pd-modal-section"><div class="pd-modal-h3">Layouts</div>'
       + '<div class="pd-layout-selector"><div class="pd-layout-sidebar">'+layoutSidebarHtml+'</div>'
       + '<div class="pd-layout-display" id="pdLayoutDisplay">'+layoutDisplayHtml+'</div></div></div>'
