@@ -3810,8 +3810,8 @@ const FACILITY_ICONS = {
     else s = c < 10 ? c.toFixed(2) : String(Math.round(c));
     return sym + ' ' + s;
   }
-  window.knApplyCurrency = function(root){
-    const cur = (typeof currentCurrency !== 'undefined') ? currentCurrency : 'MYR';
+  window.knApplyCurrency = function(root, force){
+    const cur = force || ((typeof currentCurrency !== 'undefined') ? currentCurrency : 'MYR');
     const w = document.createTreeWalker(root || document.body, NodeFilter.SHOW_TEXT, {
       acceptNode: function(n){
         const p = n.parentNode;
