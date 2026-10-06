@@ -521,5 +521,85 @@
   });
 </script>
 
+
+<script>
+// ---- Site-wide currency: convert every "RM ..." amount in page text (cards, popups, tables) ----
+(function(){
+  const orig = new WeakMap();
+  const RE = /(?<![A-Za-z])RM\s?(\d[\d,]*(?:\.\d+)?)\s?(K|M|mil|million)?(?![A-Za-z])/g;
+  function toMyr(n, u){
+    n = parseFloat(String(n).replace(/,/g,''));
+    if(!u) return n;
+    u = u.toLowerCase();
+    return u === 'k' ? n*1e3 : n*1e6;
+  }
+  function fmt(v, cur){
+    const rate = (typeof EXCHANGE_RATES !== 'undefined' && EXCHANGE_RATES[cur]) || 1;
+    const sym = (typeof CURRENCY_SYMBOL !== 'undefined' && CURRENCY_SYMBOL[cur]) || cur;
+    const c = v * rate;
+    let s;
+    if(c >= 1e6) s = (c/1e6).toFixed(2) + 'M';
+    else if(c >= 1e4) s = Math.round(c/1000) + 'K';
+    else if(c >= 1000) s = (c/1000).toFixed(1) + 'K';
+    else s = c < 10 ? c.toFixed(2) : String(Math.round(c));
+    return sym + ' ' + s;
+  }
+  window.knApplyCurrency = function(root){
+    const cur = (typeof currentCurrency !== 'undefined') ? currentCurrency : 'MYR';
+    const w = document.createTreeWalker(root || document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        const p = n.parentNode;
+        if(!p || /^(SCRIPT|STYLE|TEXTAREA|NOSCRIPT)$/.test(p.nodeName)) return NodeFilter.FILTER_REJECT;
+        if(p.closest && p.closest('#currMenu,#currSwitch')) return NodeFilter.FILTER_REJECT;
+        return (orig.has(n) || /RM\s?\d/.test(n.nodeValue)) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes = [];
+    while(w.nextNode()) nodes.push(w.currentNode);
+    nodes.forEach(function(n){
+      if(!orig.has(n)) orig.set(n, n.nodeValue);
+      const o = orig.get(n);
+      n.nodeValue = (cur === 'MYR') ? o : o.replace(RE, function(m, num, u){ return fmt(toMyr(num, u), cur); });
+    });
+  };
+  function wrap(name){
+    if(typeof window[name] !== 'function') return;
+    const f = window[name];
+    window[name] = function(){ const r = f.apply(this, arguments); try{ knApplyCurrency(); }catch(e){} return r; };
+  }
+  ['setCurrency','openDetailModal','selectLayout','renderTable','applyProjFilter','applyFilters'].forEach(wrap);
+  knApplyCurrency();
+})();
+</script>
+
+<script>
+// ---- Site-wide language: translate the shared header, WhatsApp button and footer on every page ----
+(function(){
+  const DIC = {"Home": {"zh-CN": "首页", "zh-TW": "首頁", "ms": "Utama", "ta": "முகப்பு", "ja": "ホーム", "ko": "홈", "ar": "الرئيسية"}, "View Projects": {"zh-CN": "查看项目", "zh-TW": "查看項目", "ms": "Lihat Projek", "ta": "திட்டங்களைப் பார்க்க", "ja": "物件を見る", "ko": "프로젝트 보기", "ar": "عرض المشاريع"}, "Compare Projects": {"zh-CN": "项目比较", "zh-TW": "項目比較", "ms": "Banding Projek", "ta": "திட்டங்களை ஒப்பிடுக", "ja": "物件を比較", "ko": "프로젝트 비교", "ar": "مقارنة المشاريع"}, "Blog": {"zh-CN": "博客", "zh-TW": "部落格", "ms": "Blog", "ta": "வலைப்பதிவு", "ja": "ブログ", "ko": "블로그", "ar": "المدونة"}, "About Keith": {"zh-CN": "关于 KEITH", "zh-TW": "關於 KEITH", "ms": "Tentang Keith", "ta": "Keith பற்றி", "ja": "Keithについて", "ko": "Keith 소개", "ar": "عن كيث"}, "WhatsApp": {"zh-CN": "WhatsApp", "zh-TW": "WhatsApp", "ms": "WhatsApp", "ta": "WhatsApp", "ja": "WhatsApp", "ko": "WhatsApp", "ar": "واتساب"}, "Premium Kuala Lumpur real estate — KLCC, TRX, Bukit Bintang, Bangsar and beyond.": {"zh-CN": "吉隆坡顶级房产 — KLCC、TRX、武吉免登、孟沙及更多地区。", "zh-TW": "吉隆坡頂級房產 — KLCC、TRX、武吉免登、孟沙及更多地區。", "ms": "Hartanah mewah Kuala Lumpur — KLCC, TRX, Bukit Bintang, Bangsar dan sekitarnya.", "ta": "பிரீமியம் கோலாலம்பூர் சொத்துக்கள் — KLCC, TRX, புக்கிட் பிந்தாங், பாங்சார் மற்றும் பல.", "ja": "クアラルンプールのプレミアム不動産 — KLCC、TRX、ブキビンタン、バンサーなど。", "ko": "쿠알라룸푸르 프리미엄 부동산 — KLCC, TRX, 부킷빈탕, 방사 등.", "ar": "عقارات كوالالمبور الفاخرة — KLCC وTRX وبوكيت بينتانج وبانجسار وأكثر."}, "Quick Links": {"zh-CN": "快速链接", "zh-TW": "快速連結", "ms": "Pautan Pantas", "ta": "விரைவு இணைப்புகள்", "ja": "クイックリンク", "ko": "바로가기", "ar": "روابط سريعة"}, "Projects": {"zh-CN": "项目", "zh-TW": "項目", "ms": "Projek", "ta": "திட்டங்கள்", "ja": "物件", "ko": "프로젝트", "ar": "المشاريع"}, "Legal": {"zh-CN": "法律信息", "zh-TW": "法律資訊", "ms": "Perundangan", "ta": "சட்டப்பூர்வ", "ja": "法的情報", "ko": "법적 고지", "ar": "قانوني"}, "Privacy Policy": {"zh-CN": "隐私政策", "zh-TW": "隱私政策", "ms": "Dasar Privasi", "ta": "தனியுரிமைக் கொள்கை", "ja": "プライバシーポリシー", "ko": "개인정보 처리방침", "ar": "سياسة الخصوصية"}, "Terms of Use": {"zh-CN": "使用条款", "zh-TW": "使用條款", "ms": "Terma Penggunaan", "ta": "பயன்பாட்டு விதிமுறைகள்", "ja": "利用規約", "ko": "이용약관", "ar": "شروط الاستخدام"}, "Follow": {"zh-CN": "关注我们", "zh-TW": "關注我們", "ms": "Ikuti Kami", "ta": "எங்களைப் பின்தொடருங்கள்", "ja": "フォローする", "ko": "팔로우", "ar": "تابعنا"}, "YouTube": {"zh-CN": "YouTube", "zh-TW": "YouTube", "ms": "YouTube", "ta": "YouTube", "ja": "YouTube", "ko": "YouTube", "ar": "يوتيوب"}, "Instagram": {"zh-CN": "Instagram", "zh-TW": "Instagram", "ms": "Instagram", "ta": "Instagram", "ja": "Instagram", "ko": "Instagram", "ar": "إنستغرام"}, "© 2026 Keith Nah Real Estate. All rights reserved.": {"zh-CN": "© 2026 Keith Nah Real Estate. 版权所有。", "zh-TW": "© 2026 Keith Nah Real Estate. 版權所有。", "ms": "© 2026 Keith Nah Real Estate. Hak cipta terpelihara.", "ta": "© 2026 Keith Nah Real Estate. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.", "ja": "© 2026 Keith Nah Real Estate. 無断複写・転載を禁じます。", "ko": "© 2026 Keith Nah Real Estate. 모든 권리 보유.", "ar": "© 2026 Keith Nah Real Estate. جميع الحقوق محفوظة."}, "Kuala Lumpur, Malaysia": {"zh-CN": "马来西亚吉隆坡", "zh-TW": "馬來西亞吉隆坡", "ms": "Kuala Lumpur, Malaysia", "ta": "கோலாலம்பூர், மலேசியா", "ja": "クアラルンプール、マレーシア", "ko": "쿠알라룸푸르, 말레이시아", "ar": "كوالالمبور، ماليزيا"}};
+  const origText = new WeakMap();
+  function lang(){ return (typeof currentLang !== 'undefined' && currentLang) ? currentLang : 'en'; }
+  function tr(en, l){ const e = DIC[en]; return (l !== 'en' && e && e[l]) ? e[l] : en; }
+  window.knApplyLanguage = function(){
+    const l = lang();
+    const els = document.querySelectorAll('header nav a, footer h5, footer a, footer p, footer span, .wa-agent-label');
+    els.forEach(function(el){
+      if(el.children.length) return;
+      if(!origText.has(el)) origText.set(el, el.textContent.trim());
+      const en = origText.get(el);
+      if(el.classList.contains('wa-agent-label')){
+        const base = en.replace(/\s*Keith\s*$/,'');
+        el.textContent = (l === 'en') ? en : tr(base, l) + ' Keith';
+        return;
+      }
+      if(DIC[en]) el.textContent = tr(en, l);
+    });
+  };
+  if(typeof window.setLanguage === 'function'){
+    const f = window.setLanguage;
+    window.setLanguage = function(){ const r = f.apply(this, arguments); try{ knApplyLanguage(); }catch(e){} return r; };
+  }
+  knApplyLanguage();
+})();
+</script>
 </body>
 </html>
