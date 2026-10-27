@@ -226,7 +226,7 @@
   <a class="whatsapp-btn" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28Web%29+Hi+Keith%2C+I+would+like+to+explore+more+on+Malaysia+Property.&type=phone_number&app_absent=0" target="_blank" rel="noopener">
     <span class="wa-agent-label">WhatsApp Keith</span>
   </a>
-  <span class="hamburger" onclick="alert('Menu: Home · View Projects · Compare Projects · Blog · Calculator · MM2H 第二家园 · About Keith')">&#9776;</span>
+  <span class="hamburger" onclick="knToggleMenu()">&#9776;</span>
   </div>
 </header><!-- ===================== HERO ===================== -->
 <section class="mm2h-hero">
@@ -637,6 +637,53 @@
   if(typeof window.openArticle === 'function'){ const oa = window.openArticle; window.openArticle = function(){ const r = oa.apply(this, arguments); try{ knApplyContent(); }catch(e){} return r; }; }
   knApplyLanguage();
 })();
+</script>
+<style>
+#knDrawer{position:fixed;inset:0;z-index:2147483000;display:none}
+#knDrawer.open{display:block}
+#knDrawer .kn-bg{position:absolute;inset:0;background:rgba(10,10,30,.55)}
+#knDrawer .kn-panel{position:absolute;top:0;right:0;bottom:0;width:min(82vw,340px);background:#1d1b4f;color:#fff;padding:20px 22px 28px;overflow-y:auto;box-shadow:-8px 0 30px rgba(0,0,0,.35);font-family:inherit}
+html[dir="rtl"] #knDrawer .kn-panel{right:auto;left:0}
+#knDrawer .kn-close{display:block;margin-left:auto;background:none;border:0;color:#fff;font-size:30px;line-height:1;cursor:pointer;padding:4px 8px}
+#knDrawer .kn-links a{display:block;color:#fff;text-decoration:none;font-size:17px;letter-spacing:.04em;padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12)}
+#knDrawer .kn-links a.active{color:#b9b4ff;font-weight:600}
+#knDrawer .kn-sub{margin:22px 0 8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#a9a6d6}
+#knDrawer .kn-chips{display:flex;flex-wrap:wrap;gap:8px}
+#knDrawer .kn-chips button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer}
+#knDrawer .kn-wa{display:block;margin-top:24px;text-align:center;background:#25d366;color:#fff;text-decoration:none;border-radius:999px;padding:13px;font-weight:600}
+</style>
+<div id="knDrawer" aria-hidden="true"><div class="kn-bg" onclick="knToggleMenu(false)"></div><div class="kn-panel"><button class="kn-close" type="button" aria-label="Close" onclick="knToggleMenu(false)">&times;</button><div class="kn-links" id="knLinks"></div><div class="kn-sub">Language</div><div class="kn-chips" id="knLang"></div><div class="kn-sub">Currency</div><div class="kn-chips" id="knCurr"></div><a class="kn-wa" id="knWa" target="_blank" rel="noopener" href="https://wa.me/60102821568">WhatsApp Keith</a></div></div>
+<script>
+function knToggleMenu(force){
+  var d=document.getElementById('knDrawer'); if(!d) return;
+  var open=(typeof force==='boolean')?force:!d.classList.contains('open');
+  if(open){
+    var L=document.getElementById('knLinks'); L.innerHTML='';
+    var cur=(location.pathname.split('/').pop()||'index.html');
+    document.querySelectorAll('header nav a').forEach(function(a){
+      var h=a.getAttribute('href')||''; if(h==='#home') h='index.html';
+      var c=document.createElement('a'); c.href=h; c.textContent=a.textContent;
+      if(h===cur||(cur===''&&h==='index.html')) c.className='active';
+      c.addEventListener('click',function(){ if(h==='index.html'&&cur==='index.html'){ knToggleMenu(false);} });
+      L.appendChild(c);
+    });
+    var lg=document.getElementById('knLang'); lg.innerHTML='';
+    document.querySelectorAll('#langMenu a').forEach(function(a){
+      var b=document.createElement('button'); b.type='button'; b.textContent=a.textContent;
+      b.onclick=function(){ a.click(); knToggleMenu(false); }; lg.appendChild(b);
+    });
+    var cu=document.getElementById('knCurr'); cu.innerHTML='';
+    document.querySelectorAll('#currMenu a').forEach(function(a){
+      var b=document.createElement('button'); b.type='button'; b.textContent=a.textContent.split(' ')[0];
+      b.onclick=function(){ a.click(); knToggleMenu(false); }; cu.appendChild(b);
+    });
+    var w=document.querySelector('header .whatsapp-btn'); var kw=document.getElementById('knWa');
+    if(w&&w.href) kw.href=w.href;
+  }
+  d.classList.toggle('open',open); d.setAttribute('aria-hidden',open?'false':'true');
+  document.body.style.overflow=open?'hidden':'';
+}
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') knToggleMenu(false); });
 </script>
 </body>
 </html>
