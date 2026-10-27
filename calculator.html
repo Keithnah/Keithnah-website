@@ -338,8 +338,8 @@
 
   /* ---------- OPTIONS LAYOUT ---------- */
   .calc-layout{display:grid; grid-template-columns:290px 1fr; gap:28px; align-items:start;}
-  .calc-menu{display:flex; flex-direction:column; gap:8px; counter-reset:opt; position:sticky; top:96px;}
-  .calc-opt{counter-increment:opt; display:flex; align-items:center; gap:12px; text-align:left; width:100%; background:#fff; border:1.5px solid var(--line); border-radius:10px; padding:13px 15px; font:600 14px/1.35 'Inter',sans-serif; color:var(--ink); cursor:pointer; transition:.2s;}
+  .calc-menu{display:flex; flex-direction:column; gap:6px; counter-reset:opt; position:sticky; top:96px;}
+  .calc-opt{counter-increment:opt; display:flex; align-items:center; gap:12px; text-align:left; width:100%; background:#fff; border:1.5px solid var(--line); border-radius:10px; padding:11px 14px; font:600 14px/1.3 'Inter',sans-serif; color:var(--ink); cursor:pointer; transition:.2s;}
   .calc-opt::before{content:counter(opt); flex:0 0 26px; height:26px; border-radius:50%; background:#efedf8; color:var(--gold); font-weight:700; font-size:13px; display:flex; align-items:center; justify-content:center;}
   .calc-opt:hover{border-color:var(--gold);}
   .calc-opt.active{background:var(--gold); border-color:var(--gold); color:#fff; box-shadow:0 8px 20px rgba(94,96,206,.3);}
@@ -448,7 +448,7 @@
   </div>
 
     <div class="calc-layout">
-    <nav class="calc-menu" aria-label="Calculators">
+    <div class="calc-menu" role="tablist" aria-label="Calculators">
       <button type="button" class="calc-opt active" data-tab="mort">Monthly mortgage</button>
       <button type="button" class="calc-opt" data-tab="amort">Amortization table</button>
       <button type="button" class="calc-opt" data-tab="save">Interest saving</button>
@@ -458,7 +458,7 @@
       <button type="button" class="calc-opt" data-tab="rpgt">RPGT tax</button>
       <button type="button" class="calc-opt" data-tab="ins">Insurance: fire, MRTA &amp; MLTA</button>
       <button type="button" class="calc-opt" data-tab="area">Area conversion &amp; unit price reference</button>
-    </nav>
+    </div>
     <div class="calc-stage">
 
   <!-- 1 MORTGAGE -->
