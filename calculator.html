@@ -458,6 +458,13 @@
   .cv-swap{width:44px; height:44px; border-radius:50%; border:0; background:var(--gold); color:#fff; font-size:20px; cursor:pointer; margin-bottom:10px;}
   .cv-rate{margin-top:16px; background:#f6f5fb; border-radius:8px; padding:14px 18px; font-size:14px;}
   @media(max-width:760px){.ac-inputs{grid-template-columns:1fr;} .ac-grid3{grid-template-columns:1fr;} .cv-row{grid-template-columns:1fr;} .cv-swap{justify-self:center; margin:0; transform:rotate(90deg);}}
+
+  .ac-two{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:18px 0;}
+  .ac-col{margin:0;} .ac-stack{display:grid; gap:12px;}
+  .ac-stack .ac-tile{background:#f6f5fb; border:1px solid var(--line); display:grid; grid-template-columns:1fr auto; align-items:center; gap:2px 14px; padding:14px 18px;}
+  .ac-stack .ac-label{grid-column:1;} .ac-stack .ac-val{grid-column:2; grid-row:1 / span 2; margin:0; text-align:right;} .ac-stack .ac-unit{grid-column:1; margin:0;}
+  .ac-cur{margin-top:0;}
+  @media(max-width:760px){.ac-two{grid-template-columns:1fr;}}
 </style>
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAANBklEQVR42uVbbUyV5Rv/Pc85BzhAnCJA5MUEIUF5GdiHgtSmw17BWBSklsy2QrbePtDixb6YJEXNpm3CpitXEgaLxAluVlamCGlTnLlUQiUgBJJ4OXA45/n9P9T97BwFziuuf97bs8F5nvu+r+t3Xy/3fV3XDZI8fPgw/f39KUkSJUkigP/kI8syAfCZZ57h8PAwLRYLUVdXR4PBQAD/aeZvBCErK4uKolDy8vKiyWSCJEkgiduhaTQaWCwW5ObmQvpn5W8b5kUTPEuSJPFWMC9JEmRZVv+eqpG0eWa7ybL8twTM6gT/IK0oitNiCgCKoswqGLMCgEajuYnpgIAAxMXFYd68eQgPD0dgYCB8fX1hNpsxPDyMP/74A11dXbhw4QJ+++03G6Y1Gs2sAuFRC2vtSebPn8/CwkIePnyYRqORjrZLly5x+/btzMjIoEajUcfTaDQe91QekQCh3xaLBQCwevVqbNiwAVlZWQCAzs5OHD16FKdOncKvv/6KgYEBXL9+HWNjY9BqtQgICIDBYEBkZCTi4+ORnp6OpUuXQpZldHR04IsvvsBHH32Eq1ev2ljxf4UECL8KgGlpaTxy5AhJ0mKxcMeOHXzggQdcGnfu3Ll84YUXePr0aZLk+Pg4y8rK6Ovr62lpcL2zEM/g4GBWV1eTJMfGxvjaa68xPDz8pm+1Wi01Gg01Gg1lWbZ5xHutVmsDqiRJXLp0KQ8ePEiSvHjxIp988kn1nQdAcK2jVqslACYnJ/PSpUskyc8++4wRERE2TFsz45RuSpKN/gNgXl4e+/v7SZJvvvmmanNcncNlAATzubm5NJlM7O/vZ1ZWls17N4m6SXrEeHPmzOGnn35Kkqyrq1NpcWM+18T+iSeeUC12fHy82yvuzNwAWFFRQZL88ssv6efn5446OL/yjz32GEny2LFjDA0NtXl3Kw4zAuTCwkKSZHNzsyp1LoDgnLWPjY3ltWvXePXqVd5zzz03MS9019qoiUf8PhORjvSVJEmds7i4mCT5wQcfuOodHDNIsiwzICCA58+f559//sl77733JrG8lY81CG+//TZJcuPGjU7T5NBGSGw8Nm/ejLKyMqxfvx579uyBVquF2Wy2OV0tWrQI6enp8PHxgdFoVA85kiRBr9djYmICLS0tOHPmjPWJDCTh7++PzMxMBAYGYnx8XO0bEBAAk8mE8fFxtLa24uzZs5AkST1U6XQ6tLW1ITIyEgkJCeju7oYkSQ6fPxwyPElJSSTJmpqaGXU+KCiIKSkprKysvGmL++GHHzI1NZUhISFTBmC8vb0ZHx/P/fv32/Q7evQoc3JymJSUxKCgIJu+QjUTEhKoKAobGhqc9Qr2dV+j0fDbb7/l0NAQw8PDHfa99fX1NJvNNJvNbGxsdNjKb9u2jSaTiWazmS+//LLDxvm9994jST700ENT7iOcBkAMsHLlSnUF7emYJEn08vKiLMvcuHGjuorFxcWUJIk6nW5KIyXGzMvLo8ViIUlu2rTJxjBO5+qE9Y+MjKTRaORXX33ljC2wb/k//vhjTkxMMDY21qHVFytiDUBZWdm0RFl7mK6uLpJkVVWVOpYjVl2MUVVVRZPJxJiYGEdVYfqVFDo9Ojqq6r4jqE4FQGlp6ZT9xerdeeedbG9vd9mvi29jY2NJkuXl5Q7RK9uLyDz++OPw9fVFdXX1tKEsd6NGJLFt2zYkJCSgra0N69atU4+7jgZBhMW/cOECTpw4gWeffRZeXl5QFGVGumV7A+bm5qKvrw/Hjx93OrRlj3jhRktLS7F+/Xr09PQgLy8P/f39kGXZpTCaJEk4dOgQ5s+fj7i4OJBUY5EOAyB8aEBAANLS0nDy5EmMj4+rq+VMoMQe808//TQ2b96MgYEBZGdno6Ojw+WAhwimtrS0gCSSk5Pt0iHPRPjcuXNhMBjQ3t6uiqunxN5sNiMmJgY7duyAJEkoLCzEiRMnoNVqXY72iMU5d+4cJElCTEyMfVpmAmDevHkgiStXrjilj/aYB4CQkBDU19cjJCQEL730Evbt22ezs3QHgJ6eHvT29iIxMdFGnZ2yAQAQHBwMSZJw8eJFj+YHFEVBRUUFkpKS8O6776K6utpt5q233CaTCZcvX0ZkZKTdhZsRAL1eDwDo7e31iAQI4kpKSpCfn4+9e/di06ZNbon9dNI7Pj4Of39/9wDwlM5b5woefvhhbNmyBceOHcPatWthNpthsVg8HvMfHh6Gv7+/Csh0hlB2xLd6wv+PjIwgKioKNTU1mJycRGhoKFJTU6EoikeBFk2n0zmkUjPOLI6koaGhbgOh0WhgNBrR398PnU6H6OhoNDU1YdGiRbBYLOrGy+0Y/z+S5O/vj5GREZvjttMADAwMAACio6PdJszHxwe9vb1YtWoVOjs7VU9w4MABREVFeQQEwagsywgNDVVtl9P7AIFWV1cXACAsLMxtCRBb0s7OTmRmZqK7uxskERUVhcbGRkRERMBisbilDoK+4OBgREdH49y5c3Zt2YwAdHd3Y3x83CF/6qh4ent74+zZs1i9ejWGh4ehKAoWL16MhoYGGAwGt2yCAGDhwoWQJAm//PKLazZA6M3g4CB+/vlnLF68GFqt1m0AAMBsNkOr1eKnn35CdnY2jEYjzGYzlixZgvr6evj5+dndv88EgCRJWLJkibojdNkNCn2sq6vDggULkJiYCEmSnNJT64mt/xYgfPPNN8jLy4MkSTCbzVi5ciVqamrUM4ezKifOAhkZGRgaGsKpU6dc3wmKTvv374fFYsHatWs96qsFCAcOHEB+fj5IwmQyITMzE5988gk0Go1aYOHMDjM4OBjLly9HY2MjRkZG1P2HS0FREU1pbm7m8PAwAwMDnYoIFRQUqAGRkpKSKQMU4tv8/HyS5MTEBEly586dTsX5xbhlZWUkyfvvv9+9iJD1oGvWrCFJFhUVORRlcQYA6++LiorUVDhJVlRUOASCWJTAwED29PSwtbXVJoPkMgAiCKnX63nlyhV2dXXR29vbbh5uqpDYTABY//7WW2/ZSMIbb7xhF3Qx36uvvkqSXLNmjTPpOsdEKycnhyS5detWu4OLQOaNEjBTqNo601NeXm4jCQKEqea0jgj39fWxra2NPj4+ziRLHc/K1tfXkySXLVs27apIkkQfHx8C4Ouvv64CIELcQoJmEmUA3L17t40kPP/881OCIGhoamoiSaampno2MWKdkV24cCGHhobY3t5u1yBqtVoeP35cTYy0tLQ4JJJCSry9vfn555+rIBiNRubl5dmAcKOtef/9913JVzqXm8/KyiJJHjp0SDVO1uHrhIQEFhQUsKWl5abUWFtbGwsKCpicnDxjbbL4XaPR8OuvvyZJms1mKorCFStWEIAqZZmZmRQF3zqdzunssFNVYiJYWVxcjPLycuzatQsvvvgiFEVRIzoJCQlISUmBxWLB6OiouqNTFAW+vr7QarU4c+YMTp8+PfMp7Z/NkMFgQG1tLVatWoXJyUmMjIxgw4YNaGhowMqVK9HU1ITOzk4sW7YMvb29LtU8u5SS3rJlC0mytraW3t7es1IkIdRLr9fz+++/VyVpdHSUZWVlvH79Oru7u5mQkOBOmYzzeXkxUWlpKUnyhx9+UMtkZFmml5eXms+b6nFGRIV6BQYGsqqqihMTEzSZTCTJwcFBtU5B5CNvSZGUtTt77rnnSJImk0m11NbfuFPGJjLT4v/Q0FB2d3erkjA2NsaDBw/yvvvuu6nCxKNu0J5hTElJ4XfffUeSbG1tZUZGxpRlL2I1byRM/CYYvhG4u+66i5WVlTSZTBwbG+M777xjY2THxsa4c+dOxsXF3dpCyRtdTklJiSqeR44c4aOPPqpa65l2mtO9j46O5tatW/nXX3+pRVnCz+v1ehYVFfHy5csqEGazmXv37mVmZiaDgoLo7e1NHx8fe27Rc8YKACMiIlhaWsre3l6SZG9vL2tra/nKK68wLS2Nd99995TGUq/XMyYmhtnZ2aysrOTJkydVxpqbm/nII4+oYFn3Dw4O5lNPPcXt27erZbUk2dXVxR9//JH79u1jYmLitEbSo+Xy1jk9Pz8/5OTkYN26dVi+fDl0Op3qDvv6+nDt2jWIqzoGgwEhISG444471LE6OjrQ0NCAXbt2qYEN4R5FeM26QFsciYOCghAYGAg/Pz+MjIxgcHAQg4OD08YEPH5fQJzhrQmbM2cOFixYgKioKCQlJSEsLAxhYWHw9/fH5OQk+vv78fvvv6OjowPt7e3o6urC+fPnVaLFmFPdGbC+ieJKcmXWbowIwly5LWKdQVYUxeH+UyVB7F2/mdUrMzfG6qYibCaib8ldplsBwL+5ybjNmzwbdT//N8zLMmRXws//FeYVRflbBW43EATz6enpwO7du6nT6W67y9MPPvggR0ZGCJLcs2cPfXx8XL1w8H/FvCRJXLFiBXt6ekiS/wOZdBiReDvmmgAAAABJRU5ErkJggg==">
 <link rel="shortcut icon" href="favicon.ico">
@@ -877,24 +884,21 @@
       <div class="ac-tip"><div class="tip-b">Tip:</div><div>The total price follows your Primary Property Inputs until you change it here.</div></div>
     </div>
 
-    <div class="mot-title ac-h">Area conversion</div>
-    <div class="ac-grid">
+    <div class="ac-two">
+      <div class="mot-card ac-col"><div class="mot-title">Area conversion</div><div class="ac-stack">
       <div class="ac-tile"><div class="ac-label">Square feet</div><div class="ac-val" id="a_sqft">0</div><div class="ac-unit">sq ft</div></div>
       <div class="ac-tile"><div class="ac-label">Square metres</div><div class="ac-val" id="a_sqm">0</div><div class="ac-unit">m²</div></div>
       <div class="ac-tile"><div class="ac-label">Ping (Taiwan)</div><div class="ac-val" id="a_ping">0</div><div class="ac-unit">坪</div></div>
-      <div class="ac-tile"><div class="ac-label">Acres</div><div class="ac-val" id="a_acre">0</div><div class="ac-unit">acres</div></div>
-      <div class="ac-tile"><div class="ac-label">Hectares</div><div class="ac-val" id="a_ha">0</div><div class="ac-unit">hectares</div></div>
-    </div>
-
-    <div class="mot-title ac-h">Unit price reference (RM)</div>
-    <div class="ac-grid ac-grid3">
+      </div></div>
+      <div class="mot-card ac-col"><div class="mot-title">Unit price reference (RM)</div><div class="ac-stack">
       <div class="ac-tile"><div class="ac-label">Per sq ft</div><div class="ac-val" id="up_sqft">0</div><div class="ac-unit">per sq ft</div></div>
       <div class="ac-tile"><div class="ac-label">Per m²</div><div class="ac-val" id="up_sqm">0</div><div class="ac-unit">per m²</div></div>
       <div class="ac-tile"><div class="ac-label">Per ping</div><div class="ac-val" id="up_ping">0</div><div class="ac-unit">per ping</div></div>
+      </div></div>
     </div>
 
-    <div class="mot-title ac-h">Currency converter</div>
-    <div class="mot-card ac-card">
+    <div class="mot-card ac-card ac-cur">
+      <div class="mot-title">Currency converter</div>
       <div class="cv-row">
         <div class="cv-box"><div class="ac-label">Amount</div><div class="cv-in"><select id="cv_from"><option value="MYR" selected>MYR</option><option value="USD">USD</option><option value="SGD">SGD</option><option value="CNY">CNY</option><option value="JPY">JPY</option><option value="KRW">KRW</option></select><input id="cv_amt" class="money" inputmode="decimal" value="0"></div></div>
         <button type="button" class="cv-swap" id="cv_swap" aria-label="Swap currencies">⇄</button>
@@ -1296,7 +1300,6 @@
       if(!$('cv_amt').dataset.touched && $('cv_from').value === 'MYR') $('cv_amt').value = Math.round(price).toLocaleString('en-US'); }
     const areaV = parse($('u_val').value), totalV = parse($('u_total').value), sqft = areaV, sqm = sqft / 10.7639, ping = sqft / 35.5832;
     $('a_sqft').textContent = num(sqft,2); $('a_sqm').textContent = num(sqm,2); $('a_ping').textContent = num(ping,2);
-    $('a_acre').textContent = num(sqft/43560,4); $('a_ha').textContent = num(sqm/10000,4);
     const upf = sqft > 0 ? totalV / sqft : 0, ups = sqm > 0 ? totalV / sqm : 0, upp = ping > 0 ? totalV / ping : 0;
     $('up_sqft').textContent = 'RM ' + num(upf,2); $('up_sqm').textContent = 'RM ' + num(ups,0); $('up_ping').textContent = 'RM ' + num(upp,0);
     const RATE = {MYR:1, USD:0.21, SGD:0.285, CNY:1.52, JPY:31.5, KRW:290}, SYM = {MYR:'RM', USD:'US$', SGD:'S$', CNY:'CN¥', JPY:'JP¥', KRW:'₩'};
