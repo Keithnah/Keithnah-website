@@ -122,8 +122,8 @@ for n, i in enumerate(order, 1):
     kv('Completion', p.get('completion')); kv('Completion year(s) (filter)', ', '.join(map(str, m.get('y', []))) or ('Completed' if m.get('c') else '-'))
     kv('Completed building (filter)', 'Yes' if m.get('c') else 'No'); kv('Developer (filter group)', m.get('d'))
     kv('Cover image file', ''); cover_row = r - 1
-    wa = 'https://api.whatsapp.com/send/?phone=60102821568&text=' + re.sub(r'\s', '+', '(Web) Hi Keith, I would like to know more about "%s".' % p['name'])
-    kv('WhatsApp enquiry text', '(Web) Hi Keith, I would like to know more about "%s".' % p['name'])
+    wa = 'https://api.whatsapp.com/send/?phone=60102821568&text=' + re.sub(r'\s', '+', '(KNRE) Hi Keith, I would like to know more about "%s".' % p['name'])
+    kv('WhatsApp enquiry text', '(KNRE) Hi Keith, I would like to know more about "%s".' % p['name'])
     r += 1
     section('2. OVERVIEW'); kv('Overview paragraph', p.get('overview')); r += 1
     lst('3. TOP 3 HIGHLIGHTS', p.get('points', []))
