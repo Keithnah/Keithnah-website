@@ -285,7 +285,7 @@ def page(i):
   <div class="cta"><h2>Want Keith's take on {display}?</h2><p>Ask for the latest price, available units and the full floor plans.</p><a class="wa-btn" href="{wa}" target="_blank" rel="noopener">{wasvg}WhatsApp Keith About This Project</a></div>
   <p class="note">Prices, sizes and availability are indicative and subject to change. Confirm current figures with Keith before making decisions.</p>
 </main>
-<footer>&copy; 2026 Keith Nah Real Estate · <a href="../projects.html">All projects</a> · <a href="../about-keith.html">About Keith</a></footer>
+<footer>&copy; 2026 Keith Nah Real Estate · <a href="../projects.html">All projects</a> · <a href="../about-keith.html">About Keith</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-of-use.html">Terms of Use</a></footer>
 <a class="float-wa" href="{wa}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">{wasvg}</a>
 <script>
 document.addEventListener('click',function(e){{
@@ -370,7 +370,7 @@ def link_home_page():
 def write_sitemap():
     main = [('', '1.0', 'weekly'), ('projects.html', '0.9', 'weekly'), ('compare.html', '0.7', 'monthly'),
             ('blog.html', '0.8', 'weekly'), ('calculator.html', '0.7', 'monthly'), ('mm2h.html', '0.7', 'monthly'),
-            ('about-keith.html', '0.8', 'monthly')]
+            ('about-keith.html', '0.8', 'monthly'), ('privacy-policy.html', '0.3', 'yearly'), ('terms-of-use.html', '0.3', 'yearly')]
     rows = [(SITE + '/' + u, pr, cf) for u, pr, cf in main] + [('%s/%s/%s.html' % (SITE, OUT, s), '0.8', 'monthly') for s in SLUGS]
     x = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     x += ''.join('  <url>\n    <loc>%s</loc>\n    <lastmod>%s</lastmod>\n    <changefreq>%s</changefreq>\n    <priority>%s</priority>\n  </url>\n' % (E(u), TODAY, cf, pr) for u, pr, cf in rows)
