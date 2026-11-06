@@ -101,6 +101,45 @@
   }
   .filter-btn.active, .filter-btn:hover{background:#111; border-color:#111; color:#fff;}
 
+  /* ---------- DAILY NEWS ---------- */
+  .daily-news{background:var(--bg); border-bottom:1px solid var(--line); padding:64px 5vw 56px;}
+  .dn-wrap{max-width:1240px; margin:0 auto;}
+  .dn-head{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:30px;}
+  .dn-head .eyebrow{display:inline-flex; align-items:center; gap:8px; margin-bottom:12px;}
+  .dn-live{width:8px; height:8px; border-radius:50%; background:#22A45D; box-shadow:0 0 0 0 rgba(34,164,93,0.5); animation:dnPulse 2s infinite;}
+  @keyframes dnPulse{0%{box-shadow:0 0 0 0 rgba(34,164,93,0.45);} 70%{box-shadow:0 0 0 8px rgba(34,164,93,0);} 100%{box-shadow:0 0 0 0 rgba(34,164,93,0);}}
+  .dn-head h2{font-size:clamp(26px,3.4vw,40px); line-height:1.15;}
+  .dn-head h2 .dn-accent{color:var(--gold); font-style:italic;}
+  .dn-updated{margin-top:10px; font-size:13px; color:var(--grey); font-weight:500;}
+  .dn-tabs{display:flex; gap:8px; flex-wrap:wrap;}
+  .dn-tab{font:600 12px 'Inter',sans-serif; letter-spacing:0.06em; text-transform:uppercase; padding:9px 16px; border-radius:100px; border:1px solid var(--line); background:#fff; color:var(--ink); cursor:pointer; transition:all .3s var(--ease);}
+  .dn-tab:hover{border-color:#111;}
+  .dn-tab.active{background:#111; border-color:#111; color:#fff;}
+  .dn-tab .dn-count{opacity:0.55; margin-left:4px;}
+  .dn-day{margin-top:26px;}
+  .dn-day-label{display:flex; align-items:center; gap:14px; font:700 12px 'Inter',sans-serif; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink); margin-bottom:16px;}
+  .dn-day-label::after{content:''; flex:1; height:1px; background:var(--line);}
+  .dn-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .dn-item{background:#fff; border:1px solid var(--line); border-radius:8px; padding:20px 20px 18px; display:flex; flex-direction:column; gap:12px; transition:transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s;}
+  .dn-item:hover{transform:translateY(-4px); box-shadow:0 16px 34px rgba(17,17,17,0.09); border-color:rgba(94,96,206,0.35);}
+  .dn-meta{display:flex; align-items:center; gap:8px; flex-wrap:wrap; font-size:11px; font-weight:600; color:var(--grey);}
+  .dn-src{display:inline-flex; align-items:center; gap:6px; padding:4px 10px; border-radius:100px; font-weight:700; letter-spacing:0.04em; background:var(--bg); color:var(--ink);}
+  .dn-src::before{content:''; width:7px; height:7px; border-radius:50%; background:var(--dot,#888);}
+  .dn-src[data-src="EdgeProp"]{--dot:#2E9E6B;}
+  .dn-src[data-src="NST"]{--dot:#1F5FA8;}
+  .dn-src[data-src="The Star"]{--dot:#D9822B;}
+  .dn-cat{text-transform:uppercase; letter-spacing:0.1em; color:var(--gold); font-weight:700;}
+  .dn-time{margin-left:auto; white-space:nowrap;}
+  .dn-item h3{font-size:17px; line-height:1.35; color:var(--ink);}
+  .dn-read{margin-top:auto; font-size:12px; font-weight:600; color:var(--grey); display:flex; align-items:center; gap:6px; transition:color .3s;}
+  .dn-item:hover .dn-read{color:var(--gold);}
+  .dn-more{display:block; margin:22px auto 0; font:600 13px 'Inter',sans-serif; padding:12px 26px; border-radius:100px; border:1px solid #111; background:transparent; color:#111; cursor:pointer; transition:all .3s var(--ease);}
+  .dn-more:hover{background:#111; color:#fff;}
+  .dn-note{margin-top:28px; font-size:12px; color:var(--grey); font-weight:500; text-align:center;}
+  .dn-empty{padding:30px; text-align:center; color:var(--grey); font-weight:500; background:#fff; border:1px dashed var(--line); border-radius:8px;}
+  @media(max-width:1000px){ .dn-grid{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:640px){ .daily-news{padding:48px 16px 44px;} .dn-grid{grid-template-columns:1fr;} .dn-head{align-items:flex-start;} .dn-tabs{overflow-x:auto; flex-wrap:nowrap; width:100%; padding-bottom:4px;} .dn-tab{flex:0 0 auto;} }
+
   /* ---------- ARTICLE GRID ---------- */
   .journal-grid{
     max-width:1240px; margin:0 auto; padding:70px 5vw 110px;
@@ -303,6 +342,22 @@
   <span class="eyebrow">The Journal</span>
   <h1>Insights on <span>Malaysia's</span> Property Market</h1>
   <p>Market news, investment guides, and cross-border buying advice for KL City Centre, TRX, Johor Bahru and beyond — curated by Keith Nah.</p>
+</section>
+
+<!-- ===================== DAILY NEWS ===================== -->
+<section class="daily-news" id="daily-news" hidden>
+  <div class="dn-wrap">
+    <div class="dn-head">
+      <div>
+        <span class="eyebrow"><span class="dn-live" aria-hidden="true"></span><span data-dn="eyebrow">Daily News</span></span>
+        <h2><span data-dn="h1">Today's</span> <span class="dn-accent" data-dn="h2">Property &amp; Economy</span> <span data-dn="h3">Headlines</span></h2>
+        <p class="dn-updated" id="dnUpdated"></p>
+      </div>
+      <div class="dn-tabs" id="dnTabs" role="tablist"></div>
+    </div>
+    <div id="dnDays"></div>
+    <p class="dn-note" data-dn="note">Headlines link to the original publishers. Updated every day at 12 PM; news older than 2 days is removed.</p>
+  </div>
 </section>
 
 <!-- ===================== FILTERS ===================== -->
@@ -2424,6 +2479,68 @@ function knToggleMenu(force){
 }
 document.addEventListener('keydown',function(e){ if(e.key==='Escape') knToggleMenu(false); });
 </script>
+<script>
+/* ---------- DAILY NEWS: reads daily-news.json (updated every day at 12 PM) ---------- */
+(function(){
+  var TZ='Asia/Kuala_Lumpur', PER_DAY=(window.matchMedia&&matchMedia('(max-width:640px)').matches)?4:6, SOURCES=['EdgeProp','NST','The Star'];
+  var T={
+    en:{eyebrow:'Daily News',h1:"Today's",h2:'Property & Economy',h3:'Headlines',updated:'Updated',from:'from EdgeProp, NST and The Star',all:'All',today:'Today',yesterday:'Yesterday',read:'Read on',more:'Show {n} more',less:'Show less',empty:'No headlines from this source in the last 2 days.',note:'Headlines link to the original publishers. Updated every day at 12 PM; news older than 2 days is removed.',Property:'Property',Economy:'Economy'},
+    'zh-CN':{eyebrow:'每日新闻',h1:'今日',h2:'房产与经济',h3:'头条',updated:'更新于',from:'来源：EdgeProp、NST、The Star',all:'全部',today:'今天',yesterday:'昨天',read:'前往',more:'显示另外 {n} 条',less:'收起',empty:'过去 2 天此来源没有新闻。',note:'标题链接至原新闻网站。每天中午 12 点更新，超过 2 天的新闻会自动移除。',Property:'房产',Economy:'经济'},
+    'zh-TW':{eyebrow:'每日新聞',h1:'今日',h2:'房產與經濟',h3:'頭條',updated:'更新於',from:'來源：EdgeProp、NST、The Star',all:'全部',today:'今天',yesterday:'昨天',read:'前往',more:'顯示另外 {n} 則',less:'收起',empty:'過去 2 天此來源沒有新聞。',note:'標題連結至原新聞網站。每天中午 12 點更新，超過 2 天的新聞會自動移除。',Property:'房產',Economy:'經濟'},
+    ms:{eyebrow:'Berita Harian',h1:'Tajuk Utama',h2:'Hartanah & Ekonomi',h3:'Hari Ini',updated:'Dikemas kini',from:'daripada EdgeProp, NST dan The Star',all:'Semua',today:'Hari ini',yesterday:'Semalam',read:'Baca di',more:'Tunjuk {n} lagi',less:'Tunjuk kurang',empty:'Tiada berita daripada sumber ini dalam 2 hari lepas.',note:'Tajuk dipautkan ke penerbit asal. Dikemas kini setiap hari jam 12 tengah hari; berita lebih 2 hari dibuang.',Property:'Hartanah',Economy:'Ekonomi'},
+    ta:{eyebrow:'தினசரி செய்திகள்',h1:'இன்றைய',h2:'சொத்து & பொருளாதார',h3:'தலைப்புச் செய்திகள்',updated:'புதுப்பிக்கப்பட்டது',from:'EdgeProp, NST, The Star இலிருந்து',all:'அனைத்தும்',today:'இன்று',yesterday:'நேற்று',read:'படிக்க:',more:'மேலும் {n} காட்டு',less:'குறைவாகக் காட்டு',empty:'கடந்த 2 நாட்களில் இந்த மூலத்திலிருந்து செய்தி இல்லை.',note:'தலைப்புகள் அசல் வெளியீட்டாளர்களுக்கு இணைக்கப்பட்டுள்ளன. தினமும் மதியம் 12 மணிக்கு புதுப்பிக்கப்படும்; 2 நாட்களுக்கு மேற்பட்ட செய்திகள் நீக்கப்படும்.',Property:'சொத்து',Economy:'பொருளாதாரம்'},
+    ja:{eyebrow:'デイリーニュース',h1:'今日の',h2:'不動産・経済',h3:'ヘッドライン',updated:'更新',from:'EdgeProp・NST・The Star より',all:'すべて',today:'今日',yesterday:'昨日',read:'記事を読む:',more:'さらに {n} 件表示',less:'閉じる',empty:'過去2日間、このソースのニュースはありません。',note:'見出しは各発行元のサイトにリンクしています。毎日正午に更新し、2日を過ぎたニュースは削除されます。',Property:'不動産',Economy:'経済'},
+    ko:{eyebrow:'데일리 뉴스',h1:'오늘의',h2:'부동산·경제',h3:'헤드라인',updated:'업데이트',from:'EdgeProp, NST, The Star 제공',all:'전체',today:'오늘',yesterday:'어제',read:'기사 보기:',more:'{n}개 더 보기',less:'접기',empty:'최근 2일간 이 출처의 뉴스가 없습니다.',note:'헤드라인은 원 출처로 연결됩니다. 매일 낮 12시에 업데이트되며, 2일이 지난 뉴스는 삭제됩니다.',Property:'부동산',Economy:'경제'},
+    ar:{eyebrow:'الأخبار اليومية',h1:'عناوين',h2:'العقارات والاقتصاد',h3:'اليوم',updated:'آخر تحديث',from:'من EdgeProp وNST وThe Star',all:'الكل',today:'اليوم',yesterday:'أمس',read:'اقرأ على',more:'عرض {n} أخرى',less:'عرض أقل',empty:'لا توجد أخبار من هذا المصدر خلال آخر يومين.',note:'العناوين مرتبطة بالناشرين الأصليين. يتم التحديث يوميًا الساعة 12 ظهرًا، وتُحذف الأخبار الأقدم من يومين.',Property:'عقارات',Economy:'اقتصاد'}
+  };
+  var data=null, filter='all', expanded={};
+  var sec=document.getElementById('daily-news'); if(!sec) return;
+  function L(){ return T[document.documentElement.getAttribute('lang')]||T.en; }
+  function loc(){ var l=document.documentElement.getAttribute('lang')||'en'; return l==='en'?'en-GB':l; }
+  function dayKey(d){ return new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(d); }
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function render(){
+    var t=L(); if(!data) return;
+    sec.querySelectorAll('[data-dn]').forEach(function(e){ var k=e.getAttribute('data-dn'); if(t[k]) e.textContent=t[k]; });
+    var up=new Date(data.updated);
+    document.getElementById('dnUpdated').textContent=t.updated+' '+up.toLocaleString(loc(),{timeZone:TZ,day:'numeric',month:'short',year:'numeric',hour:'numeric',minute:'2-digit',hour12:true})+' · '+t.from;
+    var items=data.items.filter(function(i){ return up-new Date(i.published) < 2*864e5+36e5; });
+    var tabs=document.getElementById('dnTabs');
+    tabs.innerHTML=['all'].concat(SOURCES).map(function(s){
+      var n=s==='all'?items.length:items.filter(function(i){return i.source===s;}).length;
+      return '<button class="dn-tab'+(filter===s?' active':'')+'" role="tab" data-s="'+esc(s)+'">'+esc(s==='all'?t.all:s)+'<span class="dn-count">'+n+'</span></button>';
+    }).join('');
+    var shown=items.filter(function(i){ return filter==='all'||i.source===filter; });
+    var today=dayKey(new Date()), yest=dayKey(new Date(Date.now()-864e5)), groups={}, order=[];
+    shown.forEach(function(i){ var k=dayKey(new Date(i.published)); if(!groups[k]){groups[k]=[];order.push(k);} groups[k].push(i); });
+    order.sort().reverse();
+    var html=order.map(function(k){
+      var d=new Date(k+'T12:00:00+08:00'), list=groups[k];
+      var name=(k===today?t.today+' · ':k===yest?t.yesterday+' · ':'')+d.toLocaleDateString(loc(),{timeZone:TZ,weekday:'short',day:'numeric',month:'short'});
+      var open=expanded[k], vis=open?list:list.slice(0,PER_DAY);
+      var cards=vis.map(function(i){
+        var tm=new Date(i.published).toLocaleTimeString(loc(),{timeZone:TZ,hour:'numeric',minute:'2-digit',hour12:true});
+        return '<a class="dn-item" href="'+esc(i.url)+'" target="_blank" rel="noopener">'+
+          '<div class="dn-meta"><span class="dn-src" data-src="'+esc(i.source)+'">'+esc(i.source)+'</span><span class="dn-cat">'+esc(t[i.category]||i.category)+'</span><span class="dn-time">'+esc(tm)+'</span></div>'+
+          '<h3>'+esc(i.title)+'</h3><span class="dn-read">'+esc(t.read)+' '+esc(i.source)+' <span aria-hidden="true">↗</span></span></a>';
+      }).join('');
+      var btn=list.length>PER_DAY?'<button class="dn-more" data-k="'+k+'">'+esc(open?t.less:t.more.replace('{n}',list.length-PER_DAY))+'</button>':'';
+      return '<div class="dn-day"><div class="dn-day-label">'+esc(name)+'</div><div class="dn-grid">'+cards+'</div>'+btn+'</div>';
+    }).join('');
+    document.getElementById('dnDays').innerHTML=html||'<div class="dn-empty">'+esc(t.empty)+'</div>';
+  }
+  sec.addEventListener('click',function(e){
+    var tab=e.target.closest('.dn-tab'); if(tab){ filter=tab.getAttribute('data-s'); render(); return; }
+    var more=e.target.closest('.dn-more'); if(more){ var k=more.getAttribute('data-k'); expanded[k]=!expanded[k]; render(); }
+  });
+  fetch('daily-news.json?v='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():null;}).then(function(j){
+    if(!j||!j.items||!j.items.length) return;
+    data=j; sec.hidden=false; render();
+    new MutationObserver(render).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+  }).catch(function(){});
+})();
+</script>
+
 <script src="lead-tracker.js"></script>
 </body>
 </html>
