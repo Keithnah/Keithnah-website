@@ -47,6 +47,8 @@ def js_lists(name):
 
 
 OVR, LOCA = js_lists('PROJECT_ARTICLE_OVERRIDES'), js_lists('LOC_ARTICLES')
+# Article page slugs written by tools/build_news_page.py
+ART_PAGE = json.load(open('tools/article_slugs.json', encoding='utf-8')) if os.path.exists('tools/article_slugs.json') else {}
 
 # Card photo and property type, by card index
 PHOTO, TYPE = {}, {}
@@ -219,7 +221,8 @@ def page(i):
             SLUGS[j], ('<img src="%s" alt="%s" loading="lazy">' % (E(up(PHOTO[j])), E(P[j]['name'])) if PHOTO.get(j) else '<i class="noimg"></i>'),
             E(P[j]['name']), E(P[j]['loc']), E(P[j].get('price')))
         for j in (p.get('nearby') or []) if 0 <= j < len(P) and j != i)
-    arts = ''.join('<a class="art" href="../blog.html?article=%s"><small>%s</small><h3>%s</h3></a>' % (a, E(ART[a][0]), E(ART[a][1]))
+    arts = ''.join('<a class="art" href="%s"><small>%s</small><h3>%s</h3></a>' % (
+        ('../article/%s.html' % ART_PAGE[a]) if a in ART_PAGE else '../blog.html?article=' + a, E(ART[a][0]), E(ART[a][1]))
                    for a in (OVR.get(name) or LOCA.get(area) or ['a4', 'a11', 'a20']) if a in ART)
     nav = ''.join('<a href="../%s"%s>%s</a>' % (h, ' class="active"' if h == 'projects.html' else '', E(t)) for h, t in NAV)
 
@@ -372,6 +375,9 @@ def write_sitemap():
             ('blog.html', '0.8', 'weekly'), ('calculator.html', '0.7', 'monthly'), ('mm2h.html', '0.7', 'monthly'),
             ('about-keith.html', '0.8', 'monthly'), ('privacy-policy.html', '0.3', 'yearly'), ('terms-of-use.html', '0.3', 'yearly')]
     rows = [(SITE + '/' + u, pr, cf) for u, pr, cf in main] + [('%s/%s/%s.html' % (SITE, OUT, s), '0.8', 'monthly') for s in SLUGS]
+    import glob
+    rows += [('%s/%s' % (SITE, p), '0.6', 'monthly') for p in sorted(glob.glob('topic/*.html'))]
+    rows += [('%s/%s' % (SITE, p), '0.6', 'yearly') for p in sorted(glob.glob('article/*.html'))]
     x = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     x += ''.join('  <url>\n    <loc>%s</loc>\n    <lastmod>%s</lastmod>\n    <changefreq>%s</changefreq>\n    <priority>%s</priority>\n  </url>\n' % (E(u), TODAY, cf, pr) for u, pr, cf in rows)
     open('sitemap.xml', 'w', encoding='utf-8').write(x + '</urlset>\n')
