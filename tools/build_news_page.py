@@ -150,18 +150,28 @@ def blog_html(counts):
     return '''
 <section class="nw-sec bt-sec" id="blog">
   <p class="nw-eyebrow">%s</p>
-  <h2 class="nw-h2 bt-h2">%s</h2>
+  <h2 class="nw-h2">%s</h2>
+  <p class="bt-label">%s</p>
   <div class="bt-chips" id="btChips">%s</div>
-</section>''' % (unit(lambda t: L(t('Blog'))), unit(lambda t: L(t('Choose a topic based on what you are trying to decide as a buyer.'))), chips)
+</section>''' % (unit(lambda t: L(t('Blog'))), unit(lambda t: L(t('Latest Property News & Insights'))), unit(lambda t: L(t('Filter by topic'))), chips)
 
 
 QUICKNAV = '<nav class="nw-jump" aria-label="On this page"><a href="#buying-guide">%s</a><a href="#faq">%s</a><a href="#blog">%s</a></nav>'
 
 CSS = r'''
   /* KN-NEWS:CSS:START */
-  .nw-jump{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:26px;}
-  .nw-jump a{font:600 13px 'Inter',sans-serif;padding:10px 20px;border-radius:100px;border:1px solid var(--line);background:#fff;color:var(--ink);}
-  .nw-jump a:hover{border-color:#111;}
+  .nw-jump{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:34px;}
+  .nw-jump-btn{display:flex;align-items:center;gap:14px;min-width:230px;padding:14px 18px 14px 14px;border-radius:14px;background:var(--gold);color:#fff;text-align:left;box-shadow:0 12px 28px rgba(94,96,206,0.28);transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .3s;}
+  .nw-jump-btn:hover{transform:translateY(-3px);background:#4B4DB8;box-shadow:0 18px 34px rgba(94,96,206,0.38);}
+  .nw-jump-ic{flex:0 0 44px;height:44px;border-radius:12px;background:rgba(255,255,255,0.16);display:flex;align-items:center;justify-content:center;}
+  .nw-jump-ic svg{width:22px;height:22px;}
+  .nw-jump-txt{display:flex;flex-direction:column;flex:1;line-height:1.25;}
+  .nw-jump-txt b{font:700 16px 'Inter',sans-serif;}
+  .nw-jump-txt small{font:500 12.5px 'Inter',sans-serif;color:rgba(255,255,255,0.78);margin-top:3px;}
+  .nw-jump-arrow{font-size:18px;opacity:.85;transition:transform .3s var(--ease);}
+  .nw-jump-btn:hover .nw-jump-arrow{transform:translateY(3px);}
+  @media(max-width:760px){ .nw-jump{gap:10px;} .nw-jump-btn{min-width:0;width:100%;max-width:360px;} }
+  .bt-label{font:700 11px 'Inter',sans-serif;letter-spacing:0.16em;text-transform:uppercase;color:var(--grey);margin:18px 0 0;}
   .nw-sec{max-width:1240px;margin:0 auto;padding:70px 5vw 10px;scroll-margin-top:80px;}
   .nw-eyebrow{font:600 11px 'Inter',sans-serif;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
   .nw-h2{font-size:clamp(28px,3.4vw,40px);line-height:1.18;margin-bottom:10px;}
@@ -218,8 +228,7 @@ CSS = r'''
   .nf-toggle{font:600 13px 'Inter',sans-serif;padding:12px 26px;border-radius:100px;border:1px solid #111;background:transparent;color:#111;cursor:pointer;}
   .nf-toggle:hover{background:#111;color:#fff;}
   .bt-sec{padding-bottom:0;}
-  .bt-h2{max-width:620px;font-family:'Inter',sans-serif;font-weight:700;font-size:clamp(22px,2.4vw,28px);letter-spacing:0;}
-  .bt-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+  .bt-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;}
   .bt-chip{display:inline-flex;align-items:center;gap:10px;font:600 14.5px 'Inter',sans-serif;color:var(--ink);background:#EFE7DA;border:1px solid transparent;border-radius:6px;padding:12px 16px;cursor:pointer;transition:all .25s var(--ease);}
   .bt-chip em{font-style:normal;font-size:12px;font-weight:700;color:#6b6257;}
   .bt-chip:hover{border-color:#111;}
@@ -317,7 +326,18 @@ def build():
         assert n == 1, 'filter bar not found'
 
     # Quick links under the hero
-    qn = '<nav class="nw-jump" aria-label="On this page">%s</nav>' % unit(lambda t_: '<a href="#buying-guide">%s</a><a href="#faq">%s</a><a href="#blog">%s</a>' % (L(t_('Buying Guide')), L(t_('FAQ')), L(t_('Blog'))))
+    ic = {
+        'g': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>',
+        'f': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 015 .5c0 1.7-2.5 2-2.5 3.5"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg>',
+        'b': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>'}
+    def jump(href, key, title, sub):
+        return ('<a class="nw-jump-btn" href="#%s"><span class="nw-jump-ic" aria-hidden="true">%s</span>'
+                '<span class="nw-jump-txt">%s</span><span class="nw-jump-arrow" aria-hidden="true">&darr;</span></a>' % (
+                    href, ic[key], unit(lambda t_: '<b>%s</b><small>%s</small>' % (L(t_(title)), L(t_(sub))))))
+    qn = '<nav class="nw-jump" aria-label="On this page">%s%s%s</nav>' % (
+        jump('buying-guide', 'g', 'Buying Guide', 'Step-by-step guides'),
+        jump('faq', 'f', 'FAQ', '%d answers' % len(FAQ)),
+        jump('blog', 'b', 'Blog', 'Articles by topic'))
     t = re.sub(r'\s*<nav class="nw-jump".*?</nav>', '', t, flags=re.S)
     i = t.index('<section class="journal-hero">')
     j = t.index('</section>', i)
