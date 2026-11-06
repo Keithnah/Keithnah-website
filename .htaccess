@@ -6,3 +6,6 @@ RewriteEngine On
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\. [NC]
 RewriteRule ^(.*)$ https://keithnah.com/$1 [L,R=301]
+
+# Keep helper scripts in /tools private (they are for setup, not for visitors)
+RedirectMatch 404 ^/tools(/|$)
