@@ -6,7 +6,7 @@
  * The Apps Script code is in tools/leads-apps-script.gs.
  */
 (function () {
-  var LEADS_ENDPOINT = ''; // e.g. 'https://script.google.com/macros/s/XXXX/exec'
+  var LEADS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwzuJuSItPGTzI6XOHrPo2O3LzgOsCD6VHRp11v38qtZsSiYruOqg2INeM0zSxlDMQtiA/exec';
   var SOURCE_WEBSITE = 'KNRE website';
 
   var PAGE_NAMES = {
