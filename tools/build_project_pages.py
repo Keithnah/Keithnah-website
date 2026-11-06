@@ -52,7 +52,7 @@ OVR, LOCA = js_lists('PROJECT_ARTICLE_OVERRIDES'), js_lists('LOC_ARTICLES')
 PHOTO, TYPE = {}, {}
 for m in re.finditer(r'data-idx="(\d+)" onclick="openDetailModal\(\1\)">(.*?)<p class="proj-loc">', src, re.S):
     k = int(m.group(1))
-    im = re.search(r'<img class="proj-photo" src="([^"]+)"', m.group(2))
+    im = re.search(r'<img\b(?=[^>]*\bclass="proj-photo")[^>]*\bsrc="([^"]+)"', m.group(2))
     ty = re.search(r'badge-type type-[a-z]+">([^<]+)<', m.group(2))
     PHOTO[k] = im.group(1) if im else ''
     TYPE[k] = ty.group(1) if ty else 'Residential'
