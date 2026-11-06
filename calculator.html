@@ -478,6 +478,7 @@
   #langMenu{min-width:210px;} #currMenu{min-width:275px;}
   .kn-flag{width:20px; height:15px; flex:0 0 20px; border-radius:2px; object-fit:cover; box-shadow:0 0 0 1px rgba(0,0,0,0.08);}
   #knLang button, #knCurr button{display:inline-flex; align-items:center; gap:8px;}
+  @media (hover:hover) and (pointer:fine){ .lang-switch::after{content:''; position:absolute; left:0; right:0; top:100%; height:14px;} }
 </style>
 <link rel="icon" type="image/png" href="images/d795398568d23a46.png">
 <link rel="shortcut icon" href="favicon.ico">
@@ -1461,6 +1462,28 @@ function knToggleMenu(force){
   document.body.style.overflow=open?'hidden':'';
 }
 document.addEventListener('keydown',function(e){ if(e.key==='Escape') knToggleMenu(false); });
+</script>
+<script id="kn-menu-hover">
+/* Language and currency menus: one open at a time; on computers they open on hover */
+(function(){
+  var P=[['langSwitch','langMenu'],['currSwitch','currMenu']];
+  var hover=window.matchMedia && matchMedia('(hover:hover) and (pointer:fine)').matches;
+  function closeAll(keep){ P.forEach(function(p){ if(p[1]!==keep){ var m=document.getElementById(p[1]); if(m) m.classList.remove('open'); } }); }
+  P.forEach(function(p){
+    var s=document.getElementById(p[0]), m=document.getElementById(p[1]); if(!s||!m) return;
+    s.addEventListener('click', function(e){
+      closeAll(p[1]);
+      if(hover && !m.contains(e.target)){ e.stopPropagation(); m.classList.add('open'); }
+    }, true);
+    if(hover){
+      s.addEventListener('mouseenter', function(){ closeAll(p[1]); m.classList.add('open'); });
+      s.addEventListener('mouseleave', function(){ m.classList.remove('open'); });
+      m.addEventListener('click', function(){ m.classList.remove('open'); });
+    }
+  });
+  document.addEventListener('click', function(e){ if(!e.target.closest('.lang-switch')) closeAll(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeAll(); });
+})();
 </script>
 <script src="lead-tracker.js"></script>
 </body>
