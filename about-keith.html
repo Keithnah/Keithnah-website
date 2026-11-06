@@ -216,6 +216,31 @@
   .whatsapp-btn{padding:11px 16px !important;}
   .logo{flex-shrink:0;} .logo-text, .logo-text b{white-space:nowrap;}
   @media(max-width:1349px){ nav, .nav-right .selector{display:none !important;} .hamburger{display:block !important; font-size:22px; cursor:pointer; color:#fff;} }
+
+/* ---------- QUICK ENQUIRY ---------- */
+.kq-card{background:linear-gradient(160deg,#1d1b4f 0%,#14132f 100%); color:#fff; border-radius:10px; padding:34px 30px 30px; box-shadow:0 30px 60px rgba(29,27,79,0.28); text-align:left; width:100%; box-sizing:border-box;}
+.kq-eyebrow{display:block; font-family:'Inter',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#fff; margin-bottom:18px;}
+.kq-card h3{font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(26px,2.6vw,34px); line-height:1.18; color:#fff; margin:0 0 24px; letter-spacing:0;}
+.kq-card h3 em{display:block; color:#b9b4ff; font-style:italic; font-weight:500;}
+.kq-row{display:flex; gap:10px; margin-bottom:12px;}
+.kq-card input,.kq-card select{width:100%; box-sizing:border-box; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.18); color:#fff; border-radius:6px; padding:15px 16px; font:400 15px 'Inter',sans-serif; outline:none; transition:border-color .2s, background .2s; appearance:none; -webkit-appearance:none; min-width:0;}
+.kq-card input::placeholder{color:rgba(255,255,255,0.55);}
+.kq-card input:focus,.kq-card select:focus{border-color:#8f90ee; background:rgba(255,255,255,0.1);}
+.kq-card select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23ffffff' stroke-width='1.6'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; padding-right:40px; margin-bottom:12px; cursor:pointer;}
+.kq-row select{margin-bottom:0;}
+.kq-card select option{color:#111; background:#fff;}
+.kq-row .kq-name{flex:1.1;} .kq-row .kq-code{flex:0 0 96px; padding-left:12px;} .kq-row .kq-phone{flex:1;}
+.kq-card .kq-pair{display:flex; flex:1.3; gap:0; min-width:0;}
+.kq-card .kq-pair select{flex:0 0 92px; border-radius:6px 0 0 6px; margin:0; padding:15px 30px 15px 12px; background-position:right 10px center;}
+.kq-card .kq-pair input{border-radius:0 6px 6px 0; border-left:0;}
+.kq-btn{width:100%; margin-top:6px; background:#5E60CE; color:#fff; border:0; border-radius:6px; padding:17px 20px; font:700 15px 'Inter',sans-serif; letter-spacing:0.04em; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; transition:background .2s, transform .2s;}
+.kq-btn:hover{background:#7173e6; transform:translateY(-1px);}
+.kq-err{color:#ffb4b4; font-size:13px; margin:10px 0 0; min-height:0;}
+.kq-card.kq-stack .kq-row{flex-wrap:wrap;}
+@media(max-width:520px){.kq-card{padding:28px 20px 24px;} .kq-row{flex-wrap:wrap;} .kq-row .kq-name,.kq-card .kq-pair{flex:1 1 100%;}}
+
+.kq-section{background:#f5f5fa; padding:80px 5vw;}
+.kq-wrap{max-width:560px; margin:0 auto;}
 </style>
 <link rel="icon" type="image/png" href="data:image/png;base64,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">
 <link rel="shortcut icon" href="favicon.ico">
@@ -400,6 +425,26 @@
 
 
 <!-- ===================== CONTACT ===================== -->
+<section class="kq-section" id="enquiry">
+  <div class="kq-wrap"><div class="kq-card" id="quickEnquiry">
+  <span class="kq-eyebrow" data-kq="eyebrow">Quick Enquiry</span>
+  <h3><span data-kq="h1">Let's Find Your</span> <em data-kq="h2">Perfect Property</em></h3>
+  <form class="kq-form" novalidate onsubmit="return knqSend(this)">
+    <div class="kq-row">
+      <input class="kq-name" type="text" name="name" autocomplete="name" data-kq-ph="name" placeholder="Full Name" aria-label="Full Name">
+    </div>
+    <div class="kq-row">
+      <div class="kq-pair"><select name="code" aria-label="Country code"><option value="+60">+60</option><option value="+65">+65</option><option value="+86">+86</option><option value="+852">+852</option><option value="+886">+886</option><option value="+81">+81</option><option value="+82">+82</option><option value="+62">+62</option><option value="+66">+66</option><option value="+971">+971</option><option value="+44">+44</option><option value="+61">+61</option><option value="+1">+1</option></select><input class="kq-phone" type="tel" name="phone" inputmode="tel" autocomplete="tel-national" data-kq-ph="wa" placeholder="WhatsApp" aria-label="WhatsApp"></div>
+    </div>
+    <div class="kq-row"><input type="email" name="email" autocomplete="email" data-kq-ph="email" placeholder="Email Address (Optional)" aria-label="Email"></div>
+    <select name="area" aria-label="Preferred Area"><option value="" data-kq="area">Preferred Area</option><option value="Bukit Bintang">Bukit Bintang</option><option value="KL City Centre">KL City Centre</option><option value="TRX & Merdeka Maybank">TRX & Merdeka Maybank</option><option value="KL City">KL City</option><option value="Bukit Jalil">Bukit Jalil</option><option value="Petaling Jaya">Petaling Jaya</option><option value="Penang">Penang</option><option value="Johor">Johor</option><option value="Melaka">Melaka</option><option value="Not sure yet" data-kq="a_any">Not sure yet</option></select>
+    <select name="look" aria-label="Looking for"><option value="" data-kq="look">I'm Looking For...</option><option value="Own stay" data-kq="l_own">Own stay</option><option value="Investment" data-kq="l_inv">Investment</option><option value="Rental income" data-kq="l_rent">Rental income</option><option value="Second home / MM2H" data-kq="l_mm2h">Second home / MM2H</option><option value="Not sure yet" data-kq="l_any">Not sure yet</option></select>
+    <button class="kq-btn" type="submit"><span data-kq="send">Send Enquiry</span> <span aria-hidden="true">&rarr;</span></button>
+    <p class="kq-err" role="alert"></p>
+  </form>
+</div></div>
+</section>
+
 <section class="keith-contact">
   <div class="section-head">
     <span class="eyebrow">Get In Touch</span>
@@ -705,5 +750,28 @@ function knToggleMenu(force){
 }
 document.addEventListener('keydown',function(e){ if(e.key==='Escape') knToggleMenu(false); });
 </script>
-</body>
+<script>
+(function(){
+  var KQ={"en": {"eyebrow": "Quick Enquiry", "h1": "Let's Find Your", "h2": "Perfect Property", "name": "Full Name", "wa": "WhatsApp", "email": "Email Address (Optional)", "area": "Preferred Area", "look": "I'm Looking For...", "send": "Send Enquiry", "err": "Please enter your name and WhatsApp number.", "a_any": "Not sure yet", "l_own": "Own stay", "l_inv": "Investment", "l_rent": "Rental income", "l_mm2h": "Second home / MM2H", "l_any": "Not sure yet"}, "zh-CN": {"eyebrow": "快速咨询", "h1": "为您找到", "h2": "理想房产", "name": "姓名", "wa": "WhatsApp 号码", "email": "电邮（选填）", "area": "偏好区域", "look": "我想寻找…", "send": "发送咨询", "err": "请填写姓名和 WhatsApp 号码。", "a_any": "暂未确定", "l_own": "自住", "l_inv": "投资", "l_rent": "租金收入", "l_mm2h": "第二家园 / MM2H", "l_any": "暂未确定"}, "zh-TW": {"eyebrow": "快速諮詢", "h1": "為您找到", "h2": "理想房產", "name": "姓名", "wa": "WhatsApp 號碼", "email": "電郵（選填）", "area": "偏好區域", "look": "我想尋找…", "send": "發送諮詢", "err": "請填寫姓名和 WhatsApp 號碼。", "a_any": "暫未確定", "l_own": "自住", "l_inv": "投資", "l_rent": "租金收入", "l_mm2h": "第二家園 / MM2H", "l_any": "暫未確定"}, "ms": {"eyebrow": "Pertanyaan Pantas", "h1": "Mari Cari", "h2": "Hartanah Idaman Anda", "name": "Nama Penuh", "wa": "WhatsApp", "email": "Alamat E-mel (Pilihan)", "area": "Kawasan Pilihan", "look": "Saya Sedang Mencari...", "send": "Hantar Pertanyaan", "err": "Sila masukkan nama dan nombor WhatsApp anda.", "a_any": "Belum pasti", "l_own": "Diduduki sendiri", "l_inv": "Pelaburan", "l_rent": "Pendapatan sewa", "l_mm2h": "Rumah kedua / MM2H", "l_any": "Belum pasti"}, "ta": {"eyebrow": "விரைவு விசாரணை", "h1": "உங்களுக்கான", "h2": "சரியான சொத்தை", "name": "முழு பெயர்", "wa": "WhatsApp", "email": "மின்னஞ்சல் (விருப்பம்)", "area": "விருப்பமான பகுதி", "look": "நான் தேடுவது...", "send": "விசாரணை அனுப்பு", "err": "உங்கள் பெயர் மற்றும் WhatsApp எண்ணை உள்ளிடவும்.", "a_any": "இன்னும் உறுதியில்லை", "l_own": "சொந்த வசிப்பு", "l_inv": "முதலீடு", "l_rent": "வாடகை வருமானம்", "l_mm2h": "இரண்டாவது வீடு / MM2H", "l_any": "இன்னும் உறுதியில்லை"}, "ja": {"eyebrow": "クイックお問い合わせ", "h1": "あなたにぴったりの", "h2": "理想の物件を", "name": "お名前", "wa": "WhatsApp番号", "email": "メールアドレス（任意）", "area": "希望エリア", "look": "探している物件...", "send": "送信する", "err": "お名前とWhatsApp番号を入力してください。", "a_any": "未定", "l_own": "自己居住", "l_inv": "投資", "l_rent": "賃貸収入", "l_mm2h": "セカンドハウス / MM2H", "l_any": "未定"}, "ko": {"eyebrow": "빠른 문의", "h1": "찾아드립니다:", "h2": "나에게 꼭 맞는 부동산", "name": "성함", "wa": "WhatsApp 번호", "email": "이메일 (선택)", "area": "희망 지역", "look": "찾는 목적...", "send": "문의 보내기", "err": "성함과 WhatsApp 번호를 입력해 주세요.", "a_any": "미정", "l_own": "실거주", "l_inv": "투자", "l_rent": "임대 수익", "l_mm2h": "세컨드 홈 / MM2H", "l_any": "미정"}, "ar": {"eyebrow": "استفسار سريع", "h1": "لنجد لك", "h2": "العقار المثالي", "name": "الاسم الكامل", "wa": "واتساب", "email": "البريد الإلكتروني (اختياري)", "area": "المنطقة المفضلة", "look": "أبحث عن...", "send": "إرسال الاستفسار", "err": "يرجى إدخال اسمك ورقم واتساب.", "a_any": "لم أحدد بعد", "l_own": "سكن شخصي", "l_inv": "استثمار", "l_rent": "دخل إيجاري", "l_mm2h": "منزل ثانٍ / MM2H", "l_any": "لم أحدد بعد"}};
+  function apply(){
+    var l=document.documentElement.getAttribute('lang')||'en'; var d=KQ[l]||KQ.en;
+    document.querySelectorAll('[data-kq]').forEach(function(e){ e.textContent=d[e.getAttribute('data-kq')]; });
+    document.querySelectorAll('[data-kq-ph]').forEach(function(e){ e.setAttribute('placeholder',d[e.getAttribute('data-kq-ph')]); });
+  }
+  window.knqErr=function(){ var l=document.documentElement.getAttribute('lang')||'en'; return (KQ[l]||KQ.en).err; };
+  window.knqSend=function(f){
+    var n=f.name.value.trim(), p=f.phone.value.replace(/[^0-9]/g,''), er=f.querySelector('.kq-err');
+    if(!n||p.length<6){ er.textContent=window.knqErr(); (n?f.phone:f.name).focus(); return false; }
+    er.textContent='';
+    var m='(KNRE) Hi Keith, I would like to make an enquiry.\nName: '+n+'\nWhatsApp: '+f.code.value+' '+f.phone.value.trim();
+    if(f.email.value.trim()) m+='\nEmail: '+f.email.value.trim();
+    if(f.area.value) m+='\nPreferred area: '+f.area.value;
+    if(f.look.value) m+='\nLooking for: '+f.look.value;
+    window.open('https://api.whatsapp.com/send/?phone=60102821568&text='+encodeURIComponent(m).replace(/%20/g,'+')+'&type=phone_number&app_absent=0','_blank','noopener');
+    return false;
+  };
+  new MutationObserver(apply).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+  apply();
+})();
+</script></body>
 </html>
