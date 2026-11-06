@@ -244,6 +244,10 @@
   .whatsapp-btn{padding:11px 16px !important;}
   .logo{flex-shrink:0;} .logo-text, .logo-text b{white-space:nowrap;}
   @media(max-width:1349px){ nav, .nav-right .selector{display:none !important;} .hamburger{display:block !important; font-size:22px; cursor:pointer; color:#fff;} }
+  .lang-menu a{display:flex !important; align-items:center; gap:10px; white-space:nowrap;}
+  #langMenu{min-width:210px;} #currMenu{min-width:275px;}
+  .kn-flag{width:20px; height:15px; flex:0 0 20px; border-radius:2px; object-fit:cover; box-shadow:0 0 0 1px rgba(0,0,0,0.08);}
+  #knLang button, #knCurr button{display:inline-flex; align-items:center; gap:8px;}
 </style>
 <link rel="icon" type="image/png" href="images/d795398568d23a46.png">
 <link rel="shortcut icon" href="favicon.ico">
@@ -269,25 +273,25 @@
     <div class="lang-switch" id="langSwitch">
       <span class="selector" id="langSelectorBtn" onclick="toggleLangMenu(event)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9z"/></svg><span id="langSelectorLabel">English</span></span>
       <div class="lang-menu" id="langMenu">
-        <a onclick="setLanguage('en')">English</a>
-        <a onclick="setLanguage('zh-CN')">简体中文</a>
-        <a onclick="setLanguage('zh-TW')">繁體中文</a>
-        <a onclick="setLanguage('ms')">Bahasa Malaysia</a>
-        <a onclick="setLanguage('ta')">தமிழ்</a>
-        <a onclick="setLanguage('ja')">日本語</a>
-        <a onclick="setLanguage('ko')">한국어</a>
-        <a onclick="setLanguage('ar')">العربية</a>
+        <a onclick="setLanguage('en')"><img class="kn-flag" src="images/flags/gb.svg" alt="" width="20" height="15">English</a>
+        <a onclick="setLanguage('zh-CN')"><img class="kn-flag" src="images/flags/cn.svg" alt="" width="20" height="15">简体中文</a>
+        <a onclick="setLanguage('zh-TW')"><img class="kn-flag" src="images/flags/tw.svg" alt="" width="20" height="15">繁體中文</a>
+        <a onclick="setLanguage('ms')"><img class="kn-flag" src="images/flags/my.svg" alt="" width="20" height="15">Bahasa Malaysia</a>
+        <a onclick="setLanguage('ta')"><img class="kn-flag" src="images/flags/in.svg" alt="" width="20" height="15">தமிழ்</a>
+        <a onclick="setLanguage('ja')"><img class="kn-flag" src="images/flags/jp.svg" alt="" width="20" height="15">日本語</a>
+        <a onclick="setLanguage('ko')"><img class="kn-flag" src="images/flags/kr.svg" alt="" width="20" height="15">한국어</a>
+        <a onclick="setLanguage('ar')"><img class="kn-flag" src="images/flags/sa.svg" alt="" width="20" height="15">العربية</a>
       </div>
     </div>
     <div class="lang-switch" id="currSwitch">
       <span class="selector" id="currSelectorBtn" onclick="toggleCurrMenu(event)"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="5"/><circle cx="16" cy="16" r="5"/></svg><span id="currSelectorLabel">MYR</span></span>
       <div class="lang-menu" id="currMenu">
-        <a onclick="setCurrency('MYR')">MYR — Malaysian Ringgit</a>
-        <a onclick="setCurrency('USD')">USD — US Dollar</a>
-        <a onclick="setCurrency('SGD')">SGD — Singapore Dollar</a>
-        <a onclick="setCurrency('CNY')">CNY — Chinese Yuan</a>
-        <a onclick="setCurrency('JPY')">JPY — Japanese Yen</a>
-        <a onclick="setCurrency('KRW')">KRW — Korean Won</a>
+        <a onclick="setCurrency('MYR')"><img class="kn-flag" src="images/flags/my.svg" alt="" width="20" height="15">MYR — Malaysian Ringgit</a>
+        <a onclick="setCurrency('USD')"><img class="kn-flag" src="images/flags/us.svg" alt="" width="20" height="15">USD — US Dollar</a>
+        <a onclick="setCurrency('SGD')"><img class="kn-flag" src="images/flags/sg.svg" alt="" width="20" height="15">SGD — Singapore Dollar</a>
+        <a onclick="setCurrency('CNY')"><img class="kn-flag" src="images/flags/cn.svg" alt="" width="20" height="15">CNY — Chinese Yuan</a>
+        <a onclick="setCurrency('JPY')"><img class="kn-flag" src="images/flags/jp.svg" alt="" width="20" height="15">JPY — Japanese Yen</a>
+        <a onclick="setCurrency('KRW')"><img class="kn-flag" src="images/flags/kr.svg" alt="" width="20" height="15">KRW — Korean Won</a>
       </div>
     </div>
     <a class="whatsapp-btn wa-link" data-wa-msg="(KNRE) Hi Keith, I would like to explore more on Malaysia Property." href="https://wa.me/60102821568" target="_blank" rel="noopener">
@@ -2408,12 +2412,12 @@ function knToggleMenu(force){
     });
     var lg=document.getElementById('knLang'); lg.innerHTML='';
     document.querySelectorAll('#langMenu a').forEach(function(a){
-      var b=document.createElement('button'); b.type='button'; b.textContent=a.textContent;
+      var b=document.createElement('button'); b.type='button'; b.innerHTML=a.innerHTML;
       b.onclick=function(){ a.click(); knToggleMenu(false); }; lg.appendChild(b);
     });
     var cu=document.getElementById('knCurr'); cu.innerHTML='';
     document.querySelectorAll('#currMenu a').forEach(function(a){
-      var b=document.createElement('button'); b.type='button'; b.textContent=a.textContent.split(' ')[0];
+      var b=document.createElement('button'); b.type='button'; var fl=a.querySelector('img'); b.innerHTML=(fl?fl.outerHTML:'')+a.textContent.trim().split(' ')[0];
       b.onclick=function(){ a.click(); knToggleMenu(false); }; cu.appendChild(b);
     });
     var w=document.querySelector('header .whatsapp-btn'); var kw=document.getElementById('knWa');
