@@ -217,6 +217,11 @@ TOPICS = [
 
 # Labels shown on the page, translated for the site's languages.
 LABELS = {
+    'Latest Property News & Insights': {'zh-CN': '最新房产新闻与洞察', 'zh-TW': '最新房產新聞與洞察', 'ms': 'Berita & Pandangan Hartanah Terkini', 'ta': 'சமீபத்திய சொத்து செய்திகள் & கருத்துகள்', 'ja': '最新の不動産ニュースと考察', 'ko': '최신 부동산 뉴스 및 인사이트', 'ar': 'أحدث أخبار ورؤى العقارات'},
+    'Filter by topic': {'zh-CN': '按主题筛选', 'zh-TW': '按主題篩選', 'ms': 'Tapis mengikut topik', 'ta': 'தலைப்பின்படி வடிகட்டு', 'ja': 'トピックで絞り込む', 'ko': '주제별 보기', 'ar': 'تصفية حسب الموضوع'},
+    'Step-by-step guides': {'zh-CN': '分步指南', 'zh-TW': '分步指南', 'ms': 'Panduan langkah demi langkah', 'ta': 'படிப்படியான வழிகாட்டிகள்', 'ja': 'ステップ別ガイド', 'ko': '단계별 가이드', 'ar': 'أدلة خطوة بخطوة'},
+    '47 answers': {'zh-CN': '47 个解答', 'zh-TW': '47 個解答', 'ms': '47 jawapan', 'ta': '47 பதில்கள்', 'ja': '47の回答', 'ko': '47개 답변', 'ar': '47 إجابة'},
+    'Articles by topic': {'zh-CN': '按主题浏览文章', 'zh-TW': '按主題瀏覽文章', 'ms': 'Artikel mengikut topik', 'ta': 'தலைப்பு வாரியான கட்டுரைகள்', 'ja': 'トピック別の記事', 'ko': '주제별 기사', 'ar': 'مقالات حسب الموضوع'},
     'Buying Guide': {'zh-CN': '购房指南', 'zh-TW': '購房指南', 'ms': 'Panduan Membeli', 'ta': 'வாங்கும் வழிகாட்டி', 'ja': '購入ガイド', 'ko': '구매 가이드', 'ar': 'دليل الشراء'},
     'FAQ': {'zh-CN': '常见问题', 'zh-TW': '常見問題', 'ms': 'Soalan Lazim', 'ta': 'அடிக்கடி கேட்கப்படும் கேள்விகள்', 'ja': 'よくある質問', 'ko': '자주 묻는 질문', 'ar': 'الأسئلة الشائعة'},
     'Blog': {'zh-CN': '博客', 'zh-TW': '部落格', 'ms': 'Blog', 'ta': 'வலைப்பதிவு', 'ja': 'ブログ', 'ko': '블로그', 'ar': 'المدونة'},
