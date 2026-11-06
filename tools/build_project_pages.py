@@ -331,13 +331,40 @@ def link_projects_page():
     if "knPageLink(p)" not in t:
         t = t.replace(hook, "+ knPageLink(p)\n      " + hook, 1)
     js = ('\n<script>var KN_SLUGS = %s;\nfunction knPageLink(p){ var s=KN_SLUGS[PROJECT_DETAILS.indexOf(p)]; '
-          'return s ? \'<a class="pd-page-link" href="property/\'+s+\'.html">View full project page &rarr;</a>\' : \'\'; }</script>' % json.dumps(SLUGS))
+          'return s ? \'<a class="pd-page-link" href="property/\'+s+\'.html">View full project page &rarr;</a>\' : \'\'; }\n'
+          '/* Every project opens its own page */\nwindow.openDetailModal=function(i){ var s=KN_SLUGS[i]; if(s) location.href=\'property/\'+s+\'.html\'; };</script>' % json.dumps(SLUGS))
     t = t.replace('<script src="lead-tracker.js"></script>', js.lstrip('\n') + '\n<script src="lead-tracker.js"></script>', 1)
     css = '  .proj-page-link{color:inherit;} .proj-page-link:hover{color:var(--gold);}\n  .pd-page-link{display:inline-block; margin:6px 0 4px; font:600 13px \'Inter\',sans-serif; color:var(--gold); border-bottom:1px solid currentColor;}\n'
     if '.pd-page-link{' not in t:
         t = t.replace('  /* ---------- PROJECT TAGS ---------- */', css + '  /* ---------- PROJECT TAGS ---------- */', 1)
     src = t
     open('projects.html', 'w', encoding='utf-8').write(t)
+
+
+def link_home_page():
+    """Make the Home page's featured project cards open the project pages (idempotent)."""
+    path = 'index.html'
+    h = open(path, encoding='utf-8').read()
+    i = h.index('PROJECT_DETAILS = ')
+    HP = json.JSONDecoder().raw_decode(h[h.index('=', i) + 1:].lstrip())[0]
+    by_name = {p['name']: SLUGS[k] for k, p in enumerate(P)}
+    hs = [by_name.get(p['name'], '') for p in HP]
+    missing = [p['name'] for p, s in zip(HP, hs) if not s]
+    assert not missing, missing
+    h = re.sub(r'<script id="kn-page-links">.*?</script>\n', '', h, flags=re.S)
+    h = re.sub(r'<h3><a class="proj-page-link" href="property/[^"]+" onclick="event.stopPropagation\(\)">(.*?)</a></h3>', r'<h3>\1</h3>', h)
+
+    def card(m):
+        k = int(m.group(1))
+        return re.sub(r'<h3>(.*?)</h3>', lambda x: '<h3><a class="proj-page-link" href="property/%s.html" onclick="event.stopPropagation()">%s</a></h3>' % (hs[k], x.group(1)), m.group(0), count=1)
+    h, n = re.subn(r'data-idx="(\d+)" onclick="openDetailModal\(\1\)">.*?<h3>.*?</h3>', card, h, flags=re.S)
+    js = ('<script id="kn-page-links">var KN_HOME_SLUGS = %s;\n'
+          'window.openDetailModal=function(i){ var s=KN_HOME_SLUGS[i]; if(s) location.href=\'property/\'+s+\'.html\'; };</script>' % json.dumps(hs))
+    h = h.replace('<script src="lead-tracker.js"></script>', js + '\n<script src="lead-tracker.js"></script>', 1)
+    if '.proj-page-link{' not in h:
+        h = h.replace('</style>', '  .proj-page-link{color:inherit;}\n</style>', 1)
+    open(path, 'w', encoding='utf-8').write(h)
+    return n
 
 
 def write_sitemap():
@@ -356,5 +383,6 @@ if __name__ == '__main__':
     for i in range(len(P)):
         open('%s/%s.html' % (OUT, SLUGS[i]), 'w', encoding='utf-8').write(page(i))
     link_projects_page()
+    print('home page cards linked:', link_home_page())
     n = write_sitemap()
     print('wrote %d project pages in %s/, linked projects.html, sitemap has %d URLs' % (len(P), OUT, n))
