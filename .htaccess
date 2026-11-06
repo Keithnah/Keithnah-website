@@ -1,0 +1,8 @@
+# Open index.html first (before any index.php / default.php)
+DirectoryIndex index.html index.php default.php
+
+# Send every visitor to one address: https://keithnah.com
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://keithnah.com/$1 [L,R=301]
