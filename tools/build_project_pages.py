@@ -138,12 +138,24 @@ section.blk{margin-bottom:50px;}
 .fact span{display:block;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey);font-weight:600;}
 .fact strong{font-weight:600;font-size:14.5px;}
 .amen{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;} .amen li{list-style:none;background:#fff;border:1px solid var(--line);border-radius:100px;padding:6px 14px;font-size:13px;}
-.layouts{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;}
-.layout{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;}
-.layout figure{background:#f3f2ef;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;}
-.layout figure img{width:100%;height:100%;object-fit:contain;}
-.layout div{padding:16px 18px;} .layout h3{font-size:18px;margin-bottom:4px;}
-.layout .meta{font-size:12px;color:var(--gold);font-weight:700;margin-bottom:8px;} .layout p{font-size:13.5px;color:var(--grey);}
+.pd-layout-selector{display:flex;gap:24px;align-items:flex-start;}
+.pd-layout-sidebar{display:flex;flex-direction:column;gap:10px;width:240px;flex-shrink:0;}
+.pd-layout-tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;width:100%;padding:14px 16px;border-radius:10px;border:1px solid var(--line);background:var(--ivory);cursor:pointer;transition:all .25s var(--ease);font-family:inherit;}
+.pd-layout-tab:hover{border-color:var(--gold);}
+.pd-layout-tab.active{background:var(--gold);border-color:var(--gold);}
+.pd-layout-tab.active .pd-layout-tab-type,.pd-layout-tab.active .pd-layout-tab-meta{color:#fff;}
+.pd-layout-tab-type{font-size:14.5px;font-weight:700;color:var(--ink);}
+.pd-layout-tab-meta{font-size:12.5px;color:var(--grey);font-weight:600;}
+.pd-layout-display{flex:1;min-width:0;background:var(--ivory);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.pd-layout-display-media{position:relative;display:flex;align-items:center;justify-content:center;background:#fff;padding:20px;}
+.pd-layout-display-media img{width:auto;height:auto;max-width:100%;max-height:70vh;object-fit:contain;display:block;margin:0 auto;}
+.pd-layout-display-body{padding:22px 24px 26px;}
+.pd-layout-display-body h3{font-size:20px;margin-bottom:8px;}
+.pd-layout-display-body p{font-size:14.5px;color:var(--grey);margin-bottom:16px;line-height:1.6;font-weight:500;}
+.pd-layout-tags{display:flex;gap:8px;flex-wrap:wrap;}
+.pd-layout-tag{padding:6px 13px;border-radius:100px;background:rgba(94,96,206,0.1);color:var(--gold);font-size:11.5px;font-weight:700;}
+.pd-layout-fallback{width:100%;min-height:320px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#EDEBFB,#F9F8F6);color:var(--gold);}
+.pd-layout-fallback svg{width:32%;}
 .fits{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
 .fit{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:10px;padding:20px;} .fit h3{font-size:17px;margin-bottom:6px;} .fit p{font-size:14px;color:var(--grey);}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
@@ -159,7 +171,7 @@ section.blk{margin-bottom:50px;}
 footer{background:#0C0C0C;color:#bbb;padding:34px 5vw;font-size:13px;text-align:center;}
 footer a{color:#fff;}
 .float-wa{position:fixed;right:22px;bottom:22px;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,0.25);z-index:60;}
-@media(max-width:900px){.hero{grid-template-columns:1fr;gap:22px;}.price{font-size:24px;}.hero h1{font-size:34px;}.stats{grid-template-columns:repeat(2,1fr);}.stat{border-left:0;border-top:1px solid var(--line);}.stat:first-child{grid-column:1/-1;border-top:0;}.wa-btn span{display:none;}.wrap{padding:0 16px;}.cta{padding:28px 20px;}}
+@media(max-width:900px){.hero{grid-template-columns:1fr;gap:22px;}.pd-layout-selector{flex-direction:column;}.pd-layout-sidebar{flex-direction:row;overflow-x:auto;width:100%;gap:8px;padding-bottom:6px;}.pd-layout-tab{flex:0 0 auto;min-width:130px;width:auto;}.price{font-size:24px;}.hero h1{font-size:34px;}.stats{grid-template-columns:repeat(2,1fr);}.stat{border-left:0;border-top:1px solid var(--line);}.stat:first-child{grid-column:1/-1;border-top:0;}.wa-btn span{display:none;}.wrap{padding:0 16px;}.cta{padding:28px 20px;}}
 '''
 
 NAV = [('', 'Home'), ('projects.html', 'View Projects'), ('compare.html', 'Compare Projects'), ('blog.html', 'News'),
@@ -185,11 +197,22 @@ def page(i):
     points = ''.join('<div class="point"><b>%d</b><p>%s</p></div>' % (n + 1, E(x)) for n, x in enumerate(p.get('selling_points') or []))
     facts = ''.join('<div class="fact"><span>%s</span><strong>%s</strong></div>' % (E(k), E(v)) for k, v in (p.get('details_extra') or {}).items())
     amen = ''.join('<li>%s</li>' % E(a) for a in (p.get('amenities') or []))
-    layouts = ''.join(
-        '<article class="layout"><figure>%s</figure><div><h3>%s</h3><p class="meta">%s</p><p>%s</p></div></article>' % (
-            ('<img src="%s" alt="%s %s floor plan" loading="lazy">' % (E(up(l['img'])), E(display), E(l.get('type'))) if l.get('img') else ''),
-            E(l.get('type')), E(' · '.join(x for x in [l.get('size'), l.get('rooms')] if x)), E(l.get('desc')))
-        for l in (p.get('layouts') or []))
+    LS = p.get('layouts') or []
+    FALLBACK = '<div class="pd-layout-fallback"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="10" y="10" width="80" height="80"/><line x1="50" y1="10" x2="50" y2="60"/><line x1="10" y1="60" x2="90" y2="60"/><line x1="70" y1="60" x2="70" y2="90"/></svg></div>'
+    tabs = ''.join(
+        '<button type="button" class="pd-layout-tab%s" role="tab" aria-selected="%s" aria-controls="lay-%d" data-i="%d"><span class="pd-layout-tab-type">%s</span><span class="pd-layout-tab-meta">%s</span></button>' % (
+            ' active' if n == 0 else '', 'true' if n == 0 else 'false', n, n, E(l.get('type')), E(l.get('size')))
+        for n, l in enumerate(LS))
+    panels = ''.join(
+        '<div class="lay-panel" id="lay-%d" role="tabpanel"%s><div class="pd-layout-display-media">%s</div>'
+        '<div class="pd-layout-display-body"><h3>%s</h3><p>%s</p><div class="pd-layout-tags">%s</div></div></div>' % (
+            n, '' if n == 0 else ' hidden',
+            ('<img src="%s" alt="%s %s floor plan"%s>' % (E(up(l['img'])), E(display), E(l.get('type')), '' if n == 0 else ' loading="lazy"')) if l.get('img') else FALLBACK,
+            E(l.get('type')), E(l.get('desc')),
+            ''.join('<span class="pd-layout-tag">%s</span>' % E(x) for x in [l.get('size'), l.get('rooms')] if x))
+        for n, l in enumerate(LS))
+    layouts = ('<div class="pd-layout-selector"><div class="pd-layout-sidebar" role="tablist" aria-label="Unit types">%s</div>'
+               '<div class="pd-layout-display">%s</div></div>' % (tabs, panels)) if LS else ''
     fits = ''.join('<div class="fit"><h3>%s</h3><p>%s</p></div>' % (E(f.get('title')), E(f.get('desc'))) for f in (p.get('buyer_fit') or []))
     near = ''.join(
         '<a class="card" href="%s.html">%s<div><h3>%s</h3><small>%s</small><span>%s</span></div></a>' % (
@@ -264,6 +287,14 @@ def page(i):
 </main>
 <footer>&copy; 2026 Keith Nah Real Estate · <a href="../projects.html">All projects</a> · <a href="../about-keith.html">About Keith</a></footer>
 <a class="float-wa" href="{wa}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">{wasvg}</a>
+<script>
+document.addEventListener('click',function(e){{
+  var b=e.target.closest('.pd-layout-tab'); if(!b) return;
+  var box=b.closest('.pd-layout-selector'), i=b.getAttribute('data-i');
+  box.querySelectorAll('.pd-layout-tab').forEach(function(x){{ var on=x===b; x.classList.toggle('active',on); x.setAttribute('aria-selected',on?'true':'false'); }});
+  box.querySelectorAll('.lay-panel').forEach(function(p){{ p.hidden=p.id!=='lay-'+i; }});
+}});
+</script>
 <script src="../lead-tracker.js"></script>
 </body>
 </html>
