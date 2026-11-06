@@ -285,7 +285,7 @@ def page(i):
   <div class="cta"><h2>Want Keith's take on {display}?</h2><p>Ask for the latest price, available units and the full floor plans.</p><a class="wa-btn" href="{wa}" target="_blank" rel="noopener">{wasvg}WhatsApp Keith About This Project</a></div>
   <p class="note">Prices, sizes and availability are indicative and subject to change. Confirm current figures with Keith before making decisions.</p>
 </main>
-<footer>&copy; 2026 Keith Nah Real Estate · <a href="../projects.html">All projects</a> · <a href="../about-keith.html">About Keith</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-of-use.html">Terms of Use</a></footer>
+<footer>&copy; 2026 Keith Nah Real Estate · <a href="../projects.html">All projects</a> · <a href="../about-keith.html">About Keith</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-of-use.html">Terms of Use</a> · <a href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/keithnah_/" target="_blank" rel="noopener">Instagram</a></footer>
 <a class="float-wa" href="{wa}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">{wasvg}</a>
 <script>
 document.addEventListener('click',function(e){{
