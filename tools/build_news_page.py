@@ -12,7 +12,11 @@ import json
 import re
 from urllib.parse import quote_plus
 
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from news_content import AS_AT, GUIDES, LABELS, TOPICS
+from news_pages import ART_SLUGS, write_pages
 
 LANGS = ['zh-CN', 'zh-TW', 'ms', 'ta', 'ja', 'ko', 'ar']
 PAGE = 'blog.html'
@@ -144,9 +148,7 @@ def faq_html():
 
 
 def blog_html(counts):
-    chips = ''.join('<button type="button" class="bt-chip" data-topic="%s">%s</button>' % (
-        slug(name), unit(lambda t, name=name: '%s<em>%d</em>' % (L(t(name)), counts[name]))) for name, _ in TOPICS)
-    chips += '<button type="button" class="bt-chip bt-all active" data-topic="all">%s</button>' % unit(lambda t: L(t('All categories')))
+    chips = unit(lambda t: ''.join('<a class="bt-chip" href="topic/%s.html">%s<em>%d</em></a>' % (slug(tp[0]), L(t(tp[0])), counts[tp[0]]) for tp in TOPICS))
     return '''
 <section class="nw-sec bt-sec" id="blog">
   <p class="nw-eyebrow">%s</p>
@@ -232,6 +234,7 @@ CSS = r'''
   .bt-chip{display:inline-flex;align-items:center;gap:10px;font:600 14.5px 'Inter',sans-serif;color:var(--ink);background:#EFE7DA;border:1px solid transparent;border-radius:6px;padding:12px 16px;cursor:pointer;transition:all .25s var(--ease);}
   .bt-chip em{font-style:normal;font-size:12px;font-weight:700;color:#6b6257;}
   .bt-chip:hover{border-color:#111;}
+  a.article-read{color:inherit;}
   .bt-chip.active{background:#111;color:#fff;} .bt-chip.active em{color:rgba(255,255,255,0.7);}
   .bt-all{background:#fff;border-color:var(--line);}
   .journal-grid{padding-top:36px;}
@@ -253,7 +256,6 @@ JS = r'''<!-- KN-NEWS:JS:START -->
 /* News page sections: buying guide tabs, FAQ, blog topics */
 (function(){
   if(window.KN_TR_PAGE) Object.assign(window.KN_TR_PAGE, __TR__);
-  var TOPICS = __TOPICS__;
   // Buying guide tabs
   var tabs = document.querySelectorAll('.bg-tab');
   function showGuide(id, scroll){
@@ -279,16 +281,10 @@ JS = r'''<!-- KN-NEWS:JS:START -->
     all.addEventListener('click', function(){ sec.classList.add('nf-open'); all.hidden = true; few.hidden = false; });
     few.addEventListener('click', function(){ sec.classList.remove('nf-open'); all.hidden = false; few.hidden = true; sec.scrollIntoView({behavior:'smooth', block:'start'}); });
   }
-  // Blog topics
-  var chips = document.querySelectorAll('.bt-chip');
-  function showTopic(t){
-    chips.forEach(function(c){ c.classList.toggle('active', c.getAttribute('data-topic') === t); });
-    document.querySelectorAll('#journalGrid .article-card').forEach(function(card){
-      var list = (card.getAttribute('data-topics') || '').split(' ');
-      card.style.display = (t === 'all' || list.indexOf(t) > -1) ? '' : 'none';
-    });
-  }
-  chips.forEach(function(c){ c.addEventListener('click', function(){ showTopic(c.getAttribute('data-topic')); }); });
+  // Articles open their own page (blog.html?article=a1 links keep working)
+  var SLUGS = __ART_SLUGS__;
+  window.openArticle = function(id){ if(SLUGS[id]) location.href = 'article/' + SLUGS[id] + '.html'; };
+  try{ var q = new URLSearchParams(location.search).get('article'); if(q && SLUGS[q]) location.replace('article/' + SLUGS[q] + '.html'); }catch(e){}
   if(typeof knApplyContent === 'function') knApplyContent();
 })();
 </script>
@@ -300,19 +296,24 @@ def build():
     t = open(PAGE, encoding='utf-8').read()
 
     # Blog topics on each article card
-    counts = {name: 0 for name, _ in TOPICS}
+    counts = {tp[0]: len(tp[1]) for tp in TOPICS}
     by_article = {}
-    for name, ids in TOPICS:
-        for a in ids:
-            by_article.setdefault(a, []).append(slug(name))
-    for name, ids in TOPICS:
-        counts[name] = len(ids)
+    for tp in TOPICS:
+        for a in tp[1]:
+            by_article.setdefault(a, []).append(slug(tp[0]))
 
     def card(m):
         aid = m.group(2)
         s = re.sub(r' data-topics="[^"]*"', '', m.group(0))
         return s.replace('data-id="%s"' % aid, 'data-id="%s" data-topics="%s"' % (aid, ' '.join(by_article.get(aid, []))), 1)
     t, n = re.subn(r'<div class="article-card" data-cat="([^"]+)" data-id="(a\d+)"(?: data-topics="[^"]*")?', card, t)
+    assert n >= 31, n
+
+    def read_link(m):
+        aid = m.group(1)
+        return re.sub(r'<(?:span|a) class="article-read"[^>]*>Read Article →</(?:span|a)>',
+                      '<a class="article-read" href="article/%s.html">Read Article →</a>' % ART_SLUGS[aid], m.group(0), count=1)
+    t, n = re.subn(r'data-id="(a\d+)"[^>]*onclick="openArticle\(\'\1\'\)">.*?class="article-read"[^>]*>Read Article →</(?:span|a)>', read_link, t, flags=re.S)
     assert n >= 31, n
 
     # Sections (replace the old filter bar on the first run)
@@ -347,7 +348,7 @@ def build():
     t = re.sub(r'\s*/\* KN-NEWS:CSS:START \*/.*?/\* KN-NEWS:CSS:END \*/\n', '\n', t, flags=re.S)
     t = t.replace('</style>', CSS + '</style>', 1)
     t = re.sub(r'<!-- KN-NEWS:JS:START -->.*?<!-- KN-NEWS:JS:END -->\n', '', t, flags=re.S)
-    js = JS.replace('__TR__', json.dumps(TR, ensure_ascii=False).replace('</', '<\\/')).replace('__TOPICS__', json.dumps([slug(n) for n, _ in TOPICS]))
+    js = JS.replace('__TR__', json.dumps(TR, ensure_ascii=False).replace('</', '<\\/')).replace('__TOPICS__', json.dumps([slug(tp[0]) for tp in TOPICS])).replace('__ART_SLUGS__', json.dumps(ART_SLUGS))
     t = t.replace('<script src="lead-tracker.js"></script>', js + '<script src="lead-tracker.js"></script>', 1)
 
     # Let the generated script add translations to the page's private TR table
@@ -366,6 +367,7 @@ def build():
 
     open(PAGE, 'w', encoding='utf-8').write(t)
     print('News page built: %d guides, %d FAQ, %d topics, %d translated blocks' % (len(GUIDES), len(FAQ), len(TOPICS), len(TR)))
+    return t
 
 
 def fix_stamp_duty_article():
@@ -421,3 +423,4 @@ if __name__ == '__main__':
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     fix_stamp_duty_article()
     build()
+    write_pages()

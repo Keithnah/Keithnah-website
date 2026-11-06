@@ -3106,10 +3106,6 @@ function knTagsHtml(p){
   new MutationObserver(function(){ applyLabels(); render(); }).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
 })();
 </script>
-<script>var KN_SLUGS = ["111-menerung", "accent-residence", "aethera-residences", "amaya-bdr-sri-damansara", "andabreeze-residences", "arden", "arra-residences", "ascott-star-residence", "axis-causeway-square", "branniganz-suites-bukit-bintang", "brixton-causeway-square", "centrix", "clouthaus", "core-residence", "devia", "dhazelton", "daya-residence", "divine-klcc", "dover-causeway-square", "eaton-residence", "foresthill-residences", "gvinton", "golden-crown-residence", "imperial-residence-pavilion-damansara-heights", "jewel-oxley-towers", "keeperz-suites", "khaya-residences", "laverra", "lightwater-residence", "lumina-residence", "maba-suitez", "mezon-park-enclave", "oaka-residences", "orion-residence", "parkside-residence", "pavilion-square", "phoeniz-suites-kl-city-centre", "pinnacle-bukit-gambier", "queens-residences-3", "ren-residences", "ria", "royal-lexis", "royal-suites-pavilion-damansara-heights", "seiras-residences", "senna-heights", "so-kl-oxley-towers", "sutera-suites", "swnk-houze-bbcc", "tagbay-suites", "the-aldenz", "the-asteriaz", "the-atas", "the-atera", "the-celestz", "the-conlay", "the-kingswoodz", "the-lighthauz", "the-queenswoodz", "the-vividz", "times-square-2", "tujuh-residences", "vi-residence", "waterstone", "westfield-residences", "zenia-parkcity-damansara", "cappella-embassy"];
-function knPageLink(p){ var s=KN_SLUGS[PROJECT_DETAILS.indexOf(p)]; return s ? '<a class="pd-page-link" href="property/'+s+'.html">View full project page &rarr;</a>' : ''; }
-/* Every project opens its own page */
-window.openDetailModal=function(i){ var s=KN_SLUGS[i]; if(s) location.href='property/'+s+'.html'; };</script>
 <script id="kn-menu-hover">
 /* Language and currency menus: one open at a time; on computers they open on hover */
 (function(){
@@ -3132,6 +3128,10 @@ window.openDetailModal=function(i){ var s=KN_SLUGS[i]; if(s) location.href='prop
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeAll(); });
 })();
 </script>
+<script>var KN_SLUGS = ["111-menerung", "accent-residence", "aethera-residences", "amaya-bdr-sri-damansara", "andabreeze-residences", "arden", "arra-residences", "ascott-star-residence", "axis-causeway-square", "branniganz-suites-bukit-bintang", "brixton-causeway-square", "centrix", "clouthaus", "core-residence", "devia", "dhazelton", "daya-residence", "divine-klcc", "dover-causeway-square", "eaton-residence", "foresthill-residences", "gvinton", "golden-crown-residence", "imperial-residence-pavilion-damansara-heights", "jewel-oxley-towers", "keeperz-suites", "khaya-residences", "laverra", "lightwater-residence", "lumina-residence", "maba-suitez", "mezon-park-enclave", "oaka-residences", "orion-residence", "parkside-residence", "pavilion-square", "phoeniz-suites-kl-city-centre", "pinnacle-bukit-gambier", "queens-residences-3", "ren-residences", "ria", "royal-lexis", "royal-suites-pavilion-damansara-heights", "seiras-residences", "senna-heights", "so-kl-oxley-towers", "sutera-suites", "swnk-houze-bbcc", "tagbay-suites", "the-aldenz", "the-asteriaz", "the-atas", "the-atera", "the-celestz", "the-conlay", "the-kingswoodz", "the-lighthauz", "the-queenswoodz", "the-vividz", "times-square-2", "tujuh-residences", "vi-residence", "waterstone", "westfield-residences", "zenia-parkcity-damansara", "cappella-embassy"];
+function knPageLink(p){ var s=KN_SLUGS[PROJECT_DETAILS.indexOf(p)]; return s ? '<a class="pd-page-link" href="property/'+s+'.html">View full project page &rarr;</a>' : ''; }
+/* Every project opens its own page */
+window.openDetailModal=function(i){ var s=KN_SLUGS[i]; if(s) location.href='property/'+s+'.html'; };</script>
 <script src="lead-tracker.js"></script>
 </body>
 </html>

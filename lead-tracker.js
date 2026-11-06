@@ -15,9 +15,11 @@
   };
 
   function pageName() {
-    if (/\/property\//.test(location.pathname)) {
+    var sub = { property: 'Project page: ', article: 'Article: ', topic: 'Topic: ' };
+    var m = location.pathname.match(/\/(property|article|topic)\//);
+    if (m) {
       var h = document.querySelector('h1');
-      return 'Project page: ' + (h ? h.textContent.trim() : location.pathname.split('/').pop());
+      return sub[m[1]] + (h ? h.textContent.trim() : location.pathname.split('/').pop());
     }
     var f = (location.pathname.split('/').pop() || '').replace(/\.html?$/i, '');
     return PAGE_NAMES[f] || f || 'Home';
