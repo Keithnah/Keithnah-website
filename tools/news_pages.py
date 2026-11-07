@@ -11,6 +11,7 @@ import re
 from urllib.parse import quote_plus
 
 from news_content import GUIDES, TOPICS
+import news_i18n as I
 
 SITE = 'https://keithnah.com'
 PAGE = 'blog.html'
@@ -106,24 +107,28 @@ SHELL = """<!DOCTYPE html>
 <header>
   <a class="logo" href="../"><img src="../images/f304c8479b1fe873.png" alt="Keith Nah logo"><span><b>Keith Nah 鈞晖</b><small>Keith Nah Real Estate</small></span></a>
   <nav>{nav}</nav>
-  <a class="wa-btn" href="{wa}" target="_blank" rel="noopener">{wasvg}<span>WhatsApp Keith</span></a>
+  <div class="hdr-right">{menu}<a class="wa-btn" href="{wa}" target="_blank" rel="noopener">{wasvg}<span>{l_wa}</span></a></div>
 </header>
 <main class="wrap">
 {body}
 </main>
-<footer>&copy; 2026 Keith Nah Real Estate · <a href="../blog.html">News</a> · <a href="../projects.html">All projects</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-of-use.html">Terms of Use</a> · <a href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/keithnah_/" target="_blank" rel="noopener">Instagram</a></footer>
+<footer>&copy; 2026 Keith Nah Real Estate · <a href="../blog.html">{l_news}</a> · <a href="../projects.html">{l_all}</a> · <a href="../privacy-policy.html">{l_priv}</a> · <a href="../terms-of-use.html">{l_terms}</a> · <a href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/keithnah_/" target="_blank" rel="noopener">Instagram</a></footer>
 <a class="float-wa" href="{wa}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">{wasvg}</a>
+{tscript}
+{menujs}
 <script src="../lead-tracker.js"></script>
 </body>
 </html>
 """
 
 
-def shell(title, desc, url, body, ld, og='article', msg='Hi Keith, I have a question about Malaysian property.'):
+def shell(c, title, desc, url, body, ld, og='article', msg='Hi Keith, I have a question about Malaysian property.'):
     import build_project_pages as bp  # shared header, nav and styles
-    nav = ''.join('<a href="../{0}"{1}>{2}</a>'.format(h, ' class="active"' if h == 'blog.html' else '', html.escape(n)) for h, n in bp.NAV)
+    nav = ''.join('<a href="../{0}"{1}>{2}</a>'.format(h, ' class="active"' if h == 'blog.html' else '', c.tt(n)) for h, n in bp.NAV)
     return SHELL.format(title=A(title), desc=A(desc), url=A(url), og=og, ld=json.dumps(ld, ensure_ascii=False).replace('</', '<\\/'),
-                        css=bp.CSS, pcss=PAGE_CSS, nav=nav, wa=A(wa(msg)), wasvg=bp.WA_SVG, body=body)
+                        css=bp.CSS, pcss=PAGE_CSS + I.MENU_CSS, nav=nav, wa=A(wa(msg)), wasvg=bp.WA_SVG, body=body, menu=I.menu_html(),
+                        l_wa=c.tt('WhatsApp Keith'), l_news=c.tt('News'), l_all=c.tt('All projects'), l_priv=c.tt('Privacy Policy'),
+                        l_terms=c.tt('Terms of Use'), tscript=c.script(), menujs=I.menu_js())
 
 
 def iso(d):
@@ -135,23 +140,41 @@ def excerpt(s, n):
     return s if len(s) <= n else s[:n].rsplit(' ', 1)[0].rstrip('.,;:—– ') + '…'
 
 
-def acard(aid, tag='h2'):
+def excerpt_any(s, l):
+    """Excerpt for any language: CJK has no spaces and packs more meaning per character."""
+    s = html.unescape(s)
+    n = {'zh-CN': 70, 'zh-TW': 70, 'ja': 80, 'ko': 95}.get(l, 170)
+    if len(s) <= n:
+        return s
+    cut = s[:n]
+    if ' ' in cut and l not in ('zh-CN', 'zh-TW', 'ja'):
+        cut = cut.rsplit(' ', 1)[0]
+    return cut.rstrip('.,;:—–、。， ') + '…'
+
+
+def tr_excerpt(text, n=170):
+    full = I.tr(text)
+    return {l: excerpt_any(v, l) for l, v in full.items()}
+
+
+def acard(c, aid, tag='h2'):
     a = ARTICLES[aid]
-    return '<a class="acard" href="../article/{s}.html"><small>{c} · {d}</small><{t}>{h}</{t}><p>{p}</p><span>Read article →</span></a>'.format(
-        s=ART_SLUGS[aid], c=T(a['cat']), d=T(a['date']), t=tag, h=T(a['title']), p=T(excerpt(a['intro'], 170)))
+    return ('<a class="acard" href="../article/{s}.html"><small>{c} · <span data-date="{iso}">{d}</span></small><{t}>{h}</{t}><p>{p}</p><span>{r}</span></a>').format(
+        s=ART_SLUGS[aid], c=c.tt(a['cat']), iso=iso(a['date']), d=T(a['date']), t=tag, h=c.tt(a['title']),
+        p=c.tt(excerpt(a['intro'], 170), tr_excerpt(a['intro'])), r=c.tt('Read article →'))
 
 
-def chips(names):
+def chips(c, names):
     return '<div class="chips">%s</div>' % ''.join(
-        '<a class="chip" href="../topic/{s}.html">{n}<em>{c}</em></a>'.format(s=slug(tp[0]), n=T(tp[0]), c=len(tp[1]))
+        '<a class="chip" href="../topic/{s}.html">{n}<em>{k}</em></a>'.format(s=slug(tp[0]), n=c.tt(tp[0]), k=len(tp[1]))
         for tp in TOPICS if tp[0] in names)
 
 
-def crumbs(*parts):
-    out = '<a href="../">Home</a><span>›</span><a href="../blog.html">News</a>'
+def crumbs(c, *parts):
+    out = '<a href="../">%s</a><span>›</span><a href="../blog.html">%s</a>' % (c.tt('Home'), c.tt('News'))
     for href, label in parts[:-1]:
-        out += '<span>›</span><a href="{0}">{1}</a>'.format(href, T(label))
-    out += '<span>›</span><strong>%s</strong>' % T(parts[-1][1])
+        out += '<span>›</span><a href="{0}">{1}</a>'.format(href, c.tt(label))
+    out += '<span>›</span><strong>%s</strong>' % c.tt(parts[-1][1])
     return '<nav class="crumbs" aria-label="Breadcrumb">%s</nav>' % out
 
 
@@ -164,38 +187,45 @@ def write_pages():
             topics_of.setdefault(a, []).append(tp[0])
     newest = sorted(ARTICLES, key=lambda k: iso(ARTICLES[k]['date']), reverse=True)
     guides = {g['id']: g for g in GUIDES}
+    missing = set()
 
     for aid, a in ARTICLES.items():
+        c = I.Collector()
         url = '%s/article/%s.html' % (SITE, ART_SLUGS[aid])
         title = html.unescape(a['title'])
         g = (a.get('grad') or '#1c1a17,#3a3226').split(',')
         mine = topics_of.get(aid, [])
         related = [k for k in newest if k != aid and set(topics_of.get(k, [])) & set(mine)][:3] or [k for k in newest if k != aid][:3]
-        secs = ''.join('<h2>%s</h2>%s' % (T(s['h2']), ''.join('<p>%s</p>' % T(p) for p in s['paragraphs'])) for s in a['sections'])
-        stats = ''.join('<div class="art-stat"><b>%s</b><span>%s</span></div>' % (T(s['value']), T(s['label'])) for s in a.get('stats', []))
+        secs = ''.join('<h2>%s</h2>%s' % (c.tt(s['h2']), ''.join('<p>%s</p>' % c.tt(p) for p in s['paragraphs'])) for s in a['sections'])
+        stats = ''.join('<div class="art-stat"><b>%s</b><span>%s</span></div>' % (T(s['value']), c.tt(s['label'])) for s in a.get('stats', []))
         trail = ([('../topic/%s.html' % slug(mine[0]), mine[0])] if mine else []) + [('', title)]
         body = """
   {crumbs}
-  <div class="art-hero" style="background:linear-gradient(135deg,{g1},{g2});">{icon}<span class="art-cat">{cat}</span><h1>{h1}</h1><time datetime="{iso}">{date} · Keith Nah</time></div>
+  <div class="art-hero" style="background:linear-gradient(135deg,{g1},{g2});">{icon}<span class="art-cat">{cat}</span><h1>{h1}</h1><time datetime="{iso}"><span data-date="{iso}">{date}</span> · Keith Nah</time></div>
   <div class="art-wrap">
     <article class="art-body">
       <p class="lead">{intro}</p>
       {secs}
       {stats}
-      <div class="art-take"><strong>Key takeaway</strong>{take}</div>
+      <div class="art-take"><strong>{l_take}</strong>{take}</div>
     </article>
     <aside class="art-side">
-      <div class="side-box"><h3>Talk to Keith</h3><p>Questions about this topic or a project? Keith replies on WhatsApp.</p><a class="wa-btn" href="{wa}" target="_blank" rel="noopener">WhatsApp Keith</a></div>
+      <div class="side-box"><h3>{l_talk}</h3><p>{l_q}</p><a class="wa-btn" href="{wa}" target="_blank" rel="noopener">{l_wa}</a></div>
       {topics}
     </aside>
   </div>
-  <section class="blk"><h2>Related articles</h2><div class="acards">{related}</div></section>""".format(
-            crumbs=crumbs(*trail), g1=g[0], g2=g[1] if len(g) > 1 else g[0], icon=a.get('icon', ''), cat=T(a['cat']), h1=T(a['title']),
-            iso=iso(a['date']), date=T(a['date']), intro=T(a['intro']), secs=secs,
-            stats=('<div class="art-stats">%s</div>' % stats) if stats else '', take=T(a['takeaway']),
+  <section class="blk"><h2>{l_rel}</h2><div class="acards">{related}</div></section>""".format(
+            crumbs=crumbs(c, *trail), g1=g[0], g2=g[1] if len(g) > 1 else g[0], icon=a.get('icon', ''), cat=c.tt(a['cat']), h1=c.tt(a['title']),
+            iso=iso(a['date']), date=T(a['date']), intro=c.tt(a['intro']), secs=secs,
+            stats=('<div class="art-stats">%s</div>' % stats) if stats else '', take=c.tt(a['takeaway']),
+            l_take=c.tt('Key takeaway'), l_talk=c.tt('Talk to Keith'), l_q=c.tt('Questions about this topic or a project? Keith replies on WhatsApp.'),
+            l_wa=c.tt('WhatsApp Keith'), l_rel=c.tt('Related articles'),
             wa=A(wa('Hi Keith, I read "%s" on your website and have a question.' % title)),
-            topics=('<div class="side-box"><h3>Topics</h3>%s</div>' % chips(mine)) if mine else '',
-            related=''.join(acard(k, 'h3') for k in related))
+            topics=('<div class="side-box"><h3>%s</h3>%s</div>' % (c.tt('Topics'), chips(c, mine))) if mine else '',
+            related=''.join(acard(c, k, 'h3') for k in related))
+        for p in [a['title'], a['intro'], a['takeaway']] + [s['h2'] for s in a['sections']] + [p for s in a['sections'] for p in s['paragraphs']]:
+            if not I.tr(p):
+                missing.add((aid, p[:60]))
         ld = [{'@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'datePublished': iso(a['date']),
                'author': {'@type': 'Person', 'name': 'Keith Nah'}, 'publisher': {'@type': 'Organization', 'name': 'Keith Nah Real Estate'},
                'description': excerpt(a['intro'], 300), 'mainEntityOfPage': url, 'articleSection': html.unescape(a['cat'])},
@@ -203,33 +233,44 @@ def write_pages():
                   {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE + '/'},
                   {'@type': 'ListItem', 'position': 2, 'name': 'News', 'item': SITE + '/blog.html'},
                   {'@type': 'ListItem', 'position': 3, 'name': title, 'item': url}]}]
-        open('article/%s.html' % ART_SLUGS[aid], 'w', encoding='utf-8').write(
-            shell('%s | Keith Nah' % title, excerpt(a['intro'], 158), url, body, ld,
-                  msg='Hi Keith, I read "%s" on your website and have a question.' % title))
+        page = shell(c, '%s | Keith Nah' % title, excerpt(a['intro'], 158), url, body, ld,
+                     msg='Hi Keith, I read "%s" on your website and have a question.' % title)
+        open('article/%s.html' % ART_SLUGS[aid], 'w', encoding='utf-8').write(page)
 
     for name, ids, desc, gid in TOPICS:
+        c = I.Collector()
         s = slug(name)
         url = '%s/topic/%s.html' % (SITE, s)
         ids_sorted = sorted(ids, key=lambda k: iso(ARTICLES[k]['date']), reverse=True)
         gbox = ''
         if name == 'MM2H':
-            gbox += '<div class="guide-box"><p>See the MM2H tiers, requirements and costs side by side.</p><a href="../mm2h.html">MM2H explained →</a></div>'
+            gbox += '<div class="guide-box"><p>%s</p><a href="../mm2h.html">%s</a></div>' % (
+                c.tt('See the MM2H tiers, requirements and costs side by side.'), c.tt('MM2H explained →'))
         if gid in guides:
             gd = guides[gid]
-            gbox += '<div class="guide-box"><p>Want the step-by-step version? Read our {0} guide.</p><a href="../blog.html#{1}">{0} →</a></div>'.format(T(gd['tab']), gd['id'])
+            arrow = {l: v + ' →' for l, v in I.tr(gd['tab']).items()}
+            gbox += '<div class="guide-box"><p>{0}</p><a href="../blog.html#{1}">{2}</a></div>'.format(
+                c.tt('Want the step-by-step version? Read our %s guide.' % gd['tab'], I.fmt('Want the step-by-step version? Read our {guide} guide.', guide=gd['tab'])),
+                gd['id'], c.tt(gd['tab'] + ' →', arrow))
+        n = len(ids)
+        word = 'article' if n == 1 else 'articles'
+        head = {l: '%s · %d %s' % (I.tr('Topic').get(l, 'Topic'), n, I.tr(word).get(l, word)) for l in I.LANGS}
         body = """
   {crumbs}
-  <div class="topic-head"><span class="eyebrow2">Topic · {n} article{pl}</span><h1>{h1}</h1><p>{desc}</p></div>
+  <div class="topic-head"><span class="eyebrow2">{head}</span><h1>{h1}</h1><p>{desc}</p></div>
   <div class="acards">{cards}</div>
   {gbox}
-  <section class="blk"><h2>More topics</h2>{more}</section>""".format(
-            crumbs=crumbs(('../blog.html#blog', 'Topics'), ('', name)), n=len(ids), pl='' if len(ids) == 1 else 's', h1=T(name), desc=T(desc),
-            cards=''.join(acard(k) for k in ids_sorted), gbox=gbox, more=chips([tp[0] for tp in TOPICS if tp[0] != name]))
+  <section class="blk"><h2>{l_more}</h2>{more}</section>""".format(
+            crumbs=crumbs(c, ('../blog.html#blog', 'Topics'), ('', name)), head=c.tt('Topic · %d %s' % (n, word), head), h1=c.tt(name), desc=c.tt(desc),
+            cards=''.join(acard(c, k) for k in ids_sorted), gbox=gbox, l_more=c.tt('More topics'),
+            more=chips(c, [tp[0] for tp in TOPICS if tp[0] != name]))
         ld = {'@context': 'https://schema.org', '@type': 'CollectionPage', 'name': '%s: property articles' % name, 'url': url, 'description': desc,
               'hasPart': [{'@type': 'Article', 'headline': html.unescape(ARTICLES[k]['title']), 'url': '%s/article/%s.html' % (SITE, ART_SLUGS[k])} for k in ids_sorted]}
-        open('topic/%s.html' % s, 'w', encoding='utf-8').write(
-            shell('%s: Malaysia Property Articles | Keith Nah' % name, '%s %d article%s by Keith Nah.' % (desc, len(ids), '' if len(ids) == 1 else 's'),
-                  url, body, ld, og='website', msg='Hi Keith, I was reading about %s on your website.' % name))
+        page = shell(c, '%s: Malaysia Property Articles | Keith Nah' % name, '%s %d %s by Keith Nah.' % (desc, n, word),
+                     url, body, ld, og='website', msg='Hi Keith, I was reading about %s on your website.' % name)
+        open('topic/%s.html' % s, 'w', encoding='utf-8').write(page)
 
     json.dump(ART_SLUGS, open('tools/article_slugs.json', 'w', encoding='utf-8'), indent=1)
-    print('Wrote %d article pages and %d topic pages' % (len(ARTICLES), len(TOPICS)))
+    print('Wrote %d article pages and %d topic pages; untranslated article text: %d' % (len(ARTICLES), len(TOPICS), len(missing)))
+    for m in sorted(missing)[:10]:
+        print('  missing:', m)
