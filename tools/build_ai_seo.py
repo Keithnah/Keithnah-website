@@ -60,7 +60,7 @@ def llms():
     lines = [
         '# Keith Nah Real Estate',
         '',
-        '> Keith Nah (鈞晖) is a property consultant in Malaysia who helps local and international buyers choose new-launch '
+        '> Keith Nah (鈞晖, REN 60517) is a registered real estate negotiator in Malaysia who helps local and international buyers choose new-launch '
         'condominiums and homes, mainly in Kuala Lumpur (KL City Centre, TRX, Bukit Bintang, Bangsar, Bukit Jalil), with '
         'projects also in Selangor, Penang and Johor. Buyers pay no agent fee on new launches. Each project page lists '
         'price, sizes, bedrooms, tenure, completion date and floor plans. Contact: WhatsApp %s.' % WHATSAPP,
@@ -109,7 +109,7 @@ def faq_items(page, pattern):
 
 def structured_data():
     person = {'@type': 'Person', '@id': SITE + '/#keith', 'name': 'Keith Nah', 'alternateName': '鈞晖',
-              'jobTitle': 'Property Consultant', 'url': SITE + '/about-keith.html', 'image': LOGO, 'sameAs': SAME_AS,
+              'jobTitle': 'Property Consultant', 'identifier': {'@type': 'PropertyValue', 'name': 'REN', 'value': '60517'}, 'url': SITE + '/about-keith.html', 'image': LOGO, 'sameAs': SAME_AS,
               'worksFor': {'@id': SITE + '/#agency'}}
     agency = {'@type': 'RealEstateAgent', '@id': SITE + '/#agency', 'name': 'Keith Nah Real Estate', 'url': SITE + '/',
               'logo': LOGO, 'image': LOGO, 'telephone': WHATSAPP, 'founder': {'@id': SITE + '/#keith'}, 'sameAs': SAME_AS,
