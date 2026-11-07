@@ -122,9 +122,14 @@ header nav a.active,header nav a:hover{text-decoration:underline;text-underline-
 .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px;}
 .btn2{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:100px;border:1px solid #111;font-size:13px;font-weight:600;}
 .btn2:hover{background:#111;color:#fff;}
-.tags{display:flex;flex-wrap:wrap;gap:8px;}
-.tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--grey);background:#fff;border:1px solid rgba(17,17,17,0.14);border-radius:100px;padding:6px 13px;}
-.tag svg{width:12px;height:12px;opacity:.7;} .tag:hover{border-color:var(--gold);color:var(--gold);}
+.tg-sub{color:var(--grey);font-size:14px;margin:-6px 0 18px;}
+.tg-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px 24px;}
+.tg-row{display:grid;grid-template-columns:170px 1fr;gap:16px;align-items:start;padding:18px 0;border-top:1px solid var(--line);} .tg-row:first-child{border-top:0;}
+.tg-label{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--grey);font-weight:700;margin:8px 0 0;}
+.tg-list{display:flex;flex-wrap:wrap;gap:8px;}
+.tg{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:#111;background:var(--bg);border:1px solid transparent;border-radius:100px;padding:7px 14px;transition:border-color .15s,color .15s,background .15s;}
+.tg svg{width:12px;height:12px;color:var(--gold);flex:0 0 12px;} .tg:hover{border-color:var(--gold);color:var(--gold);background:#fff;}
+@media(max-width:700px){.tg-box{padding:4px 16px;}.tg-row{grid-template-columns:1fr;gap:10px;padding:16px 0;}.tg-label{margin:0;}}
 .stats{display:grid;grid-template-columns:repeat(5,1fr);background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:46px;}
 .stat{padding:20px 22px;border-left:1px solid var(--line);} .stat:first-child{border-left:0;}
 .stat span{display:block;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--grey);font-weight:600;margin-bottom:6px;}
@@ -195,7 +200,14 @@ def page(i):
     stats = ''.join('<div class="stat"><span>%s</span><strong>%s</strong></div>' % (E(k), E(v)) for k, v in [
         ('Starting Price', p.get('price')), ('Size', p.get('size')), ('Bedrooms', p.get('rooms')),
         ('Tenure', p.get('tenure')), ('Completion', p.get('completion'))] if v)
-    tags = ''.join('<a class="tag" href="../projects.html?tag=%s#tagSection">%s%s</a>' % (E(t.replace(' ', '+')), TAG_SVG, E(t)) for t in tg)
+    groups = [('This project', []), ('Nearby landmarks', []), ('Area & property type', []), ('中文搜索', [])]
+    low = name.lower()
+    for t_ in tg:
+        k = 0 if low in t_.lower() else 3 if re.search(r'[\u4e00-\u9fff]', t_) else 1 if re.search(r'\bnear\b', t_, re.I) else 2
+        groups[k][1].append(t_)
+    tags = ''.join('<div class="tg-row"><p class="tg-label">%s</p><div class="tg-list">%s</div></div>' % (E(lbl), ''.join(
+        '<a class="tg" href="../projects.html?tag=%s#tagSection">%s<span>%s</span></a>' % (E(x.replace(' ', '+')), TAG_SVG, E(x)) for x in items))
+        for lbl, items in groups if items)
     points = ''.join('<div class="point"><b>%d</b><p>%s</p></div>' % (n + 1, E(x)) for n, x in enumerate(p.get('selling_points') or []))
     facts = ''.join('<div class="fact"><span>%s</span><strong>%s</strong></div>' % (E(k), E(v)) for k, v in (p.get('details_extra') or {}).items())
     amen = ''.join('<li>%s</li>' % E(a) for a in (p.get('amenities') or []))
@@ -273,7 +285,6 @@ def page(i):
       <p class="loc">{loc}</p>
       <div class="price"><small>Starting Price</small>{price}</div>
       <div class="ctas"><a class="wa-btn" href="{wa}" target="_blank" rel="noopener">{wasvg}WhatsApp Keith</a><a class="btn2" href="../compare.html">Compare projects</a></div>
-      <div class="tags">{tags}</div>
     </div>
   </div>
   <div class="stats">{stats}</div>
@@ -283,6 +294,7 @@ def page(i):
   <section class="blk"><h2>Location</h2><p class="lead">{loctext}</p>{amen_blk}</section>
   {layouts_blk}
   {fits_blk}
+  {tags_blk}
   {near_blk}
   {arts_blk}
   <div class="cta"><h2>Want Keith's take on {display}?</h2><p>Ask for the latest price, available units and the full floor plans.</p><a class="wa-btn" href="{wa}" target="_blank" rel="noopener">{wasvg}WhatsApp Keith About This Project</a></div>
@@ -313,6 +325,7 @@ document.addEventListener('click',function(e){{
         facts_blk=('<section class="blk"><h2>Project Details</h2><div class="facts">%s</div></section>' % facts) if facts else '',
         amen_blk=('<ul class="amen">%s</ul>' % amen) if amen else '',
         layouts_blk=('<section class="blk"><h2>%s Floor Plans &amp; Unit Types</h2><div class="layouts">%s</div></section>' % (E(display), layouts)) if layouts else '',
+        tags_blk=('<section class="blk tg-sec"><h2>Popular Searches for %s</h2><p class="tg-sub">Tap a tag to see every project that matches it.</p><div class="tg-box">%s</div></section>' % (E(display), tags)) if tg else '',
         fits_blk=('<section class="blk"><h2>Who Should Consider %s?</h2><div class="fits">%s</div></section>' % (E(display), fits)) if fits else '',
         near_blk=('<section class="blk"><h2>Nearby Projects</h2><div class="cards">%s</div></section>' % near) if near else '',
         arts_blk=('<section class="blk"><h2>Related Articles</h2><div class="cards">%s</div></section>' % arts) if arts else '')
