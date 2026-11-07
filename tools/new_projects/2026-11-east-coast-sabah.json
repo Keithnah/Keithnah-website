@@ -175,49 +175,56 @@
     "size": "351 – 372 sqft",
     "rooms": "Studio, 1 Shower",
     "tag": "Studio",
-    "desc": "A studio suite with a vanity, powder room and shower; Type A2 (372 sqft) is the most common studio."
+    "desc": "A studio suite with a vanity, powder room and shower; Type A2 (372 sqft) is the most common studio.",
+    "img": "images/744534bf4aa797e0.jpg"
    },
    {
     "type": "Type B1 / B1A / B1B — 1 Room",
     "size": "388 – 389 sqft",
     "rooms": "1 Room + Front Room, 1 Shower",
     "tag": "1 Room",
-    "desc": "A 1-room suite with a front room, vanity, powder room and shower."
+    "desc": "A 1-room suite with a front room, vanity, powder room and shower.",
+    "img": "images/387d4a5042e8f64b.jpg"
    },
    {
     "type": "Type B2A / B2B — 1 Room",
     "size": "373 sqft",
     "rooms": "1 Room + Front Room, 1 Shower",
     "tag": "1 Room",
-    "desc": "A compact 1-room suite with a front room, vanity, powder room and shower."
+    "desc": "A compact 1-room suite with a front room, vanity, powder room and shower.",
+    "img": "images/7a245e6ca7dc986b.jpg"
    },
    {
     "type": "Type C — 1 Room",
     "size": "457 sqft",
     "rooms": "1 Room + Front Room, 1 Shower",
     "tag": "1 Room",
-    "desc": "A larger 1-room suite with a front room, vanity, powder room and shower."
+    "desc": "A larger 1-room suite with a front room, vanity, powder room and shower.",
+    "img": "images/d3dda0ea3f48e9e9.jpg"
    },
    {
     "type": "Type D — 2 Rooms",
     "size": "511 sqft",
     "rooms": "2 Rooms + Front Room, 1 Shower",
     "tag": "Most units",
-    "desc": "The most common layout: 2 rooms and a front room with a vanity, powder room and shower."
+    "desc": "The most common layout: 2 rooms and a front room with a vanity, powder room and shower.",
+    "img": "images/917e1d77be0d1184.jpg"
    },
    {
     "type": "Type E — 2 Rooms",
     "size": "568 sqft",
     "rooms": "2 Rooms + Front Room, 1 Shower",
     "tag": "2 Rooms",
-    "desc": "A 2-room suite with a front room, vanity, powder room and shower."
+    "desc": "A 2-room suite with a front room, vanity, powder room and shower.",
+    "img": "images/74743a1950097a02.jpg"
    },
    {
     "type": "Type F — 2 Rooms + Study",
     "size": "640 sqft",
     "rooms": "2 Rooms + Study, 1 Shower",
     "tag": "Study",
-    "desc": "A 2-room suite with a study, front room, vanity, powder room and shower."
+    "desc": "A 2-room suite with a study, front room, vanity, powder room and shower.",
+    "img": "images/627505068cbd5378.jpg"
    },
    {
     "type": "Type G1 / G2 — Dual Key",
