@@ -76,14 +76,16 @@
     "size": "506 sqft",
     "rooms": "2 Bedrooms, 1 Bathroom",
     "tag": "Most units",
-    "desc": "A 506 sqft (47 sqm) 2-bedroom, 1-bathroom layout with living, dining and kitchen areas (Types B1 to B6)."
+    "desc": "A 506 sqft (47 sqm) home with a master bedroom, a second bedroom, separate WC and shower, living, dining and kitchen (Types B1 to B6; Type B1 shown).",
+    "img": "images/bef4f1d629b94233.jpg"
    },
    {
     "type": "Type C — 3 Bedrooms",
     "size": "753 sqft",
     "rooms": "3 Bedrooms, 2 Bathrooms",
     "tag": "Family",
-    "desc": "A 753 sqft (70 sqm) 3-bedroom, 2-bathroom home with a master bathroom (Types C1 and C2)."
+    "desc": "A 753 sqft (70 sqm) home with a master bedroom and master bathroom, 2 more bedrooms, a WC and shower, living, dining and kitchen (Types C1 and C2; Type C2 shown).",
+    "img": "images/0207021b5998b37b.jpg"
    }
   ],
   "tags": [
