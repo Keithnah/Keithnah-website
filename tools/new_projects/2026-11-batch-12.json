@@ -146,7 +146,7 @@
   "tenure": "Leasehold (expiring 2119)",
   "size": "495 – 903 sqft",
   "size_short": "495-903 sqft",
-  "rooms": "1 – 3 Bedrooms (incl. Dual Key)",
+  "rooms": "1+1 – 3 Bedrooms (incl. Dual Key)",
   "rooms_short": "1-3 Bedrooms",
   "completion": "2025",
   "completion_short": "2025",
@@ -205,7 +205,56 @@
    "Security": "3-tier security",
    "Furnishing": "Partly furnished: 2 to 4 inverter air-conditioners, built-in kitchen cabinet with electric hob and hood, water heater in all bathrooms, half shower screen"
   },
-  "layouts": [],
+  "layouts": [
+   {
+    "type": "Type A",
+    "size": "495 sqft",
+    "rooms": "1+1 Bedrooms, 1 Bathroom",
+    "tag": "Entry",
+    "desc": "A master bedroom plus a study, living, dining, kitchen and balcony.",
+    "img": "images/8d323b639ac7c435.jpg"
+   },
+   {
+    "type": "Type B",
+    "size": "548 sqft",
+    "rooms": "2 Bedrooms, 1 Bathroom",
+    "tag": "2 Bedrooms",
+    "desc": "2 bedrooms and 1 bathroom with a balcony and open kitchen.",
+    "img": "images/ccdda8dbb85dd1b5.jpg"
+   },
+   {
+    "type": "Type C",
+    "size": "590 sqft",
+    "rooms": "2 Bedrooms, 1 Bathroom",
+    "tag": "2 Bedrooms",
+    "desc": "A wider 2-bedroom, 1-bathroom layout with a balcony.",
+    "img": "images/85625e02c2161319.jpg"
+   },
+   {
+    "type": "Type E",
+    "size": "853 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Family",
+    "desc": "3 bedrooms and 2 bathrooms with a yard, kitchen and balcony.",
+    "img": "images/35316990b2063070.jpg"
+   },
+   {
+    "type": "Type D",
+    "size": "903 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Largest",
+    "desc": "The largest layout: 3 bedrooms and 2 bathrooms with a balcony.",
+    "img": "images/9bfd78afc97513ed.jpg"
+   },
+   {
+    "type": "Type D1",
+    "size": "903 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Dual Key",
+    "desc": "A 903 sqft dual-key layout with 3 bedrooms and 2 bathrooms.",
+    "img": "images/2e0e8ab334303e26.jpg"
+   }
+  ],
   "tags": [
    "Laurel Residence",
    "Laurel Residence price",
@@ -289,7 +338,32 @@
    "Furnishing": "Partly furnished: air-conditioners in the living room and all bedrooms, water heaters for 2 bathrooms, kitchen cabinet with hood and hob",
    "Certification": "GreenRE"
   },
-  "layouts": [],
+  "layouts": [
+   {
+    "type": "Type A",
+    "size": "706 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "KL City View",
+    "desc": "2 bedrooms and 2 bathrooms with a balcony.",
+    "img": "images/0c6a1957ed1ca201.jpg"
+   },
+   {
+    "type": "Type B",
+    "size": "855 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Show unit",
+    "desc": "3 bedrooms and 2 bathrooms with a balcony and hackable wall.",
+    "img": "images/ac0038348a79a70a.jpg"
+   },
+   {
+    "type": "Type C",
+    "size": "1,006 sqft",
+    "rooms": "4 Bedrooms, 2 Bathrooms",
+    "tag": "Largest",
+    "desc": "4 bedrooms and 2 bathrooms with a balcony and hackable wall.",
+    "img": "images/3290fe8794c748e2.jpg"
+   }
+  ],
   "tags": [
    "M Aspira",
    "M Aspira price",
@@ -378,35 +452,40 @@
     "size": "1,637 sqft",
     "rooms": "3+1 Rooms, 3+1 Bathrooms",
     "tag": "Largest",
-    "desc": "The largest home with 3+1 rooms, 3+1 bathrooms, a store room and 2 car park bays."
+    "desc": "The largest home with 3+1 rooms, 3+1 bathrooms, a store room and 2 car park bays.",
+    "img": "images/a5526f60c9639749.jpg"
    },
    {
     "type": "Type B",
     "size": "1,434 sqft",
     "rooms": "3+1 Rooms, 2+1 Bathrooms",
     "tag": "Show unit",
-    "desc": "3+1 rooms, 2+1 bathrooms, a balcony, store room and 2 car park bays."
+    "desc": "3+1 rooms, 2+1 bathrooms, a balcony, store room and 2 car park bays.",
+    "img": "images/c86247202c78ae2a.jpg"
    },
    {
     "type": "Type C",
     "size": "1,353 sqft",
     "rooms": "3+1 Rooms, 2+1 Bathrooms",
     "tag": "Family",
-    "desc": "3+1 rooms and 2+1 bathrooms with a balcony and 2 car park bays."
+    "desc": "3+1 rooms and 2+1 bathrooms with a balcony and 2 car park bays.",
+    "img": "images/cc936316094f7629.jpg"
    },
    {
     "type": "Type D1",
     "size": "1,230 sqft",
     "rooms": "3+1 Rooms, 2 Bathrooms",
     "tag": "Store room",
-    "desc": "3+1 rooms and 2 bathrooms with a store room and 2 car park bays."
+    "desc": "3+1 rooms and 2 bathrooms with a store room and 2 car park bays.",
+    "img": "images/6116a21945050600.jpg"
    },
    {
     "type": "Type D",
     "size": "1,158 sqft",
     "rooms": "3 Rooms, 2 Bathrooms",
     "tag": "Entry",
-    "desc": "A 3-room, 2-bathroom home with a balcony and 2 car park bays."
+    "desc": "A 3-room, 2-bathroom home with a balcony and 2 car park bays.",
+    "img": "images/2fee2a9cc905cce0.jpg"
    }
   ],
   "tags": [
@@ -497,21 +576,24 @@
     "size": "484 sqft",
     "rooms": "2 Rooms, 1 Bathroom",
     "tag": "2 Rooms",
-    "desc": "A 484 sqft (45 sqm) serviced suite with 2 rooms, a bathroom, living, dining and kitchen."
+    "desc": "A 484 sqft (45 sqm) serviced suite with 2 rooms, a bathroom, living, dining and kitchen.",
+    "img": "images/6f566b38c22634da.jpg"
    },
    {
     "type": "Type B1 – B4",
     "size": "657 sqft",
     "rooms": "1 Room, 2 Bathrooms",
     "tag": "Largest",
-    "desc": "A 657 sqft (61 sqm) suite with a bedroom, 2 bathrooms, living, dining and kitchen."
+    "desc": "A 657 sqft (61 sqm) suite with a bedroom, 2 bathrooms, living, dining and kitchen.",
+    "img": "images/5bdfa330c522da14.jpg"
    },
    {
     "type": "Type C1 – C4",
     "size": "323 sqft",
     "rooms": "Studio Office Suite",
     "tag": "Studio",
-    "desc": "A 323 sqft (30 sqm) studio office suite with a kitchenette and toilet."
+    "desc": "A 323 sqft (30 sqm) studio office suite with a kitchenette and toilet.",
+    "img": "images/4d9c3ac6cf934ef2.jpg"
    }
   ],
   "tags": [
@@ -603,28 +685,32 @@
     "size": "1,100 sqft",
     "rooms": "3+1 Rooms, 2 Bathrooms",
     "tag": "Most units",
-    "desc": "3 bedrooms, a utility room and study, 2 bathrooms; with or without balcony."
+    "desc": "3 bedrooms, a utility room and study, 2 bathrooms; with or without balcony.",
+    "img": "images/ee39660893fdf3d5.jpg"
    },
    {
     "type": "Type C1 / C2",
     "size": "1,129 sqft",
     "rooms": "3+1 Rooms, 2 Bathrooms",
     "tag": "Elderly-friendly",
-    "desc": "Elderly-friendly 3+1-bedroom home with a ramp at the foyer and one bathroom."
+    "desc": "Elderly-friendly 3+1-bedroom home with a ramp at the foyer and one bathroom.",
+    "img": "images/3a11b9912e63ce2d.jpg"
    },
    {
     "type": "Type B1 – B4",
     "size": "1,300 sqft",
     "rooms": "4+1 Rooms, 2 Bathrooms",
     "tag": "Family",
-    "desc": "4 bedrooms, a utility room and study, 2 bathrooms; with or without balcony."
+    "desc": "4 bedrooms, a utility room and study, 2 bathrooms; with or without balcony.",
+    "img": "images/57cb64df55718e5b.jpg"
    },
    {
     "type": "Type D1 / D2",
     "size": "1,331 sqft",
     "rooms": "4+1 Rooms, 2 Bathrooms",
     "tag": "Elderly-friendly",
-    "desc": "Elderly-friendly 4+1-bedroom home with a ramp at the foyer and one bathroom."
+    "desc": "Elderly-friendly 4+1-bedroom home with a ramp at the foyer and one bathroom.",
+    "img": "images/b632f16cb85327bf.jpg"
    }
   ],
   "tags": [
@@ -713,7 +799,8 @@
     "size": "550 sqft",
     "rooms": "2 Bedrooms, 1 Bathroom",
     "tag": "All units",
-    "desc": "The single layout of the development: 2 bedrooms and 1 bathroom in 550 sqft."
+    "desc": "The single layout of the development: 2 bedrooms and 1 bathroom in 550 sqft.",
+    "img": "images/538aa3f1ebf13d61.jpg"
    }
   ],
   "tags": [
@@ -797,7 +884,32 @@
    "Security": "Multi-tier security",
    "Furnishing": "Bare unit with water heater storage tank"
   },
-  "layouts": [],
+  "layouts": [
+   {
+    "type": "Type B1 / B2",
+    "size": "2,028 – 2,030 sqft",
+    "rooms": "3+1 Bedrooms, 3+1 Bathrooms",
+    "tag": "Show unit",
+    "desc": "3+1 bedrooms and 3+1 bathrooms with a family area, dry and wet kitchens and 1 balcony (Block B, Levels 2–12).",
+    "img": "images/35b76a2c9a2938f3.jpg"
+   },
+   {
+    "type": "Type B3 / B4",
+    "size": "2,168 – 2,169 sqft",
+    "rooms": "3+1 Bedrooms, 3+1 Bathrooms",
+    "tag": "3 Balconies",
+    "desc": "The Level 1 version of Types B1/B2 with 3 balconies (Block B).",
+    "img": "images/81c121d74209b6ba.jpg"
+   },
+   {
+    "type": "Type A1 / A2",
+    "size": "2,500 – 2,530 sqft",
+    "rooms": "4+1 Bedrooms, 5+1 Bathrooms",
+    "tag": "Largest",
+    "desc": "4+1 bedrooms and 5+1 bathrooms with a walk-in wardrobe, family area and 1 or 2 balconies (Block A).",
+    "img": "images/0ef1e1170d122904.jpg"
+   }
+  ],
   "tags": [
    "Stellar Damansara",
    "Stellar Damansara price",
