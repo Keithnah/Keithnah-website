@@ -57,6 +57,21 @@ def L(s):
     return T(s)
 
 
+def G(en, wrap=None):
+    """Register a guide text unit from tools/i18n; wrap(text) builds the unit's inner HTML."""
+    import news_i18n
+    wrap = wrap or (lambda x: T(x))
+    tr = news_i18n.tr(en)
+    if tr:
+        TR[wrap(en)] = {l: wrap(v) for l, v in tr.items()}
+    else:
+        MISSING.append(en[:60])
+    return wrap(en)
+
+
+MISSING = []
+
+
 # ---------- FAQ from the Home page ----------
 index = open('index.html', encoding='utf-8').read()
 FAQ = []
@@ -88,13 +103,13 @@ def guides_html():
         for k, g in enumerate(GUIDES))
     panels = ''
     for k, g in enumerate(GUIDES):
-        rows = ''.join('<tr><th scope="row">%s</th><td>%s</td></tr>' % (T(a), T(b)) for a, b in g['numbers'])
-        steps = ''.join('<li><a href="#%s-stage-%d"><b>%d</b><span>%s</span></a></li>' % (g['id'], n + 1, n + 1, T(s[0])) for n, s in enumerate(g['stages']))
+        rows = ''.join('<tr><th scope="row">%s</th><td>%s</td></tr>' % (G(a), G(b)) for a, b in g['numbers'])
+        steps = ''.join(G(s[0], lambda x, g=g, n=n: '<a href="#%s-stage-%d"><b>%d</b><span>%s</span></a>' % (g['id'], n + 1, n + 1, T(x))).join(['<li>', '</li>']) for n, s in enumerate(g['stages']))
         stages = ''.join(
-            '<article class="bg-stage" id="%s-stage-%d"><div class="bg-stage-num">Stage %d</div><h4>%s</h4><ul>%s</ul></article>' % (
-                g['id'], n + 1, n + 1, T(s[0]), ''.join('<li>%s</li>' % T(x) for x in s[1]))
+            '<article class="bg-stage" id="%s-stage-%d"><div class="bg-stage-num">%s</div><h4>%s</h4><ul>%s</ul></article>' % (
+                g['id'], n + 1, G('Stage', lambda x, n=n: '%s %d' % (T(x), n + 1)), G(s[0]), ''.join('<li>%s</li>' % G(x) for x in s[1]))
             for n, s in enumerate(g['stages']))
-        faqs = ''.join('<details class="bg-faq"><summary>%s</summary><p>%s</p></details>' % (T(q), T(a)) for q, a in g['faq'])
+        faqs = ''.join('<details class="bg-faq"><summary>%s</summary><p>%s</p></details>' % (G(q), G(a)) for q, a in g['faq'])
         panels += '''
     <div class="bg-panel" id="%(id)s" role="tabpanel"%(hidden)s data-no-currency>
       <h3 class="bg-h3">%(title)s</h3>
@@ -108,12 +123,12 @@ def guides_html():
       <p class="bg-label">%(l_faq)s</p>
       <div class="bg-faqs">%(faqs)s</div>
       <div class="bg-cta"><p>%(l_cta)s</p><a class="bg-wa wa-link" href="%(wa)s" target="_blank" rel="noopener">%(wasvg)s<span>%(l_wa)s</span></a></div>
-      <p class="bg-note">Figures as at %(asat)s. Rules and rates change; confirm the details for your purchase with Keith or your lawyer before you commit.</p>
-    </div>''' % dict(id=g['id'], hidden='' if k == 0 else ' hidden', title=T(g['title']), short=T(g['short']), rows=rows, steps=steps,
+      <p class="bg-note">%(note)s</p>
+    </div>''' % dict(id=g['id'], hidden='' if k == 0 else ' hidden', title=G(g['title']), short=G(g['short']), note=G('Figures as at %s. Rules and rates change; confirm the details for your purchase with Keith or your lawyer before you commit.' % AS_AT), rows=rows, steps=steps,
                      stages=stages, faqs=faqs, wa=A(wa('Hi Keith, I have a question about %s.' % g['tab'].lower())), wasvg=WA_SVG, asat=AS_AT,
                      l_short=unit(lambda t: L(t('Short answer'))), l_numbers=unit(lambda t: L(t('Key numbers at a glance'))),
                      l_stages=unit(lambda t: L(t('Six stages, start to finish'))), l_faq=unit(lambda t: L(t('Questions buyers ask'))),
-                     l_cta=unit(lambda t: L(t('Stuck on a step? Ask Keith directly.'))), l_wa=L('WhatsApp Keith'))
+                     l_cta=unit(lambda t: L(t('Stuck on a step? Ask Keith directly.'))), l_wa=G('WhatsApp Keith'))
     return '''
 <section class="nw-sec bg-sec" id="buying-guide">
   <p class="nw-eyebrow">%s</p>
@@ -366,6 +381,7 @@ def build():
     assert '[data-no-currency]' in t
 
     open(PAGE, 'w', encoding='utf-8').write(t)
+    print('Untranslated guide strings: %d %s' % (len(MISSING), MISSING[:5]))
     print('News page built: %d guides, %d FAQ, %d topics, %d translated blocks' % (len(GUIDES), len(FAQ), len(TOPICS), len(TR)))
     return t
 
