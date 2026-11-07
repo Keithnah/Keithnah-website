@@ -81,6 +81,11 @@ def llms():
     ]
     for area in sorted(projects):
         lines += ['', '### %s' % area] + projects[area]
+    areas = []
+    for f in sorted(glob.glob('area/*.html')):
+        t, title, desc = meta(f)
+        areas.append('- [%s](%s/%s): %s' % (title.split(' | ')[0], SITE, f, desc))
+    lines += ['', '## New launch guides by state and area'] + areas
     lines += ['', '## Topics'] + topics + ['', '## Articles'] + arts
     lines += ['', '## Optional', '- [YouTube: Keith Nah Real Estate](%s): project walkthroughs and drone videos' % SAME_AS[0],
               '- [Instagram](%s)' % SAME_AS[1], '- [Sitemap](%s/sitemap.xml)' % SITE, '']
