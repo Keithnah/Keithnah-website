@@ -95,7 +95,7 @@ def main(spec_path):
     # 4) Developer list in the search form
     m = re.search(r'(<select id="psDev">)(.*?)(</select>)', s, re.S)
     devs = re.findall(r'<option value="([^"]+)">', m.group(2))
-    devs = sorted({html.unescape(x) for x in devs if x != 'All'} | {p['developer_group'] for p in todo}, key=str.lower)
+    devs = sorted({html.unescape(x) for x in devs if x != 'All'} | {p['developer_group'] for p in todo if p['developer_group']}, key=str.lower)
     s = s[:m.start()] + m.group(1) + '<option value="All">Any developer</option>' + ''.join(
         '<option value="%s">%s</option>' % (E(x), E(x)) for x in devs) + m.group(3) + s[m.end():]
 
