@@ -152,10 +152,16 @@ section.blk{margin-bottom:50px;}
 .points{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
 .point{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;gap:14px;}
 .point b{flex:0 0 32px;height:32px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
-.fact{padding:14px 18px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);}
-.fact span{display:block;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey);font-weight:600;}
-.fact strong{font-weight:600;font-size:14.5px;}
+.pi{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(17,17,17,0.08);border:1px solid var(--line);}
+.pi-head{background:linear-gradient(135deg,#5E60CE,#4A4CB8);color:#fff;text-align:center;font:700 22px/1.3 'Inter',sans-serif;padding:20px 16px;letter-spacing:0.01em;}
+.pi table{width:100%;border-collapse:collapse;}
+.pi th,.pi td{padding:16px 24px;text-align:left;vertical-align:top;font-size:15px;line-height:1.55;}
+.pi th{width:24%;min-width:170px;background:#5E60CE;color:#fff;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.22);}
+.pi td{color:#222;border-bottom:1px solid var(--line);}
+.pi tr:last-child th{border-bottom:0;} .pi tr:last-child td{border-bottom:0;}
+.pi tr:nth-child(even) td{background:#FAFAFD;}
+html[dir=rtl] .pi th,html[dir=rtl] .pi td{text-align:right;}
+@media(max-width:600px){.pi th,.pi td{display:block;width:auto;padding:10px 16px;}.pi th{border-bottom:0;font-size:13px;padding-bottom:8px;}.pi td{padding-top:10px;padding-bottom:14px;}.pi-head{font-size:19px;padding:16px;}}
 .amen{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;} .amen li{list-style:none;background:#fff;border:1px solid var(--line);border-radius:100px;padding:6px 14px;font-size:13px;}
 .pd-layout-selector{display:flex;gap:24px;align-items:flex-start;}
 .pd-layout-sidebar{display:flex;flex-direction:column;gap:10px;width:240px;flex-shrink:0;}
@@ -235,7 +241,12 @@ def page(i):
         '<a class="tg" href="../projects.html?tag=%s#tagSection">%s<span>%s</span></a>' % (E(x.replace(' ', '+')), TAG_SVG, E(x)) for x in items))
         for lbl, items in groups if items)
     points = ''.join('<div class="point"><b>%d</b><p>%s</p></div>' % (n + 1, E(x)) for n, x in enumerate(p.get('selling_points') or []))
-    facts = ''.join('<div class="fact"><span>%s</span><strong>%s</strong></div>' % (E(k), E(v)) for k, v in (p.get('details_extra') or {}).items())
+    extra = dict(p.get('details_extra') or {})
+    rows = [('Project Name', display), ('Developer', extra.pop('Developer', '')), ('Location', p.get('loc')),
+            ('Property Type', TYPE.get(i, 'Residential')), ('Tenure', p.get('tenure')), ('Status', p.get('status')),
+            ('Starting Price', p.get('price')), ('Size', p.get('size')), ('Bedrooms', p.get('rooms')), ('Completion', p.get('completion'))]
+    rows += list(extra.items())
+    facts = ''.join('<tr><th scope="row">%s</th><td>%s</td></tr>' % (E(k), E(v)) for k, v in rows if v)
     amen = ''.join('<li>%s</li>' % E(a) for a in (p.get('amenities') or []))
     LS = p.get('layouts') or []
     FALLBACK = '<div class="pd-layout-fallback"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="10" y="10" width="80" height="80"/><line x1="50" y1="10" x2="50" y2="60"/><line x1="10" y1="60" x2="90" y2="60"/><line x1="70" y1="60" x2="70" y2="90"/></svg></div>'
@@ -350,7 +361,7 @@ document.addEventListener('click',function(e){{
         status=E(p.get('status')), ptype=E(TYPE.get(i, 'Residential')), loc=E(p['loc']), price=E(p.get('price')),
         tags=tags, stats=stats, overview=E(p.get('overview')), loctext=E(p.get('loc_text')),
         points_blk=('<section class="blk"><h2>Top Highlights</h2><div class="points">%s</div></section>' % points) if points else '',
-        facts_blk=('<section class="blk"><h2>Project Details</h2><div class="facts">%s</div></section>' % facts) if facts else '',
+        facts_blk=('<section class="blk"><h2>Project Details</h2><div class="pi"><div class="pi-head">Project Information</div><table>%s</table></div></section>' % facts) if facts else '',
         amen_blk=('<ul class="amen">%s</ul>' % amen) if amen else '',
         layouts_blk=('<section class="blk"><h2>%s Floor Plans &amp; Unit Types</h2><div class="layouts">%s</div></section>' % (E(display), layouts)) if layouts else '',
         tags_blk=('<section class="blk tg-sec"><h2>Popular Searches for %s</h2><p class="tg-sub">Tap a tag to see every project that matches it.</p><div class="tg-box">%s</div></section>' % (E(display), tags)) if tg else '',
