@@ -430,6 +430,41 @@
   .kn-flag{width:20px; height:15px; flex:0 0 20px; border-radius:2px; object-fit:cover; box-shadow:0 0 0 1px rgba(0,0,0,0.08);}
   #knLang button, #knCurr button{display:inline-flex; align-items:center; gap:8px;}
   @media (hover:hover) and (pointer:fine){ .lang-switch::after{content:''; position:absolute; left:0; right:0; top:100%; height:14px;} }
+
+/* KN-AREAS:CSS:START */
+#projFilters{display:none!important;}
+.proj-wrap.kn-areas{display:grid;grid-template-columns:260px minmax(0,1fr);gap:36px;align-items:start;max-width:1320px;}
+.proj-wrap.kn-areas > :not(.sb){grid-column:2;}
+.sb{grid-column:1;grid-row:1 / span 20;position:sticky;top:96px;}
+.sb-toggle{display:none;}
+.sb-panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 10px 12px;max-height:calc(100vh - 120px);overflow:auto;}
+.sb-title{font:700 17px 'Inter',sans-serif;margin:0 10px 10px;color:#111;}
+.sb-all,.sb-area{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;border:0;background:none;padding:9px 10px;border-radius:8px;font:500 13px 'Inter',sans-serif;color:#444;cursor:pointer;text-align:start;}
+.sb-all{font-weight:600;color:#111;padding:10px;}
+.sb-all:hover,.sb-area:hover,.sb-head:hover{background:var(--bg);}
+.sb-all.active,.sb-area.active{background:#F1F0FB;color:var(--gold);font-weight:700;}
+.sb-head{display:flex;align-items:center;gap:8px;width:100%;border:0;background:none;padding:11px 10px;border-radius:8px;cursor:pointer;font:600 13px 'Inter',sans-serif;letter-spacing:.04em;color:#222;text-align:start;}
+.sb-chev svg{width:12px;height:12px;color:var(--grey);transition:transform .2s;display:block;}
+html[dir=rtl] .sb-chev svg{transform:scaleX(-1);}
+.sb-name{flex:1;text-transform:uppercase;} .sb-head em,.sb-all em,.sb-area em{font-style:normal;font-size:11px;color:var(--grey);font-weight:600;}
+.sb-plus{width:14px;height:14px;position:relative;flex:0 0 14px;}
+.sb-plus::before,.sb-plus::after{content:"";position:absolute;left:0;right:0;top:6px;height:2px;background:#111;border-radius:2px;transition:transform .2s;}
+.sb-plus::after{transform:rotate(90deg);}
+.sb-state.open .sb-plus::after{transform:rotate(0deg);} .sb-state.open .sb-chev svg{transform:rotate(90deg);}
+.sb-state.current > .sb-head{color:var(--gold);}
+.sb-areas{display:none;padding:2px 0 8px;padding-inline-start:28px;}
+.sb-state.open .sb-areas{display:block;}
+.sb-count{grid-column:2;margin:0 0 18px;font:500 13.5px 'Inter',sans-serif;color:var(--grey);}
+.sb-count b{color:#111;}
+@media(max-width:900px){
+  .proj-wrap.kn-areas{display:block;}
+  .sb{position:sticky;top:70px;z-index:40;margin:0 0 14px;}
+  .sb-toggle{display:flex;align-items:center;gap:10px;width:100%;border:1px solid var(--line);background:#fff;border-radius:12px;padding:13px 16px;font:600 14px 'Inter',sans-serif;color:#111;cursor:pointer;box-shadow:0 6px 18px rgba(17,17,17,.06);}
+  .sb-toggle svg{width:16px;height:16px;color:var(--gold);flex:0 0 16px;} .sb-toggle b{margin-inline-start:auto;color:var(--gold);font-weight:700;text-align:end;}
+  .sb-panel{display:none;margin-top:8px;max-height:62vh;box-shadow:0 16px 40px rgba(0,0,0,.14);}
+  .sb.open .sb-panel{display:block;}
+}
+/* KN-AREAS:CSS:END */
 </style>
 <link rel="icon" type="image/png" href="images/d795398568d23a46.png">
 <link rel="shortcut icon" href="favicon.ico">
@@ -508,7 +543,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
   <form class="proj-search" id="projSearch">
     <div class="ps-field ps-name"><label for="psName">Project name</label><input id="psName" type="text" placeholder="Try Zenia, Pavilion or Imperial" autocomplete="off"></div>
     <div class="ps-row">
-      <div class="ps-field ps-area"><label for="psArea">Area</label><select id="psArea"><option value="All">Anywhere</option><option value="Bukit Bintang">Bukit Bintang</option><option value="KL City Centre">KL City Centre</option><option value="TRX &amp; Merdeka Maybank">TRX &amp; Merdeka Maybank</option><option value="KL City">KL City</option><option value="Bukit Jalil">Bukit Jalil</option><option value="Petaling Jaya">Petaling Jaya</option><option value="Penang">Penang</option><option value="Johor">Johor</option><option value="Melaka">Melaka</option></select></div>
+      <div class="ps-field ps-area"><label for="psArea">Area</label><select id="psArea"><option value="All">Anywhere</option><optgroup label="Kuala Lumpur"><option value="Kuala Lumpur">All Kuala Lumpur</option><option value="Kuala Lumpur/KL City Centre">KL City Centre</option><option value="Kuala Lumpur/Bukit Bintang">Bukit Bintang</option><option value="Kuala Lumpur/Bukit Jalil">Bukit Jalil</option><option value="Kuala Lumpur/Damansara Heights">Damansara Heights</option><option value="Kuala Lumpur/Bandar Sri Damansara">Bandar Sri Damansara</option><option value="Kuala Lumpur/Bangsar">Bangsar</option><option value="Kuala Lumpur/TRX">TRX</option><option value="Kuala Lumpur/Taman Desa">Taman Desa</option></optgroup><optgroup label="Selangor"><option value="Selangor">All Selangor</option><option value="Selangor/Kwasa Damansara">Kwasa Damansara</option><option value="Selangor/Petaling Jaya">Petaling Jaya</option><option value="Selangor/Ara Damansara">Ara Damansara</option><option value="Selangor/Damansara Damai">Damansara Damai</option><option value="Selangor/Damansara Perdana">Damansara Perdana</option><option value="Selangor/Subang Jaya">Subang Jaya</option></optgroup><optgroup label="Penang"><option value="Penang">All Penang</option><option value="Penang/Batu Kawan">Batu Kawan</option><option value="Penang/Gelugor">Gelugor</option><option value="Penang/George Town">George Town</option><option value="Penang/Bayan Lepas">Bayan Lepas</option><option value="Penang/Paya Terubong">Paya Terubong</option><option value="Penang/Tanjung Bungah">Tanjung Bungah</option></optgroup><optgroup label="Johor"><option value="Johor">All Johor</option><option value="Johor/JB City Centre">JB City Centre</option><option value="Johor/Kebun Teh">Kebun Teh</option></optgroup><optgroup label="Melaka"><option value="Melaka">All Melaka</option><option value="Melaka/Melaka City">Melaka City</option></optgroup></select></div>
       <div class="ps-field ps-area"><label for="psYear">Completion year</label><select id="psYear"><option value="All">Any year</option><option value="completed">Completed</option><option value="2021">2021</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="tbc">TBC / after APDL</option></select></div>
       <div class="ps-field ps-area"><label for="psDev">Developer</label><select id="psDev"><option value="All">Any developer</option><option value="Aspen">Aspen</option><option value="Astaka Holdings">Astaka Holdings</option><option value="Avaland">Avaland</option><option value="Berjaya Group">Berjaya Group</option><option value="BRDB Developments">BRDB Developments</option><option value="BSG Property">BSG Property</option><option value="Chin Hin Property">Chin Hin Property</option><option value="Core Precious Development">Core Precious Development</option><option value="Crest Builder (Intan Sekitar)">Crest Builder (Intan Sekitar)</option><option value="Eastern &amp; Oriental (E&amp;O)">Eastern &amp; Oriental (E&amp;O)</option><option value="EcoWorld">EcoWorld</option><option value="Ehsan Bina Group">Ehsan Bina Group</option><option value="EXSIM">EXSIM</option><option value="Gaya Kuasa">Gaya Kuasa</option><option value="Golden Eagle Group">Golden Eagle Group</option><option value="GSD Group">GSD Group</option><option value="GSH Corporation">GSH Corporation</option><option value="Ideal Property Group">Ideal Property Group</option><option value="IJM Land &amp; Perennial (JV)">IJM Land &amp; Perennial (JV)</option><option value="Kerjaya Prospek Property">Kerjaya Prospek Property</option><option value="KL Metro Group">KL Metro Group</option><option value="Land &amp; General">Land &amp; General</option><option value="Maxim Global">Maxim Global</option><option value="MCT">MCT</option><option value="Melati Ehsan Group">Melati Ehsan Group</option><option value="MRCB Land">MRCB Land</option><option value="Oxley Holdings">Oxley Holdings</option><option value="Paramount Property">Paramount Property</option><option value="ParkCity Group">ParkCity Group</option><option value="Pavilion Group">Pavilion Group</option><option value="Pinnacle Bukit Gambir">Pinnacle Bukit Gambir</option><option value="Puncakdana">Puncakdana</option><option value="SCP Group">SCP Group</option><option value="Sunsuria">Sunsuria</option><option value="Symphony Life / UMLand">Symphony Life / UMLand</option><option value="TA Global">TA Global</option><option value="TSR Development">TSR Development</option><option value="UOA Group">UOA Group</option><option value="VST Group">VST Group</option><option value="Welton Group">Welton Group</option></select></div>
       <button type="button" class="ps-btn" id="psGo">Search Projects</button>
@@ -540,7 +575,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
     var out=[];
     for(var i=0;i<PS_META.length;i++){
       var p=PROJECT_DETAILS[i],m=PS_META[i];
-      if(area!=='All'&&p.tag!==area)continue;
+      if(area!=='All'){var kp=(window.KN_PLACES||[])[i]||[];if(area.indexOf('/')<0?kp[0]!==area:(kp[0]+'/'+kp[1])!==area)continue;}
       if(dev!=='All'&&m.d!==dev)continue;
       if(yr!=='All'){
         if(yr==='completed'){if(!m.c)continue;}
@@ -571,7 +606,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       var raw=document.getElementById('psName').value.trim(),q=norm(raw),area=document.getElementById('psArea').value;
       var yr=document.getElementById('psYear').value,dev=document.getElementById('psDev').value,box=document.getElementById('psResults');
       cards().forEach(function(c){c.classList.remove('kn-found');});
-      setArea(area);
+      if(window.knShowArea){var pa=area.split('/');window.knShowArea(area==='All'?'All':pa[0],pa[1]||'All');}else setArea(area);
       if(yr!=='All'||dev!=='All'){showResults(psMatches(q,area,yr,dev));return;}
       if(box)box.style.display='none';
       if(!q){
@@ -629,8 +664,9 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
 </div>
 
 <!-- ===================== PROJECT GRID ===================== -->
-<div class="proj-wrap">
-  <div class="proj-grid" id="projGrid"><div class="proj-card" data-tag="KL City" data-idx="0" onclick="openDetailModal(0)">
+<div class="proj-wrap kn-areas">
+  <!-- KN-AREAS:SIDE:START --><aside class="sb" id="sbBox"><button type="button" class="sb-toggle" id="sbToggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Filter by location</span><b id="sbCurrent">All Malaysia</b></button><div class="sb-panel"><p class="sb-title">Location</p><button type="button" class="sb-all active"><span>All Malaysia</span><em>66</em></button><div class="sb-state" data-state="Kuala Lumpur"><button type="button" class="sb-head" aria-expanded="false"><span class="sb-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span><span class="sb-name">Kuala Lumpur</span><em>33</em><span class="sb-plus" aria-hidden="true"></span></button><div class="sb-areas"><button type="button" class="sb-area" data-area="All"><span>All Kuala Lumpur</span></button><button type="button" class="sb-area" data-area="KL City Centre"><span>KL City Centre</span><em>13</em></button><button type="button" class="sb-area" data-area="Bukit Bintang"><span>Bukit Bintang</span><em>5</em></button><button type="button" class="sb-area" data-area="Bukit Jalil"><span>Bukit Jalil</span><em>5</em></button><button type="button" class="sb-area" data-area="Damansara Heights"><span>Damansara Heights</span><em>3</em></button><button type="button" class="sb-area" data-area="Bandar Sri Damansara"><span>Bandar Sri Damansara</span><em>2</em></button><button type="button" class="sb-area" data-area="Bangsar"><span>Bangsar</span><em>2</em></button><button type="button" class="sb-area" data-area="TRX"><span>TRX</span><em>2</em></button><button type="button" class="sb-area" data-area="Taman Desa"><span>Taman Desa</span><em>1</em></button></div></div><div class="sb-state" data-state="Selangor"><button type="button" class="sb-head" aria-expanded="false"><span class="sb-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span><span class="sb-name">Selangor</span><em>12</em><span class="sb-plus" aria-hidden="true"></span></button><div class="sb-areas"><button type="button" class="sb-area" data-area="All"><span>All Selangor</span></button><button type="button" class="sb-area" data-area="Kwasa Damansara"><span>Kwasa Damansara</span><em>4</em></button><button type="button" class="sb-area" data-area="Petaling Jaya"><span>Petaling Jaya</span><em>4</em></button><button type="button" class="sb-area" data-area="Ara Damansara"><span>Ara Damansara</span><em>1</em></button><button type="button" class="sb-area" data-area="Damansara Damai"><span>Damansara Damai</span><em>1</em></button><button type="button" class="sb-area" data-area="Damansara Perdana"><span>Damansara Perdana</span><em>1</em></button><button type="button" class="sb-area" data-area="Subang Jaya"><span>Subang Jaya</span><em>1</em></button></div></div><div class="sb-state" data-state="Penang"><button type="button" class="sb-head" aria-expanded="false"><span class="sb-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span><span class="sb-name">Penang</span><em>13</em><span class="sb-plus" aria-hidden="true"></span></button><div class="sb-areas"><button type="button" class="sb-area" data-area="All"><span>All Penang</span></button><button type="button" class="sb-area" data-area="Batu Kawan"><span>Batu Kawan</span><em>4</em></button><button type="button" class="sb-area" data-area="Gelugor"><span>Gelugor</span><em>3</em></button><button type="button" class="sb-area" data-area="George Town"><span>George Town</span><em>3</em></button><button type="button" class="sb-area" data-area="Bayan Lepas"><span>Bayan Lepas</span><em>1</em></button><button type="button" class="sb-area" data-area="Paya Terubong"><span>Paya Terubong</span><em>1</em></button><button type="button" class="sb-area" data-area="Tanjung Bungah"><span>Tanjung Bungah</span><em>1</em></button></div></div><div class="sb-state" data-state="Johor"><button type="button" class="sb-head" aria-expanded="false"><span class="sb-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span><span class="sb-name">Johor</span><em>7</em><span class="sb-plus" aria-hidden="true"></span></button><div class="sb-areas"><button type="button" class="sb-area" data-area="All"><span>All Johor</span></button><button type="button" class="sb-area" data-area="JB City Centre"><span>JB City Centre</span><em>5</em></button><button type="button" class="sb-area" data-area="Kebun Teh"><span>Kebun Teh</span><em>2</em></button></div></div><div class="sb-state" data-state="Melaka"><button type="button" class="sb-head" aria-expanded="false"><span class="sb-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span><span class="sb-name">Melaka</span><em>1</em><span class="sb-plus" aria-hidden="true"></span></button><div class="sb-areas"><button type="button" class="sb-area" data-area="All"><span>All Melaka</span></button><button type="button" class="sb-area" data-area="Melaka City"><span>Melaka City</span><em>1</em></button></div></div></div></aside><p class="sb-count" id="sbCount" aria-live="polite"></p><!-- KN-AREAS:SIDE:END -->
+  <div class="proj-grid" id="projGrid"><div class="proj-card" data-tag="KL City" data-state="Kuala Lumpur" data-area="Damansara Heights" data-idx="0" onclick="openDetailModal(0)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1c1a17,#3a3226);">
       <img class="proj-photo" src="images/03d8820b7640fbf7.jpg" alt="111 Menerung" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -641,7 +677,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22111+Menerung%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">KL City</span>
+      <span class="proj-tag">Damansara Heights</span>
       <h3><a class="proj-page-link" href="property/111-menerung.html" onclick="event.stopPropagation()">111 Menerung</a></h3>
       <p class="proj-loc">Damansara Heights, Kuala Lumpur</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Damansara Heights"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Damansara Heights</span><span class="ptag" data-t="Damansara Heights condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Damansara Heights condo for sale</span><span class="ptag-more" data-idx="0">+14</span></div>
@@ -657,7 +693,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Petaling Jaya" data-idx="1" onclick="openDetailModal(1)">
+  <div class="proj-card" data-tag="Petaling Jaya" data-state="Selangor" data-area="Petaling Jaya" data-idx="1" onclick="openDetailModal(1)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/ed5c6833e0444a18.jpg" alt="Accent Residence" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -684,7 +720,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Johor" data-idx="2" onclick="openDetailModal(2)">
+  <div class="proj-card" data-tag="Johor" data-state="Johor" data-area="JB City Centre" data-idx="2" onclick="openDetailModal(2)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/5ab827382436e28a.jpg" alt="Aethera Residences" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -695,7 +731,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Aethera+Residences%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Johor</span>
+      <span class="proj-tag">JB City Centre</span>
       <h3><a class="proj-page-link" href="property/aethera-residences.html" onclick="event.stopPropagation()">Aethera Residences</a></h3>
       <p class="proj-loc">Jalan Tun Abdul Razak, Johor Bahru</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Johor Bahru"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Johor Bahru</span><span class="ptag" data-t="Johor Bahru serviced apartment for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Johor Bahru serviced apartment for sale</span><span class="ptag-more" data-idx="2">+14</span></div>
@@ -711,7 +747,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Petaling Jaya" data-idx="3" onclick="openDetailModal(3)">
+  <div class="proj-card" data-tag="Petaling Jaya" data-state="Kuala Lumpur" data-area="Bandar Sri Damansara" data-idx="3" onclick="openDetailModal(3)">
     <div class="proj-media" style="background:linear-gradient(135deg,#201c1a,#3f2e26);">
       <img class="proj-photo" src="images/6cd5858c1a5869f0.jpg" alt="Amaya @ BDR Sri Damansara" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -722,7 +758,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Amaya+%40+BDR+Sri+Damansara%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Petaling Jaya</span>
+      <span class="proj-tag">Bandar Sri Damansara</span>
       <h3><a class="proj-page-link" href="property/amaya-bdr-sri-damansara.html" onclick="event.stopPropagation()">Amaya @ BDR Sri Damansara</a></h3>
       <p class="proj-loc">Bandar Sri Damansara, Kuala Lumpur</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Bandar Sri Damansara"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Bandar Sri Damansara</span><span class="ptag" data-t="Bandar Sri Damansara condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Bandar Sri Damansara condo for sale</span><span class="ptag-more" data-idx="3">+17</span></div>
@@ -738,7 +774,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Penang" data-idx="4" onclick="openDetailModal(4)">
+  <div class="proj-card" data-tag="Penang" data-state="Penang" data-area="Batu Kawan" data-idx="4" onclick="openDetailModal(4)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/4a208b6c9d45fe84.jpg" alt="Andabreeze Residences" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -749,7 +785,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Andabreeze+Residences%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Penang</span>
+      <span class="proj-tag">Batu Kawan</span>
       <h3><a class="proj-page-link" href="property/andabreeze-residences.html" onclick="event.stopPropagation()">Andabreeze Residences</a></h3>
       <p class="proj-loc">Batu Kawan, Penang</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Batu Kawan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Batu Kawan</span><span class="ptag" data-t="Batu Kawan serviced apartment for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Batu Kawan serviced apartment for sale</span><span class="ptag-more" data-idx="4">+18</span></div>
@@ -765,7 +801,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Johor" data-idx="5" onclick="openDetailModal(5)">
+  <div class="proj-card" data-tag="Johor" data-state="Johor" data-area="JB City Centre" data-idx="5" onclick="openDetailModal(5)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/b26ac3535ff24079.jpg" alt="Arden" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -776,7 +812,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Arden%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Johor</span>
+      <span class="proj-tag">JB City Centre</span>
       <h3><a class="proj-page-link" href="property/arden.html" onclick="event.stopPropagation()">Arden</a></h3>
       <p class="proj-loc">One Bukit Senyum, Johor Bahru</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Johor Bahru"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Johor Bahru</span><span class="ptag" data-t="Johor Bahru serviced apartment for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Johor Bahru serviced apartment for sale</span><span class="ptag-more" data-idx="5">+15</span></div>
@@ -792,7 +828,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Petaling Jaya" data-idx="6" onclick="openDetailModal(6)">
+  <div class="proj-card" data-tag="Petaling Jaya" data-state="Selangor" data-area="Ara Damansara" data-idx="6" onclick="openDetailModal(6)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/4cdd75225758f401.jpg" alt="ARRA Residences" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -803,7 +839,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22ARRA+Residences%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Petaling Jaya</span>
+      <span class="proj-tag">Ara Damansara</span>
       <h3><a class="proj-page-link" href="property/arra-residences.html" onclick="event.stopPropagation()">ARRA Residences</a></h3>
       <p class="proj-loc">Ara Damansara, Petaling Jaya, Selangor</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Ara Damansara"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Ara Damansara</span><span class="ptag" data-t="Ara Damansara condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Ara Damansara condo for sale</span><span class="ptag-more" data-idx="6">+15</span></div>
@@ -819,7 +855,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="KL City Centre" data-idx="7" onclick="openDetailModal(7)">
+  <div class="proj-card" data-tag="KL City Centre" data-state="Kuala Lumpur" data-area="KL City Centre" data-idx="7" onclick="openDetailModal(7)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/b6093533439b2e09.jpg" alt="Ascott Star Residence" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -846,7 +882,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-    <div class="proj-card" data-tag="Johor" data-idx="8" onclick="openDetailModal(8)">
+    <div class="proj-card" data-tag="Johor" data-state="Johor" data-area="JB City Centre" data-idx="8" onclick="openDetailModal(8)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/aa7d767ea39c6a57.jpg" alt="Axis Causeway Square" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -857,7 +893,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Axis+Causeway+Square%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Johor</span>
+      <span class="proj-tag">JB City Centre</span>
       <h3><a class="proj-page-link" href="property/axis-causeway-square.html" onclick="event.stopPropagation()">Axis Causeway Square</a></h3>
       <p class="proj-loc">Causeway Square, Johor Bahru</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Johor Bahru"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Johor Bahru</span><span class="ptag" data-t="Johor Bahru serviced apartment for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Johor Bahru serviced apartment for sale</span><span class="ptag-more" data-idx="8">+15</span></div>
@@ -873,7 +909,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Bukit Bintang" data-idx="9" onclick="openDetailModal(9)">
+  <div class="proj-card" data-tag="Bukit Bintang" data-state="Kuala Lumpur" data-area="Bukit Bintang" data-idx="9" onclick="openDetailModal(9)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1c1a17,#3a3226);">
       <img src="images/6c22c3e31976423c.jpg" alt="Branniganz Suites @ Bukit Bintang" class="proj-photo" loading="lazy">
       <div class="proj-badges">
@@ -899,7 +935,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Johor" data-idx="10" onclick="openDetailModal(10)">
+  <div class="proj-card" data-tag="Johor" data-state="Johor" data-area="JB City Centre" data-idx="10" onclick="openDetailModal(10)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/68735e2d36658494.jpg" alt="Brixton Causeway Square" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -910,7 +946,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Brixton+Causeway+Square%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Johor</span>
+      <span class="proj-tag">JB City Centre</span>
       <h3><a class="proj-page-link" href="property/brixton-causeway-square.html" onclick="event.stopPropagation()">Brixton Causeway Square</a></h3>
       <p class="proj-loc">Causeway Square, Johor Bahru</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Johor Bahru"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Johor Bahru</span><span class="ptag" data-t="Johor Bahru serviced apartment for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Johor Bahru serviced apartment for sale</span><span class="ptag-more" data-idx="10">+13</span></div>
@@ -926,7 +962,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="KL City Centre" data-idx="11" onclick="openDetailModal(11)">
+  <div class="proj-card" data-tag="KL City Centre" data-state="Kuala Lumpur" data-area="KL City Centre" data-idx="11" onclick="openDetailModal(11)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);"><img src="images/54046f8122a0e4de.jpg" alt="Centrix" class="proj-photo" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
       <div class="proj-badges">
@@ -952,7 +988,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="KL City Centre" data-idx="12" onclick="openDetailModal(12)">
+  <div class="proj-card" data-tag="KL City Centre" data-state="Kuala Lumpur" data-area="KL City Centre" data-idx="12" onclick="openDetailModal(12)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img src="images/18d68db66306c200.jpg" alt="Clouthaus" class="proj-photo" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -979,7 +1015,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="TRX &amp; Merdeka Maybank" data-idx="13" onclick="openDetailModal(13)">
+  <div class="proj-card" data-tag="TRX &amp; Merdeka Maybank" data-state="Kuala Lumpur" data-area="TRX" data-idx="13" onclick="openDetailModal(13)">
     <div class="proj-media" style="background:linear-gradient(135deg,#20211c,#3f3f2f);">
       <img class="proj-photo" src="images/5dd92e92e1108fdd.jpg" alt="Core Residence" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -990,7 +1026,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Core+Residence%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">TRX &amp; Merdeka Maybank</span>
+      <span class="proj-tag">TRX</span>
       <h3><a class="proj-page-link" href="property/core-residence.html" onclick="event.stopPropagation()">Core Residence</a></h3>
       <p class="proj-loc">Tun Razak Exchange (TRX), Kuala Lumpur</p>
       <div class="proj-tags"><span class="ptag" data-t="new project TRX"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project TRX</span><span class="ptag" data-t="freehold condo KL"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>freehold condo KL</span><span class="ptag-more" data-idx="13">+24</span></div>
@@ -1006,7 +1042,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Petaling Jaya" data-idx="14" onclick="openDetailModal(14)">
+  <div class="proj-card" data-tag="Petaling Jaya" data-state="Selangor" data-area="Kwasa Damansara" data-idx="14" onclick="openDetailModal(14)">
     <div class="proj-media" style="background:linear-gradient(135deg,#20211c,#3f3f2f);">
       <img class="proj-photo" src="images/eae597fc2350de78.jpg" alt="D'Evia" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1017,7 +1053,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22D%27Evia%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Petaling Jaya</span>
+      <span class="proj-tag">Kwasa Damansara</span>
       <h3><a class="proj-page-link" href="property/devia.html" onclick="event.stopPropagation()">D'Evia</a></h3>
       <p class="proj-loc">Kwasa Damansara, Selangor</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Kwasa Damansara"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Kwasa Damansara</span><span class="ptag" data-t="Kwasa Damansara condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Kwasa Damansara condo for sale</span><span class="ptag-more" data-idx="14">+16</span></div>
@@ -1033,7 +1069,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Penang" data-idx="15" onclick="openDetailModal(15)">
+  <div class="proj-card" data-tag="Penang" data-state="Penang" data-area="Paya Terubong" data-idx="15" onclick="openDetailModal(15)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/6cd01a03c5bdd892.jpg" alt="D'Hazelton" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1044,7 +1080,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22D%27Hazelton%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Penang</span>
+      <span class="proj-tag">Paya Terubong</span>
       <h3><a class="proj-page-link" href="property/dhazelton.html" onclick="event.stopPropagation()">D'Hazelton</a></h3>
       <p class="proj-loc">Farlim, Paya Terubong, Penang</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Paya Terubong"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Paya Terubong</span><span class="ptag" data-t="Paya Terubong condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Paya Terubong condo for sale</span><span class="ptag-more" data-idx="15">+15</span></div>
@@ -1060,7 +1096,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Petaling Jaya" data-idx="16" onclick="openDetailModal(16)">
+  <div class="proj-card" data-tag="Petaling Jaya" data-state="Selangor" data-area="Kwasa Damansara" data-idx="16" onclick="openDetailModal(16)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/bb4c625009696fea.jpg" alt="Daya Residence" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1071,7 +1107,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Daya+Residence%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Petaling Jaya</span>
+      <span class="proj-tag">Kwasa Damansara</span>
       <h3><a class="proj-page-link" href="property/daya-residence.html" onclick="event.stopPropagation()">Daya Residence</a></h3>
       <p class="proj-loc">Kwasa Damansara, Selangor</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Kwasa Damansara"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Kwasa Damansara</span><span class="ptag" data-t="Kwasa Damansara condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Kwasa Damansara condo for sale</span><span class="ptag-more" data-idx="16">+16</span></div>
@@ -1087,7 +1123,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="KL City Centre" data-idx="17" onclick="openDetailModal(17)">
+  <div class="proj-card" data-tag="KL City Centre" data-state="Kuala Lumpur" data-area="KL City Centre" data-idx="17" onclick="openDetailModal(17)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1c1a17,#3a3226);">
       <img src="images/4ab9e3115bd75e79.jpg" alt="Divine" class="proj-photo" loading="lazy">
       <div class="proj-badges">
@@ -1113,7 +1149,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Johor" data-idx="18" onclick="openDetailModal(18)">
+  <div class="proj-card" data-tag="Johor" data-state="Johor" data-area="JB City Centre" data-idx="18" onclick="openDetailModal(18)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/6e47bd6fbbbbb5fa.jpg" alt="Dover Causeway Square" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1124,7 +1160,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Dover+Causeway+Square%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Johor</span>
+      <span class="proj-tag">JB City Centre</span>
       <h3><a class="proj-page-link" href="property/dover-causeway-square.html" onclick="event.stopPropagation()">Dover Causeway Square</a></h3>
       <p class="proj-loc">Causeway Square, Johor Bahru</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Johor Bahru"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Johor Bahru</span><span class="ptag" data-t="Johor Bahru serviced apartment for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Johor Bahru serviced apartment for sale</span><span class="ptag-more" data-idx="18">+14</span></div>
@@ -1140,7 +1176,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="KL City Centre" data-idx="19" onclick="openDetailModal(19)">
+  <div class="proj-card" data-tag="KL City Centre" data-state="Kuala Lumpur" data-area="KL City Centre" data-idx="19" onclick="openDetailModal(19)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1a201d,#2e3f36);">
       <img src="images/de906c06e251f865.jpg" alt="Eaton Residence" class="proj-photo" loading="lazy">
       <div class="proj-badges">
@@ -1166,7 +1202,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Petaling Jaya" data-idx="20" onclick="openDetailModal(20)">
+  <div class="proj-card" data-tag="Petaling Jaya" data-state="Selangor" data-area="Damansara Perdana" data-idx="20" onclick="openDetailModal(20)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/81796ccd69ee630a.jpg" alt="ForestHill Residences" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1177,7 +1213,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22ForestHill+Residences%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Petaling Jaya</span>
+      <span class="proj-tag">Damansara Perdana</span>
       <h3><a class="proj-page-link" href="property/foresthill-residences.html" onclick="event.stopPropagation()">ForestHill Residences</a></h3>
       <p class="proj-loc">Damansara Perdana, Petaling Jaya, Selangor</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Damansara Perdana"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Damansara Perdana</span><span class="ptag" data-t="Damansara Perdana condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Damansara Perdana condo for sale</span><span class="ptag-more" data-idx="20">+13</span></div>
@@ -1193,7 +1229,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Penang" data-idx="21" onclick="openDetailModal(21)">
+  <div class="proj-card" data-tag="Penang" data-state="Penang" data-area="George Town" data-idx="21" onclick="openDetailModal(21)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/afd8642efceb0c95.jpg" alt="G'Vinton" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1204,7 +1240,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22G%27Vinton%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Penang</span>
+      <span class="proj-tag">George Town</span>
       <h3><a class="proj-page-link" href="property/gvinton.html" onclick="event.stopPropagation()">G'Vinton</a></h3>
       <p class="proj-loc">George Town, Penang</p>
       <div class="proj-tags"><span class="ptag" data-t="new project George Town"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project George Town</span><span class="ptag" data-t="George Town serviced apartment for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>George Town serviced apartment for sale</span><span class="ptag-more" data-idx="21">+14</span></div>
@@ -1220,7 +1256,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="TRX &amp; Merdeka Maybank" data-idx="22" onclick="openDetailModal(22)">
+  <div class="proj-card" data-tag="TRX &amp; Merdeka Maybank" data-state="Kuala Lumpur" data-area="TRX" data-idx="22" onclick="openDetailModal(22)">
     <div class="proj-media" style="background:linear-gradient(135deg,#20211c,#3f3f2f);">
       <img class="proj-photo" src="images/1c5e573f8246cdea.jpg" alt="Golden Crown Residence" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1231,7 +1267,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Golden+Crown+Residence%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">TRX &amp; Merdeka Maybank</span>
+      <span class="proj-tag">TRX</span>
       <h3><a class="proj-page-link" href="property/golden-crown-residence.html" onclick="event.stopPropagation()">Golden Crown Residence</a></h3>
       <p class="proj-loc">Jalan Tun Razak, adjacent to TRX, Kuala Lumpur</p>
       <div class="proj-tags"><span class="ptag" data-t="new project TRX"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project TRX</span><span class="ptag" data-t="new launch condo KL"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new launch condo KL</span><span class="ptag-more" data-idx="22">+25</span></div>
@@ -1247,7 +1283,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="KL City" data-idx="23" onclick="openDetailModal(23)">
+  <div class="proj-card" data-tag="KL City" data-state="Kuala Lumpur" data-area="Damansara Heights" data-idx="23" onclick="openDetailModal(23)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/a24e23212fa37697.jpg" alt="Imperial Residence Pavilion Damansara Heights" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1258,7 +1294,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Imperial+Residence+Pavilion+Damansara+Heights%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">KL City</span>
+      <span class="proj-tag">Damansara Heights</span>
       <h3><a class="proj-page-link" href="property/imperial-residence-pavilion-damansara-heights.html" onclick="event.stopPropagation()">Imperial Residence Pavilion Damansara Heights</a></h3>
       <p class="proj-loc">Damansara Heights, Kuala Lumpur</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Damansara Heights"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Damansara Heights</span><span class="ptag" data-t="Damansara Heights condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Damansara Heights condo for sale</span><span class="ptag-more" data-idx="23">+15</span></div>
@@ -1274,7 +1310,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="KL City Centre" data-idx="24" onclick="openDetailModal(24)">
+  <div class="proj-card" data-tag="KL City Centre" data-state="Kuala Lumpur" data-area="KL City Centre" data-idx="24" onclick="openDetailModal(24)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1a201d,#2e3f36);">
       <img src="images/e57456cb2c4214b0.jpg" alt="Jewel (Tower 2, Oxley Towers)" class="proj-photo">
       <div class="proj-badges">
@@ -1300,7 +1336,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Penang" data-idx="25" onclick="openDetailModal(25)">
+  <div class="proj-card" data-tag="Penang" data-state="Penang" data-area="George Town" data-idx="25" onclick="openDetailModal(25)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/d8ad181b681801c2.jpg" alt="Keeperz Suites" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1311,7 +1347,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Keeperz+Suites%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Penang</span>
+      <span class="proj-tag">George Town</span>
       <h3><a class="proj-page-link" href="property/keeperz-suites.html" onclick="event.stopPropagation()">Keeperz Suites</a></h3>
       <p class="proj-loc">Bandar George Town, Penang</p>
       <div class="proj-tags"><span class="ptag" data-t="new project George Town"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project George Town</span><span class="ptag" data-t="George Town serviced apartment for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>George Town serviced apartment for sale</span><span class="ptag-more" data-idx="25">+17</span></div>
@@ -1327,7 +1363,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="KL City" data-idx="26" onclick="openDetailModal(26)">
+  <div class="proj-card" data-tag="KL City" data-state="Kuala Lumpur" data-area="Bangsar" data-idx="26" onclick="openDetailModal(26)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/3b571771979daf3d.jpg" alt="Khaya Residences" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1338,7 +1374,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Khaya+Residences%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">KL City</span>
+      <span class="proj-tag">Bangsar</span>
       <h3><a class="proj-page-link" href="property/khaya-residences.html" onclick="event.stopPropagation()">Khaya Residences</a></h3>
       <p class="proj-loc">Bangsar, Kuala Lumpur</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Bangsar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Bangsar</span><span class="ptag" data-t="Bangsar condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Bangsar condo for sale</span><span class="ptag-more" data-idx="26">+19</span></div>
@@ -1354,7 +1390,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Petaling Jaya" data-idx="27" onclick="openDetailModal(27)">
+  <div class="proj-card" data-tag="Petaling Jaya" data-state="Kuala Lumpur" data-area="Bandar Sri Damansara" data-idx="27" onclick="openDetailModal(27)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/160326ec845b6044.jpg" alt="Laverra" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1365,7 +1401,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Laverra%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Petaling Jaya</span>
+      <span class="proj-tag">Bandar Sri Damansara</span>
       <h3><a class="proj-page-link" href="property/laverra.html" onclick="event.stopPropagation()">Laverra</a></h3>
       <p class="proj-loc">Bandar Sri Damansara, Kuala Lumpur</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Bandar Sri Damansara"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Bandar Sri Damansara</span><span class="ptag" data-t="Bandar Sri Damansara condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Bandar Sri Damansara condo for sale</span><span class="ptag-more" data-idx="27">+17</span></div>
@@ -1381,7 +1417,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-      <div class="proj-card" data-tag="Penang" data-idx="28" onclick="openDetailModal(28)">
+      <div class="proj-card" data-tag="Penang" data-state="Penang" data-area="Gelugor" data-idx="28" onclick="openDetailModal(28)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/daf302259fbf2c78.jpg" alt="Lightwater Residence" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1392,7 +1428,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Lightwater+Residence%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Penang</span>
+      <span class="proj-tag">Gelugor</span>
       <h3><a class="proj-page-link" href="property/lightwater-residence.html" onclick="event.stopPropagation()">Lightwater Residence</a></h3>
       <p class="proj-loc">Gelugor, Penang</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Gelugor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Gelugor</span><span class="ptag" data-t="Gelugor condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Gelugor condo for sale</span><span class="ptag-more" data-idx="28">+15</span></div>
@@ -1408,7 +1444,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Penang" data-idx="29" onclick="openDetailModal(29)">
+  <div class="proj-card" data-tag="Penang" data-state="Penang" data-area="George Town" data-idx="29" onclick="openDetailModal(29)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/338435177382a8ca.jpg" alt="Lumina Residence" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1419,7 +1455,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Lumina+Residence%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Penang</span>
+      <span class="proj-tag">George Town</span>
       <h3><a class="proj-page-link" href="property/lumina-residence.html" onclick="event.stopPropagation()">Lumina Residence</a></h3>
       <p class="proj-loc">George Town, Penang</p>
       <div class="proj-tags"><span class="ptag" data-t="new project George Town"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project George Town</span><span class="ptag" data-t="George Town condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>George Town condo for sale</span><span class="ptag-more" data-idx="29">+14</span></div>
@@ -1435,7 +1471,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="TRX &amp; Merdeka Maybank" data-idx="30" onclick="openDetailModal(30)">
+  <div class="proj-card" data-tag="TRX &amp; Merdeka Maybank" data-state="Kuala Lumpur" data-area="KL City Centre" data-idx="30" onclick="openDetailModal(30)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/42e77b719cef7c4d.jpg" alt="MABA Suitez" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1446,7 +1482,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22MABA+Suitez%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">TRX &amp; Merdeka Maybank</span>
+      <span class="proj-tag">KL City Centre</span>
       <h3><a class="proj-page-link" href="property/maba-suitez.html" onclick="event.stopPropagation()">MABA Suitez</a></h3>
       <p class="proj-loc">Jalan Hang Jebat, KL City Centre</p>
       <div class="proj-tags"><span class="ptag" data-t="new project KL City Centre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project KL City Centre</span><span class="ptag" data-t="KL City Centre condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>KL City Centre condo for sale</span><span class="ptag-more" data-idx="30">+29</span></div>
@@ -1462,7 +1498,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-    <div class="proj-card" data-tag="Penang" data-idx="31" onclick="openDetailModal(31)">
+    <div class="proj-card" data-tag="Penang" data-state="Penang" data-area="Batu Kawan" data-idx="31" onclick="openDetailModal(31)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/2175b92aff774837.jpg" alt="Mezon @ Park Enclave" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1473,7 +1509,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Mezon+%40+Park+Enclave%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Penang</span>
+      <span class="proj-tag">Batu Kawan</span>
       <h3><a class="proj-page-link" href="property/mezon-park-enclave.html" onclick="event.stopPropagation()">Mezon @ Park Enclave</a></h3>
       <p class="proj-loc">Batu Kawan, Penang</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Batu Kawan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Batu Kawan</span><span class="ptag" data-t="Batu Kawan serviced apartment for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Batu Kawan serviced apartment for sale</span><span class="ptag-more" data-idx="31">+16</span></div>
@@ -1489,7 +1525,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Bukit Jalil" data-idx="32" onclick="openDetailModal(32)">
+  <div class="proj-card" data-tag="Bukit Jalil" data-state="Kuala Lumpur" data-area="Bukit Jalil" data-idx="32" onclick="openDetailModal(32)">
     <div class="proj-media" style="background:linear-gradient(135deg,#20211c,#3f3f2f);">
       <img class="proj-photo" src="images/60014d115a298674.jpg" alt="OAKA Residences" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1516,7 +1552,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Bukit Bintang" data-idx="33" onclick="openDetailModal(33)">
+  <div class="proj-card" data-tag="Bukit Bintang" data-state="Kuala Lumpur" data-area="Bukit Bintang" data-idx="33" onclick="openDetailModal(33)">
     <div class="proj-media" style="background:linear-gradient(135deg,#20211c,#3f3f2f);">
       <img src="images/f4ddcdf74df36d56.jpg" alt="Orion Residence" class="proj-photo">
       <div class="proj-badges">
@@ -1542,7 +1578,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="KL City" data-idx="34" onclick="openDetailModal(34)">
+  <div class="proj-card" data-tag="KL City" data-state="Kuala Lumpur" data-area="Bangsar" data-idx="34" onclick="openDetailModal(34)">
     <div class="proj-media" style="background:linear-gradient(135deg,#201c1a,#3f2e26);">
       <img class="proj-photo" src="images/7444bc3a8fbc36bf.jpg" alt="Parkside Residence" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1553,7 +1589,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Parkside+Residence%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">KL City</span>
+      <span class="proj-tag">Bangsar</span>
       <h3><a class="proj-page-link" href="property/parkside-residence.html" onclick="event.stopPropagation()">Parkside Residence</a></h3>
       <p class="proj-loc">Bangsar / Pantai Baru, Kuala Lumpur</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Bangsar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Bangsar</span><span class="ptag" data-t="Bangsar condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Bangsar condo for sale</span><span class="ptag-more" data-idx="34">+15</span></div>
@@ -1570,7 +1606,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
     </div>
   </div>
   
-  <div class="proj-card" data-tag="Bukit Bintang" data-idx="35" onclick="openDetailModal(35)">
+  <div class="proj-card" data-tag="Bukit Bintang" data-state="Kuala Lumpur" data-area="Bukit Bintang" data-idx="35" onclick="openDetailModal(35)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1c1a17,#3a3226);">
       <img src="images/f257eb5e6ff11a25.jpg" alt="Pavilion Square" class="proj-photo" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1597,7 +1633,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="KL City Centre" data-idx="36" onclick="openDetailModal(36)">
+  <div class="proj-card" data-tag="KL City Centre" data-state="Kuala Lumpur" data-area="KL City Centre" data-idx="36" onclick="openDetailModal(36)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1c1a17,#3a3226);">
       <img src="images/1491e51b1261fd53.jpg" alt="Phoeniz Suites @ KL City Centre" class="proj-photo" loading="lazy">
       <div class="proj-badges">
@@ -1623,7 +1659,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Penang" data-idx="37" onclick="openDetailModal(37)">
+  <div class="proj-card" data-tag="Penang" data-state="Penang" data-area="Gelugor" data-idx="37" onclick="openDetailModal(37)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/8194ab8134cf1569.jpg" alt="Pinnacle Bukit Gambier" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1634,7 +1670,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Pinnacle+Bukit+Gambier%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Penang</span>
+      <span class="proj-tag">Gelugor</span>
       <h3><a class="proj-page-link" href="property/pinnacle-bukit-gambier.html" onclick="event.stopPropagation()">Pinnacle Bukit Gambier</a></h3>
       <p class="proj-loc">Gelugor, Penang</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Gelugor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Gelugor</span><span class="ptag" data-t="Gelugor serviced apartment for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Gelugor serviced apartment for sale</span><span class="ptag-more" data-idx="37">+15</span></div>
@@ -1650,7 +1686,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Penang" data-idx="38" onclick="openDetailModal(38)">
+  <div class="proj-card" data-tag="Penang" data-state="Penang" data-area="Bayan Lepas" data-idx="38" onclick="openDetailModal(38)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/7a452cab6fa1e76d.jpg" alt="Queens Residences 3" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1661,7 +1697,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Queens+Residences+3%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Penang</span>
+      <span class="proj-tag">Bayan Lepas</span>
       <h3><a class="proj-page-link" href="property/queens-residences-3.html" onclick="event.stopPropagation()">Queens Residences 3</a></h3>
       <p class="proj-loc">Bayan Lepas, Penang</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Bayan Lepas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Bayan Lepas</span><span class="ptag" data-t="Bayan Lepas condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Bayan Lepas condo for sale</span><span class="ptag-more" data-idx="38">+14</span></div>
@@ -1677,7 +1713,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Bukit Jalil" data-idx="39" onclick="openDetailModal(39)">
+  <div class="proj-card" data-tag="Bukit Jalil" data-state="Kuala Lumpur" data-area="Bukit Jalil" data-idx="39" onclick="openDetailModal(39)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/bb8e354eb88b7c55.jpg" alt="Ren Residences" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1704,7 +1740,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Petaling Jaya" data-idx="40" onclick="openDetailModal(40)">
+  <div class="proj-card" data-tag="Petaling Jaya" data-state="Selangor" data-area="Kwasa Damansara" data-idx="40" onclick="openDetailModal(40)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/b4e0a6c6cdd8a64c.jpg" alt="RIA" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1715,7 +1751,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22RIA%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Petaling Jaya</span>
+      <span class="proj-tag">Kwasa Damansara</span>
       <h3><a class="proj-page-link" href="property/ria.html" onclick="event.stopPropagation()">RIA</a></h3>
       <p class="proj-loc">Kwasa Damansara, Selangor</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Kwasa Damansara"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Kwasa Damansara</span><span class="ptag" data-t="Kwasa Damansara condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Kwasa Damansara condo for sale</span><span class="ptag-more" data-idx="40">+16</span></div>
@@ -1731,7 +1767,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="KL City Centre" data-idx="41" onclick="openDetailModal(41)">
+  <div class="proj-card" data-tag="KL City Centre" data-state="Kuala Lumpur" data-area="KL City Centre" data-idx="41" onclick="openDetailModal(41)">
     <div class="proj-media" style="background:linear-gradient(135deg,#20211c,#3f3f2f);">
       <img src="images/c975566715ed544c.jpg" alt="Royal Lexis" class="proj-photo" loading="lazy">
       <div class="proj-badges">
@@ -1757,7 +1793,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="KL City" data-idx="42" onclick="openDetailModal(42)">
+  <div class="proj-card" data-tag="KL City" data-state="Kuala Lumpur" data-area="Damansara Heights" data-idx="42" onclick="openDetailModal(42)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/3b343a91598a4967.jpg" alt="Royal Suites Pavilion Damansara Heights" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1768,7 +1804,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Royal+Suites+Pavilion+Damansara+Heights%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">KL City</span>
+      <span class="proj-tag">Damansara Heights</span>
       <h3><a class="proj-page-link" href="property/royal-suites-pavilion-damansara-heights.html" onclick="event.stopPropagation()">Royal Suites Pavilion Damansara Heights</a></h3>
       <p class="proj-loc">Damansara Heights, Kuala Lumpur</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Damansara Heights"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Damansara Heights</span><span class="ptag" data-t="Damansara Heights condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Damansara Heights condo for sale</span><span class="ptag-more" data-idx="42">+15</span></div>
@@ -1784,7 +1820,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Penang" data-idx="43" onclick="openDetailModal(43)">
+  <div class="proj-card" data-tag="Penang" data-state="Penang" data-area="Batu Kawan" data-idx="43" onclick="openDetailModal(43)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/60a558d18dbc91d4.jpg" alt="Seiras Residences" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1795,7 +1831,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Seiras+Residences%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Penang</span>
+      <span class="proj-tag">Batu Kawan</span>
       <h3><a class="proj-page-link" href="property/seiras-residences.html" onclick="event.stopPropagation()">Seiras Residences</a></h3>
       <p class="proj-loc">Bandar Cassia, Batu Kawan, Penang</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Batu Kawan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Batu Kawan</span><span class="ptag" data-t="Batu Kawan serviced apartment for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Batu Kawan serviced apartment for sale</span><span class="ptag-more" data-idx="43">+15</span></div>
@@ -1811,7 +1847,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Petaling Jaya" data-idx="44" onclick="openDetailModal(44)">
+  <div class="proj-card" data-tag="Petaling Jaya" data-state="Selangor" data-area="Damansara Damai" data-idx="44" onclick="openDetailModal(44)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/e8abe887a5cce50f.jpg" alt="Senna Heights" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1822,7 +1858,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Senna+Heights%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Petaling Jaya</span>
+      <span class="proj-tag">Damansara Damai</span>
       <h3><a class="proj-page-link" href="property/senna-heights.html" onclick="event.stopPropagation()">Senna Heights</a></h3>
       <p class="proj-loc">Damansara Damai, Petaling Jaya, Selangor</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Damansara Damai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Damansara Damai</span><span class="ptag" data-t="Damansara Damai condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Damansara Damai condo for sale</span><span class="ptag-more" data-idx="44">+17</span></div>
@@ -1838,7 +1874,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="KL City Centre" data-idx="45" onclick="openDetailModal(45)">
+  <div class="proj-card" data-tag="KL City Centre" data-state="Kuala Lumpur" data-area="KL City Centre" data-idx="45" onclick="openDetailModal(45)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1a201d,#2e3f36);">
       <img src="images/5dda31e85bba162c.jpg" alt="So/KL (Tower 1, Oxley Towers)" class="proj-photo">
       <div class="proj-badges">
@@ -1864,7 +1900,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="KL City Centre" data-idx="46" onclick="openDetailModal(46)">
+  <div class="proj-card" data-tag="KL City Centre" data-state="Kuala Lumpur" data-area="KL City Centre" data-idx="46" onclick="openDetailModal(46)">
     <div class="proj-media" style="background:linear-gradient(135deg,#20211c,#3f3f2f);">
       <img src="images/e5be84e760a75f97.jpg" alt="Sutera Suites" class="proj-photo" loading="lazy">
       <div class="proj-badges">
@@ -1890,7 +1926,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Bukit Bintang" data-idx="47" onclick="openDetailModal(47)">
+  <div class="proj-card" data-tag="Bukit Bintang" data-state="Kuala Lumpur" data-area="Bukit Bintang" data-idx="47" onclick="openDetailModal(47)">
     <div class="proj-media" style="background:linear-gradient(135deg,#20211c,#3f3f2f);">
       <img src="images/01b0edbe93bca03a.jpg" alt="SWNK Houze @ BBCC" class="proj-photo" loading="lazy">
       <div class="proj-badges">
@@ -1916,7 +1952,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Melaka" data-idx="48" onclick="openDetailModal(48)">
+  <div class="proj-card" data-tag="Melaka" data-state="Melaka" data-area="Melaka City" data-idx="48" onclick="openDetailModal(48)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/b1483c609beda2c2.jpg" alt="Tagbay Suites" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1927,7 +1963,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Tagbay+Suites%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Melaka</span>
+      <span class="proj-tag">Melaka City</span>
       <h3><a class="proj-page-link" href="property/tagbay-suites.html" onclick="event.stopPropagation()">Tagbay Suites</a></h3>
       <p class="proj-loc">Melaka City, Melaka</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Melaka"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Melaka</span><span class="ptag" data-t="Melaka condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Melaka condo for sale</span><span class="ptag-more" data-idx="48">+11</span></div>
@@ -1943,7 +1979,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Petaling Jaya" data-idx="49" onclick="openDetailModal(49)">
+  <div class="proj-card" data-tag="Petaling Jaya" data-state="Selangor" data-area="Petaling Jaya" data-idx="49" onclick="openDetailModal(49)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1c1a17,#3a3226);">
       <img class="proj-photo" src="images/38ace37edbacd8d0.jpg" alt="The Aldenz" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1970,7 +2006,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Johor" data-idx="50" onclick="openDetailModal(50)">
+  <div class="proj-card" data-tag="Johor" data-state="Johor" data-area="Kebun Teh" data-idx="50" onclick="openDetailModal(50)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/218c5feeafbd38d4.jpg" alt="The Asteriaz" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -1981,7 +2017,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22The+Asteriaz%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Johor</span>
+      <span class="proj-tag">Kebun Teh</span>
       <h3><a class="proj-page-link" href="property/the-asteriaz.html" onclick="event.stopPropagation()">The Asteriaz</a></h3>
       <p class="proj-loc">Kebun Teh, Johor Bahru</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Johor Bahru"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Johor Bahru</span><span class="ptag" data-t="Johor Bahru serviced apartment for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Johor Bahru serviced apartment for sale</span><span class="ptag-more" data-idx="50">+15</span></div>
@@ -1997,7 +2033,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="KL City" data-idx="51" onclick="openDetailModal(51)">
+  <div class="proj-card" data-tag="KL City" data-state="Kuala Lumpur" data-area="Taman Desa" data-idx="51" onclick="openDetailModal(51)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/91b0b8ef312cec56.jpg" alt="The Atas" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -2008,7 +2044,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22The+Atas%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">KL City</span>
+      <span class="proj-tag">Taman Desa</span>
       <h3><a class="proj-page-link" href="property/the-atas.html" onclick="event.stopPropagation()">The Atas</a></h3>
       <p class="proj-loc">Taman Desa, Kuala Lumpur</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Taman Desa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Taman Desa</span><span class="ptag" data-t="Taman Desa condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Taman Desa condo for sale</span><span class="ptag-more" data-idx="51">+16</span></div>
@@ -2024,7 +2060,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Petaling Jaya" data-idx="52" onclick="openDetailModal(52)">
+  <div class="proj-card" data-tag="Petaling Jaya" data-state="Selangor" data-area="Petaling Jaya" data-idx="52" onclick="openDetailModal(52)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1c1a17,#3a3226);">
       <img class="proj-photo" src="images/c5c748cdac09db6e.jpg" alt="The Atera" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -2051,7 +2087,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Johor" data-idx="53" onclick="openDetailModal(53)">
+  <div class="proj-card" data-tag="Johor" data-state="Johor" data-area="Kebun Teh" data-idx="53" onclick="openDetailModal(53)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/4314810d3cbd8ea3.jpg" alt="The Celestz" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -2062,7 +2098,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22The+Celestz%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Johor</span>
+      <span class="proj-tag">Kebun Teh</span>
       <h3><a class="proj-page-link" href="property/the-celestz.html" onclick="event.stopPropagation()">The Celestz</a></h3>
       <p class="proj-loc">Kebun Teh, Johor Bahru</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Johor Bahru"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Johor Bahru</span><span class="ptag" data-t="Johor Bahru serviced apartment for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Johor Bahru serviced apartment for sale</span><span class="ptag-more" data-idx="53">+11</span></div>
@@ -2078,7 +2114,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="KL City Centre" data-idx="54" onclick="openDetailModal(54)">
+  <div class="proj-card" data-tag="KL City Centre" data-state="Kuala Lumpur" data-area="KL City Centre" data-idx="54" onclick="openDetailModal(54)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1c1a17,#3a3226);">
       <img src="images/7ca2758ade498c0e.jpg" alt="The Conlay" class="proj-photo" loading="lazy">
       <div class="proj-badges">
@@ -2104,7 +2140,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="KL City" data-idx="65" onclick="openDetailModal(65)">
+  <div class="proj-card" data-tag="KL City" data-state="Kuala Lumpur" data-area="KL City Centre" data-idx="65" onclick="openDetailModal(65)">
     <div class="proj-media" style="background:linear-gradient(135deg,#201c1a,#3f2e26);">
       <img class="proj-photo" src="images/6571b022bfe475ee.jpg" alt="Cappella Embassy" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -2115,7 +2151,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Cappella+Embassy%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">KL City</span>
+      <span class="proj-tag">KL City Centre</span>
       <h3><a class="proj-page-link" href="property/cappella-embassy.html" onclick="event.stopPropagation()">Cappella Embassy</a></h3>
       <p class="proj-loc">Jalan Ampang, Kuala Lumpur</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Jalan Ampang"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Jalan Ampang</span><span class="ptag" data-t="Jalan Ampang condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Jalan Ampang condo for sale</span><span class="ptag-more" data-idx="65">+24</span></div>
@@ -2131,7 +2167,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Bukit Jalil" data-idx="55" onclick="openDetailModal(55)">
+  <div class="proj-card" data-tag="Bukit Jalil" data-state="Kuala Lumpur" data-area="Bukit Jalil" data-idx="55" onclick="openDetailModal(55)">
     <div class="proj-media" style="background:linear-gradient(135deg,#201c1a,#3f2e26);"><img class="proj-photo" src="images/d910266d0991c545.jpg" alt="The Kingswoodz" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
       <div class="proj-badges">
@@ -2157,7 +2193,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Penang" data-idx="56" onclick="openDetailModal(56)">
+  <div class="proj-card" data-tag="Penang" data-state="Penang" data-area="Gelugor" data-idx="56" onclick="openDetailModal(56)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/e98a33784f10102d.jpg" alt="The Lighthauz" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -2168,7 +2204,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22The+Lighthauz%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Penang</span>
+      <span class="proj-tag">Gelugor</span>
       <h3><a class="proj-page-link" href="property/the-lighthauz.html" onclick="event.stopPropagation()">The Lighthauz</a></h3>
       <p class="proj-loc">Gelugor, Penang</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Gelugor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Gelugor</span><span class="ptag" data-t="Gelugor condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Gelugor condo for sale</span><span class="ptag-more" data-idx="56">+17</span></div>
@@ -2184,7 +2220,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Bukit Jalil" data-idx="57" onclick="openDetailModal(57)">
+  <div class="proj-card" data-tag="Bukit Jalil" data-state="Kuala Lumpur" data-area="Bukit Jalil" data-idx="57" onclick="openDetailModal(57)">
     <div class="proj-media" style="background:linear-gradient(135deg,#201c1a,#3f2e26);"><img class="proj-photo" src="images/5dcccaf8754cc877.jpg" alt="The Queenswoodz" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
       <div class="proj-badges">
@@ -2210,7 +2246,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Bukit Jalil" data-idx="58" onclick="openDetailModal(58)">
+  <div class="proj-card" data-tag="Bukit Jalil" data-state="Kuala Lumpur" data-area="Bukit Jalil" data-idx="58" onclick="openDetailModal(58)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1c1a17,#3a3226);"><img class="proj-photo" src="images/af26c455c5d4e5f7.jpg" alt="The Vividz" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
       <div class="proj-badges">
@@ -2236,7 +2272,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Bukit Bintang" data-idx="59" onclick="openDetailModal(59)">
+  <div class="proj-card" data-tag="Bukit Bintang" data-state="Kuala Lumpur" data-area="Bukit Bintang" data-idx="59" onclick="openDetailModal(59)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1c1a17,#3a3226);">
       <img src="images/29cf2d6c731b7af5.jpg" alt="Times Square 2" class="proj-photo" loading="lazy">
       <div class="proj-badges">
@@ -2262,7 +2298,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Petaling Jaya" data-idx="60" onclick="openDetailModal(60)">
+  <div class="proj-card" data-tag="Petaling Jaya" data-state="Selangor" data-area="Kwasa Damansara" data-idx="60" onclick="openDetailModal(60)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/b9b5c308d90c8b3e.jpg" alt="Tujuh Residences" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -2273,7 +2309,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Tujuh+Residences%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Petaling Jaya</span>
+      <span class="proj-tag">Kwasa Damansara</span>
       <h3><a class="proj-page-link" href="property/tujuh-residences.html" onclick="event.stopPropagation()">Tujuh Residences</a></h3>
       <p class="proj-loc">Kwasa Damansara, Selangor</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Kwasa Damansara"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Kwasa Damansara</span><span class="ptag" data-t="Kwasa Damansara condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Kwasa Damansara condo for sale</span><span class="ptag-more" data-idx="60">+16</span></div>
@@ -2289,7 +2325,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-    <div class="proj-card" data-tag="Penang" data-idx="61" onclick="openDetailModal(61)">
+    <div class="proj-card" data-tag="Penang" data-state="Penang" data-area="Batu Kawan" data-idx="61" onclick="openDetailModal(61)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/576e9b8cd9925ac4.jpg" alt="Vi Residence" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -2300,7 +2336,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Vi+Residence%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Penang</span>
+      <span class="proj-tag">Batu Kawan</span>
       <h3><a class="proj-page-link" href="property/vi-residence.html" onclick="event.stopPropagation()">Vi Residence</a></h3>
       <p class="proj-loc">Batu Kawan, Penang</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Batu Kawan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Batu Kawan</span><span class="ptag" data-t="Batu Kawan condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Batu Kawan condo for sale</span><span class="ptag-more" data-idx="61">+14</span></div>
@@ -2316,7 +2352,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Penang" data-idx="62" onclick="openDetailModal(62)">
+  <div class="proj-card" data-tag="Penang" data-state="Penang" data-area="Tanjung Bungah" data-idx="62" onclick="openDetailModal(62)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/35ba68760c53e231.jpg" alt="Waterstone" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -2327,7 +2363,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Waterstone%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Penang</span>
+      <span class="proj-tag">Tanjung Bungah</span>
       <h3><a class="proj-page-link" href="property/waterstone.html" onclick="event.stopPropagation()">Waterstone</a></h3>
       <p class="proj-loc">Tanjung Bungah, Penang</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Tanjung Bungah"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Tanjung Bungah</span><span class="ptag" data-t="Tanjung Bungah serviced apartment for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Tanjung Bungah serviced apartment for sale</span><span class="ptag-more" data-idx="62">+14</span></div>
@@ -2343,7 +2379,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Petaling Jaya" data-idx="63" onclick="openDetailModal(63)">
+  <div class="proj-card" data-tag="Petaling Jaya" data-state="Selangor" data-area="Subang Jaya" data-idx="63" onclick="openDetailModal(63)">
     <div class="proj-media" style="background:linear-gradient(135deg,#1e1a20,#3a2e3f);">
       <img class="proj-photo" src="images/eaed60b138b85225.jpg" alt="Westfield Residences" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -2354,7 +2390,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       <a class="proj-plus" href="https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+know+more+about+%22Westfield+Residences%22.&type=phone_number&app_absent=0" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="Enquire">+</a>
     </div>
     <div class="proj-body">
-      <span class="proj-tag">Petaling Jaya</span>
+      <span class="proj-tag">Subang Jaya</span>
       <h3><a class="proj-page-link" href="property/westfield-residences.html" onclick="event.stopPropagation()">Westfield Residences</a></h3>
       <p class="proj-loc">USJ 1, Subang Jaya, Selangor</p>
       <div class="proj-tags"><span class="ptag" data-t="new project Subang Jaya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>new project Subang Jaya</span><span class="ptag" data-t="Subang Jaya condo for sale"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Subang Jaya condo for sale</span><span class="ptag-more" data-idx="63">+17</span></div>
@@ -2370,7 +2406,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
       </div>
     </div>
   </div>
-  <div class="proj-card" data-tag="Petaling Jaya" data-idx="64" onclick="openDetailModal(64)">
+  <div class="proj-card" data-tag="Petaling Jaya" data-state="Selangor" data-area="Petaling Jaya" data-idx="64" onclick="openDetailModal(64)">
     <div class="proj-media" style="background:linear-gradient(135deg,#201c1a,#3f2e26);">
       <img class="proj-photo" src="images/7330fb61a19749e9.jpg" alt="Zenia @ ParkCity Damansara" loading="lazy">
       <div class="proj-icon"><svg viewBox="0 0 200 200" class="proj-icon-art"><path d="M60 190V70l40-30 40 30v120z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="60" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/><line x1="60" y1="110" x2="140" y2="110" stroke="currentColor" stroke-width="1"/><line x1="60" y1="130" x2="140" y2="130" stroke="currentColor" stroke-width="1"/><line x1="60" y1="150" x2="140" y2="150" stroke="currentColor" stroke-width="1"/><line x1="60" y1="170" x2="140" y2="170" stroke="currentColor" stroke-width="1"/><path d="M30 190v-60h20v60zM150 190v-60h20v60z" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="15" y1="190" x2="185" y2="190" stroke="currentColor" stroke-width="1.6"/></svg></div>
@@ -3143,6 +3179,73 @@ function knTagsHtml(p){
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeAll(); });
 })();
 </script>
+<!-- KN-AREAS:JS:START -->
+<script>
+window.KN_PLACES = [["Kuala Lumpur", "Damansara Heights"], ["Selangor", "Petaling Jaya"], ["Johor", "JB City Centre"], ["Kuala Lumpur", "Bandar Sri Damansara"], ["Penang", "Batu Kawan"], ["Johor", "JB City Centre"], ["Selangor", "Ara Damansara"], ["Kuala Lumpur", "KL City Centre"], ["Johor", "JB City Centre"], ["Kuala Lumpur", "Bukit Bintang"], ["Johor", "JB City Centre"], ["Kuala Lumpur", "KL City Centre"], ["Kuala Lumpur", "KL City Centre"], ["Kuala Lumpur", "TRX"], ["Selangor", "Kwasa Damansara"], ["Penang", "Paya Terubong"], ["Selangor", "Kwasa Damansara"], ["Kuala Lumpur", "KL City Centre"], ["Johor", "JB City Centre"], ["Kuala Lumpur", "KL City Centre"], ["Selangor", "Damansara Perdana"], ["Penang", "George Town"], ["Kuala Lumpur", "TRX"], ["Kuala Lumpur", "Damansara Heights"], ["Kuala Lumpur", "KL City Centre"], ["Penang", "George Town"], ["Kuala Lumpur", "Bangsar"], ["Kuala Lumpur", "Bandar Sri Damansara"], ["Penang", "Gelugor"], ["Penang", "George Town"], ["Kuala Lumpur", "KL City Centre"], ["Penang", "Batu Kawan"], ["Kuala Lumpur", "Bukit Jalil"], ["Kuala Lumpur", "Bukit Bintang"], ["Kuala Lumpur", "Bangsar"], ["Kuala Lumpur", "Bukit Bintang"], ["Kuala Lumpur", "KL City Centre"], ["Penang", "Gelugor"], ["Penang", "Bayan Lepas"], ["Kuala Lumpur", "Bukit Jalil"], ["Selangor", "Kwasa Damansara"], ["Kuala Lumpur", "KL City Centre"], ["Kuala Lumpur", "Damansara Heights"], ["Penang", "Batu Kawan"], ["Selangor", "Damansara Damai"], ["Kuala Lumpur", "KL City Centre"], ["Kuala Lumpur", "KL City Centre"], ["Kuala Lumpur", "Bukit Bintang"], ["Melaka", "Melaka City"], ["Selangor", "Petaling Jaya"], ["Johor", "Kebun Teh"], ["Kuala Lumpur", "Taman Desa"], ["Selangor", "Petaling Jaya"], ["Johor", "Kebun Teh"], ["Kuala Lumpur", "KL City Centre"], ["Kuala Lumpur", "Bukit Jalil"], ["Penang", "Gelugor"], ["Kuala Lumpur", "Bukit Jalil"], ["Kuala Lumpur", "Bukit Jalil"], ["Kuala Lumpur", "Bukit Bintang"], ["Selangor", "Kwasa Damansara"], ["Penang", "Batu Kawan"], ["Penang", "Tanjung Bungah"], ["Selangor", "Subang Jaya"], ["Selangor", "Petaling Jaya"], ["Kuala Lumpur", "KL City Centre"]];
+(function(){
+  var PLACES = [["Kuala Lumpur", "Damansara Heights"], ["Selangor", "Petaling Jaya"], ["Johor", "JB City Centre"], ["Kuala Lumpur", "Bandar Sri Damansara"], ["Penang", "Batu Kawan"], ["Johor", "JB City Centre"], ["Selangor", "Ara Damansara"], ["Kuala Lumpur", "KL City Centre"], ["Johor", "JB City Centre"], ["Kuala Lumpur", "Bukit Bintang"], ["Johor", "JB City Centre"], ["Kuala Lumpur", "KL City Centre"], ["Kuala Lumpur", "KL City Centre"], ["Kuala Lumpur", "TRX"], ["Selangor", "Kwasa Damansara"], ["Penang", "Paya Terubong"], ["Selangor", "Kwasa Damansara"], ["Kuala Lumpur", "KL City Centre"], ["Johor", "JB City Centre"], ["Kuala Lumpur", "KL City Centre"], ["Selangor", "Damansara Perdana"], ["Penang", "George Town"], ["Kuala Lumpur", "TRX"], ["Kuala Lumpur", "Damansara Heights"], ["Kuala Lumpur", "KL City Centre"], ["Penang", "George Town"], ["Kuala Lumpur", "Bangsar"], ["Kuala Lumpur", "Bandar Sri Damansara"], ["Penang", "Gelugor"], ["Penang", "George Town"], ["Kuala Lumpur", "KL City Centre"], ["Penang", "Batu Kawan"], ["Kuala Lumpur", "Bukit Jalil"], ["Kuala Lumpur", "Bukit Bintang"], ["Kuala Lumpur", "Bangsar"], ["Kuala Lumpur", "Bukit Bintang"], ["Kuala Lumpur", "KL City Centre"], ["Penang", "Gelugor"], ["Penang", "Bayan Lepas"], ["Kuala Lumpur", "Bukit Jalil"], ["Selangor", "Kwasa Damansara"], ["Kuala Lumpur", "KL City Centre"], ["Kuala Lumpur", "Damansara Heights"], ["Penang", "Batu Kawan"], ["Selangor", "Damansara Damai"], ["Kuala Lumpur", "KL City Centre"], ["Kuala Lumpur", "KL City Centre"], ["Kuala Lumpur", "Bukit Bintang"], ["Melaka", "Melaka City"], ["Selangor", "Petaling Jaya"], ["Johor", "Kebun Teh"], ["Kuala Lumpur", "Taman Desa"], ["Selangor", "Petaling Jaya"], ["Johor", "Kebun Teh"], ["Kuala Lumpur", "KL City Centre"], ["Kuala Lumpur", "Bukit Jalil"], ["Penang", "Gelugor"], ["Kuala Lumpur", "Bukit Jalil"], ["Kuala Lumpur", "Bukit Jalil"], ["Kuala Lumpur", "Bukit Bintang"], ["Selangor", "Kwasa Damansara"], ["Penang", "Batu Kawan"], ["Penang", "Tanjung Bungah"], ["Selangor", "Subang Jaya"], ["Selangor", "Petaling Jaya"], ["Kuala Lumpur", "KL City Centre"]], UI = {"en": {"loc": "Location", "all": "All Malaysia", "filter": "Filter by location", "allof": "All {s}", "show": "Showing <b>{n}</b> projects in <b>{l}</b>", "show1": "Showing <b>1</b> project in <b>{l}</b>", "st": {}}, "zh-CN": {"loc": "地区", "all": "全马", "filter": "按地区筛选", "allof": "全部{s}", "show": "{l}：共 <b>{n}</b> 个项目", "show1": "{l}：共 <b>1</b> 个项目", "st": {"Kuala Lumpur": "吉隆坡", "Selangor": "雪兰莪", "Penang": "槟城", "Johor": "柔佛", "Melaka": "马六甲"}}, "zh-TW": {"loc": "地區", "all": "全馬", "filter": "按地區篩選", "allof": "全部{s}", "show": "{l}：共 <b>{n}</b> 個項目", "show1": "{l}：共 <b>1</b> 個項目", "st": {"Kuala Lumpur": "吉隆坡", "Selangor": "雪蘭莪", "Penang": "檳城", "Johor": "柔佛", "Melaka": "馬六甲"}}, "ms": {"loc": "Lokasi", "all": "Seluruh Malaysia", "filter": "Tapis ikut lokasi", "allof": "Semua {s}", "show": "Menunjukkan <b>{n}</b> projek di <b>{l}</b>", "show1": "Menunjukkan <b>1</b> projek di <b>{l}</b>", "st": {"Penang": "Pulau Pinang"}}, "ta": {"loc": "இடம்", "all": "முழு மலேசியா", "filter": "இடத்தின்படி வடிகட்டு", "allof": "அனைத்து {s}", "show": "<b>{l}</b>: <b>{n}</b> திட்டங்கள்", "show1": "<b>{l}</b>: <b>1</b> திட்டம்", "st": {"Kuala Lumpur": "கோலாலம்பூர்", "Selangor": "சிலாங்கூர்", "Penang": "பினாங்கு", "Johor": "ஜொகூர்", "Melaka": "மலாக்கா"}}, "ja": {"loc": "エリア", "all": "マレーシア全域", "filter": "エリアで絞り込む", "allof": "{s}すべて", "show": "<b>{l}</b>：<b>{n}</b>件のプロジェクト", "show1": "<b>{l}</b>：<b>1</b>件のプロジェクト", "st": {"Kuala Lumpur": "クアラルンプール", "Selangor": "セランゴール", "Penang": "ペナン", "Johor": "ジョホール", "Melaka": "マラッカ"}}, "ko": {"loc": "지역", "all": "말레이시아 전체", "filter": "지역별 필터", "allof": "{s} 전체", "show": "<b>{l}</b>: 프로젝트 <b>{n}</b>개", "show1": "<b>{l}</b>: 프로젝트 <b>1</b>개", "st": {"Kuala Lumpur": "쿠알라룸푸르", "Selangor": "셀랑오르", "Penang": "페낭", "Johor": "조호르", "Melaka": "말라카"}}, "ar": {"loc": "الموقع", "all": "كل ماليزيا", "filter": "التصفية حسب الموقع", "allof": "كل {s}", "show": "عرض <b>{n}</b> مشروعًا في <b>{l}</b>", "show1": "عرض مشروع <b>1</b> في <b>{l}</b>", "st": {"Kuala Lumpur": "كوالالمبور", "Selangor": "سلانغور", "Penang": "بينانغ", "Johor": "جوهور", "Melaka": "ملاكا"}}}, OLD = {"Bukit Bintang": "Kuala Lumpur/Bukit Bintang", "KL City Centre": "Kuala Lumpur/KL City Centre", "TRX & Merdeka Maybank": "Kuala Lumpur/TRX", "KL City": "Kuala Lumpur", "Bukit Jalil": "Kuala Lumpur/Bukit Jalil", "Petaling Jaya": "Selangor", "Penang": "Penang", "Johor": "Johor", "Melaka": "Melaka"};
+  var box = document.getElementById('sbBox'); if(!box) return;
+  var cur = ['All', 'All'];
+  function L(){ var l = (typeof currentLang !== 'undefined' && currentLang) || document.documentElement.lang || 'en'; return UI[l] || UI.en; }
+  function st(s){ return L().st[s] || s; }
+  function label(s, a){ return s === 'All' ? L().all : (a === 'All' ? st(s) : st(s) + ' › ' + a); }
+  function texts(){
+    var u = L();
+    box.querySelector('.sb-title').textContent = u.loc;
+    box.querySelector('.sb-toggle span').textContent = u.filter;
+    box.querySelector('.sb-all span').textContent = u.all;
+    box.querySelectorAll('.sb-state').forEach(function(s){ var n = s.getAttribute('data-state');
+      s.querySelector('.sb-name').textContent = st(n);
+      s.querySelector('.sb-area[data-area="All"] span').textContent = u.allof.replace('{s}', st(n)); });
+  }
+  function ui(s, a, n){
+    cur = [s, a];
+    box.querySelector('.sb-all').classList.toggle('active', s === 'All');
+    box.querySelectorAll('.sb-state').forEach(function(x){ var me = x.getAttribute('data-state') === s; x.classList.toggle('current', me);
+      if(me) x.classList.add('open');
+      x.querySelectorAll('.sb-area').forEach(function(b){ b.classList.toggle('active', me && b.getAttribute('data-area') === a); }); });
+    document.getElementById('sbCurrent').textContent = label(s, a);
+    var c = document.getElementById('sbCount');
+    if(n == null){ c.innerHTML = ''; return; }
+    var u = L(); c.innerHTML = (n === 1 ? u.show1 : u.show).replace('{n}', n).replace('{l}', label(s, a).replace(/</g, '&lt;'));
+  }
+  function show(s, a){
+    var all = document.querySelector('.proj-filter-btn[data-tag="All"]'); if(all) all.click();  // clears any tag selection
+    var n = 0;
+    document.querySelectorAll('.proj-card').forEach(function(c){
+      var ok = s === 'All' || (c.getAttribute('data-state') === s && (a === 'All' || c.getAttribute('data-area') === a));
+      c.style.display = ok ? 'flex' : 'none'; if(ok) n++;
+    });
+    var e = document.getElementById('projEmpty'); if(e) e.style.display = n ? 'none' : 'block';
+    ui(s, a, n);
+    var sel = document.getElementById('psArea'); if(sel) sel.value = s === 'All' ? 'All' : (a === 'All' ? s : s + '/' + a);
+  }
+  window.knShowArea = show;
+  box.addEventListener('click', function(e){
+    var t;
+    if((t = e.target.closest('#sbToggle'))){ box.classList.toggle('open'); return; }
+    if((t = e.target.closest('.sb-all'))){ box.querySelectorAll('.sb-state').forEach(function(x){ x.classList.remove('open'); }); show('All', 'All'); box.classList.remove('open'); return; }
+    if((t = e.target.closest('.sb-head'))){ var x = t.parentNode; x.classList.toggle('open'); t.setAttribute('aria-expanded', x.classList.contains('open')); return; }
+    if((t = e.target.closest('.sb-area'))){ show(t.closest('.sb-state').getAttribute('data-state'), t.getAttribute('data-area')); box.classList.remove('open'); return; }
+  });
+  document.addEventListener('click', function(e){ if(box.classList.contains('open') && !box.contains(e.target)) box.classList.remove('open'); });
+  // Choosing a tag shows projects from every area
+  document.addEventListener('click', function(e){ if(e.target.closest('.ptag,#tagSection .ts-opt,#tsClear,.ts-chip')) setTimeout(function(){ ui('All', 'All', null); }, 0); }, true);
+  // Links such as projects.html#Selangor/Kwasa%20Damansara or the old #Petaling%20Jaya
+  function fromHash(){
+    var h = decodeURIComponent((location.hash || '').replace(/^#/, '')); if(!h || h === 'tagSection') return;
+    h = OLD[h] || h; var p = h.split('/'), s = p[0], a = p[1] || 'All';
+    if(STATES.indexOf(s) < 0) return;
+    show(s, a); setTimeout(function(){ document.getElementById('projGrid').scrollIntoView({behavior:'smooth', block:'start'}); }, 150);
+  }
+  var STATES = ["Kuala Lumpur", "Selangor", "Penang", "Johor", "Melaka"];
+  var f = window.setLanguage; if(typeof f === 'function'){ window.setLanguage = function(){ var r = f.apply(this, arguments); try{ texts(); ui(cur[0], cur[1], cur[0] === 'All' && !document.getElementById('sbCount').innerHTML ? null : visible()); }catch(err){} return r; }; }
+  function visible(){ var n = 0; document.querySelectorAll('.proj-card').forEach(function(c){ if(c.style.display !== 'none') n++; }); return n; }
+  texts(); ui('All', 'All', null);
+  window.addEventListener('hashchange', fromHash); setTimeout(fromHash, 50);
+})();
+</script>
+<!-- KN-AREAS:JS:END -->
 <script>var KN_SLUGS = ["111-menerung", "accent-residence", "aethera-residences", "amaya-bdr-sri-damansara", "andabreeze-residences", "arden", "arra-residences", "ascott-star-residence", "axis-causeway-square", "branniganz-suites-bukit-bintang", "brixton-causeway-square", "centrix", "clouthaus", "core-residence", "devia", "dhazelton", "daya-residence", "divine-klcc", "dover-causeway-square", "eaton-residence", "foresthill-residences", "gvinton", "golden-crown-residence", "imperial-residence-pavilion-damansara-heights", "jewel-oxley-towers", "keeperz-suites", "khaya-residences", "laverra", "lightwater-residence", "lumina-residence", "maba-suitez", "mezon-park-enclave", "oaka-residences", "orion-residence", "parkside-residence", "pavilion-square", "phoeniz-suites-kl-city-centre", "pinnacle-bukit-gambier", "queens-residences-3", "ren-residences", "ria", "royal-lexis", "royal-suites-pavilion-damansara-heights", "seiras-residences", "senna-heights", "so-kl-oxley-towers", "sutera-suites", "swnk-houze-bbcc", "tagbay-suites", "the-aldenz", "the-asteriaz", "the-atas", "the-atera", "the-celestz", "the-conlay", "the-kingswoodz", "the-lighthauz", "the-queenswoodz", "the-vividz", "times-square-2", "tujuh-residences", "vi-residence", "waterstone", "westfield-residences", "zenia-parkcity-damansara", "cappella-embassy"];
 function knPageLink(p){ var s=KN_SLUGS[PROJECT_DETAILS.indexOf(p)]; return s ? '<a class="pd-page-link" href="property/'+s+'.html">View full project page &rarr;</a>' : ''; }
 /* Every project opens its own page */

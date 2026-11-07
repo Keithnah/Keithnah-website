@@ -14,9 +14,14 @@ import html
 import json
 import os
 import re
+from urllib.parse import quote
 
 import float_wa as FW
 
+try:
+    PLACES = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'project_places.json'), encoding='utf-8'))
+except (OSError, ValueError):
+    PLACES = []
 try:
     TAG_GROUPS = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tag_groups.json'), encoding='utf-8'))
 except (OSError, ValueError):
@@ -198,7 +203,7 @@ def page(i):
     name, display = p['name'], tg[0]
     url = '%s/%s/%s.html' % (SITE, OUT, slug)
     photo = PHOTO.get(i, '')
-    area = p['tag']
+    state, area = PLACES[i] if i < len(PLACES) else ('', p['tag'])
     title = '%s | Price, Floor Plan & Unit Types | Keith Nah' % display
     bits = [x for x in [p.get('price'), p.get('size'), p.get('rooms'), p.get('tenure')] if x]
     desc = '%s, %s: %s. Completion %s. See floor plans, unit types and nearby projects, and WhatsApp Keith Nah for the latest price.' % (
@@ -297,7 +302,7 @@ def page(i):
   <a class="wa-btn" href="{wa}" target="_blank" rel="noopener">{wasvg}<span>WhatsApp Keith</span></a>
 </header>
 <main class="wrap">
-  <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>›</span><a href="../projects.html">Projects</a><span>›</span><a href="../projects.html#{areahash}">{area}</a><span>›</span><strong>{display}</strong></nav>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>›</span><a href="../projects.html">Projects</a><span>›</span>{statecrumb}<a href="../projects.html#{areahash}">{area}</a><span>›</span><strong>{display}</strong></nav>
   <div class="hero">
     <div class="hero-img">{heroimg}</div>
     <div>
@@ -339,7 +344,8 @@ document.addEventListener('click',function(e){{
         title=E(title), desc=E(desc), kw=E(', '.join(tg)), url=E(url), icon=E(up(ICON)), logo=E(up(LOGO)),
         ogimg=('<meta property="og:image" content="%s/%s">\n' % (SITE, E(photo))) if photo else '',
         ld=json.dumps(ld, ensure_ascii=False).replace('</', '<\\/'), css=CSS, nav=nav, wa=E(wa(msg)), wasvg=WA_SVG,
-        areahash=E(area.replace(' ', '%20').replace('&', '%26')), area=E(area), display=E(display),
+        areahash=E(quote(state + '/' + area if state else area, safe='/')), area=E(area),
+        statecrumb=('<a href="../projects.html#%s">%s</a><span>›</span>' % (E(quote(state)), E(state))) if state else '', display=E(display),
         heroimg=('<img src="%s" alt="%s" fetchpriority="high">' % (E(up(photo)), E(display))) if photo else '<div class="hero-ph"><svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2"><path d="M60 190V70l40-30 40 30v120z"/><path d="M60 90h80M60 110h80M60 130h80M60 150h80M85 190v-25h30v25"/></svg></div>',
         status=E(p.get('status')), ptype=E(TYPE.get(i, 'Residential')), loc=E(p['loc']), price=E(p.get('price')),
         tags=tags, stats=stats, overview=E(p.get('overview')), loctext=E(p.get('loc_text')),
