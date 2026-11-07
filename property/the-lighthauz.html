@@ -139,7 +139,22 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
 .kn-top svg{width:20px;height:20px;}
 @media(max-width:600px){.kn-fab{right:16px;bottom:16px;gap:10px;}.kn-top{width:44px;height:44px;}}
 @media(prefers-reduced-motion:reduce){.kn-top{transition:none;}}
+/* phones: the header WhatsApp button would push the menu button off screen; the floating button stays */
+@media(max-width:560px){header .whatsapp-btn,header .wa-btn,.nav-right .whatsapp-btn{display:none!important;}.hamburger{margin-left:auto;padding:6px 4px;}}
 /* KN-FLOAT:END */
+</style>
+<style id="kn-mnav-css">
+.kn-burger{display:none;margin-left:auto;background:none;border:0;color:#fff;font-size:26px;line-height:1;padding:6px 4px;cursor:pointer;}
+@media(max-width:1100px){.kn-burger{display:block;}}
+#knMnav{position:fixed;inset:0;z-index:2147483000;display:none;}
+#knMnav.open{display:block;}
+#knMnav .kn-mbg{position:absolute;inset:0;background:rgba(10,10,30,.55);}
+#knMnav .kn-mpanel{position:absolute;top:0;right:0;bottom:0;width:min(82vw,340px);background:#1d1b4f;color:#fff;padding:20px 22px 28px;overflow-y:auto;box-shadow:-8px 0 30px rgba(0,0,0,.35);}
+html[dir=rtl] #knMnav .kn-mpanel{right:auto;left:0;}
+#knMnav .kn-mclose{display:block;margin-left:auto;background:none;border:0;color:#fff;font-size:30px;line-height:1;cursor:pointer;padding:4px 8px;}
+#knMnav .kn-mlinks a{display:block;color:#fff;text-decoration:none;font-size:17px;letter-spacing:.04em;padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12);}
+#knMnav .kn-mlinks a.active{color:#b9b4ff;font-weight:600;}
+#knMnav .kn-mwa{display:block;margin-top:24px;text-align:center;background:#25d366;color:#fff;text-decoration:none;border-radius:999px;padding:13px;font-weight:600;}
 </style>
 </head>
 <body>
@@ -147,6 +162,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
   <a class="logo" href="../"><img src="../images/f304c8479b1fe873.png" alt="Keith Nah logo"><span><b>Keith Nah 鈞晖</b><small>Keith Nah Real Estate</small></span></a>
   <nav><a href="../">Home</a><a href="../projects.html" class="active">View Projects</a><a href="../compare.html">Compare Projects</a><a href="../blog.html">News</a><a href="../calculator.html">Calculator</a><a href="../mm2h.html">MM2H 第二家园</a><a href="../about-keith.html">About Keith</a></nav>
   <a class="wa-btn" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27m+interested+in+The+Lighthauz+and+would+like+to+find+out+more.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.44.79 3.06 1.2 4.72 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0012.04 2zm5.8 14.06c-.24.68-1.42 1.3-1.95 1.34-.5.04-.97.23-3.27-.68-2.77-1.09-4.53-3.93-4.67-4.11-.13-.18-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.25-.27.54-.34.72-.34l.52.01c.17 0 .39-.06.61.47.24.56.79 1.92.86 2.06.07.14.11.3.02.48-.09.18-.13.29-.27.45-.13.16-.28.35-.4.47-.13.13-.27.28-.12.55.16.27.7 1.15 1.5 1.86 1.03.92 1.9 1.2 2.17 1.34.27.13.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.88.27.14.45.2.52.32.07.11.07.66-.17 1.34z"/></svg><span>WhatsApp Keith</span></a>
+<button type="button" class="kn-burger" aria-label="Menu" onclick="knMnav()">&#9776;</button>
 </header>
 <main class="wrap">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>›</span><a href="../projects.html">Projects</a><span>›</span><a href="../projects.html#Penang">Penang</a><span>›</span><a href="../projects.html#Penang/Gelugor">Gelugor</a><span>›</span><strong>The Lighthauz</strong></nav>
@@ -184,5 +200,7 @@ document.addEventListener('click',function(e){
 });
 </script>
 <script src="../lead-tracker.js"></script>
+<div id="knMnav" aria-hidden="true"><div class="kn-mbg" onclick="knMnav(false)"></div><div class="kn-mpanel"><button type="button" class="kn-mclose" aria-label="Close" onclick="knMnav(false)">&times;</button><div class="kn-mlinks"><a href="../">Home</a><a href="../projects.html" class="active">View Projects</a><a href="../compare.html">Compare Projects</a><a href="../blog.html">News</a><a href="../calculator.html">Calculator</a><a href="../mm2h.html">MM2H 第二家园</a><a href="../about-keith.html">About Keith</a></div><a class="kn-mwa" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27m+interested+in+The+Lighthauz+and+would+like+to+find+out+more.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">Chat with Keith</a></div></div><!--/knMnav-->
+<script>function knMnav(o){var d=document.getElementById('knMnav');if(!d)return;o=(o===undefined)?!d.classList.contains('open'):o;d.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';}document.addEventListener('keydown',function(e){if(e.key==='Escape')knMnav(false);});</script>
 </body>
 </html>

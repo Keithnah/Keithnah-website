@@ -33,6 +33,8 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
 .kn-top svg{width:20px;height:20px;}
 @media(max-width:600px){.kn-fab{right:16px;bottom:16px;gap:10px;}.kn-top{width:44px;height:44px;}}
 @media(prefers-reduced-motion:reduce){.kn-top{transition:none;}}
+/* phones: the header WhatsApp button would push the menu button off screen; the floating button stays */
+@media(max-width:560px){header .whatsapp-btn,header .wa-btn,.nav-right .whatsapp-btn{display:none!important;}.hamburger{margin-left:auto;padding:6px 4px;}}
 /* KN-FLOAT:END */
 """
 SVG = ('<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38'
@@ -81,8 +83,57 @@ def fix_page(path):
     open(path, 'w', encoding='utf-8').write(t)
 
 
+# ---------- mobile menu for pages that have no menu button (project, article, topic, legal pages)
+MNAV_CSS = """<style id="kn-mnav-css">
+.kn-burger{display:none;margin-left:auto;background:none;border:0;color:#fff;font-size:26px;line-height:1;padding:6px 4px;cursor:pointer;}
+@media(max-width:1100px){.kn-burger{display:block;}}
+#knMnav{position:fixed;inset:0;z-index:2147483000;display:none;}
+#knMnav.open{display:block;}
+#knMnav .kn-mbg{position:absolute;inset:0;background:rgba(10,10,30,.55);}
+#knMnav .kn-mpanel{position:absolute;top:0;right:0;bottom:0;width:min(82vw,340px);background:#1d1b4f;color:#fff;padding:20px 22px 28px;overflow-y:auto;box-shadow:-8px 0 30px rgba(0,0,0,.35);}
+html[dir=rtl] #knMnav .kn-mpanel{right:auto;left:0;}
+#knMnav .kn-mclose{display:block;margin-left:auto;background:none;border:0;color:#fff;font-size:30px;line-height:1;cursor:pointer;padding:4px 8px;}
+#knMnav .kn-mlinks a{display:block;color:#fff;text-decoration:none;font-size:17px;letter-spacing:.04em;padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12);}
+#knMnav .kn-mlinks a.active{color:#b9b4ff;font-weight:600;}
+#knMnav .kn-mwa{display:block;margin-top:24px;text-align:center;background:#25d366;color:#fff;text-decoration:none;border-radius:999px;padding:13px;font-weight:600;}
+</style>"""
+MNAV_JS = ("<script>function knMnav(o){var d=document.getElementById('knMnav');if(!d)return;o=(o===undefined)?!d.classList.contains('open'):o;"
+           "d.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';}"
+           "document.addEventListener('keydown',function(e){if(e.key==='Escape')knMnav(false);});</script>")
+
+
+def add_mobile_nav(t):
+    """Add a menu button to the header and a slide-in menu with the header's own links. Idempotent."""
+    if 'class="hamburger"' in t or '<header' not in t:
+        return t
+    t = re.sub(r'<style id="kn-mnav-css">.*?</style>\n?', '', t, flags=re.S)
+    t = re.sub(r'\s*<button type="button" class="kn-burger".*?</button>', '', t, flags=re.S)
+    t = re.sub(r'<div id="knMnav".*?</div></div><!--/knMnav-->\n?<script>function knMnav.*?</script>\n?', '', t, flags=re.S)
+    h0 = t.index('<header'); h1 = t.index('</header>', h0)
+    nav = re.search(r'<nav>(.*?)</nav>', t[h0:h1], re.S)
+    wa = re.search(r'<a class="(?:wa-btn|float-wa)"[^>]*href="([^"]+)"', t)
+    links = nav.group(1) if nav else ''
+    panel = ('<div id="knMnav" aria-hidden="true"><div class="kn-mbg" onclick="knMnav(false)"></div><div class="kn-mpanel">'
+             '<button type="button" class="kn-mclose" aria-label="Close" onclick="knMnav(false)">&times;</button>'
+             '<div class="kn-mlinks">%s</div>%s</div></div><!--/knMnav-->\n' % (
+                 links, ('<a class="kn-mwa" href="%s" target="_blank" rel="noopener">Chat with Keith</a>' % wa.group(1)) if wa else ''))
+    burger = '<button type="button" class="kn-burger" aria-label="Menu" onclick="knMnav()">&#9776;</button>'
+    t = t[:h1] + burger + '\n' + t[h1:]
+    t = t.replace('</head>', MNAV_CSS + '\n</head>', 1)
+    t = t.replace('</body>', panel + MNAV_JS + '\n</body>', 1)
+    return t
+
+
 if __name__ == '__main__':
     pages = sorted(glob.glob('*.html'))
     for p in pages:
         fix_page(p)
-    print('Floating WhatsApp button updated on %d pages' % len(pages))
+    sub = sorted(glob.glob('property/*.html') + glob.glob('article/*.html') + glob.glob('topic/*.html'))
+    n = 0
+    for p in pages + sub:
+        s = open(p, encoding='utf-8').read()
+        s2 = add_mobile_nav(s)
+        if s2 != s:
+            open(p, 'w', encoding='utf-8').write(s2)
+            n += 1
+    print('Floating WhatsApp button updated on %d pages; mobile menu added to %d pages' % (len(pages), n))

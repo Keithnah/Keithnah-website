@@ -495,6 +495,8 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
 .kn-top svg{width:20px;height:20px;}
 @media(max-width:600px){.kn-fab{right:16px;bottom:16px;gap:10px;}.kn-top{width:44px;height:44px;}}
 @media(prefers-reduced-motion:reduce){.kn-top{transition:none;}}
+/* phones: the header WhatsApp button would push the menu button off screen; the floating button stays */
+@media(max-width:560px){header .whatsapp-btn,header .wa-btn,.nav-right .whatsapp-btn{display:none!important;}.hamburger{margin-left:auto;padding:6px 4px;}}
 /* KN-FLOAT:END */
 </style>
 </head>
