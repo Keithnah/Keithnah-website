@@ -67,8 +67,7 @@
    "Lifts": "8 + 1 lifts, about 33 units per floor",
    "Car Parks": "508 bays on Levels 1–5; not attached to units",
    "Security": "Multi-tier security",
-   "Eligibility": "2- and 3-bedroom units for Bumiputera buyers only",
-   "Sales Gallery": "Lot 3829A, Jalan Kampung Tiong, 20100 Kuala Terengganu"
+   "Eligibility": "2- and 3-bedroom units for Bumiputera buyers only"
   },
   "layouts": [
    {
@@ -142,7 +141,7 @@
    "Kota Kinabalu International Airport",
    "Queen Elizabeth Hospital"
   ],
-  "loc_text": "The Bedrock is on Jalan Haji Saman in Kota Kinabalu city centre, next to the Jesselton Docklands Live Lab sales gallery. It is the first residential plot of Jesselton Docklands, a five-plot waterfront masterplan with a planned cruise terminal, ferry terminal, retail promenade, hotels, offices and an international school. Gaya Street, Suria Sabah, Wisma Merdeka and the KK City Waterfront are close by.",
+  "loc_text": "The Bedrock is on Jalan Haji Saman in Kota Kinabalu city centre. It is the first residential plot of Jesselton Docklands, a five-plot waterfront masterplan with a planned cruise terminal, ferry terminal, retail promenade, hotels, offices and an international school. Gaya Street, Suria Sabah, Wisma Merdeka and the KK City Waterfront are close by.",
   "buyer_fit": [
    {
     "title": "Investors",
@@ -166,8 +165,7 @@
    "Lifts": "Tower A: 6 + 1 · Tower B: 6 + 1",
    "Car Parks": "Lower Ground and Levels 2–5; not attached to units",
    "Facilities": "Rooftop pool, gym, community kitchen and function room; pocket gardens, laundromat, co-working space and meeting salon",
-   "Security": "Multi-tier security",
-   "Sales Gallery": "Jesselton Docklands Live Lab, Jalan Haji Saman, 88000 Kota Kinabalu"
+   "Security": "Multi-tier security"
   },
   "layouts": [
    {
@@ -328,8 +326,7 @@
    "Lifts": "4 passenger lifts + 1 service lift",
    "Car Parks": "131 bays (incl. 3 OKU and 3 EV) + 35 motorcycle bays; not attached to units",
    "Certification": "GreenRE Green Building",
-   "Eligibility": "Kelantanese Bumiputera buyers only: IC code 03 or 29, father from Kelantan with IC 03 or 29, or living in Kelantan for more than 20 years (confirmed by a PTG letter)",
-   "Sales Gallery": "PT 1504 & PT 1505, Jalan Raja Perempuan Zainab 2, Kubang Kerian, 16150 Kota Bharu"
+   "Eligibility": "Kelantanese Bumiputera buyers only: IC code 03 or 29, father from Kelantan with IC 03 or 29, or living in Kelantan for more than 20 years (confirmed by a PTG letter)"
   },
   "layouts": [
    {
@@ -400,8 +397,7 @@
    "Residential title with a 999-year lease",
    "One or two car parks per home, side by side, plus 106 visitor bays",
    "Low maintenance fee of RM0.39 psf, including sinking fund",
-   "Close to Likas, Kota Kinabalu city centre, major hospitals and well-known schools",
-   "Developer's licence 06-2029/06788 and advertising permit 06-2029/05106"
+   "Close to Likas, Kota Kinabalu city centre, major hospitals and well-known schools"
   ],
   "amenities": [
    "Kota Kinabalu city centre",
@@ -437,11 +433,7 @@
    "Maintenance Fee": "RM0.39 psf (incl. sinking fund)",
    "Lifts": "3 + 1 lifts per tower; 11 units per floor (Tower A), 13 (Tower B)",
    "Car Parks": "1,176 car parks: 1 for Types A and B, 2 for Types B1, C, D and D1 (side by side) + 106 visitor bays",
-   "Security": "Multi-tier security",
-   "Developer's Licence": "06-2029/06788 (04/06/2024 – 03/06/2029)",
-   "Advertising Permit": "06-2029/05106 (04/06/2024 – 03/06/2029)",
-   "Building Plan Approval": "BP/138/04.24/S/52 (Kota Kinabalu City Hall)",
-   "Sales Gallery": "FYT Sales Gallery, Ground Floor, off Mile 3, Jalan Tuaran, Kota Kinabalu"
+   "Security": "Multi-tier security"
   },
   "layouts": [
    {
