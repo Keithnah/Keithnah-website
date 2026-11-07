@@ -37,6 +37,9 @@ def load_articles():
     blog = open(PAGE, encoding='utf-8').read()
     i = blog.index('const ARTICLES =') + len('const ARTICLES =')
     arts = json.JSONDecoder().raw_decode(blog[i:].lstrip())[0]
+    from news_content import EXTRA_ARTICLES
+    for k, v in EXTRA_ARTICLES.items():
+        arts.setdefault(k, v)
     slugs = {}
     for k, a in arts.items():
         s = slug(re.sub(r"'s\b", 's', html.unescape(a['title'])))[:70].strip('-')

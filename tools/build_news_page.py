@@ -15,8 +15,9 @@ from urllib.parse import quote_plus
 import os
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from news_content import AS_AT, GUIDES, LABELS, TOPICS
+from news_content import AS_AT, EXTRA_ARTICLES, EXTRA_CARDS, GUIDES, LABELS, TOPICS
 from news_pages import ART_SLUGS, write_pages
+import news_i18n
 
 LANGS = ['zh-CN', 'zh-TW', 'ms', 'ta', 'ja', 'ko', 'ar']
 PAGE = 'blog.html'
@@ -363,6 +364,12 @@ def build():
     t = re.sub(r'\s*/\* KN-NEWS:CSS:START \*/.*?/\* KN-NEWS:CSS:END \*/\n', '\n', t, flags=re.S)
     t = t.replace('</style>', CSS + '</style>', 1)
     t = re.sub(r'<!-- KN-NEWS:JS:START -->.*?<!-- KN-NEWS:JS:END -->\n', '', t, flags=re.S)
+    # Card text of the extra articles (title, excerpt, category and date)
+    for k, a in EXTRA_ARTICLES.items():
+        for s in (a['title'], EXTRA_CARDS[k], a['cat'], a['date']):
+            tr = news_i18n.tr(s)
+            if tr:
+                TR[T(s)] = {l: T(v) for l, v in tr.items()}
     js = JS.replace('__TR__', json.dumps(TR, ensure_ascii=False).replace('</', '<\\/')).replace('__TOPICS__', json.dumps([slug(tp[0]) for tp in TOPICS])).replace('__ART_SLUGS__', json.dumps(ART_SLUGS))
     t = t.replace('<script src="lead-tracker.js"></script>', js + '<script src="lead-tracker.js"></script>', 1)
 
@@ -384,6 +391,37 @@ def build():
     print('Untranslated guide strings: %d %s' % (len(MISSING), MISSING[:5]))
     print('News page built: %d guides, %d FAQ, %d topics, %d translated blocks' % (len(GUIDES), len(FAQ), len(TOPICS), len(TR)))
     return t
+
+
+def add_extra_articles():
+    """Add the articles in tools/i18n/news_extra_src.json to blog.html: data for the reader and a card at the top of the grid."""
+    t = open(PAGE, encoding='utf-8').read()
+    i = t.index('const ARTICLES =') + len('const ARTICLES =')
+    while t[i] == ' ':
+        i += 1
+    arts, end = json.JSONDecoder().raw_decode(t[i:])
+    changed = False
+    for k in sorted(EXTRA_ARTICLES, key=lambda x: int(x[1:])):
+        a = EXTRA_ARTICLES[k]
+        if arts.get(k) != dict(a, icon=arts.get(k, {}).get('icon', ''), grad=arts.get(k, {}).get('grad', '#1c1a17,#3a3226')):
+            arts[k] = dict(a, icon='', grad='#1c1a17,#3a3226')
+            changed = True
+        if 'data-id="%s"' % k not in t:
+            card = ('  <div class="article-card" data-cat="{c}" data-id="{k}" onclick="openArticle(\'{k}\')">\n'
+                    '    <div class="article-body">\n      <span class="article-cat-text">{c}</span>\n'
+                    '      <span class="article-date">{d}</span>\n      <h3>{h}</h3>\n      <p>{p}</p>\n'
+                    '      <span class="article-read">Read Article →</span>\n    </div>\n  </div>\n').format(
+                c=A(a['cat']), k=k, d=T(a['date']), h=T(a['title']), p=T(EXTRA_CARDS[k]))
+            g = t.index('<div class="journal-grid" id="journalGrid">') + len('<div class="journal-grid" id="journalGrid">\n')
+            t = t[:g] + card + t[g:]
+            i = t.index('const ARTICLES =') + len('const ARTICLES =')
+            while t[i] == ' ':
+                i += 1
+            changed = True
+    if changed:
+        _, end = json.JSONDecoder().raw_decode(t[i:])
+        t = t[:i] + json.dumps(arts, ensure_ascii=False) + t[i + end:]
+        open(PAGE, 'w', encoding='utf-8').write(t)
 
 
 def fix_stamp_duty_article():
@@ -438,5 +476,6 @@ if __name__ == '__main__':
     import sys
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     fix_stamp_duty_article()
+    add_extra_articles()
     build()
     write_pages()

@@ -1,0 +1,353 @@
+{
+ "a32": {
+  "cat": "Market Trend",
+  "date": "6 Nov 2026",
+  "topics": [
+   "Kuala Lumpur",
+   "TRX & Merdeka 118"
+  ],
+  "title": {
+   "en": "118 Mall Opens at Merdeka 118: What It Means for KL's Old City Core",
+   "zh-CN": "默迪卡118的118 Mall开幕：对吉隆坡老城区意味着什么",
+   "ms": "118 Mall Dibuka di Merdeka 118: Apa Maknanya bagi Pusat Bandar Lama KL",
+   "ta": "Merdeka 118-இல் 118 Mall திறப்பு: KL பழைய நகர மையத்துக்கு இதன் பொருள் என்ன",
+   "ja": "ムルデカ118に「118 Mall」が開業：KL旧市街にとっての意味",
+   "ko": "메르데카 118에 118 Mall 개장: KL 구도심에 주는 의미",
+   "ar": "افتتاح 118 Mall في Merdeka 118: ماذا يعني لقلب كوالالمبور القديم",
+   "zh-TW": "默迪卡118的118 Mall開幕：對吉隆坡老城區意味著什麼"
+  },
+  "card": {
+   "en": "The mall at the foot of the world's second-tallest building opened on 1 November. Here's what it changes for homes nearby, and what it doesn't.",
+   "zh-CN": "位于全球第二高楼脚下的商场已于11月1日开幕。它会给周边住宅带来哪些改变，又有哪些不会改变？",
+   "ms": "Pusat beli-belah di kaki bangunan kedua tertinggi di dunia dibuka pada 1 November. Inilah perubahan yang dibawanya kepada kediaman berhampiran, dan apa yang tidak berubah.",
+   "ta": "உலகின் இரண்டாவது உயரமான கட்டடத்தின் அடியில் உள்ள மால் நவம்பர் 1 அன்று திறக்கப்பட்டது. அருகிலுள்ள வீடுகளுக்கு இது எதை மாற்றுகிறது, எதை மாற்றவில்லை என்பதைப் பார்ப்போம்.",
+   "ja": "世界で2番目に高いビルの足元にあるモールが11月1日に開業しました。周辺の住宅にとって何が変わり、何が変わらないのかを整理します。",
+   "ko": "세계에서 두 번째로 높은 빌딩 아래의 쇼핑몰이 11월 1일 문을 열었습니다. 주변 주택에 무엇이 달라지고 무엇이 그대로인지 살펴봅니다.",
+   "ar": "افتُتح المجمع التجاري الواقع عند قاعدة ثاني أطول مبنى في العالم في 1 نوفمبر. إليك ما يغيّره بالنسبة إلى المساكن القريبة، وما لا يغيّره.",
+   "zh-TW": "位於全球第二高樓腳下的商場已於11月1日開幕。它會給周邊住宅帶來哪些改變，又有哪些不會改變？"
+  },
+  "intro": {
+   "en": "118 Mall opened to the public on 1 November 2026 at the base of Merdeka 118, the 678.9-metre tower that is now the world's second-tallest building. About 158 stores were trading on opening day, with more than 300 planned as the remaining tenants open in phases. For anyone who owns, rents or is thinking of buying around the old city centre, it is the first big everyday amenity the tower has delivered.",
+   "zh-CN": "118 Mall于2026年11月1日在默迪卡118脚下向公众开放。这座高678.9米的大厦目前是全球第二高楼。开幕当天约有158家店铺营业，其余租户将分阶段开业，计划总数超过300家。对于在老城区一带拥有房产、租房或考虑买房的人来说，这是该大厦带来的第一项大型日常配套。",
+   "ms": "118 Mall dibuka kepada orang ramai pada 1 November 2026 di kaki Merdeka 118, menara setinggi 678.9 meter yang kini merupakan bangunan kedua tertinggi di dunia. Kira-kira 158 kedai beroperasi pada hari pembukaan, dengan lebih 300 dirancang apabila penyewa selebihnya dibuka secara berperingkat. Bagi sesiapa yang memiliki, menyewa atau bercadang membeli kediaman di sekitar pusat bandar lama, inilah kemudahan harian besar pertama yang dibawa oleh menara itu.",
+   "ta": "678.9 மீட்டர் உயரமுள்ள, தற்போது உலகின் இரண்டாவது உயரமான கட்டடமான Merdeka 118-இன் அடிப்பகுதியில் 118 Mall 2026 நவம்பர் 1 அன்று பொதுமக்களுக்குத் திறக்கப்பட்டது. திறப்பு நாளில் சுமார் 158 கடைகள் இயங்கின; மீதமுள்ள குத்தகைதாரர்கள் கட்டம் கட்டமாகத் திறக்கும்போது மொத்தம் 300-க்கும் மேற்பட்ட கடைகள் திட்டமிடப்பட்டுள்ளன. பழைய நகர மையத்தைச் சுற்றி வீடு வைத்திருப்பவர்கள், வாடகைக்கு இருப்பவர்கள் அல்லது வாங்க நினைப்பவர்களுக்கு, இந்தக் கோபுரம் வழங்கும் முதல் பெரிய அன்றாட வசதி இதுவே.",
+   "ja": "118 Mallは2026年11月1日、高さ678.9メートルで現在世界第2位の高さを誇るムルデカ118の足元に一般開業しました。開業日には約158店舗が営業し、残りのテナントが段階的に開店することで、最終的には300店舗以上を予定しています。旧市街周辺で物件を所有している人、賃貸で住んでいる人、購入を検討している人にとって、このタワーがもたらす初めての大規模な日常の利便施設です。",
+   "ko": "118 Mall은 2026년 11월 1일, 높이 678.9미터로 현재 세계에서 두 번째로 높은 건물인 메르데카 118의 하부에서 일반에 문을 열었습니다. 개장일에는 약 158개 매장이 영업했으며, 나머지 입점 업체가 단계적으로 문을 열면서 총 300개 이상이 계획되어 있습니다. 구도심 일대에 집을 소유하거나 임차하고 있거나 매입을 고려하는 사람에게, 이는 이 타워가 처음으로 제공하는 대형 생활 편의시설입니다.",
+   "ar": "افتُتح 118 Mall للجمهور في 1 نوفمبر 2026 عند قاعدة برج Merdeka 118 البالغ ارتفاعه 678.9 مترًا، وهو الآن ثاني أطول مبنى في العالم. كان نحو 158 متجرًا يعمل يوم الافتتاح، مع خطة لأكثر من 300 متجر مع افتتاح بقية المستأجرين على مراحل. وبالنسبة إلى من يملك أو يستأجر أو يفكر في الشراء حول وسط المدينة القديم، فهذه أول خدمة يومية كبيرة يقدمها البرج.",
+   "zh-TW": "118 Mall於2026年11月1日在默迪卡118腳下向公眾開放。這座高678.9米的大廈目前是全球第二高樓。開幕當天約有158家店鋪營業，其餘租戶將分階段開業，計劃總數超過300家。對於在老城區一帶擁有房產、租房或考慮買房的人來說，這是該大廈帶來的第一項大型日常配套。"
+  },
+  "sections": [
+   {
+    "h2": {
+     "en": "What Opened, and How You Get There",
+     "zh-CN": "开了什么，怎么去",
+     "ms": "Apa yang Dibuka, dan Cara ke Sana",
+     "ta": "என்ன திறக்கப்பட்டது, எப்படிச் செல்வது",
+     "ja": "何が開業し、どう行くのか",
+     "ko": "무엇이 문을 열었고, 어떻게 가는가",
+     "ar": "ما الذي افتُتح، وكيف تصل إليه",
+     "zh-TW": "開了什麼，怎麼去"
+    },
+    "paragraphs": [
+     {
+      "en": "Beyond the shops, the mall has a few features meant to give it its own identity, including The Atmosphere, the Raincloud installation and a Malaysian Artisan District for local makers. The opening ceremony was timed for 11:18am, a nod to the tower's name.",
+      "zh-CN": "除了店铺之外，商场还设有几项特色设施，让它拥有自己的风格，包括 The Atmosphere、Raincloud 装置，以及为本地手工艺人而设的马来西亚工匠区（Malaysian Artisan District）。开幕仪式特意定在上午11点18分，呼应大厦的名字。",
+      "ms": "Selain kedai, pusat beli-belah ini mempunyai beberapa ciri tersendiri, termasuk The Atmosphere, instalasi Raincloud dan Malaysian Artisan District untuk pembuat tempatan. Majlis pembukaan diadakan pada jam 11:18 pagi, sempena nama menara itu.",
+      "ta": "கடைகளைத் தாண்டி, The Atmosphere, Raincloud நிறுவல், உள்ளூர் கைவினைஞர்களுக்கான Malaysian Artisan District உள்ளிட்ட, மாலுக்குத் தனித்துவம் தரும் சில அம்சங்கள் உள்ளன. கோபுரத்தின் பெயரை நினைவூட்டும் வகையில் திறப்பு விழா காலை 11:18 மணிக்கு நடைபெற்றது.",
+      "ja": "店舗のほかにも、The Atmosphere、Raincloudのインスタレーション、地元の作り手のためのMalaysian Artisan Districtなど、独自の個性を打ち出す施設があります。開業セレモニーはタワーの名前にちなみ、午前11時18分に合わせて行われました。",
+      "ko": "매장 외에도 The Atmosphere, Raincloud 설치물, 현지 공예가를 위한 Malaysian Artisan District 등 고유한 개성을 살린 시설이 있습니다. 개장식은 타워 이름에 맞춰 오전 11시 18분에 열렸습니다.",
+      "ar": "إلى جانب المتاجر، يضم المجمع عناصر تمنحه هوية خاصة، منها The Atmosphere وعمل Raincloud الفني ومنطقة Malaysian Artisan District للحرفيين المحليين. وقد حُدد موعد حفل الافتتاح عند الساعة 11:18 صباحًا، في إشارة إلى اسم البرج.",
+      "zh-TW": "除了店鋪之外，商場還設有幾項特色設施，讓它擁有自己的風格，包括 The Atmosphere、Raincloud 裝置，以及為本地手工藝人而設的馬來西亞工匠區（Malaysian Artisan District）。開幕儀式特意定在上午11點18分，呼應大廈的名字。"
+     },
+     {
+      "en": "Access is the strongest point. An express escalator links the mall directly to Merdeka MRT station on the Kajang Line, so it is reachable without a car from much of the Klang Valley. The tower's observation deck, The View at 118, is a separate attraction and has not yet announced an opening date.",
+      "zh-CN": "交通是它最大的优势。一条快速扶梯把商场直接连接到加影线（Kajang Line）的默迪卡地铁站（Merdeka MRT），因此巴生谷大部分地区的人不开车也能到达。大厦的观景台 The View at 118 是另一个独立景点，目前尚未公布开放日期。",
+      "ms": "Akses ialah kelebihan terbesarnya. Eskalator ekspres menghubungkan pusat beli-belah terus ke stesen MRT Merdeka di Laluan Kajang, jadi ia boleh dikunjungi tanpa kereta dari kebanyakan kawasan Lembah Klang. Dek pemerhatian menara, The View at 118, ialah tarikan berasingan dan belum mengumumkan tarikh pembukaan.",
+      "ta": "அணுகல் வசதியே இதன் மிகப்பெரிய பலம். ஒரு எக்ஸ்பிரஸ் எஸ்கலேட்டர் மாலை Kajang Line-இல் உள்ள Merdeka MRT நிலையத்துடன் நேரடியாக இணைக்கிறது; எனவே Klang Valley-இன் பெரும்பாலான பகுதிகளிலிருந்து கார் இல்லாமலே செல்லலாம். கோபுரத்தின் கண்காணிப்புத் தளமான The View at 118 தனி ஈர்ப்பு; அதன் திறப்புத் தேதி இன்னும் அறிவிக்கப்படவில்லை.",
+      "ja": "最大の強みはアクセスです。急行エスカレーターでカジャン線（Kajang Line）のムルデカMRT駅と直結しているため、クランバレーの多くの地域から車なしで行けます。タワーの展望台「The View at 118」は別の施設で、開業日はまだ発表されていません。",
+      "ko": "가장 큰 강점은 접근성입니다. 익스프레스 에스컬레이터가 쇼핑몰을 카장선(Kajang Line) 메르데카 MRT역과 바로 연결해, 클랑밸리 대부분 지역에서 차 없이 갈 수 있습니다. 타워 전망대인 The View at 118은 별도 시설로, 아직 개장일이 발표되지 않았습니다.",
+      "ar": "سهولة الوصول هي أقوى ميزاته. إذ يربط سلم كهربائي سريع المجمع مباشرة بمحطة Merdeka MRT على خط Kajang، فيمكن الوصول إليه من دون سيارة من معظم وادي كلانغ. أما منصة المراقبة في البرج، The View at 118، فهي معلم منفصل ولم يُعلن موعد افتتاحها بعد.",
+      "zh-TW": "交通是它最大的優勢。一條快速扶梯把商場直接連線到加影線（Kajang Line）的默迪卡地鐵站（Merdeka MRT），因此巴生谷大部分地區的人不開車也能到達。大廈的觀景臺 The View at 118 是另一個獨立景點，目前尚未公佈開放日期。"
+     }
+    ]
+   },
+   {
+    "h2": {
+     "en": "Why It Matters for Homes Nearby",
+     "zh-CN": "为什么这对周边住宅很重要",
+     "ms": "Mengapa Ia Penting bagi Kediaman Berhampiran",
+     "ta": "அருகிலுள்ள வீடுகளுக்கு இது ஏன் முக்கியம்",
+     "ja": "周辺の住宅にとってなぜ重要か",
+     "ko": "주변 주택에 왜 중요한가",
+     "ar": "لماذا يهم ذلك المساكن القريبة",
+     "zh-TW": "為什麼這對周邊住宅很重要"
+    },
+    "paragraphs": [
+     {
+      "en": "The streets around Merdeka 118, from Petaling Street and Jalan Hang Tuah to the southern edge of Bukit Bintang, have long had heritage and transit but few modern daily conveniences within walking distance. A large mall with groceries, food and services changes that, and it is the kind of amenity tenants notice when choosing where to live.",
+      "zh-CN": "默迪卡118周边的街道，从茨厂街（Petaling Street）、汉都亚路（Jalan Hang Tuah）一直到武吉免登的南端，长期以来有历史风貌和交通，但步行范围内的现代日常配套很少。一个提供超市、餐饮和各类服务的大型商场改变了这一点，而这正是租客在选择住处时会留意的配套。",
+      "ms": "Jalan-jalan di sekitar Merdeka 118, dari Petaling Street dan Jalan Hang Tuah hingga ke pinggir selatan Bukit Bintang, sudah lama mempunyai warisan dan pengangkutan awam tetapi sedikit kemudahan harian moden dalam jarak berjalan kaki. Pusat beli-belah besar dengan pasar raya, makanan dan perkhidmatan mengubah keadaan itu, dan inilah jenis kemudahan yang diperhatikan penyewa apabila memilih tempat tinggal.",
+      "ta": "Petaling Street, Jalan Hang Tuah முதல் Bukit Bintang-இன் தெற்கு எல்லை வரை Merdeka 118-ஐச் சுற்றியுள்ள தெருக்களில் நீண்ட காலமாகப் பாரம்பரியமும் போக்குவரத்தும் இருந்தாலும், நடந்து செல்லும் தூரத்தில் நவீன அன்றாட வசதிகள் குறைவு. மளிகை, உணவு, சேவைகள் கொண்ட பெரிய மால் அதை மாற்றுகிறது; வாடகைதாரர்கள் வசிக்கும் இடத்தைத் தேர்ந்தெடுக்கும்போது கவனிக்கும் வசதி இது.",
+      "ja": "ムルデカ118周辺の街並み、つまりペタリン通り（Petaling Street）やハントゥア通り（Jalan Hang Tuah）からブキッ・ビンタンの南端にかけては、歴史と交通の便はあっても、徒歩圏内の現代的な日常の利便施設は多くありませんでした。スーパー、飲食、各種サービスがそろう大型モールはその状況を変えるもので、入居者が住む場所を選ぶ際に重視する施設でもあります。",
+      "ko": "페탈링 스트리트(Petaling Street)와 잘란 항투아(Jalan Hang Tuah)부터 부킷 빈탕 남쪽 끝까지, 메르데카 118 주변 거리는 오래전부터 역사와 교통은 갖췄지만 걸어서 갈 수 있는 현대적 생활 편의시설은 부족했습니다. 마트, 식당, 각종 서비스를 갖춘 대형 쇼핑몰은 이를 바꾸며, 세입자가 거주지를 고를 때 눈여겨보는 시설이기도 합니다.",
+      "ar": "لطالما تمتعت الشوارع المحيطة بـ Merdeka 118، من Petaling Street وJalan Hang Tuah إلى الطرف الجنوبي من Bukit Bintang، بالتراث وبالنقل العام، لكن مع قليل من الخدمات اليومية الحديثة على مسافة مشي. ومجمع كبير يضم متاجر بقالة ومطاعم وخدمات يغيّر ذلك، وهو من نوع المرافق التي يلاحظها المستأجرون عند اختيار مكان سكنهم.",
+      "zh-TW": "默迪卡118周邊的街道，從茨廠街（Petaling Street）、漢都亞路（Jalan Hang Tuah）一直到武吉免登的南端，長期以來有歷史風貌和交通，但步行範圍內的現代日常配套很少。一個提供超市、餐飲和各類服務的大型商場改變了這一點，而這正是租客在選擇住處時會留意的配套。"
+     },
+     {
+      "en": "For short-stay hosts, a new landmark attraction adds another reason for visitors to stay in the area rather than pass through. For owner-occupiers, the main gain is convenience: a full mall and an MRT station within a short walk is a combination that has historically supported resale demand in other parts of KL.",
+      "zh-CN": "对短租房东来说，一个新的地标景点让游客多了一个留宿该区而不只是路过的理由。对自住买家来说，最主要的好处是便利：步行不远就有完整的商场和地铁站，这种组合在吉隆坡其他地区一向有助于支撑二手需求。",
+      "ms": "Bagi hos sewaan jangka pendek, tarikan mercu tanda baharu memberi pelawat satu lagi sebab untuk menginap di kawasan ini dan bukan sekadar melalui. Bagi pemilik yang menduduki sendiri, manfaat utamanya ialah kemudahan: pusat beli-belah lengkap dan stesen MRT dalam jarak berjalan kaki yang dekat ialah gabungan yang selama ini menyokong permintaan jualan semula di bahagian lain KL.",
+      "ta": "குறுகிய கால வாடகை வழங்குநர்களுக்கு, புதிய அடையாளச் சின்ன ஈர்ப்பு பார்வையாளர்கள் இப்பகுதியைக் கடந்து செல்லாமல் இங்கேயே தங்க இன்னொரு காரணத்தைத் தருகிறது. சொந்தமாக வசிப்பவர்களுக்கு முக்கிய நன்மை வசதி: சிறிது நடை தூரத்தில் முழுமையான மாலும் MRT நிலையமும் இருப்பது, KL-இன் பிற பகுதிகளில் மறுவிற்பனைத் தேவையை வரலாற்று ரீதியாக ஆதரித்த கலவை.",
+      "ja": "短期賃貸のホストにとっては、新たなランドマークが、旅行者が素通りせずこのエリアに泊まる理由をもう一つ増やします。自己居住の購入者にとっての主なメリットは利便性です。徒歩圏内に本格的なモールとMRT駅があるという組み合わせは、KLの他のエリアでも中古需要を支えてきました。",
+      "ko": "단기 임대 호스트에게는 새로운 랜드마크가 방문객이 이 지역을 지나치지 않고 머무를 이유를 하나 더 만들어 줍니다. 실거주자에게 가장 큰 이점은 편리함입니다. 가까운 도보 거리에 대형 쇼핑몰과 MRT역이 함께 있는 조합은 KL의 다른 지역에서도 재판매 수요를 뒷받침해 왔습니다.",
+      "ar": "بالنسبة إلى مضيفي الإيجارات القصيرة، يمنح معلم جديد الزوار سببًا إضافيًا للإقامة في المنطقة بدلًا من المرور بها فقط. أما لمن يسكن في عقاره، فالمكسب الأساسي هو الراحة: فوجود مجمع تجاري متكامل ومحطة MRT على مسافة مشي قصيرة مزيج دعم تاريخيًا الطلب على إعادة البيع في أنحاء أخرى من كوالالمبور.",
+      "zh-TW": "對短租房東來說，一個新的地標景點讓遊客多了一個留宿該區而不只是路過的理由。對自住買家來說，最主要的好處是便利：步行不遠就有完整的商場和地鐵站，這種組合在吉隆坡其他地區一向有助於支撐二手需求。"
+     }
+    ]
+   },
+   {
+    "h2": {
+     "en": "What a Mall Opening Doesn't Do",
+     "zh-CN": "商场开幕做不到的事",
+     "ms": "Apa yang Tidak Dilakukan oleh Pembukaan Pusat Beli-belah",
+     "ta": "ஒரு மால் திறப்பு செய்யாதவை",
+     "ja": "モール開業でも変わらないこと",
+     "ko": "쇼핑몰 개장이 해주지 못하는 것",
+     "ar": "ما لا يفعله افتتاح مجمع تجاري",
+     "zh-TW": "商場開幕做不到的事"
+    },
+    "paragraphs": [
+     {
+      "en": "A new mall does not lift every unit nearby by the same amount. The area also has a large pipeline of new condominium and serviced residence launches, and more supply competes for the same tenants. Walking distance, building quality and the unit's own layout still matter more than the postcode.",
+      "zh-CN": "新商场不会让周边每个单位都同等升值。该区也有大量新公寓和服务式住宅陆续推出，更多的供应会争夺同一批租客。步行距离、建筑质量和单位本身的格局，仍然比地址更重要。",
+      "ms": "Pusat beli-belah baharu tidak menaikkan nilai setiap unit berhampiran dengan kadar yang sama. Kawasan ini juga mempunyai banyak pelancaran kondominium dan kediaman servis baharu, dan bekalan yang lebih banyak bersaing untuk penyewa yang sama. Jarak berjalan kaki, kualiti bangunan dan susun atur unit itu sendiri masih lebih penting daripada poskod.",
+      "ta": "புதிய மால் அருகிலுள்ள ஒவ்வொரு யூனிட்டின் மதிப்பையும் ஒரே அளவில் உயர்த்தாது. இப்பகுதியில் புதிய காண்டோமினியம் மற்றும் சர்வீஸ் ரெசிடென்ஸ் வெளியீடுகளும் ஏராளமாக வரிசையில் உள்ளன; அதிகமான விநியோகம் அதே வாடகைதாரர்களுக்காகப் போட்டியிடுகிறது. அஞ்சல் குறியீட்டை விட நடை தூரம், கட்டடத் தரம், யூனிட்டின் வடிவமைப்பு ஆகியவையே இன்னும் முக்கியம்.",
+      "ja": "新しいモールができても、周辺のすべての物件が同じだけ値上がりするわけではありません。このエリアでは新築コンドミニアムやサービスレジデンスの供給も多く控えており、供給が増えれば同じ入居者を奪い合うことになります。住所よりも、徒歩距離、建物の質、住戸そのものの間取りのほうが依然として重要です。",
+      "ko": "새 쇼핑몰이 생겼다고 주변의 모든 유닛 가치가 똑같이 오르지는 않습니다. 이 지역에는 신규 콘도미니엄과 서비스 레지던스 분양도 많이 예정되어 있어, 늘어난 공급이 같은 세입자를 두고 경쟁합니다. 주소보다는 도보 거리, 건물 품질, 유닛 자체의 구조가 여전히 더 중요합니다.",
+      "ar": "لا يرفع المجمع الجديد قيمة كل وحدة قريبة بالقدر نفسه. فالمنطقة تشهد أيضًا عددًا كبيرًا من مشاريع الشقق والوحدات الخدمية الجديدة، والمزيد من العرض يتنافس على المستأجرين أنفسهم. ولا تزال مسافة المشي وجودة المبنى وتصميم الوحدة نفسها أهم من العنوان.",
+      "zh-TW": "新商場不會讓周邊每個單位都同等升值。該區也有大量新公寓和服務式住宅陸續推出，更多的供應會爭奪同一批租客。步行距離、建築質量和單位本身的格局，仍然比地址更重要。"
+     },
+     {
+      "en": "Before buying on the strength of the opening, compare actual resale and rental transactions in the building you are looking at, not asking prices or launch brochures. Keith can pull recent figures for any project around Merdeka 118 and Bukit Bintang.",
+      "zh-CN": "在因为商场开幕而决定购买之前，请比较你所看楼盘的实际二手成交价和租金成交，而不是叫价或推介手册。Keith 可以为默迪卡118和武吉免登一带的任何项目提供近期数据。",
+      "ms": "Sebelum membeli kerana pembukaan ini, bandingkan transaksi jualan semula dan sewaan sebenar di bangunan yang anda minati, bukan harga tawaran atau brosur pelancaran. Keith boleh mendapatkan angka terkini bagi mana-mana projek di sekitar Merdeka 118 dan Bukit Bintang.",
+      "ta": "இந்தத் திறப்பை நம்பி வாங்குவதற்கு முன், நீங்கள் பார்க்கும் கட்டடத்தின் உண்மையான மறுவிற்பனை மற்றும் வாடகைப் பரிவர்த்தனைகளை ஒப்பிடுங்கள்; கேட்கும் விலைகளையோ வெளியீட்டுக் கையேடுகளையோ அல்ல. Merdeka 118 மற்றும் Bukit Bintang சுற்றியுள்ள எந்தத் திட்டத்துக்கும் Keith சமீபத்திய புள்ளிவிவரங்களைத் தர முடியும்.",
+      "ja": "開業を理由に購入する前に、売り出し価格やパンフレットではなく、検討中の物件での実際の中古成約と賃貸成約を比較してください。Keithはムルデカ118とブキッ・ビンタン周辺のどのプロジェクトについても最新の数字をお調べできます。",
+      "ko": "개장 소식만 보고 매입하기 전에, 호가나 분양 브로슈어가 아닌 관심 있는 건물의 실제 재판매 및 임대 거래를 비교해 보세요. Keith가 메르데카 118과 부킷 빈탕 주변 어느 프로젝트든 최근 수치를 찾아 드릴 수 있습니다.",
+      "ar": "قبل الشراء اعتمادًا على هذا الافتتاح، قارن صفقات إعادة البيع والإيجار الفعلية في المبنى الذي تفكر فيه، لا الأسعار المطلوبة أو كتيبات الإطلاق. ويمكن لـ Keith توفير أحدث الأرقام لأي مشروع حول Merdeka 118 وBukit Bintang.",
+      "zh-TW": "在因為商場開幕而決定購買之前，請比較你所看樓盤的實際二手成交價和租金成交，而不是叫價或推介手冊。Keith 可以為默迪卡118和武吉免登一帶的任何專案提供近期資料。"
+     }
+    ]
+   }
+  ],
+  "stats": [
+   {
+    "value": "158",
+    "label": {
+     "en": "Stores trading on opening day",
+     "zh-CN": "开幕当天营业的店铺",
+     "ms": "Kedai beroperasi pada hari pembukaan",
+     "ta": "திறப்பு நாளில் இயங்கிய கடைகள்",
+     "ja": "開業日に営業した店舗",
+     "ko": "개장일 영업 매장",
+     "ar": "متاجر عملت يوم الافتتاح",
+     "zh-TW": "開幕當天營業的店鋪"
+    }
+   },
+   {
+    "value": "300+",
+    "label": {
+     "en": "Stores planned in total",
+     "zh-CN": "计划店铺总数",
+     "ms": "Jumlah kedai yang dirancang",
+     "ta": "மொத்தம் திட்டமிடப்பட்ட கடைகள்",
+     "ja": "予定されている店舗総数",
+     "ko": "계획된 전체 매장 수",
+     "ar": "إجمالي المتاجر المخطط لها",
+     "zh-TW": "計劃店鋪總數"
+    }
+   },
+   {
+    "value": "678.9 m",
+    "label": {
+     "en": "Height of Merdeka 118",
+     "zh-CN": "默迪卡118的高度",
+     "ms": "Ketinggian Merdeka 118",
+     "ta": "Merdeka 118-இன் உயரம்",
+     "ja": "ムルデカ118の高さ",
+     "ko": "메르데카 118의 높이",
+     "ar": "ارتفاع Merdeka 118",
+     "zh-TW": "默迪卡118的高度"
+    }
+   }
+  ],
+  "takeaway": {
+   "en": "118 Mall gives the old city core the daily amenity it lacked, linked straight to an MRT station. That helps homes within walking distance, but supply nearby is large, so judge each building on its own transactions.",
+   "zh-CN": "118 Mall 为老城区带来了一直欠缺的日常配套，并直通地铁站。这对步行范围内的住宅有帮助，但周边供应量大，所以每栋楼都要根据它自己的成交数据来判断。",
+   "ms": "118 Mall memberi pusat bandar lama kemudahan harian yang selama ini tiada, dihubungkan terus ke stesen MRT. Ini membantu kediaman dalam jarak berjalan kaki, tetapi bekalan berhampiran adalah besar, jadi nilailah setiap bangunan berdasarkan transaksinya sendiri.",
+   "ta": "MRT நிலையத்துடன் நேரடியாக இணைக்கப்பட்ட 118 Mall, பழைய நகர மையத்துக்கு இதுவரை இல்லாத அன்றாட வசதியைத் தருகிறது. இது நடை தூரத்திலுள்ள வீடுகளுக்கு உதவும்; ஆனால் அருகிலுள்ள விநியோகம் அதிகம், எனவே ஒவ்வொரு கட்டடத்தையும் அதன் சொந்தப் பரிவர்த்தனைகளை வைத்து மதிப்பிடுங்கள்.",
+   "ja": "118 MallはMRT駅と直結し、旧市街に欠けていた日常の利便性をもたらします。徒歩圏内の住宅には追い風ですが、周辺の供給は多いため、各物件はそれぞれの成約実績で判断しましょう。",
+   "ko": "118 Mall은 MRT역과 바로 연결되어 구도심에 부족했던 생활 편의를 제공합니다. 도보권 주택에는 도움이 되지만 주변 공급이 많으므로, 각 건물은 그 건물의 실제 거래로 판단하세요.",
+   "ar": "يمنح 118 Mall قلب المدينة القديم الخدمات اليومية التي كان يفتقدها، مع ربط مباشر بمحطة MRT. وهذا يفيد المساكن الواقعة على مسافة مشي، لكن العرض القريب كبير، لذا قيّم كل مبنى بناءً على صفقاته الفعلية.",
+   "zh-TW": "118 Mall 為老城區帶來了一直欠缺的日常配套，並直通地鐵站。這對步行範圍內的住宅有幫助，但周邊供應量大，所以每棟樓都要根據它自己的成交資料來判斷。"
+  }
+ },
+ "a33": {
+  "cat": "Penang News",
+  "date": "7 Nov 2026",
+  "topics": [
+   "Penang"
+  ],
+  "title": {
+   "en": "The Waterfront Shoppes Opens at The Light City, Penang",
+   "zh-CN": "槟城 The Light City 的 The Waterfront Shoppes 开幕",
+   "ms": "The Waterfront Shoppes Dibuka di The Light City, Pulau Pinang",
+   "ta": "பினாங்கு The Light City-இல் The Waterfront Shoppes திறப்பு",
+   "ja": "ペナン「The Light City」に The Waterfront Shoppes が開業",
+   "ko": "페낭 The Light City에 The Waterfront Shoppes 개장",
+   "ar": "افتتاح The Waterfront Shoppes في The Light City، بينانغ",
+   "zh-TW": "檳城 The Light City 的 The Waterfront Shoppes 開幕"
+  },
+  "card": {
+   "en": "Penang's first big seafront mall soft-opened on 29 October. What it adds to The Light City, and what buyers nearby should still check.",
+   "zh-CN": "槟城首个大型海滨商场已于10月29日试营业。它为 The Light City 带来了什么，附近的买家还需要注意什么？",
+   "ms": "Pusat beli-belah tepi laut besar pertama Pulau Pinang dibuka secara tidak rasmi pada 29 Oktober. Apa yang ditambahnya kepada The Light City, dan apa yang masih perlu disemak oleh pembeli berhampiran.",
+   "ta": "பினாங்கின் முதல் பெரிய கடற்கரை மால் அக்டோபர் 29 அன்று சோதனை முறையில் திறக்கப்பட்டது. இது The Light City-க்கு எதைச் சேர்க்கிறது, அருகிலுள்ள வாங்குவோர் இன்னும் எதைச் சரிபார்க்க வேண்டும் என்பதைப் பார்ப்போம்.",
+   "ja": "ペナン初の大型ウォーターフロントモールが10月29日にソフトオープンしました。The Light Cityに何をもたらし、周辺で購入を考える人は何を確認すべきかをまとめます。",
+   "ko": "페낭 최초의 대형 해안 쇼핑몰이 10월 29일 가오픈했습니다. The Light City에 무엇을 더하는지, 주변 매수자가 여전히 확인해야 할 점은 무엇인지 정리합니다.",
+   "ar": "افتُتح أول مجمع تجاري كبير على الواجهة البحرية في بينانغ افتتاحًا تجريبيًا في 29 أكتوبر. ما الذي يضيفه إلى The Light City، وما الذي ينبغي أن يتحقق منه المشترون القريبون.",
+   "zh-TW": "檳城首個大型海濱商場已於10月29日試營業。它為 The Light City 帶來了什麼，附近的買家還需要注意什麼？"
+  },
+  "intro": {
+   "en": "The Waterfront Shoppes, the retail heart of The Light City on Penang island's east coast, held its soft opening on 29 October 2026. Developed by Singapore's Perennial Holdings with IJM Land, it is reported at around 1.5 million sq ft and is Penang's largest new mall in more than a decade. Tenants are opening in phases, with more than 300 outlets planned, and a grand opening date has not yet been announced.",
+   "zh-CN": "The Waterfront Shoppes 是槟城岛东海岸 The Light City 的零售核心，已于2026年10月29日试营业。该商场由新加坡的 Perennial Holdings 与 IJM Land 共同开发，据报道面积约150万平方英尺，是槟城十多年来最大的新商场。租户将分阶段开业，计划超过300家店铺，正式开幕日期尚未公布。",
+   "ms": "The Waterfront Shoppes, nadi runcit The Light City di pantai timur pulau Pulau Pinang, mengadakan pembukaan tidak rasmi pada 29 Oktober 2026. Dibangunkan oleh Perennial Holdings dari Singapura bersama IJM Land, ia dilaporkan berkeluasan kira-kira 1.5 juta kaki persegi dan merupakan pusat beli-belah baharu terbesar Pulau Pinang dalam lebih sedekad. Penyewa dibuka secara berperingkat, dengan lebih 300 premis dirancang, dan tarikh pembukaan rasmi belum diumumkan.",
+   "ta": "பினாங்குத் தீவின் கிழக்குக் கரையில் உள்ள The Light City-இன் சில்லறை வணிக மையமான The Waterfront Shoppes, 2026 அக்டோபர் 29 அன்று சோதனைத் திறப்பை நடத்தியது. சிங்கப்பூரின் Perennial Holdings, IJM Land உடன் இணைந்து உருவாக்கிய இது சுமார் 15 லட்சம் சதுர அடி பரப்பளவு கொண்டது என்று தெரிவிக்கப்படுகிறது; பத்தாண்டுகளுக்கும் மேலாகப் பினாங்கில் திறக்கப்பட்ட மிகப்பெரிய புதிய மால் இது. குத்தகைதாரர்கள் கட்டம் கட்டமாகத் திறக்கின்றனர்; 300-க்கும் மேற்பட்ட கடைகள் திட்டமிடப்பட்டுள்ளன; அதிகாரப்பூர்வத் திறப்புத் தேதி இன்னும் அறிவிக்கப்படவில்லை.",
+   "ja": "ペナン島東海岸に位置するThe Light Cityの商業の中核、The Waterfront Shoppesが2026年10月29日にソフトオープンしました。シンガポールのPerennial HoldingsとIJM Landが共同開発したもので、規模は約150万平方フィートと報じられ、ペナンでは10年以上ぶりの最大級の新モールです。テナントは段階的に開店し、300店舗以上を予定していますが、グランドオープンの日程はまだ発表されていません。",
+   "ko": "페낭섬 동쪽 해안에 있는 The Light City의 상업 중심, The Waterfront Shoppes가 2026년 10월 29일 가오픈했습니다. 싱가포르의 Perennial Holdings와 IJM Land가 공동 개발했으며, 규모는 약 150만 평방피트로 알려져 10여 년 만에 페낭에서 가장 큰 신규 쇼핑몰입니다. 입점 업체는 단계적으로 문을 열며 300개 이상의 매장이 계획되어 있고, 그랜드 오픈 일정은 아직 발표되지 않았습니다.",
+   "ar": "أقام The Waterfront Shoppes، القلب التجاري لمشروع The Light City على الساحل الشرقي لجزيرة بينانغ، افتتاحه التجريبي في 29 أكتوبر 2026. طوّرته شركة Perennial Holdings السنغافورية مع IJM Land، وتشير التقارير إلى أن مساحته نحو 1.5 مليون قدم مربعة، وهو أكبر مجمع تجاري جديد في بينانغ منذ أكثر من عقد. ويفتتح المستأجرون على مراحل مع خطة لأكثر من 300 متجر، ولم يُعلن موعد الافتتاح الرسمي بعد.",
+   "zh-TW": "The Waterfront Shoppes 是檳城島東海岸 The Light City 的零售核心，已於2026年10月29日試營業。該商場由新加坡的 Perennial Holdings 與 IJM Land 共同開發，據報道面積約150萬平方英尺，是檳城十多年來最大的新商場。租戶將分階段開業，計劃超過300家店鋪，正式開幕日期尚未公佈。"
+  },
+  "sections": [
+   {
+    "h2": {
+     "en": "What's There at Opening",
+     "zh-CN": "开幕时有什么",
+     "ms": "Apa yang Ada Semasa Pembukaan",
+     "ta": "திறப்பின்போது என்ன இருக்கிறது",
+     "ja": "開業時に何があるか",
+     "ko": "개장 시점에 있는 것",
+     "ar": "ما الموجود عند الافتتاح",
+     "zh-TW": "開幕時有什麼"
+    },
+    "paragraphs": [
+     {
+      "en": "The mall sits along a 750-metre waterfront promenade facing the Penang Strait, which sets it apart from the island's other malls. Early highlights reported at opening include a CINITY LED cinema, billed as the first in Southeast Asia, a food hall with 28 stalls, and the first Malaysian outlet of the Xventure indoor adventure park.",
+      "zh-CN": "商场沿着一条面向槟城海峡、长750米的海滨长廊而建，这让它有别于岛上其他商场。开幕时报道的亮点包括号称东南亚首家的 CINITY LED 影院、设有28个摊位的美食广场，以及室内冒险乐园 Xventure 在马来西亚的首家分店。",
+      "ms": "Pusat beli-belah ini terletak di sepanjang persiaran tepi laut sepanjang 750 meter yang menghadap Selat Pulau Pinang, sesuatu yang membezakannya daripada pusat beli-belah lain di pulau itu. Antara tarikan awal yang dilaporkan semasa pembukaan ialah pawagam CINITY LED, yang disebut sebagai yang pertama di Asia Tenggara, dewan makanan dengan 28 gerai, dan cawangan pertama di Malaysia bagi taman pengembaraan dalaman Xventure.",
+      "ta": "பினாங்கு நீரிணையை நோக்கிய 750 மீட்டர் நீளக் கடற்கரை நடைபாதையை ஒட்டி மால் அமைந்துள்ளது; இது தீவின் பிற மால்களிலிருந்து இதைத் தனித்துக் காட்டுகிறது. தென்கிழக்கு ஆசியாவின் முதல் என்று குறிப்பிடப்படும் CINITY LED திரையரங்கம், 28 கடைகள் கொண்ட உணவுக் கூடம், Xventure உள்ளரங்கச் சாகசப் பூங்காவின் மலேசியாவின் முதல் கிளை ஆகியவை திறப்பின்போது தெரிவிக்கப்பட்ட சிறப்பம்சங்கள்.",
+      "ja": "モールはペナン海峡に面した全長750メートルのウォーターフロント遊歩道沿いにあり、島内の他のモールとの大きな違いになっています。開業時に報じられた目玉としては、東南アジア初とされるCINITY LEDシネマ、28店舗が並ぶフードホール、屋内アドベンチャーパーク「Xventure」のマレーシア1号店などがあります。",
+      "ko": "쇼핑몰은 페낭 해협을 마주한 750미터 길이의 해안 산책로를 따라 자리 잡고 있어 섬의 다른 쇼핑몰과 차별화됩니다. 개장 당시 알려진 주요 시설로는 동남아시아 최초로 소개된 CINITY LED 영화관, 28개 매장이 있는 푸드홀, 실내 어드벤처 파크 Xventure의 말레이시아 1호점 등이 있습니다.",
+      "ar": "يمتد المجمع على طول ممشى بحري بطول 750 مترًا يطل على مضيق بينانغ، وهو ما يميزه عن بقية مجمعات الجزيرة. ومن أبرز ما ذُكر عند الافتتاح سينما CINITY LED التي وُصفت بأنها الأولى في جنوب شرق آسيا، وقاعة طعام تضم 28 كشكًا، وأول فرع في ماليزيا لمتنزه المغامرات الداخلي Xventure.",
+      "zh-TW": "商場沿著一條面向檳城海峽、長750米的海濱長廊而建，這讓它有別於島上其他商場。開幕時報道的亮點包括號稱東南亞首家的 CINITY LED 影院、設有28個攤位的美食廣場，以及室內冒險樂園 Xventure 在馬來西亞的首家分店。"
+     },
+     {
+      "en": "As with any phased opening, not every store is trading yet. Opening hours, parking arrangements and the full tenant list were still being finalised in the first week, so expect the mall to fill out over the coming months.",
+      "zh-CN": "与所有分阶段开业的商场一样，并非每家店铺都已营业。开业首周，营业时间、停车安排和完整租户名单仍在落实中，预计商场会在未来几个月逐步完善。",
+      "ms": "Seperti mana-mana pembukaan berperingkat, bukan semua kedai sudah beroperasi. Waktu operasi, susunan tempat letak kereta dan senarai penuh penyewa masih dimuktamadkan pada minggu pertama, jadi jangkakan pusat beli-belah ini akan lebih lengkap dalam beberapa bulan akan datang.",
+      "ta": "கட்டம் கட்டமான எந்தத் திறப்பையும் போலவே, எல்லாக் கடைகளும் இன்னும் இயங்கவில்லை. முதல் வாரத்தில் இயக்க நேரம், வாகன நிறுத்த ஏற்பாடுகள், முழுக் குத்தகைதாரர் பட்டியல் ஆகியவை இன்னும் இறுதி செய்யப்பட்டு வந்தன; வரும் மாதங்களில் மால் படிப்படியாக நிரம்பும் என எதிர்பார்க்கலாம்.",
+      "ja": "段階的な開業のため、まだすべての店舗が営業しているわけではありません。最初の週の時点では営業時間、駐車場の運用、テナントの全リストがまだ調整中だったため、今後数か月をかけて充実していくと見込まれます。",
+      "ko": "단계적 개장인 만큼 아직 모든 매장이 영업하는 것은 아닙니다. 첫 주에는 영업시간, 주차 운영, 전체 입점 목록이 아직 확정되지 않았으므로, 앞으로 몇 달에 걸쳐 채워질 것으로 보입니다.",
+      "ar": "وكما في أي افتتاح على مراحل، لا تعمل جميع المتاجر بعد. فقد كانت ساعات العمل وترتيبات المواقف والقائمة الكاملة للمستأجرين لا تزال قيد الإعداد في الأسبوع الأول، لذا يُتوقع أن يكتمل المجمع خلال الأشهر المقبلة.",
+      "zh-TW": "與所有分階段開業的商場一樣，並非每家店鋪都已營業。開業首周，營業時間、停車安排和完整租戶名單仍在落實中，預計商場會在未來幾個月逐步完善。"
+     }
+    ]
+   },
+   {
+    "h2": {
+     "en": "What It Means for The Light City Homes",
+     "zh-CN": "这对 The Light City 的住宅意味着什么",
+     "ms": "Apa Maknanya bagi Kediaman The Light City",
+     "ta": "The Light City வீடுகளுக்கு இதன் பொருள் என்ன",
+     "ja": "The Light Cityの住宅にとっての意味",
+     "ko": "The Light City 주택에 주는 의미",
+     "ar": "ماذا يعني ذلك لمساكن The Light City",
+     "zh-TW": "這對 The Light City 的住宅意味著什麼"
+    },
+    "paragraphs": [
+     {
+      "en": "The Light City is a mixed development of homes, offices, a convention centre and the mall, built on reclaimed land in Gelugor near the Penang Bridge. Until now buyers there were paying for a plan; with the mall trading, the precinct is starting to work as a neighbourhood, which is usually when rental interest from professionals in the Bayan Lepas and Gelugor job belt picks up.",
+      "zh-CN": "The Light City 是一个综合发展项目，包括住宅、办公楼、会展中心和商场，建在靠近槟城大桥的牛汝莪（Gelugor）填海地上。此前，那里的买家买的是一张蓝图；随着商场开始营业，这一带开始真正成为一个社区，而这通常也是峇六拜（Bayan Lepas）和牛汝莪就业带的专业人士租房兴趣上升的时候。",
+      "ms": "The Light City ialah pembangunan bercampur yang merangkumi kediaman, pejabat, pusat konvensyen dan pusat beli-belah, dibina di atas tanah tebus guna di Gelugor berhampiran Jambatan Pulau Pinang. Sebelum ini pembeli di sana membayar untuk sebuah pelan; dengan pusat beli-belah kini beroperasi, kawasan ini mula berfungsi sebagai sebuah kejiranan, dan biasanya pada tahap inilah minat sewaan daripada golongan profesional di jalur pekerjaan Bayan Lepas dan Gelugor meningkat.",
+      "ta": "The Light City என்பது Penang Bridge அருகே Gelugor-இல் மீட்கப்பட்ட நிலத்தில் கட்டப்பட்ட, வீடுகள், அலுவலகங்கள், மாநாட்டு மையம், மால் ஆகியவை கொண்ட கலப்பு மேம்பாடு. இதுவரை அங்கு வாங்கியவர்கள் ஒரு திட்டத்துக்குப் பணம் செலுத்தினர்; இப்போது மால் இயங்குவதால் இப்பகுதி ஒரு குடியிருப்புப் பகுதியாகச் செயல்படத் தொடங்குகிறது. Bayan Lepas, Gelugor வேலைவாய்ப்புப் பகுதியிலுள்ள தொழில் வல்லுநர்களிடமிருந்து வாடகை ஆர்வம் பொதுவாக இந்தக் கட்டத்தில்தான் அதிகரிக்கும்.",
+      "ja": "The Light Cityは、ペナン大橋に近いグルゴー（Gelugor）の埋め立て地に建設された、住宅、オフィス、コンベンションセンター、モールからなる複合開発です。これまで購入者は計画図にお金を払っていましたが、モールの営業開始で街として機能し始めます。バヤンレパス（Bayan Lepas）やグルゴーの職場で働く専門職からの賃貸需要が高まるのは、たいていこの段階です。",
+      "ko": "The Light City는 페낭 대교 인근 글루고르(Gelugor)의 매립지에 조성된 주거, 오피스, 컨벤션 센터, 쇼핑몰 복합 개발입니다. 지금까지 이곳 매수자는 계획에 돈을 낸 셈이었지만, 쇼핑몰이 영업을 시작하면서 하나의 동네로 기능하기 시작했습니다. 바얀르파스(Bayan Lepas)와 글루고르 일대 직장에 다니는 전문직의 임대 수요가 늘어나는 것도 보통 이 시점입니다.",
+      "ar": "The Light City مشروع متعدد الاستخدامات يضم مساكن ومكاتب ومركز مؤتمرات والمجمع التجاري، وقد بُني على أرض مستصلحة في Gelugor قرب جسر بينانغ. حتى الآن كان المشترون هناك يدفعون مقابل مخطط؛ ومع تشغيل المجمع بدأت المنطقة تعمل كحيّ سكني، وهذه عادة المرحلة التي يرتفع فيها اهتمام المهنيين العاملين في منطقة Bayan Lepas وGelugor بالاستئجار.",
+      "zh-TW": "The Light City 是一個綜合發展專案，包括住宅、辦公樓、會展中心和商場，建在靠近檳城大橋的牛汝莪（Gelugor）填海地上。此前，那裡的買家買的是一張藍圖；隨著商場開始營業，這一帶開始真正成為一個社群，而這通常也是峇六拜（Bayan Lepas）和牛汝莪就業帶的專業人士租房興趣上升的時候。"
+     },
+     {
+      "en": "The catch is transport. Until the Mutiara LRT Line is built, the precinct depends on cars, and weekend traffic around a big new mall can be heavy. Buyers should weigh the commute to their own workplace and look at where each tower sits relative to the mall and the main road.",
+      "zh-CN": "问题在于交通。在 Mutiara 轻快铁线（Mutiara LRT Line）建成之前，这一带依赖汽车出行，大型新商场周边的周末交通也可能很拥堵。买家应考虑到自己工作地点的通勤时间，并留意每栋大楼相对于商场和主干道的位置。",
+      "ms": "Cabarannya ialah pengangkutan. Sehingga Laluan LRT Mutiara siap dibina, kawasan ini bergantung pada kereta, dan trafik hujung minggu di sekitar pusat beli-belah baharu yang besar boleh menjadi sesak. Pembeli patut menimbang perjalanan ke tempat kerja mereka sendiri dan melihat kedudukan setiap menara berbanding pusat beli-belah dan jalan utama.",
+      "ta": "சிக்கல் போக்குவரத்துதான். Mutiara LRT Line கட்டி முடிக்கப்படும் வரை இப்பகுதி கார்களையே நம்பியுள்ளது; பெரிய புதிய மாலைச் சுற்றி வார இறுதிப் போக்குவரத்து நெரிசலாக இருக்கலாம். வாங்குவோர் தங்கள் சொந்த வேலையிடத்துக்கான பயணத்தைக் கணக்கிட்டு, ஒவ்வொரு கோபுரமும் மாலுக்கும் பிரதான சாலைக்கும் எங்கே அமைந்துள்ளது என்பதைப் பார்க்க வேண்டும்.",
+      "ja": "課題は交通です。ムティアラLRT線（Mutiara LRT Line）が完成するまでは車が頼りで、大型の新モール周辺は週末に渋滞しがちです。購入者は自分の職場までの通勤を考慮し、各タワーがモールや幹線道路に対してどこにあるかを確認しましょう。",
+      "ko": "걸림돌은 교통입니다. 무티아라 LRT선(Mutiara LRT Line)이 완공될 때까지 이 지역은 자동차에 의존하며, 대형 신규 쇼핑몰 주변의 주말 교통은 혼잡할 수 있습니다. 매수자는 자신의 직장까지의 통근을 따져 보고, 각 타워가 쇼핑몰과 주요 도로에 대해 어디에 있는지 살펴봐야 합니다.",
+      "ar": "العقبة هي النقل. فإلى أن يُنجز خط Mutiara LRT، تعتمد المنطقة على السيارات، وقد تكون حركة المرور في عطلات نهاية الأسبوع حول مجمع جديد كبير كثيفة. وعلى المشترين أن يأخذوا في الحسبان التنقل إلى مكان عملهم، وأن ينظروا إلى موقع كل برج بالنسبة إلى المجمع والطريق الرئيسي.",
+      "zh-TW": "問題在於交通。在 Mutiara 輕快鐵線（Mutiara LRT Line）建成之前，這一帶依賴汽車出行，大型新商場周邊的週末交通也可能很擁堵。買家應考慮到自己工作地點的通勤時間，並留意每棟大樓相對於商場和主幹道的位置。"
+     }
+    ]
+   }
+  ],
+  "stats": [
+   {
+    "value": "750 m",
+    "label": {
+     "en": "Waterfront promenade",
+     "zh-CN": "海滨长廊",
+     "ms": "Persiaran tepi laut",
+     "ta": "கடற்கரை நடைபாதை",
+     "ja": "ウォーターフロント遊歩道",
+     "ko": "해안 산책로",
+     "ar": "الممشى البحري",
+     "zh-TW": "海濱長廊"
+    }
+   },
+   {
+    "value": "300+",
+    "label": {
+     "en": "Outlets planned",
+     "zh-CN": "计划店铺数量",
+     "ms": "Premis yang dirancang",
+     "ta": "திட்டமிடப்பட்ட கடைகள்",
+     "ja": "予定されている店舗数",
+     "ko": "계획된 매장 수",
+     "ar": "المتاجر المخطط لها",
+     "zh-TW": "計劃店鋪數量"
+    }
+   },
+   {
+    "value": "~1.5m sq ft",
+    "label": {
+     "en": "Reported size of the mall",
+     "zh-CN": "报道中的商场面积",
+     "ms": "Keluasan pusat beli-belah yang dilaporkan",
+     "ta": "தெரிவிக்கப்பட்ட மாலின் அளவு",
+     "ja": "報じられたモールの規模",
+     "ko": "보도된 쇼핑몰 규모",
+     "ar": "المساحة المعلنة للمجمع",
+     "zh-TW": "報道中的商場面積"
+    }
+   }
+  ],
+  "takeaway": {
+   "en": "The Waterfront Shoppes turns The Light City from a plan into a working neighbourhood with a seafront mall. That supports rental interest, but the precinct is car-dependent until the LRT arrives, so check the commute and each tower's position before buying.",
+   "zh-CN": "The Waterfront Shoppes 让 The Light City 从一张蓝图变成一个拥有海滨商场、真正运作的社区。这有助于提升租赁需求，但在轻快铁通车前这一带依赖汽车，因此购买前请先考虑通勤和每栋大楼的位置。",
+   "ms": "The Waterfront Shoppes mengubah The Light City daripada sebuah pelan kepada kejiranan yang berfungsi dengan pusat beli-belah tepi laut. Ini menyokong minat sewaan, tetapi kawasan ini bergantung pada kereta sehingga LRT tiba, jadi semak perjalanan harian dan kedudukan setiap menara sebelum membeli.",
+   "ta": "The Waterfront Shoppes, The Light City-ஐ ஒரு திட்டத்திலிருந்து கடற்கரை மாலுடன் இயங்கும் குடியிருப்புப் பகுதியாக மாற்றுகிறது. இது வாடகை ஆர்வத்தை ஆதரிக்கும்; ஆனால் LRT வரும் வரை இப்பகுதி கார்களை நம்பியுள்ளது, எனவே வாங்குவதற்கு முன் பயணத்தையும் ஒவ்வொரு கோபுரத்தின் அமைவிடத்தையும் சரிபாருங்கள்.",
+   "ja": "The Waterfront Shoppesにより、The Light Cityは計画段階から、海辺のモールを備えた実際に機能する街へと変わります。賃貸需要の後押しになりますが、LRT開通までは車が頼りのエリアなので、購入前に通勤と各タワーの位置を確認しましょう。",
+   "ko": "The Waterfront Shoppes는 The Light City를 계획 단계에서 해안 쇼핑몰을 갖춘 실제 동네로 바꿔 놓습니다. 임대 수요에는 도움이 되지만 LRT가 들어오기 전까지는 자동차 의존 지역이므로, 매입 전에 통근과 각 타워의 위치를 확인하세요.",
+   "ar": "يحوّل The Waterfront Shoppes مشروع The Light City من مخطط إلى حيّ فعلي يضم مجمعًا تجاريًا على البحر. وهذا يدعم الطلب على الإيجار، لكن المنطقة تعتمد على السيارات حتى وصول LRT، لذا تحقق من التنقل اليومي وموقع كل برج قبل الشراء.",
+   "zh-TW": "The Waterfront Shoppes 讓 The Light City 從一張藍圖變成一個擁有海濱商場、真正運作的社群。這有助於提升租賃需求，但在輕快鐵通車前這一帶依賴汽車，因此購買前請先考慮通勤和每棟大樓的位置。"
+  }
+ }
+}
