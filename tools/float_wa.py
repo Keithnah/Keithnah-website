@@ -1,4 +1,4 @@
-"""The floating "Chat with Keith" WhatsApp button with a pulsing glow, on every page.
+"""The floating "Chat with Keith" WhatsApp button with a pulsing glow, and the back-to-top button above it, on every page.
 
 The project, article and topic page generators use FLOAT_CSS and float_html().
 For the hand-built pages in the site root, run:
@@ -23,6 +23,16 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
 }
 @media(max-width:600px){a.float-wa.float-wa{right:16px;bottom:16px;padding:11px 18px 11px 14px;font-size:14px;gap:9px;}a.float-wa.float-wa svg{width:22px;height:22px;flex-basis:22px;}}
 @media(prefers-reduced-motion:reduce){a.float-wa.float-wa{animation:none;box-shadow:0 0 0 6px rgba(37,211,102,.18),0 8px 22px rgba(0,0,0,.16);}}
+/* back to top, above the WhatsApp button */
+.kn-fab{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.kn-fab a.float-wa.float-wa{position:static;right:auto;bottom:auto;}
+.kn-top{width:48px;height:48px;border-radius:50%;background:#fff;border:1.5px solid #d6d6d6;box-shadow:0 6px 18px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:#555;
+  opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility .25s,border-color .2s,color .2s;}
+.kn-top.show{opacity:1;visibility:visible;transform:none;}
+.kn-top:hover{border-color:var(--gold,#5E60CE);color:var(--gold,#5E60CE);}
+.kn-top svg{width:20px;height:20px;}
+@media(max-width:600px){.kn-fab{right:16px;bottom:16px;gap:10px;}.kn-top{width:44px;height:44px;}}
+@media(prefers-reduced-motion:reduce){.kn-top{transition:none;}}
 /* KN-FLOAT:END */
 """
 SVG = ('<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38'
@@ -32,9 +42,19 @@ SVG = ('<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d=
        ' 2.01 1.27 2.3 1.41.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.68.79 1.97.94.29.14.48.21.55.33.07.12.07.7-.17 1.38z"/></svg>')
 
 
+TOP_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>'
+TOP_JS = ("<script>(function(){var b=document.getElementById('knTop');if(!b)return;"
+          "function s(){b.classList.toggle('show',(window.pageYOffset||document.documentElement.scrollTop)>300);}"
+          "window.addEventListener('scroll',s,{passive:true});s();"
+          "b.addEventListener('click',function(){var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;window.scrollTo({top:0,behavior:r?'auto':'smooth'});});})();</script>")
+
+
 def float_html(href):
-    return '<a class="float-wa" href="%s" target="_blank" rel="noopener" aria-label="%s on WhatsApp">%s<span class="fw-txt">%s</span></a>' % (
+    """Back-to-top button stacked above the WhatsApp button, in one fixed corner group."""
+    wa = '<a class="float-wa" href="%s" target="_blank" rel="noopener" aria-label="%s on WhatsApp">%s<span class="fw-txt">%s</span></a>' % (
         href, LABEL, SVG, LABEL)
+    return ('<div class="kn-fab"><button type="button" class="kn-top" id="knTop" aria-label="Back to top">%s</button>%s</div><!--/kn-fab-->%s'
+            % (TOP_SVG, wa, TOP_JS))
 
 
 DEFAULT_HREF = ('https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+explore+more+on+Malaysia+Property.'
@@ -44,6 +64,9 @@ ANCHOR = re.compile(r'<a\b[^>]*class="float-wa[^"]*"[^>]*>.*?</a>', re.S)
 
 def fix_page(path):
     t = open(path, encoding='utf-8').read()
+    # unwrap an earlier corner group so the WhatsApp link inside it is found again
+    t = re.sub(r'<div class="kn-fab">.*?(<a\b[^>]*class="float-wa.*?</a>)</div><!--/kn-fab--><script>\(function\(\)\{var b=document\.getElementById\(\'knTop\'\).*?</script>',
+               lambda m: m.group(1), t, flags=re.S)
     found = list(ANCHOR.finditer(t))
     if found:
         keep = found[-1].group(0)
