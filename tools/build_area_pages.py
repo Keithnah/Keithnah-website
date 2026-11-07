@@ -292,6 +292,15 @@ def page(state, area, ids, tree, root):
            cards=cards, fcss=FW.FLOAT_CSS, floatwa=FW.float_html(E(wa)), head=head, rows=rows, faq=faq_html, more=more, states=states)
 
 
+def _register():
+    import i18n_pages as I
+    I.register({'intro.' + k: v for k, v in INTRO.items()})
+    I.DATA.update(v for p in P for f in ('size', 'rooms', 'tenure', 'completion', 'price', 'status') for v in [p.get(f)] if v)
+
+
+_register()
+
+
 def build(out, root):
     tree = groups()
     os.makedirs(out, exist_ok=True)
