@@ -91,12 +91,14 @@ def slug(s):
 
 
 def price_rm(s):
+    """Lowest whole-unit price in RM from a price text, or None (per-sqft prices are ignored)."""
     s = (s or '').replace(',', '')
-    m = re.search(r'RM\s*([\d.]+)\s*(k|m|mil|million)?\b', s, re.I)
-    if not m:
-        return None
-    v = float(m.group(1)); u = (m.group(2) or '').lower()
-    return v * 1000 if u == 'k' else v * 1e6 if u in ('m', 'mil', 'million') else v
+    for m in re.finditer(r'RM\s*([\d.]+)\s*(k|m|mil|million)?\b(?!\s*(?:psf|per\s*s))', s, re.I):
+        v = float(m.group(1)); u = (m.group(2) or '').lower()
+        v = v * 1000 if u == 'k' else v * 1e6 if u in ('m', 'mil', 'million') else v
+        if v >= 50000:
+            return v
+    return None
 
 
 def rm(v):
