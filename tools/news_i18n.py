@@ -12,7 +12,7 @@ import json
 import os
 import re
 
-from news_content import LABELS
+from news_content import EXTRA_TR, LABELS
 
 LANGS = ['zh-CN', 'zh-TW', 'ms', 'ta', 'ja', 'ko', 'ar']
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -62,7 +62,12 @@ for key, val in PAGE_TR.items():
 def tr(en):
     """{lang: translation} for an English string (plain text), or {}."""
     e = html.unescape(en)
-    for src in (NEWS.get(e), LABELS.get(e)):
+    m = re.fullmatch(r'(\d{1,2}) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{4})', e)
+    if m:
+        d, mo, y = int(m.group(1)), 'JanFebMarAprMayJunJulAugSepOctNovDec'.index(m.group(2)) // 3 + 1, m.group(3)
+        cjk = '%s年%d月%d日' % (y, mo, d)
+        return {'zh-CN': cjk, 'zh-TW': cjk, 'ja': cjk, 'ko': '%s년 %d월 %d일' % (y, mo, d), 'ms': e, 'ta': e, 'ar': e}
+    for src in (EXTRA_TR.get(e), NEWS.get(e), LABELS.get(e)):
         if src:
             return dict(src)
     for key in (T(e), e):

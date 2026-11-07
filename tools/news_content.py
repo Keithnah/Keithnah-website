@@ -288,3 +288,42 @@ LABELS = {
     'Completed homes bought from an existing owner': {'zh-CN': '向现有屋主购买的已完工房产', 'zh-TW': '向現有屋主購買的已完工房產', 'ms': 'Rumah siap yang dibeli daripada pemilik sedia ada', 'ta': 'தற்போதைய உரிமையாளரிடமிருந்து வாங்கும் முடிந்த வீடுகள்', 'ja': '既存のオーナーから購入する完成済み物件', 'ko': '기존 소유자에게서 구매하는 완공 주택', 'ar': 'منازل مكتملة تُشترى من مالكها الحالي'},
     'Rules, costs and steps for non-Malaysian buyers': {'zh-CN': '非马来西亚买家的规定、费用与步骤', 'zh-TW': '非馬來西亞買家的規定、費用與步驟', 'ms': 'Peraturan, kos dan langkah untuk pembeli bukan warganegara', 'ta': 'மலேசியர் அல்லாத வாங்குபவர்களுக்கான விதிகள், செலவுகள் மற்றும் படிகள்', 'ja': '外国人購入者向けのルール・費用・手順', 'ko': '외국인 구매자를 위한 규정, 비용 및 절차', 'ar': 'القواعد والتكاليف والخطوات للمشترين غير الماليزيين'},
 }
+
+
+# ---------- Extra articles written for the site (tools/i18n/news_extra_src.json) ----------
+import json as _json
+import os as _os
+
+EXTRA_SRC = _json.load(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'i18n', 'news_extra_src.json'), encoding='utf-8'))
+
+
+def _en(o):
+    if isinstance(o, dict) and 'en' in o:
+        return o['en']
+    if isinstance(o, dict):
+        return {k: _en(v) for k, v in o.items()}
+    if isinstance(o, list):
+        return [_en(v) for v in o]
+    return o
+
+
+def _pairs(o, out):
+    """Every {en, lang...} text in the extra articles, as {en: {lang: text}}."""
+    if isinstance(o, dict) and 'en' in o:
+        out[o['en']] = {k: v for k, v in o.items() if k != 'en'}
+    elif isinstance(o, dict):
+        for v in o.values():
+            _pairs(v, out)
+    elif isinstance(o, list):
+        for v in o:
+            _pairs(v, out)
+    return out
+
+
+EXTRA_ARTICLES = {k: {f: _en(v) for f, v in a.items() if f not in ('topics', 'card')} for k, a in EXTRA_SRC.items()}
+EXTRA_CARDS = {k: a['card']['en'] for k, a in EXTRA_SRC.items()}
+EXTRA_TR = _pairs(EXTRA_SRC, {})
+for _k, _a in EXTRA_SRC.items():
+    for _tp in TOPICS:
+        if _tp[0] in _a['topics'] and _k not in _tp[1]:
+            _tp[1].insert(0, _k)
