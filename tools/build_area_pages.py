@@ -213,6 +213,18 @@ def page(state, area, ids, tree, root):
     else:
         more = '<section class="blk"><h2>Areas in %s</h2><div class="chips">%s</div></section>' % (
             E(state), ''.join('<a class="chip" href="%s.html">%s<em>%d</em></a>' % (slug(a), E(a), len(v)) for a, v in tree[state].items()))
+    lm = {}
+    try:
+        lm = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'list_membership.json'), encoding='utf-8'))
+    except (OSError, ValueError):
+        pass
+    cnt = {}
+    for k in ids:
+        for s2, t2 in lm.get(str(k), []):
+            cnt[(s2, t2)] = cnt.get((s2, t2), 0) + 1
+    top = sorted(cnt.items(), key=lambda kv: -kv[1])[:10]
+    more += ('<section class="blk"><h2>Popular lists with %s projects</h2><div class="chips">%s<a class="chip" href="%sbest/">All lists →</a></div></section>' % (
+        E(place), ''.join('<a class="chip" href="%sbest/%s.html">%s<em>%d</em></a>' % (root, s2, E(t2), c) for (s2, t2), c in top), root)) if top else ''
     states = '<section class="blk"><h2>Other states</h2><div class="chips">%s</div></section>' % ''.join(
         '<a class="chip" href="%s.html">%s<em>%d</em></a>' % (slug(s), E(s), sum(len(v) for v in tree[s].values())) for s in STATES if s != state and tree.get(s))
 
@@ -267,7 +279,7 @@ def page(state, area, ids, tree, root):
   <div class="cta"><h2>Looking for a home or investment in {place}?</h2><p>Tell Keith your budget and needs, and he will shortlist the right units for you.</p><a class="wa-btn" href="{wa}" target="_blank" rel="noopener">WhatsApp Keith</a></div>
   <p class="note">Prices are gross starting prices as published and may change. Confirm the latest prices, units and terms with Keith before deciding.</p>
 </main>
-<footer>&copy; {year} Keith Nah Real Estate · REN 60517 · IQI Global · <a href="{root}projects.html">All projects</a> · <a href="{root}privacy-policy.html">Privacy Policy</a> · <a href="{root}terms-of-use.html">Terms of Use</a></footer>
+<footer>&copy; {year} Keith Nah Real Estate · REN 60517 · IQI Global · <a href="{root}projects.html">All projects</a> · <a href="{root}best/">Best new launch lists</a> · <a href="{root}privacy-policy.html">Privacy Policy</a> · <a href="{root}terms-of-use.html">Terms of Use</a></footer>
 {floatwa}
 <script src="{root}lead-tracker.js"></script>
 </body>

@@ -6,8 +6,9 @@ developer list) and compare.html (PROJECTS, the area buttons), and records
 its state and area in tools/new_projects/places.json for tools/update_areas.py.
 
 Then run, from the repository root:
-    python3 tools/update_tags.py && python3 tools/update_areas.py && python3 tools/build_project_pages.py
-    python3 tools/build_news_page.py && python3 tools/float_wa.py && python3 tools/build_ai_seo.py
+    python3 tools/build_all.py
+That rebuilds tags, area guides, the best-of lists (new projects join every
+list whose rule they match), project pages, news, sitemap and llms.txt.
 
 Usage: python3 tools/add_projects.py tools/new_projects/<file>.json
 """

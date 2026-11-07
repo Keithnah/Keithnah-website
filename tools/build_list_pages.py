@@ -130,6 +130,115 @@ LISTS = [
 ]
 
 
+# ---------- more lists, all rule based (new projects join automatically) ----------
+TXT = lambda k: ' '.join([P[k].get('loc', ''), P[k].get('loc_text', ''), P[k].get('overview', '')] + (P[k].get('amenities') or [])
+                         + (P[k].get('selling_points') or []) + (P[k].get('points') or [])).lower()
+
+
+def beds(k):
+    """(min, max) bedrooms from the rooms text; Studio counts as 0."""
+    r = re.sub(r'\d+(?:\+\d)?\s*Bath\w*', '', P[k].get('rooms') or '', flags=re.I)
+    n = [int(x) for x in re.findall(r'(\d)(?:\+\d)?\s*(?:–|-|to|Bed|R\b|Room|$|\s)', r)]
+    if re.search(r'studio', r, re.I):
+        n.append(0)
+    return (min(n), max(n)) if n else None
+
+
+def units(k):
+    m = re.search(r'(\d[\d,]*)\s*(?:units|suites|homes)', (P[k].get('details_extra') or {}).get('Total Units', ''), re.I)
+    return int(m.group(1).replace(',', '')) if m else None
+
+
+def title(k):
+    return (P[k].get('details_extra') or {}).get('Title', '')
+
+
+st = lambda k: PLACES[k][0]
+bed_has = lambda k, n: beds(k) is not None and beds(k)[0] <= n <= beds(k)[1]
+anytag = lambda k, *ts: any(has(k, t) for t in ts)
+LISTS += [
+    ('new-launch-under-rm800k', 'New Launch Condos Under RM800K', 'New launches under RM800,000',
+     'A popular budget for first homes and investment units: projects with a published starting price below RM800,000, cheapest first.',
+     by_price([k for k in ALL if price(k) and price(k) < 8e5]), None),
+    ('new-launch-kuala-lumpur-under-rm700k', 'New Launch Condos in Kuala Lumpur Under RM700K', 'Kuala Lumpur new launches under RM700,000',
+     'Kuala Lumpur addresses that start below RM700,000, from the city centre to Bukit Jalil and Bangsar South. Cheapest first.',
+     by_price([k for k in ALL if st(k) == 'Kuala Lumpur' and price(k) and price(k) < 7e5]), None),
+    ('new-launch-selangor-under-rm700k', 'New Launch Condos in Selangor Under RM700K', 'Selangor new launches under RM700,000',
+     'Selangor projects that start below RM700,000, in Petaling Jaya, Damansara, Kwasa Damansara and Subang Jaya. Cheapest first.',
+     by_price([k for k in ALL if st(k) == 'Selangor' and price(k) and price(k) < 7e5]), None),
+    ('freehold-condo-penang', 'Freehold New Launch Condos in Penang', 'Freehold new launches in Penang',
+     'Freehold projects on Penang island and the mainland, cheapest first.',
+     by_price([k for k in ALL if st(k) == 'Penang' and free(k)]), None),
+    ('freehold-condo-johor-bahru', 'Freehold New Launch Condos in Johor Bahru', 'Freehold new launches in Johor Bahru',
+     'Freehold projects in Johor Bahru, close to the Causeway and the upcoming RTS Link. Cheapest first.',
+     by_price([k for k in ALL if st(k) == 'Johor' and free(k)]), None),
+    ('2-bedroom-new-launch', '2-Bedroom New Launch Condos', 'New launches with 2-bedroom units',
+     'Projects that offer 2-bedroom layouts, a favourite of young couples and rental investors. Cheapest first.',
+     by_price([k for k in ALL if bed_has(k, 2)]), ('Bedrooms', lambda k: E(P[k].get('rooms')))),
+    ('3-bedroom-new-launch', '3-Bedroom New Launch Condos', 'New launches with 3-bedroom units',
+     'Projects that offer 3-bedroom layouts for families and upgraders. Cheapest first.',
+     by_price([k for k in ALL if bed_has(k, 3)]), ('Bedrooms', lambda k: E(P[k].get('rooms')))),
+    ('4-bedroom-family-homes', '4-Bedroom and Larger Family Homes', 'New launches with 4 bedrooms or more',
+     'Projects with 4-bedroom (or larger) layouts for big and multi-generation families. Cheapest first.',
+     by_price([k for k in ALL if beds(k) and beds(k)[1] >= 4]), ('Bedrooms', lambda k: E(P[k].get('rooms')))),
+    ('large-condo-above-1500-sqft', 'Large New Launch Condos Above 1,500 sqft', 'Large homes above 1,500 sqft',
+     'Projects whose largest layouts are 1,500 sqft or more, sorted by largest unit size, biggest first.',
+     sorted([k for k in ALL if size_max(k) and size_max(k) >= 1500], key=lambda k: -size_max(k)), ('Largest unit', lambda k: '%s sqft' % format(int(size_max(k)), ','))),
+    ('residential-title-condo', 'Residential Title New Launch Condos', 'New launches with residential title',
+     'Residential title usually means residential utility rates and maintenance rules, and is preferred by many owner-occupiers over commercial-titled serviced apartments. Cheapest first.',
+     by_price([k for k in ALL if 'residential' in title(k).lower() and 'commercial' not in title(k).lower()]), None),
+    ('low-density-condo', 'Low Density New Launch Condos (Under 400 Units)', 'Low-density projects with fewer than 400 units',
+     'Fewer neighbours means quieter lifts, facilities and car parks. These projects have under 400 units in total, fewest first.',
+     sorted([k for k in ALL if units(k) and 10 < units(k) < 400], key=units), ('Total units', lambda k: format(units(k), ','))),
+    ('latest-new-launch-2026', 'Latest New Launches in Malaysia (2026)', 'The latest new launches',
+     'Projects that are newly launched or coming soon, so you can get in at the start. Cheapest first.',
+     by_price([k for k in ALL if (P[k].get('status') or '') in ('Coming Soon', 'New Launch')]), None),
+    ('condo-near-international-school', 'New Launch Condos Near International Schools', 'New launches near international schools',
+     'Projects that list an international school among their nearby amenities, for expat and local families. Cheapest first.',
+     by_price([k for k in ALL if 'international school' in TXT(k)]), None),
+    ('condo-near-hospital', 'New Launch Condos Near Hospitals', 'New launches near hospitals',
+     'Projects that list a hospital or medical centre nearby, useful for retirees, families and medical staff. Cheapest first.',
+     by_price([k for k in ALL if re.search(r'hospital|medical centre', TXT(k))]), None),
+    ('condo-near-university', 'New Launch Condos Near Universities', 'New launches near universities',
+     'Projects close to a university, popular with lecturers, families and student-rental investors. Cheapest first.',
+     by_price([k for k in ALL if re.search(r'universit', TXT(k))]), None),
+    ('condo-near-pavilion', 'New Launch Condos Near Pavilion', 'New launches near Pavilion Kuala Lumpur and Pavilion Bukit Jalil',
+     'Projects within reach of Pavilion Kuala Lumpur in Bukit Bintang or Pavilion Bukit Jalil. Cheapest first.',
+     by_price([k for k in ALL if anytag(k, 'condo near Pavilion KL', 'condo near Pavilion Bukit Jalil')]), None),
+    ('condo-near-petronas-twin-towers', 'New Launch Condos Near the Petronas Twin Towers', 'New launches near the Petronas Twin Towers',
+     'Projects around the Petronas Twin Towers and KL City Centre Park, cheapest first.',
+     by_price([k for k in ALL if anytag(k, 'condo near KL City Centre', 'condo near Petronas Twin Towers')]), None),
+    ('condo-near-trx-merdeka-118', 'New Launch Condos Near TRX and Merdeka 118', 'New launches near TRX, Exchange 106 and Merdeka 118',
+     "Projects close to Kuala Lumpur's new skyline landmarks: Tun Razak Exchange (TRX), Exchange 106 and Merdeka 118. Cheapest first.",
+     by_price([k for k in ALL if anytag(k, 'condo near TRX', 'condo near The Exchange 106', 'condo near Merdeka 118')]), None),
+    ('condo-near-mid-valley', 'New Launch Condos Near Mid Valley', 'New launches near Mid Valley',
+     'Projects close to Mid Valley Megamall or Mid Valley Southkey, cheapest first.',
+     by_price([k for k in ALL if anytag(k, 'condo near Mid Valley Megamall', 'condo near Mid Valley Southkey')]), None),
+    ('sea-view-waterfront-condo', 'Sea View and Waterfront New Launch Condos', 'Sea-view and waterfront new launches',
+     'Projects that mention sea views or a waterfront setting, from Penang and Melaka to Kota Kinabalu and Kuala Terengganu. Cheapest first.',
+     by_price([k for k in ALL if re.search(r'sea view|sea-view|waterfront|seafront|sea-facing', TXT(k))]), None),
+    ('greenre-green-building-condo', 'GreenRE Certified Green Building Condos', 'GreenRE-certified green buildings',
+     'Projects that are GreenRE certified or designed to green-building standards, for lower running costs and healthier living. Cheapest first.',
+     by_price([k for k in ALL if 'greenre' in TXT(k) or 'greenre' in json.dumps(P[k].get('details_extra') or {}).lower()]), None),
+    ('condo-with-infinity-pool', 'New Launch Condos with an Infinity or Sky Pool', 'New launches with an infinity or sky pool',
+     'Projects with an infinity pool, sky pool or rooftop pool among their facilities. Cheapest first.',
+     by_price([k for k in ALL if re.search(r'infinity pool|sky pool|rooftop pool|sky infinity', TXT(k))]), None),
+    ('condo-near-ktm-station', 'New Launch Condos Near KTM Stations', 'New launches near a KTM station',
+     'Projects close to a KTM Komuter station, cheapest first.',
+     by_price([k for k in ALL if has(k, 'condo near KTM station') or re.search(r'\bktm\b', TXT(k))]), None),
+]
+LISTS = [l for l in LISTS if len(l[4]) >= 3]  # no thin pages
+
+
+def membership():
+    """{project index: [(slug, title), ...]} for the lists each project appears in."""
+    m = {}
+    for s, t, h, it, ids, x in LISTS:
+        for k in ids:
+            m.setdefault(k, []).append((s, t))
+    return m
+
+
 def page(slug, title, h1, intro, ids, extra, root, lists):
     n = len(ids)
     proj = lambda k: '%sproperty/%s.html' % (root, A.SLUG.get(k, A.slug(P[k]['name'])))
@@ -229,7 +338,33 @@ def build(out, root):
     for s, t, h, it, ids, x in lists:
         open(os.path.join(out, s + '.html'), 'w', encoding='utf-8').write(page(s, t, h, it, ids, x, root, lists))
     open(os.path.join(out, 'index.html'), 'w', encoding='utf-8').write(index(root, lists))
+    json.dump({str(k): v for k, v in membership().items()}, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'list_membership.json'), 'w', encoding='utf-8'), ensure_ascii=False)
     return [(s, len(ids)) for s, t, h, it, ids, x in lists]
+
+
+
+QUICK = ['new-launch-under-rm500k', 'new-launch-under-rm800k', 'freehold-under-rm1-million-near-mrt-lrt', 'condo-near-mrt-station',
+         '3-bedroom-new-launch', 'dual-key-units', 'completed-ready-to-move-in', 'latest-new-launch-2026', 'lowest-price-per-sqft-kuala-lumpur']
+QUICK_LABEL = {'new-launch-under-rm500k': 'Under RM500K', 'new-launch-under-rm800k': 'Under RM800K', 'freehold-under-rm1-million-near-mrt-lrt': 'Freehold < RM1M near rail',
+               'condo-near-mrt-station': 'Near MRT', '3-bedroom-new-launch': '3 bedrooms', 'dual-key-units': 'Dual key',
+               'completed-ready-to-move-in': 'Ready to move in', 'latest-new-launch-2026': 'Latest launches', 'lowest-price-per-sqft-kuala-lumpur': 'Lowest psf in KL'}
+
+
+def link_projects_page():
+    """Quick-pick chips under the search box on View Projects (idempotent)."""
+    have = {l[0] for l in LISTS}
+    chips = ''.join('<a class="qp-chip" href="best/%s.html">%s</a>' % (s, E(QUICK_LABEL[s])) for s in QUICK if s in have)
+    block = ('<!-- KN-QUICK:START --><style>.qp{max-width:980px;margin:18px auto 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;}'
+             '.qp b{font:600 12px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin-right:4px;}'
+             '.qp-chip{background:#fff;border:1px solid var(--line);border-radius:100px;padding:8px 14px;font:500 13px Inter,sans-serif;color:#111;}'
+             '.qp-chip:hover{border-color:var(--gold);color:var(--gold);}.qp-all{font:600 13px Inter,sans-serif;color:var(--gold);padding:8px 6px;}</style>'
+             '<div class="qp"><b>Quick picks</b>%s<a class="qp-all" href="best/">All lists →</a></div><!-- KN-QUICK:END -->') % chips
+    t = open('projects.html', encoding='utf-8').read()
+    t = re.sub(r'<!-- KN-QUICK:START -->.*?<!-- KN-QUICK:END -->', '', t, flags=re.S)
+    a = '<div class="ps-results" id="psResults" style="display:none"></div>'
+    assert a in t
+    t = t.replace(a, a + block, 1)
+    open('projects.html', 'w', encoding='utf-8').write(t)
 
 
 if __name__ == '__main__':
@@ -237,3 +372,4 @@ if __name__ == '__main__':
         print(build(os.path.join(sys.argv[2], 'best'), SITE + '/'))
     else:
         print(build('best', '../'))
+        link_projects_page()

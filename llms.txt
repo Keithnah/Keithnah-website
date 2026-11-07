@@ -161,7 +161,7 @@ The site is available in English, 简体中文, 繁體中文, Bahasa Malaysia, �
 - [New Launch Condos in Damansara Heights 2026](https://keithnah.com/area/damansara-heights.html): 3 new property launches in Damansara Heights, Kuala Lumpur: starting prices from RM1,745,000, sizes, tenure and completion dates, with floor plans for each project.
 - [New Launch Condos in Damansara Perdana 2026](https://keithnah.com/area/damansara-perdana.html): 1 new property launches in Damansara Perdana, Selangor: starting prices from RM643,300, sizes, tenure and completion dates, with floor plans for each project.
 - [New Launch Condos in Gelugor 2026](https://keithnah.com/area/gelugor.html): 3 new property launches in Gelugor, Penang: starting prices from RM813,800, sizes, tenure and completion dates, with floor plans for each project.
-- [New Launch Condos in George Town 2026](https://keithnah.com/area/george-town.html): 3 new property launches in George Town, Penang: starting prices from RM800, sizes, tenure and completion dates, with floor plans for each project.
+- [New Launch Condos in George Town 2026](https://keithnah.com/area/george-town.html): 3 new property launches in George Town, Penang: starting prices from RM560,000, sizes, tenure and completion dates, with floor plans for each project.
 - [New Launch Condos in JB City Centre 2026](https://keithnah.com/area/jb-city-centre.html): 5 new property launches in JB City Centre, Johor: starting prices from RM580,300, sizes, tenure and completion dates, with floor plans for each project.
 - [New Launch Condos in Johor 2026](https://keithnah.com/area/johor.html): 7 new property launches in Johor: starting prices from RM474,900, sizes, tenure and completion dates, with floor plans for each project.
 - [New Launch Condos in Kebun Teh 2026](https://keithnah.com/area/kebun-teh.html): 2 new property launches in Kebun Teh, Johor: starting prices from RM474,900, sizes, tenure and completion dates, with floor plans for each project.
@@ -175,7 +175,7 @@ The site is available in English, 简体中文, 繁體中文, Bahasa Malaysia, �
 - [New Launch Condos in Melaka City 2026](https://keithnah.com/area/melaka-city.html): 1 new property launches in Melaka City, Melaka: starting prices from RM332,300, sizes, tenure and completion dates, with floor plans for each project.
 - [New Launch Condos in Melaka 2026](https://keithnah.com/area/melaka.html): 1 new property launches in Melaka: starting prices from RM332,300, sizes, tenure and completion dates, with floor plans for each project.
 - [New Launch Condos in Paya Terubong 2026](https://keithnah.com/area/paya-terubong.html): 1 new property launches in Paya Terubong, Penang: starting prices from RM450,000, sizes, tenure and completion dates, with floor plans for each project.
-- [New Launch Condos in Penang 2026](https://keithnah.com/area/penang.html): 13 new property launches in Penang: starting prices from RM800, sizes, tenure and completion dates, with floor plans for each project.
+- [New Launch Condos in Penang 2026](https://keithnah.com/area/penang.html): 13 new property launches in Penang: starting prices from RM433,000, sizes, tenure and completion dates, with floor plans for each project.
 - [New Launch Condos in Petaling Jaya 2026](https://keithnah.com/area/petaling-jaya.html): 6 new property launches in Petaling Jaya, Selangor: starting prices from RM622,200, sizes, tenure and completion dates, with floor plans for each project.
 - [New Launch Condos in Sabah 2026](https://keithnah.com/area/sabah.html): 2 new property launches in Sabah: starting prices from RM499,800, sizes, tenure and completion dates, with floor plans for each project.
 - [New Launch Condos in Selangor 2026](https://keithnah.com/area/selangor.html): 18 new property launches in Selangor: starting prices from RM270,000, sizes, tenure and completion dates, with floor plans for each project.
@@ -184,6 +184,46 @@ The site is available in English, 简体中文, 繁體中文, Bahasa Malaysia, �
 - [New Launch Condos in Tanjung Bungah 2026](https://keithnah.com/area/tanjung-bungah.html): 1 new property launches in Tanjung Bungah, Penang: starting prices from RM1,100,000, sizes, tenure and completion dates, with floor plans for each project.
 - [New Launch Condos in Terengganu 2026](https://keithnah.com/area/terengganu.html): 1 new property launches in Terengganu: starting prices from RM473,700, sizes, tenure and completion dates, with floor plans for each project.
 - [New Launch Condos in TRX 2026](https://keithnah.com/area/trx.html): 2 new property launches in TRX, Kuala Lumpur: starting prices from RM1,280,000, sizes, tenure and completion dates, with floor plans for each project.
+
+## Best new launch lists (by budget, tenure, transit, layout and completion)
+- [2-Bedroom New Launch Condos (2026)](https://keithnah.com/best/2-bedroom-new-launch.html)
+- [3-Bedroom New Launch Condos (2026)](https://keithnah.com/best/3-bedroom-new-launch.html)
+- [4-Bedroom and Larger Family Homes (2026)](https://keithnah.com/best/4-bedroom-family-homes.html)
+- [Completed Condos Ready to Move In (2026)](https://keithnah.com/best/completed-ready-to-move-in.html)
+- [New Launches Completing by 2028 (2026)](https://keithnah.com/best/completing-by-2028.html)
+- [New Launch Condos Near Hospitals (2026)](https://keithnah.com/best/condo-near-hospital.html)
+- [New Launch Condos Near International Schools (2026)](https://keithnah.com/best/condo-near-international-school.html)
+- [New Launch Condos Near KTM Stations (2026)](https://keithnah.com/best/condo-near-ktm-station.html)
+- [New Launch Condos Near LRT Stations (2026)](https://keithnah.com/best/condo-near-lrt-station.html)
+- [New Launch Condos Near Mid Valley (2026)](https://keithnah.com/best/condo-near-mid-valley.html)
+- [New Launch Condos Near MRT Stations (2026)](https://keithnah.com/best/condo-near-mrt-station.html)
+- [New Launch Condos Near Pavilion (2026)](https://keithnah.com/best/condo-near-pavilion.html)
+- [New Launch Condos Near the Petronas Twin Towers (2026)](https://keithnah.com/best/condo-near-petronas-twin-towers.html)
+- [New Launch Condos Near TRX and Merdeka 118 (2026)](https://keithnah.com/best/condo-near-trx-merdeka-118.html)
+- [New Launch Condos Near Universities (2026)](https://keithnah.com/best/condo-near-university.html)
+- [New Launch Condos with an Infinity or Sky Pool (2026)](https://keithnah.com/best/condo-with-infinity-pool.html)
+- [Dual Key New Launch Condos in Malaysia (2026)](https://keithnah.com/best/dual-key-units.html)
+- [Freehold New Launch Condos in Johor Bahru (2026)](https://keithnah.com/best/freehold-condo-johor-bahru.html)
+- [Freehold New Launch Condos in Kuala Lumpur (2026)](https://keithnah.com/best/freehold-condo-kuala-lumpur.html)
+- [Freehold New Launch Condos in Penang (2026)](https://keithnah.com/best/freehold-condo-penang.html)
+- [Freehold New Launch Condos in Selangor (2026)](https://keithnah.com/best/freehold-condo-selangor.html)
+- [Freehold Condos Under RM1 Million Near MRT/LRT (2026)](https://keithnah.com/best/freehold-under-rm1-million-near-mrt-lrt.html)
+- [GreenRE Certified Green Building Condos (2026)](https://keithnah.com/best/greenre-green-building-condo.html)
+- [Large New Launch Condos Above 1,500 sqft (2026)](https://keithnah.com/best/large-condo-above-1500-sqft.html)
+- [Largest New Launch Homes Under RM1.5 Million (2026)](https://keithnah.com/best/largest-homes-under-rm1-5-million.html)
+- [Latest New Launches in Malaysia (2026) (2026)](https://keithnah.com/best/latest-new-launch-2026.html)
+- [Low Density New Launch Condos (Under 400 Units) (2026)](https://keithnah.com/best/low-density-condo.html)
+- [Lowest Price per Sqft New Launches in Kuala Lumpur (2026)](https://keithnah.com/best/lowest-price-per-sqft-kuala-lumpur.html)
+- [Luxury New Launch Condos Above RM1 Million (2026)](https://keithnah.com/best/luxury-new-launch-above-rm1-million.html)
+- [Property Near the RTS Link in Johor Bahru (2026)](https://keithnah.com/best/near-rts-link-johor-bahru.html)
+- [New Launch Condos in Kuala Lumpur Under RM700K (2026)](https://keithnah.com/best/new-launch-kuala-lumpur-under-rm700k.html)
+- [New Launch Condos from RM500K to RM1 Million (2026)](https://keithnah.com/best/new-launch-rm500k-to-rm1-million.html)
+- [New Launch Condos in Selangor Under RM700K (2026)](https://keithnah.com/best/new-launch-selangor-under-rm700k.html)
+- [New Launch Property Under RM500K in Malaysia (2026)](https://keithnah.com/best/new-launch-under-rm500k.html)
+- [New Launch Condos Under RM800K (2026)](https://keithnah.com/best/new-launch-under-rm800k.html)
+- [Residential Title New Launch Condos (2026)](https://keithnah.com/best/residential-title-condo.html)
+- [Sea View and Waterfront New Launch Condos (2026)](https://keithnah.com/best/sea-view-waterfront-condo.html)
+- [New Launch Condos with Studio Units (2026)](https://keithnah.com/best/studio-units.html)
 
 ## Topics
 - [Area Guides](https://keithnah.com/topic/area-guides.html): Neighbourhood guides to the parts of Kuala Lumpur and the Klang Valley buyers ask about most.
