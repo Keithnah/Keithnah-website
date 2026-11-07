@@ -15,6 +15,8 @@ import json
 import os
 import re
 
+import float_wa as FW
+
 SITE = 'https://keithnah.com'
 OUT = 'property'
 WA = '60102821568'
@@ -177,9 +179,10 @@ section.blk{margin-bottom:50px;}
 .note{font-size:12px;color:var(--grey);padding:0 0 30px;}
 footer{background:#0C0C0C;color:#bbb;padding:34px 5vw;font-size:13px;text-align:center;}
 footer a{color:#fff;}
-.float-wa{position:fixed;right:22px;bottom:22px;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,0.25);z-index:60;}
 @media(max-width:900px){.hero{grid-template-columns:1fr;gap:22px;}.pd-layout-selector{flex-direction:column;}.pd-layout-sidebar{flex-direction:row;overflow-x:auto;width:100%;gap:8px;padding-bottom:6px;}.pd-layout-tab{flex:0 0 auto;min-width:130px;width:auto;}.price{font-size:24px;}.hero h1{font-size:34px;}.stats{grid-template-columns:repeat(2,1fr);}.stat{border-left:0;border-top:1px solid var(--line);}.stat:first-child{grid-column:1/-1;border-top:0;}.wa-btn span{display:none;}.wrap{padding:0 16px;}.cta{padding:28px 20px;}}
 '''
+CSS += FW.FLOAT_CSS
+
 
 NAV = [('', 'Home'), ('projects.html', 'View Projects'), ('compare.html', 'Compare Projects'), ('blog.html', 'News'),
        ('calculator.html', 'Calculator'), ('mm2h.html', 'MM2H 第二家园'), ('about-keith.html', 'About Keith')]
@@ -301,7 +304,7 @@ def page(i):
   <p class="note">Prices, sizes and availability are indicative and subject to change. Confirm current figures with Keith before making decisions.</p>
 </main>
 <footer>&copy; 2026 Keith Nah Real Estate · <a href="../projects.html">All projects</a> · <a href="../about-keith.html">About Keith</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-of-use.html">Terms of Use</a> · <a href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/keithnah_/" target="_blank" rel="noopener">Instagram</a></footer>
-<a class="float-wa" href="{wa}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">{wasvg}</a>
+{floatwa}
 <script>
 document.addEventListener('click',function(e){{
   var b=e.target.closest('.pd-layout-tab'); if(!b) return;
@@ -314,6 +317,7 @@ document.addEventListener('click',function(e){{
 </body>
 </html>
 '''.format(
+        floatwa=FW.float_html(E(wa(msg))),
         title=E(title), desc=E(desc), kw=E(', '.join(tg)), url=E(url), icon=E(up(ICON)), logo=E(up(LOGO)),
         ogimg=('<meta property="og:image" content="%s/%s">\n' % (SITE, E(photo))) if photo else '',
         ld=json.dumps(ld, ensure_ascii=False).replace('</', '<\\/'), css=CSS, nav=nav, wa=E(wa(msg)), wasvg=WA_SVG,

@@ -12,6 +12,7 @@ from urllib.parse import quote_plus
 
 from news_content import GUIDES, TOPICS
 import news_i18n as I
+import float_wa as FW
 
 SITE = 'https://keithnah.com'
 PAGE = 'blog.html'
@@ -116,7 +117,7 @@ SHELL = """<!DOCTYPE html>
 {body}
 </main>
 <footer>&copy; 2026 Keith Nah Real Estate · <a href="../blog.html">{l_news}</a> · <a href="../projects.html">{l_all}</a> · <a href="../privacy-policy.html">{l_priv}</a> · <a href="../terms-of-use.html">{l_terms}</a> · <a href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/keithnah_/" target="_blank" rel="noopener">Instagram</a></footer>
-<a class="float-wa" href="{wa}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">{wasvg}</a>
+{floatwa}
 {tscript}
 {menujs}
 <script src="../lead-tracker.js"></script>
@@ -131,7 +132,7 @@ def shell(c, title, desc, url, body, ld, og='article', msg='Hi Keith, I have a q
     return SHELL.format(title=A(title), desc=A(desc), url=A(url), og=og, ld=json.dumps(ld, ensure_ascii=False).replace('</', '<\\/'),
                         css=bp.CSS, pcss=PAGE_CSS + I.MENU_CSS, nav=nav, wa=A(wa(msg)), wasvg=bp.WA_SVG, body=body, menu=I.menu_html(),
                         l_wa=c.tt('WhatsApp Keith'), l_news=c.tt('News'), l_all=c.tt('All projects'), l_priv=c.tt('Privacy Policy'),
-                        l_terms=c.tt('Terms of Use'), tscript=c.script(), menujs=I.menu_js())
+                        l_terms=c.tt('Terms of Use'), tscript=c.script(), menujs=I.menu_js(), floatwa=FW.float_html(A(wa(msg))))
 
 
 def iso(d):
