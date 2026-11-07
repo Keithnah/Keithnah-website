@@ -1,5 +1,6 @@
 /* KNRE lead tracker
- * Records every WhatsApp button click and every Quick Enquiry submission
+ * Records WhatsApp button clicks (only when the visitor actually leaves for WhatsApp,
+ * once per 30 minutes) and every Quick Enquiry submission
  * in the "KNRE Leads" Google Sheet, through a Google Apps Script web app.
  *
  * Setup: paste the web app URL (ends in /exec) into LEADS_ENDPOINT below.
@@ -65,10 +66,33 @@
     return (t || 'WhatsApp link').slice(0, 120);
   }
 
+  // A WhatsApp click is only recorded once the visitor really goes to WhatsApp
+  // (the page is hidden, unloaded or loses focus within a few seconds).
+  // A tap that does not leave the page is treated as accidental and dropped,
+  // and repeat clicks from the same visitor within 30 minutes are recorded once.
+  var CONFIRM_MS = 5000, REPEAT_MS = 30 * 60 * 1000, KEY = 'knre_wa_last';
+  var pending = null;
+
+  function recentlySent() {
+    try { return Date.now() - (+localStorage.getItem(KEY) || 0) < REPEAT_MS; } catch (e) { return false; }
+  }
+
+  function confirmPending() {
+    if (!pending || Date.now() - pending.t > CONFIRM_MS) { pending = null; return; }
+    var d = pending.data; pending = null;
+    if (recentlySent()) return;
+    try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
+    send(d);
+  }
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') confirmPending(); });
+  window.addEventListener('pagehide', confirmPending);
+  window.addEventListener('blur', function () { setTimeout(function () { if (!document.hasFocus()) confirmPending(); }, 300); });
+
   function onClick(e) {
     var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
     if (!a || !isWhatsApp(a.href)) return;
-    send({ type: 'WhatsApp Click', button: buttonLabel(a), message: whatsAppText(a.href) });
+    pending = { t: Date.now(), data: { type: 'WhatsApp Click', button: buttonLabel(a), message: whatsAppText(a.href) } };
+    setTimeout(function () { if (pending && Date.now() - pending.t >= CONFIRM_MS) pending = null; }, CONFIRM_MS + 100);
   }
   document.addEventListener('click', onClick, true);
   document.addEventListener('auxclick', function (e) { if (e.button === 1) onClick(e); }, true);
