@@ -134,6 +134,8 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
 .kn-top svg{width:20px;height:20px;}
 @media(max-width:600px){.kn-fab{right:16px;bottom:16px;gap:10px;}.kn-top{width:44px;height:44px;}}
 @media(prefers-reduced-motion:reduce){.kn-top{transition:none;}}
+/* phones: the header WhatsApp button would push the menu button off screen; the floating button stays */
+@media(max-width:560px){header .whatsapp-btn,header .wa-btn,.nav-right .whatsapp-btn{display:none!important;}.hamburger{margin-left:auto;padding:6px 4px;}}
 /* KN-FLOAT:END */
 
 .art-hero{border-radius:14px;padding:46px 40px;color:#fff;margin:6px 0 34px;position:relative;overflow:hidden;}
@@ -184,12 +186,26 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
 @media (hover:hover) and (pointer:fine){ .kn-lang::after{content:'';position:absolute;left:0;right:0;top:100%;height:12px;} }
 html[dir=rtl] .art-body,html[dir=rtl] .topic-head,html[dir=rtl] .acard{text-align:right;}
 </style>
+<style id="kn-mnav-css">
+.kn-burger{display:none;margin-left:auto;background:none;border:0;color:#fff;font-size:26px;line-height:1;padding:6px 4px;cursor:pointer;}
+@media(max-width:1100px){.kn-burger{display:block;}}
+#knMnav{position:fixed;inset:0;z-index:2147483000;display:none;}
+#knMnav.open{display:block;}
+#knMnav .kn-mbg{position:absolute;inset:0;background:rgba(10,10,30,.55);}
+#knMnav .kn-mpanel{position:absolute;top:0;right:0;bottom:0;width:min(82vw,340px);background:#1d1b4f;color:#fff;padding:20px 22px 28px;overflow-y:auto;box-shadow:-8px 0 30px rgba(0,0,0,.35);}
+html[dir=rtl] #knMnav .kn-mpanel{right:auto;left:0;}
+#knMnav .kn-mclose{display:block;margin-left:auto;background:none;border:0;color:#fff;font-size:30px;line-height:1;cursor:pointer;padding:4px 8px;}
+#knMnav .kn-mlinks a{display:block;color:#fff;text-decoration:none;font-size:17px;letter-spacing:.04em;padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12);}
+#knMnav .kn-mlinks a.active{color:#b9b4ff;font-weight:600;}
+#knMnav .kn-mwa{display:block;margin-top:24px;text-align:center;background:#25d366;color:#fff;text-decoration:none;border-radius:999px;padding:13px;font-weight:600;}
+</style>
 </head>
 <body>
 <header>
   <a class="logo" href="../"><img src="../images/f304c8479b1fe873.png" alt="Keith Nah logo"><span><b>Keith Nah 鈞晖</b><small>Keith Nah Real Estate</small></span></a>
   <nav><a href="../"><span data-t="12">Home</span></a><a href="../projects.html"><span data-t="33">View Projects</span></a><a href="../compare.html"><span data-t="34">Compare Projects</span></a><a href="../blog.html" class="active"><span data-t="13">News</span></a><a href="../calculator.html"><span data-t="35">Calculator</span></a><a href="../mm2h.html">MM2H 第二家园</a><a href="../about-keith.html"><span data-t="36">About Keith</span></a></nav>
   <div class="hdr-right"><div class="kn-lang" id="knLang"><button type="button" class="kn-lang-btn" aria-haspopup="true"><img class="kn-flag" src="../images/flags/gb.svg" alt="" width="20" height="15"><span>English</span></button><div class="kn-lang-menu" role="menu"><button type="button" data-lang="en"><img class="kn-flag" src="../images/flags/gb.svg" alt="" width="20" height="15">English</button><button type="button" data-lang="zh-CN"><img class="kn-flag" src="../images/flags/cn.svg" alt="" width="20" height="15">简体中文</button><button type="button" data-lang="zh-TW"><img class="kn-flag" src="../images/flags/tw.svg" alt="" width="20" height="15">繁體中文</button><button type="button" data-lang="ms"><img class="kn-flag" src="../images/flags/my.svg" alt="" width="20" height="15">Bahasa Malaysia</button><button type="button" data-lang="ta"><img class="kn-flag" src="../images/flags/in.svg" alt="" width="20" height="15">தமிழ்</button><button type="button" data-lang="ja"><img class="kn-flag" src="../images/flags/jp.svg" alt="" width="20" height="15">日本語</button><button type="button" data-lang="ko"><img class="kn-flag" src="../images/flags/kr.svg" alt="" width="20" height="15">한국어</button><button type="button" data-lang="ar"><img class="kn-flag" src="../images/flags/sa.svg" alt="" width="20" height="15">العربية</button></div></div><a class="wa-btn" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I+read+%22Latest+Airbnb+Ban+in+Penang+Residential+Developments%22+on+your+website+and+have+a+question.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.44.79 3.06 1.2 4.72 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0012.04 2zm5.8 14.06c-.24.68-1.42 1.3-1.95 1.34-.5.04-.97.23-3.27-.68-2.77-1.09-4.53-3.93-4.67-4.11-.13-.18-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.25-.27.54-.34.72-.34l.52.01c.17 0 .39-.06.61.47.24.56.79 1.92.86 2.06.07.14.11.3.02.48-.09.18-.13.29-.27.45-.13.16-.28.35-.4.47-.13.13-.27.28-.12.55.16.27.7 1.15 1.5 1.86 1.03.92 1.9 1.2 2.17 1.34.27.13.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.88.27.14.45.2.52.32.07.11.07.66-.17 1.34z"/></svg><span><span data-t="22">WhatsApp Keith</span></span></a></div>
+<button type="button" class="kn-burger" aria-label="Menu" onclick="knMnav()">&#9776;</button>
 </header>
 <main class="wrap">
 
@@ -237,5 +253,7 @@ html[dir=rtl] .art-body,html[dir=rtl] .topic-head,html[dir=rtl] .acard{text-alig
 })();
 </script>
 <script src="../lead-tracker.js"></script>
+<div id="knMnav" aria-hidden="true"><div class="kn-mbg" onclick="knMnav(false)"></div><div class="kn-mpanel"><button type="button" class="kn-mclose" aria-label="Close" onclick="knMnav(false)">&times;</button><div class="kn-mlinks"><a href="../"><span data-t="12">Home</span></a><a href="../projects.html"><span data-t="33">View Projects</span></a><a href="../compare.html"><span data-t="34">Compare Projects</span></a><a href="../blog.html" class="active"><span data-t="13">News</span></a><a href="../calculator.html"><span data-t="35">Calculator</span></a><a href="../mm2h.html">MM2H 第二家园</a><a href="../about-keith.html"><span data-t="36">About Keith</span></a></div><a class="kn-mwa" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I+read+%22Latest+Airbnb+Ban+in+Penang+Residential+Developments%22+on+your+website+and+have+a+question.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">Chat with Keith</a></div></div><!--/knMnav-->
+<script>function knMnav(o){var d=document.getElementById('knMnav');if(!d)return;o=(o===undefined)?!d.classList.contains('open'):o;d.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';}document.addEventListener('keydown',function(e){if(e.key==='Escape')knMnav(false);});</script>
 </body>
 </html>
