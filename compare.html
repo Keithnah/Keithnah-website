@@ -2104,7 +2104,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
     const l = lang();
     if(l === 'en' || dict(l)) return cb();
     const s = document.createElement('script');
-    s.src = 'i18n-projects-' + l + '.js';
+    s.src = 'i18n-projects-' + l + '.js?v=c1470e42fe';
     s.onload = cb; s.onerror = cb;
     document.head.appendChild(s);
   }
