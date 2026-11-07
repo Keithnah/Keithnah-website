@@ -129,6 +129,16 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
 }
 @media(max-width:600px){a.float-wa.float-wa{right:16px;bottom:16px;padding:11px 18px 11px 14px;font-size:14px;gap:9px;}a.float-wa.float-wa svg{width:22px;height:22px;flex-basis:22px;}}
 @media(prefers-reduced-motion:reduce){a.float-wa.float-wa{animation:none;box-shadow:0 0 0 6px rgba(37,211,102,.18),0 8px 22px rgba(0,0,0,.16);}}
+/* back to top, above the WhatsApp button */
+.kn-fab{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.kn-fab a.float-wa.float-wa{position:static;right:auto;bottom:auto;}
+.kn-top{width:48px;height:48px;border-radius:50%;background:#fff;border:1.5px solid #d6d6d6;box-shadow:0 6px 18px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:#555;
+  opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility .25s,border-color .2s,color .2s;}
+.kn-top.show{opacity:1;visibility:visible;transform:none;}
+.kn-top:hover{border-color:var(--gold,#5E60CE);color:var(--gold,#5E60CE);}
+.kn-top svg{width:20px;height:20px;}
+@media(max-width:600px){.kn-fab{right:16px;bottom:16px;gap:10px;}.kn-top{width:44px;height:44px;}}
+@media(prefers-reduced-motion:reduce){.kn-top{transition:none;}}
 /* KN-FLOAT:END */
 </style>
 </head>
@@ -164,7 +174,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
   <p class="note">Prices, sizes and availability are indicative and subject to change. Confirm current figures with Keith before making decisions.</p>
 </main>
 <footer>&copy; 2026 Keith Nah Real Estate · <a href="../projects.html">All projects</a> · <a href="../about-keith.html">About Keith</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-of-use.html">Terms of Use</a> · <a href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/keithnah_/" target="_blank" rel="noopener">Instagram</a></footer>
-<a class="float-wa" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27m+interested+in+Arden+and+would+like+to+find+out+more.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener" aria-label="Chat with Keith on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.44.79 3.06 1.2 4.72 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0012.04 2zm5.82 14.06c-.24.68-1.42 1.3-1.95 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.3-.13.58.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.41.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.68.79 1.97.94.29.14.48.21.55.33.07.12.07.7-.17 1.38z"/></svg><span class="fw-txt">Chat with Keith</span></a>
+<div class="kn-fab"><button type="button" class="kn-top" id="knTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button><a class="float-wa" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27m+interested+in+Arden+and+would+like+to+find+out+more.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener" aria-label="Chat with Keith on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.44.79 3.06 1.2 4.72 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0012.04 2zm5.82 14.06c-.24.68-1.42 1.3-1.95 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.3-.13.58.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.41.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.68.79 1.97.94.29.14.48.21.55.33.07.12.07.7-.17 1.38z"/></svg><span class="fw-txt">Chat with Keith</span></a></div><!--/kn-fab--><script>(function(){var b=document.getElementById('knTop');if(!b)return;function s(){b.classList.toggle('show',(window.pageYOffset||document.documentElement.scrollTop)>300);}window.addEventListener('scroll',s,{passive:true});s();b.addEventListener('click',function(){var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;window.scrollTo({top:0,behavior:r?'auto':'smooth'});});})();</script>
 <script>
 document.addEventListener('click',function(e){
   var b=e.target.closest('.pd-layout-tab'); if(!b) return;
