@@ -19,6 +19,10 @@ from urllib.parse import quote
 import float_wa as FW
 
 try:
+    LISTS_OF = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'list_membership.json'), encoding='utf-8'))
+except (OSError, ValueError):
+    LISTS_OF = {}
+try:
     PLACES = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'project_places.json'), encoding='utf-8'))
 except (OSError, ValueError):
     PLACES = []
@@ -136,6 +140,7 @@ header nav a.active,header nav a:hover{text-decoration:underline;text-underline-
 .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px;}
 .btn2{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:100px;border:1px solid #111;font-size:13px;font-weight:600;}
 .btn2:hover{background:#111;color:#fff;}
+.lst-chips{display:flex;flex-wrap:wrap;gap:8px;}.lst-chip{background:#fff;border:1px solid var(--line);border-radius:100px;padding:9px 15px;font-size:13.5px;font-weight:500;}.lst-chip:hover{border-color:var(--gold);color:var(--gold);}
 .tg-sub{color:var(--grey);font-size:14px;margin:-6px 0 18px;}
 .tg-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px 24px;}
 .tg-row{display:grid;grid-template-columns:170px 1fr;gap:16px;align-items:start;padding:18px 0;border-top:1px solid var(--line);} .tg-row:first-child{border-top:0;}
@@ -342,12 +347,13 @@ def page(i):
   {layouts_blk}
   {fits_blk}
   {tags_blk}
+  {lists_blk}
   {near_blk}
   {arts_blk}
   <div class="cta"><h2>Want Keith's take on {display}?</h2><p>Ask for the latest price, available units and the full floor plans.</p><a class="wa-btn" href="{wa}" target="_blank" rel="noopener">{wasvg}WhatsApp Keith About This Project</a></div>
   <p class="note">Prices, sizes and availability are indicative and subject to change. Confirm current figures with Keith before making decisions.</p>
 </main>
-<footer>&copy; 2026 Keith Nah Real Estate · <a href="../projects.html">All projects</a> · <a href="../about-keith.html">About Keith</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-of-use.html">Terms of Use</a> · <a href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/keithnah_/" target="_blank" rel="noopener">Instagram</a></footer>
+<footer>&copy; 2026 Keith Nah Real Estate · <a href="../projects.html">All projects</a> · <a href="../best/">Best new launch lists</a> · <a href="../about-keith.html">About Keith</a> · <a href="../privacy-policy.html">Privacy Policy</a> · <a href="../terms-of-use.html">Terms of Use</a> · <a href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/keithnah_/" target="_blank" rel="noopener">Instagram</a></footer>
 {floatwa}
 <script>
 document.addEventListener('click',function(e){{
@@ -375,6 +381,8 @@ document.addEventListener('click',function(e){{
         facts_blk=('<section class="blk"><h2>Project Details</h2><div class="pi"><div class="pi-head">Project Information</div><table>%s</table></div></section>' % facts) if facts else '',
         amen_blk=('<ul class="amen">%s</ul>' % amen) if amen else '',
         layouts_blk=('<section class="blk"><h2>%s Floor Plans &amp; Unit Types</h2><div class="layouts">%s</div></section>' % (E(display), layouts)) if layouts else '',
+        lists_blk=(('<section class="blk"><h2>Featured in these lists</h2><div class="lst-chips">%s</div></section>' % ''.join(
+            '<a class="lst-chip" href="../best/%s.html">%s</a>' % (E(s), E(t2)) for s, t2 in LISTS_OF.get(str(i), []))) if LISTS_OF.get(str(i)) else ''),
         tags_blk=('<section class="blk tg-sec"><h2>Popular Searches for %s</h2><p class="tg-sub">Tap a tag to see every project that matches it.</p><div class="tg-box">%s</div></section>' % (E(display), tags)) if tg else '',
         fits_blk=('<section class="blk"><h2>Who Should Consider %s?</h2><div class="fits">%s</div></section>' % (E(display), fits)) if fits else '',
         near_blk=('<section class="blk"><h2>Nearby Projects</h2><div class="cards">%s</div></section>' % near) if near else '',
@@ -440,6 +448,7 @@ def write_sitemap():
     rows = [(SITE + '/' + u, pr, cf) for u, pr, cf in main] + [('%s/%s/%s.html' % (SITE, OUT, s), '0.8', 'monthly') for s in SLUGS]
     import glob
     rows += [('%s/%s' % (SITE, p), '0.8', 'weekly') for p in sorted(glob.glob('area/*.html'))]
+    rows += [('%s/best/' % SITE, '0.8', 'weekly')] + [('%s/%s' % (SITE, p), '0.7', 'weekly') for p in sorted(glob.glob('best/*.html')) if not p.endswith('index.html')]
     rows += [('%s/%s' % (SITE, p), '0.6', 'monthly') for p in sorted(glob.glob('topic/*.html'))]
     rows += [('%s/%s' % (SITE, p), '0.6', 'yearly') for p in sorted(glob.glob('article/*.html'))]
     x = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'

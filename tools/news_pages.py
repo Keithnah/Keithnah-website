@@ -116,7 +116,7 @@ SHELL = """<!DOCTYPE html>
 <main class="wrap">
 {body}
 </main>
-<footer>&copy; 2026 Keith Nah Real Estate · <a href="../blog.html">{l_news}</a> · <a href="../projects.html">{l_all}</a> · <a href="../privacy-policy.html">{l_priv}</a> · <a href="../terms-of-use.html">{l_terms}</a> · <a href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/keithnah_/" target="_blank" rel="noopener">Instagram</a></footer>
+<footer>&copy; 2026 Keith Nah Real Estate · <a href="../blog.html">{l_news}</a> · <a href="../projects.html">{l_all}</a> · <a href="../best/">Best new launch lists</a> · <a href="../privacy-policy.html">{l_priv}</a> · <a href="../terms-of-use.html">{l_terms}</a> · <a href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.instagram.com/keithnah_/" target="_blank" rel="noopener">Instagram</a></footer>
 {floatwa}
 {tscript}
 {menujs}
