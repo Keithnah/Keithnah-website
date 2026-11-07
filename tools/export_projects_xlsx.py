@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""Export every project on the Keith Nah site into WEBSITE_PROJECT.xlsx (+ images folder).
+"""Export every project on the Keith Nah site into WEBSITE_PROJECT.xlsx (+ images folder),
+classified by state, then area (the same as the View Projects Location list).
 Run from the site folder after ANY project add / remove / edit:
     python3 tools/export_projects_xlsx.py [out_dir]
-Reads projects.html (PROJECT_DETAILS, PS_META, cards) and compare.html (PROJECTS).
+Reads projects.html (PROJECT_DETAILS, PS_META, cards), compare.html (PROJECTS) and
+tools/project_places.json (state and area, written by tools/update_areas.py).
+Also writes projects_by_state.json, ready to import into a new website.
 """
 import re, json, base64, os, sys, zipfile, shutil, datetime
 from collections import Counter
@@ -38,6 +41,13 @@ for m in re.finditer(r'<div class="proj-card"[^>]*data-idx="(\d+)"', s):
     covers[i] = s[p:q]
 
 def save_img(dataurl, folder, name):
+    if dataurl and not dataurl.startswith('data:'):
+        src = os.path.join(SITE, dataurl)
+        if not os.path.isfile(src): return ''
+        os.makedirs(folder, exist_ok=True)
+        fn = '%s%s' % (name, os.path.splitext(src)[1].lower())
+        shutil.copyfile(src, os.path.join(folder, fn))
+        return fn
     if not dataurl or ',' not in dataurl: return ''
     os.makedirs(folder, exist_ok=True)
     ext = 'png' if 'image/png' in dataurl[:30] else ('webp' if 'webp' in dataurl[:30] else 'jpg')
@@ -48,8 +58,16 @@ def save_img(dataurl, folder, name):
 if os.path.isdir(IMG_DIR): shutil.rmtree(IMG_DIR)
 os.makedirs(IMG_DIR)
 
-AREA_ORDER = ['Bukit Bintang', 'KL City Centre', 'TRX & Merdeka Maybank', 'KL City', 'Bukit Jalil', 'Petaling Jaya', 'Penang', 'Johor', 'Melaka']
-order = sorted(range(len(D)), key=lambda i: (AREA_ORDER.index(D[i]['tag']) if D[i]['tag'] in AREA_ORDER else 99, D[i]['name'].lower()))
+PLACES = json.load(open(os.path.join(SITE, 'tools', 'project_places.json'), encoding='utf-8'))
+assert len(PLACES) == len(D), (len(PLACES), len(D))
+STATES = ['Kuala Lumpur', 'Selangor', 'Penang', 'Johor', 'Melaka']
+CODE = {'Kuala Lumpur': 'KL', 'Selangor': 'SGR', 'Penang': 'PNG', 'Johor': 'JHR', 'Melaka': 'MLK'}
+def ST(i): return PLACES[i][0]
+def AR(i): return PLACES[i][1]
+AREA_N = Counter((ST(i), AR(i)) for i in range(len(D)))
+order = sorted(range(len(D)), key=lambda i: (STATES.index(ST(i)) if ST(i) in STATES else 99, -AREA_N[(ST(i), AR(i))], AR(i), D[i]['name'].lower()))
+def folder_of(i): return os.path.join(IMG_DIR, slug(ST(i)), slug(AR(i)), slug(D[i]['name']))
+def rel(i, fn): return '%s/%s/%s/%s' % (slug(ST(i)), slug(AR(i)), slug(D[i]['name']), fn)
 
 # ---------- styles
 F = 'Arial'
@@ -73,7 +91,7 @@ def sheet_name(n, name):
     return f'{n:02d} {base}'[:31]
 
 names = {}
-for n, i in enumerate(order, 1): names[i] = sheet_name(n, D[i]['name'])
+for n, i in enumerate(order, 1): names[i] = ('%s %02d %s' % (CODE.get(ST(i), 'OT'), n, re.sub(r'[\[\]\:\*\?/\\]', '', D[i]['name'])))[:31]
 
 def pname(idx): return D[idx]['name'] if 0 <= idx < len(D) else str(idx)
 
@@ -93,6 +111,7 @@ for n, i in enumerate(order, 1):
     ws.row_dimensions[r].height = 30; ws.cell(r, 1).alignment = Alignment(vertical='center')
     r += 1
     ws.cell(r, 1, '← Back to INDEX').hyperlink = "#'INDEX'!A1"; ws.cell(r, 1).font = f_link
+    ws.cell(r, 3, '← Back to %s' % ST(i).upper()).hyperlink = "#'%s'!A1" % ST(i).upper(); ws.cell(r, 3).font = f_link
     r += 2
     def section(title):
         global r
@@ -115,7 +134,7 @@ for n, i in enumerate(order, 1):
         for k, t in enumerate(items, 1): kv(str(k), t)
         r += 1
     section('1. BASIC INFORMATION')
-    kv('Project name', p['name']); kv('Area / section', p['tag']); kv('Location', p.get('loc'))
+    kv('Project name', p['name']); kv('State', ST(i)); kv('Area', AR(i)); kv('Website section (old)', p['tag']); kv('Location', p.get('loc'))
     kv('Property type', cm.get('type')); kv('Status', p.get('status'))
     kv('Starting price', p.get('price')); kv('Price (short, card)', cm.get('price'))
     kv('Tenure', p.get('tenure')); kv('Size', p.get('size')); kv('Bedrooms', p.get('rooms'))
@@ -145,12 +164,12 @@ for n, i in enumerate(order, 1):
     for col, h in enumerate(['Type', 'Size', 'Rooms', 'Tag', 'Image file', 'Description'], 1):
         x = ws.cell(r, col, h); x.font = f_hdr; x.fill = fill_navy; x.border = box
     ws.merge_cells(start_row=r, start_column=6, end_row=r, end_column=8); r += 1
-    folder = os.path.join(IMG_DIR, slug(p['name']))
+    folder = folder_of(i)
     cov = save_img(covers.get(i), folder, 'cover')
-    ws.cell(cover_row, 2, (slug(p['name']) + '/' + cov) if cov else '-').font = f_val
+    ws.cell(cover_row, 2, rel(i, cov) if cov else '-').font = f_val
     for lay in p.get('layouts', []):
         fn = save_img(lay.get('img'), folder, 'layout-' + slug(lay.get('type', 'type')))
-        vals = [lay.get('type'), lay.get('size'), lay.get('rooms'), lay.get('tag'), (slug(p['name']) + '/' + fn) if fn else '-', lay.get('desc')]
+        vals = [lay.get('type'), lay.get('size'), lay.get('rooms'), lay.get('tag'), rel(i, fn) if fn else '-', lay.get('desc')]
         for col, v in enumerate(vals, 1):
             x = ws.cell(r, col, v); x.font = f_val; x.alignment = wrap; x.border = box
         ws.merge_cells(start_row=r, start_column=6, end_row=r, end_column=8)
@@ -160,36 +179,37 @@ for n, i in enumerate(order, 1):
 
 # ---------- INDEX
 wsI.sheet_view.showGridLines = False
-wsI.merge_cells('A1:L1'); wsI['A1'] = 'KEITH NAH REAL ESTATE — WEBSITE PROJECT DATABASE'
+wsI.merge_cells('A1:M1'); wsI['A1'] = 'KEITH NAH REAL ESTATE — WEBSITE PROJECT DATABASE'
 wsI['A1'].font = f_title
-for col in range(1, 13): wsI.cell(1, col).fill = fill_navy
+for col in range(1, 14): wsI.cell(1, col).fill = fill_navy
 wsI.row_dimensions[1].height = 32
-wsI['A2'] = f'{len(D)} projects · exported {datetime.date.today().isoformat()} · one sheet per project (click the project name). Update by running tools/export_projects_xlsx.py after every project change.'
+wsI['A2'] = f'{len(D)} projects · exported {datetime.date.today().isoformat()} · sorted by state, then area · one sheet per state and per project (click a name). Update by running tools/export_projects_xlsx.py after every project change.'
 wsI['A2'].font = Font(name=F, size=9, italic=True, color='666666')
-heads = ['#', 'Project', 'Area / section', 'Developer', 'Status', 'Tenure', 'Starting price', 'Size', 'Bedrooms', 'Completion', 'Location', 'Type']
+heads = ['#', 'Project', 'State', 'Area', 'Developer', 'Status', 'Tenure', 'Starting price', 'Size', 'Bedrooms', 'Completion', 'Location', 'Type']
 for col, h in enumerate(heads, 1):
     x = wsI.cell(4, col, h); x.font = f_hdr; x.fill = fill_pur; x.border = box; x.alignment = Alignment(vertical='center', wrap_text=True)
 for n, i in enumerate(order, 1):
     p = D[i]; cm = CMP[i]; row = 4 + n
     dev = p.get('details_extra', {}).get('Developer') or META[i].get('d') or '-'
-    vals = [n, p['name'], p['tag'], dev, p.get('status'), p.get('tenure'), p.get('price'), p.get('size'), p.get('rooms'), p.get('completion'), p.get('loc'), cm.get('type')]
+    vals = [n, p['name'], ST(i), AR(i), dev, p.get('status'), p.get('tenure'), p.get('price'), p.get('size'), p.get('rooms'), p.get('completion'), p.get('loc'), cm.get('type')]
     for col, v in enumerate(vals, 1):
         x = wsI.cell(row, col, v); x.font = f_val; x.border = box; x.alignment = Alignment(vertical='top', wrap_text=True)
         if n % 2 == 0: x.fill = fill_grey
     wsI.cell(row, 2).hyperlink = f"#'{names[i]}'!A1"; wsI.cell(row, 2).font = f_link
-for col, w in zip('ABCDEFGHIJKL', [5, 34, 20, 24, 18, 18, 34, 20, 18, 24, 34, 18]): wsI.column_dimensions[col].width = w
-wsI.freeze_panes = 'C5'; wsI.auto_filter.ref = f'A4:L{4 + len(D)}'
+for col, w in zip('ABCDEFGHIJKLM', [5, 34, 16, 22, 24, 18, 18, 34, 20, 18, 24, 34, 18]): wsI.column_dimensions[col].width = w
+wsI.freeze_panes = 'C5'; wsI.auto_filter.ref = f'A4:M{4 + len(D)}'
 
 # ---------- MASTER (flat, all fields) for easy import
 wsM = wb.create_sheet('MASTER TABLE', 1)
 base_cols = ['name', 'tag', 'status', 'price', 'tenure', 'size', 'rooms', 'completion', 'loc', 'overview', 'loc_text']
 extra_cols = [k for k, _ in EXTRA_KEYS.most_common()]
-head = ['Project', 'Area', 'Status', 'Starting price', 'Tenure', 'Size', 'Bedrooms', 'Completion', 'Location', 'Overview', 'Location text', 'Top 3 highlights', 'Selling points', 'Amenities', 'Buyer fit', 'Related projects', 'Layout types', 'Property type', 'Completion years', 'Completed?'] + extra_cols
+head = ['Project', 'State', 'Area', 'Website section (old)', 'Status', 'Starting price', 'Tenure', 'Size', 'Bedrooms', 'Completion', 'Location', 'Overview', 'Location text', 'Top 3 highlights', 'Selling points', 'Amenities', 'Buyer fit', 'Related projects', 'Layout types', 'Property type', 'Completion years', 'Completed?'] + extra_cols
 for col, h in enumerate(head, 1):
     x = wsM.cell(1, col, h); x.font = f_hdr; x.fill = fill_navy; x.alignment = Alignment(wrap_text=True, vertical='center'); x.border = box
 for n, i in enumerate(order, 1):
     p = D[i]; row = 1 + n
     vals = [p[k] if k not in ('name',) else p['name'] for k in base_cols]
+    vals[1:1] = [ST(i), AR(i)]
     vals += [' | '.join(p.get('points', [])), ' | '.join(p.get('selling_points', [])), ', '.join(p.get('amenities', [])),
              ' | '.join(f"{b['title']}: {b['desc']}" for b in p.get('buyer_fit', [])), ', '.join(pname(x) for x in p.get('nearby', [])),
              ', '.join(l.get('type', '') for l in p.get('layouts', [])), CMP[i].get('type'), ', '.join(map(str, META[i].get('y', []))), 'Yes' if META[i].get('c') else 'No']
@@ -197,34 +217,91 @@ for n, i in enumerate(order, 1):
     for col, v in enumerate(vals, 1):
         x = wsM.cell(row, col, v); x.font = f_val; x.alignment = Alignment(vertical='top', wrap_text=True); x.border = box
 for col in range(1, len(head) + 1):
-    wsM.column_dimensions[get_column_letter(col)].width = 60 if col in (10, 11, 12, 13, 15) else 24
+    wsM.column_dimensions[get_column_letter(col)].width = 60 if col in (12, 13, 14, 15, 17) else 24
 wsM.column_dimensions['A'].width = 32
 wsM.freeze_panes = 'B2'; wsM.auto_filter.ref = f'A1:{get_column_letter(len(head))}{1 + len(D)}'
 
 # ---------- LAYOUTS (all unit types)
 wsL = wb.create_sheet('ALL LAYOUTS', 2)
-for col, h in enumerate(['Project', 'Area', 'Type', 'Size', 'Rooms', 'Tag', 'Description', 'Image file'], 1):
+for col, h in enumerate(['Project', 'State', 'Area', 'Type', 'Size', 'Rooms', 'Tag', 'Description', 'Image file'], 1):
     x = wsL.cell(1, col, h); x.font = f_hdr; x.fill = fill_navy; x.border = box
 row = 2
 for i in order:
     p = D[i]
     for lay in p.get('layouts', []):
         fn = 'layout-' + slug(lay.get('type', 'type'))
-        ext = next((f for f in os.listdir(os.path.join(IMG_DIR, slug(p['name']))) if f.startswith(fn + '.')), '') if os.path.isdir(os.path.join(IMG_DIR, slug(p['name']))) else ''
-        for col, v in enumerate([p['name'], p['tag'], lay.get('type'), lay.get('size'), lay.get('rooms'), lay.get('tag'), lay.get('desc'), (slug(p['name']) + '/' + ext) if ext else '-'], 1):
+        ext = next((f for f in os.listdir(folder_of(i)) if f.startswith(fn + '.')), '') if os.path.isdir(folder_of(i)) else ''
+        for col, v in enumerate([p['name'], ST(i), AR(i), lay.get('type'), lay.get('size'), lay.get('rooms'), lay.get('tag'), lay.get('desc'), rel(i, ext) if ext else '-'], 1):
             x = wsL.cell(row, col, v); x.font = f_val; x.alignment = Alignment(wrap_text=True, vertical='top'); x.border = box
         row += 1
-for col, w in zip('ABCDEFGH', [32, 20, 18, 22, 28, 14, 70, 34]): wsL.column_dimensions[col].width = w
-wsL.freeze_panes = 'A2'; wsL.auto_filter.ref = f'A1:H{row - 1}'
+for col, w in zip('ABCDEFGHI', [32, 16, 20, 18, 22, 28, 14, 70, 44]): wsL.column_dimensions[col].width = w
+wsL.freeze_panes = 'A2'; wsL.auto_filter.ref = f'A1:I{row - 1}'
+
+# ---------- BY STATE: a summary sheet and one sheet per state (projects grouped by area)
+wsS = wb.create_sheet('BY STATE', 1); wsS.sheet_view.showGridLines = False
+wsS.merge_cells('A1:D1'); wsS['A1'] = 'PROJECTS BY STATE AND AREA'; wsS['A1'].font = f_title
+for col in range(1, 5): wsS.cell(1, col).fill = fill_navy
+wsS.row_dimensions[1].height = 30
+r = 3
+for col, h in enumerate(['State', 'Area', 'Projects', 'Open'], 1):
+    x = wsS.cell(r, col, h); x.font = f_hdr; x.fill = fill_pur; x.border = box
+r += 1
+for s in STATES:
+    total = sum(v for (a_, _), v in AREA_N.items() if a_ == s)
+    wsS.cell(r, 1, s.upper()).font = f_lab; wsS.cell(r, 3, total).font = f_lab
+    x = wsS.cell(r, 4, 'Open %s sheet →' % s); x.hyperlink = "#'%s'!A1" % s.upper(); x.font = f_link
+    for col in range(1, 5): wsS.cell(r, col).fill = fill_light; wsS.cell(r, col).border = box
+    r += 1
+    for (s2, a_), v in sorted(AREA_N.items(), key=lambda kv: (-kv[1], kv[0][1])):
+        if s2 != s: continue
+        wsS.cell(r, 2, a_).font = f_val; wsS.cell(r, 3, v).font = f_val
+        for col in range(1, 5): wsS.cell(r, col).border = box
+        r += 1
+wsS.cell(r, 1, 'TOTAL').font = f_lab; wsS.cell(r, 3, len(D)).font = f_lab
+for col, w in zip('ABCD', [20, 26, 12, 26]): wsS.column_dimensions[col].width = w
+
+sheads = ['#', 'Project', 'Area', 'Developer', 'Status', 'Tenure', 'Starting price', 'Size', 'Bedrooms', 'Completion', 'Location', 'Type']
+for k, s in enumerate(STATES):
+    ws = wb.create_sheet(s.upper(), 2 + k); ws.sheet_view.showGridLines = False
+    ids = [i for i in order if ST(i) == s]
+    ws.merge_cells('A1:L1'); ws['A1'] = '%s — %d projects' % (s.upper(), len(ids)); ws['A1'].font = f_title
+    for col in range(1, 13): ws.cell(1, col).fill = fill_navy
+    ws.row_dimensions[1].height = 30
+    ws.cell(2, 1, '← Back to BY STATE').hyperlink = "#'BY STATE'!A1"; ws.cell(2, 1).font = f_link
+    r = 4
+    for col, h in enumerate(sheads, 1):
+        x = ws.cell(r, col, h); x.font = f_hdr; x.fill = fill_pur; x.border = box; x.alignment = Alignment(vertical='center', wrap_text=True)
+    r += 1; n = 0; last = None
+    for i in ids:
+        p = D[i]
+        if AR(i) != last:
+            last = AR(i)
+            ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=12)
+            ws.cell(r, 1, '%s  (%d)' % (last, AREA_N[(s, last)])).font = f_lab
+            for col in range(1, 13): ws.cell(r, col).fill = fill_light
+            r += 1
+        n += 1
+        dev = p.get('details_extra', {}).get('Developer') or META[i].get('d') or '-'
+        for col, v in enumerate([n, p['name'], AR(i), dev, p.get('status'), p.get('tenure'), p.get('price'), p.get('size'), p.get('rooms'), p.get('completion'), p.get('loc'), CMP[i].get('type')], 1):
+            x = ws.cell(r, col, v); x.font = f_val; x.border = box; x.alignment = Alignment(vertical='top', wrap_text=True)
+        ws.cell(r, 2).hyperlink = f"#'{names[i]}'!A1"; ws.cell(r, 2).font = f_link
+        r += 1
+    for col, w in zip('ABCDEFGHIJKL', [5, 34, 22, 24, 18, 18, 34, 20, 18, 24, 34, 18]): ws.column_dimensions[col].width = w
+    ws.freeze_panes = 'C5'
 
 # ---------- README
-wsR = wb.create_sheet('README', 3)
+wsR = wb.create_sheet('README', 4 + len(STATES))
 lines = ['HOW THIS FILE WORKS',
- '• INDEX — one row per project; click a project name to jump to its own sheet.',
+ '• Everything is classified by STATE, then AREA (same as the View Projects Location list on the website).',
+ '• BY STATE — how many projects each state and area has; click a state to open its sheet.',
+ '• KUALA LUMPUR / SELANGOR / PENANG / JOHOR / MELAKA — the projects of that state, grouped by area.',
+ '• INDEX — one row per project with State and Area columns (use the filter arrows); click a project name to jump to its own sheet.',
+ '• Project sheets are named with a state code: KL, SGR (Selangor), PNG (Penang), JHR (Johor), MLK (Melaka).',
+ '• projects_by_state.json — the same data as State > Area > Projects, ready to import into a new website.',
  '• MASTER TABLE — every project in one flat table (best for importing into a new website / database).',
  '• ALL LAYOUTS — every unit type of every project.',
  '• One sheet per project — sections: Basic info, Overview, Top 3 highlights, Selling points, Amenities, Location, Buyer fit, Fact sheet, Unit types.',
- '• Images are in the project_images folder (one sub-folder per project: cover + layout images). The "Image file" cells give the file path.',
+ '• Images are in the project_images folder: state / area / project (cover + layout images). The "Image file" cells give the file path.',
  '• All prices are GROSS prices as published on the site. Rebates, nett prices, commission and other internal developer information are NOT recorded here.',
  '• Source of truth = the website files (projects.html / compare.html). This workbook is regenerated from them after every project add / remove / edit.']
 for k, t in enumerate(lines, 1):
@@ -233,9 +310,28 @@ wsR.column_dimensions['A'].width = 140
 
 os.makedirs(OUT, exist_ok=True)
 xl = os.path.join(OUT, 'WEBSITE_PROJECT.xlsx'); wb.save(xl)
+tree = []
+for s in STATES:
+    areas = []
+    for a_ in [a2 for (s2, a2), _ in sorted(AREA_N.items(), key=lambda kv: (-kv[1], kv[0][1])) if s2 == s]:
+        items = []
+        for i in order:
+            if ST(i) != s or AR(i) != a_: continue
+            p = dict(D[i]); p['state'] = s; p['area'] = a_; p['property_type'] = CMP[i].get('type'); p['developer'] = p.get('details_extra', {}).get('Developer') or META[i].get('d') or ''
+            p['nearby'] = [pname(x) for x in p.get('nearby', [])]
+            fd = folder_of(i)
+            p['cover_image'] = next((rel(i, f) for f in sorted(os.listdir(fd)) if f.startswith('cover.')), '') if os.path.isdir(fd) else ''
+            for lay in p.get('layouts', []):
+                fn = 'layout-' + slug(lay.get('type', 'type'))
+                lay['img'] = next((rel(i, f) for f in sorted(os.listdir(fd)) if f.startswith(fn + '.')), '') if os.path.isdir(fd) else ''
+            items.append(p)
+        areas.append({'area': a_, 'count': len(items), 'projects': items})
+    tree.append({'state': s, 'count': sum(x['count'] for x in areas), 'areas': areas})
+json.dump({'exported': datetime.date.today().isoformat(), 'total': len(D), 'states': tree}, open(os.path.join(OUT, 'projects_by_state.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 zp = os.path.join(OUT, 'project_images.zip')
 with zipfile.ZipFile(zp, 'w', zipfile.ZIP_DEFLATED) as z:
     for root, _, files in os.walk(IMG_DIR):
         for f in files:
             full = os.path.join(root, f); z.write(full, os.path.relpath(full, OUT))
+    z.write(xl, 'WEBSITE_PROJECT.xlsx'); z.write(os.path.join(OUT, 'projects_by_state.json'), 'projects_by_state.json')
 print('projects', len(D), 'sheets', len(wb.sheetnames), 'images', sum(len(f) for _, _, f in os.walk(IMG_DIR)))
