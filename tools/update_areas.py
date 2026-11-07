@@ -120,6 +120,9 @@ html[dir=rtl] .sb-chev svg{transform:scaleX(-1);}
 .sb-state.open .sb-areas{display:block;}
 .sb-count{grid-column:2;margin:0 0 18px;font:500 13.5px 'Inter',sans-serif;color:var(--grey);}
 .sb-count b{color:#111;}
+.sb-guide{display:block;margin:6px 10px 4px;font:600 12.5px 'Inter',sans-serif;color:var(--gold);}
+.sb-guide:hover,.sb-guide-inline:hover{text-decoration:underline;}
+.sb-guide-inline{color:var(--gold);font-weight:600;}
 @media(max-width:900px){
   .proj-wrap.kn-areas{display:block;}
   .sb{position:sticky;top:70px;z-index:40;margin:0 0 14px;}
@@ -137,6 +140,7 @@ JS = r'''<!-- KN-AREAS:JS:START -->
   var PLACES = __PLACES__, UI = __UI__, OLD = __OLD__;
   var box = document.getElementById('sbBox'); if(!box) return;
   var cur = ['All', 'All'];
+  function slugify(x){ return x.toLowerCase().replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
   function L(){ var l = (typeof currentLang !== 'undefined' && currentLang) || document.documentElement.lang || 'en'; return UI[l] || UI.en; }
   function st(s){ return L().st[s] || s; }
   function label(s, a){ return s === 'All' ? L().all : (a === 'All' ? st(s) : st(s) + ' › ' + a); }
@@ -158,7 +162,8 @@ JS = r'''<!-- KN-AREAS:JS:START -->
     document.getElementById('sbCurrent').textContent = label(s, a);
     var c = document.getElementById('sbCount');
     if(n == null){ c.innerHTML = ''; return; }
-    var u = L(); c.innerHTML = (n === 1 ? u.show1 : u.show).replace('{n}', n).replace('{l}', label(s, a).replace(/</g, '&lt;'));
+    var u = L(); c.innerHTML = (n === 1 ? u.show1 : u.show).replace('{n}', n).replace('{l}', label(s, a).replace(/</g, '&lt;'))
+      + (s !== 'All' ? ' · <a class="sb-guide-inline" href="area/' + slugify(a === 'All' ? s : a) + '.html">' + (a === 'All' ? s : a).replace(/</g, '&lt;') + ' guide →</a>' : '');
   }
   function show(s, a){
     var all = document.querySelector('.proj-filter-btn[data-tag="All"]'); if(all) all.click();  // clears any tag selection
@@ -198,6 +203,10 @@ JS = r'''<!-- KN-AREAS:JS:START -->
 </script>
 <!-- KN-AREAS:JS:END -->
 '''
+
+
+def aslug(s):
+    return re.sub(r'[^a-z0-9]+', '-', s.lower().replace('&', 'and')).strip('-')
 
 
 def sort_key(name):
@@ -270,9 +279,11 @@ def main():
     for s in STATES:
         acc += ('<div class="sb-state" data-state="%s"><button type="button" class="sb-head" aria-expanded="false">'
                 '<span class="sb-chev">%s</span><span class="sb-name">%s</span><em>%d</em><span class="sb-plus" aria-hidden="true"></span></button>'
-                '<div class="sb-areas"><button type="button" class="sb-area" data-area="All"><span>All %s</span></button>%s</div></div>') % (
+                '<div class="sb-areas"><button type="button" class="sb-area" data-area="All"><span>All %s</span></button>%s'
+                '<a class="sb-guide" href="area/%s.html">%s new launch guide →</a></div></div>') % (
             E(s), CHEV, E(s), sum(tree[s].values()), E(s),
-            ''.join('<button type="button" class="sb-area" data-area="%s"><span>%s</span><em>%d</em></button>' % (E(a), E(a), c) for a, c in tree[s].items()))
+            ''.join('<button type="button" class="sb-area" data-area="%s"><span>%s</span><em>%d</em></button>' % (E(a), E(a), c) for a, c in tree[s].items()),
+            aslug(s), E(s))
     side = ('<!-- KN-AREAS:SIDE:START --><aside class="sb" id="sbBox"><button type="button" class="sb-toggle" id="sbToggle">%s<span>Filter by location</span>'
             '<b id="sbCurrent">All Malaysia</b></button><div class="sb-panel"><p class="sb-title">Location</p>%s</div></aside>'
             '<p class="sb-count" id="sbCount" aria-live="polite"></p><!-- KN-AREAS:SIDE:END -->') % (PIN, acc)

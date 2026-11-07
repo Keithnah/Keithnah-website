@@ -128,7 +128,7 @@ if __name__ == '__main__':
     pages = sorted(glob.glob('*.html'))
     for p in pages:
         fix_page(p)
-    sub = sorted(glob.glob('property/*.html') + glob.glob('article/*.html') + glob.glob('topic/*.html'))
+    sub = sorted(glob.glob('property/*.html') + glob.glob('article/*.html') + glob.glob('topic/*.html') + glob.glob('area/*.html'))
     n = 0
     for p in pages + sub:
         s = open(p, encoding='utf-8').read()

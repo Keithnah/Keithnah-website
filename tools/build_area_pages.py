@@ -13,6 +13,9 @@ import json
 import os
 import re
 import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import float_wa as FW
 from collections import OrderedDict
 
 SITE = 'https://keithnah.com'
@@ -238,7 +241,7 @@ def page(state, area, ids, tree, root):
 <link rel="icon" type="image/png" href="{root}images/f304c8479b1fe873.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">{ld}</script>
-<style>{css}</style>
+<style>{css}{fcss}</style>
 </head>
 <body>
 <header>
@@ -263,6 +266,7 @@ def page(state, area, ids, tree, root):
   <p class="note">Prices are gross starting prices as published and may change. Confirm the latest prices, units and terms with Keith before deciding.</p>
 </main>
 <footer>&copy; {year} Keith Nah Real Estate · REN 60517 · IQI Global · <a href="{root}projects.html">All projects</a> · <a href="{root}privacy-policy.html">Privacy Policy</a> · <a href="{root}terms-of-use.html">Terms of Use</a></footer>
+{floatwa}
 <script src="{root}lead-tracker.js"></script>
 </body>
 </html>
@@ -270,7 +274,7 @@ def page(state, area, ids, tree, root):
            nav=nav, wa=E(wa), crumbs=crumbs, eyebrow=E(state if area else 'Malaysia'), place=E(place), year=YEAR,
            intro=E(INTRO.get(place, '')), n=n, s='' if n == 1 else 's', lowtxt=(', starting from about %s (gross)' % rm(low[0])) if low else '',
            low=rm(low[0]) if low else '—', free=len(free), years=('%d – %d' % (years[0], years[-1]) if len(years) > 1 else (str(years[0]) if years else 'TBC')),
-           cards=cards, head=head, rows=rows, faq=faq_html, more=more, states=states)
+           cards=cards, fcss=FW.FLOAT_CSS, floatwa=FW.float_html(E(wa)), head=head, rows=rows, faq=faq_html, more=more, states=states)
 
 
 def build(out, root):

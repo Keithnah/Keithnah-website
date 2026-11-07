@@ -208,6 +208,10 @@ NAV = [('', 'Home'), ('projects.html', 'View Projects'), ('compare.html', 'Compa
        ('calculator.html', 'Calculator'), ('mm2h.html', 'MM2H 第二家园'), ('about-keith.html', 'About Keith')]
 
 
+def area_slug(s):
+    return re.sub(r'[^a-z0-9]+', '-', s.lower().replace('&', 'and')).strip('-')
+
+
 def page(i):
     p, tg, slug = P[i], TAGS[i], SLUGS[i]
     name, display = p['name'], tg[0]
@@ -319,7 +323,7 @@ def page(i):
   <a class="wa-btn" href="{wa}" target="_blank" rel="noopener">{wasvg}<span>WhatsApp Keith</span></a>
 </header>
 <main class="wrap">
-  <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>›</span><a href="../projects.html">Projects</a><span>›</span>{statecrumb}<a href="../projects.html#{areahash}">{area}</a><span>›</span><strong>{display}</strong></nav>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a><span>›</span><a href="../projects.html">Projects</a><span>›</span>{statecrumb}<a href="{areahref}">{area}</a><span>›</span><strong>{display}</strong></nav>
   <div class="hero">
     <div class="hero-img">{heroimg}</div>
     <div>
@@ -362,7 +366,8 @@ document.addEventListener('click',function(e){{
         ogimg=('<meta property="og:image" content="%s/%s">\n' % (SITE, E(photo))) if photo else '',
         ld=json.dumps(ld, ensure_ascii=False).replace('</', '<\\/'), css=CSS, nav=nav, wa=E(wa(msg)), wasvg=WA_SVG,
         areahash=E(quote(state + '/' + area if state else area, safe='/')), area=E(area),
-        statecrumb=('<a href="../projects.html#%s">%s</a><span>›</span>' % (E(quote(state)), E(state))) if state else '', display=E(display),
+        areahref=('../area/%s.html' % area_slug(area)) if state and os.path.exists('area/%s.html' % area_slug(area)) else '../projects.html#' + E(quote(state + '/' + area if state else area, safe='/')),
+        statecrumb=('<a href="%s">%s</a><span>›</span>' % ((('../area/%s.html' % area_slug(state)) if os.path.exists('area/%s.html' % area_slug(state)) else '../projects.html#' + E(quote(state))), E(state))) if state else '', display=E(display),
         heroimg=('<img src="%s" alt="%s" fetchpriority="high">' % (E(up(photo)), E(display))) if photo else '<div class="hero-ph"><svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2"><path d="M60 190V70l40-30 40 30v120z"/><path d="M60 90h80M60 110h80M60 130h80M60 150h80M85 190v-25h30v25"/></svg></div>',
         status=E(p.get('status')), ptype=E(TYPE.get(i, 'Residential')), loc=E(p['loc']), price=E(p.get('price')),
         tags=tags, stats=stats, overview=E(p.get('overview')), loctext=E(p.get('loc_text')),
@@ -434,6 +439,7 @@ def write_sitemap():
             ('about-keith.html', '0.8', 'monthly'), ('privacy-policy.html', '0.3', 'yearly'), ('terms-of-use.html', '0.3', 'yearly')]
     rows = [(SITE + '/' + u, pr, cf) for u, pr, cf in main] + [('%s/%s/%s.html' % (SITE, OUT, s), '0.8', 'monthly') for s in SLUGS]
     import glob
+    rows += [('%s/%s' % (SITE, p), '0.8', 'weekly') for p in sorted(glob.glob('area/*.html'))]
     rows += [('%s/%s' % (SITE, p), '0.6', 'monthly') for p in sorted(glob.glob('topic/*.html'))]
     rows += [('%s/%s' % (SITE, p), '0.6', 'yearly') for p in sorted(glob.glob('article/*.html'))]
     x = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
