@@ -205,23 +205,32 @@ def sort_key(name):
 
 
 def sort_cards(text, card_open, grid_start, grid_end, P):
-    """Reorder the cards between grid_start and grid_end by project name."""
+    """Reorder the cards inside the grid by project name.
+
+    Each card is found as a balanced <div>...</div> block, so nesting is never
+    broken (grid_end is kept for compatibility and not used).
+    """
     g = text.index(grid_start) + len(grid_start)
-    e = text.index(grid_end, g)
-    body = text[g:e]
-    starts = [m.start() for m in re.finditer(card_open, body)]
-    lead = body[:starts[0]]
-    blocks = [body[a:b] for a, b in zip(starts, starts[1:] + [len(body)])]
-    tail = ''
-    if not blocks[-1].endswith('\n'):
-        pass
-    blocks = [b if b.endswith('\n') else b + '\n' for b in blocks]
+    depth, cards, start, end = 1, [], None, None
+    for m in re.finditer(r'<div\b|</div>', text[g:]):
+        pos = g + m.start()
+        if m.group(0) == '</div>':
+            depth -= 1
+            if depth == 1 and start is not None:
+                cards.append((start, g + m.end()))
+                start = None
+            if depth == 0:
+                end = pos
+                break
+        else:
+            if depth == 1 and text.startswith(card_open.replace('\\', ''), pos):
+                start = pos
+            depth += 1
+    blocks = [text[a:b] for a, b in cards]
     idx = lambda b: int(re.search(r'data-idx="(\d+)"', b).group(1))
-    blocks.sort(key=lambda b: sort_key(P[idx(b)]['name']))
-    out = lead + ''.join(blocks)
-    if not body.endswith('\n'):
-        out = out.rstrip('\n')
-    return text[:g] + out + text[e:]
+    order = sorted(blocks, key=lambda b: sort_key(P[idx(b)]['name']))
+    body = '\n  ' + '\n  '.join(order) + '\n  '
+    return text[:g] + body + text[end:]
 
 
 def main():
