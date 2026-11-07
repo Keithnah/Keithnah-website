@@ -1,0 +1,159 @@
+# Keith Nah Real Estate
+
+> Keith Nah (鈞晖) is a property consultant in Malaysia who helps local and international buyers choose new-launch condominiums and homes, mainly in Kuala Lumpur (KL City Centre, TRX, Bukit Bintang, Bangsar, Bukit Jalil), with projects also in Selangor, Penang and Johor. Buyers pay no agent fee on new launches. Each project page lists price, sizes, bedrooms, tenure, completion date and floor plans. Contact: WhatsApp +60102821568.
+
+The site is available in English, 简体中文, 繁體中文, Bahasa Malaysia, தமிழ், 日本語, 한국어 and العربية. Prices are indicative; buyers should confirm current figures with Keith.
+
+## Main pages
+- [Home](https://keithnah.com/): who Keith is, featured projects and 47 common buyer questions
+- [All projects](https://keithnah.com/projects.html): every project, searchable by area, price, type and tag
+- [Compare projects](https://keithnah.com/compare.html): side-by-side comparison
+- [Buying guides, FAQ and news](https://keithnah.com/blog.html): buying a new property, buying a subsale home, rules for foreign buyers
+- [Loan calculator](https://keithnah.com/calculator.html)
+- [MM2H explained](https://keithnah.com/mm2h.html): Malaysia My Second Home tiers, requirements and costs
+- [About Keith](https://keithnah.com/about-keith.html)
+
+## Projects
+
+### Bukit Bintang
+- [Branniganz Suites @ Bukit Bintang](https://keithnah.com/property/branniganz-suites-bukit-bintang.html): Branniganz Suites @ Bukit Bintang, Bukit Bintang, Kuala Lumpur: RM 803.5K, 344 – 678 sqft, Studio – 2 Bedrooms, Leasehold (~94 yrs from VP). Completion Q4 2028.
+- [Orion Residence](https://keithnah.com/property/orion-residence.html): Orion Residence, Jalan Bukit Bintang, Kuala Lumpur: RM 1.58M, 491 – 1,329 sqft, Studio – 3 Bedrooms (Dual Key), Freehold. Completed.
+- [Pavilion Square](https://keithnah.com/property/pavilion-square.html): Pavilion Square, Jalan Raja Chulan, Bukit Bintang: RM 1.45M, 504 – 1,272 sqft, Studio – 3 Beds, Leasehold (99 yrs, to 2122). Completion Q4 2029.
+- [SWNK Houze @ BBCC](https://keithnah.com/property/swnk-houze-bbcc.html): SWNK Houze @ BBCC, Bukit Bintang City Centre (BBCC), Kuala Lumpur: RM 705K, 463 – 1,238 sqft, Studio – 3 Bedrooms (Dual Key), Leasehold (94 years, to 2110). Completion Q4 2026.
+- [Times Square 2](https://keithnah.com/property/times-square-2.html): Times Square 2, Jalan Imbi, Bukit Bintang: RM 688K, 488 – 1,356 sqft, 1 – 3 Bedrooms, Freehold. Completion Oct 2027.
+
+### Bukit Jalil
+- [OAKA Residences](https://keithnah.com/property/oaka-residences.html): OAKA Residences, Bukit Jalil, Kuala Lumpur: From RM836,000 (Gross), 882 – 1,423 sqft, 2 – 3 Bedrooms, Freehold. Completion Est. Q1 2028.
+- [Ren Residences](https://keithnah.com/property/ren-residences.html): Ren Residences, Bukit Jalil, Kuala Lumpur: From RM537,000 (Gross), 920 – 1,680 sqft, 3 – 4+1 Bedrooms, Leasehold (99 years). Completion Est. Q4 2027.
+- [The Kingswoodz](https://keithnah.com/property/the-kingswoodz.html): The Kingswoodz, Bukit Jalil, Kuala Lumpur: From RM422,500 (Gross), 474 – 904 sqft, 1 – 3 Bedrooms, Leasehold. Completion Q4 2028.
+- [The Queenswoodz](https://keithnah.com/property/the-queenswoodz.html): The Queenswoodz, Bukit Jalil, Kuala Lumpur: From RM723,300 (Gross), 807 – 1,410 sqft, 2+1 – 4 Bedrooms, Leasehold. Completion 52 Months After APDL.
+- [The Vividz](https://keithnah.com/property/the-vividz.html): The Vividz, Bukit Jalil, Kuala Lumpur: From RM446,400 (Gross), 484 – 915 sqft, 1 – 3 Bedrooms, Leasehold. Completion TBC (52mo after APDL).
+
+### Johor
+- [Aethera Residences](https://keithnah.com/property/aethera-residences.html): Aethera Residences, Jalan Tun Abdul Razak, Johor Bahru: Price on Request, 650 – 2,594 sqft, 1+1 – 4 Bedrooms, Freehold. Completion Est. 2029.
+- [Arden](https://keithnah.com/property/arden.html): Arden, One Bukit Senyum, Johor Bahru: Price on Request, 797 – 1,700 sqft, 2 – 4 Bedrooms, Freehold. Completion Est. H1 2029.
+- [Axis Causeway Square](https://keithnah.com/property/axis-causeway-square.html): Axis Causeway Square, Causeway Square, Johor Bahru: From RM580,300 (Gross), 366 – 592 sqft, Studio – 2 Bedrooms, Freehold. Completion 60 months after APDL.
+- [Brixton Causeway Square](https://keithnah.com/property/brixton-causeway-square.html): Brixton Causeway Square, Causeway Square, Johor Bahru: From RM691,000 (Gross), 474 – 850 sqft, 1 – 3 Bedrooms, Freehold. Completion 60 months after APDL.
+- [Dover Causeway Square](https://keithnah.com/property/dover-causeway-square.html): Dover Causeway Square, Causeway Square, Johor Bahru: From RM727,500 (Gross), 474 – 850 sqft, 1 – 3 Bedrooms, Freehold. Completion 60 months after APDL.
+- [The Asteriaz](https://keithnah.com/property/the-asteriaz.html): The Asteriaz, Kebun Teh, Johor Bahru: From RM474,900 (Gross), 560 – 915 sqft, 1+1 – 3 Bedrooms, Leasehold. Completion 52 months after APDL.
+- [The Celestz](https://keithnah.com/property/the-celestz.html): The Celestz, Kebun Teh, Johor Bahru: From RM543,800 (Gross), 581 – 915 sqft, 1+1 – 3 Bedrooms, Leasehold. Completion 52 months after APDL.
+
+### KL City
+- [111 Menerung](https://keithnah.com/property/111-menerung.html): 111 Menerung, Damansara Heights, Kuala Lumpur: From RM1,745,000 (Gross), 1,001 – 3,714 sqft, 2 – 3+1 Bedrooms, Freehold. Completion Est. Q1 2027.
+- [Cappella Embassy](https://keithnah.com/property/cappella-embassy.html): Cappella Embassy, Jalan Ampang, Kuala Lumpur: From RM1,577,000 (Gross), 1,109 – 10,635 sqft, 2 – 8+2 Bedrooms, Leasehold. Completed (VP 2019), refurbished Q4 2026.
+- [Imperial Residence Pavilion Damansara Heights](https://keithnah.com/property/imperial-residence-pavilion-damansara-heights.html): Imperial Residence Pavilion Damansara Heights, Damansara Heights, Kuala Lumpur: Price on Request, 3,380 – 7,459 sqft, Luxury Residences, Freehold. Completion TBC.
+- [Khaya Residences](https://keithnah.com/property/khaya-residences.html): Khaya Residences, Bangsar, Kuala Lumpur: From RM893,000 (Gross), 630 – 1,321 sqft, 1 – 3+1 Bedrooms, Leasehold. Completion Est. Q2 2029.
+- [Parkside Residence](https://keithnah.com/property/parkside-residence.html): Parkside Residence, Bangsar / Pantai Baru, Kuala Lumpur: From RM665,000 (Gross), 485 – 1,325 sqft, 1 – 3 Bedrooms, Leasehold. Completion Est. Q1 2030.
+- [Royal Suites Pavilion Damansara Heights](https://keithnah.com/property/royal-suites-pavilion-damansara-heights.html): Royal Suites Pavilion Damansara Heights, Damansara Heights, Kuala Lumpur: Price on Request, 452 – 1,679 sqft, Suite – 3 Bedrooms, Freehold. Completion TBC.
+- [The Atas](https://keithnah.com/property/the-atas.html): The Atas, Taman Desa, Kuala Lumpur: From RM825,000 (Gross), 1,156 – 1,518 sqft, 3+1 – 4+1 Bedrooms, Leasehold. Completion Est. Q3 2028.
+
+### KL City Centre
+- [Ascott Star Residence](https://keithnah.com/property/ascott-star-residence.html): Ascott Star Residence, Jalan Yap Kwan Seng, KL City Centre, Kuala Lumpur: Price on Request, 700 – 2,089 sqft, 1 – 3+1 Bedrooms, Freehold. Completed.
+- [Centrix](https://keithnah.com/property/centrix.html): Centrix, Jalan Ampang, KL City Centre: RM 857K (est.), 564 – 1,039 sqft, Studio – 3 Beds, Leasehold 99 years. Completion Est. 2028 – 2029.
+- [Clouthaus](https://keithnah.com/property/clouthaus.html): Clouthaus, Jalan P. Ramlee, KL City Centre: RM 1.41M, 549 – 1,216 sqft, 1 – 3 Beds, Freehold. Completion Q1 2029.
+- [Divine KLCC](https://keithnah.com/property/divine-klcc.html): Divine KLCC, Jalan Tun Razak, KL City Centre — 400m from Suria KLCC: RM 997K, 502 – 1,319 sqft, 1+1 – 3+1 Bedrooms, Leasehold (Commercial title under HDA). Completion Q3 2032.
+- [Eaton Residence](https://keithnah.com/property/eaton-residence.html): Eaton Residence, Jalan Kia Peng, KL City Centre: RM 1.3M, 635 – 2,831 sqft, 1 – 4 Bedrooms, Leasehold 99 years (to 31/12/2114). Completed (Q1 2021).
+- [Jewel Oxley Towers](https://keithnah.com/property/jewel-oxley-towers.html): Jewel Oxley Towers, Jalan Ampang, KL City Centre, Kuala Lumpur: RM 1.57M, 678 – 1,227 sqft, 1 – 3+1 Bedrooms, Freehold. Completed.
+- [Phoeniz Suites @ KL City Centre](https://keithnah.com/property/phoeniz-suites-kl-city-centre.html): Phoeniz Suites @ KL City Centre, KL City Centre, KL City Centre Fringe: RM 1.016M, 484 – 678 sqft, 1 Bedroom (Dual Key available), Freehold. Completion 60 months from APDL.
+- [Royal Lexis](https://keithnah.com/property/royal-lexis.html): Royal Lexis, Jalan Sultan Ismail, Bukit Bintang: RM 1.897M, 573 – 1,155 sqft, 1 Bedroom (Dual-Key avail.), Freehold. Completion Oct 2029.
+- [So/KL Oxley Towers](https://keithnah.com/property/so-kl-oxley-towers.html): So/KL Oxley Towers, Jalan Ampang, KL City Centre, Kuala Lumpur: RM 1.38M, 578 – 995 sqft, Studio – 2+1 Bedrooms, Freehold. Completed.
+- [Sutera Suites](https://keithnah.com/property/sutera-suites.html): Sutera Suites, Jalan Sungai Baru, Kampung Baru: RM 595K, 425 – 835 sqft, Studio – 2 Beds, Leasehold. Completion Est. Q1 2031.
+- [The Conlay](https://keithnah.com/property/the-conlay.html): The Conlay, Embassy Row, KL City Centre: RM 1.49M, 635 – 1,335 sqft, 1 – 2 Bedrooms, Freehold. Completion 2025.
+
+### Melaka
+- [Tagbay Suites](https://keithnah.com/property/tagbay-suites.html): Tagbay Suites, Melaka City, Melaka: From RM332,300 (Gross), 495 – 990 sqft, 1 – 2+1 Bedrooms, Leasehold. Completion 36 months after APDL.
+
+### Penang
+- [Andabreeze Residences](https://keithnah.com/property/andabreeze-residences.html): Andabreeze Residences, Bandar Cassia, Batu Kawan, Penang: From RM433,000 (Gross), 636 – 1,280 sqft, 2 – 4 Bedrooms, Freehold. Completion Q2 2030.
+- [D'Hazelton](https://keithnah.com/property/dhazelton.html): D'Hazelton, Farlim, Paya Terubong, Penang: From RM450,000 (Gross), 900 – 1,000 sqft, 3 Bedrooms, Freehold. Completion Est. 2029.
+- [G'Vinton](https://keithnah.com/property/gvinton.html): G'Vinton, Jalan Sultan Ahmad Shah, George Town, Penang: From RM560,000 (Gross), 387 – 1,356 sqft, 1 – 3 Bedrooms, Freehold. Completion Q3 2028.
+- [Keeperz Suites](https://keithnah.com/property/keeperz-suites.html): Keeperz Suites, Seksyen 8, Bandar George Town, Penang: From RM820,100 (Gross), 484 – 581 sqft, Studio & Dual Key (1 – 2 Bedrooms), Freehold. Completion 48 months after APDL.
+- [Lightwater Residence](https://keithnah.com/property/lightwater-residence.html): Lightwater Residence, Gelugor, Penang: From RM2,055,000 (Gross), 1,152 – 1,690 sqft, 2+1 – 3+1 Bedrooms, Freehold. Completion Targeted Q1 2029.
+- [Lumina Residence](https://keithnah.com/property/lumina-residence.html): Lumina Residence, Pykett Avenue, George Town, Penang: From RM850 psf (Gross), 1,206 – 1,518 sqft, 3 Bedrooms, Freehold. Completion Q4 2027.
+- [Mezon @ Park Enclave](https://keithnah.com/property/mezon-park-enclave.html): Mezon @ Park Enclave, Batu Kawan, Penang: From RM595,000 (Gross), 862 – 1,410 sqft, 3 – 4 Bedrooms, Freehold. Completion 2030 (48 months).
+- [Pinnacle Bukit Gambier](https://keithnah.com/property/pinnacle-bukit-gambier.html): Pinnacle Bukit Gambier, Gelugor, Penang: From RM813,800 (Gross), 1,077 – 1,734 sqft, 3 – 4 Bedrooms, Freehold. Completion Q1 2030.
+- [Queens Residences 3](https://keithnah.com/property/queens-residences-3.html): Queens Residences 3, Bayan Lepas, Penang: From RM900,000 (Gross), 950 – 1,400 sqft, 2+1 – 3 Bedrooms, Freehold. Completion End of 2027.
+- [Seiras Residences](https://keithnah.com/property/seiras-residences.html): Seiras Residences, Bandar Cassia, Batu Kawan, Penang: From RM578,000 (Gross), 1,033 sqft, 3 Bedrooms, Freehold. Completion 2028 (tentatively Q1).
+- [The Lighthauz](https://keithnah.com/property/the-lighthauz.html): The Lighthauz, Gelugor, Penang: From RM864,500 (Gross), 732 – 1,001 sqft, 2 – 3 Bedrooms, Freehold. Completion 60 months after APDL.
+- [Vi Residence](https://keithnah.com/property/vi-residence.html): Vi Residence, Batu Kawan, Penang: From RM550,000 (Gross), 1,000 – 1,250 sqft, 3 Bedrooms, Freehold. Completion 4 years from SPA date.
+- [Waterstone](https://keithnah.com/property/waterstone.html): Waterstone, Tanjung Bungah, Penang: From RM1.1 mil (Gross), 1,334 – 2,195 sqft, 3 – 4 Bedrooms, Freehold. Completion Q4 2028.
+
+### Petaling Jaya
+- [Accent Residence](https://keithnah.com/property/accent-residence.html): Accent Residence, Jalan Kemajuan, Section 13, Petaling Jaya: Price on Request, 1,165 – 2,811 sqft, 3 – 4 Bedrooms, Leasehold. Completion 2030.
+- [Amaya @ BDR Sri Damansara](https://keithnah.com/property/amaya-bdr-sri-damansara.html): Amaya @ BDR Sri Damansara, Bandar Sri Damansara, Kuala Lumpur: From RM561,000 (Gross), 554 – 1,230 sqft, 1 – 3 Bedrooms, Freehold. Completion Q1 2028 (54 months from SPA).
+- [ARRA Residences](https://keithnah.com/property/arra-residences.html): ARRA Residences, Ara Damansara, Petaling Jaya, Selangor: From RM554,000 (Gross), 721 – 1,285 sqft, 2 Bedrooms (Type A), Freehold. Completion Est. 4.5 years from SPA (Tower A).
+- [Daya Residence](https://keithnah.com/property/daya-residence.html): Daya Residence, Kwasa Damansara, Selangor: From RM631,800 (Gross), 947 – 5,004 sqft, 3 – 6 Bedrooms, Freehold. Completion Phase 1 Est. Q1 2027 · Phase 2 Est. Q1 2029.
+- [D'Evia](https://keithnah.com/property/devia.html): D'Evia, Kwasa Damansara, Selangor: From RM498,100 (Gross), 657 – 1,109 sqft, 2 – 4 Bedrooms, Leasehold. Completion 48 months after APDL.
+- [ForestHill Residences](https://keithnah.com/property/foresthill-residences.html): ForestHill Residences, Damansara Perdana, Petaling Jaya, Selangor: From RM643,300 (Gross), 953 – 1,527 sqft, 3 – 4 Bedrooms, Leasehold. Completion Est. Q1 2027.
+- [Laverra](https://keithnah.com/property/laverra.html): Laverra, Bandar Sri Damansara, Kuala Lumpur: From RM696,700 (Gross), 725 – 1,150 sqft, 2 – 4 Bedrooms, Freehold. Completion Est. Q4 2031.
+- [RIA](https://keithnah.com/property/ria.html): RIA, Kwasa Damansara, Selangor: From RM849,000 (Gross), 1,195 – 1,841 sqft, 3 – 4+1 Bedrooms, Freehold. Completion Est. Q3 2030.
+- [Senna Heights](https://keithnah.com/property/senna-heights.html): Senna Heights, Damansara Damai, Petaling Jaya, Selangor: From RM672,800 (Gross), 700 – 1,464 sqft, 1 – 3 Bedrooms + Study, Leasehold. Completion Est. Q4 2029.
+- [The Aldenz](https://keithnah.com/property/the-aldenz.html): The Aldenz, Petaling Jaya, Selangor: From RM622,200 (Gross), 775 – 926 sqft, 2 – 3 Bedrooms, Leasehold. Completion 48 months after APDL.
+- [The Atera](https://keithnah.com/property/the-atera.html): The Atera, Section 14, Petaling Jaya, Selangor: From RM691,400 (Gross), 775 – 1,420 sqft, 2 – 4 Bedrooms, Leasehold. Completion 2028.
+- [Tujuh Residences](https://keithnah.com/property/tujuh-residences.html): Tujuh Residences, Kwasa Damansara, Selangor: From RM501,000 (Gross), 550 – 909 sqft, 1 – 3 Bedrooms, Leasehold. Completion Est. Q4 2026.
+- [Westfield Residences](https://keithnah.com/property/westfield-residences.html): Westfield Residences, USJ 1, Subang Jaya, Selangor: From RM639,000 (Gross), 768 – 1,008 sqft, 3 – 4 Bedrooms, Freehold. Completion Est. Q1 2031.
+- [Zenia @ ParkCity Damansara](https://keithnah.com/property/zenia-parkcity-damansara.html): Zenia @ ParkCity Damansara, ParkCity Damansara, Petaling Jaya: Condovillas from RM1.3 mil · ParkHomes from RM2.5 mil (Gross), 1,691 – 4,247 sqft, 3 – 5 Bedrooms, Leasehold (until 2124). Completion 2030 (48 months).
+
+### TRX & Merdeka Maybank
+- [Core Residence](https://keithnah.com/property/core-residence.html): Core Residence, Tun Razak Exchange (TRX), Kuala Lumpur: From RM1.5 mil (Gross), 622 – 1,572 sqft, 1 – 3 Bedrooms, Freehold. Completion Tower 1 & 2: Sept 2024 · Tower 3: Q3 2025.
+- [Golden Crown Residence](https://keithnah.com/property/golden-crown-residence.html): Golden Crown Residence, Jalan Tun Razak, adjacent to TRX, Kuala Lumpur: From RM1,280,000 (Gross), 624 – 1,023 sqft, 1 – 2 Bedrooms, Leasehold (expires 2111). Completion Target Dec 2026.
+- [MABA Suitez](https://keithnah.com/property/maba-suitez.html): MABA Suitez, Jalan Hang Jebat, KL City Centre: From RM699,000 (Gross), 323 – 657 sqft, Studio – 1+1 Bedrooms, Leasehold. Completion 60 months after APDL.
+
+## Topics
+- [Area Guides](https://keithnah.com/topic/area-guides.html): Neighbourhood guides to the parts of Kuala Lumpur and the Klang Valley buyers ask about most.
+- [Costs, Tax & Stamp Duty](https://keithnah.com/topic/costs-tax-and-stamp-duty.html): Stamp duty, legal fees, RPGT and the running costs to budget for before and after you buy.
+- [Expat Living](https://keithnah.com/topic/expat-living.html): The neighbourhoods expats choose, what they look for and what that means for landlords.
+- [Foreign Buyer Rules](https://keithnah.com/topic/foreign-buyer-rules.html): Who can buy, the minimum price in each state, state consent and what foreigners pay to own property in Malaysia.
+- [Investment Strategy](https://keithnah.com/topic/investment-strategy.html): How to choose between areas, project types and rental plans when the goal is long-term return.
+- [Johor & Singapore Buyers](https://keithnah.com/topic/johor-and-singapore-buyers.html): The RTS Link, Johor Bahru prices and why Singaporeans are buying across the causeway.
+- [Kuala Lumpur](https://keithnah.com/topic/kuala-lumpur.html): Everything on Kuala Lumpur: KL City Centre, TRX, Bukit Bintang, Bangsar, Mont Kiara and Bukit Jalil.
+- [Loan & Financing](https://keithnah.com/topic/loan-and-financing.html): How much banks lend, the documents they ask for and what changes when your income is outside Malaysia.
+- [Luxury & Branded Residences](https://keithnah.com/topic/luxury-and-branded-residences.html): Branded residences, private lift lobbies and prime addresses, and whether the premium is worth paying.
+- [Market Outlook](https://keithnah.com/topic/market-outlook.html): Where the Malaysian property market is heading and how KL compares with Johor Bahru and Singapore.
+- [MM2H](https://keithnah.com/topic/mm2h.html): The Malaysia My Second Home programme and what it means for buying property here.
+- [New Launch Reviews](https://keithnah.com/topic/new-launch-reviews.html): Keith's take on new launches: location, layouts, pricing and who each project suits.
+- [Penang](https://keithnah.com/topic/penang.html): New launches, the LRT, short-stay rules and the waterfront projects shaping Penang's market.
+- [Rental Yield & Airbnb](https://keithnah.com/topic/rental-yield-and-airbnb.html): What rents and yields look like in practice, and how long stays compare with short stays and Airbnb rules.
+- [Selangor & Petaling Jaya](https://keithnah.com/topic/selangor-and-petaling-jaya.html): Petaling Jaya, Kwasa Damansara and ParkCity: the Selangor addresses gaining attention.
+- [Transit & Infrastructure](https://keithnah.com/topic/transit-and-infrastructure.html): MRT, LRT and the RTS Link: how new transport changes property values and rental demand.
+- [TRX & Merdeka 118](https://keithnah.com/topic/trx-and-merdeka-118.html): Malaysia's new financial district and the Menara Merdeka 118 precinct: what is there and what it means for buyers.
+
+## Articles
+- [118 Mall Opens at Merdeka 118: What It Means for KL's Old City Core](https://keithnah.com/article/118-mall-opens-at-merdeka-118-what-it-means-for-kls-old-city-core.html)
+- [A Beginner's Guide to Investing in Malaysian Property as a Foreigner](https://keithnah.com/article/a-beginners-guide-to-investing-in-malaysian-property-as-a-foreigner.html)
+- [Accent PJ: Is a Private Lift Lobby the New Condo Standard?](https://keithnah.com/article/accent-pj-is-a-private-lift-lobby-the-new-condo-standard.html)
+- [Andaman Island by E&O: Penang's Best Holiday Home Location?](https://keithnah.com/article/andaman-island-by-eando-penangs-best-holiday-home-location.html)
+- [Avea Residence: Penang's Latest New Launch](https://keithnah.com/article/avea-residence-penangs-latest-new-launch.html)
+- [Bangsar's Enduring Appeal for Expat and Investor Buyers](https://keithnah.com/article/bangsars-enduring-appeal-for-expat-and-investor-buyers.html)
+- [Branded Residences in KL: Are They Worth the Premium?](https://keithnah.com/article/branded-residences-in-kl-are-they-worth-the-premium.html)
+- [Bukit Bintang's Transformation: From Shopping Belt to Residential Hotspot](https://keithnah.com/article/bukit-bintangs-transformation-from-shopping-belt-to-residential-hotspo.html)
+- [Bukit Jalil's Rise as a Family-Friendly Investment Hub](https://keithnah.com/article/bukit-jalils-rise-as-a-family-friendly-investment-hub.html)
+- [Can ParkCity Damansara Become Desa ParkCity 2.0?](https://keithnah.com/article/can-parkcity-damansara-become-desa-parkcity-2-0.html)
+- [Comparing Property Prices: Singapore vs Kuala Lumpur vs Johor Bahru](https://keithnah.com/article/comparing-property-prices-singapore-vs-kuala-lumpur-vs-johor-bahru.html)
+- [Financing Property in Malaysia as a Non-Resident: What You Need to Know](https://keithnah.com/article/financing-property-in-malaysia-as-a-non-resident-what-you-need-to-know.html)
+- [Foreign Ownership Rules in Malaysia: A State-by-State Breakdown](https://keithnah.com/article/foreign-ownership-rules-in-malaysia-a-state-by-state-breakdown.html)
+- [Freehold vs Leasehold: What International Buyers Should Know](https://keithnah.com/article/freehold-vs-leasehold-what-international-buyers-should-know.html)
+- [Golden Crown Residence: The Most Valuable Investment Opportunity in TRX?](https://keithnah.com/article/golden-crown-residence-the-most-valuable-investment-opportunity-in-trx.html)
+- [Is Kwasa Damansara the Next Investment Hotspot?](https://keithnah.com/article/is-kwasa-damansara-the-next-investment-hotspot.html)
+- [Is The Light City a Great Investment Opportunity?](https://keithnah.com/article/is-the-light-city-a-great-investment-opportunity.html)
+- [Is the Penang LRT Finally Operating Soon?](https://keithnah.com/article/is-the-penang-lrt-finally-operating-soon.html)
+- [Johor Bahru Property Boom: How the RTS Link Is Reshaping the Market](https://keithnah.com/article/johor-bahru-property-boom-how-the-rts-link-is-reshaping-the-market.html)
+- [KL City Centre vs TRX: Which Address Offers Better Long-Term Value?](https://keithnah.com/article/kl-city-centre-vs-trx-which-address-offers-better-long-term-value.html)
+- [Latest Airbnb Ban in Penang Residential Developments](https://keithnah.com/article/latest-airbnb-ban-in-penang-residential-developments.html)
+- [Long-Term Rental vs Short-Term Rental: Which Actually Makes More Money?](https://keithnah.com/article/long-term-rental-vs-short-term-rental-which-actually-makes-more-money.html)
+- [Malaysia Property Outlook 2026: Trends Every Investor Should Watch](https://keithnah.com/article/malaysia-property-outlook-2026-trends-every-investor-should-watch.html)
+- [Merdeka 118 Renamed Menara Merdeka Maybank — What's Actually Inside?](https://keithnah.com/article/merdeka-118-renamed-menara-merdeka-maybank-whats-actually-inside.html)
+- [MM2H 2026: What Changed and What It Means for Property Buyers](https://keithnah.com/article/mm2h-2026-what-changed-and-what-it-means-for-property-buyers.html)
+- [Mont Kiara: Why It Remains a Favourite Among Expat Renters](https://keithnah.com/article/mont-kiara-why-it-remains-a-favourite-among-expat-renters.html)
+- [RTS Link Explained: What Singapore-JB Commuters Need to Know](https://keithnah.com/article/rts-link-explained-what-singapore-jb-commuters-need-to-know.html)
+- [Stamp Duty and Legal Fees: A Foreign Buyer's Cost Checklist](https://keithnah.com/article/stamp-duty-and-legal-fees-a-foreign-buyers-cost-checklist.html)
+- [The Waterfront Shoppes Opens at The Light City, Penang](https://keithnah.com/article/the-waterfront-shoppes-opens-at-the-light-city-penang.html)
+- [TRX: Inside Malaysia's New Financial District and Its Property Market](https://keithnah.com/article/trx-inside-malaysias-new-financial-district-and-its-property-market.html)
+- [Understanding Rental Yields in Kuala Lumpur's Prime Districts](https://keithnah.com/article/understanding-rental-yields-in-kuala-lumpurs-prime-districts.html)
+- [Why Kuala Lumpur Is Malaysia's Top Choice for Property Investors in 2026](https://keithnah.com/article/why-kuala-lumpur-is-malaysias-top-choice-for-property-investors-in-202.html)
+- [Why Singaporeans Are Turning to Malaysia for Property Investment](https://keithnah.com/article/why-singaporeans-are-turning-to-malaysia-for-property-investment.html)
+
+## Optional
+- [YouTube: Keith Nah Real Estate](https://www.youtube.com/@KeithNahRealEstate): project walkthroughs and drone videos
+- [Instagram](https://www.instagram.com/keithnah_/)
+- [Sitemap](https://keithnah.com/sitemap.xml)

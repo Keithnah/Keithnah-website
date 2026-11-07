@@ -1,0 +1,40 @@
+# Tell Bing (and other IndexNow search engines, which ChatGPT and Copilot search rely on)
+# which pages changed, right after each deploy. Run it by hand to submit every page.
+name: IndexNow
+on:
+  push:
+    branches: [main]
+    paths: ['**.html', 'llms.txt', 'sitemap.xml']
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Wait for Hostinger to deploy
+        run: sleep 90
+      - name: Submit changed pages
+        env:
+          BEFORE: ${{ github.event.before }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          python3 - <<'PY'
+          import json, os, re, subprocess, urllib.request
+          site, key = 'https://keithnah.com', '7c1f4b9e2d8a4f63a5e0b6d91c3e8f27'
+          before = os.environ.get('BEFORE', '')
+          if os.environ['EVENT'] == 'push' and before and not set(before) <= {'0'}:
+              files = subprocess.run(['git', 'diff', '--name-only', '--diff-filter=AM', before, 'HEAD'], capture_output=True, text=True).stdout.split()
+              urls = [site + '/' + ('' if f == 'index.html' else f) for f in files if f.endswith('.html') or f == 'llms.txt']
+          else:
+              urls = re.findall(r'<loc>(.*?)</loc>', open('sitemap.xml', encoding='utf-8').read())
+          urls = sorted(set(urls))[:10000]
+          print(len(urls), 'URLs'); print('\n'.join(urls[:20]))
+          if not urls:
+              raise SystemExit(0)
+          body = json.dumps({'host': 'keithnah.com', 'key': key, 'keyLocation': site + '/' + key + '.txt', 'urlList': urls}).encode()
+          req = urllib.request.Request('https://api.indexnow.org/indexnow', data=body, headers={'Content-Type': 'application/json; charset=utf-8'})
+          with urllib.request.urlopen(req) as r:
+              print('IndexNow response:', r.status)
+          PY
