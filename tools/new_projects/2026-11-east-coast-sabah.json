@@ -325,21 +325,24 @@
     "size": "355 sqft",
     "rooms": "Studio, 1 Bathroom",
     "tag": "Studio",
-    "desc": "A 355 sqft (33 sqm) studio (38 units)."
+    "desc": "A 355 sqft (33 sqm) studio room with a bathroom and A/C ledge (38 units).",
+    "img": "images/27590b43cc892522.jpg"
    },
    {
-    "type": "Type B — 2 Bedrooms",
+    "type": "Type B — Bedroom + Study",
     "size": "549 sqft",
-    "rooms": "2 Bedrooms, 1 Bathroom",
+    "rooms": "1 Bedroom + Study Area, 1 Bathroom",
     "tag": "Most units",
-    "desc": "A 549 sqft (51 sqm) 2-bedroom, 1-bathroom unit, the main layout of the tower (285 units)."
+    "desc": "A 549 sqft (51 sqm) layout with a master bedroom, master bathroom, study area, living, dining and kitchen (285 units).",
+    "img": "images/e4ee7e1aec94b692.jpg"
    },
    {
-    "type": "Type C — 2+1 Bedrooms, Dual Key",
+    "type": "Type C — Dual Key",
     "size": "893 sqft",
     "rooms": "2+1 Bedrooms, 2 Bathrooms",
     "tag": "Dual Key",
-    "desc": "An 893 sqft (83 sqm) dual-key unit with 2+1 bedrooms and 2 bathrooms (38 units)."
+    "desc": "An 893 sqft (83 sqm) dual-key unit: a 2-bedroom home with living and dining, plus a separate suite with its own bathroom (38 units).",
+    "img": "images/84a6ae7eec48c560.jpg"
    }
   ],
   "tags": [
@@ -366,8 +369,8 @@
   "tenure": "Leasehold (999 years)",
   "size": "697 – 1,132 sqft",
   "size_short": "697-1,132 sqft",
-  "rooms": "2 – 4 Bedrooms",
-  "rooms_short": "2-4 Bedrooms",
+  "rooms": "2 – 4 Rooms",
+  "rooms_short": "2-4 Rooms",
   "completion": "Q4 2028",
   "completion_short": "Q4 2028",
   "status": "Under Construction",
@@ -432,30 +435,50 @@
    {
     "type": "Type A",
     "size": "697 sqft",
-    "rooms": "1 car park",
+    "rooms": "2 Rooms, 2 Bathrooms, 1 Car Park",
     "tag": "Entry",
-    "desc": "The most compact home at 697 sqft, with a balcony and 1 car park (190 units)."
+    "desc": "A bedroom and a study with 2 bathrooms, living and dining, dry kitchen and balcony (190 units).",
+    "img": "images/3665e755c474b846.jpg"
    },
    {
-    "type": "Type B / B1",
+    "type": "Type B",
     "size": "834 sqft",
-    "rooms": "1–2 car parks",
-    "tag": "Popular",
-    "desc": "An 834 sqft home; Type B comes with 1 car park and Type B1 with 2 (286 units)."
+    "rooms": "3 Rooms, 2 Bathrooms, 1 Car Park",
+    "tag": "Walk-in wardrobe",
+    "desc": "A bedroom, study and walk-in wardrobe with 2 bathrooms, dry kitchen, yard and balcony (158 units).",
+    "img": "images/f991410c0250d329.jpg"
+   },
+   {
+    "type": "Type B1",
+    "size": "898 sqft",
+    "rooms": "3+1 Rooms, 2 Bathrooms, 2 Car Parks",
+    "tag": "Open nook",
+    "desc": "Type B with an extra open nook beside the living area, plus 2 car parks (128 units).",
+    "img": "images/b86479e76a90f9a1.jpg"
    },
    {
     "type": "Type C",
     "size": "963 sqft",
-    "rooms": "2 car parks",
+    "rooms": "3+1 Rooms, 2 Bathrooms, 2 Car Parks",
     "tag": "Family",
-    "desc": "A 963 sqft family home with 2 car parks (158 units)."
+    "desc": "2 bedrooms and a study with 2 bathrooms, a wide living and dining area, dry kitchen and yard (158 units).",
+    "img": "images/52852bb46232a517.jpg"
    },
    {
-    "type": "Type D / D1",
-    "size": "1,131 – 1,132 sqft",
-    "rooms": "2 Bedrooms + Study, 3 Bathrooms",
+    "type": "Type D",
+    "size": "1,131 sqft",
+    "rooms": "4 Rooms, 3 Bathrooms, 2 Car Parks",
     "tag": "Largest",
-    "desc": "The largest homes, with 2 bedrooms, a study, a walk-in wardrobe, 3 bathrooms and 2 car parks (128 units)."
+    "desc": "2 bedrooms, a study and a walk-in wardrobe with 3 bathrooms, dry kitchen, yard and balcony (64 units).",
+    "img": "images/c0e0e54eff6c702d.jpg"
+   },
+   {
+    "type": "Type D1",
+    "size": "1,132 sqft",
+    "rooms": "4 Rooms, 3 Bathrooms, 2 Car Parks",
+    "tag": "Largest",
+    "desc": "A mirror of Type D with a front balcony: 2 bedrooms, a study, walk-in wardrobe and 3 bathrooms (64 units).",
+    "img": "images/203b95d1f938f532.jpg"
    }
   ],
   "tags": [
