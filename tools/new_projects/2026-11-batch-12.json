@@ -921,5 +921,146 @@
    "OCR new project",
    "雪兰莪新楼盘"
   ]
+ },
+ {
+  "name": "Dawn KLCC",
+  "tag": "KL City Centre",
+  "state": "Kuala Lumpur",
+  "area": "KL City Centre",
+  "developer_group": "Chin Hin",
+  "type": "Serviced Apartment",
+  "price": "From RM717,000 (Gross)",
+  "price_short": "From RM717,000",
+  "tenure": "Freehold",
+  "size": "350 – 804 sqft",
+  "size_short": "350-804 sqft",
+  "rooms": "Studio – 2 Bedrooms (incl. Dual Key)",
+  "rooms_short": "Studio-2 Bedrooms",
+  "completion": "Est. 2029",
+  "completion_short": "Est. 2029",
+  "status": "Under Construction",
+  "years": [
+   2029
+  ],
+  "loc": "Jalan Kampung Baru, KL City Centre, Kuala Lumpur",
+  "overview": "Dawn KLCC is a freehold development on the edge of Kampung Baru, about 385 m from KLCC LRT station, with views towards the Petronas Twin Towers, Merdeka 118 and KL Tower. It has two parts: 468 Lifestyle Suites over 22 floors and 492 serviced apartments over 42 floors, with 5 layout types from 350 sqft studios to 804 sqft dual-key homes, and sky facilities on Levels 9 and 22.",
+  "points": [
+   "Freehold, about 385 m walking distance to KLCC LRT station",
+   "960 units: 468 Lifestyle Suites (22 floors) and 492 serviced apartments (42 floors)",
+   "Studios, 2-bedroom and dual-key homes from 350 to 804 sqft, from RM717,000 (gross)"
+  ],
+  "selling_points": [
+   "City-centre address beside the Saloma Link to KLCC Park, with the AKLEH highway at the doorstep",
+   "Walking distance to KLCC and Kampung Baru",
+   "Level 9 facilities: sport and badminton courts, co-working space, games room, kids' play gym and water play",
+   "Level 22 facilities: swimming pool, shallow and wading pools, jacuzzi, floating gym and function room",
+   "Dual-key Types B and C4 split into two units with their own bathrooms"
+  ],
+  "amenities": [
+   "Petronas Twin Towers",
+   "KLCC Park",
+   "KLCC LRT Station (385 m)",
+   "Kampung Baru LRT Station",
+   "Saloma Link",
+   "The Intermark & Ilham Tower",
+   "Exchange 106 @ TRX",
+   "Merdeka 118"
+  ],
+  "loc_text": "Dawn KLCC is on the Kampung Baru side of KL City Centre, about 385 m from KLCC LRT station and beside the Saloma Link pedestrian bridge to KLCC Park. The Intermark, Ilham Tower and the Petronas Twin Towers are close by, and the AKLEH highway links to Ampang and the rest of the city.",
+  "buyer_fit": [
+   {
+    "title": "City Professionals",
+    "desc": "Compact freehold suites a short walk from KLCC's offices and the LRT."
+   },
+   {
+    "title": "Investors",
+    "desc": "Studios from 350 sqft and dual-key layouts in a freehold city-centre address."
+   },
+   {
+    "title": "Couples",
+    "desc": "2-bedroom Types C1 and C2 (739 – 785 sqft) with a balcony."
+   }
+  ],
+  "details_extra": {
+   "Developer": "Chin Hin Property (Dawn Land Sdn Bhd)",
+   "Land Area": "Less than 1.4 acres",
+   "Total Units": "960 units: 468 Lifestyle Suites (22 floors) and 492 serviced apartments (42 floors)",
+   "Title": "Lifestyle Suites: commercial; serviced apartments: commercial under HDA; Freehold",
+   "Price per Sqft": "From about RM2,048 psf (Gross)",
+   "Maintenance Fee": "RM0.70 psf (incl. sinking fund)",
+   "Lifts": "5 + 1 service lift",
+   "Car Parks": "No allocated car park; residents can rent bays",
+   "Security": "Multi-tier security"
+  },
+  "layouts": [
+   {
+    "type": "Type A",
+    "size": "350 sqft",
+    "rooms": "Lifestyle Suite, 1 Bathroom",
+    "tag": "Studio",
+    "desc": "A studio lifestyle suite with a pantry and bathroom.",
+    "img": "images/9f99808942c81298.jpg"
+   },
+   {
+    "type": "Type A4",
+    "size": "350 sqft",
+    "rooms": "Lifestyle Suite, 1 Bathroom",
+    "tag": "Bay window",
+    "desc": "A long studio lifestyle suite with a bay window, pantry and bathroom.",
+    "img": "images/48051033b5d6ae35.jpg"
+   },
+   {
+    "type": "Type B",
+    "size": "550 sqft",
+    "rooms": "Dual Key, 2 Bathrooms",
+    "tag": "Dual Key",
+    "desc": "A dual-key layout: two studio rooms, each with its own bathroom and pantry (show unit).",
+    "img": "images/ecc1e742413d6018.jpg"
+   },
+   {
+    "type": "Type B1",
+    "size": "550 sqft",
+    "rooms": "2 Bedrooms, 1 Bathroom",
+    "tag": "2 Rooms",
+    "desc": "A bedroom and a study room with living, dining, pantry and bathroom.",
+    "img": "images/d1021b5eb2b57f79.jpg"
+   },
+   {
+    "type": "Type C1",
+    "size": "739 sqft",
+    "rooms": "2 Bedrooms, 1 Bathroom",
+    "tag": "Show unit",
+    "desc": "2 bedrooms and 1 bathroom with living, dining, kitchen and balcony.",
+    "img": "images/641b68ddc3d217f2.jpg"
+   },
+   {
+    "type": "Type C2",
+    "size": "785 sqft",
+    "rooms": "2 Bedrooms, 1 Bathroom",
+    "tag": "Balcony",
+    "desc": "2 bedrooms and 1 bathroom with a wide balcony.",
+    "img": "images/a3a629c63a17e464.jpg"
+   },
+   {
+    "type": "Type C4",
+    "size": "804 sqft",
+    "rooms": "Dual Key, 2 Bathrooms",
+    "tag": "Dual Key",
+    "desc": "A dual-key layout with two rooms, each with its own bathroom, pantry and balcony.",
+    "img": "images/d8a199e917985ecd.jpg"
+   }
+  ],
+  "tags": [
+   "Dawn KLCC",
+   "Dawn KLCC price",
+   "Dawn KLCC floor plan",
+   "Dawn KL City Centre",
+   "new project KL City Centre",
+   "KL City Centre serviced apartment for sale",
+   "freehold condo KL",
+   "new launch condo KL",
+   "Chin Hin new project",
+   "吉隆坡新楼盘"
+  ]
  }
 ]
