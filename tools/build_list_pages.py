@@ -230,6 +230,12 @@ LISTS += [
 ]
 LISTS = [l for l in LISTS if len(l[4]) >= 3]  # no thin pages
 
+import i18n_pages as I
+for _s, _t, _h, _i, _ids, _x in LISTS:
+    I.register({_s + '.t': _t, _s + '.h': _h, _s + '.i': _i})
+I.register(I.TPL)
+I.register({'intro.' + k: v for k, v in A.INTRO.items()})
+
 
 def membership():
     """{project index: [(slug, title), ...]} for the lists each project appears in."""
@@ -339,6 +345,7 @@ def build(out, root):
     for s, t, h, it, ids, x in lists:
         open(os.path.join(out, s + '.html'), 'w', encoding='utf-8').write(SH.apply(page(s, t, h, it, ids, x, root, lists), root, 'projects.html'))
     open(os.path.join(out, 'index.html'), 'w', encoding='utf-8').write(SH.apply(index(root, lists), root, 'projects.html'))
+    I.save_en()
     json.dump({str(k): v for k, v in membership().items()}, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'list_membership.json'), 'w', encoding='utf-8'), ensure_ascii=False)
     return [(s, len(ids)) for s, t, h, it, ids, x in lists]
 
@@ -364,18 +371,18 @@ QUICK_CSS = (
     '.bl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;position:relative;}'
     '.bl-tile{display:flex;flex-direction:column;gap:4px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:16px 18px;color:#fff;transition:background .25s,transform .25s,border-color .25s;}'
     '.bl-tile:hover{background:#fff;color:#1d1b4f;transform:translateY(-3px);border-color:#fff;}'
-    '.bl-tile small{font:600 10px Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#c9c6ff;}'
-    '.bl-tile:hover small{color:#5E60CE;}'
-    '.bl-tile b{font:700 16px "Playfair Display",serif;line-height:1.3;}'
-    '.bl-tile em{font:500 12.5px Inter,sans-serif;font-style:normal;opacity:.75;}'
+    '.bl-tile .bl-g{font:600 10px Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#c9c6ff;}'
+    '.bl-tile:hover .bl-g{color:#5E60CE;}'
+    '.bl-tile .bl-n{font:700 16px "Playfair Display",serif;line-height:1.3;}'
+    '.bl-tile .bl-c{font:500 12.5px Inter,sans-serif;opacity:.75;}'
     '@media(max-width:1000px){.bl-grid{grid-template-columns:repeat(3,1fr);}}'
-    '@media(max-width:700px){.bl-section{padding:50px 16px 30px;}.bl-box{padding:28px 18px;border-radius:18px;}.bl-grid{grid-template-columns:1fr 1fr;gap:10px;}.bl-tile{padding:13px 14px;}.bl-tile b{font-size:14.5px;}.bl-all{width:100%;justify-content:center;}}')
+    '@media(max-width:700px){.bl-section{padding:50px 16px 30px;}.bl-box{padding:28px 18px;border-radius:18px;}.bl-grid{grid-template-columns:1fr 1fr;gap:10px;}.bl-tile{padding:13px 14px;}.bl-tile .bl-n{font-size:14.5px;}.bl-all{width:100%;justify-content:center;}}')
 
 
 def link_projects_page():
     """'Best New Launch Lists' block above Browse by Tag on View Projects (idempotent)."""
     have = {l[0]: len(l[4]) for l in LISTS}
-    tiles = ''.join('<a class="bl-tile" href="best/%s.html"><small>%s</small><b>%s</b><em>%d projects →</em></a>' % (s, E(g), E(lab), have[s])
+    tiles = ''.join('<a class="bl-tile" href="best/%s.html"><div class="bl-g">%s</div><div class="bl-n">%s</div><div class="bl-c">%d projects →</div></a>' % (s, E(g), E(lab), have[s])
                     for s, lab, g in QUICK if s in have)
     block = ('<!-- KN-QUICK:START --><style>%s</style><section class="bl-section" id="bestLists"><div class="bl-box"><div class="bl-head"><div>'
              '<span class="bl-eyebrow">Shortcuts · updated %d</span><h2 class="bl-title">Best New Launch Lists</h2>'
@@ -388,6 +395,15 @@ def link_projects_page():
     assert a in t
     t = t.replace(a, block + a, 1)
     open('projects.html', 'w', encoding='utf-8').write(t)
+    strings = {'Best New Launch Lists': ('ui.index_t', {}), 'Shortcuts · updated %d' % YEAR: ('qp.eyebrow', {'y': YEAR}),
+               E('Ready-made shortlists by budget, freehold, MRT and LRT, layout and completion date. New projects join the right lists automatically.'): ('qp.sub', {}),
+               'View all %d lists →' % len(LISTS): ('tpl.viewall', {'n': len(LISTS)})}
+    for n, (s, lab, g) in enumerate(QUICK):
+        if s in have:
+            strings[E(lab)] = ('qp.l%d' % (n + 1), {})
+            strings[E(g)] = ('qp.' + g, {})
+            strings['%d projects →' % have[s]] = ('tpl.nprojarrow', {'n': have[s]})
+    I.merge_projects_page(strings)
 
 
 if __name__ == '__main__':

@@ -114,14 +114,17 @@ var RATE={MYR:1,USD:0.21,SGD:0.285,CNY:1.52,JPY:31.5,KRW:290}, SYM={MYR:'RM',USD
 function get(k,d){try{return localStorage.getItem(k)||d}catch(e){return d}}
 function put(k,v){try{localStorage.setItem(k,v)}catch(e){}}
 function navText(lang){document.querySelectorAll('[data-nav]').forEach(function(el){var k=el.getAttribute('data-nav');el.textContent=(lang!=='en'&&NT[k]&&NT[k][lang])||k;});}
-window.knSetLang=function(l){put('kn_lang',l);var lab=document.getElementById('knLangLab');if(lab)lab.textContent=LN[l]||'English';
+var FROM={'en':'From ','zh-CN':'\u8d77\u4ef7 ','zh-TW':'\u8d77\u50f9 ','ms':'Dari ','ta':'\u0ba4\u0bca\u0b9f\u0b95\u0bcd\u0b95\u0bae\u0bcd ','ja':'','ko':'','ar':'\u0645\u0646 '};
+function pt(lang){var T=window.KN_PT||[];document.querySelectorAll('[data-pt]').forEach(function(el){if(!el.hasAttribute('data-en'))el.setAttribute('data-en',el.textContent);
+ var r=T[+el.getAttribute('data-pt')]||{};el.textContent=(lang!=='en'&&r[lang])||el.getAttribute('data-en');});}
+window.knSetLang=function(l){put('kn_lang',l);document.documentElement.setAttribute('lang',l);pt(l);var lab=document.getElementById('knLangLab');if(lab)lab.textContent=LN[l]||'English';
  document.querySelectorAll('#knLangMenu a').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-v')===l)});
- document.documentElement.setAttribute('dir',l==='ar'?'rtl':'ltr');navText(l);mark();close();};
+ document.documentElement.setAttribute('dir',l==='ar'?'rtl':'ltr');navText(l);if(window.knSetCur)knSetCur(get('kn_currency','MYR'));mark();close();};
 function fmt(v,c){var x=v*(RATE[c]||1),s=SYM[c]||c;return '~'+s+' '+(x>=1e6?(x/1e6).toFixed(2)+'M':Math.round(x/1e3)+'K');}
 window.knSetCur=function(c){put('kn_currency',c);var lab=document.getElementById('knCurLab');if(lab)lab.textContent=c;
  document.querySelectorAll('#knCurMenu a').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-v')===c)});
  document.querySelectorAll('[data-price-myr]').forEach(function(el){if(!el.hasAttribute('data-orig'))el.setAttribute('data-orig',el.innerHTML);
-  el.innerHTML=c==='MYR'?el.getAttribute('data-orig'):'From '+fmt(parseFloat(el.getAttribute('data-price-myr')),c);});mark();close();};
+  el.innerHTML=c==='MYR'?el.getAttribute('data-orig'):(FROM[get('kn_lang','en')]||'From ')+fmt(parseFloat(el.getAttribute('data-price-myr')),c);});if(c==='MYR')pt(get('kn_lang','en'));mark();close();};
 window.knTog=function(id,e){e.stopPropagation();var m=document.getElementById(id),o=!m.classList.contains('open');close();m.classList.toggle('open',o);};
 function close(){document.querySelectorAll('.kn-menu.open').forEach(function(m){m.classList.remove('open')});}
 document.addEventListener('click',close);
@@ -130,7 +133,7 @@ function drawer(){var p=document.querySelector('#knMnav .kn-mlinks');if(!p||docu
  var h='<div class="kn-msub">Language</div><div class="kn-mchips">';for(var k in LN)h+='<button type="button" data-v="'+k+'" onclick="knSetLang(this.getAttribute(\\'data-v\\'))">'+LN[k]+'</button>';
  h+='</div><div class="kn-msub">Currency</div><div class="kn-mchips">';for(var c in CN)h+='<button type="button" data-v="'+c+'" onclick="knSetCur(this.getAttribute(\\'data-v\\'))">'+c+'</button>';
  p.insertAdjacentHTML('afterend',h+'</div>');}
-document.addEventListener('DOMContentLoaded',function(){drawer();knSetLang(get('kn_lang','en'));knSetCur(get('kn_currency','MYR'));});
+document.addEventListener('DOMContentLoaded',function(){drawer();knSetLang(get('kn_lang','en'));});
 })();
 </script>"""
 
@@ -159,6 +162,8 @@ def price_tag(text, myr):
 
 
 def apply(page, root, active, wa=None):
+    import i18n_pages
+    page = i18n_pages.translate(page)
     """Swap a generated page's simple header for the main one and add its CSS and script."""
     if wa is None:
         wa = re.search(r'<header>.*?<a class="wa-btn" href="([^"]+)"', page, re.S).group(1)
