@@ -63,6 +63,8 @@ OVR, LOCA = js_lists('PROJECT_ARTICLE_OVERRIDES'), js_lists('LOC_ARTICLES')
 ART_PAGE = json.load(open('tools/article_slugs.json', encoding='utf-8')) if os.path.exists('tools/article_slugs.json') else {}
 
 # Card photo and property type, by card index
+# Not shown on the site: permit and licence numbers, sales gallery / showroom addresses
+HIDDEN_FACTS = ['Sales Office', 'Showroom', 'Sales Gallery', 'Property Gallery', "Developer's Licence", 'Advertising Permit', 'Building Plan Approval']
 PHOTO, TYPE = {}, {}
 for m in re.finditer(r'data-idx="(\d+)" onclick="openDetailModal\(\1\)">(.*?)<p class="proj-loc">', src, re.S):
     k = int(m.group(1))
@@ -242,6 +244,8 @@ def page(i):
         for lbl, items in groups if items)
     points = ''.join('<div class="point"><b>%d</b><p>%s</p></div>' % (n + 1, E(x)) for n, x in enumerate(p.get('selling_points') or []))
     extra = dict(p.get('details_extra') or {})
+    for k in HIDDEN_FACTS:
+        extra.pop(k, None)
     rows = [('Project Name', display), ('Developer', extra.pop('Developer', '')), ('Location', p.get('loc')),
             ('Property Type', TYPE.get(i, 'Residential')), ('Tenure', p.get('tenure')), ('Status', p.get('status')),
             ('Starting Price', p.get('price')), ('Size', p.get('size')), ('Bedrooms', p.get('rooms')), ('Completion', p.get('completion'))]
