@@ -140,12 +140,21 @@ try:
 except (OSError, ValueError):
     OLD_FEATURES = set()
 OLD_FEATURES -= {x for tg in TAGS for x in tg[:1]}  # never drop a project name
+_m = src.index('var PS_META=') + len('var PS_META=')
+META = json.loads(src[_m:src.index('];', _m) + 1])
+
+
+def dev_of(p):
+    return (p.get('details_extra') or {}).get('Developer') or META[P.index(p)].get('d', '')
+
+
 new = []
 for p, tg in zip(P, TAGS):
     base = [t for t in tg if t not in ALL_LM_TAGS and t not in OLD_FEATURES]
     text = ' '.join([p.get('loc', ''), p.get('loc_text', ''), p.get('overview', '')]
                     + (p.get('amenities') or []) + (p.get('selling_points') or [])).lower()
-    add = [t for _, pat, tags in LANDMARKS if re.search(pat, text) for t in tags]
+    add = [t for lm, pat, tags in LANDMARKS if re.search(pat, text) for t in tags
+           if not (lm == 'KLCC' and 'EXSIM' in (dev_of(p) or ''))]  # EXSIM bans the word "KLCC" in marketing
     for x in add:
         GROUP[x] = 'Location & landmarks'
     add += features(p, base)
