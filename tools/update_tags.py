@@ -53,6 +53,74 @@ LANDMARKS = [
      ['condo near JB CIQ']),
 ]
 ALL_LM_TAGS = {t for _, _, tags in LANDMARKS for t in tags}
+
+# Feature tags, worked out from each project's own data so every tag stays true.
+# tag -> group shown on the project page
+TRANSIT = [
+    (r'\bLRT\b', ['condo near LRT station', '近LRT公寓']),
+    (r'\bMRT\b', ['condo near MRT station', '近MRT公寓']),
+    (r'\bKTM\b', ['condo near KTM station']),
+    (r'\bmonorail\b', ['condo near KL Monorail']),
+    (r'\bBRT\b', ['condo near BRT station']),
+]
+REGIONS = {'KL': 'Kuala Lumpur', 'Selangor': 'Selangor', 'Penang': 'Penang', 'Johor': 'Johor'}
+GROUP = {}
+
+
+def price_rm(s):
+    s = (s or '').replace(',', '')
+    m = re.search(r'RM\s*([\d.]+)\s*(k|m|mil|million)?\b', s, re.I)
+    if not m:
+        return None
+    v = float(m.group(1))
+    u = (m.group(2) or '').lower()
+    return v * 1000 if u == 'k' else v * 1e6 if u in ('m', 'mil', 'million') else v
+
+
+def features(p, tg):
+    out = []
+
+    def add(group, *tags):
+        for x in tags:
+            GROUP[x] = group
+            out.append(x)
+    text = ' '.join([p.get('loc', ''), p.get('loc_text', ''), p.get('overview', '')]
+                    + (p.get('amenities') or []) + (p.get('selling_points') or []))
+    for pat, tags in TRANSIT:
+        if re.search(pat, text, re.I):
+            add('Transit', *tags)
+    region = next((REGIONS[m.group(1)] for x in tg for m in [re.match(r'new launch condo (KL|Selangor|Penang|Johor)$', x)] if m), None)
+    if region:
+        add('Location & landmarks', '%s property' % region)
+    tenure = (p.get('tenure') or '').lower()
+    if tenure.startswith('freehold'):
+        add('Tenure & status', 'freehold property', '永久地契房产')
+    elif tenure.startswith('leasehold'):
+        add('Tenure & status', 'leasehold property', '租赁地契房产')
+        if region:
+            add('Tenure & status', 'leasehold condo %s' % ('KL' if region == 'Kuala Lumpur' else region))
+    status = p.get('status') or ''
+    if status in ('Coming Soon', 'New Launch'):
+        add('Tenure & status', 'latest new launch 2026', '2026最新楼盘')
+    elif status == 'Under Construction':
+        add('Tenure & status', 'under construction condo')
+    elif status == 'Completed':
+        add('Tenure & status', 'completed condo, ready to move in', '现房')
+    y = re.search(r'\b(20[2-4]\d)\b', p.get('completion') or '')
+    if y and status != 'Completed':
+        add('Tenure & status', 'completion %s' % y.group(1))
+    v = price_rm(p.get('price'))
+    if v:
+        add('Price & unit type', 'condo under RM500K' if v < 500000 else 'condo RM500K to RM1M' if v < 1000000 else 'condo above RM1M')
+    rooms = p.get('rooms') or ''
+    if re.search(r'dual ?key', rooms + ' ' + text, re.I):
+        add('Price & unit type', 'dual key unit')
+    if re.search(r'studio', rooms, re.I):
+        add('Price & unit type', 'studio unit')
+    return out
+
+
+FEATURE_TAGS = None  # filled below
 TAG_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>'
 E = lambda s: html.escape(s, quote=True)
 
@@ -67,12 +135,20 @@ def js_json(marker):
 P, _ = js_json('const PROJECT_DETAILS = ')
 TAGS, ti = js_json('var KN_TAGS = ')
 
+try:
+    OLD_FEATURES = set(json.load(open('tools/tag_groups.json', encoding='utf-8')))
+except (OSError, ValueError):
+    OLD_FEATURES = set()
+OLD_FEATURES -= {x for tg in TAGS for x in tg[:1]}  # never drop a project name
 new = []
 for p, tg in zip(P, TAGS):
-    base = [t for t in tg if t not in ALL_LM_TAGS]
+    base = [t for t in tg if t not in ALL_LM_TAGS and t not in OLD_FEATURES]
     text = ' '.join([p.get('loc', ''), p.get('loc_text', ''), p.get('overview', '')]
                     + (p.get('amenities') or []) + (p.get('selling_points') or [])).lower()
     add = [t for _, pat, tags in LANDMARKS if re.search(pat, text) for t in tags]
+    for x in add:
+        GROUP[x] = 'Location & landmarks'
+    add += features(p, base)
     seen = set()
     new.append([t for t in base + add if not (t.lower() in seen or seen.add(t.lower()))])
 
@@ -112,6 +188,7 @@ src, n = re.subn(r'(<div class="ts-list" id="tsList">).*?(</div>)', lambda m: m.
 assert n == 1
 
 open('projects.html', 'w', encoding='utf-8').write(src)
+json.dump(dict(sorted(GROUP.items())), open('tools/tag_groups.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 lm = sorted({t for t in order if t in ALL_LM_TAGS}, key=lambda t: -counts[t])
 print('tags: %d unique (%d landmark tags); per project %d-%d' % (len(order), len(lm), min(map(len, new)), max(map(len, new))))
 print('landmark tags:', ', '.join('%s (%d)' % (t, counts[t]) for t in lm))

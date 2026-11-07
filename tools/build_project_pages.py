@@ -17,6 +17,11 @@ import re
 
 import float_wa as FW
 
+try:
+    TAG_GROUPS = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tag_groups.json'), encoding='utf-8'))
+except (OSError, ValueError):
+    TAG_GROUPS = {}
+
 SITE = 'https://keithnah.com'
 OUT = 'property'
 WA = '60102821568'
@@ -203,11 +208,24 @@ def page(i):
     stats = ''.join('<div class="stat"><span>%s</span><strong>%s</strong></div>' % (E(k), E(v)) for k, v in [
         ('Starting Price', p.get('price')), ('Size', p.get('size')), ('Bedrooms', p.get('rooms')),
         ('Tenure', p.get('tenure')), ('Completion', p.get('completion'))] if v)
-    groups = [('This project', []), ('Nearby landmarks', []), ('Area & property type', []), ('中文搜索', [])]
+    order = ['This project', 'Location & landmarks', 'Transit', 'Tenure & status', 'Price & unit type', 'Area & developer', '中文搜索']
+    groups = {g: [] for g in order}
     low = name.lower()
     for t_ in tg:
-        k = 0 if low in t_.lower() else 3 if re.search(r'[\u4e00-\u9fff]', t_) else 1 if re.search(r'\bnear\b', t_, re.I) else 2
-        groups[k][1].append(t_)
+        if t_.lower().startswith(low):
+            g = 'This project'
+        elif re.search(r'[\u4e00-\u9fff]', t_):
+            g = '中文搜索'
+        elif t_ in TAG_GROUPS:
+            g = TAG_GROUPS[t_]
+        elif re.search(r'\bnear\b', t_, re.I):
+            g = 'Location & landmarks'
+        elif re.search(r'^(freehold|leasehold) ', t_, re.I):
+            g = 'Tenure & status'
+        else:
+            g = 'Area & developer'
+        groups[g].append(t_)
+    groups = [(g, groups[g]) for g in order]
     tags = ''.join('<div class="tg-row"><p class="tg-label">%s</p><div class="tg-list">%s</div></div>' % (E(lbl), ''.join(
         '<a class="tg" href="../projects.html?tag=%s#tagSection">%s<span>%s</span></a>' % (E(x.replace(' ', '+')), TAG_SVG, E(x)) for x in items))
         for lbl, items in groups if items)
