@@ -60,8 +60,8 @@ os.makedirs(IMG_DIR)
 
 PLACES = json.load(open(os.path.join(SITE, 'tools', 'project_places.json'), encoding='utf-8'))
 assert len(PLACES) == len(D), (len(PLACES), len(D))
-STATES = ['Kuala Lumpur', 'Selangor', 'Penang', 'Johor', 'Melaka']
-CODE = {'Kuala Lumpur': 'KL', 'Selangor': 'SGR', 'Penang': 'PNG', 'Johor': 'JHR', 'Melaka': 'MLK'}
+STATES = ['Kuala Lumpur', 'Selangor', 'Penang', 'Johor', 'Melaka', 'Sabah', 'Terengganu', 'Kelantan']
+CODE = {'Kuala Lumpur': 'KL', 'Selangor': 'SGR', 'Penang': 'PNG', 'Johor': 'JHR', 'Melaka': 'MLK', 'Sabah': 'SBH', 'Terengganu': 'TRG', 'Kelantan': 'KTN'}
 def ST(i): return PLACES[i][0]
 def AR(i): return PLACES[i][1]
 AREA_N = Counter((ST(i), AR(i)) for i in range(len(D)))
@@ -294,9 +294,9 @@ wsR = wb.create_sheet('README', 4 + len(STATES))
 lines = ['HOW THIS FILE WORKS',
  '• Everything is classified by STATE, then AREA (same as the View Projects Location list on the website).',
  '• BY STATE — how many projects each state and area has; click a state to open its sheet.',
- '• KUALA LUMPUR / SELANGOR / PENANG / JOHOR / MELAKA — the projects of that state, grouped by area.',
+ '• One sheet per state (KUALA LUMPUR, SELANGOR, PENANG, JOHOR, MELAKA, SABAH, TERENGGANU, KELANTAN) — its projects grouped by area.',
  '• INDEX — one row per project with State and Area columns (use the filter arrows); click a project name to jump to its own sheet.',
- '• Project sheets are named with a state code: KL, SGR (Selangor), PNG (Penang), JHR (Johor), MLK (Melaka).',
+ '• Project sheets are named with a state code: KL, SGR (Selangor), PNG (Penang), JHR (Johor), MLK (Melaka), SBH (Sabah), TRG (Terengganu), KTN (Kelantan).',
  '• projects_by_state.json — the same data as State > Area > Projects, ready to import into a new website.',
  '• MASTER TABLE — every project in one flat table (best for importing into a new website / database).',
  '• ALL LAYOUTS — every unit type of every project.',
