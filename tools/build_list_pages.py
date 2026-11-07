@@ -15,6 +15,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import build_area_pages as A
 import float_wa as FW
+import site_header as SH
 
 P, PLACES, E, SITE, YEAR = A.P, A.PLACES, A.E, A.SITE, A.YEAR
 TAGS = A.js('var KN_TAGS = ')
@@ -249,7 +250,7 @@ def page(slug, title, h1, intro, ids, extra, root, lists):
         '<ul><li><b>Size</b>%s</li><li><b>Bedrooms</b>%s</li><li><b>Tenure</b>%s</li><li><b>Completion</b>%s</li></ul>'
         '<div class="price">%s</div></div></a>' % (
             proj(k), img(k), i + 1, E('%s, %s' % (PLACES[k][1], PLACES[k][0])), E(P[k]['name']), E(P[k]['loc']),
-            E(P[k].get('size')), E(P[k].get('rooms')), E(P[k].get('tenure')), E(P[k].get('completion')), E(P[k].get('price')))
+            E(P[k].get('size')), E(P[k].get('rooms')), E(P[k].get('tenure')), E(P[k].get('completion')), SH.price_tag(E(P[k].get('price')), price(k)))
         for i, k in enumerate(ids))
     xh = ('<th>%s</th>' % E(extra[0])) if extra else ''
     rows = ''.join('<tr><td>%d</td><td><a href="%s">%s</a></td><td>%s</td>%s<td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
@@ -336,34 +337,56 @@ def build(out, root):
     os.makedirs(out, exist_ok=True)
     lists = [l for l in LISTS if l[4]]
     for s, t, h, it, ids, x in lists:
-        open(os.path.join(out, s + '.html'), 'w', encoding='utf-8').write(page(s, t, h, it, ids, x, root, lists))
-    open(os.path.join(out, 'index.html'), 'w', encoding='utf-8').write(index(root, lists))
+        open(os.path.join(out, s + '.html'), 'w', encoding='utf-8').write(SH.apply(page(s, t, h, it, ids, x, root, lists), root, 'projects.html'))
+    open(os.path.join(out, 'index.html'), 'w', encoding='utf-8').write(SH.apply(index(root, lists), root, 'projects.html'))
     json.dump({str(k): v for k, v in membership().items()}, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'list_membership.json'), 'w', encoding='utf-8'), ensure_ascii=False)
     return [(s, len(ids)) for s, t, h, it, ids, x in lists]
 
 
 
-QUICK = ['new-launch-under-rm500k', 'new-launch-under-rm800k', 'freehold-under-rm1-million-near-mrt-lrt', 'condo-near-mrt-station',
-         '3-bedroom-new-launch', 'dual-key-units', 'completed-ready-to-move-in', 'latest-new-launch-2026', 'lowest-price-per-sqft-kuala-lumpur']
-QUICK_LABEL = {'new-launch-under-rm500k': 'Under RM500K', 'new-launch-under-rm800k': 'Under RM800K', 'freehold-under-rm1-million-near-mrt-lrt': 'Freehold < RM1M near rail',
-               'condo-near-mrt-station': 'Near MRT', '3-bedroom-new-launch': '3 bedrooms', 'dual-key-units': 'Dual key',
-               'completed-ready-to-move-in': 'Ready to move in', 'latest-new-launch-2026': 'Latest launches', 'lowest-price-per-sqft-kuala-lumpur': 'Lowest psf in KL'}
+QUICK = [('new-launch-under-rm500k', 'Under RM500K', 'Budget'), ('new-launch-under-rm800k', 'Under RM800K', 'Budget'),
+         ('freehold-under-rm1-million-near-mrt-lrt', 'Freehold under RM1M near rail', 'Freehold'),
+         ('condo-near-mrt-station', 'Near an MRT station', 'Transit'), ('3-bedroom-new-launch', '3-bedroom units', 'Layout'),
+         ('dual-key-units', 'Dual key units', 'Layout'), ('completed-ready-to-move-in', 'Ready to move in', 'Completion'),
+         ('latest-new-launch-2026', 'Latest new launches', 'New'), ('lowest-price-per-sqft-kuala-lumpur', 'Lowest psf in KL', 'Value'),
+         ('condo-near-international-school', 'Near international schools', 'Lifestyle'), ('freehold-condo-kuala-lumpur', 'Freehold in KL', 'Freehold'),
+         ('sea-view-waterfront-condo', 'Sea view & waterfront', 'Lifestyle')]
+QUICK_CSS = (
+    '.bl-section{max-width:1240px;margin:0 auto;padding:70px 5vw 40px;}'
+    '.bl-box{background:linear-gradient(135deg,#1d1b4f 0%,#3b3c99 60%,#5E60CE 100%);border-radius:22px;padding:40px clamp(20px,4vw,48px);color:#fff;position:relative;overflow:hidden;box-shadow:0 24px 60px rgba(29,27,79,.25);}'
+    '.bl-box:before{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.06);}'
+    '.bl-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:26px;position:relative;}'
+    '.bl-eyebrow{font:600 11px Inter,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:#c9c6ff;}'
+    '.bl-title{font-size:clamp(26px,3vw,36px);margin:6px 0 6px;color:#fff;}'
+    '.bl-sub{color:rgba(255,255,255,.78);font-size:14px;font-weight:500;max-width:620px;}'
+    '.bl-all{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#1d1b4f;border-radius:100px;padding:13px 22px;font:700 12px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;transition:transform .25s;}'
+    '.bl-all:hover{transform:translateY(-2px);}'
+    '.bl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;position:relative;}'
+    '.bl-tile{display:flex;flex-direction:column;gap:4px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:16px 18px;color:#fff;transition:background .25s,transform .25s,border-color .25s;}'
+    '.bl-tile:hover{background:#fff;color:#1d1b4f;transform:translateY(-3px);border-color:#fff;}'
+    '.bl-tile small{font:600 10px Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#c9c6ff;}'
+    '.bl-tile:hover small{color:#5E60CE;}'
+    '.bl-tile b{font:700 16px "Playfair Display",serif;line-height:1.3;}'
+    '.bl-tile em{font:500 12.5px Inter,sans-serif;font-style:normal;opacity:.75;}'
+    '@media(max-width:1000px){.bl-grid{grid-template-columns:repeat(3,1fr);}}'
+    '@media(max-width:700px){.bl-section{padding:50px 16px 30px;}.bl-box{padding:28px 18px;border-radius:18px;}.bl-grid{grid-template-columns:1fr 1fr;gap:10px;}.bl-tile{padding:13px 14px;}.bl-tile b{font-size:14.5px;}.bl-all{width:100%;justify-content:center;}}')
 
 
 def link_projects_page():
-    """Quick-pick chips under the search box on View Projects (idempotent)."""
-    have = {l[0] for l in LISTS}
-    chips = ''.join('<a class="qp-chip" href="best/%s.html">%s</a>' % (s, E(QUICK_LABEL[s])) for s in QUICK if s in have)
-    block = ('<!-- KN-QUICK:START --><style>.qp{max-width:980px;margin:18px auto 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;}'
-             '.qp b{font:600 12px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin-right:4px;}'
-             '.qp-chip{background:#fff;border:1px solid var(--line);border-radius:100px;padding:8px 14px;font:500 13px Inter,sans-serif;color:#111;}'
-             '.qp-chip:hover{border-color:var(--gold);color:var(--gold);}.qp-all{font:600 13px Inter,sans-serif;color:var(--gold);padding:8px 6px;}</style>'
-             '<div class="qp"><b>Quick picks</b>%s<a class="qp-all" href="best/">All lists →</a></div><!-- KN-QUICK:END -->') % chips
+    """'Best New Launch Lists' block above Browse by Tag on View Projects (idempotent)."""
+    have = {l[0]: len(l[4]) for l in LISTS}
+    tiles = ''.join('<a class="bl-tile" href="best/%s.html"><small>%s</small><b>%s</b><em>%d projects →</em></a>' % (s, E(g), E(lab), have[s])
+                    for s, lab, g in QUICK if s in have)
+    block = ('<!-- KN-QUICK:START --><style>%s</style><section class="bl-section" id="bestLists"><div class="bl-box"><div class="bl-head"><div>'
+             '<span class="bl-eyebrow">Shortcuts · updated %d</span><h2 class="bl-title">Best New Launch Lists</h2>'
+             '<p class="bl-sub">Ready-made shortlists by budget, freehold, MRT and LRT, layout and completion date. New projects join the right lists automatically.</p></div>'
+             '<a class="bl-all" href="best/">View all %d lists →</a></div><div class="bl-grid">%s</div></div></section><!-- KN-QUICK:END -->\n') % (
+        QUICK_CSS, YEAR, len(LISTS), tiles)
     t = open('projects.html', encoding='utf-8').read()
-    t = re.sub(r'<!-- KN-QUICK:START -->.*?<!-- KN-QUICK:END -->', '', t, flags=re.S)
-    a = '<div class="ps-results" id="psResults" style="display:none"></div>'
+    t = re.sub(r'<!-- KN-QUICK:START -->.*?<!-- KN-QUICK:END -->\n?', '', t, flags=re.S)
+    a = '<!-- ===================== TAG SELECTION ===================== -->'
     assert a in t
-    t = t.replace(a, a + block, 1)
+    t = t.replace(a, block + a, 1)
     open('projects.html', 'w', encoding='utf-8').write(t)
 
 

@@ -16,6 +16,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import float_wa as FW
+import site_header as SH
 from collections import OrderedDict
 
 SITE = 'https://keithnah.com'
@@ -177,7 +178,7 @@ def page(state, area, ids, tree, root):
         '<ul><li><b>Size</b>%s</li><li><b>Bedrooms</b>%s</li><li><b>Tenure</b>%s</li><li><b>Completion</b>%s</li></ul>'
         '<div class="price">%s</div></div></a>' % (
             proj(k), img(k), E(PLACES[k][1]), E(P[k].get('status') or ''), E(P[k]['name']), E(P[k]['loc']),
-            E(P[k].get('size')), E(P[k].get('rooms')), E(P[k].get('tenure')), E(P[k].get('completion')), E(P[k].get('price')))
+            E(P[k].get('size')), E(P[k].get('rooms')), E(P[k].get('tenure')), E(P[k].get('completion')), SH.price_tag(E(P[k].get('price')), price_rm(P[k].get('price'))))
         for k in ids)
     rows = ''.join('<tr><td><a href="%s">%s</a></td>%s<td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' % (
         proj(k), E(P[k]['name']), ('' if area else '<td>%s</td>' % E(PLACES[k][1])), E(P[k].get('price')), E(P[k].get('size')),
@@ -299,12 +300,12 @@ def build(out, root):
         if not tree.get(s):
             continue
         allids = [k for v in tree[s].values() for k in v]
-        open(os.path.join(out, slug(s) + '.html'), 'w', encoding='utf-8').write(page(s, None, allids, tree, root))
+        open(os.path.join(out, slug(s) + '.html'), 'w', encoding='utf-8').write(SH.apply(page(s, None, allids, tree, root), root, 'projects.html'))
         pages.append(slug(s))
         for a, ids in tree[s].items():
             if a == s:
                 continue
-            open(os.path.join(out, slug(a) + '.html'), 'w', encoding='utf-8').write(page(s, a, ids, tree, root))
+            open(os.path.join(out, slug(a) + '.html'), 'w', encoding='utf-8').write(SH.apply(page(s, a, ids, tree, root), root, 'projects.html'))
             pages.append(slug(a))
     return pages
 
