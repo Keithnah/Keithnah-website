@@ -107,7 +107,7 @@ def add_mobile_nav(t):
     if 'class="hamburger"' in t or '<header' not in t:
         return t
     t = re.sub(r'<style id="kn-mnav-css">.*?</style>\n?', '', t, flags=re.S)
-    t = re.sub(r'\s*<button type="button" class="kn-burger".*?</button>', '', t, flags=re.S)
+    t = re.sub(r'(<!--kn-burger-->)?\s*<button type="button" class="kn-burger".*?</button>', lambda m: m.group(1) or '', t, flags=re.S)
     t = re.sub(r'<div id="knMnav".*?</div></div><!--/knMnav-->\n?<script>function knMnav.*?</script>\n?', '', t, flags=re.S)
     h0 = t.index('<header'); h1 = t.index('</header>', h0)
     nav = re.search(r'<nav>(.*?)</nav>', t[h0:h1], re.S)
@@ -118,7 +118,10 @@ def add_mobile_nav(t):
              '<div class="kn-mlinks">%s</div>%s</div></div><!--/knMnav-->\n' % (
                  links, ('<a class="kn-mwa" href="%s" target="_blank" rel="noopener">Chat with Keith</a>' % wa.group(1)) if wa else ''))
     burger = '<button type="button" class="kn-burger" aria-label="Menu" onclick="knMnav()">&#9776;</button>'
-    t = t[:h1] + burger + '\n' + t[h1:]
+    if '<!--kn-burger-->' in t[h0:h1]:
+        t = t[:h0] + t[h0:h1].replace('<!--kn-burger-->', '<!--kn-burger-->' + burger, 1) + t[h1:]
+    else:
+        t = t[:h1] + burger + '\n' + t[h1:]
     t = t.replace('</head>', MNAV_CSS + '\n</head>', 1)
     t = t.replace('</body>', panel + MNAV_JS + '\n</body>', 1)
     return t
