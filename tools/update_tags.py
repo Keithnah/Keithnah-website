@@ -19,8 +19,8 @@ import re
 LANDMARKS = [
     ('Merdeka 118', r'merdeka ?118|menara merdeka|pnb ?118',
      ['condo near Merdeka 118', 'Menara Merdeka 118 condo', '默迪卡118附近公寓']),
-    ('KLCC', r'\bklcc\b|petronas|twin towers',
-     ['condo near KLCC', 'condo near Petronas Twin Towers', '双子塔附近公寓']),
+    ('KLCC', r'\bklcc\b|kl city centre park|suria kl city centre|petronas|twin towers',
+     ['condo near KL City Centre', 'condo near Petronas Twin Towers', '双子塔附近公寓']),
     ('Pavilion KL', r'pavilion (kuala lumpur|kl\b|bukit bintang|mall|shopping)|pavilion elite',
      ['condo near Pavilion KL', 'Pavilion Bukit Bintang condo', '柏威年附近公寓']),
     ('TRX', r'\btrx\b|tun razak exchange',

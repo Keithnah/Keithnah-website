@@ -59,7 +59,8 @@ def compare_cards(c, todo, index):
 
 
 def main(spec_path):
-    new = json.load(open(spec_path, encoding='utf-8'))
+    import no_klcc
+    new = json.loads(no_klcc.clean(open(spec_path, encoding='utf-8').read()))
     s = open('projects.html', encoding='utf-8').read()
     D, d0, d1 = js_value(s, 'const PROJECT_DETAILS = ')
     names = {p['name'] for p in D}
