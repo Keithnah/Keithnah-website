@@ -231,21 +231,24 @@
     "size": "666 – 700 sqft",
     "rooms": "2 Studios, 2 Showers",
     "tag": "Dual Key",
-    "desc": "A dual-key unit made of two studios, each with its own vanity, powder room and shower."
+    "desc": "A dual-key unit made of two studios, each with its own vanity, powder room and shower.",
+    "img": "images/81a766563818e347.jpg"
    },
    {
     "type": "Type H — 2 Rooms, Sea View Corner",
     "size": "668 sqft",
     "rooms": "2 Rooms + Front Room, 2 Showers",
     "tag": "Sea View",
-    "desc": "A corner unit facing the sea, with 2 rooms, 2 vanities and a bathroom with a bathtub."
+    "desc": "A corner unit facing the sea, with 2 rooms, 2 vanities and a bathroom with a bathtub.",
+    "img": "images/acbff01464da5dc2.jpg"
    },
    {
     "type": "Type H1 — 3 Rooms, Hill View Corner",
     "size": "668 sqft",
     "rooms": "3 Rooms + Front Room, 2 Showers",
     "tag": "Hill View",
-    "desc": "A corner unit facing the hills, with 3 rooms and 2 showers."
+    "desc": "A corner unit facing the hills, with 3 rooms and 2 showers.",
+    "img": "images/2f849da68f295c59.jpg"
    }
   ],
   "tags": [
