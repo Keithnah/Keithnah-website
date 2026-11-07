@@ -37,10 +37,10 @@ def place(p):
         return 'Kuala Lumpur', 'TRX'
     if tag in ('KL City', 'Petaling Jaya'):
         for key, area in [('damansara heights', 'Damansara Heights'), ('bangsar', 'Bangsar'), ('taman desa', 'Taman Desa'),
-                          ('jalan ampang', 'KL City Centre'), ('bandar sri damansara', 'Bandar Sri Damansara')]:
+                          ('jalan ampang', 'KL City Centre')]:
             if key in l:
                 return 'Kuala Lumpur', area
-        for key, area in [('kwasa', 'Kwasa Damansara'), ('subang', 'Subang Jaya'), ('ara damansara', 'Ara Damansara'),
+        for key, area in [('bandar sri damansara', 'Bandar Sri Damansara'), ('kwasa', 'Kwasa Damansara'), ('subang', 'Subang Jaya'), ('ara damansara', 'Ara Damansara'),
                           ('damansara perdana', 'Damansara Perdana'), ('damansara damai', 'Damansara Damai')]:
             if key in l:
                 return 'Selangor', area
