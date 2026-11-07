@@ -16,7 +16,7 @@ import re
 from collections import OrderedDict
 
 PAGE = 'projects.html'
-STATES = ['Kuala Lumpur', 'Selangor', 'Penang', 'Johor', 'Melaka']
+STATES = ['Kuala Lumpur', 'Selangor', 'Penang', 'Johor', 'Melaka', 'Sabah', 'Terengganu', 'Kelantan']
 
 # Old area names (used in links such as projects.html#Petaling%20Jaya) -> state[/area]
 OLD_LINKS = {'Bukit Bintang': 'Kuala Lumpur/Bukit Bintang', 'KL City Centre': 'Kuala Lumpur/KL City Centre',
@@ -27,9 +27,17 @@ OLD_LINKS = {'Bukit Bintang': 'Kuala Lumpur/Bukit Bintang', 'KL City Centre': 'K
 OVERRIDE = {'MABA Suitez': ('Kuala Lumpur', 'KL City Centre')}
 
 
+try:
+    ADDED = json.load(open('tools/new_projects/places.json', encoding='utf-8'))  # written by tools/add_projects.py
+except (OSError, ValueError):
+    ADDED = {}
+
+
 def place(p):
     if p['name'] in OVERRIDE:
         return OVERRIDE[p['name']]
+    if p['name'] in ADDED:
+        return tuple(ADDED[p['name']])
     tag, l = p['tag'], p['loc'].lower()
     if tag in ('Bukit Bintang', 'KL City Centre', 'Bukit Jalil'):
         return 'Kuala Lumpur', tag
@@ -63,24 +71,24 @@ UI = {
            'show': 'Showing <b>{n}</b> projects in <b>{l}</b>', 'show1': 'Showing <b>1</b> project in <b>{l}</b>',
            'st': {}},
     'zh-CN': {'loc': '地区', 'all': '全马', 'filter': '按地区筛选', 'allof': '全部{s}', 'show': '{l}：共 <b>{n}</b> 个项目', 'show1': '{l}：共 <b>1</b> 个项目',
-              'st': {'Kuala Lumpur': '吉隆坡', 'Selangor': '雪兰莪', 'Penang': '槟城', 'Johor': '柔佛', 'Melaka': '马六甲'}},
+              'st': {'Kuala Lumpur': '吉隆坡', 'Selangor': '雪兰莪', 'Penang': '槟城', 'Johor': '柔佛', 'Melaka': '马六甲', 'Sabah': '沙巴', 'Terengganu': '登嘉楼', 'Kelantan': '吉兰丹'}},
     'zh-TW': {'loc': '地區', 'all': '全馬', 'filter': '按地區篩選', 'allof': '全部{s}', 'show': '{l}：共 <b>{n}</b> 個項目', 'show1': '{l}：共 <b>1</b> 個項目',
-              'st': {'Kuala Lumpur': '吉隆坡', 'Selangor': '雪蘭莪', 'Penang': '檳城', 'Johor': '柔佛', 'Melaka': '馬六甲'}},
+              'st': {'Kuala Lumpur': '吉隆坡', 'Selangor': '雪蘭莪', 'Penang': '檳城', 'Johor': '柔佛', 'Melaka': '馬六甲', 'Sabah': '沙巴', 'Terengganu': '登嘉樓', 'Kelantan': '吉蘭丹'}},
     'ms': {'loc': 'Lokasi', 'all': 'Seluruh Malaysia', 'filter': 'Tapis ikut lokasi', 'allof': 'Semua {s}',
            'show': 'Menunjukkan <b>{n}</b> projek di <b>{l}</b>', 'show1': 'Menunjukkan <b>1</b> projek di <b>{l}</b>',
            'st': {'Penang': 'Pulau Pinang'}},
     'ta': {'loc': 'இடம்', 'all': 'முழு மலேசியா', 'filter': 'இடத்தின்படி வடிகட்டு', 'allof': 'அனைத்து {s}',
            'show': '<b>{l}</b>: <b>{n}</b> திட்டங்கள்', 'show1': '<b>{l}</b>: <b>1</b> திட்டம்',
-           'st': {'Kuala Lumpur': 'கோலாலம்பூர்', 'Selangor': 'சிலாங்கூர்', 'Penang': 'பினாங்கு', 'Johor': 'ஜொகூர்', 'Melaka': 'மலாக்கா'}},
+           'st': {'Kuala Lumpur': 'கோலாலம்பூர்', 'Selangor': 'சிலாங்கூர்', 'Penang': 'பினாங்கு', 'Johor': 'ஜொகூர்', 'Melaka': 'மலாக்கா', 'Sabah': 'சபா', 'Terengganu': 'திரங்கானு', 'Kelantan': 'கிளந்தான்'}},
     'ja': {'loc': 'エリア', 'all': 'マレーシア全域', 'filter': 'エリアで絞り込む', 'allof': '{s}すべて',
            'show': '<b>{l}</b>：<b>{n}</b>件のプロジェクト', 'show1': '<b>{l}</b>：<b>1</b>件のプロジェクト',
-           'st': {'Kuala Lumpur': 'クアラルンプール', 'Selangor': 'セランゴール', 'Penang': 'ペナン', 'Johor': 'ジョホール', 'Melaka': 'マラッカ'}},
+           'st': {'Kuala Lumpur': 'クアラルンプール', 'Selangor': 'セランゴール', 'Penang': 'ペナン', 'Johor': 'ジョホール', 'Melaka': 'マラッカ', 'Sabah': 'サバ', 'Terengganu': 'トレンガヌ', 'Kelantan': 'クランタン'}},
     'ko': {'loc': '지역', 'all': '말레이시아 전체', 'filter': '지역별 필터', 'allof': '{s} 전체',
            'show': '<b>{l}</b>: 프로젝트 <b>{n}</b>개', 'show1': '<b>{l}</b>: 프로젝트 <b>1</b>개',
-           'st': {'Kuala Lumpur': '쿠알라룸푸르', 'Selangor': '셀랑오르', 'Penang': '페낭', 'Johor': '조호르', 'Melaka': '말라카'}},
+           'st': {'Kuala Lumpur': '쿠알라룸푸르', 'Selangor': '셀랑오르', 'Penang': '페낭', 'Johor': '조호르', 'Melaka': '말라카', 'Sabah': '사바', 'Terengganu': '트렝가누', 'Kelantan': '클란탄'}},
     'ar': {'loc': 'الموقع', 'all': 'كل ماليزيا', 'filter': 'التصفية حسب الموقع', 'allof': 'كل {s}',
            'show': 'عرض <b>{n}</b> مشروعًا في <b>{l}</b>', 'show1': 'عرض مشروع <b>1</b> في <b>{l}</b>',
-           'st': {'Kuala Lumpur': 'كوالالمبور', 'Selangor': 'سلانغور', 'Penang': 'بينانغ', 'Johor': 'جوهور', 'Melaka': 'ملاكا'}},
+           'st': {'Kuala Lumpur': 'كوالالمبور', 'Selangor': 'سلانغور', 'Penang': 'بينانغ', 'Johor': 'جوهور', 'Melaka': 'ملاكا', 'Sabah': 'صباح', 'Terengganu': 'ترغكانو', 'Kelantan': 'كلنتن'}},
 }
 E = lambda s: html.escape(s, quote=True)
 PIN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>'

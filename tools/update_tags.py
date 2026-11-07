@@ -63,7 +63,7 @@ TRANSIT = [
     (r'\bmonorail\b', ['condo near KL Monorail']),
     (r'\bBRT\b', ['condo near BRT station']),
 ]
-REGIONS = {'KL': 'Kuala Lumpur', 'Selangor': 'Selangor', 'Penang': 'Penang', 'Johor': 'Johor'}
+REGIONS = {'KL': 'Kuala Lumpur', 'Selangor': 'Selangor', 'Penang': 'Penang', 'Johor': 'Johor', 'Sabah': 'Sabah', 'Terengganu': 'Terengganu', 'Kelantan': 'Kelantan'}
 GROUP = {}
 
 
@@ -89,7 +89,7 @@ def features(p, tg):
     for pat, tags in TRANSIT:
         if re.search(pat, text, re.I):
             add('Transit', *tags)
-    region = next((REGIONS[m.group(1)] for x in tg for m in [re.match(r'new launch condo (KL|Selangor|Penang|Johor)$', x)] if m), None)
+    region = next((REGIONS[m.group(1)] for x in tg for m in [re.match(r'new launch condo (KL|Selangor|Penang|Johor|Sabah|Terengganu|Kelantan)$', x)] if m), None)
     if region:
         add('Location & landmarks', '%s property' % region)
     tenure = (p.get('tenure') or '').lower()

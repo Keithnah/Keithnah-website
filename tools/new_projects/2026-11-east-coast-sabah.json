@@ -1,0 +1,473 @@
+[
+ {
+  "name": "Qubaz Suites",
+  "tag": "Terengganu",
+  "state": "Terengganu",
+  "area": "Kuala Terengganu",
+  "developer_group": "EXSIM",
+  "type": "Serviced Apartment",
+  "price": "From RM473,700 (Gross)",
+  "price_short": "From RM473,700",
+  "tenure": "Leasehold",
+  "size": "506 – 753 sqft",
+  "size_short": "506-753 sqft",
+  "rooms": "2 – 3 Bedrooms",
+  "rooms_short": "2-3 Bedrooms",
+  "completion": "48 months after APDL",
+  "completion_short": "48 mths after APDL",
+  "status": "New Launch",
+  "years": [],
+  "loc": "Jalan Kampung Tiong, Kuala Terengganu, Terengganu",
+  "overview": "Qubaz Suites is a hotel-concept serviced apartment development on Jalan Kampung Tiong, at the edge of Kuala Terengganu's Chinatown and close to the waterfront. One tower of 759 units on 1.45 acres combines a modern Islamic design with sea and river views, concierge-style services and retail at ground level. Homes for sale are 2-bedroom (506 sqft) and 3-bedroom (753 sqft) units, and they come fully furnished.",
+  "points": [
+   "759 hotel-concept serviced apartments in one tower on 1.45 acres, less than 1 km from Chinatown",
+   "2-bedroom (506 sqft) and 3-bedroom (753 sqft) units from RM473,700 (gross), about RM936 psf",
+   "Fully furnished, including kitchen cabinets, appliances, air-conditioners, beds and wardrobes"
+  ],
+  "selling_points": [
+   "Waterfront city-centre address next to Chinatown, Pasar Payang and the Kuala Terengganu Waterfront",
+   "About 15 minutes to Sultan Mahmud Airport and a short boat ride to the islands",
+   "Modern Islamic design with geometric patterns, wide interiors and landscaped arrival",
+   "Retail units on the ground floor and multi-tier security",
+   "Purchase eligibility: the 2- and 3-bedroom units are reserved for Bumiputera buyers"
+  ],
+  "amenities": [
+   "Kuala Terengganu Chinatown",
+   "Kuala Terengganu Waterfront",
+   "Pasar Payang",
+   "Pulau Warisan",
+   "Masjid Putih (Sultan Zainal Abidin Mosque)",
+   "KTCC Mall",
+   "Pantai Batu Buruk",
+   "Sultan Mahmud Airport (about 15 min)"
+  ],
+  "loc_text": "Qubaz Suites sits on Jalan Kampung Tiong at the edge of Kuala Terengganu's Chinatown, a heritage area almost 300 years old, facing the South China Sea and the mouth of the Terengganu River. Chinatown is less than 1 km away, Pasar Payang, the Kuala Terengganu Waterfront and Pulau Warisan are close by, the islands are a short boat ride away and Sultan Mahmud Airport is about 15 minutes by car.",
+  "buyer_fit": [
+   {
+    "title": "Bumiputera Home Buyers",
+    "desc": "Fully furnished 2- and 3-bedroom homes in the city centre of Kuala Terengganu, ready to move in at handover."
+   },
+   {
+    "title": "Investors",
+    "desc": "A hotel-concept serviced apartment close to Chinatown and the waterfront, two of the city's main visitor areas."
+   },
+   {
+    "title": "East Coast Returnees",
+    "desc": "A modern city home near family, the beach and the airport for Terengganu people working in KL or abroad."
+   }
+  ],
+  "details_extra": {
+   "Developer": "EXSIM Kg Tiong (KT) Sdn Bhd",
+   "Land Area": "1.45 acres",
+   "Total Units": "759 units in 1 tower (Levels 6–28) + 8 retail units",
+   "Building Height": "31 levels",
+   "Title": "Commercial under HDA, Leasehold (about 94 years left at vacant possession)",
+   "Price per Sqft": "From about RM936 psf (Gross)",
+   "Maintenance Fee": "RM0.77 psf (incl. sinking fund)",
+   "Lifts": "8 + 1 lifts, about 33 units per floor",
+   "Car Parks": "508 bays on Levels 1–5; not attached to units",
+   "Security": "Multi-tier security",
+   "Eligibility": "2- and 3-bedroom units for Bumiputera buyers only",
+   "Sales Gallery": "Lot 3829A, Jalan Kampung Tiong, 20100 Kuala Terengganu"
+  },
+  "layouts": [
+   {
+    "type": "Type B — 2 Bedrooms",
+    "size": "506 sqft",
+    "rooms": "2 Bedrooms, 1 Bathroom",
+    "tag": "Most units",
+    "desc": "A 506 sqft (47 sqm) 2-bedroom, 1-bathroom layout with living, dining and kitchen areas (Types B1 to B6)."
+   },
+   {
+    "type": "Type C — 3 Bedrooms",
+    "size": "753 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Family",
+    "desc": "A 753 sqft (70 sqm) 3-bedroom, 2-bathroom home with a master bathroom (Types C1 and C2)."
+   }
+  ],
+  "tags": [
+   "Qubaz Suites",
+   "Qubaz Suites price",
+   "Qubaz Suites floor plan",
+   "Qubaz Suites Kuala Terengganu",
+   "new project Kuala Terengganu",
+   "Kuala Terengganu serviced apartment for sale",
+   "new launch condo Terengganu",
+   "EXSIM new project",
+   "登嘉楼新楼盘"
+  ]
+ },
+ {
+  "name": "The Bedrock",
+  "tag": "Sabah",
+  "state": "Sabah",
+  "area": "Kota Kinabalu",
+  "developer_group": "EXSIM",
+  "type": "Serviced Apartment",
+  "price": "RM532,400 – RM973,600 (Gross)",
+  "price_short": "From RM532,400",
+  "tenure": "Leasehold",
+  "size": "351 – 700 sqft",
+  "size_short": "351-700 sqft",
+  "rooms": "Studio – 3 Rooms (incl. Dual Key)",
+  "rooms_short": "Studio-3 Rooms",
+  "completion": "52 months from SPA",
+  "completion_short": "52 mths from SPA",
+  "status": "Coming Soon",
+  "years": [],
+  "loc": "Jalan Haji Saman, Kota Kinabalu, Sabah",
+  "overview": "The Bedrock is the first residential plot of Jesselton Docklands, a waterfront masterplan in Kota Kinabalu city centre. Two towers on 6.15 acres hold 1,080 fully furnished commercial suites, from 351 sqft studios to 700 sqft dual-key units, with rooftop pools and gyms, pocket gardens, co-working space and a laundromat. It is developed by Jesselton Docklands 1 Sdn Bhd, a BEDI Development partnership with EXSIM.",
+  "points": [
+   "1,080 fully furnished suites in 2 towers on 6.15 acres, part of the Jesselton Docklands waterfront masterplan",
+   "Studios, 1- and 2-room suites, dual-key and corner units from 351 to 700 sqft, RM532,400 – RM973,600 (gross)",
+   "Rooftop swimming pool, gym, community kitchen and function room on each tower"
+  ],
+  "selling_points": [
+   "Kota Kinabalu city-centre waterfront on Jalan Haji Saman, near Gaya Street and the KK City Waterfront",
+   "Jesselton Docklands plans a cruise terminal, ferry terminal, retail promenade, hotels and an international school around the site",
+   "Fully furnished suites with sea, hill or city views; Type H corner units face the sea",
+   "Pocket gardens, co-working space, meeting salon, laundromat and a reception lounge in each tower",
+   "GreenRE-minded design by EXSIM and BEDI Development"
+  ],
+  "amenities": [
+   "Gaya Street",
+   "Kota Kinabalu City Waterfront",
+   "Suria Sabah Shopping Mall",
+   "Wisma Merdeka",
+   "Jesselton Point Ferry Terminal",
+   "Imago Shopping Mall",
+   "Kota Kinabalu International Airport",
+   "Queen Elizabeth Hospital"
+  ],
+  "loc_text": "The Bedrock is on Jalan Haji Saman in Kota Kinabalu city centre, next to the Jesselton Docklands Live Lab sales gallery. It is the first residential plot of Jesselton Docklands, a five-plot waterfront masterplan with a planned cruise terminal, ferry terminal, retail promenade, hotels, offices and an international school. Gaya Street, Suria Sabah, Wisma Merdeka and the KK City Waterfront are close by.",
+  "buyer_fit": [
+   {
+    "title": "Investors",
+    "desc": "Compact, fully furnished suites in Kota Kinabalu city centre, a gateway for Sabah tourism and business travel."
+   },
+   {
+    "title": "Young Professionals",
+    "desc": "Studios and 1-room suites from 351 sqft within reach of the city's offices, malls and waterfront."
+   },
+   {
+    "title": "Flexible Owners",
+    "desc": "Dual-key Types G1 and G2 split into two studios, to live in one and keep the other for family or tenants."
+   }
+  ],
+  "details_extra": {
+   "Developer": "Jesselton Docklands 1 Sdn Bhd (BEDI Development with EXSIM)",
+   "Land Area": "6.15 acres",
+   "Total Units": "1,080 suites: Tower A 610 units (Levels 3–27), Tower B 470 units (Levels 3–25)",
+   "Title": "Commercial, Leasehold",
+   "Maintenance Fee": "RM0.50 psf (incl. sinking fund)",
+   "Lifts": "Tower A: 6 + 1 · Tower B: 6 + 1",
+   "Car Parks": "Lower Ground and Levels 2–5; not attached to units",
+   "Facilities": "Rooftop pool, gym, community kitchen and function room; pocket gardens, laundromat, co-working space and meeting salon",
+   "Security": "Multi-tier security",
+   "Sales Gallery": "Jesselton Docklands Live Lab, Jalan Haji Saman, 88000 Kota Kinabalu"
+  },
+  "layouts": [
+   {
+    "type": "Type A1 / A2 — Studio",
+    "size": "351 – 372 sqft",
+    "rooms": "Studio, 1 Shower",
+    "tag": "Studio",
+    "desc": "A studio suite with a vanity, powder room and shower; Type A2 (372 sqft) is the most common studio."
+   },
+   {
+    "type": "Type B1 / B1A / B1B — 1 Room",
+    "size": "388 – 389 sqft",
+    "rooms": "1 Room + Front Room, 1 Shower",
+    "tag": "1 Room",
+    "desc": "A 1-room suite with a front room, vanity, powder room and shower."
+   },
+   {
+    "type": "Type B2A / B2B — 1 Room",
+    "size": "373 sqft",
+    "rooms": "1 Room + Front Room, 1 Shower",
+    "tag": "1 Room",
+    "desc": "A compact 1-room suite with a front room, vanity, powder room and shower."
+   },
+   {
+    "type": "Type C — 1 Room",
+    "size": "457 sqft",
+    "rooms": "1 Room + Front Room, 1 Shower",
+    "tag": "1 Room",
+    "desc": "A larger 1-room suite with a front room, vanity, powder room and shower."
+   },
+   {
+    "type": "Type D — 2 Rooms",
+    "size": "511 sqft",
+    "rooms": "2 Rooms + Front Room, 1 Shower",
+    "tag": "Most units",
+    "desc": "The most common layout: 2 rooms and a front room with a vanity, powder room and shower."
+   },
+   {
+    "type": "Type E — 2 Rooms",
+    "size": "568 sqft",
+    "rooms": "2 Rooms + Front Room, 1 Shower",
+    "tag": "2 Rooms",
+    "desc": "A 2-room suite with a front room, vanity, powder room and shower."
+   },
+   {
+    "type": "Type F — 2 Rooms + Study",
+    "size": "640 sqft",
+    "rooms": "2 Rooms + Study, 1 Shower",
+    "tag": "Study",
+    "desc": "A 2-room suite with a study, front room, vanity, powder room and shower."
+   },
+   {
+    "type": "Type G1 / G2 — Dual Key",
+    "size": "666 – 700 sqft",
+    "rooms": "2 Studios, 2 Showers",
+    "tag": "Dual Key",
+    "desc": "A dual-key unit made of two studios, each with its own vanity, powder room and shower."
+   },
+   {
+    "type": "Type H — 2 Rooms, Sea View Corner",
+    "size": "668 sqft",
+    "rooms": "2 Rooms + Front Room, 2 Showers",
+    "tag": "Sea View",
+    "desc": "A corner unit facing the sea, with 2 rooms, 2 vanities and a bathroom with a bathtub."
+   },
+   {
+    "type": "Type H1 — 3 Rooms, Hill View Corner",
+    "size": "668 sqft",
+    "rooms": "3 Rooms + Front Room, 2 Showers",
+    "tag": "Hill View",
+    "desc": "A corner unit facing the hills, with 3 rooms and 2 showers."
+   }
+  ],
+  "tags": [
+   "The Bedrock",
+   "The Bedrock price",
+   "The Bedrock floor plan",
+   "The Bedrock Kota Kinabalu",
+   "Jesselton Docklands",
+   "new project Kota Kinabalu",
+   "Kota Kinabalu serviced apartment for sale",
+   "new launch condo Sabah",
+   "EXSIM new project",
+   "沙巴新楼盘"
+  ]
+ },
+ {
+  "name": "Erinaz Suites",
+  "tag": "Kelantan",
+  "state": "Kelantan",
+  "area": "Kubang Kerian",
+  "developer_group": "EXSIM",
+  "type": "Serviced Apartment",
+  "price": "RM379,200 – RM899,200 (Gross)",
+  "price_short": "From RM379,200",
+  "tenure": "Freehold",
+  "size": "355 – 893 sqft",
+  "size_short": "355-893 sqft",
+  "rooms": "Studio – 2+1 Bedrooms (Dual Key)",
+  "rooms_short": "Studio-2+1 Bedrooms",
+  "completion": "48 months after APDL",
+  "completion_short": "48 mths after APDL",
+  "status": "Coming Soon",
+  "years": [],
+  "loc": "Bandar Baru Kubang Kerian, Kota Bharu, Kelantan",
+  "overview": "Erinaz Suites is a freehold, GreenRE-certified serviced apartment tower in Bandar Baru Kubang Kerian, Kota Bharu, near Hospital USM. One 24-storey building on 1.076 acres holds 361 units: studios (355 sqft), 2-bedroom units (549 sqft) and 2+1-bedroom dual-key units (893 sqft), with an infinity pool and sky facilities on Level 23. Purchase is open to Kelantanese Bumiputera buyers only.",
+  "points": [
+   "361 freehold serviced apartments in one 24-storey tower, near Hospital USM in Kubang Kerian",
+   "Studios, 2-bedroom and 2+1 dual-key units from 355 to 893 sqft, RM379,200 – RM899,200 (gross)",
+   "Level 23 sky facilities: infinity pool, jacuzzi, BBQ area, sauna and sun loungers"
+  ],
+  "selling_points": [
+   "Freehold title in Kubang Kerian, the medical and education hub of Kota Bharu",
+   "GreenRE green building with solar panels, a salt-water pool and laminated window glass",
+   "Level 3 facilities: outdoor water play, open lounge, surau, gym, co-working space and an indoor theme park",
+   "Major shopping within about 10 km; about 21 minutes to the future ECRL station",
+   "Purchase eligibility: Kelantanese Bumiputera buyers only"
+  ],
+  "amenities": [
+   "Hospital Universiti Sains Malaysia (HUSM)",
+   "Kota Bharu city centre",
+   "Universiti Sains Malaysia Health Campus",
+   "Demit",
+   "ECRL station (about 21 min)"
+  ],
+  "loc_text": "Erinaz Suites is in Seksyen 84, Bandar Baru Kubang Kerian, in the Kota Bharu district of Kelantan. Hospital Universiti Sains Malaysia and its health campus are next to the township, Kota Bharu city centre is a short drive away and the major shopping malls are within about 10 km. The future East Coast Rail Link station is about 21 minutes away.",
+  "buyer_fit": [
+   {
+    "title": "Kelantanese Bumiputera Buyers",
+    "desc": "A freehold home in Kubang Kerian; purchase is open only to Kelantanese Bumiputera buyers."
+   },
+   {
+    "title": "Medical & University Community",
+    "desc": "Close to Hospital USM and the USM Health Campus, for staff, students' families and visiting patients."
+   },
+   {
+    "title": "Families",
+    "desc": "The 893 sqft dual-key Type C splits into two spaces, for an extended family or a home with a separate unit."
+   }
+  ],
+  "details_extra": {
+   "Developer": "EXSIM Kubang Kerian Sdn Bhd",
+   "Land Area": "1.076 acres",
+   "Total Units": "361 serviced apartments (Levels 4–22) + 4 retail units",
+   "Building Height": "24 storeys, about 19 units per floor",
+   "Title": "Commercial (HDA), Freehold",
+   "Price per Sqft": "From about RM899 psf (Gross)",
+   "Lifts": "4 passenger lifts + 1 service lift",
+   "Car Parks": "131 bays (incl. 3 OKU and 3 EV) + 35 motorcycle bays; not attached to units",
+   "Certification": "GreenRE Green Building",
+   "Eligibility": "Kelantanese Bumiputera buyers only: IC code 03 or 29, father from Kelantan with IC 03 or 29, or living in Kelantan for more than 20 years (confirmed by a PTG letter)",
+   "Sales Gallery": "PT 1504 & PT 1505, Jalan Raja Perempuan Zainab 2, Kubang Kerian, 16150 Kota Bharu"
+  },
+  "layouts": [
+   {
+    "type": "Type A — Studio",
+    "size": "355 sqft",
+    "rooms": "Studio, 1 Bathroom",
+    "tag": "Studio",
+    "desc": "A 355 sqft (33 sqm) studio (38 units)."
+   },
+   {
+    "type": "Type B — 2 Bedrooms",
+    "size": "549 sqft",
+    "rooms": "2 Bedrooms, 1 Bathroom",
+    "tag": "Most units",
+    "desc": "A 549 sqft (51 sqm) 2-bedroom, 1-bathroom unit, the main layout of the tower (285 units)."
+   },
+   {
+    "type": "Type C — 2+1 Bedrooms, Dual Key",
+    "size": "893 sqft",
+    "rooms": "2+1 Bedrooms, 2 Bathrooms",
+    "tag": "Dual Key",
+    "desc": "An 893 sqft (83 sqm) dual-key unit with 2+1 bedrooms and 2 bathrooms (38 units)."
+   }
+  ],
+  "tags": [
+   "Erinaz Suites",
+   "Erinaz Suites price",
+   "Erinaz Suites floor plan",
+   "Erinaz Suites Kubang Kerian",
+   "new project Kota Bharu",
+   "Kubang Kerian serviced apartment for sale",
+   "new launch condo Kelantan",
+   "EXSIM new project",
+   "吉兰丹新楼盘"
+  ]
+ },
+ {
+  "name": "Residensi Bayu Damai",
+  "tag": "Sabah",
+  "state": "Sabah",
+  "area": "Kota Kinabalu",
+  "developer_group": "FYT Land",
+  "type": "Residential",
+  "price": "From RM499,800 (Gross)",
+  "price_short": "From RM499,800",
+  "tenure": "Leasehold (999 years)",
+  "size": "697 – 1,132 sqft",
+  "size_short": "697-1,132 sqft",
+  "rooms": "2 – 4 Bedrooms",
+  "rooms_short": "2-4 Bedrooms",
+  "completion": "Q4 2028",
+  "completion_short": "Q4 2028",
+  "status": "Under Construction",
+  "years": [
+   2028
+  ],
+  "loc": "Off Mile 3, Jalan Tuaran, Kota Kinabalu, Sabah",
+  "overview": "Residensi Bayu Damai is a residential condominium by FYT Land off Mile 3, Jalan Tuaran, in Kota Kinabalu. Two towers of 38 and 34 levels on 10.20 acres hold 762 homes from 697 to 1,132 sqft, with up to two car parks per unit and more than 20 facilities, including a 40 m pool, a badminton hall and a basketball court.",
+  "points": [
+   "762 residential homes in 2 towers (38 and 34 levels) on 10.20 acres, off Mile 3 Jalan Tuaran",
+   "Homes from 697 to 1,132 sqft from RM499,800 (gross), about RM790 psf",
+   "Over 20 facilities including a 40 m x 9 m pool, gym, badminton hall, basketball court and BBQ pavilions"
+  ],
+  "selling_points": [
+   "Residential title with a 999-year lease",
+   "One or two car parks per home, side by side, plus 106 visitor bays",
+   "Low maintenance fee of RM0.39 psf, including sinking fund",
+   "Close to Likas, Kota Kinabalu city centre, major hospitals and well-known schools",
+   "Developer's licence 06-2029/06788 and advertising permit 06-2029/05106"
+  ],
+  "amenities": [
+   "Kota Kinabalu city centre",
+   "Likas Square & Likas Sports Complex",
+   "Suria Sabah Shopping Mall",
+   "Imago Shopping Mall",
+   "Queen Elizabeth Hospital",
+   "KPJ Sabah Specialist Hospital",
+   "Gleneagles Hospital Kota Kinabalu",
+   "SJK (C) Chung Hwa & Sabah Tshung Tsin Secondary School"
+  ],
+  "loc_text": "Residensi Bayu Damai is off Mile 3, Jalan Tuaran in Kota Kinabalu, with quick access to Jalan Tuaran, the KK Bypass and Jalan Damai. Likas, Kota Kinabalu city centre and the waterfront are a short drive away, with Suria Sabah, Imago, Queen Elizabeth Hospital, KPJ Sabah, Gleneagles Kota Kinabalu and well-known schools such as SJK (C) Chung Hwa and Sabah Tshung Tsin nearby.",
+  "buyer_fit": [
+   {
+    "title": "Families",
+    "desc": "Homes up to 1,132 sqft with two car parks, a kids' pool, play rooms and a basketball court."
+   },
+   {
+    "title": "First-Home Buyers",
+    "desc": "A residential-titled home in Kota Kinabalu from RM499,800 (gross)."
+   },
+   {
+    "title": "Upgraders",
+    "desc": "The larger Types C, D and D1 (963 – 1,132 sqft) with two car parks, close to the city's hospitals and schools."
+   }
+  ],
+  "details_extra": {
+   "Developer": "FYT Land (KK) Sdn Bhd",
+   "Land Area": "10.20 acres",
+   "Total Units": "762 units: Tower A 373 units (38 levels), Tower B 389 units (34 levels)",
+   "Title": "Residential, Leasehold 999 years",
+   "Price per Sqft": "From about RM790 psf (Gross)",
+   "Maintenance Fee": "RM0.39 psf (incl. sinking fund)",
+   "Lifts": "3 + 1 lifts per tower; 11 units per floor (Tower A), 13 (Tower B)",
+   "Car Parks": "1,176 car parks: 1 for Types A and B, 2 for Types B1, C, D and D1 (side by side) + 106 visitor bays",
+   "Security": "Multi-tier security",
+   "Developer's Licence": "06-2029/06788 (04/06/2024 – 03/06/2029)",
+   "Advertising Permit": "06-2029/05106 (04/06/2024 – 03/06/2029)",
+   "Building Plan Approval": "BP/138/04.24/S/52 (Kota Kinabalu City Hall)",
+   "Sales Gallery": "FYT Sales Gallery, Ground Floor, off Mile 3, Jalan Tuaran, Kota Kinabalu"
+  },
+  "layouts": [
+   {
+    "type": "Type A",
+    "size": "697 sqft",
+    "rooms": "1 car park",
+    "tag": "Entry",
+    "desc": "The most compact home at 697 sqft, with a balcony and 1 car park (190 units)."
+   },
+   {
+    "type": "Type B / B1",
+    "size": "834 sqft",
+    "rooms": "1–2 car parks",
+    "tag": "Popular",
+    "desc": "An 834 sqft home; Type B comes with 1 car park and Type B1 with 2 (286 units)."
+   },
+   {
+    "type": "Type C",
+    "size": "963 sqft",
+    "rooms": "2 car parks",
+    "tag": "Family",
+    "desc": "A 963 sqft family home with 2 car parks (158 units)."
+   },
+   {
+    "type": "Type D / D1",
+    "size": "1,131 – 1,132 sqft",
+    "rooms": "2 Bedrooms + Study, 3 Bathrooms",
+    "tag": "Largest",
+    "desc": "The largest homes, with 2 bedrooms, a study, a walk-in wardrobe, 3 bathrooms and 2 car parks (128 units)."
+   }
+  ],
+  "tags": [
+   "Residensi Bayu Damai",
+   "Residensi Bayu Damai price",
+   "Residensi Bayu Damai floor plan",
+   "Residensi Bayu Damai Kota Kinabalu",
+   "new project Kota Kinabalu",
+   "Kota Kinabalu condo for sale",
+   "new launch condo Sabah",
+   "FYT Land new project",
+   "沙巴新楼盘"
+  ]
+ }
+]

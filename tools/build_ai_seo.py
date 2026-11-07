@@ -114,11 +114,11 @@ def structured_data():
     agency = {'@type': 'RealEstateAgent', '@id': SITE + '/#agency', 'name': 'Keith Nah Real Estate', 'url': SITE + '/',
               'logo': LOGO, 'image': LOGO, 'telephone': WHATSAPP, 'founder': {'@id': SITE + '/#keith'}, 'sameAs': SAME_AS,
               'description': 'Property consultant for new-launch condominiums and homes in Malaysia, mainly Kuala Lumpur '
-                             '(KL City Centre, TRX, Bukit Bintang, Bangsar, Bukit Jalil), plus Selangor, Penang and Johor. '
+                             '(KL City Centre, TRX, Bukit Bintang, Bangsar, Bukit Jalil), plus Selangor, Penang, Johor, Melaka, Sabah, Terengganu and Kelantan. '
                              'No agent fee for buyers on new launches.',
               'address': {'@type': 'PostalAddress', 'addressLocality': 'Kuala Lumpur', 'addressCountry': 'MY'},
               'areaServed': [{'@type': 'City', 'name': 'Kuala Lumpur'}, {'@type': 'State', 'name': 'Selangor'},
-                             {'@type': 'State', 'name': 'Penang'}, {'@type': 'State', 'name': 'Johor'}],
+                             {'@type': 'State', 'name': 'Penang'}, {'@type': 'State', 'name': 'Johor'}, {'@type': 'State', 'name': 'Melaka'}, {'@type': 'State', 'name': 'Sabah'}, {'@type': 'State', 'name': 'Terengganu'}, {'@type': 'State', 'name': 'Kelantan'}],
               'contactPoint': {'@type': 'ContactPoint', 'telephone': WHATSAPP, 'contactType': 'sales',
                                'url': 'https://wa.me/60102821568'}}
     website = {'@type': 'WebSite', '@id': SITE + '/#website', 'name': 'Keith Nah Real Estate', 'url': SITE + '/',
