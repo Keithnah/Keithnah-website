@@ -276,3 +276,60 @@ if os.path.exists('sitemap.xml'):
     if new:
         open('sitemap.xml', 'w', encoding='utf-8').write(sm.replace('</urlset>', new + '</urlset>'))
 print('resources: %d area guides' % len(GUIDES))
+
+# ---------- home page: MM2H section (after the YouTube videos), linking to mm2h.html ----------
+MM = {
+    'mm_eb': ('MM2H 第二家园', {'zh-CN': 'MM2H 第二家园', 'ms': 'MM2H', 'ja': 'MM2H', 'ko': 'MM2H'}),
+    'mm_h2': ('Live in Malaysia on a long-stay pass.', {'zh-CN': '用长期签证，住在马来西亚。', 'ms': 'Tinggal di Malaysia dengan pas jangka panjang.', 'ja': '長期滞在ビザでマレーシアに暮らす。', 'ko': '장기 체류 비자로 말레이시아에서 살기.'}),
+    'mm_p': ('Malaysia My Second Home (MM2H) lets foreigners and their families live in Malaysia on a renewable pass of 5, 15 or 20 years. Many of Keith\'s clients combine it with buying a home here.',
+             {'zh-CN': 'MM2H（马来西亚第二家园）让外国人和家人以 5、15 或 20 年可续签的签证住在马来西亚。很多 Keith 的客户会同时在这里买房。',
+              'ms': 'Malaysia My Second Home (MM2H) membolehkan warga asing dan keluarga tinggal di Malaysia dengan pas 5, 15 atau 20 tahun yang boleh diperbaharui. Ramai pelanggan Keith menggabungkannya dengan membeli rumah di sini.',
+              'ja': 'MM2H（マレーシア・マイ・セカンドホーム）は、外国人とその家族が5年・15年・20年の更新可能なビザでマレーシアに住める制度です。Keith のお客様の多くは、住宅購入と組み合わせています。',
+              'ko': 'MM2H(말레이시아 마이 세컨드 홈)는 외국인과 가족이 5년, 15년 또는 20년 갱신 가능한 비자로 말레이시아에 살 수 있는 제도입니다. Keith의 많은 고객이 주택 구매와 함께 신청합니다.'}),
+    'mm_fd': ('Fixed deposit', {'zh-CN': '定期存款', 'ms': 'Simpanan tetap', 'ja': '定期預金', 'ko': '정기예금'}),
+    'mm_pp': ('Property from', {'zh-CN': '购房最低', 'ms': 'Hartanah dari', 'ja': '不動産購入', 'ko': '부동산 최소'}),
+    'mm_vd': ('Visa', {'zh-CN': '签证', 'ms': 'Visa', 'ja': 'ビザ', 'ko': '비자'}),
+    'mm_y5': ('5 years', {'zh-CN': '5 年', 'ms': '5 tahun', 'ja': '5年', 'ko': '5년'}),
+    'mm_y15': ('15 years', {'zh-CN': '15 年', 'ms': '15 tahun', 'ja': '15年', 'ko': '15년'}),
+    'mm_y20': ('20 years', {'zh-CN': '20 年', 'ms': '20 tahun', 'ja': '20年', 'ko': '20년'}),
+    'mm_btn': ('Read the full MM2H guide', {'zh-CN': '阅读完整 MM2H 指南', 'ms': 'Baca panduan MM2H penuh', 'ja': 'MM2H ガイドを読む', 'ko': 'MM2H 가이드 전체 보기'}),
+    'mm_ask': ('Ask Keith about MM2H', {'zh-CN': '咨询 Keith 关于 MM2H', 'ms': 'Tanya Keith tentang MM2H', 'ja': 'MM2H について Keith に相談', 'ko': 'MM2H에 대해 Keith에게 문의'}),
+    'mm_note': ('Figures are a general guide to the current tiers; the government may update them.', {'zh-CN': '以上为现行等级的大致要求，政府可能会更新。', 'ms': 'Angka ialah panduan umum peringkat semasa; kerajaan boleh mengemas kininya.', 'ja': '現行ランクの目安です。政府により変更される場合があります。', 'ko': '현행 등급의 일반적인 기준이며 정부가 변경할 수 있습니다.'}),
+}
+TIERS = [('Silver', '#8e9aaf', 'USD 150,000', 'RM 600,000', 'mm_y5'), ('Gold', '#c9a227', 'USD 500,000', 'RM 1,000,000', 'mm_y15'),
+         ('Platinum', '#5E60CE', 'USD 1,000,000', 'RM 2,000,000', 'mm_y20')]
+t_ = lambda k: '<span data-i18n="%s">%s</span>' % (k, E(MM[k][0]))
+tiers = ''.join('<div class="mmh-t" style="--tc:%s"><b>%s</b><dl><dt>%s</dt><dd>%s</dd><dt>%s</dt><dd>%s</dd><dt>%s</dt><dd>%s</dd></dl></div>' % (
+    c, n, t_('mm_fd'), fd, t_('mm_pp'), pp, t_('mm_vd'), t_(y)) for n, c, fd, pp, y in TIERS)
+MM_HTML = ('<!-- KN-MM2H:START -->\n<style>'
+           '#mm2h-home{padding:100px 5vw;background:linear-gradient(160deg,#1d1b4f,#2b2973 70%%,#3b3c99);color:#fff;}'
+           '.mmh{max-width:1220px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center;}'
+           '.mmh .eyebrow{color:#b9b4ff;} .mmh h2{font-size:clamp(30px,3.6vw,46px);color:#fff;margin:14px 0 16px;line-height:1.15;} .mmh p{opacity:.86;font-size:15.5px;font-weight:500;margin-bottom:28px;max-width:520px;}'
+           '.mmh-b{display:flex;gap:12px;flex-wrap:wrap;} .mmh-b a{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:100px;font-weight:700;font-size:14px;letter-spacing:.02em;transition:transform .2s,background .2s;}'
+           '.mmh-b a:hover{transform:translateY(-2px);} .mmh-go{background:#fff;color:#1d1b4f;} .mmh-wa{border:1px solid rgba(255,255,255,.35);color:#fff;} .mmh-wa:hover{background:rgba(255,255,255,.1);}'
+           '.mmh-ts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;} .mmh-t{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-top:4px solid var(--tc);border-radius:16px;padding:20px 18px;}'
+           '.mmh-t>b{display:block;font-family:"Playfair Display",serif;font-size:22px;margin-bottom:12px;} .mmh-t dt{font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.65;margin-top:10px;} .mmh-t dd{font-size:15.5px;font-weight:700;}'
+           '.mmh small{display:block;margin-top:14px;font-size:11.5px;opacity:.6;}'
+           '@media(max-width:900px){#mm2h-home{padding:70px 20px;} .mmh{grid-template-columns:1fr;gap:32px;} .mmh-ts{grid-template-columns:1fr;} .mmh-t{display:grid;grid-template-columns:110px 1fr;align-items:center;} .mmh-t dl{display:grid;grid-template-columns:auto auto;gap:2px 12px;} .mmh-t dt{margin:0;align-self:center;}}'
+           '</style>\n<section id="mm2h-home"><div class="mmh"><div>'
+           '<span class="eyebrow" data-i18n="mm_eb">MM2H 第二家园</span><h2 data-i18n="mm_h2">%s</h2><p data-i18n="mm_p">%s</p>'
+           '<div class="mmh-b"><a class="mmh-go" href="mm2h.html"><span data-i18n="mm_btn">%s</span> &rarr;</a>'
+           '<a class="mmh-wa" href="%s" target="_blank" rel="noopener" data-i18n="mm_ask">%s</a></div></div>'
+           '<div><div class="mmh-ts">%s</div><small data-i18n="mm_note">%s</small></div></div></section>\n<!-- KN-MM2H:END -->\n') % (
+    E(MM['mm_h2'][0]), E(MM['mm_p'][0]), E(MM['mm_btn'][0]), E(waq('Hi Keith, I would like to know more about MM2H.')), E(MM['mm_ask'][0]), tiers, E(MM['mm_note'][0]))
+ix = open('index.html', encoding='utf-8').read()
+ix = re.sub(r'<!-- KN-MM2H:START -->.*?<!-- KN-MM2H:END -->\n', '', ix, flags=re.S)
+anchor = '<!-- ===================== FAQ'
+if anchor not in ix:
+    anchor = '<section id="faq">'
+ix = ix.replace(anchor, MM_HTML + anchor, 1)
+d0 = ix.index('const I18N = {') + len('const I18N = {')
+for k, (en_, tr) in MM.items():
+    tr = dict(tr)
+    tr['zh-TW'] = _cc(tr['zh-CN'])
+    entry = '\n  "%s": %s,' % (k, json.dumps(tr, ensure_ascii=False))
+    ix = re.sub(r'\n  "%s": \{[^}]*\},' % k, '', ix)
+    d0 = ix.index('const I18N = {') + len('const I18N = {')
+    ix = ix[:d0] + entry + ix[d0:]
+open('index.html', 'w', encoding='utf-8').write(ix)
+print('home: MM2H section')
