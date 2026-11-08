@@ -14,7 +14,7 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link href=
 NAV = [('', 'Home'), ('projects.html', 'View Projects'), ('compare.html', 'Compare Projects'), ('blog.html', 'News'),
        ('calculator.html', 'Calculator'), ('mm2h.html', 'MM2H 第二家园'), ('about-keith.html', 'About Keith')]
 LANGS = [('en', 'gb', 'English'), ('zh-CN', 'cn', '简体中文'), ('zh-TW', 'tw', '繁體中文'), ('ms', 'my', 'Bahasa Malaysia'),
-         ('ta', 'in', 'தமிழ்'), ('ja', 'jp', '日本語'), ('ko', 'kr', '한국어'), ('ar', 'sa', 'العربية')]
+         ('ja', 'jp', '日本語'), ('ko', 'kr', '한국어')]
 CURS = [('MYR', 'my', 'Malaysian Ringgit'), ('USD', 'us', 'US Dollar'), ('SGD', 'sg', 'Singapore Dollar'),
         ('CNY', 'cn', 'Chinese Yuan'), ('JPY', 'jp', 'Japanese Yen'), ('KRW', 'kr', 'Korean Won')]
 NAV_TR = {
@@ -101,6 +101,7 @@ header .wa-btn:hover{box-shadow:0 8px 20px rgba(37,211,102,.4);}
 header .kn-burger{margin-left:0;}
 @media(max-width:1349px){header nav,.nav-right .kn-sw{display:none;} header .kn-burger{display:block;}}
 @media(max-width:560px){header .wa-btn{display:none!important;}}
+main .wa-btn{white-space:normal;max-width:100%;text-align:center;justify-content:center;}
 #knMnav .kn-msub{margin:22px 0 8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#a9a6d6;}
 #knMnav .kn-mchips{display:flex;flex-wrap:wrap;gap:8px;}
 #knMnav .kn-mchips button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer;}
@@ -117,14 +118,14 @@ function navText(lang){document.querySelectorAll('[data-nav]').forEach(function(
 var FROM={'en':'From ','zh-CN':'\u8d77\u4ef7 ','zh-TW':'\u8d77\u50f9 ','ms':'Dari ','ta':'\u0ba4\u0bca\u0b9f\u0b95\u0bcd\u0b95\u0bae\u0bcd ','ja':'','ko':'','ar':'\u0645\u0646 '};
 function pt(lang){var T=window.KN_PT||[];document.querySelectorAll('[data-pt]').forEach(function(el){if(!el.hasAttribute('data-en'))el.setAttribute('data-en',el.textContent);
  var r=T[+el.getAttribute('data-pt')]||{};el.textContent=(lang!=='en'&&r[lang])||el.getAttribute('data-en');});}
-window.knSetLang=function(l){put('kn_lang',l);document.documentElement.setAttribute('lang',l);pt(l);var lab=document.getElementById('knLangLab');if(lab)lab.textContent=LN[l]||'English';
+window.knSetLang=function(l){if(!LN[l])l='en';put('kn_lang',l);document.documentElement.setAttribute('lang',l);pt(l);var lab=document.getElementById('knLangLab');if(lab)lab.textContent=LN[l]||'English';
  document.querySelectorAll('#knLangMenu a').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-v')===l)});
  document.documentElement.setAttribute('dir',l==='ar'?'rtl':'ltr');navText(l);if(window.knSetCur)knSetCur(get('kn_currency','MYR'));mark();close();};
 function fmt(v,c){var x=v*(RATE[c]||1),s=SYM[c]||c;return '~'+s+' '+(x>=1e6?(x/1e6).toFixed(2)+'M':Math.round(x/1e3)+'K');}
 window.knSetCur=function(c){put('kn_currency',c);var lab=document.getElementById('knCurLab');if(lab)lab.textContent=c;
  document.querySelectorAll('#knCurMenu a').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-v')===c)});
  document.querySelectorAll('[data-price-myr]').forEach(function(el){if(!el.hasAttribute('data-orig'))el.setAttribute('data-orig',el.innerHTML);
-  el.innerHTML=c==='MYR'?el.getAttribute('data-orig'):(FROM[get('kn_lang','en')]||'From ')+fmt(parseFloat(el.getAttribute('data-price-myr')),c);});if(c==='MYR')pt(get('kn_lang','en'));mark();close();};
+  el.innerHTML=c==='MYR'?el.getAttribute('data-orig'):((get('kn_lang','en') in FROM)?FROM[get('kn_lang','en')]:'From ')+fmt(parseFloat(el.getAttribute('data-price-myr')),c)+({'ja':' から','ko':'부터'}[get('kn_lang','en')]||'');});if(c==='MYR')pt(get('kn_lang','en'));mark();close();};
 window.knTog=function(id,e){e.stopPropagation();var m=document.getElementById(id),o=!m.classList.contains('open');close();m.classList.toggle('open',o);};
 function close(){document.querySelectorAll('.kn-menu.open').forEach(function(m){m.classList.remove('open')});}
 document.addEventListener('click',close);

@@ -14,7 +14,7 @@ import re
 
 from news_content import EXTRA_TR, LABELS
 
-LANGS = ['zh-CN', 'zh-TW', 'ms', 'ta', 'ja', 'ko', 'ar']
+LANGS = ['zh-CN', 'zh-TW', 'ms', 'ja', 'ko']  # Tamil and Arabic were removed from the site
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -94,7 +94,7 @@ def fmt(template_en, **parts):
 
 
 LANG_NAMES = [('en', 'English', 'gb'), ('zh-CN', '简体中文', 'cn'), ('zh-TW', '繁體中文', 'tw'), ('ms', 'Bahasa Malaysia', 'my'),
-              ('ta', 'தமிழ்', 'in'), ('ja', '日本語', 'jp'), ('ko', '한국어', 'kr'), ('ar', 'العربية', 'sa')]
+              ('ja', '日本語', 'jp'), ('ko', '한국어', 'kr')]
 
 
 class Collector:

@@ -17,7 +17,7 @@ import os
 import re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-LANGS = ['zh-CN', 'zh-TW', 'ms', 'ta', 'ja', 'ko', 'ar']
+LANGS = ['zh-CN', 'zh-TW', 'ms', 'ja', 'ko']  # Tamil and Arabic were removed from the site
 
 UI = {
     'ui.home': 'Home', 'ui.bestlists': 'Best new launch lists', 'ui.projects': 'Projects', 'ui.malaysia': 'Malaysia',
@@ -48,6 +48,7 @@ UI = {
     'qp.l5': '3-bedroom units', 'qp.l6': 'Dual key units', 'qp.l7': 'Ready to move in', 'qp.l8': 'Latest new launches',
     'qp.l9': 'Lowest psf in KL', 'qp.l10': 'Near international schools', 'qp.l11': 'Freehold in KL', 'qp.l12': 'Sea view & waterfront',
 }
+UI.update({"pp.price": "Starting Price", "pp.compare": "Compare projects", "pp.highlights": "Top Highlights", "pp.details": "Project Details", "pp.info": "Project Information", "pp.name": "Project Name", "pp.dev": "Developer", "pp.loc": "Location", "pp.ptype": "Property Type", "pp.status": "Status", "pp.fac": "Facilities", "pp.featured": "Featured in these lists", "pp.tap": "Tap a tag to see every project that matches it.", "pp.near": "Nearby Projects", "pp.arts": "Related Articles", "pp.g1": "This project", "pp.g2": "Location & landmarks", "pp.g3": "Transit", "pp.g4": "Tenure & status", "pp.g5": "Price & unit type", "pp.g6": "Area & developer", "pp.ask": "Ask for the latest price, available units and the full floor plans.", "pp.note": "Prices, sizes and availability are indicative and subject to change. Confirm current figures with Keith before making decisions.", "pp.wa": "WhatsApp Keith About This Project", "pp.t1": "Residential", "pp.t2": "Serviced Apartment", "pp.t3": "Commercial Suites", "pp.k1": "Title", "pp.k2": "Total Units", "pp.k3": "Land Area", "pp.k4": "Car Parks", "pp.k5": "Security", "pp.k6": "Maintenance Fee", "pp.k7": "Lifts", "pp.k8": "Price per Sqft", "pp.k9": "Furnishing", "pp.k10": "Price Guide", "pp.k11": "Launch", "pp.k12": "Ceiling Height", "pp.k13": "Maintenance", "pp.k14": "Unit Mix", "pp.k15": "Building Height", "pp.k16": "Certification", "pp.k17": "Units per Floor", "pp.k18": "Number of Units", "pp.k19": "Number of Floors", "pp.v1": "Multi-tier security", "pp.v2": "Multi-Tier Security", "pp.v3": "Floor plan on request"})
 # Sentence patterns: {x} is any text; groups named in TRG are translated too (and must be translatable).
 TPL = {
     'tpl.h1year': '{h} ({y})', 'tpl.updated_n': 'Updated {y} · {n} projects', 'tpl.updated': 'Updated {y}',
@@ -70,6 +71,11 @@ TPL = {
     'tpl.other_areas': 'Other areas in {state}', 'tpl.all_of': 'All of {state}', 'tpl.areas_in': 'Areas in {state}',
     'tpl.popular': 'Popular lists with {place} projects', 'tpl.area_cta': 'Looking for a home or investment in {place}?',
     'tpl.card_status': '{place} · {st}',
+    'tpl.pp_about': 'About {name}',
+    'tpl.pp_plans': '{name} Floor Plans & Unit Types',
+    'tpl.pp_who': 'Who Should Consider {name}?',
+    'tpl.pp_pop': 'Popular Searches for {name}',
+    'tpl.pp_take': "Want Keith's take on {name}?"
 }
 TRG = {'h': 'exact', 'intro': 'exact', 'fm': 'exact', 'st': 'status'}
 STATUS = {'Under Construction', 'New Launch', 'Coming Soon', 'Completed'}
@@ -171,6 +177,7 @@ for _id, _en in TPL.items():
     rx = re.sub(r'\\\{(\w+)\\\}', lambda m: '(?P<%s>%s)' % (m.group(1), r'[\d,]+' if m.group(1) in ('n', 'y', 'a', 'b') else '.+?'), rx)
     TPL_RX.append((_id, re.compile('^%s$' % rx, re.S)))
 DATA = set()
+USE_KN = [False]   # project pages: also look up the site's project translations (i18n-projects-*.js)
 
 
 def register(ids):
@@ -211,10 +218,14 @@ def data(en, lang):
     return out if out != en else None
 
 
-def one(en, lang):
+def one(en, lang, raw=None):
     t = exact(en, lang)
     if t:
         return t
+    if raw is not None and USE_KN[0]:
+        k = KN[lang].get(raw) or KN[lang].get(en) or KN[lang].get(html.escape(en, quote=False))
+        if k:
+            return html.unescape(re.sub(r'<[^>]+>', '', k))
     if en in DATA:
         return data(en, lang)
     for tid, rx in TPL_RX:
@@ -250,7 +261,7 @@ def translate(page):
             return m.group(0)
         row = {}
         for l in LANGS:
-            t = one(en, l)
+            t = one(en, l, raw.strip())
             if t:
                 row[l] = t
         if not row:
@@ -258,7 +269,7 @@ def translate(page):
         rows.append(row)
         lead = raw[:len(raw) - len(raw.lstrip())]
         tail = raw[len(raw.rstrip()):]
-        return '%s%s<span data-pt="%d">%s</span>%s' % (m.group(1), lead, len(rows) - 1, raw.strip(), tail)
+        return '%s%s<kn-t data-pt="%d">%s</kn-t>%s' % (m.group(1), lead, len(rows) - 1, raw.strip(), tail)
 
     def region(m):
         return re.sub(r'(>)([^<>]+)(?=<)', node, m.group(0))

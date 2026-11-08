@@ -17,6 +17,8 @@ import re
 from urllib.parse import quote
 
 import float_wa as FW
+import site_header as SH
+import i18n_pages as I18N
 
 try:
     LISTS_OF = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'list_membership.json'), encoding='utf-8'))
@@ -217,6 +219,11 @@ def area_slug(s):
     return re.sub(r'[^a-z0-9]+', '-', s.lower().replace('&', 'and')).strip('-')
 
 
+def _myr(s):
+    import build_area_pages
+    return build_area_pages.price_rm(s)
+
+
 def page(i):
     p, tg, slug = P[i], TAGS[i], SLUGS[i]
     name, display = p['name'], tg[0]
@@ -229,7 +236,7 @@ def page(i):
         display, p['loc'], ', '.join(bits), p.get('completion') or 'to be confirmed')
     msg = "Hi Keith, I'm interested in %s and would like to find out more." % name
 
-    stats = ''.join('<div class="stat"><span>%s</span><strong>%s</strong></div>' % (E(k), E(v)) for k, v in [
+    stats = ''.join('<div class="stat"><span>%s</span><strong>%s</strong></div>' % (E(k), SH.price_tag(E(v), _myr(v)) if k == 'Starting Price' else E(v)) for k, v in [
         ('Starting Price', p.get('price')), ('Size', p.get('size')), ('Bedrooms', p.get('rooms')),
         ('Tenure', p.get('tenure')), ('Completion', p.get('completion'))] if v)
     order = ['This project', 'Location & landmarks', 'Transit', 'Tenure & status', 'Price & unit type', 'Area & developer', '中文搜索']
@@ -375,7 +382,7 @@ document.addEventListener('click',function(e){{
         areahref=('../area/%s.html' % area_slug(area)) if state and os.path.exists('area/%s.html' % area_slug(area)) else '../projects.html#' + E(quote(state + '/' + area if state else area, safe='/')),
         statecrumb=('<a href="%s">%s</a><span>›</span>' % ((('../area/%s.html' % area_slug(state)) if os.path.exists('area/%s.html' % area_slug(state)) else '../projects.html#' + E(quote(state))), E(state))) if state else '', display=E(display),
         heroimg=('<img src="%s" alt="%s" fetchpriority="high">' % (E(up(photo)), E(display))) if photo else '<div class="hero-ph"><svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2"><path d="M60 190V70l40-30 40 30v120z"/><path d="M60 90h80M60 110h80M60 130h80M60 150h80M85 190v-25h30v25"/></svg></div>',
-        status=E(p.get('status')), ptype=E(TYPE.get(i, 'Residential')), loc=E(p['loc']), price=E(p.get('price')),
+        status=E(p.get('status')), ptype=E(TYPE.get(i, 'Residential')), loc=E(p['loc']), price=SH.price_tag(E(p.get('price')), _myr(p.get('price'))),
         tags=tags, stats=stats, overview=E(p.get('overview')), loctext=E(p.get('loc_text')),
         points_blk=('<section class="blk"><h2>Top Highlights</h2><div class="points">%s</div></section>' % points) if points else '',
         facts_blk=('<section class="blk"><h2>Project Details</h2><div class="pi"><div class="pi-head">Project Information</div><table>%s</table></div></section>' % facts) if facts else '',
@@ -458,9 +465,13 @@ def write_sitemap():
 
 
 if __name__ == '__main__':
+    I18N.USE_KN[0] = True
+    I18N.DATA.update(v for p in P for f in ('size', 'rooms', 'tenure', 'completion', 'price', 'status') for v in [p.get(f)] if v)
+    I18N.DATA.update(v for p in P for l in (p.get('layouts') or []) for v in (l.get('size'), l.get('rooms')) if v)
+    I18N.DATA.update(v for p in P for k, v in (p.get('details_extra') or {}).items() if k == 'Title' and isinstance(v, str))
     os.makedirs(OUT, exist_ok=True)
     for i in range(len(P)):
-        open('%s/%s.html' % (OUT, SLUGS[i]), 'w', encoding='utf-8').write(page(i))
+        open('%s/%s.html' % (OUT, SLUGS[i]), 'w', encoding='utf-8').write(SH.apply(page(i), '../', 'projects.html'))
     link_projects_page()
     print('home page cards linked:', link_home_page())
     n = write_sitemap()

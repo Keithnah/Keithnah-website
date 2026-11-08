@@ -65,11 +65,11 @@ def llms():
         'projects also in Selangor, Penang and Johor. Buyers pay no agent fee on new launches. Each project page lists '
         'price, sizes, bedrooms, tenure, completion date and floor plans. Contact: WhatsApp %s.' % WHATSAPP,
         '',
-        'The site is available in English, 简体中文, 繁體中文, Bahasa Malaysia, தமிழ், 日本語, 한국어 and العربية. '
+        'The site is available in English, 简体中文, 繁體中文, Bahasa Malaysia, 日本語 and 한국어. '
         'Prices are indicative; buyers should confirm current figures with Keith.',
         '',
         '## Main pages',
-        '- [Home](%s/): who Keith is, featured projects and 47 common buyer questions' % SITE,
+        '- [Home](%s/): who Keith is, featured projects and common buyer questions' % SITE,
         '- [All projects](%s/projects.html): every project, searchable by area, price, type and tag' % SITE,
         '- [Compare projects](%s/compare.html): side-by-side comparison' % SITE,
         '- [Buying guides, FAQ and news](%s/blog.html): buying a new property, buying a subsale home, rules for foreign buyers' % SITE,
@@ -135,7 +135,7 @@ def structured_data():
                                'url': 'https://wa.me/60102821568'}}
     website = {'@type': 'WebSite', '@id': SITE + '/#website', 'name': 'Keith Nah Real Estate', 'url': SITE + '/',
                'publisher': {'@id': SITE + '/#agency'},
-               'inLanguage': ['en', 'zh-CN', 'zh-TW', 'ms', 'ta', 'ja', 'ko', 'ar']}
+               'inLanguage': ['en', 'zh-CN', 'zh-TW', 'ms', 'ja', 'ko']}
     home_faq = faq_items('index.html', r'data-i18n="faq_q\d+">(.*?)<span class="faq-icon">.*?<p data-i18n="faq_a\d+">(.*?)</p>')
     assert len(home_faq) >= 30, len(home_faq)
     put_ld('index.html', {'@context': 'https://schema.org', '@graph': [agency, person, website,
