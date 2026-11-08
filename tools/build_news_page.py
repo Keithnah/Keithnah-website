@@ -163,6 +163,47 @@ def faq_html():
                  unit(lambda t: L(t('Show fewer questions'))))
 
 
+NEWS_VIDEOS = [('BFIzSCnOWQo', 'Is Malaysia the top choice for property in Southeast Asia?'),
+               ('klV6W0xTEEo', 'Can foreigners buy property in Malaysia?')]
+
+
+def video_html():
+    cards = ''.join(
+        '<figure class="nv-card"><div class="nv-yt" data-id="%s" role="button" tabindex="0">'
+        '<img src="https://i.ytimg.com/vi/%s/hqdefault.jpg" alt="" loading="lazy">'
+        '<button type="button" aria-label="Play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></div>'
+        '<figcaption>%s</figcaption></figure>' % (v, v, unit(lambda t, s=s: L(t(s)))) for v, s in NEWS_VIDEOS)
+    return """
+<style>
+.nv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:22px;}
+.nv-card{margin:0;}
+.nv-yt{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;cursor:pointer;box-shadow:0 14px 34px rgba(17,17,17,.12);}
+.nv-yt img{width:100%%;height:100%%;object-fit:cover;transition:transform .4s;} .nv-yt:hover img{transform:scale(1.03);}
+.nv-yt button{position:absolute;inset:0;margin:auto;width:76px;height:54px;border:0;border-radius:14px;background:rgba(255,0,0,.9);cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.nv-yt button svg{width:26px;height:26px;fill:#fff;}
+.nv-yt iframe{position:absolute;inset:0;width:100%%;height:100%%;border:0;}
+.nv-card figcaption{font:600 16px 'Playfair Display',serif;margin-top:12px;}
+.nv-more{display:inline-block;margin-top:16px;color:var(--gold);font-weight:600;font-size:14px;}
+</style>
+<section class="nw-sec nv-sec" id="videos" data-no-currency>
+  <p class="nw-eyebrow">%s</p>
+  <h2 class="nw-h2">%s</h2>
+  <p class="nw-sub">%s</p>
+  <div class="nv-grid">%s</div>
+  <a class="nv-more" href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener">%s</a>
+</section>
+<script>
+document.querySelectorAll('.nv-yt[data-id]').forEach(function(el){
+  el.addEventListener('click', function(){
+    if(el.querySelector('iframe')) return;
+    el.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + el.getAttribute('data-id') + '?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+  });
+});
+</script>""" % (unit(lambda t: L(t('Videos'))), unit(lambda t: L(t('Watch Keith explain'))),
+                 unit(lambda t: L(t('Short videos on why buyers choose Malaysia and what foreigners need to know before buying.'))),
+                 cards, unit(lambda t: L(t('More videos on YouTube →'))))
+
+
 def blog_html(counts):
     chips = unit(lambda t: ''.join('<a class="bt-chip" href="topic/%s.html">%s<em>%d</em></a>' % (slug(tp[0]), L(t(tp[0])), counts[tp[0]]) for tp in TOPICS))
     return '''
@@ -334,7 +375,7 @@ def build():
 
     # Sections (replace the old filter bar on the first run)
     TR.clear()
-    block = ('<!-- KN-NEWS:SECTIONS:START -->' + guides_html() + faq_html() + blog_html(counts) +
+    block = ('<!-- KN-NEWS:SECTIONS:START -->' + guides_html() + faq_html() + video_html() + blog_html(counts) +
              '\n<div class="filters" id="filters" hidden></div>\n<!-- KN-NEWS:SECTIONS:END -->')
     if '<!-- KN-NEWS:SECTIONS:START -->' in t:
         t = re.sub(r'<!-- KN-NEWS:SECTIONS:START -->.*?<!-- KN-NEWS:SECTIONS:END -->', lambda _: block, t, flags=re.S)
