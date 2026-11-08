@@ -276,8 +276,8 @@ UI = {
            'p': 'Projects', 'from': 'Starting from', 'fh': 'Freehold', 'cy': 'Completion', 'pg': 'PDF · {n} pages',
            'ft': 'Get the free guide', 'fs': 'Fill in your details and the PDF downloads straight away.',
            'name': 'Name', 'email': 'Email', 'wa': 'WhatsApp number', 'wc': 'WeChat / LINE ID (optional)', 'go': 'Download the PDF',
-           'priv': 'Keith may contact you about this guide. Your details are never shared.', 'need': 'Please fill in your name, email and WhatsApp number (or a WeChat / LINE ID).',
-           'okT': 'Your guide is ready', 'okS': 'The download should start on its own. If it does not, tap the button below.', 'dl': 'Download again', 'ask': 'Questions? WhatsApp Keith',
+           'priv': 'Keith may contact you about this guide. Your details are never shared.', 'need': 'Please fill in your name, email and WhatsApp number (or a WeChat / LINE ID).', 'fail': 'Sorry, the download did not start. Please try again or WhatsApp Keith.',
+           'okT': 'Your guide is ready', 'okS': 'Thank you! The PDF has been downloaded. Tap below to download it again.', 'dl': 'Download again', 'ask': 'Questions? WhatsApp Keith',
            'in': "What's inside", 'i1': 'Side-by-side table', 'i1d': 'All {n} projects on one page: price, psf, size, bedrooms, tenure and completion.',
            'i2': 'A sheet per project', 'i2d': 'Photo, key numbers, maintenance fee, developer and highlights.',
            'i3': 'Location map', 'i3d': 'Where each project sits, with the rail stations nearby.', 'i4': 'Monthly instalments', 'i4d': 'An estimate for every project, so you can see what fits your budget.',
@@ -286,8 +286,8 @@ UI = {
               'p': '项目', 'from': '起价', 'fh': '永久地契', 'cy': '竣工', 'pg': 'PDF · {n} 页',
               'ft': '免费领取懒人包', 'fs': '填写资料后，PDF 会马上下载。',
               'name': '名字', 'email': '电邮', 'wa': 'WhatsApp 号码', 'wc': '微信 / LINE ID（选填）', 'go': '下载 PDF',
-              'priv': 'Keith 可能会就这份资料联系你。你的资料不会分享给任何人。', 'need': '请填写名字、电邮和 WhatsApp 号码（或微信 / LINE ID）。',
-              'okT': '懒人包已准备好', 'okS': '下载会自动开始。如果没有，请按下面的按钮。', 'dl': '再次下载', 'ask': '有问题？WhatsApp Keith',
+              'priv': 'Keith 可能会就这份资料联系你。你的资料不会分享给任何人。', 'need': '请填写名字、电邮和 WhatsApp 号码（或微信 / LINE ID）。', 'fail': '抱歉，下载没有开始。请再试一次，或 WhatsApp Keith。',
+              'okT': '懒人包已准备好', 'okS': '谢谢！PDF 已经下载。需要的话可以按下面再下载一次。', 'dl': '再次下载', 'ask': '有问题？WhatsApp Keith',
               'in': '懒人包里有什么', 'i1': '并排比较表', 'i1d': '{n} 个项目放在同一页：价格、呎价、面积、卧室、产权和竣工。',
               'i2': '每个项目一页资料', 'i2d': '照片、重点数字、管理费、发展商和项目亮点。',
               'i3': '位置地图', 'i3d': '每个项目的位置，以及附近的轨道站。', 'i4': '月供估算', 'i4d': '每个项目都有月供估算，马上知道哪个适合你的预算。',
@@ -296,8 +296,8 @@ UI = {
            'p': 'Projek', 'from': 'Harga dari', 'fh': 'Pegangan bebas', 'cy': 'Siap', 'pg': 'PDF · {n} halaman',
            'ft': 'Dapatkan panduan percuma', 'fs': 'Isi butiran anda dan PDF akan dimuat turun serta-merta.',
            'name': 'Nama', 'email': 'E-mel', 'wa': 'Nombor WhatsApp', 'wc': 'ID WeChat / LINE (pilihan)', 'go': 'Muat turun PDF',
-           'priv': 'Keith mungkin menghubungi anda tentang panduan ini. Butiran anda tidak akan dikongsi.', 'need': 'Sila isi nama, e-mel dan nombor WhatsApp (atau ID WeChat / LINE).',
-           'okT': 'Panduan anda sudah sedia', 'okS': 'Muat turun akan bermula sendiri. Jika tidak, tekan butang di bawah.', 'dl': 'Muat turun semula', 'ask': 'Ada soalan? WhatsApp Keith',
+           'priv': 'Keith mungkin menghubungi anda tentang panduan ini. Butiran anda tidak akan dikongsi.', 'need': 'Sila isi nama, e-mel dan nombor WhatsApp (atau ID WeChat / LINE).', 'fail': 'Maaf, muat turun tidak bermula. Sila cuba lagi atau WhatsApp Keith.',
+           'okT': 'Panduan anda sudah sedia', 'okS': 'Terima kasih! PDF telah dimuat turun. Tekan di bawah untuk muat turun semula.', 'dl': 'Muat turun semula', 'ask': 'Ada soalan? WhatsApp Keith',
            'in': 'Kandungan panduan', 'i1': 'Jadual perbandingan', 'i1d': 'Kesemua {n} projek dalam satu halaman: harga, harga sk, saiz, bilik, pegangan dan tarikh siap.',
            'i2': 'Satu halaman setiap projek', 'i2d': 'Foto, angka utama, yuran penyelenggaraan, pemaju dan kelebihan.',
            'i3': 'Peta lokasi', 'i3d': 'Lokasi setiap projek, dengan stesen rel berdekatan.', 'i4': 'Ansuran bulanan', 'i4d': 'Anggaran untuk setiap projek, supaya anda tahu yang mana sesuai dengan bajet.',
@@ -306,8 +306,8 @@ UI = {
            'p': '物件数', 'from': '最低価格', 'fh': '自由保有', 'cy': '完成', 'pg': 'PDF · {n}ページ',
            'ft': '無料ガイドを受け取る', 'fs': '情報を入力すると、すぐにPDFがダウンロードされます。',
            'name': 'お名前', 'email': 'メール', 'wa': 'WhatsApp 番号', 'wc': 'WeChat / LINE ID（任意）', 'go': 'PDFをダウンロード',
-           'priv': 'このガイドについて Keith からご連絡する場合があります。情報が共有されることはありません。', 'need': 'お名前、メール、WhatsApp 番号（または WeChat / LINE ID）を入力してください。',
-           'okT': 'ガイドの準備ができました', 'okS': 'ダウンロードが自動で始まります。始まらない場合は下のボタンを押してください。', 'dl': 'もう一度ダウンロード', 'ask': '質問は Keith の WhatsApp へ',
+           'priv': 'このガイドについて Keith からご連絡する場合があります。情報が共有されることはありません。', 'need': 'お名前、メール、WhatsApp 番号（または WeChat / LINE ID）を入力してください。', 'fail': 'ダウンロードを開始できませんでした。もう一度お試しいただくか、Keith の WhatsApp へご連絡ください。',
+           'okT': 'ガイドの準備ができました', 'okS': 'ありがとうございます！PDFをダウンロードしました。下のボタンでもう一度ダウンロードできます。', 'dl': 'もう一度ダウンロード', 'ask': '質問は Keith の WhatsApp へ',
            'in': 'ガイドの内容', 'i1': '比較表', 'i1d': '{n}件の物件を1ページで比較：価格、単価、面積、ベッドルーム、保有形態、完成時期。',
            'i2': '物件ごとの資料', 'i2d': '写真、主な数字、管理費、デベロッパー、特徴。',
            'i3': '地図', 'i3d': '各物件の位置と近くの駅。', 'i4': '月々の返済目安', 'i4d': 'すべての物件に返済目安付き。予算に合う物件がすぐわかります。',
@@ -316,8 +316,8 @@ UI = {
            'p': '프로젝트', 'from': '시작 가격', 'fh': '자유보유', 'cy': '준공', 'pg': 'PDF · {n}페이지',
            'ft': '무료 가이드 받기', 'fs': '정보를 입력하면 PDF가 바로 다운로드됩니다.',
            'name': '이름', 'email': '이메일', 'wa': 'WhatsApp 번호', 'wc': 'WeChat / LINE ID (선택)', 'go': 'PDF 다운로드',
-           'priv': '이 가이드와 관련해 Keith가 연락드릴 수 있습니다. 정보는 공유되지 않습니다.', 'need': '이름, 이메일, WhatsApp 번호(또는 WeChat / LINE ID)를 입력해 주세요.',
-           'okT': '가이드가 준비되었습니다', 'okS': '다운로드가 자동으로 시작됩니다. 시작되지 않으면 아래 버튼을 누르세요.', 'dl': '다시 다운로드', 'ask': '질문은 Keith의 WhatsApp으로',
+           'priv': '이 가이드와 관련해 Keith가 연락드릴 수 있습니다. 정보는 공유되지 않습니다.', 'need': '이름, 이메일, WhatsApp 번호(또는 WeChat / LINE ID)를 입력해 주세요.', 'fail': '다운로드가 시작되지 않았습니다. 다시 시도하거나 Keith의 WhatsApp으로 연락해 주세요.',
+           'okT': '가이드가 준비되었습니다', 'okS': '감사합니다! PDF가 다운로드되었습니다. 아래 버튼으로 다시 받을 수 있습니다.', 'dl': '다시 다운로드', 'ask': '질문은 Keith의 WhatsApp으로',
            'in': '가이드 내용', 'i1': '비교표', 'i1d': '{n}개 프로젝트를 한 페이지에: 가격, 평방피트당 가격, 면적, 침실, 소유 형태, 준공.',
            'i2': '프로젝트별 자료', 'i2d': '사진, 주요 수치, 관리비, 개발사, 특징.',
            'i3': '위치 지도', 'i3d': '각 프로젝트의 위치와 가까운 역.', 'i4': '월 상환액', 'i4d': '모든 프로젝트의 예상 월 상환액으로 예산에 맞는 곳을 바로 확인하세요.',
@@ -424,12 +424,13 @@ def landing(g, all_g):
       <label class="fl"><span data-u="email">Email</span><input name="email" type="email" autocomplete="email" required></label>
       <label class="fl"><span data-u="wa">WhatsApp number</span><div class="ph"><select name="code" aria-label="Country code">{codes}</select><input name="phone" type="tel" inputmode="tel" autocomplete="tel-national"></div></label>
       <label class="fl"><span data-u="wc">WeChat / LINE ID (optional)</span><input name="wc"></label>
+      <input name="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <p class="err" id="gErr" data-u="need">Please fill in your name, email and WhatsApp number (or a WeChat / LINE ID).</p>
       <button type="submit" class="go"><span data-u="go">Download the PDF</span>{dlic}</button>
       <p class="priv">{lock}<span data-u="priv">Keith may contact you about this guide. Your details are never shared.</span></p>
     </form>
     <div class="ok"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></div><h2 data-u="okT">Your guide is ready</h2><p data-u="okS">The download should start on its own. If it does not, tap the button below.</p>
-      <a class="go" id="gDl" href="{pdf}" download><span data-u="dl">Download again</span>{dlic}</a><a class="wa" href="{waq}" target="_blank" rel="noopener" data-u="ask">Questions? WhatsApp Keith</a></div>
+      <a class="go" id="gDl" href="#get"><span data-u="dl">Download again</span>{dlic}</a><a class="wa" href="{waq}" target="_blank" rel="noopener" data-u="ask">Questions? WhatsApp Keith</a></div>
   </div>
 </div></section>
 <main class="wrap">
@@ -452,20 +453,22 @@ function fm(s){return s.replace(/\\{(\\w)\\}/g,function(_,k){return {a:G.area,y:
 function apply(){var L=U[lang()];document.querySelectorAll('[data-u]').forEach(function(el){var v=L[el.getAttribute('data-u')];if(v)el.textContent=v;});
 document.querySelectorAll('[data-uf]').forEach(function(el){var k=el.getAttribute('data-uf'),v=L[k];if(!v)return;el.textContent=k==='pg'?v.replace('{n}',G.pages):k==='i1d'?v.replace('{n}',G.n):fm(v);});
 document.querySelectorAll('[data-np]').forEach(function(el){el.textContent=L.n_p.replace('{n}',el.getAttribute('data-np'));});}
-var box=document.getElementById('get'),f=document.getElementById('gForm'),err=document.getElementById('gErr'),dl=document.getElementById('gDl');
-function done(auto){box.classList.add('done');if(auto){try{dl.click();}catch(e){location.href=dl.href;}}}
-try{if(localStorage.getItem('kn_guide_ok'))f.querySelector('[name=name]').value=JSON.parse(localStorage.getItem('kn_guide_ok')).name||'';}catch(e){}
-f.addEventListener('submit',function(e){e.preventDefault();var d={};['name','email','code','phone','wc'].forEach(function(k){d[k]=(f.elements[k].value||'').trim();});
+var box=document.getElementById('get'),f=document.getElementById('gForm'),err=document.getElementById('gErr'),dl=document.getElementById('gDl'),go=f.querySelector('.go'),last=null;
+function save(blob){var u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='KNRE-'+G.slug+'-guide.pdf';document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(u);a.remove();},4000);}
+function ask(d,again,cb){var fd=new FormData();Object.keys(d).forEach(function(k){fd.append(k,d[k]);});fd.append('slug',G.slug);fd.append('area',G.area);
+fd.append('lang',document.documentElement.getAttribute('lang')||lang());fd.append('page_url',location.href);fd.append('ref',document.referrer||'');if(again)fd.append('again','1');
+fetch('get.php',{method:'POST',body:fd}).then(function(r){var t=r.headers.get('Content-Type')||'';if(!r.ok||t.indexOf('pdf')<0)throw new Error(r.status);return r.blob();}).then(function(b){save(b);cb(true);}).catch(function(){cb(false);});}
+try{var sv=JSON.parse(localStorage.getItem('kn_guide_ok')||'null');if(sv)['name','email','code','phone','wc'].forEach(function(k){if(sv[k]&&f.elements[k])f.elements[k].value=sv[k];});}catch(e){}
+f.addEventListener('submit',function(e){e.preventDefault();var d={hp:f.elements.hp.value};['name','email','code','phone','wc'].forEach(function(k){d[k]=(f.elements[k].value||'').trim();});
 var okMail=/^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$/.test(d.email);
-if(!d.name||!okMail||(!d.phone&&!d.wc)){err.style.display='block';return;}err.style.display='none';
-var dev=/iPad|Tablet/i.test(navigator.userAgent)?'Tablet':/Mobi|Android|iPhone/i.test(navigator.userAgent)?'Mobile':'Desktop';
-var body=JSON.stringify({type:'Quick Enquiry',source:'KNRE website',page:'Area guide: '+G.area,button:'Area guide PDF download',name:d.name,code:d.code,phone:d.phone,email:d.email,
-area:G.area,look:'Free '+G.area+' guide (PDF)'+(d.wc?' · WeChat/LINE: '+d.wc:''),message:d.wc?('WeChat/LINE: '+d.wc):'',lang:document.documentElement.getAttribute('lang')||lang(),device:dev,referrer:document.referrer||'',url:location.href});
-try{if(EP){if(!(navigator.sendBeacon&&navigator.sendBeacon(EP,new Blob([body],{type:'text/plain'}))))fetch(EP,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain'},body:body});}}catch(e){}
-try{localStorage.setItem('kn_guide_ok',JSON.stringify({name:d.name,t:Date.now()}));}catch(e){}
-done(true);});
+if(!d.name||!okMail||(!d.phone&&!d.wc)){err.textContent=U[lang()].need;err.style.display='block';return;}err.style.display='none';
+go.disabled=true;go.style.opacity=.6;
+ask(d,false,function(ok){go.disabled=false;go.style.opacity='';
+if(!ok){err.textContent=U[lang()].fail;err.style.display='block';return;}
+last=d;try{localStorage.setItem('kn_guide_ok',JSON.stringify(d));}catch(e){}box.classList.add('done');});});
+dl.addEventListener('click',function(e){e.preventDefault();if(last)ask(last,true,function(){});});
 document.addEventListener('DOMContentLoaded',function(){var s=window.knSetLang;if(typeof s==='function')window.knSetLang=function(){var r=s.apply(this,arguments);apply();return r;};apply();});
-apply();})();</script>''' % (json.dumps(UI, ensure_ascii=False), json.dumps({'area': g['area'], 'n': g['n'], 'pages': g.get('pages', ''), 'year': YEAR}, ensure_ascii=False), json.dumps(endpoint()))
+apply();})();</script>''' % (json.dumps(UI, ensure_ascii=False), json.dumps({'area': g['area'], 'slug': g['slug'], 'n': g['n'], 'pages': g.get('pages', ''), 'year': YEAR}, ensure_ascii=False), json.dumps(''))
     title = '%s New Launch Guide %d (Free PDF) | Keith Nah Real Estate' % (g['area'], YEAR)
     desc = 'Free PDF guide to all %d new launch projects in %s: prices, psf, sizes, completion dates, rail stations and a map.' % (g['n'], g['area'])
     page = '''<!DOCTYPE html>
@@ -497,4 +500,9 @@ if __name__ == '__main__':
     os.makedirs('guides', exist_ok=True)
     for g in gs:
         open('guides/%s.html' % g['slug'], 'w', encoding='utf-8').write(landing(g, gs))
+    # the download gate: PDFs only through guides/get.php (template in tools/templates/guide-get.php)
+    shutil.copyfile(os.path.join(HERE, 'templates', 'guide-get.php'), 'guides/get.php')
+    open('downloads/guides/.htaccess', 'w', encoding='utf-8').write(
+        '# The area guide PDFs are only sent through guides/get.php, after the enquiry form.\n'
+        '<IfModule mod_authz_core.c>\nRequire all denied\n</IfModule>\n<IfModule !mod_authz_core.c>\nOrder allow,deny\nDeny from all\n</IfModule>\n')
     print('guides: %d landing pages, %d PDFs' % (len(gs), sum(os.path.exists('downloads/guides/%s.pdf' % g['slug']) for g in gs)))
