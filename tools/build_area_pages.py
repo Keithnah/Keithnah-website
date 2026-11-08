@@ -380,17 +380,17 @@ _register()
 
 
 def link_projects_map():
-    """All projects on a map in View Projects, above the Best New Launch Lists block (idempotent)."""
+    """All projects on a map in View Projects, below the search bar and above the project grid (idempotent)."""
     ids = [k for k in range(len(P))]
     blk = map_block('Malaysia', ids, '', heading='Map of all new launches')
     blk = blk.replace('<section class="blk">', '<section class="blk pmap-sec" id="projectMap">', 1)
-    css = ('<style>.pmap-sec{max-width:1240px;margin:0 auto;padding:60px 5vw 0;}.pmap-sec h2{font-size:clamp(26px,3vw,36px);margin-bottom:16px;}'
-           '.pmap-sec .kmap{height:480px;}@media(max-width:700px){.pmap-sec{padding:44px 16px 0;}.pmap-sec .kmap{height:380px;}}</style>')
+    css = ('<style>.pmap-sec{max-width:1240px;margin:0 auto;padding:36px 5vw 34px;}.pmap-sec h2{font-size:clamp(26px,3vw,36px);margin-bottom:16px;}'
+           '.pmap-sec .kmap{height:480px;}@media(max-width:700px){.pmap-sec{padding:28px 16px 24px;}.pmap-sec .kmap{height:380px;}}</style>')
     block = '<!-- KN-MAP:START -->' + css + blk + '<!-- KN-MAP:END -->\n'
     p = 'projects.html'
     s = open(p, encoding='utf-8').read()
     s = re.sub(r'<!-- KN-MAP:START -->.*?<!-- KN-MAP:END -->\n?', '', s, flags=re.S)
-    anchor = '<!-- KN-QUICK:START -->'
+    anchor = '<!-- ===================== PROJECT GRID ===================== -->'
     assert anchor in s
     s = s.replace(anchor, block + anchor, 1)
     open(p, 'w', encoding='utf-8').write(s)
