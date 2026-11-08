@@ -449,13 +449,13 @@ def page(i):
     </div>
   </div>
   <div class="stats">{stats}</div>
-  {mo_blk}
   <section class="blk"><h2>About {display}</h2><p class="lead">{overview}</p></section>
   {points_blk}
   {facts_blk}
   <section class="blk"><h2>Location</h2><p class="lead">{loctext}</p>{amen_blk}</section>
   {layouts_blk}
   {fits_blk}
+  {mo_blk}
   {tags_blk}
   {lists_blk}
   {near_blk}
