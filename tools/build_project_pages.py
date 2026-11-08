@@ -246,34 +246,45 @@ MO_CSS = (
     '.mo-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;}'
     '.mo-acts .btn2{border-color:#fff;color:#fff;} .mo-acts .btn2:hover{background:#fff;color:#1d1b4f;}'
     '.mo-note{font-size:12.5px;color:var(--grey);margin-top:12px;}'
+    '.mo-dp{display:flex;gap:12px;align-items:center;} .mo-dp .mo-f{flex:0 0 120px;width:120px;min-width:0;} .mo-f input{width:100%;} .mo-box>*,.mo-in>*{min-width:0;} .mo-amt{font:600 15px Inter,sans-serif;color:var(--ink);text-transform:none;letter-spacing:0;}'
+    '.mo-rng{width:100%;accent-color:var(--gold);}'
+    '.mo-tip{font-size:12px;font-weight:500;color:var(--grey);text-transform:none;letter-spacing:0;line-height:1.5;}'
     '@media(max-width:820px){.mo-box{grid-template-columns:1fr;}.mo-out strong{font-size:34px;}}')
 
 MO_JS = r"""<script>
 (function(){
   var box = document.getElementById('loanCalc'); if(!box) return;
   var $ = function(id){ return document.getElementById(id); };
-  var down = 10;
   var num = function(s){ return parseFloat(String(s).replace(/[^\d.]/g, '')) || 0; };
-  var rm = function(v){ return 'RM ' + Math.round(v).toLocaleString('en-US'); };
+  function cur(){ var c = 'MYR'; try{ c = localStorage.getItem('kn_currency') || 'MYR'; }catch(e){} return (window.KN_RATE && KN_RATE[c]) ? c : 'MYR'; }
+  function money(v){ var c = cur(); if(c === 'MYR') return 'RM ' + Math.round(v).toLocaleString('en-US');
+    return '~' + KN_SYM[c] + ' ' + Math.round(v * KN_RATE[c]).toLocaleString('en-US'); }
+  function setDown(v, from){ v = Math.max(0, Math.min(90, isNaN(v) ? 0 : v));
+    if(from !== 'in') $('moDownPct').value = v; if(from !== 'rg') $('moDownRg').value = v; return v; }
   function calc(){
-    var price = num($('moPrice').value), rate = num($('moRate').value), years = num($('moYears').value) || 30;
+    var price = num($('moPrice').value), down = Math.max(0, Math.min(90, num($('moDownPct').value))), rate = num($('moRate').value), years = num($('moYears').value) || 35;
     var loan = price * (1 - down / 100), n = years * 12, i = rate / 100 / 12;
     var inst = loan <= 0 ? 0 : (i > 0 ? loan * i / (1 - Math.pow(1 + i, -n)) : loan / n);
-    $('moInst').textContent = rm(inst); $('moLoan').textContent = rm(loan);
-    $('moDown').textContent = rm(price - loan); $('moInt').textContent = rm(Math.max(inst * n - loan, 0));
-    var h = document.querySelector('[data-mo]'); if(h) h.textContent = rm(inst);
+    $('moInst').textContent = money(inst); $('moLoan').textContent = money(loan);
+    $('moDown').textContent = money(price - loan); $('moInt').textContent = money(Math.max(inst * n - loan, 0));
+    $('moDownAmt').textContent = money(price - loan);
+    $('moDownRg').style.setProperty('--p', down / 90 * 100 + '%');
+    var h = document.querySelector('[data-mo]'); if(h) h.textContent = money(inst);
+    $('moCur').value = cur();
     $('moFull').href = '../calculator.html?price=' + Math.round(price) + '&down=' + down + '&rate=' + rate + '&years=' + years + '&tab=cost';
   }
-  box.querySelectorAll('.mo-pills button').forEach(function(b){
-    b.addEventListener('click', function(){ down = +b.getAttribute('data-d');
-      box.querySelectorAll('.mo-pills button').forEach(function(x){ x.classList.toggle('on', x === b); }); calc(); });
-  });
+  $('moDownPct').addEventListener('input', function(){ setDown(num(this.value), 'in'); calc(); });
+  $('moDownPct').addEventListener('blur', function(){ setDown(num(this.value)); calc(); });
+  $('moDownRg').addEventListener('input', function(){ setDown(+this.value, 'rg'); calc(); });
   $('moPrice').addEventListener('input', calc); $('moRate').addEventListener('input', calc); $('moYears').addEventListener('change', calc);
   $('moPrice').addEventListener('blur', function(){ var v = num(this.value); this.value = v ? Math.round(v).toLocaleString('en-US') : ''; });
+  $('moCur').addEventListener('change', function(){ if(window.knSetCur) knSetCur(this.value); else { try{ localStorage.setItem('kn_currency', this.value); }catch(e){} } calc(); });
+  document.addEventListener('kncur', calc);
+  document.addEventListener('DOMContentLoaded', calc);
   calc();
 })();
 </script>"""
-MO_DEF = {'down': 10, 'rate': 4.0, 'years': 30}
+MO_DEF = {'down': 10, 'rate': 4.0, 'years': 35}
 
 
 def _instal(price, down=MO_DEF['down'], rate=MO_DEF['rate'], years=MO_DEF['years']):
@@ -297,18 +308,22 @@ def mo_block(p, name):
     wa = 'https://api.whatsapp.com/send/?phone=60102821568&text=%s&type=phone_number&app_absent=0' % quote_plus(
         "(KNRE) Hi Keith, I'm interested in %s and would like to know the loan options." % name)
     years = ''.join('<option value="%d"%s>%d</option>' % (y, ' selected' if y == MO_DEF['years'] else '', y) for y in (35, 30, 25, 20, 15, 10))
+    curs = ''.join('<option value="%s">%s</option>' % (c, c) for c in ('MYR', 'USD', 'SGD', 'CNY', 'JPY', 'KRW'))
     pills = ''.join('<button type="button" data-d="%d"%s>%d%%</button>' % (d, ' class="on"' if d == MO_DEF['down'] else '', d) for d in (10, 20, 30, 40))
     return ('<style>%s</style><section class="blk" id="loanCalc"><h2>Monthly Instalment Estimate</h2><div class="mo-box"><div class="mo-in">'
             '<label><span>Property price</span><div class="mo-f"><em>RM</em><input id="moPrice" inputmode="numeric" value="%s" aria-label="Property price"></div></label>'
-            '<div class="mo-row"><span>Down payment</span><div class="mo-pills">%s</div></div>'
+            '<label><span>Down payment</span><div class="mo-dp"><div class="mo-f"><input id="moDownPct" inputmode="decimal" value="%s" aria-label="Down payment"><em>%%</em></div><div class="mo-amt" id="moDownAmt"></div></div>'
+            '<input type="range" class="mo-rng" id="moDownRg" min="0" max="90" step="1" value="%s" aria-label="Down payment"></label>'
             '<label><span>Interest rate (%% p.a.)</span><div class="mo-f"><input id="moRate" inputmode="decimal" value="%.2f" aria-label="Interest rate"><em>%%</em></div></label>'
-            '<label><span>Loan tenure (years)</span><div class="mo-f"><select id="moYears" aria-label="Loan tenure">%s</select></div></label>'
+            '<label><span>Loan tenure (years)</span><div class="mo-f"><select id="moYears" aria-label="Loan tenure">%s</select></div>'
+            '<small class="mo-tip">Malaysians can borrow until age 70. Foreigners usually get a shorter tenure; contact Keith for advice.</small></label>'
+            '<label><span>Show in currency</span><div class="mo-f"><select id="moCur" aria-label="Currency">%s</select></div></label>'
             '</div><div class="mo-out"><small>Estimated monthly instalment</small><strong id="moInst">RM 0</strong>'
             '<ul><li><span>Loan amount</span><b id="moLoan"></b></li><li><span>Down payment</span><b id="moDown"></b></li><li><span>Total interest</span><b id="moInt"></b></li></ul>'
             '<div class="mo-acts"><a class="btn2" id="moFull" href="../calculator.html">Stamp duty &amp; legal fees →</a>'
             '<a class="wa-btn" href="%s" target="_blank" rel="noopener">Ask Keith about loan options</a></div></div></div>'
             '<p class="mo-note">Estimate only, based on the starting price. Your bank decides the final loan amount, interest rate and tenure; foreign buyers may need a larger down payment.</p>'
-            '</section>%s') % (MO_CSS, format(int(v), ','), pills, MO_DEF['rate'], years, E(wa), MO_JS)
+            '</section>%s') % (MO_CSS, format(int(v), ','), MO_DEF['down'], MO_DEF['down'], MO_DEF['rate'], years, curs, E(wa), MO_JS)
 
 
 def page(i):

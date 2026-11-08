@@ -111,7 +111,7 @@ main .wa-btn{white-space:normal;max-width:100%;text-align:center;justify-content
 JS = """<script>
 (function(){
 var NT=%s, LN=%s, CN=%s;
-var RATE={MYR:1,USD:0.21,SGD:0.285,CNY:1.52,JPY:31.5,KRW:290}, SYM={MYR:'RM',USD:'US$',SGD:'S$',CNY:'CN\\u00a5',JPY:'JP\\u00a5',KRW:'\\u20a9'};
+var RATE={MYR:1,USD:0.21,SGD:0.285,CNY:1.52,JPY:31.5,KRW:290}, SYM={MYR:'RM',USD:'US$',SGD:'S$',CNY:'CN\\u00a5',JPY:'JP\\u00a5',KRW:'\\u20a9'};window.KN_RATE=RATE;window.KN_SYM=SYM;
 function get(k,d){try{return localStorage.getItem(k)||d}catch(e){return d}}
 function put(k,v){try{localStorage.setItem(k,v)}catch(e){}}
 function navText(lang){document.querySelectorAll('[data-nav]').forEach(function(el){var k=el.getAttribute('data-nav');el.textContent=(lang!=='en'&&NT[k]&&NT[k][lang])||k;});}
@@ -125,7 +125,7 @@ function fmt(v,c){var x=v*(RATE[c]||1),s=SYM[c]||c;return '~'+s+' '+(x>=1e6?(x/1
 window.knSetCur=function(c){put('kn_currency',c);var lab=document.getElementById('knCurLab');if(lab)lab.textContent=c;
  document.querySelectorAll('#knCurMenu a').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-v')===c)});
  document.querySelectorAll('[data-price-myr]').forEach(function(el){if(!el.hasAttribute('data-orig'))el.setAttribute('data-orig',el.innerHTML);
-  el.innerHTML=c==='MYR'?el.getAttribute('data-orig'):((get('kn_lang','en') in FROM)?FROM[get('kn_lang','en')]:'From ')+fmt(parseFloat(el.getAttribute('data-price-myr')),c)+({'ja':' から','ko':'부터'}[get('kn_lang','en')]||'');});if(c==='MYR')pt(get('kn_lang','en'));mark();close();};
+  el.innerHTML=c==='MYR'?el.getAttribute('data-orig'):((get('kn_lang','en') in FROM)?FROM[get('kn_lang','en')]:'From ')+fmt(parseFloat(el.getAttribute('data-price-myr')),c)+({'ja':' から','ko':'부터'}[get('kn_lang','en')]||'');});if(c==='MYR')pt(get('kn_lang','en'));mark();close();try{document.dispatchEvent(new CustomEvent('kncur',{detail:c}))}catch(e){}};
 window.knTog=function(id,e){e.stopPropagation();var m=document.getElementById(id),o=!m.classList.contains('open');close();m.classList.toggle('open',o);};
 function close(){document.querySelectorAll('.kn-menu.open').forEach(function(m){m.classList.remove('open')});}
 document.addEventListener('click',close);
