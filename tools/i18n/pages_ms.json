@@ -297,5 +297,18 @@
 "tpl.pp_plans": "Pelan Lantai & Jenis Unit {name}",
 "tpl.pp_who": "Siapa yang Patut Mempertimbangkan {name}?",
 "tpl.pp_pop": "Carian Popular untuk {name}",
-"tpl.pp_take": "Mahu pandangan Keith tentang {name}?"
+"tpl.pp_take": "Mahu pandangan Keith tentang {name}?",
+"mo.from": "Anggaran ansuran bulanan dari",
+"mo.change": "Tukar bayaran pendahuluan & kadar",
+"mo.h2": "Anggaran Ansuran Bulanan",
+"mo.price": "Harga hartanah",
+"mo.down": "Bayaran pendahuluan",
+"mo.rate": "Kadar faedah (% setahun)",
+"mo.years": "Tempoh pinjaman (tahun)",
+"mo.est": "Anggaran ansuran bulanan",
+"mo.loan": "Jumlah pinjaman",
+"mo.int": "Jumlah faedah",
+"mo.full": "Duti setem & yuran guaman →",
+"mo.ask": "Tanya Keith tentang pilihan pinjaman",
+"mo.note": "Anggaran sahaja, berdasarkan harga permulaan. Bank anda menentukan jumlah pinjaman, kadar faedah dan tempoh akhir; pembeli asing mungkin perlu bayaran pendahuluan yang lebih besar."
 }
