@@ -228,7 +228,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
     <a href="compare.html">Compare Projects</a>
     <a href="blog.html">News</a>
     <a href="calculator.html">Calculator</a>
-    <a href="mm2h.html" class="active">MM2H 第二家园</a>
+    <a href="resources.html">Free Toolkit</a>
     <a href="about-keith.html">About Keith</a>
   </nav>
   <div class="nav-right">
@@ -696,6 +696,7 @@ function knToggleMenu(force){
       if(h===cur||(cur===''&&h==='index.html')) c.className='active';
       c.addEventListener('click',function(){ if(h==='index.html'&&cur==='index.html'){ knToggleMenu(false);} });
       L.appendChild(c);
+      if(h==='resources.html'){ var m2=document.createElement('a'); m2.href='mm2h.html'; m2.textContent='MM2H 第二家园'; if(cur==='mm2h.html') m2.className='active'; L.appendChild(m2); }
     });
     var lg=document.getElementById('knLang'); lg.innerHTML='';
     document.querySelectorAll('#langMenu a').forEach(function(a){

@@ -183,7 +183,7 @@ for label, names in PRESETS:
     seen.add(tuple(sorted(ids)))
     pre.append('<button type="button" class="cmp-preset" data-p="%s"><div class="t">%s</div><div class="s">%s</div></button>' % (
         ','.join(map(str, ids)), E(label), E(' · '.join(re.sub(r'^The ', '', rows[i]['name']) for i in ids))))
-PRE_HTML = ('\n    <!-- KN-CMP-PRESETS:START --><div class="cmp-presets"><div class="cmp-presets-head"><h3>Popular comparisons</h3>'
+PRE_HTML = ('\n    <!-- KN-CMP-PRESETS:START --><div class="cmp-presets" id="popular"><div class="cmp-presets-head"><h3>Popular comparisons</h3>'
             '<p>One tap to compare popular combinations.</p></div><div class="cmp-preset-row">%s</div></div><!-- KN-CMP-PRESETS:END -->\n') % ''.join(pre)
 s = re.sub(r'\n?\s*<!-- KN-CMP-PRESETS:START -->.*?<!-- KN-CMP-PRESETS:END -->\n', '\n', s, flags=re.S)
 m = re.search(r'id="cmpEmpty">.*?</div>\n    </div>\n', s, flags=re.S)   # below the project grid

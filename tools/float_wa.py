@@ -113,6 +113,12 @@ def add_mobile_nav(t):
     nav = re.search(r'<nav>(.*?)</nav>', t[h0:h1], re.S)
     wa = re.search(r'<a class="(?:wa-btn|float-wa)"[^>]*href="([^"]+)"', t)
     links = nav.group(1) if nav else ''
+    if 'mm2h.html' not in links:   # MM2H left the main menu for the Free Toolkit; keep it in the mobile menu
+        m = re.search(r'href="([^"]*)resources\.html"', links)
+        if m:
+            links = links.replace('</a>', '</a>', 1)
+            i = links.index(m.group(0)); j = links.index('</a>', i) + 4
+            links = links[:j] + '<a href="%smm2h.html">MM2H 第二家园</a>' % m.group(1) + links[j:]
     panel = ('<div id="knMnav" aria-hidden="true"><div class="kn-mbg" onclick="knMnav(false)"></div><div class="kn-mpanel">'
              '<button type="button" class="kn-mclose" aria-label="Close" onclick="knMnav(false)">&times;</button>'
              '<div class="kn-mlinks">%s</div>%s</div></div><!--/knMnav-->\n' % (
@@ -131,7 +137,7 @@ if __name__ == '__main__':
     pages = sorted(glob.glob('*.html'))
     for p in pages:
         fix_page(p)
-    sub = sorted(glob.glob('property/*.html') + glob.glob('article/*.html') + glob.glob('topic/*.html') + glob.glob('area/*.html') + glob.glob('best/*.html'))
+    sub = sorted(glob.glob('property/*.html') + glob.glob('article/*.html') + glob.glob('topic/*.html') + glob.glob('area/*.html') + glob.glob('best/*.html') + glob.glob('guides/*.html'))
     n = 0
     for p in pages + sub:
         s = open(p, encoding='utf-8').read()
