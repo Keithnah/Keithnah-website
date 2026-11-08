@@ -228,6 +228,12 @@ except ImportError:
     LBL['zh-TW'] = dict(LBL['zh-CN'])
 
 CSS = '''/* KN-CMP:START */
+  .cmp-bar.show{position:fixed; left:50%; bottom:20px; transform:translateX(-50%); z-index:950; width:min(640px, calc(100% - 32px)); margin:0; flex-wrap:nowrap; box-shadow:0 12px 34px rgba(17,17,17,.35); animation:cmpUp .3s var(--ease);}
+  .cmp-bar.show .btn{white-space:nowrap;} .cmp-bar.one .btn{opacity:.45;}
+  @keyframes cmpUp{from{transform:translate(-50%,30px); opacity:0;} to{transform:translateX(-50%); opacity:1;}}
+  body.cmp-bar-on .kn-fab{bottom:100px !important;} body.cmp-bar-on .cmp-wrap{padding-bottom:140px;}
+  @media(max-width:700px){ .cmp-bar.show{bottom:12px; padding:12px 14px; gap:10px;} .cmp-bar.show .btn{padding:10px 16px;} body.cmp-bar-on .kn-fab{bottom:86px !important;} }
+  .cmp-card-foot{flex-wrap:wrap;} .cmp-card-body{min-width:0;} .cmp-add-btn{flex-shrink:0;}
   .cmp-subs{margin:-8px 0 22px;} .cmp-sub{display:none; flex-wrap:wrap; gap:8px; padding:12px 14px; background:var(--bg); border-radius:10px;}
   .cmp-sub.show{display:flex;} .cmp-filter-btn em{font-style:normal;} .cmp-sub-btn{font-size:12px; padding:6px 13px; background:#fff;}
   .cmp-presets{margin:0 0 22px; padding:18px 18px 16px; border-radius:12px; background:linear-gradient(135deg,#f3f1fa,#fbfaf7); border:1px solid rgba(94,96,206,.15);}
@@ -453,6 +459,13 @@ JS = r'''<!-- KN-CMP:START -->
   document.querySelectorAll('.cmp-preset').forEach(function(b){
     b.addEventListener('click', function(){ compare(b.getAttribute('data-p').split(',').map(Number)); });
   });
+  var _rs = window.renderSelection;
+  window.renderSelection = function(){
+    var r = _rs.apply(this, arguments), n = selectedIdx.length, bar = document.getElementById('cmpBar');
+    if(bar){ bar.classList.toggle('show', n >= 1); bar.classList.toggle('one', n === 1); }
+    document.body.classList.toggle('cmp-bar-on', n >= 1);
+    return r;
+  };
   setup();
   function ph(){ var se = document.getElementById('cmpSearch'); if(se) se.placeholder = T('search'); }
   ph();

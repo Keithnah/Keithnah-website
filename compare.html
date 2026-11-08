@@ -249,36 +249,14 @@
 <link rel="icon" type="image/png" href="images/d795398568d23a46.png">
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<style id="kn-float">
-/* KN-FLOAT:START */
-a.float-wa.float-wa{position:fixed;right:22px;bottom:22px;z-index:60;display:inline-flex;align-items:center;gap:11px;width:auto;height:auto;
-  padding:13px 24px 13px 18px;border-radius:100px;background:#25D366;color:#fff;font:700 16px/1 'Inter',system-ui,sans-serif;letter-spacing:0;
-  text-decoration:none;animation:knWaPulse 2.6s ease-in-out infinite;transition:transform .25s ease;}
-a.float-wa.float-wa:hover{transform:translateY(-2px) scale(1.03);color:#fff;}
-a.float-wa.float-wa svg{width:26px;height:26px;flex:0 0 26px;fill:#fff;}
-a.float-wa.float-wa .fw-txt{white-space:nowrap;}
-@keyframes knWaPulse{
-  0%,100%{box-shadow:0 0 0 4px rgba(37,211,102,.18),0 0 14px 2px rgba(37,211,102,.30),0 8px 22px rgba(0,0,0,.16);}
-  50%{box-shadow:0 0 0 12px rgba(37,211,102,.10),0 0 30px 10px rgba(37,211,102,.45),0 8px 22px rgba(0,0,0,.16);}
-}
-@media(max-width:600px){a.float-wa.float-wa{right:16px;bottom:16px;padding:11px 18px 11px 14px;font-size:14px;gap:9px;}a.float-wa.float-wa svg{width:22px;height:22px;flex-basis:22px;}}
-@media(prefers-reduced-motion:reduce){a.float-wa.float-wa{animation:none;box-shadow:0 0 0 6px rgba(37,211,102,.18),0 8px 22px rgba(0,0,0,.16);}}
-/* back to top, above the WhatsApp button */
-.kn-fab{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:center;gap:12px;}
-.kn-fab a.float-wa.float-wa{position:static;right:auto;bottom:auto;}
-.kn-top{width:48px;height:48px;border-radius:50%;background:#fff;border:1.5px solid #d6d6d6;box-shadow:0 6px 18px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:#555;
-  opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility .25s,border-color .2s,color .2s;}
-.kn-top.show{opacity:1;visibility:visible;transform:none;}
-.kn-top:hover{border-color:var(--gold,#5E60CE);color:var(--gold,#5E60CE);}
-.kn-top svg{width:20px;height:20px;}
-@media(max-width:600px){.kn-fab{right:16px;bottom:16px;gap:10px;}.kn-top{width:44px;height:44px;}}
-@media(prefers-reduced-motion:reduce){.kn-top{transition:none;}}
-/* phones: the header WhatsApp button would push the menu button off screen; the floating button stays */
-@media(max-width:560px){header .whatsapp-btn,header .wa-btn,.nav-right .whatsapp-btn{display:none!important;}.hamburger{margin-left:auto;padding:6px 4px;}}
-/* KN-FLOAT:END */
-</style>
 <style id="kn-cmp">
 /* KN-CMP:START */
+  .cmp-bar.show{position:fixed; left:50%; bottom:20px; transform:translateX(-50%); z-index:950; width:min(640px, calc(100% - 32px)); margin:0; flex-wrap:nowrap; box-shadow:0 12px 34px rgba(17,17,17,.35); animation:cmpUp .3s var(--ease);}
+  .cmp-bar.show .btn{white-space:nowrap;} .cmp-bar.one .btn{opacity:.45;}
+  @keyframes cmpUp{from{transform:translate(-50%,30px); opacity:0;} to{transform:translateX(-50%); opacity:1;}}
+  body.cmp-bar-on .kn-fab{bottom:100px !important;} body.cmp-bar-on .cmp-wrap{padding-bottom:140px;}
+  @media(max-width:700px){ .cmp-bar.show{bottom:12px; padding:12px 14px; gap:10px;} .cmp-bar.show .btn{padding:10px 16px;} body.cmp-bar-on .kn-fab{bottom:86px !important;} }
+  .cmp-card-foot{flex-wrap:wrap;} .cmp-card-body{min-width:0;} .cmp-add-btn{flex-shrink:0;}
   .cmp-subs{margin:-8px 0 22px;} .cmp-sub{display:none; flex-wrap:wrap; gap:8px; padding:12px 14px; background:var(--bg); border-radius:10px;}
   .cmp-sub.show{display:flex;} .cmp-filter-btn em{font-style:normal;} .cmp-sub-btn{font-size:12px; padding:6px 13px; background:#fff;}
   .cmp-presets{margin:0 0 22px; padding:18px 18px 16px; border-radius:12px; background:linear-gradient(135deg,#f3f1fa,#fbfaf7); border:1px solid rgba(94,96,206,.15);}
@@ -311,6 +289,34 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
     .cmp-table td.best{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
   }
 /* KN-CMP:END */
+</style>
+<style id="kn-float">
+/* KN-FLOAT:START */
+a.float-wa.float-wa{position:fixed;right:22px;bottom:22px;z-index:60;display:inline-flex;align-items:center;gap:11px;width:auto;height:auto;
+  padding:13px 24px 13px 18px;border-radius:100px;background:#25D366;color:#fff;font:700 16px/1 'Inter',system-ui,sans-serif;letter-spacing:0;
+  text-decoration:none;animation:knWaPulse 2.6s ease-in-out infinite;transition:transform .25s ease;}
+a.float-wa.float-wa:hover{transform:translateY(-2px) scale(1.03);color:#fff;}
+a.float-wa.float-wa svg{width:26px;height:26px;flex:0 0 26px;fill:#fff;}
+a.float-wa.float-wa .fw-txt{white-space:nowrap;}
+@keyframes knWaPulse{
+  0%,100%{box-shadow:0 0 0 4px rgba(37,211,102,.18),0 0 14px 2px rgba(37,211,102,.30),0 8px 22px rgba(0,0,0,.16);}
+  50%{box-shadow:0 0 0 12px rgba(37,211,102,.10),0 0 30px 10px rgba(37,211,102,.45),0 8px 22px rgba(0,0,0,.16);}
+}
+@media(max-width:600px){a.float-wa.float-wa{right:16px;bottom:16px;padding:11px 18px 11px 14px;font-size:14px;gap:9px;}a.float-wa.float-wa svg{width:22px;height:22px;flex-basis:22px;}}
+@media(prefers-reduced-motion:reduce){a.float-wa.float-wa{animation:none;box-shadow:0 0 0 6px rgba(37,211,102,.18),0 8px 22px rgba(0,0,0,.16);}}
+/* back to top, above the WhatsApp button */
+.kn-fab{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.kn-fab a.float-wa.float-wa{position:static;right:auto;bottom:auto;}
+.kn-top{width:48px;height:48px;border-radius:50%;background:#fff;border:1.5px solid #d6d6d6;box-shadow:0 6px 18px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:#555;
+  opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility .25s,border-color .2s,color .2s;}
+.kn-top.show{opacity:1;visibility:visible;transform:none;}
+.kn-top:hover{border-color:var(--gold,#5E60CE);color:var(--gold,#5E60CE);}
+.kn-top svg{width:20px;height:20px;}
+@media(max-width:600px){.kn-fab{right:16px;bottom:16px;gap:10px;}.kn-top{width:44px;height:44px;}}
+@media(prefers-reduced-motion:reduce){.kn-top{transition:none;}}
+/* phones: the header WhatsApp button would push the menu button off screen; the floating button stays */
+@media(max-width:560px){header .whatsapp-btn,header .wa-btn,.nav-right .whatsapp-btn{display:none!important;}.hamburger{margin-left:auto;padding:6px 4px;}}
+/* KN-FLOAT:END */
 </style>
 </head>
 <body>
@@ -2089,6 +2095,13 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
   document.querySelectorAll('.cmp-preset').forEach(function(b){
     b.addEventListener('click', function(){ compare(b.getAttribute('data-p').split(',').map(Number)); });
   });
+  var _rs = window.renderSelection;
+  window.renderSelection = function(){
+    var r = _rs.apply(this, arguments), n = selectedIdx.length, bar = document.getElementById('cmpBar');
+    if(bar){ bar.classList.toggle('show', n >= 1); bar.classList.toggle('one', n === 1); }
+    document.body.classList.toggle('cmp-bar-on', n >= 1);
+    return r;
+  };
   setup();
   function ph(){ var se = document.getElementById('cmpSearch'); if(se) se.placeholder = T('search'); }
   ph();
