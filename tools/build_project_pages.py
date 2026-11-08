@@ -326,6 +326,42 @@ def mo_block(p, name):
             '</section>%s') % (MO_CSS, format(int(v), ','), MO_DEF['down'], MO_DEF['down'], MO_DEF['rate'], years, curs, E(wa), MO_JS)
 
 
+try:
+    VIDEOS = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'project_videos.json'), encoding='utf-8'))
+except (OSError, ValueError):
+    VIDEOS = {}
+YT_CSS = ('.yt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;}'
+          '.yt{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;cursor:pointer;box-shadow:0 14px 34px rgba(17,17,17,.12);}'
+          '.yt img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}'
+          '.yt:hover img{transform:scale(1.03);}'
+          '.yt button{position:absolute;inset:0;margin:auto;width:76px;height:54px;border:0;border-radius:14px;background:rgba(255,0,0,.9);cursor:pointer;display:flex;align-items:center;justify-content:center;}'
+          '.yt button svg{width:26px;height:26px;fill:#fff;}'
+          '.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}'
+          '.yt-more{display:inline-block;margin-top:14px;color:var(--gold);font-weight:600;font-size:14px;}')
+YT_JS = """<script>
+document.querySelectorAll('.yt[data-id]').forEach(function(el){
+  el.addEventListener('click', function(){
+    if(el.querySelector('iframe')) return;
+    el.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + el.getAttribute('data-id') + '?autoplay=1&rel=0" title="' + el.getAttribute('data-title') + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+  });
+});
+</script>"""
+
+
+def video_block(name, display):
+    ids = VIDEOS.get(name) or []
+    if not ids:
+        return ''
+    cards = ''.join(
+        '<div class="yt" data-id="%s" data-title="%s video tour" role="button" tabindex="0" aria-label="Play %s video">'
+        '<img src="https://i.ytimg.com/vi/%s/hqdefault.jpg" alt="%s video tour by Keith Nah" loading="lazy">'
+        '<button type="button" aria-label="Play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></div>' % (
+            v, E(display), E(display), v, E(display)) for v in ids)
+    return ('<style>%s</style><section class="blk" id="video"><h2>Video Tour</h2><div class="yt-grid">%s</div>'
+            '<a class="yt-more" href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener">More videos on Keith\'s YouTube channel →</a></section>%s') % (
+        YT_CSS, cards, YT_JS)
+
+
 def page(i):
     p, tg, slug = P[i], TAGS[i], SLUGS[i]
     name, display = p['name'], tg[0]
@@ -453,6 +489,7 @@ def page(i):
   {points_blk}
   {facts_blk}
   <section class="blk"><h2>Location</h2><p class="lead">{loctext}</p>{amen_blk}</section>
+  {video_blk}
   {layouts_blk}
   {fits_blk}
   {mo_blk}
@@ -485,7 +522,7 @@ document.addEventListener('click',function(e){{
         areahref=('../area/%s.html' % area_slug(area)) if state and os.path.exists('area/%s.html' % area_slug(area)) else '../projects.html#' + E(quote(state + '/' + area if state else area, safe='/')),
         statecrumb=('<a href="%s">%s</a><span>›</span>' % ((('../area/%s.html' % area_slug(state)) if os.path.exists('area/%s.html' % area_slug(state)) else '../projects.html#' + E(quote(state))), E(state))) if state else '', display=E(display),
         heroimg=('<img src="%s" alt="%s" fetchpriority="high">' % (E(up(photo)), E(display))) if photo else '<div class="hero-ph"><svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2"><path d="M60 190V70l40-30 40 30v120z"/><path d="M60 90h80M60 110h80M60 130h80M60 150h80M85 190v-25h30v25"/></svg></div>',
-        status=E(p.get('status')), ptype=E(TYPE.get(i, 'Residential')), loc=E(p['loc']), price=SH.price_tag(E(p.get('price')), _myr(p.get('price'))), moline=mo_line(p), mo_blk=mo_block(p, name),
+        status=E(p.get('status')), ptype=E(TYPE.get(i, 'Residential')), loc=E(p['loc']), price=SH.price_tag(E(p.get('price')), _myr(p.get('price'))), moline=mo_line(p), mo_blk=mo_block(p, name), video_blk=video_block(name, display),
         tags=tags, stats=stats, overview=E(p.get('overview')), loctext=E(p.get('loc_text')),
         points_blk=('<section class="blk"><h2>Top Highlights</h2><div class="points">%s</div></section>' % points) if points else '',
         facts_blk=('<section class="blk"><h2>Project Details</h2><div class="pi"><div class="pi-head">Project Information</div><table>%s</table></div></section>' % facts) if facts else '',
