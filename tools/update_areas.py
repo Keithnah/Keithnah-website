@@ -268,11 +268,9 @@ def main():
     src, n = re.subn(r'data-idx="(\d+)" onclick="openDetailModal\(\1\)">.*?<span class="proj-tag">.*?</span>', lab, src, flags=re.S)
     assert n == len(P), n
 
-    # 1b) Cards in alphabetical order (View Projects and Compare)
+    # 1b) Cards in alphabetical order (View Projects)
     src = sort_cards(src, r'<div class="proj-card"', '<div class="proj-grid" id="projGrid">', '  </div></div>\n  </div>', P)
-    cmp = open('compare.html', encoding='utf-8').read()
-    cmp = sort_cards(cmp, r'<div class="cmp-card"', '<div class="cmp-grid" id="cmpGrid">\n', '  </div>\n    <div class="cmp-empty"', P)
-    open('compare.html', 'w', encoding='utf-8').write(cmp)
+    # (compare.html cards are built, A-Z, by build_compare.py)
 
     # 2) The Location list
     acc = '<button type="button" class="sb-all active"><span>All Malaysia</span><em>%d</em></button>' % len(P)
