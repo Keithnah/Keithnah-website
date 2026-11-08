@@ -297,5 +297,20 @@
 "tpl.pp_plans": "{name}平面图与户型",
 "tpl.pp_who": "{name}适合谁？",
 "tpl.pp_pop": "{name}热门搜索",
-"tpl.pp_take": "想听 Keith 对{name}的看法？"
+"tpl.pp_take": "想听 Keith 对{name}的看法？",
+"mo.from": "月供约",
+"mo.change": "更改首付和利率",
+"mo.h2": "月供估算",
+"mo.price": "房价",
+"mo.down": "首付",
+"mo.rate": "利率（年息 %）",
+"mo.years": "贷款年限（年）",
+"mo.est": "估算月供",
+"mo.loan": "贷款额",
+"mo.int": "总利息",
+"mo.full": "印花税与律师费 →",
+"mo.ask": "向 Keith 询问贷款方案",
+"mo.note": "仅为估算，按起价计算。最终贷款额、利率和年限由银行决定；外国买家可能需要更高的首付。",
+"mo.tip": "马来西亚公民可贷款至 70 岁。外国人的贷款年限通常较短，请联系 Keith 了解详情。",
+"mo.cur": "显示货币"
 }

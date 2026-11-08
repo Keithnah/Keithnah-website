@@ -1365,6 +1365,13 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
   });
   function syncNat(from, to){ document.querySelectorAll('input[name='+from+']').forEach(function(el){ el.addEventListener('change', function(){ document.querySelectorAll('input[name='+to+']').forEach(function(o){ o.checked = (o.value === el.value) && el.checked || o.checked && o.value === el.value; }); const t = document.querySelector('input[name='+to+'][value='+el.value+']'); if(t) t.checked = true; recalc(); }); }); }
   syncNat('d_buyer','d_nat'); syncNat('d_nat','d_buyer');
+  // Opened from a project page: ?price=&down=&rate=&years=&tab=
+  try {
+    const q = new URLSearchParams(location.search);
+    ['price','down','rate','years'].forEach(function(k){ const v = parseFloat(q.get(k)); if(!isNaN(v)) setVal(k, v); });
+    const tb = q.get('tab'), btn = tb && document.querySelector('.calc-opt[data-tab="'+tb+'"]');
+    if(btn) btn.click();
+  } catch(e) {}
   recalc();
 })();
 </script>
