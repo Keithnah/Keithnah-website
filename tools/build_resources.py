@@ -333,3 +333,49 @@ for k, (en_, tr) in MM.items():
     ix = ix[:d0] + entry + ix[d0:]
 open('index.html', 'w', encoding='utf-8').write(ix)
 print('home: MM2H section')
+
+# ---------- credential badge (REN number + agency) on the home and About Keith pages ----------
+REN_HTML = ('<p class="keith-ren"><span class="kr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.8 4.5 5.6v5.6c0 4.6 3.1 8.6 7.5 10 4.4-1.4 7.5-5.4 7.5-10V5.6z"/>'
+            '<path d="m8.6 12.2 2.4 2.4 4.6-4.8"/></svg></span><span class="kr-a"><small>Registered Estate Negotiator</small><b>REN 60517</b></span>'
+            '<span class="kr-sep" aria-hidden="true"></span><span class="kr-b"><small>Agency</small><b>IQI Global</b></span></p>')
+REN_CSS = ('.keith-hero-copy p.keith-ren{display:inline-flex; align-items:center; gap:14px; margin:4px 0 18px; padding:10px 18px 10px 10px; border-radius:16px;'
+           ' background:linear-gradient(135deg,#f3f1fa,#fff); border:1px solid rgba(94,96,206,.25); box-shadow:0 8px 22px rgba(29,27,79,.08); color:#1d1b4f; line-height:1.25; max-width:none;}'
+           ' .keith-ren .kr-ic{width:40px; height:40px; flex-shrink:0; border-radius:12px; background:#5E60CE; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(94,96,206,.35);}'
+           ' .keith-ren .kr-ic svg{width:22px; height:22px; fill:none; stroke:#fff; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;}'
+           ' .keith-ren small{display:block; font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#6b6a85;}'
+           ' .keith-ren b{display:block; font-size:17px; font-weight:800; letter-spacing:.02em; color:#1d1b4f;}'
+           ' .keith-ren .kr-sep{width:1px; align-self:stretch; background:rgba(94,96,206,.25);}'
+           ' @media(max-width:480px){.keith-hero-copy p.keith-ren{gap:10px; padding:8px 14px 8px 8px;} .keith-ren .kr-ic{width:34px; height:34px;} .keith-ren b{font-size:15px;} .keith-ren small{font-size:9.5px; letter-spacing:.06em;}}')
+REN_TR = {'Registered Estate Negotiator': {'zh-CN': '注册房产经纪', 'ms': 'Perunding Hartanah Berdaftar', 'ja': '登録不動産ネゴシエーター', 'ko': '등록 부동산 중개인'},
+          'Agency': {'zh-CN': '所属公司', 'ms': 'Agensi', 'ja': '所属会社', 'ko': '소속 회사'}}
+for f in ('index.html', 'about-keith.html'):
+    t = open(f, encoding='utf-8').read()
+    o = t
+    h = REN_HTML
+    if 'const I18N = {' in t:   # the home page translates through data-i18n
+        h = h.replace('<small>Registered Estate Negotiator</small>', '<small data-i18n="kr_l1">Registered Estate Negotiator</small>').replace(
+            '<small>Agency</small>', '<small data-i18n="kr_l2">Agency</small>')
+        for k, en_ in (('kr_l1', 'Registered Estate Negotiator'), ('kr_l2', 'Agency')):
+            tr = dict(REN_TR[en_]); tr['zh-TW'] = _cc(tr['zh-CN'])
+            t = re.sub(r'\n  "%s": \{[^}]*\},' % k, '', t)
+            d0 = t.index('const I18N = {') + len('const I18N = {')
+            t = t[:d0] + '\n  "%s": %s,' % (k, json.dumps(tr, ensure_ascii=False)) + t[d0:]
+    t = re.sub(r'<p class="keith-ren">.*?</p>', lambda _: h, t, count=1, flags=re.S)
+    t = re.sub(r'\.keith-hero-copy p\.keith-ren\{[^}]*\}(?: \.keith-ren [^\n]*)?', lambda _: REN_CSS, t, count=1)
+    if t != o:
+        open(f, 'w', encoding='utf-8').write(t)
+for l in ['zh-CN', 'zh-TW', 'ms', 'ja', 'ko']:
+    p = 'i18n-projects-%s.js' % l
+    t = open(p, encoding='utf-8').read()
+    m = 'window.KN_TR["%s"]=' % l
+    a = t.index(m) + len(m)
+    d, n = json.JSONDecoder().raw_decode(t[a:])
+    ch = False
+    for en_, tr in REN_TR.items():
+        v = tr.get(l) or _cc(tr['zh-CN'])
+        if d.get(en_) != v:
+            d[en_] = v
+            ch = True
+    if ch:
+        open(p, 'w', encoding='utf-8').write(t[:a] + json.dumps(d, ensure_ascii=False, separators=(',', ':')) + t[a + n:])
+print('credential badge updated')
