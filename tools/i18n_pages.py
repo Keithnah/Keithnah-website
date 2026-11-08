@@ -52,6 +52,7 @@ UI.update({"pp.price": "Starting Price", "pp.compare": "Compare projects", "pp.h
 UI.update({"mo.from": "Est. monthly instalment from", "mo.change": "Change down payment & rate", "mo.h2": "Monthly Instalment Estimate", "mo.price": "Property price", "mo.down": "Down payment", "mo.rate": "Interest rate (% p.a.)", "mo.years": "Loan tenure (years)", "mo.est": "Estimated monthly instalment", "mo.loan": "Loan amount", "mo.int": "Total interest", "mo.full": "Stamp duty & legal fees →", "mo.ask": "Ask Keith about loan options", "mo.note": "Estimate only, based on the starting price. Your bank decides the final loan amount, interest rate and tenure; foreign buyers may need a larger down payment."})
 UI.update({"mo.tip": "Malaysians can borrow until age 70. Foreigners usually get a shorter tenure; contact Keith for advice.", "mo.cur": "Show in currency"})
 UI.update({"yt.h2": "Video Tour", "yt.more": "More videos on Keith's YouTube channel →"})
+UI.update({"map.note": "Pins show each project's approximate location. Tap a pin to see the project."})
 # Sentence patterns: {x} is any text; groups named in TRG are translated too (and must be translatable).
 TPL = {
     'tpl.h1year': '{h} ({y})', 'tpl.updated_n': 'Updated {y} · {n} projects', 'tpl.updated': 'Updated {y}',
@@ -74,6 +75,7 @@ TPL = {
     'tpl.other_areas': 'Other areas in {state}', 'tpl.all_of': 'All of {state}', 'tpl.areas_in': 'Areas in {state}',
     'tpl.popular': 'Popular lists with {place} projects', 'tpl.area_cta': 'Looking for a home or investment in {place}?',
     'tpl.card_status': '{place} · {st}',
+    'tpl.map_h2': 'Map of new launches in {place}',
     'tpl.pp_about': 'About {name}',
     'tpl.pp_plans': '{name} Floor Plans & Unit Types',
     'tpl.pp_who': 'Who Should Consider {name}?',

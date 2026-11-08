@@ -314,5 +314,7 @@
 "mo.tip": "Rakyat Malaysia boleh meminjam sehingga umur 70 tahun. Warga asing biasanya mendapat tempoh lebih pendek; hubungi Keith untuk nasihat.",
 "mo.cur": "Papar dalam mata wang",
 "yt.h2": "Lawatan Video",
-"yt.more": "Lagi video di saluran YouTube Keith →"
+"yt.more": "Lagi video di saluran YouTube Keith →",
+"map.note": "Pin menunjukkan anggaran lokasi setiap projek. Tekan pin untuk melihat projek.",
+"tpl.map_h2": "Peta pelancaran baharu di {place}"
 }

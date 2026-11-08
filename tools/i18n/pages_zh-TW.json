@@ -314,5 +314,7 @@
 "mo.tip": "馬來西亞公民可貸款至 70 歲。外國人的貸款年限通常較短，請聯繫 Keith 瞭解詳情。",
 "mo.cur": "顯示貨幣",
 "yt.h2": "視頻介紹",
-"yt.more": "在 Keith 的 YouTube 頻道看更多視頻 →"
+"yt.more": "在 Keith 的 YouTube 頻道看更多視頻 →",
+"map.note": "圖釘顯示每個項目的大概位置。點擊圖釘查看項目。",
+"tpl.map_h2": "{place}新盤地圖"
 }
