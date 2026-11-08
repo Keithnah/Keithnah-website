@@ -379,3 +379,69 @@ for l in ['zh-CN', 'zh-TW', 'ms', 'ja', 'ko']:
     if ch:
         open(p, 'w', encoding='utf-8').write(t[:a] + json.dumps(d, ensure_ascii=False, separators=(',', ':')) + t[a + n:])
 print('credential badge updated')
+
+# ---------- home page: Explore By Location, one compact card per state (from the live project data) ----------
+_groups = A.groups()
+_cmp = G.CMP
+_states = []
+for st, sub in _groups.items():
+    ids = [k for v in sub.values() for k in v]
+    if ids:
+        _states.append((st, sub, ids))
+_states.sort(key=lambda x: (-len(x[2]), x[0]))
+_used = set()
+_cards = []
+ARR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
+for st, sub, ids in _states:
+    prices = [_cmp[A.P[k]['name']]['nPrice'] for k in ids if _cmp.get(A.P[k]['name'], {}).get('nPrice')]
+    withp = sorted((k for k in ids if A.PHOTO.get(k)), key=lambda k: -(_cmp.get(A.P[k]['name'], {}).get('nPrice') or 0))
+    k = next((k for k in withp if A.PHOTO[k] not in _used), withp[0] if withp else None)
+    if k is not None:
+        _used.add(A.PHOTO[k])
+    areas = [a for a, _ in sorted(sub.items(), key=lambda kv: (-len(kv[1]), kv[0])) if a != st][:4]
+    chips = ''.join('<a href="area/%s.html">%s<i></i></a>' % (A.slug(a), E(a)) for a in areas)
+    low = min(prices) if prices else None
+    _cards.append(
+        '<div class="ls-card"><a class="ls-img" href="area/{s}.html"><img src="{img}" alt="{st}" loading="lazy"><span class="ls-n"><b>{n}</b> <span data-i18n="loc_projects">projects</span></span></a>'
+        '<div class="ls-b"><a class="ls-h" href="area/{s}.html"><h3>{st}{arr}</h3></a>{low}<div class="ls-chips">{chips}</div></div></div>'.format(
+            s=A.slug(st), img=E(A.PHOTO.get(k, '')) if k is not None else '', st=E(st), n=len(ids), arr=ARR, chips=chips,
+            low=('<p class="ls-from"><span data-i18n="loc_from">From</span> %s</p>' % E(G.rm(low))) if low else ''))
+LOC_CSS = ('<style>.ls-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:12px;}'
+           '.ls-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;}'
+           '.ls-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(17,17,17,.08);}'
+           '.ls-img{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:#eceaf6;}'
+           '.ls-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;} .ls-card:hover .ls-img img{transform:scale(1.05);}'
+           '.ls-n{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.94);color:#1d1b4f;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:100px;}'
+           '.ls-n b{font-weight:800;}'
+           '.ls-b{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1;}'
+           '.ls-h h3{font-size:18px;display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0;}'
+           '.ls-h svg{width:16px;height:16px;fill:none;stroke:var(--gold);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s;} .ls-card:hover .ls-h svg{transform:translateX(3px);}'
+           '.ls-from{font-size:12.5px;color:var(--grey);font-weight:600;margin:0;}'
+           '.ls-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}'
+           '.ls-chips a{font-size:11.5px;font-weight:600;color:#3d3c55;background:#f3f1fa;border-radius:100px;padding:4px 10px;transition:background .2s,color .2s;}'
+           '.ls-chips a:hover{background:var(--gold);color:#fff;} .ls-chips i{display:none;}'
+           '@media(max-width:1000px){.ls-grid{grid-template-columns:repeat(3,1fr);}}'
+           '@media(max-width:640px){.ls-grid{grid-template-columns:1fr 1fr;gap:10px;} .ls-b{padding:10px 12px 12px;} .ls-h h3{font-size:15.5px;} .ls-chips a{font-size:10.5px;padding:3px 8px;} .ls-from{font-size:11.5px;}}</style>')
+LOC_HTML = '<!-- KN-LOC:START -->' + LOC_CSS + '<div class="ls-grid">' + ''.join(_cards) + '</div><!-- KN-LOC:END -->\n'
+ix = open('index.html', encoding='utf-8').read()
+s0 = ix.index('<section id="locations">')
+s1 = ix.index('</section>', s0)
+blk = ix[s0:s1]
+if '<!-- KN-LOC:START -->' in blk:
+    blk = re.sub(r'<!-- KN-LOC:START -->.*?<!-- KN-LOC:END -->\n', lambda _: LOC_HTML, blk, flags=re.S)
+else:
+    g0 = blk.index('<div class="loc-grid">')
+    blk = blk[:g0] + LOC_HTML
+blk = re.sub(r'(data-i18n="loc_p">)[^<]*', lambda m: m.group(1) + "Browse every new launch by state, then open a state for its areas, prices and a map.", blk)
+ix = ix[:s0] + blk + ix[s1:]
+LOC_TR = {'loc_projects': {'zh-CN': '个项目', 'ms': 'projek', 'ja': '件', 'ko': '개 프로젝트'},
+          'loc_from': {'zh-CN': '起价', 'ms': 'Dari', 'ja': '最低価格', 'ko': '시작가'},
+          'loc_p': {'zh-CN': '按州浏览所有新楼盘，点进每个州查看地区、价格和地图。', 'ms': 'Lihat semua projek baharu mengikut negeri, kemudian buka negeri untuk kawasan, harga dan peta.',
+                    'ja': '州ごとに新築物件を見て、各州のエリア・価格・地図をチェック。', 'ko': '주별로 모든 신규 분양을 살펴보고, 주를 열어 지역·가격·지도를 확인하세요.'}}
+for k_, tr in LOC_TR.items():
+    tr = dict(tr); tr['zh-TW'] = _cc(tr['zh-CN'])
+    ix = re.sub(r'\n  "%s": \{[^}]*\},' % k_, '', ix)
+    d0 = ix.index('const I18N = {') + len('const I18N = {')
+    ix = ix[:d0] + '\n  "%s": %s,' % (k_, json.dumps(tr, ensure_ascii=False)) + ix[d0:]
+open('index.html', 'w', encoding='utf-8').write(ix)
+print('home: %d state cards' % len(_cards))
