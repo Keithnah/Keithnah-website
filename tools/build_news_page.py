@@ -19,7 +19,7 @@ from news_content import AS_AT, EXTRA_ARTICLES, EXTRA_CARDS, GUIDES, LABELS, TOP
 from news_pages import ART_SLUGS, write_pages
 import news_i18n
 
-LANGS = ['zh-CN', 'zh-TW', 'ms', 'ta', 'ja', 'ko', 'ar']
+LANGS = ['zh-CN', 'zh-TW', 'ms', 'ja', 'ko']  # Tamil and Arabic were removed from the site
 PAGE = 'blog.html'
 
 

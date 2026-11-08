@@ -9,6 +9,9 @@ Then run, from the repository root:
     python3 tools/build_all.py
 That rebuilds tags, area guides, the best-of lists (new projects join every
 list whose rule they match), project pages, news, sitemap and llms.txt.
+New project texts also need translations: add them to tools/i18n/proj_en.json and a
+file in tools/i18n/proj_tr/ ({id: [zh-CN, ms, ja, ko]}); build_all merges them.
+The site's languages are English, 简体中文, 繁體中文, Bahasa Malaysia, 日本語 and 한국어.
 
 Usage: python3 tools/add_projects.py tools/new_projects/<file>.json
 """

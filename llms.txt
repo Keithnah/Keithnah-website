@@ -2,10 +2,10 @@
 
 > Keith Nah (鈞晖, REN 60517, IQI Global) is a registered real estate negotiator in Malaysia who helps local and international buyers choose new-launch condominiums and homes, mainly in Kuala Lumpur (KL City Centre, TRX, Bukit Bintang, Bangsar, Bukit Jalil), with projects also in Selangor, Penang and Johor. Buyers pay no agent fee on new launches. Each project page lists price, sizes, bedrooms, tenure, completion date and floor plans. Contact: WhatsApp +60102821568.
 
-The site is available in English, 简体中文, 繁體中文, Bahasa Malaysia, தமிழ், 日本語, 한국어 and العربية. Prices are indicative; buyers should confirm current figures with Keith.
+The site is available in English, 简体中文, 繁體中文, Bahasa Malaysia, 日本語 and 한국어. Prices are indicative; buyers should confirm current figures with Keith.
 
 ## Main pages
-- [Home](https://keithnah.com/): who Keith is, featured projects and 47 common buyer questions
+- [Home](https://keithnah.com/): who Keith is, featured projects and common buyer questions
 - [All projects](https://keithnah.com/projects.html): every project, searchable by area, price, type and tag
 - [Compare projects](https://keithnah.com/compare.html): side-by-side comparison
 - [Buying guides, FAQ and news](https://keithnah.com/blog.html): buying a new property, buying a subsale home, rules for foreign buyers

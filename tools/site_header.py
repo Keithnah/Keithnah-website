@@ -14,7 +14,7 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link href=
 NAV = [('', 'Home'), ('projects.html', 'View Projects'), ('compare.html', 'Compare Projects'), ('blog.html', 'News'),
        ('calculator.html', 'Calculator'), ('mm2h.html', 'MM2H 第二家园'), ('about-keith.html', 'About Keith')]
 LANGS = [('en', 'gb', 'English'), ('zh-CN', 'cn', '简体中文'), ('zh-TW', 'tw', '繁體中文'), ('ms', 'my', 'Bahasa Malaysia'),
-         ('ta', 'in', 'தமிழ்'), ('ja', 'jp', '日本語'), ('ko', 'kr', '한국어'), ('ar', 'sa', 'العربية')]
+         ('ja', 'jp', '日本語'), ('ko', 'kr', '한국어')]
 CURS = [('MYR', 'my', 'Malaysian Ringgit'), ('USD', 'us', 'US Dollar'), ('SGD', 'sg', 'Singapore Dollar'),
         ('CNY', 'cn', 'Chinese Yuan'), ('JPY', 'jp', 'Japanese Yen'), ('KRW', 'kr', 'Korean Won')]
 NAV_TR = {
@@ -118,7 +118,7 @@ function navText(lang){document.querySelectorAll('[data-nav]').forEach(function(
 var FROM={'en':'From ','zh-CN':'\u8d77\u4ef7 ','zh-TW':'\u8d77\u50f9 ','ms':'Dari ','ta':'\u0ba4\u0bca\u0b9f\u0b95\u0bcd\u0b95\u0bae\u0bcd ','ja':'','ko':'','ar':'\u0645\u0646 '};
 function pt(lang){var T=window.KN_PT||[];document.querySelectorAll('[data-pt]').forEach(function(el){if(!el.hasAttribute('data-en'))el.setAttribute('data-en',el.textContent);
  var r=T[+el.getAttribute('data-pt')]||{};el.textContent=(lang!=='en'&&r[lang])||el.getAttribute('data-en');});}
-window.knSetLang=function(l){put('kn_lang',l);document.documentElement.setAttribute('lang',l);pt(l);var lab=document.getElementById('knLangLab');if(lab)lab.textContent=LN[l]||'English';
+window.knSetLang=function(l){if(!LN[l])l='en';put('kn_lang',l);document.documentElement.setAttribute('lang',l);pt(l);var lab=document.getElementById('knLangLab');if(lab)lab.textContent=LN[l]||'English';
  document.querySelectorAll('#knLangMenu a').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-v')===l)});
  document.documentElement.setAttribute('dir',l==='ar'?'rtl':'ltr');navText(l);if(window.knSetCur)knSetCur(get('kn_currency','MYR'));mark();close();};
 function fmt(v,c){var x=v*(RATE[c]||1),s=SYM[c]||c;return '~'+s+' '+(x>=1e6?(x/1e6).toFixed(2)+'M':Math.round(x/1e3)+'K');}

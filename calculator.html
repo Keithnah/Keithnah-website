@@ -536,10 +536,8 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
         <a onclick="setLanguage('zh-CN')"><img class="kn-flag" src="images/flags/cn.svg" alt="" width="20" height="15">简体中文</a>
         <a onclick="setLanguage('zh-TW')"><img class="kn-flag" src="images/flags/tw.svg" alt="" width="20" height="15">繁體中文</a>
         <a onclick="setLanguage('ms')"><img class="kn-flag" src="images/flags/my.svg" alt="" width="20" height="15">Bahasa Malaysia</a>
-        <a onclick="setLanguage('ta')"><img class="kn-flag" src="images/flags/in.svg" alt="" width="20" height="15">தமிழ்</a>
         <a onclick="setLanguage('ja')"><img class="kn-flag" src="images/flags/jp.svg" alt="" width="20" height="15">日本語</a>
         <a onclick="setLanguage('ko')"><img class="kn-flag" src="images/flags/kr.svg" alt="" width="20" height="15">한국어</a>
-        <a onclick="setLanguage('ar')"><img class="kn-flag" src="images/flags/sa.svg" alt="" width="20" height="15">العربية</a>
       </div>
     </div>
     <div class="lang-switch" id="currSwitch">
@@ -983,7 +981,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
 
 <script>
   // ---- Language switcher (site-wide, shared with home page) ----
-  const LANG_NAMES = {"en": "English", "zh-CN": "简体中文", "zh-TW": "繁體中文", "ms": "Bahasa Malaysia", "ta": "தமிழ்", "ja": "日本語", "ko": "한국어", "ar": "العربية"};
+  const LANG_NAMES = {"en": "English", "zh-CN": "简体中文", "zh-TW": "繁體中文", "ms": "Bahasa Malaysia", "ja": "日本語", "ko": "한국어"};
   let currentLang = 'en';
 
   function setLanguage(lang){
@@ -1015,6 +1013,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
   (function initLang(){
     let saved = 'en';
     try { saved = localStorage.getItem('kn_lang') || 'en'; } catch(e) {}
+    if (!(saved in LANG_NAMES)) saved = 'en';
     setLanguage(saved);
   })();
 

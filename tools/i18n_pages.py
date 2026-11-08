@@ -17,7 +17,7 @@ import os
 import re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-LANGS = ['zh-CN', 'zh-TW', 'ms', 'ta', 'ja', 'ko', 'ar']
+LANGS = ['zh-CN', 'zh-TW', 'ms', 'ja', 'ko']  # Tamil and Arabic were removed from the site
 
 UI = {
     'ui.home': 'Home', 'ui.bestlists': 'Best new launch lists', 'ui.projects': 'Projects', 'ui.malaysia': 'Malaysia',
