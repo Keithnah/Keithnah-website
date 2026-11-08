@@ -101,6 +101,7 @@ header .wa-btn:hover{box-shadow:0 8px 20px rgba(37,211,102,.4);}
 header .kn-burger{margin-left:0;}
 @media(max-width:1349px){header nav,.nav-right .kn-sw{display:none;} header .kn-burger{display:block;}}
 @media(max-width:560px){header .wa-btn{display:none!important;}}
+main .wa-btn{white-space:normal;max-width:100%;text-align:center;justify-content:center;}
 #knMnav .kn-msub{margin:22px 0 8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#a9a6d6;}
 #knMnav .kn-mchips{display:flex;flex-wrap:wrap;gap:8px;}
 #knMnav .kn-mchips button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer;}
@@ -124,7 +125,7 @@ function fmt(v,c){var x=v*(RATE[c]||1),s=SYM[c]||c;return '~'+s+' '+(x>=1e6?(x/1
 window.knSetCur=function(c){put('kn_currency',c);var lab=document.getElementById('knCurLab');if(lab)lab.textContent=c;
  document.querySelectorAll('#knCurMenu a').forEach(function(a){a.classList.toggle('active',a.getAttribute('data-v')===c)});
  document.querySelectorAll('[data-price-myr]').forEach(function(el){if(!el.hasAttribute('data-orig'))el.setAttribute('data-orig',el.innerHTML);
-  el.innerHTML=c==='MYR'?el.getAttribute('data-orig'):(FROM[get('kn_lang','en')]||'From ')+fmt(parseFloat(el.getAttribute('data-price-myr')),c);});if(c==='MYR')pt(get('kn_lang','en'));mark();close();};
+  el.innerHTML=c==='MYR'?el.getAttribute('data-orig'):((get('kn_lang','en') in FROM)?FROM[get('kn_lang','en')]:'From ')+fmt(parseFloat(el.getAttribute('data-price-myr')),c)+({'ja':' から','ko':'부터'}[get('kn_lang','en')]||'');});if(c==='MYR')pt(get('kn_lang','en'));mark();close();};
 window.knTog=function(id,e){e.stopPropagation();var m=document.getElementById(id),o=!m.classList.contains('open');close();m.classList.toggle('open',o);};
 function close(){document.querySelectorAll('.kn-menu.open').forEach(function(m){m.classList.remove('open')});}
 document.addEventListener('click',close);
