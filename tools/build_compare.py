@@ -148,30 +148,46 @@ s = s[:f0] + '<div class="cmp-filter-wrap" id="cmpFilters">\n' + '\n'.join(chips
 # ---------- popular comparison presets ----------
 
 
-def cheapest(ok, n=3):
-    c = sorted((r for r in rows if ok(r) and r['nPrice']), key=lambda r: r['nPrice'])[:n]
+def pick(ok, key='nPrice', rev=False, n=3):
+    c = sorted((r for r in rows if ok(r) and r.get(key)), key=lambda r: r[key], reverse=rev)[:n]
     return [r['name'] for r in c]
 
 
+cheapest = pick
+KL = lambda r: r['state'] == 'Kuala Lumpur'
 PRESETS = [
     ('Bukit Jalil trio', ['The Kingswoodz', 'The Queenswoodz', 'The Vividz']),
-    ('KL City Centre under RM1M', cheapest(lambda r: r['area'] == 'KL City Centre' and (r['nPrice'] or 9e9) < 1e6)),
-    ('Freehold near MRT/LRT', cheapest(lambda r: r['tenure'].lower().startswith('freehold') and re.search(r'\b(MRT|LRT)\b', r['rail']))),
-    ('Johor Bahru near RTS Link', cheapest(lambda r: r['state'] == 'Johor' and 'RTS' in r['rail'])),
-    ('Kwasa Damansara MRT', cheapest(lambda r: r['area'] == 'Kwasa Damansara')),
-    ('Penang best value', cheapest(lambda r: r['state'] == 'Penang')),
+    ('KL City Centre under RM1M', pick(lambda r: r['area'] == 'KL City Centre' and (r['nPrice'] or 9e9) < 1e6)),
+    ('Freehold near MRT/LRT', pick(lambda r: r['tenure'].lower().startswith('freehold') and re.search(r'\b(MRT|LRT)\b', r['rail']))),
+    ('Luxury Kuala Lumpur', pick(KL, rev=True)),
+    ('Lowest psf in Kuala Lumpur', pick(KL, 'nPsf')),
+    ('Under RM500K', pick(lambda r: (r['nPrice'] or 9e9) < 5e5)),
+    ('Ready to move in', pick(lambda r: r['status'].lower() == 'completed')),
+    ('Completing soonest', pick(lambda r: (r['nYear'] or 0) > 0, 'nYear')),
+    ('Biggest homes under RM1.5M', pick(lambda r: (r['nPrice'] or 9e9) < 1.5e6, 'nSize', rev=True)),
+    ('Low-density living', pick(lambda r: True, 'nUnits')),
+    ('Lowest maintenance fee', pick(lambda r: True, 'nMaint')),
+    ('Selangor under RM700K', pick(lambda r: r['state'] == 'Selangor' and (r['nPrice'] or 9e9) < 7e5)),
+    ('Kwasa Damansara MRT', pick(lambda r: r['area'] == 'Kwasa Damansara')),
+    ('Damansara Heights', pick(lambda r: r['area'] == 'Damansara Heights')),
+    ('Johor Bahru city', pick(lambda r: r['area'] == 'JB City Centre')),
+    ('Johor Bahru near RTS Link', pick(lambda r: r['state'] == 'Johor' and 'RTS' in r['rail'])),
+    ('Penang best value', pick(lambda r: r['state'] == 'Penang')),
 ]
+seen = set()
 pre = []
 for label, names in PRESETS:
     ids = [IDX[n] for n in names if n in IDX]
-    if len(ids) < 2:
+    if len(ids) < 2 or tuple(sorted(ids)) in seen:
         continue
+    seen.add(tuple(sorted(ids)))
     pre.append('<button type="button" class="cmp-preset" data-p="%s"><div class="t">%s</div><div class="s">%s</div></button>' % (
         ','.join(map(str, ids)), E(label), E(' · '.join(re.sub(r'^The ', '', rows[i]['name']) for i in ids))))
-PRE_HTML = ('<!-- KN-CMP-PRESETS:START --><div class="cmp-presets"><div class="cmp-presets-head"><h3>Popular comparisons</h3>'
-            '<p>One tap to compare popular combinations.</p></div><div class="cmp-preset-row">%s</div></div><!-- KN-CMP-PRESETS:END -->\n    ') % ''.join(pre)
-s = re.sub(r'<!-- KN-CMP-PRESETS:START -->.*?<!-- KN-CMP-PRESETS:END -->\n\s*', '', s, flags=re.S)
-s = s.replace('<div class="cmp-search-row">', PRE_HTML + '<div class="cmp-search-row">', 1)
+PRE_HTML = ('\n    <!-- KN-CMP-PRESETS:START --><div class="cmp-presets"><div class="cmp-presets-head"><h3>Popular comparisons</h3>'
+            '<p>One tap to compare popular combinations.</p></div><div class="cmp-preset-row">%s</div></div><!-- KN-CMP-PRESETS:END -->\n') % ''.join(pre)
+s = re.sub(r'\n?\s*<!-- KN-CMP-PRESETS:START -->.*?<!-- KN-CMP-PRESETS:END -->\n', '\n', s, flags=re.S)
+m = re.search(r'id="cmpEmpty">.*?</div>\n    </div>\n', s, flags=re.S)   # below the project grid
+s = s[:m.end()] + PRE_HTML.lstrip('\n') + s[m.end():]
 
 # ---------- hero ----------
 HERO = "Side-by-side comparison of Keith's new launch projects across Malaysia."
@@ -190,35 +206,35 @@ LBL = {
            'elig': 'Buyer eligibility', 'low': 'Lowest', 'large': 'Largest', 'early': 'Earliest', 'few': 'Most exclusive',
            'pm': '/ month', 'moNote': '10% down, 4% p.a. Estimate only.', 'share': 'Copy share link', 'copied': 'Link copied!',
            'print': 'Print / Save PDF', 'map': 'Where they are', 'mapNote': 'Pins show approximate locations.', 'view': 'View project',
-           'best': 'Best value is marked for each row.', 'calc': 'Open calculator', 'ready': 'Ready', 'search': 'Search by project name or area...'},
+           'best': 'Best value is marked for each row.', 'calc': 'Open calculator', 'ready': 'Ready', 'search': 'Search by project name or area...', 'sel': 'selected', 'pick': 'Pick one more to compare', 'clear': 'Clear', 'go': 'Compare now'},
     'zh-CN': {'dev': '发展商', 'type': '类型', 'tenure': '产权', 'title': '地契', 'status': '状态', 'completion': '竣工',
               'price': '起价', 'psf': '每平方尺价格', 'mo': '预计月供（35 年）', 'size': '面积', 'rooms': '卧室',
               'maint': '管理费', 'units': '总单位', 'cars': '停车位', 'rail': '最近轨道站', 'area': '地区',
               'elig': '购买资格', 'low': '最低', 'large': '最大', 'early': '最早', 'few': '最低密度',
               'pm': '/ 月', 'moNote': '首付 10%，年利率 4%，仅供参考。', 'share': '复制分享链接', 'copied': '链接已复制！',
               'print': '打印 / 保存 PDF', 'map': '项目位置', 'mapNote': '地图标记为大约位置。', 'view': '查看项目',
-              'best': '每一行的最佳数值已标出。', 'calc': '打开计算器', 'ready': '现房', 'search': '按项目名称或地区搜索…'},
+              'best': '每一行的最佳数值已标出。', 'calc': '打开计算器', 'ready': '现房', 'search': '按项目名称或地区搜索…', 'sel': '已选', 'pick': '再选一个即可比较', 'clear': '清除', 'go': '立即比较'},
     'ms': {'dev': 'Pemaju', 'type': 'Jenis', 'tenure': 'Pegangan', 'title': 'Hak milik', 'status': 'Status', 'completion': 'Siap',
            'price': 'Harga permulaan', 'psf': 'Harga sk', 'mo': 'Anggaran bulanan (35 thn)', 'size': 'Saiz', 'rooms': 'Bilik tidur',
            'maint': 'Yuran penyelenggaraan', 'units': 'Jumlah unit', 'cars': 'Tempat letak kereta', 'rail': 'Stesen rel terdekat', 'area': 'Kawasan',
            'elig': 'Kelayakan pembeli', 'low': 'Terendah', 'large': 'Terbesar', 'early': 'Terawal', 'few': 'Paling eksklusif',
            'pm': '/ bulan', 'moNote': 'Deposit 10%, 4% setahun. Anggaran sahaja.', 'share': 'Salin pautan', 'copied': 'Pautan disalin!',
            'print': 'Cetak / Simpan PDF', 'map': 'Lokasi projek', 'mapNote': 'Pin menunjukkan lokasi anggaran.', 'view': 'Lihat projek',
-           'best': 'Nilai terbaik ditandakan bagi setiap baris.', 'calc': 'Buka kalkulator', 'ready': 'Sedia', 'search': 'Cari mengikut nama projek atau kawasan...'},
+           'best': 'Nilai terbaik ditandakan bagi setiap baris.', 'calc': 'Buka kalkulator', 'ready': 'Sedia', 'search': 'Cari mengikut nama projek atau kawasan...', 'sel': 'dipilih', 'pick': 'Pilih satu lagi untuk dibandingkan', 'clear': 'Kosongkan', 'go': 'Bandingkan'},
     'ja': {'dev': 'デベロッパー', 'type': 'タイプ', 'tenure': '保有形態', 'title': '権利種別', 'status': 'ステータス', 'completion': '完成',
            'price': '最低価格', 'psf': '平方フィート単価', 'mo': '月々の返済目安（35年）', 'size': '面積', 'rooms': 'ベッドルーム',
            'maint': '管理費', 'units': '総戸数', 'cars': '駐車場', 'rail': '最寄り駅', 'area': 'エリア',
            'elig': '購入資格', 'low': '最安', 'large': '最大', 'early': '最も早い', 'few': '最も希少',
            'pm': '/ 月', 'moNote': '頭金10%、年利4%。目安です。', 'share': '共有リンクをコピー', 'copied': 'コピーしました！',
            'print': '印刷 / PDF保存', 'map': '所在地', 'mapNote': 'ピンはおおよその位置です。', 'view': 'プロジェクトを見る',
-           'best': '各行のベスト値に印が付いています。', 'calc': '計算機を開く', 'ready': '完成済み', 'search': 'プロジェクト名またはエリアで検索…'},
+           'best': '各行のベスト値に印が付いています。', 'calc': '計算機を開く', 'ready': '完成済み', 'search': 'プロジェクト名またはエリアで検索…', 'sel': '選択中', 'pick': 'もう1件選ぶと比較できます', 'clear': 'クリア', 'go': '比較する'},
     'ko': {'dev': '개발사', 'type': '유형', 'tenure': '소유 형태', 'title': '권리 유형', 'status': '상태', 'completion': '준공',
            'price': '시작 가격', 'psf': '평방피트당 가격', 'mo': '예상 월 상환액 (35년)', 'size': '면적', 'rooms': '침실',
            'maint': '관리비', 'units': '총 세대수', 'cars': '주차', 'rail': '가장 가까운 역', 'area': '지역',
            'elig': '구매 자격', 'low': '최저', 'large': '최대', 'early': '가장 빠름', 'few': '가장 희소',
            'pm': '/ 월', 'moNote': '계약금 10%, 연 4%. 참고용 추정치입니다.', 'share': '공유 링크 복사', 'copied': '링크가 복사되었습니다!',
            'print': '인쇄 / PDF 저장', 'map': '위치', 'mapNote': '핀은 대략적인 위치입니다.', 'view': '프로젝트 보기',
-           'best': '각 행의 최고 값이 표시됩니다.', 'calc': '계산기 열기', 'ready': '입주 가능', 'search': '프로젝트명 또는 지역으로 검색…'},
+           'best': '각 행의 최고 값이 표시됩니다.', 'calc': '계산기 열기', 'ready': '입주 가능', 'search': '프로젝트명 또는 지역으로 검색…', 'sel': '선택됨', 'pick': '하나 더 선택하면 비교할 수 있어요', 'clear': '지우기', 'go': '비교하기'},
 }
 try:
     import opencc
@@ -228,15 +244,30 @@ except ImportError:
     LBL['zh-TW'] = dict(LBL['zh-CN'])
 
 CSS = '''/* KN-CMP:START */
-  .cmp-bar.show{position:fixed; left:50%; bottom:20px; transform:translateX(-50%); z-index:950; width:min(640px, calc(100% - 32px)); margin:0; flex-wrap:nowrap; box-shadow:0 12px 34px rgba(17,17,17,.35); animation:cmpUp .3s var(--ease);}
-  .cmp-bar.show .btn{white-space:nowrap;} .cmp-bar.one .btn{opacity:.45;}
-  @keyframes cmpUp{from{transform:translate(-50%,30px); opacity:0;} to{transform:translateX(-50%); opacity:1;}}
-  body.cmp-bar-on .kn-fab{bottom:100px !important;} body.cmp-bar-on .cmp-wrap{padding-bottom:140px;}
-  @media(max-width:700px){ .cmp-bar.show{bottom:12px; padding:12px 14px; gap:10px;} .cmp-bar.show .btn{padding:10px 16px;} body.cmp-bar-on .kn-fab{bottom:86px !important;} }
+  .cmp-bar.show{position:fixed; left:50%; bottom:22px; transform:translateX(-50%); z-index:80; width:min(620px, calc(100% - 28px)); margin:0;
+    display:flex; flex-wrap:nowrap; align-items:center; gap:14px; padding:10px 10px 10px 12px; background:rgba(255,255,255,.97); color:var(--ink);
+    border:1px solid rgba(94,96,206,.22); border-radius:18px; box-shadow:0 18px 44px rgba(29,27,79,.22); backdrop-filter:blur(8px); animation:cmpUp .35s var(--ease);}
+  @keyframes cmpUp{from{transform:translate(-50%,24px); opacity:0;} to{transform:translateX(-50%); opacity:1;}}
+  body.cmp-modal-open .cmp-bar{display:none !important;}
+  .cmpb-slots{display:flex; gap:8px; flex-shrink:0;}
+  .cmpb-slot{position:relative; width:46px; height:46px; border-radius:12px; overflow:visible; background:#f3f1fa; border:1.5px dashed rgba(94,96,206,.45); display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:20px; font-weight:400;}
+  .cmpb-slot.on{border:2px solid var(--gold); background:#1d1b4f;}
+  .cmpb-slot img{width:100%; height:100%; object-fit:cover; border-radius:10px; display:block;}
+  .cmpb-slot .x{position:absolute; top:-7px; right:-7px; width:19px; height:19px; border-radius:50%; background:#111; color:#fff; font-size:12px; line-height:19px; text-align:center; cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,.25);}
+  .cmpb-info{flex:1; min-width:0; line-height:1.3;}
+  .cmpb-info b{display:block; font-size:13.5px; font-weight:800;}
+  .cmpb-info small{display:block; font-size:11.5px; color:var(--grey); font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .cmpb-clear{all:unset; cursor:pointer; font-size:12px; font-weight:700; color:var(--grey); padding:6px 4px; flex-shrink:0;} .cmpb-clear:hover{color:var(--ink);}
+  .cmpb-go{all:unset; box-sizing:border-box; cursor:pointer; flex-shrink:0; display:flex; align-items:center; gap:8px; background:var(--gold); color:#fff; font-size:13px; font-weight:800; letter-spacing:.02em; padding:13px 20px; border-radius:12px; transition:background .25s, transform .25s;}
+  .cmpb-go:hover{background:#1d1b4f;} .cmpb-go svg{width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round;}
+  .cmp-bar.one .cmpb-go{background:#c9c8e6; cursor:default; pointer-events:none;}
+  body.cmp-bar-on .kn-fab{bottom:104px !important;} body.cmp-bar-on .cmp-wrap{padding-bottom:150px;}
+  @media(max-width:700px){ .cmp-bar.show{bottom:12px; gap:10px; padding:8px 8px 8px 10px; border-radius:16px;} .cmpb-slot{width:40px; height:40px;} .cmpb-slots{gap:6px;}
+    .cmpb-info small,.cmpb-clear{display:none;} .cmpb-go{padding:12px 14px;} body.cmp-bar-on .kn-fab{bottom:88px !important;} }
   .cmp-card-foot{flex-wrap:wrap;} .cmp-card-body{min-width:0;} .cmp-add-btn{flex-shrink:0;}
   .cmp-subs{margin:-8px 0 22px;} .cmp-sub{display:none; flex-wrap:wrap; gap:8px; padding:12px 14px; background:var(--bg); border-radius:10px;}
   .cmp-sub.show{display:flex;} .cmp-filter-btn em{font-style:normal;} .cmp-sub-btn{font-size:12px; padding:6px 13px; background:#fff;}
-  .cmp-presets{margin:0 0 22px; padding:18px 18px 16px; border-radius:12px; background:linear-gradient(135deg,#f3f1fa,#fbfaf7); border:1px solid rgba(94,96,206,.15);}
+  .cmp-presets{margin:34px 0 0; padding:18px 18px 16px; border-radius:12px; background:linear-gradient(135deg,#f3f1fa,#fbfaf7); border:1px solid rgba(94,96,206,.15);}
   .cmp-presets-head{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:12px;}
   .cmp-presets-head h3{font-size:18px;} .cmp-presets-head p{font-size:12.5px; color:var(--grey); font-weight:500;}
   .cmp-preset-row{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:10px;}
@@ -462,20 +493,45 @@ JS = r'''<!-- KN-CMP:START -->
   var _rs = window.renderSelection;
   window.renderSelection = function(){
     var r = _rs.apply(this, arguments), n = selectedIdx.length, bar = document.getElementById('cmpBar');
-    if(bar){ bar.classList.toggle('show', n >= 1); bar.classList.toggle('one', n === 1); }
+    if(bar){
+      var slots = '';
+      for(var k = 0; k < 3; k++){
+        var i = selectedIdx[k];
+        if(i === undefined){ slots += '<div class="cmpb-slot">+</div>'; continue; }
+        var img = document.querySelector('.cmp-card[data-idx="' + i + '"] .cmp-card-photo');
+        slots += '<div class="cmpb-slot on" title="' + esc(PROJECTS[i].name) + '">' + (img ? '<img src="' + img.getAttribute('src') + '" alt="">' : '')
+          + '<span class="x" data-rm="' + i + '">&times;</span></div>';
+      }
+      bar.innerHTML = '<div class="cmpb-slots">' + slots + '</div><div class="cmpb-info"><b>' + n + ' / 3 ' + esc(T('sel')) + '</b><small>'
+        + esc(n < 2 ? T('pick') : selectedIdx.map(function(i){ return PROJECTS[i].name; }).join(' · ')) + '</small></div>'
+        + '<button type="button" class="cmpb-clear">' + esc(T('clear')) + '</button>'
+        + '<button type="button" class="cmpb-go">' + esc(T('go')) + '<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>';
+      bar.classList.toggle('show', n >= 1); bar.classList.toggle('one', n === 1);
+    }
     document.body.classList.toggle('cmp-bar-on', n >= 1);
     return r;
   };
+  (function(){
+    var bar = document.getElementById('cmpBar'); if(!bar) return;
+    bar.addEventListener('click', function(e){
+      var x = e.target.closest('[data-rm]');
+      if(x){ toggleSelect(+x.getAttribute('data-rm')); return; }
+      if(e.target.closest('.cmpb-clear')){ selectedIdx.length = 0; renderSelection(); return; }
+      if(e.target.closest('.cmpb-go')) openModal();
+    });
+  })();
+  var _om = window.openModal, _cm0 = window.closeModal;
+  window.openModal = function(){ var r = _om.apply(this, arguments); if(document.getElementById('cmpModalOverlay').classList.contains('open')) document.body.classList.add('cmp-modal-open'); return r; };
   setup();
   function ph(){ var se = document.getElementById('cmpSearch'); if(se) se.placeholder = T('search'); }
   ph();
   var _close = window.closeModal;
-  window.closeModal = function(){ _close.apply(this, arguments); try{ history.replaceState(null, '', location.pathname); }catch(e){} };
+  window.closeModal = function(){ _close.apply(this, arguments); document.body.classList.remove('cmp-modal-open'); try{ history.replaceState(null, '', location.pathname); }catch(e){} };
   document.addEventListener('DOMContentLoaded', function(){   // setLanguage is defined by a later script
     var _setLang = window.setLanguage;
     if(typeof _setLang === 'function') window.setLanguage = function(){
       var r = _setLang.apply(this, arguments);
-      ph();
+      ph(); renderSelection();
       if(document.getElementById('cmpModalOverlay').classList.contains('open')) renderTable();
       return r;
     };
@@ -509,6 +565,16 @@ STATIC = {
     'KL City Centre under RM1M': {'zh-CN': 'KL City Centre RM1M 以下', 'ms': 'KL City Centre bawah RM1M', 'ja': 'KL City Centre RM1M以下', 'ko': 'KL City Centre RM1M 이하'},
     'Freehold near MRT/LRT': {'zh-CN': '永久地契 · 近 MRT/LRT', 'ms': 'Pegangan bebas berhampiran MRT/LRT', 'ja': '自由保有 · MRT/LRT 近く', 'ko': '자유보유 · MRT/LRT 인근'},
     'Johor Bahru near RTS Link': {'zh-CN': 'Johor Bahru 近 RTS Link', 'ms': 'Johor Bahru berhampiran RTS Link', 'ja': 'Johor Bahru RTS Link 近く', 'ko': 'Johor Bahru RTS Link 인근'},
+    'Luxury Kuala Lumpur': {'zh-CN': 'Kuala Lumpur 豪华项目', 'ms': 'Mewah Kuala Lumpur', 'ja': 'Kuala Lumpur ラグジュアリー', 'ko': 'Kuala Lumpur 럭셔리'},
+    'Lowest psf in Kuala Lumpur': {'zh-CN': 'Kuala Lumpur 呎价最低', 'ms': 'Harga sk terendah di Kuala Lumpur', 'ja': 'Kuala Lumpur 平方フィート単価が最安', 'ko': 'Kuala Lumpur 평방피트당 최저가'},
+    'Under RM500K': {'zh-CN': 'RM500K 以下', 'ms': 'Bawah RM500K', 'ja': 'RM500K以下', 'ko': 'RM500K 이하'},
+    'Ready to move in': {'zh-CN': '现房，即可入住', 'ms': 'Sedia untuk didiami', 'ja': '即入居可', 'ko': '즉시 입주 가능'},
+    'Completing soonest': {'zh-CN': '最快竣工', 'ms': 'Siap paling awal', 'ja': '完成が最も早い', 'ko': '가장 빠른 준공'},
+    'Biggest homes under RM1.5M': {'zh-CN': 'RM1.5M 以下最大面积', 'ms': 'Rumah terbesar bawah RM1.5M', 'ja': 'RM1.5M以下で最も広い住まい', 'ko': 'RM1.5M 이하 최대 면적'},
+    'Low-density living': {'zh-CN': '低密度住宅', 'ms': 'Kediaman berkepadatan rendah', 'ja': '低密度の住まい', 'ko': '저밀도 주거'},
+    'Lowest maintenance fee': {'zh-CN': '管理费最低', 'ms': 'Yuran penyelenggaraan terendah', 'ja': '管理費が最安', 'ko': '관리비 최저'},
+    'Selangor under RM700K': {'zh-CN': 'Selangor RM700K 以下', 'ms': 'Selangor bawah RM700K', 'ja': 'Selangor RM700K以下', 'ko': 'Selangor RM700K 이하'},
+    'Johor Bahru city': {'zh-CN': 'Johor Bahru 市中心', 'ms': 'Bandar Johor Bahru', 'ja': 'Johor Bahru 市内', 'ko': 'Johor Bahru 시내'},
     'Penang best value': {'zh-CN': 'Penang 高性价比', 'ms': 'Penang nilai terbaik', 'ja': 'Penang コスパ重視', 'ko': 'Penang 가성비'},
 }
 for l in ['zh-CN', 'zh-TW', 'ms', 'ja', 'ko']:
