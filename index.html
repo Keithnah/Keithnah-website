@@ -667,7 +667,7 @@ lang="en">
   .keith-portrait img{width:100%; height:100%; object-fit:cover; display:block;}
   .keith-hero-copy h2{font-size:clamp(32px,4.4vw,52px); margin:14px 0 6px; text-align:left;}
   .keith-hero-copy h2 em{color:var(--gold); font-style:italic; font-weight:400;}
-  .keith-hero-copy p.keith-ren{display:inline-block; margin:2px 0 16px; padding:8px 16px; border-radius:10px; background:#EDE6DA; color:#4A4037; font-size:14px; font-weight:700; line-height:1.4; letter-spacing:0.02em; max-width:none;}
+  .keith-hero-copy p.keith-ren{display:inline-flex; align-items:center; gap:14px; margin:4px 0 18px; padding:10px 18px 10px 10px; border-radius:16px; background:linear-gradient(135deg,#f3f1fa,#fff); border:1px solid rgba(94,96,206,.25); box-shadow:0 8px 22px rgba(29,27,79,.08); color:#1d1b4f; line-height:1.25; max-width:none;} .keith-ren .kr-ic{width:40px; height:40px; flex-shrink:0; border-radius:12px; background:#5E60CE; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(94,96,206,.35);} .keith-ren .kr-ic svg{width:22px; height:22px; fill:none; stroke:#fff; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;} .keith-ren small{display:block; font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#6b6a85;} .keith-ren b{display:block; font-size:17px; font-weight:800; letter-spacing:.02em; color:#1d1b4f;} .keith-ren .kr-sep{width:1px; align-self:stretch; background:rgba(94,96,206,.25);} @media(max-width:480px){.keith-hero-copy p.keith-ren{gap:10px; padding:8px 14px 8px 8px;} .keith-ren .kr-ic{width:34px; height:34px;} .keith-ren b{font-size:15px;} .keith-ren small{font-size:9.5px; letter-spacing:.06em;}}
   .keith-title{font-size:15px; color:var(--grey); font-weight:600; margin-bottom:20px;}
   .keith-hero-copy p{color:var(--grey); font-size:15px; line-height:1.85; margin-bottom:26px; max-width:540px;}
   .keith-hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
@@ -820,7 +820,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
   <div class="keith-hero-copy">
     <span class="eyebrow" data-i18n="kh_eyebrow">About Keith</span>
     <h2>Keith Nah <em>鈞晖</em></h2>
-    <p class="keith-ren">REN 60517 · IQI Global</p>
+    <p class="keith-ren"><span class="kr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.8 4.5 5.6v5.6c0 4.6 3.1 8.6 7.5 10 4.4-1.4 7.5-5.4 7.5-10V5.6z"/><path d="m8.6 12.2 2.4 2.4 4.6-4.8"/></svg></span><span class="kr-a"><small data-i18n="kr_l1">Registered Estate Negotiator</small><b>REN 60517</b></span><span class="kr-sep" aria-hidden="true"></span><span class="kr-b"><small data-i18n="kr_l2">Agency</small><b>IQI Global</b></span></p>
     <p class="keith-title" data-i18n="kh_title">Property Consultant &amp; Content Strategist — Kuala Lumpur New Launches</p>
     <p data-i18n="kh_p">Keith Nah helps local and international buyers navigate Kuala Lumpur's new-launch market — from KL City Centre and TRX to Bukit Bintang, Bangsar and Bukit Jalil. Through in-depth video walkthroughs and straight-talking guidance, he turns complex developer launches into clear, confident decisions.</p>
     <div class="keith-hero-actions">
@@ -2100,6 +2100,8 @@ const FACILITY_ICONS = {
 
 <script>
   const I18N = {
+  "kr_l2": {"zh-CN": "所属公司", "ms": "Agensi", "ja": "所属会社", "ko": "소속 회사", "zh-TW": "所屬公司"},
+  "kr_l1": {"zh-CN": "注册房产经纪", "ms": "Perunding Hartanah Berdaftar", "ja": "登録不動産ネゴシエーター", "ko": "등록 부동산 중개인", "zh-TW": "註冊房產經紀"},
   "mm_note": {"zh-CN": "以上为现行等级的大致要求，政府可能会更新。", "ms": "Angka ialah panduan umum peringkat semasa; kerajaan boleh mengemas kininya.", "ja": "現行ランクの目安です。政府により変更される場合があります。", "ko": "현행 등급의 일반적인 기준이며 정부가 변경할 수 있습니다.", "zh-TW": "以上為現行等級的大致要求，政府可能會更新。"},
   "mm_ask": {"zh-CN": "咨询 Keith 关于 MM2H", "ms": "Tanya Keith tentang MM2H", "ja": "MM2H について Keith に相談", "ko": "MM2H에 대해 Keith에게 문의", "zh-TW": "諮詢 Keith 關於 MM2H"},
   "mm_btn": {"zh-CN": "阅读完整 MM2H 指南", "ms": "Baca panduan MM2H penuh", "ja": "MM2H ガイドを読む", "ko": "MM2H 가이드 전체 보기", "zh-TW": "閱讀完整 MM2H 指南"},
@@ -4054,7 +4056,7 @@ const FACILITY_ICONS = {
     const l = lang();
     if(l === 'en' || dict(l)) return cb();
     const s = document.createElement('script');
-    s.src = 'i18n-projects-' + l + '.js?v=0c66d84d54';
+    s.src = 'i18n-projects-' + l + '.js?v=827d9828dd';
     s.onload = cb; s.onerror = cb;
     document.head.appendChild(s);
   }
