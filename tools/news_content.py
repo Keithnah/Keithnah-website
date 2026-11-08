@@ -242,6 +242,13 @@ TOPICS = [
 
 # Labels shown on the page, translated for the site's languages.
 LABELS = {
+    'Videos': {'zh-CN': '视频', 'zh-TW': '影片', 'ms': 'Video', 'ja': '動画', 'ko': '영상'},
+    'Watch Keith explain': {'zh-CN': '看 Keith 讲解', 'zh-TW': '看 Keith 講解', 'ms': 'Tonton Keith menerangkan', 'ja': 'Keith の解説動画', 'ko': 'Keith의 설명 영상'},
+    'Short videos on why buyers choose Malaysia and what foreigners need to know before buying.': {'zh-CN': '短视频讲解为什么买家选择马来西亚，以及外国人买房前需要知道的事。', 'zh-TW': '短影片講解為什麼買家選擇馬來西亞，以及外國人買房前需要知道的事。', 'ms': 'Video pendek tentang sebab pembeli memilih Malaysia dan perkara yang perlu diketahui warga asing sebelum membeli.', 'ja': '買い手がマレーシアを選ぶ理由と、外国人が購入前に知っておくべきことを短い動画で解説します。', 'ko': '구매자들이 말레이시아를 선택하는 이유와 외국인이 구매 전 알아야 할 점을 짧은 영상으로 설명합니다.'},
+    'Is Malaysia the top choice for property in Southeast Asia?': {'zh-CN': '东南亚房产首选是马来西亚？', 'zh-TW': '東南亞房產首選是馬來西亞？', 'ms': 'Adakah Malaysia pilihan utama hartanah di Asia Tenggara?', 'ja': '東南アジアの不動産ならマレーシアが一番？', 'ko': '동남아 부동산 최고의 선택은 말레이시아?'},
+    'Can foreigners buy property in Malaysia?': {'zh-CN': '外国人可以买马来西亚房产吗？', 'zh-TW': '外國人可以買馬來西亞房產嗎？', 'ms': 'Bolehkah warga asing membeli hartanah di Malaysia?', 'ja': '外国人はマレーシアの不動産を買える？', 'ko': '외국인도 말레이시아 부동산을 살 수 있을까?'},
+    'More videos on YouTube →': {'zh-CN': '在 YouTube 看更多视频 →', 'zh-TW': '在 YouTube 看更多影片 →', 'ms': 'Lagi video di YouTube →', 'ja': 'YouTube でほかの動画を見る →', 'ko': 'YouTube에서 더 많은 영상 보기 →'},
+
     'Investment Strategy': {'zh-CN': '投资策略', 'zh-TW': '投資策略', 'ms': 'Strategi Pelaburan', 'ta': 'முதலீட்டு உத்தி', 'ja': '投資戦略', 'ko': '투자 전략', 'ar': 'استراتيجية الاستثمار'},
     'Kuala Lumpur': {'zh-CN': '吉隆坡', 'zh-TW': '吉隆坡', 'ms': 'Kuala Lumpur', 'ta': 'கோலாலம்பூர்', 'ja': 'クアラルンプール', 'ko': '쿠알라룸푸르', 'ar': 'كوالالمبور'},
     'TRX & Merdeka 118': {'zh-CN': 'TRX 与默迪卡118', 'zh-TW': 'TRX 與默迪卡118', 'ms': 'TRX & Merdeka 118', 'ta': 'TRX & மெர்டேகா 118', 'ja': 'TRXとムルデカ118', 'ko': 'TRX 및 메르데카 118', 'ar': 'TRX وميرديكا 118'},
