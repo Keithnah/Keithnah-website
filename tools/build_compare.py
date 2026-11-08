@@ -292,8 +292,11 @@ CSS = '''/* KN-CMP:START */
   @media print{
     body > *:not(#cmpModalOverlay){display:none !important;}
     .cmp-modal-overlay{position:static !important; display:block !important; background:none !important; padding:0 !important; opacity:1 !important; visibility:visible !important;}
-    .cmp-modal{max-height:none !important; overflow:visible !important; box-shadow:none !important; transform:none !important; width:100% !important; max-width:none !important;}
-    .cmp-modal-head-right,.cmp-th-remove,.cmp-actions,.cmp-map-wrap{display:none !important;}
+    html,body{background:#fff !important; overflow:visible !important; height:auto !important;}
+    .cmp-modal{opacity:1 !important; animation:none !important; transition:none !important; max-height:none !important; overflow:visible !important; box-shadow:none !important; transform:none !important; width:100% !important; max-width:none !important;}
+    .cmp-modal-head-right,.cmp-th-remove,.cmp-actions,.cmp-map-wrap,.cmp-modal-cta p,.cmp-table a.cmp-mini,.cmp-bar{display:none !important;}
+    .cmp-th-name a{text-decoration:none;}
+    .cmp-modal-cta:after{content:"Keith Nah Real Estate  ·  keithnah.com  ·  WhatsApp +60 10-282 1568"; display:block; font-size:11px; color:#5A5A5A; border-top:1px solid #ddd; padding-top:10px;}
     .cmp-table td.best{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
   }
 /* KN-CMP:END */
@@ -386,6 +389,8 @@ JS = r'''<!-- KN-CMP:START -->
     try{ history.replaceState(null, '', '?p=' + selectedIdx.map(function(i){ return PROJECTS[i].slug; }).join(',')); }catch(e){}
   }
   function setup(){
+    var ov = document.getElementById('cmpModalOverlay');
+    if(ov && ov.parentNode !== document.body) document.body.appendChild(ov);   // so print can show it on its own
     var cta = document.querySelector('.cmp-modal-cta'), wa = document.getElementById('cmpWaLink');
     if(!cta || document.getElementById('cmpShare')) return;
     var wrap = document.querySelector('.cmp-table-wrap');
