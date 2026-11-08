@@ -212,7 +212,7 @@ CSS += FW.FLOAT_CSS
 
 
 NAV = [('', 'Home'), ('projects.html', 'View Projects'), ('compare.html', 'Compare Projects'), ('blog.html', 'News'),
-       ('calculator.html', 'Calculator'), ('resources.html', 'Free Resources'), ('about-keith.html', 'About Keith')]
+       ('calculator.html', 'Calculator'), ('resources.html', 'Free Toolkit'), ('about-keith.html', 'About Keith')]
 
 
 def area_slug(s):

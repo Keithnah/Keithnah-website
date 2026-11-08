@@ -12,7 +12,7 @@ E = lambda s: html.escape(s, quote=True)
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700'
          '&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">')
 NAV = [('', 'Home'), ('projects.html', 'View Projects'), ('compare.html', 'Compare Projects'), ('blog.html', 'News'),
-       ('calculator.html', 'Calculator'), ('resources.html', 'Free Resources'), ('about-keith.html', 'About Keith')]
+       ('calculator.html', 'Calculator'), ('resources.html', 'Free Toolkit'), ('about-keith.html', 'About Keith')]
 LANGS = [('en', 'gb', 'English'), ('zh-CN', 'cn', '简体中文'), ('zh-TW', 'tw', '繁體中文'), ('ms', 'my', 'Bahasa Malaysia'),
          ('ja', 'jp', '日本語'), ('ko', 'kr', '한국어')]
 CURS = [('MYR', 'my', 'Malaysian Ringgit'), ('USD', 'us', 'US Dollar'), ('SGD', 'sg', 'Singapore Dollar'),
@@ -63,12 +63,12 @@ NAV_TR = {
   "ko": "계산기",
   "ar": "الحاسبة"
  },
- "Free Resources": {
+ "Free Toolkit": {
   "zh-CN": "免费资源",
   "zh-TW": "免費資源",
-  "ms": "Sumber Percuma",
-  "ja": "無料リソース",
-  "ko": "무료 자료"
+  "ms": "Kit Percuma",
+  "ja": "無料ツールキット",
+  "ko": "무료 툴킷"
  },
  "About Keith": {
   "zh-CN": "关于 KEITH",

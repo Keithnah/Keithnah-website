@@ -1278,4 +1278,16 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url><loc>https://keithnah.com/guides/selangor.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://keithnah.com/guides/kl-city-centre.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://keithnah.com/guides/penang.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://keithnah.com/guides/johor.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://keithnah.com/guides/bukit-jalil.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://keithnah.com/guides/kwasa-damansara.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://keithnah.com/guides/petaling-jaya.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://keithnah.com/guides/bukit-bintang.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://keithnah.com/guides/jb-city-centre.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://keithnah.com/guides/batu-kawan.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://keithnah.com/guides/damansara-heights.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://keithnah.com/guides/gelugor.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
