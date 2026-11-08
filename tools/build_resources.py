@@ -398,13 +398,15 @@ for st, sub, ids in _states:
     k = next((k for k in withp if A.PHOTO[k] not in _used), withp[0] if withp else None)
     if k is not None:
         _used.add(A.PHOTO[k])
+    simg = 'images/state/%s.jpg' % A.slug(st)   # landmark photo of the state, when there is one
+    img = simg if os.path.exists(simg) else (A.PHOTO.get(k, '') if k is not None else '')
     areas = [a for a, _ in sorted(sub.items(), key=lambda kv: (-len(kv[1]), kv[0])) if a != st][:4]
     chips = ''.join('<a href="area/%s.html">%s<i></i></a>' % (A.slug(a), E(a)) for a in areas)
     low = min(prices) if prices else None
     _cards.append(
-        '<div class="ls-card"><a class="ls-img" href="area/{s}.html"><img src="{img}" alt="{st}" loading="lazy"><span class="ls-n"><b>{n}</b> <span data-i18n="loc_projects">projects</span></span></a>'
+        '<div class="ls-card"><a class="ls-img" href="area/{s}.html"><img src="{img}" alt="{st}" loading="lazy"><span class="ls-n"><b>{n}</b><span data-i18n="loc_projects">projects</span></span></a>'
         '<div class="ls-b"><a class="ls-h" href="area/{s}.html"><h3>{st}{arr}</h3></a>{low}<div class="ls-chips">{chips}</div></div></div>'.format(
-            s=A.slug(st), img=E(A.PHOTO.get(k, '')) if k is not None else '', st=E(st), n=len(ids), arr=ARR, chips=chips,
+            s=A.slug(st), img=E(img), st=E(st), n=len(ids), arr=ARR, chips=chips,
             low=('<p class="ls-from"><span data-i18n="loc_from">From</span> %s</p>' % E(G.rm(low))) if low else ''))
 LOC_CSS = ('<style>.ls-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:12px;}'
            '.ls-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;}'
@@ -412,7 +414,7 @@ LOC_CSS = ('<style>.ls-grid{display:grid;grid-template-columns:repeat(4,1fr);gap
            '.ls-img{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:#eceaf6;}'
            '.ls-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;} .ls-card:hover .ls-img img{transform:scale(1.05);}'
            '.ls-n{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.94);color:#1d1b4f;font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:100px;}'
-           '.ls-n b{font-weight:800;}'
+           '.ls-n{display:inline-flex;gap:4px;align-items:baseline;} .ls-n b{font-weight:800;}'
            '.ls-b{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1;}'
            '.ls-h h3{font-size:18px;display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0;}'
            '.ls-h svg{width:16px;height:16px;fill:none;stroke:var(--gold);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s;} .ls-card:hover .ls-h svg{transform:translateX(3px);}'
