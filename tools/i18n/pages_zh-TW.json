@@ -316,5 +316,6 @@
 "yt.h2": "視頻介紹",
 "yt.more": "在 Keith 的 YouTube 頻道看更多視頻 →",
 "map.note": "圖釘顯示每個項目的大概位置。點擊圖釘查看項目。",
-"tpl.map_h2": "{place}新盤地圖"
+"tpl.map_h2": "{place}新盤地圖",
+"pm.h2": "全部新盤地圖"
 }

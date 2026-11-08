@@ -316,5 +316,6 @@
 "yt.h2": "Lawatan Video",
 "yt.more": "Lagi video di saluran YouTube Keith →",
 "map.note": "Pin menunjukkan anggaran lokasi setiap projek. Tekan pin untuk melihat projek.",
-"tpl.map_h2": "Peta pelancaran baharu di {place}"
+"tpl.map_h2": "Peta pelancaran baharu di {place}",
+"pm.h2": "Peta semua pelancaran baharu"
 }

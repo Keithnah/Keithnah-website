@@ -53,6 +53,7 @@ UI.update({"mo.from": "Est. monthly instalment from", "mo.change": "Change down 
 UI.update({"mo.tip": "Malaysians can borrow until age 70. Foreigners usually get a shorter tenure; contact Keith for advice.", "mo.cur": "Show in currency"})
 UI.update({"yt.h2": "Video Tour", "yt.more": "More videos on Keith's YouTube channel →"})
 UI.update({"map.note": "Pins show each project's approximate location. Tap a pin to see the project."})
+UI.update({'pm.h2': 'Map of all new launches'})
 # Sentence patterns: {x} is any text; groups named in TRG are translated too (and must be translatable).
 TPL = {
     'tpl.h1year': '{h} ({y})', 'tpl.updated_n': 'Updated {y} · {n} projects', 'tpl.updated': 'Updated {y}',

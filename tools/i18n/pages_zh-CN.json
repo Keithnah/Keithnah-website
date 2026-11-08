@@ -316,5 +316,6 @@
 "yt.h2": "视频介绍",
 "yt.more": "在 Keith 的 YouTube 频道看更多视频 →",
 "map.note": "图钉显示每个项目的大概位置。点击图钉查看项目。",
-"tpl.map_h2": "{place}新盘地图"
+"tpl.map_h2": "{place}新盘地图",
+"pm.h2": "全部新盘地图"
 }

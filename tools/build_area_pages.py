@@ -197,7 +197,9 @@ def map_points(ids, root):
     return out
 
 
-MAP_CSS = ('.kd{background:#5E60CE;border:3px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(17,17,17,.35);cursor:pointer;transition:transform .15s;}'
+MAP_CSS = ('.kc{background:rgba(94,96,206,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;}'
+           '.kc span{width:30px;height:30px;border-radius:50%;background:#5E60CE;color:#fff;font:700 13px Inter,sans-serif;display:flex;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 2px 8px rgba(17,17,17,.3);}'
+           '.kd{background:#5E60CE;border:3px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(17,17,17,.35);cursor:pointer;transition:transform .15s;}'
            '.kd:hover{transform:scale(1.25);background:#1d1b4f;}'
            '.leaflet-tooltip{font:600 12px Inter,sans-serif;border-radius:8px;padding:5px 9px;}'
            '.kmap{height:440px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#eef0f4;z-index:0;}'
@@ -212,22 +214,22 @@ MAP_CSS = ('.kd{background:#5E60CE;border:3px solid #fff;border-radius:50%;box-s
            '@media(max-width:700px){.kmap{height:360px;}}')
 
 
-def map_block(place, ids, root):
+def map_block(place, ids, root, heading=None):
     pts = map_points(ids, root)
     if not pts:
         return ''
-    return ('<link rel="stylesheet" href="%svendor/leaflet/leaflet.css"><style>%s</style>'
-            '<section class="blk"><h2>Map of new launches in %s</h2><div class="kmap" id="kmap" aria-label="Map of projects"></div>'
+    return ('<link rel="stylesheet" href="%svendor/leaflet/leaflet.css"><link rel="stylesheet" href="%svendor/leaflet/MarkerCluster.css"><style>%s</style>'
+            '<section class="blk"><h2>%s</h2><div class="kmap" id="kmap" aria-label="Map of projects"></div>'
             '<p class="kmap-note">Pins show each project\'s approximate location. Tap a pin to see the project.</p></section>'
-            '<script src="%svendor/leaflet/leaflet.js"></script><script>(function(){var P=%s,VIEW=%s;'
+            '<script src="%svendor/leaflet/leaflet.js"></script><script src="%svendor/leaflet/leaflet.markercluster.js"></script><script>(function(){var P=%s,VIEW=%s;'
             'var m=L.map("kmap",{scrollWheelZoom:false,dragging:!L.Browser.mobile,tap:false});'
             'L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,'
             'attribution:"&copy; <a href=\\"https://www.openstreetmap.org/copyright\\">OpenStreetMap</a>"}).addTo(m);'
-            'var b=[];P.forEach(function(p){var ic=L.divIcon({className:"kd",iconSize:[18,18],iconAnchor:[9,9],popupAnchor:[0,-10]});'
+            'var g=L.markerClusterGroup({showCoverageOnHover:false,maxClusterRadius:38,disableClusteringAtZoom:15,iconCreateFunction:function(c){return L.divIcon({html:"<span>"+c.getChildCount()+"</span>",className:"kc",iconSize:[38,38]})}});var b=[];P.forEach(function(p){var ic=L.divIcon({className:"kd",iconSize:[18,18],iconAnchor:[9,9],popupAnchor:[0,-10]});'
             'var h=function(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}var V=VIEW[l]||VIEW.en;return "<div class=\\"kpop\\">"+(p.i?"<img src=\\""+p.i+"\\" alt=\\"\\">":"")+"<b>"+p.n+"</b><small>"+p.a+(p.s?" · "+p.s:"")+"</small>"+(p.p?"<em>"+(V[0]?V[0]+" ":"")+p.p+"</em>":"")+"<a href=\\""+p.u+"\\">"+V[1]+" →</a></div>"};'
-            'L.marker([p.lat,p.lng],{icon:ic,title:p.n,riseOnHover:true}).addTo(m).bindPopup(h,{maxWidth:240}).bindTooltip(p.n+(p.p?" · "+p.p:""),{direction:"top",offset:[0,-8]});b.push([p.lat,p.lng]);});'
-            'if(b.length===1)m.setView(b[0],15);else m.fitBounds(b,{padding:[40,40],maxZoom:15});})();</script>') % (
-        root, MAP_CSS, E(place), root, json.dumps(pts, ensure_ascii=False).replace('</', '<\\/'),
+            'L.marker([p.lat,p.lng],{icon:ic,title:p.n,riseOnHover:true}).addTo(g).bindPopup(h,{maxWidth:240}).bindTooltip(p.n+(p.p?" · "+p.p:""),{direction:"top",offset:[0,-8]});b.push([p.lat,p.lng]);});'
+            'm.addLayer(g);if(b.length===1)m.setView(b[0],15);else m.fitBounds(b,{padding:[40,40],maxZoom:15});})();</script>') % (
+        root, root, MAP_CSS, heading or ('Map of new launches in %s' % E(place)), root, root, json.dumps(pts, ensure_ascii=False).replace('</', '<\\/'),
         json.dumps({'en': ['From', 'View project'], 'zh-CN': ['起价', '查看项目'], 'zh-TW': ['起價', '查看項目'], 'ms': ['Dari', 'Lihat projek'], 'ja': ['', 'プロジェクトを見る'], 'ko': ['', '프로젝트 보기']}, ensure_ascii=False))
 
 
@@ -375,6 +377,25 @@ def _register():
 _register()
 
 
+def link_projects_map():
+    """All projects on a map in View Projects, above the Best New Launch Lists block (idempotent)."""
+    ids = [k for k in range(len(P))]
+    blk = map_block('Malaysia', ids, '', heading='Map of all new launches')
+    blk = blk.replace('<section class="blk">', '<section class="blk pmap-sec" id="projectMap">', 1)
+    css = ('<style>.pmap-sec{max-width:1240px;margin:0 auto;padding:60px 5vw 0;}.pmap-sec h2{font-size:clamp(26px,3vw,36px);margin-bottom:16px;}'
+           '.pmap-sec .kmap{height:480px;}@media(max-width:700px){.pmap-sec{padding:44px 16px 0;}.pmap-sec .kmap{height:380px;}}</style>')
+    block = '<!-- KN-MAP:START -->' + css + blk + '<!-- KN-MAP:END -->\n'
+    p = 'projects.html'
+    s = open(p, encoding='utf-8').read()
+    s = re.sub(r'<!-- KN-MAP:START -->.*?<!-- KN-MAP:END -->\n?', '', s, flags=re.S)
+    anchor = '<!-- KN-QUICK:START -->'
+    assert anchor in s
+    s = s.replace(anchor, block + anchor, 1)
+    open(p, 'w', encoding='utf-8').write(s)
+    import i18n_pages as I
+    I.merge_projects_page({'Map of all new launches': ('pm.h2', {}), "Pins show each project's approximate location. Tap a pin to see the project.": ('map.note', {})})
+
+
 def build(out, root):
     tree = groups()
     os.makedirs(out, exist_ok=True)
@@ -398,4 +419,5 @@ if __name__ == '__main__':
         pages = build(os.path.join(sys.argv[2], 'area'), SITE + '/')
     else:
         pages = build('area', '../')
+    link_projects_map()
     print('area pages:', len(pages))
