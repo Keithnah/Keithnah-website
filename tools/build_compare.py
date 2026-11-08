@@ -190,35 +190,35 @@ LBL = {
            'elig': 'Buyer eligibility', 'low': 'Lowest', 'large': 'Largest', 'early': 'Earliest', 'few': 'Most exclusive',
            'pm': '/ month', 'moNote': '10% down, 4% p.a. Estimate only.', 'share': 'Copy share link', 'copied': 'Link copied!',
            'print': 'Print / Save PDF', 'map': 'Where they are', 'mapNote': 'Pins show approximate locations.', 'view': 'View project',
-           'best': 'Best value is marked for each row.', 'calc': 'Open calculator', 'ready': 'Ready'},
+           'best': 'Best value is marked for each row.', 'calc': 'Open calculator', 'ready': 'Ready', 'search': 'Search by project name or area...'},
     'zh-CN': {'dev': '发展商', 'type': '类型', 'tenure': '产权', 'title': '地契', 'status': '状态', 'completion': '竣工',
               'price': '起价', 'psf': '每平方尺价格', 'mo': '预计月供（35 年）', 'size': '面积', 'rooms': '卧室',
               'maint': '管理费', 'units': '总单位', 'cars': '停车位', 'rail': '最近轨道站', 'area': '地区',
               'elig': '购买资格', 'low': '最低', 'large': '最大', 'early': '最早', 'few': '最低密度',
               'pm': '/ 月', 'moNote': '首付 10%，年利率 4%，仅供参考。', 'share': '复制分享链接', 'copied': '链接已复制！',
               'print': '打印 / 保存 PDF', 'map': '项目位置', 'mapNote': '地图标记为大约位置。', 'view': '查看项目',
-              'best': '每一行的最佳数值已标出。', 'calc': '打开计算器', 'ready': '现房'},
+              'best': '每一行的最佳数值已标出。', 'calc': '打开计算器', 'ready': '现房', 'search': '按项目名称或地区搜索…'},
     'ms': {'dev': 'Pemaju', 'type': 'Jenis', 'tenure': 'Pegangan', 'title': 'Hak milik', 'status': 'Status', 'completion': 'Siap',
            'price': 'Harga permulaan', 'psf': 'Harga sk', 'mo': 'Anggaran bulanan (35 thn)', 'size': 'Saiz', 'rooms': 'Bilik tidur',
            'maint': 'Yuran penyelenggaraan', 'units': 'Jumlah unit', 'cars': 'Tempat letak kereta', 'rail': 'Stesen rel terdekat', 'area': 'Kawasan',
            'elig': 'Kelayakan pembeli', 'low': 'Terendah', 'large': 'Terbesar', 'early': 'Terawal', 'few': 'Paling eksklusif',
            'pm': '/ bulan', 'moNote': 'Deposit 10%, 4% setahun. Anggaran sahaja.', 'share': 'Salin pautan', 'copied': 'Pautan disalin!',
            'print': 'Cetak / Simpan PDF', 'map': 'Lokasi projek', 'mapNote': 'Pin menunjukkan lokasi anggaran.', 'view': 'Lihat projek',
-           'best': 'Nilai terbaik ditandakan bagi setiap baris.', 'calc': 'Buka kalkulator', 'ready': 'Sedia'},
+           'best': 'Nilai terbaik ditandakan bagi setiap baris.', 'calc': 'Buka kalkulator', 'ready': 'Sedia', 'search': 'Cari mengikut nama projek atau kawasan...'},
     'ja': {'dev': 'デベロッパー', 'type': 'タイプ', 'tenure': '保有形態', 'title': '権利種別', 'status': 'ステータス', 'completion': '完成',
            'price': '最低価格', 'psf': '平方フィート単価', 'mo': '月々の返済目安（35年）', 'size': '面積', 'rooms': 'ベッドルーム',
            'maint': '管理費', 'units': '総戸数', 'cars': '駐車場', 'rail': '最寄り駅', 'area': 'エリア',
            'elig': '購入資格', 'low': '最安', 'large': '最大', 'early': '最も早い', 'few': '最も希少',
            'pm': '/ 月', 'moNote': '頭金10%、年利4%。目安です。', 'share': '共有リンクをコピー', 'copied': 'コピーしました！',
            'print': '印刷 / PDF保存', 'map': '所在地', 'mapNote': 'ピンはおおよその位置です。', 'view': 'プロジェクトを見る',
-           'best': '各行のベスト値に印が付いています。', 'calc': '計算機を開く', 'ready': '完成済み'},
+           'best': '各行のベスト値に印が付いています。', 'calc': '計算機を開く', 'ready': '完成済み', 'search': 'プロジェクト名またはエリアで検索…'},
     'ko': {'dev': '개발사', 'type': '유형', 'tenure': '소유 형태', 'title': '권리 유형', 'status': '상태', 'completion': '준공',
            'price': '시작 가격', 'psf': '평방피트당 가격', 'mo': '예상 월 상환액 (35년)', 'size': '면적', 'rooms': '침실',
            'maint': '관리비', 'units': '총 세대수', 'cars': '주차', 'rail': '가장 가까운 역', 'area': '지역',
            'elig': '구매 자격', 'low': '최저', 'large': '최대', 'early': '가장 빠름', 'few': '가장 희소',
            'pm': '/ 월', 'moNote': '계약금 10%, 연 4%. 참고용 추정치입니다.', 'share': '공유 링크 복사', 'copied': '링크가 복사되었습니다!',
            'print': '인쇄 / PDF 저장', 'map': '위치', 'mapNote': '핀은 대략적인 위치입니다.', 'view': '프로젝트 보기',
-           'best': '각 행의 최고 값이 표시됩니다.', 'calc': '계산기 열기', 'ready': '입주 가능'},
+           'best': '각 행의 최고 값이 표시됩니다.', 'calc': '계산기 열기', 'ready': '입주 가능', 'search': '프로젝트명 또는 지역으로 검색…'},
 }
 try:
     import opencc
@@ -454,14 +454,21 @@ JS = r'''<!-- KN-CMP:START -->
     b.addEventListener('click', function(){ compare(b.getAttribute('data-p').split(',').map(Number)); });
   });
   setup();
+  function ph(){ var se = document.getElementById('cmpSearch'); if(se) se.placeholder = T('search'); }
+  ph();
   var _close = window.closeModal;
   window.closeModal = function(){ _close.apply(this, arguments); try{ history.replaceState(null, '', location.pathname); }catch(e){} };
-  var _setLang = window.setLanguage;
-  if(typeof _setLang === 'function') window.setLanguage = function(){
-    var r = _setLang.apply(this, arguments);
-    if(document.getElementById('cmpModalOverlay').classList.contains('open')) renderTable();
-    return r;
-  };
+  document.addEventListener('DOMContentLoaded', function(){   // setLanguage is defined by a later script
+    var _setLang = window.setLanguage;
+    if(typeof _setLang === 'function') window.setLanguage = function(){
+      var r = _setLang.apply(this, arguments);
+      ph();
+      if(document.getElementById('cmpModalOverlay').classList.contains('open')) renderTable();
+      return r;
+    };
+    ph();
+  });
+  window.addEventListener('load', ph);
   var q = (location.search.match(/[?&]p=([^&]+)/) || [])[1];
   if(q){
     var want = decodeURIComponent(q).split(',');

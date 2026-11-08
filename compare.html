@@ -249,6 +249,34 @@
 <link rel="icon" type="image/png" href="images/d795398568d23a46.png">
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style id="kn-float">
+/* KN-FLOAT:START */
+a.float-wa.float-wa{position:fixed;right:22px;bottom:22px;z-index:60;display:inline-flex;align-items:center;gap:11px;width:auto;height:auto;
+  padding:13px 24px 13px 18px;border-radius:100px;background:#25D366;color:#fff;font:700 16px/1 'Inter',system-ui,sans-serif;letter-spacing:0;
+  text-decoration:none;animation:knWaPulse 2.6s ease-in-out infinite;transition:transform .25s ease;}
+a.float-wa.float-wa:hover{transform:translateY(-2px) scale(1.03);color:#fff;}
+a.float-wa.float-wa svg{width:26px;height:26px;flex:0 0 26px;fill:#fff;}
+a.float-wa.float-wa .fw-txt{white-space:nowrap;}
+@keyframes knWaPulse{
+  0%,100%{box-shadow:0 0 0 4px rgba(37,211,102,.18),0 0 14px 2px rgba(37,211,102,.30),0 8px 22px rgba(0,0,0,.16);}
+  50%{box-shadow:0 0 0 12px rgba(37,211,102,.10),0 0 30px 10px rgba(37,211,102,.45),0 8px 22px rgba(0,0,0,.16);}
+}
+@media(max-width:600px){a.float-wa.float-wa{right:16px;bottom:16px;padding:11px 18px 11px 14px;font-size:14px;gap:9px;}a.float-wa.float-wa svg{width:22px;height:22px;flex-basis:22px;}}
+@media(prefers-reduced-motion:reduce){a.float-wa.float-wa{animation:none;box-shadow:0 0 0 6px rgba(37,211,102,.18),0 8px 22px rgba(0,0,0,.16);}}
+/* back to top, above the WhatsApp button */
+.kn-fab{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.kn-fab a.float-wa.float-wa{position:static;right:auto;bottom:auto;}
+.kn-top{width:48px;height:48px;border-radius:50%;background:#fff;border:1.5px solid #d6d6d6;box-shadow:0 6px 18px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:#555;
+  opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility .25s,border-color .2s,color .2s;}
+.kn-top.show{opacity:1;visibility:visible;transform:none;}
+.kn-top:hover{border-color:var(--gold,#5E60CE);color:var(--gold,#5E60CE);}
+.kn-top svg{width:20px;height:20px;}
+@media(max-width:600px){.kn-fab{right:16px;bottom:16px;gap:10px;}.kn-top{width:44px;height:44px;}}
+@media(prefers-reduced-motion:reduce){.kn-top{transition:none;}}
+/* phones: the header WhatsApp button would push the menu button off screen; the floating button stays */
+@media(max-width:560px){header .whatsapp-btn,header .wa-btn,.nav-right .whatsapp-btn{display:none!important;}.hamburger{margin-left:auto;padding:6px 4px;}}
+/* KN-FLOAT:END */
+</style>
 <style id="kn-cmp">
 /* KN-CMP:START */
   .cmp-subs{margin:-8px 0 22px;} .cmp-sub{display:none; flex-wrap:wrap; gap:8px; padding:12px 14px; background:var(--bg); border-radius:10px;}
@@ -283,34 +311,6 @@
     .cmp-table td.best{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
   }
 /* KN-CMP:END */
-</style>
-<style id="kn-float">
-/* KN-FLOAT:START */
-a.float-wa.float-wa{position:fixed;right:22px;bottom:22px;z-index:60;display:inline-flex;align-items:center;gap:11px;width:auto;height:auto;
-  padding:13px 24px 13px 18px;border-radius:100px;background:#25D366;color:#fff;font:700 16px/1 'Inter',system-ui,sans-serif;letter-spacing:0;
-  text-decoration:none;animation:knWaPulse 2.6s ease-in-out infinite;transition:transform .25s ease;}
-a.float-wa.float-wa:hover{transform:translateY(-2px) scale(1.03);color:#fff;}
-a.float-wa.float-wa svg{width:26px;height:26px;flex:0 0 26px;fill:#fff;}
-a.float-wa.float-wa .fw-txt{white-space:nowrap;}
-@keyframes knWaPulse{
-  0%,100%{box-shadow:0 0 0 4px rgba(37,211,102,.18),0 0 14px 2px rgba(37,211,102,.30),0 8px 22px rgba(0,0,0,.16);}
-  50%{box-shadow:0 0 0 12px rgba(37,211,102,.10),0 0 30px 10px rgba(37,211,102,.45),0 8px 22px rgba(0,0,0,.16);}
-}
-@media(max-width:600px){a.float-wa.float-wa{right:16px;bottom:16px;padding:11px 18px 11px 14px;font-size:14px;gap:9px;}a.float-wa.float-wa svg{width:22px;height:22px;flex-basis:22px;}}
-@media(prefers-reduced-motion:reduce){a.float-wa.float-wa{animation:none;box-shadow:0 0 0 6px rgba(37,211,102,.18),0 8px 22px rgba(0,0,0,.16);}}
-/* back to top, above the WhatsApp button */
-.kn-fab{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:center;gap:12px;}
-.kn-fab a.float-wa.float-wa{position:static;right:auto;bottom:auto;}
-.kn-top{width:48px;height:48px;border-radius:50%;background:#fff;border:1.5px solid #d6d6d6;box-shadow:0 6px 18px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:#555;
-  opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility .25s,border-color .2s,color .2s;}
-.kn-top.show{opacity:1;visibility:visible;transform:none;}
-.kn-top:hover{border-color:var(--gold,#5E60CE);color:var(--gold,#5E60CE);}
-.kn-top svg{width:20px;height:20px;}
-@media(max-width:600px){.kn-fab{right:16px;bottom:16px;gap:10px;}.kn-top{width:44px;height:44px;}}
-@media(prefers-reduced-motion:reduce){.kn-top{transition:none;}}
-/* phones: the header WhatsApp button would push the menu button off screen; the floating button stays */
-@media(max-width:560px){header .whatsapp-btn,header .wa-btn,.nav-right .whatsapp-btn{display:none!important;}.hamburger{margin-left:auto;padding:6px 4px;}}
-/* KN-FLOAT:END */
 </style>
 </head>
 <body>
@@ -1903,7 +1903,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
 <!-- KN-CMP:START -->
 <script>
 (function(){
-  var LBL = {"en": {"dev": "Developer", "type": "Type", "tenure": "Tenure", "title": "Title", "status": "Status", "completion": "Completion", "price": "Starting price", "psf": "Price psf", "mo": "Est. monthly (35 yrs)", "size": "Size", "rooms": "Bedrooms", "maint": "Maintenance fee", "units": "Total units", "cars": "Car parks", "rail": "Nearest rail", "area": "Area", "elig": "Buyer eligibility", "low": "Lowest", "large": "Largest", "early": "Earliest", "few": "Most exclusive", "pm": "/ month", "moNote": "10% down, 4% p.a. Estimate only.", "share": "Copy share link", "copied": "Link copied!", "print": "Print / Save PDF", "map": "Where they are", "mapNote": "Pins show approximate locations.", "view": "View project", "best": "Best value is marked for each row.", "calc": "Open calculator", "ready": "Ready"}, "zh-CN": {"dev": "发展商", "type": "类型", "tenure": "产权", "title": "地契", "status": "状态", "completion": "竣工", "price": "起价", "psf": "每平方尺价格", "mo": "预计月供（35 年）", "size": "面积", "rooms": "卧室", "maint": "管理费", "units": "总单位", "cars": "停车位", "rail": "最近轨道站", "area": "地区", "elig": "购买资格", "low": "最低", "large": "最大", "early": "最早", "few": "最低密度", "pm": "/ 月", "moNote": "首付 10%，年利率 4%，仅供参考。", "share": "复制分享链接", "copied": "链接已复制！", "print": "打印 / 保存 PDF", "map": "项目位置", "mapNote": "地图标记为大约位置。", "view": "查看项目", "best": "每一行的最佳数值已标出。", "calc": "打开计算器", "ready": "现房"}, "ms": {"dev": "Pemaju", "type": "Jenis", "tenure": "Pegangan", "title": "Hak milik", "status": "Status", "completion": "Siap", "price": "Harga permulaan", "psf": "Harga sk", "mo": "Anggaran bulanan (35 thn)", "size": "Saiz", "rooms": "Bilik tidur", "maint": "Yuran penyelenggaraan", "units": "Jumlah unit", "cars": "Tempat letak kereta", "rail": "Stesen rel terdekat", "area": "Kawasan", "elig": "Kelayakan pembeli", "low": "Terendah", "large": "Terbesar", "early": "Terawal", "few": "Paling eksklusif", "pm": "/ bulan", "moNote": "Deposit 10%, 4% setahun. Anggaran sahaja.", "share": "Salin pautan", "copied": "Pautan disalin!", "print": "Cetak / Simpan PDF", "map": "Lokasi projek", "mapNote": "Pin menunjukkan lokasi anggaran.", "view": "Lihat projek", "best": "Nilai terbaik ditandakan bagi setiap baris.", "calc": "Buka kalkulator", "ready": "Sedia"}, "ja": {"dev": "デベロッパー", "type": "タイプ", "tenure": "保有形態", "title": "権利種別", "status": "ステータス", "completion": "完成", "price": "最低価格", "psf": "平方フィート単価", "mo": "月々の返済目安（35年）", "size": "面積", "rooms": "ベッドルーム", "maint": "管理費", "units": "総戸数", "cars": "駐車場", "rail": "最寄り駅", "area": "エリア", "elig": "購入資格", "low": "最安", "large": "最大", "early": "最も早い", "few": "最も希少", "pm": "/ 月", "moNote": "頭金10%、年利4%。目安です。", "share": "共有リンクをコピー", "copied": "コピーしました！", "print": "印刷 / PDF保存", "map": "所在地", "mapNote": "ピンはおおよその位置です。", "view": "プロジェクトを見る", "best": "各行のベスト値に印が付いています。", "calc": "計算機を開く", "ready": "完成済み"}, "ko": {"dev": "개발사", "type": "유형", "tenure": "소유 형태", "title": "권리 유형", "status": "상태", "completion": "준공", "price": "시작 가격", "psf": "평방피트당 가격", "mo": "예상 월 상환액 (35년)", "size": "면적", "rooms": "침실", "maint": "관리비", "units": "총 세대수", "cars": "주차", "rail": "가장 가까운 역", "area": "지역", "elig": "구매 자격", "low": "최저", "large": "최대", "early": "가장 빠름", "few": "가장 희소", "pm": "/ 월", "moNote": "계약금 10%, 연 4%. 참고용 추정치입니다.", "share": "공유 링크 복사", "copied": "링크가 복사되었습니다!", "print": "인쇄 / PDF 저장", "map": "위치", "mapNote": "핀은 대략적인 위치입니다.", "view": "프로젝트 보기", "best": "각 행의 최고 값이 표시됩니다.", "calc": "계산기 열기", "ready": "입주 가능"}, "zh-TW": {"dev": "發展商", "type": "類型", "tenure": "產權", "title": "地契", "status": "狀態", "completion": "竣工", "price": "起價", "psf": "每平方尺價格", "mo": "預計月供（35 年）", "size": "面積", "rooms": "臥室", "maint": "管理費", "units": "總單位", "cars": "停車位", "rail": "最近軌道站", "area": "地區", "elig": "購買資格", "low": "最低", "large": "最大", "early": "最早", "few": "最低密度", "pm": "/ 月", "moNote": "首付 10%，年利率 4%，僅供參考。", "share": "複製分享鏈接", "copied": "鏈接已複製！", "print": "打印 / 保存 PDF", "map": "項目位置", "mapNote": "地圖標記為大約位置。", "view": "查看項目", "best": "每一行的最佳數值已標出。", "calc": "打開計算器", "ready": "現房"}};
+  var LBL = {"en": {"dev": "Developer", "type": "Type", "tenure": "Tenure", "title": "Title", "status": "Status", "completion": "Completion", "price": "Starting price", "psf": "Price psf", "mo": "Est. monthly (35 yrs)", "size": "Size", "rooms": "Bedrooms", "maint": "Maintenance fee", "units": "Total units", "cars": "Car parks", "rail": "Nearest rail", "area": "Area", "elig": "Buyer eligibility", "low": "Lowest", "large": "Largest", "early": "Earliest", "few": "Most exclusive", "pm": "/ month", "moNote": "10% down, 4% p.a. Estimate only.", "share": "Copy share link", "copied": "Link copied!", "print": "Print / Save PDF", "map": "Where they are", "mapNote": "Pins show approximate locations.", "view": "View project", "best": "Best value is marked for each row.", "calc": "Open calculator", "ready": "Ready", "search": "Search by project name or area..."}, "zh-CN": {"dev": "发展商", "type": "类型", "tenure": "产权", "title": "地契", "status": "状态", "completion": "竣工", "price": "起价", "psf": "每平方尺价格", "mo": "预计月供（35 年）", "size": "面积", "rooms": "卧室", "maint": "管理费", "units": "总单位", "cars": "停车位", "rail": "最近轨道站", "area": "地区", "elig": "购买资格", "low": "最低", "large": "最大", "early": "最早", "few": "最低密度", "pm": "/ 月", "moNote": "首付 10%，年利率 4%，仅供参考。", "share": "复制分享链接", "copied": "链接已复制！", "print": "打印 / 保存 PDF", "map": "项目位置", "mapNote": "地图标记为大约位置。", "view": "查看项目", "best": "每一行的最佳数值已标出。", "calc": "打开计算器", "ready": "现房", "search": "按项目名称或地区搜索…"}, "ms": {"dev": "Pemaju", "type": "Jenis", "tenure": "Pegangan", "title": "Hak milik", "status": "Status", "completion": "Siap", "price": "Harga permulaan", "psf": "Harga sk", "mo": "Anggaran bulanan (35 thn)", "size": "Saiz", "rooms": "Bilik tidur", "maint": "Yuran penyelenggaraan", "units": "Jumlah unit", "cars": "Tempat letak kereta", "rail": "Stesen rel terdekat", "area": "Kawasan", "elig": "Kelayakan pembeli", "low": "Terendah", "large": "Terbesar", "early": "Terawal", "few": "Paling eksklusif", "pm": "/ bulan", "moNote": "Deposit 10%, 4% setahun. Anggaran sahaja.", "share": "Salin pautan", "copied": "Pautan disalin!", "print": "Cetak / Simpan PDF", "map": "Lokasi projek", "mapNote": "Pin menunjukkan lokasi anggaran.", "view": "Lihat projek", "best": "Nilai terbaik ditandakan bagi setiap baris.", "calc": "Buka kalkulator", "ready": "Sedia", "search": "Cari mengikut nama projek atau kawasan..."}, "ja": {"dev": "デベロッパー", "type": "タイプ", "tenure": "保有形態", "title": "権利種別", "status": "ステータス", "completion": "完成", "price": "最低価格", "psf": "平方フィート単価", "mo": "月々の返済目安（35年）", "size": "面積", "rooms": "ベッドルーム", "maint": "管理費", "units": "総戸数", "cars": "駐車場", "rail": "最寄り駅", "area": "エリア", "elig": "購入資格", "low": "最安", "large": "最大", "early": "最も早い", "few": "最も希少", "pm": "/ 月", "moNote": "頭金10%、年利4%。目安です。", "share": "共有リンクをコピー", "copied": "コピーしました！", "print": "印刷 / PDF保存", "map": "所在地", "mapNote": "ピンはおおよその位置です。", "view": "プロジェクトを見る", "best": "各行のベスト値に印が付いています。", "calc": "計算機を開く", "ready": "完成済み", "search": "プロジェクト名またはエリアで検索…"}, "ko": {"dev": "개발사", "type": "유형", "tenure": "소유 형태", "title": "권리 유형", "status": "상태", "completion": "준공", "price": "시작 가격", "psf": "평방피트당 가격", "mo": "예상 월 상환액 (35년)", "size": "면적", "rooms": "침실", "maint": "관리비", "units": "총 세대수", "cars": "주차", "rail": "가장 가까운 역", "area": "지역", "elig": "구매 자격", "low": "최저", "large": "최대", "early": "가장 빠름", "few": "가장 희소", "pm": "/ 월", "moNote": "계약금 10%, 연 4%. 참고용 추정치입니다.", "share": "공유 링크 복사", "copied": "링크가 복사되었습니다!", "print": "인쇄 / PDF 저장", "map": "위치", "mapNote": "핀은 대략적인 위치입니다.", "view": "프로젝트 보기", "best": "각 행의 최고 값이 표시됩니다.", "calc": "계산기 열기", "ready": "입주 가능", "search": "프로젝트명 또는 지역으로 검색…"}, "zh-TW": {"dev": "發展商", "type": "類型", "tenure": "產權", "title": "地契", "status": "狀態", "completion": "竣工", "price": "起價", "psf": "每平方尺價格", "mo": "預計月供（35 年）", "size": "面積", "rooms": "臥室", "maint": "管理費", "units": "總單位", "cars": "停車位", "rail": "最近軌道站", "area": "地區", "elig": "購買資格", "low": "最低", "large": "最大", "early": "最早", "few": "最低密度", "pm": "/ 月", "moNote": "首付 10%，年利率 4%，僅供參考。", "share": "複製分享鏈接", "copied": "鏈接已複製！", "print": "打印 / 保存 PDF", "map": "項目位置", "mapNote": "地圖標記為大約位置。", "view": "查看項目", "best": "每一行的最佳數值已標出。", "calc": "打開計算器", "ready": "現房", "search": "按項目名稱或地區搜索…"}};
   function lang(){ var l = (typeof currentLang !== 'undefined' && currentLang) ? currentLang : 'en'; return LBL[l] ? l : 'en'; }
   function T(k){ return LBL[lang()][k] || LBL.en[k]; }
   function esc(v){ return escapeHtml(v == null ? '' : v); }
@@ -2090,14 +2090,21 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
     b.addEventListener('click', function(){ compare(b.getAttribute('data-p').split(',').map(Number)); });
   });
   setup();
+  function ph(){ var se = document.getElementById('cmpSearch'); if(se) se.placeholder = T('search'); }
+  ph();
   var _close = window.closeModal;
   window.closeModal = function(){ _close.apply(this, arguments); try{ history.replaceState(null, '', location.pathname); }catch(e){} };
-  var _setLang = window.setLanguage;
-  if(typeof _setLang === 'function') window.setLanguage = function(){
-    var r = _setLang.apply(this, arguments);
-    if(document.getElementById('cmpModalOverlay').classList.contains('open')) renderTable();
-    return r;
-  };
+  document.addEventListener('DOMContentLoaded', function(){   // setLanguage is defined by a later script
+    var _setLang = window.setLanguage;
+    if(typeof _setLang === 'function') window.setLanguage = function(){
+      var r = _setLang.apply(this, arguments);
+      ph();
+      if(document.getElementById('cmpModalOverlay').classList.contains('open')) renderTable();
+      return r;
+    };
+    ph();
+  });
+  window.addEventListener('load', ph);
   var q = (location.search.match(/[?&]p=([^&]+)/) || [])[1];
   if(q){
     var want = decodeURIComponent(q).split(',');
