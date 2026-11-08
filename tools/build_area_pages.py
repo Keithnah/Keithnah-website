@@ -155,7 +155,7 @@ footer{border-top:1px solid var(--line);padding:26px 5vw;font-size:13px;color:va
 '''
 
 NAV = [('', 'Home'), ('projects.html', 'View Projects'), ('compare.html', 'Compare Projects'), ('blog.html', 'News'),
-       ('calculator.html', 'Calculator'), ('mm2h.html', 'MM2H 第二家园'), ('about-keith.html', 'About Keith')]
+       ('calculator.html', 'Calculator'), ('resources.html', 'Free Resources'), ('about-keith.html', 'About Keith')]
 
 
 try:
