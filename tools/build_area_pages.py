@@ -158,6 +158,81 @@ NAV = [('', 'Home'), ('projects.html', 'View Projects'), ('compare.html', 'Compa
        ('calculator.html', 'Calculator'), ('mm2h.html', 'MM2H 第二家园'), ('about-keith.html', 'About Keith')]
 
 
+try:
+    COORDS = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'project_coords.json'), encoding='utf-8'))
+except (OSError, ValueError):
+    COORDS = {}
+
+
+def short_rm(v):
+    if not v:
+        return ''
+    return ('RM %.2fM' % (v / 1e6)).replace('.00M', 'M').replace('0M', 'M') if v >= 1e6 else 'RM %dK' % round(v / 1000)
+
+
+def map_points(ids, root):
+    import math
+    pts = []
+    for k in ids:
+        c = COORDS.get(P[k]['name'])
+        if not c:
+            continue
+        pts.append({'k': k, 'lat': c[0], 'lng': c[1]})
+    groups = {}
+    for p in pts:
+        groups.setdefault((round(p['lat'], 5), round(p['lng'], 5)), []).append(p)
+    for g in groups.values():
+        if len(g) > 1:      # same spot: spread the pins a little so each one can be tapped
+            for n, p in enumerate(g):
+                a = 2 * math.pi * n / len(g)
+                p['lat'] += 0.0022 * math.cos(a)
+                p['lng'] += 0.0022 * math.sin(a)
+    out = []
+    for p in pts:
+        k = p['k']
+        v = price_rm(P[k].get('price'))
+        out.append({'lat': round(p['lat'], 6), 'lng': round(p['lng'], 6), 'n': P[k]['name'], 'a': PLACES[k][1],
+                    's': P[k].get('status') or '', 'p': short_rm(v), 'u': '%sproperty/%s.html' % (root, SLUG.get(k, slug(P[k]['name']))),
+                    'i': (root + PHOTO[k]) if PHOTO.get(k) else ''})
+    return out
+
+
+MAP_CSS = ('.kc{background:rgba(94,96,206,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;}'
+           '.kc span{width:30px;height:30px;border-radius:50%;background:#5E60CE;color:#fff;font:700 13px Inter,sans-serif;display:flex;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 2px 8px rgba(17,17,17,.3);}'
+           '.kd{background:#5E60CE;border:3px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(17,17,17,.35);cursor:pointer;transition:transform .15s;}'
+           '.kd:hover{transform:scale(1.25);background:#1d1b4f;}'
+           '.leaflet-tooltip{font:600 12px Inter,sans-serif;border-radius:8px;padding:5px 9px;}'
+           '.kmap{height:440px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#eef0f4;z-index:0;}'
+           '.kp{background:#5E60CE;color:#fff;font:700 12px Inter,sans-serif;padding:5px 9px;border-radius:100px;white-space:nowrap;box-shadow:0 4px 12px rgba(17,17,17,.25);border:2px solid #fff;transform:translate(-50%,-100%);display:inline-block;position:relative;}'
+           '.kp:after{content:"";position:absolute;left:50%;bottom:-7px;margin-left:-5px;border:5px solid transparent;border-top-color:#5E60CE;}'
+           '.kp.dot{width:16px;height:16px;padding:0;border-radius:50%;} .kp.dot:after{display:none;}'
+           '.kp:hover,.kp.on{background:#1d1b4f;} .kp:hover:after,.kp.on:after{border-top-color:#1d1b4f;}'
+           '.kpop{width:220px;font-family:Inter,sans-serif;} .kpop img{width:100%;height:110px;object-fit:cover;border-radius:8px;margin-bottom:8px;}'
+           '.kpop b{display:block;font:700 15px "Playfair Display",serif;color:#111;} .kpop small{display:block;color:#5A5A5A;font-size:12px;margin:2px 0 6px;}'
+           '.kpop em{font-style:normal;color:#5E60CE;font-weight:700;font-size:14px;} .kpop a{display:block;margin-top:8px;color:#5E60CE;font-weight:700;}'
+           '.leaflet-popup-content{margin:12px;} .kmap-note{font-size:12.5px;color:var(--grey);margin-top:10px;}'
+           '@media(max-width:700px){.kmap{height:360px;}}')
+
+
+def map_block(place, ids, root, heading=None):
+    pts = map_points(ids, root)
+    if not pts:
+        return ''
+    return ('<link rel="stylesheet" href="%svendor/leaflet/leaflet.css"><link rel="stylesheet" href="%svendor/leaflet/MarkerCluster.css"><style>%s</style>'
+            '<section class="blk"><h2>%s</h2><div class="kmap" id="kmap" aria-label="Map of projects"></div>'
+            '<p class="kmap-note">Pins show each project\'s approximate location. Tap a pin to see the project.</p></section>'
+            '<script src="%svendor/leaflet/leaflet.js"></script><script src="%svendor/leaflet/leaflet.markercluster.js"></script><script>(function(){var P=%s,VIEW=%s;'
+            'var m=L.map("kmap",{scrollWheelZoom:false,dragging:!L.Browser.mobile,tap:false});'
+            'L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,'
+            'attribution:"&copy; <a href=\\"https://www.openstreetmap.org/copyright\\">OpenStreetMap</a>"}).addTo(m);'
+            'var g=L.markerClusterGroup({showCoverageOnHover:false,maxClusterRadius:38,disableClusteringAtZoom:15,iconCreateFunction:function(c){return L.divIcon({html:"<span>"+c.getChildCount()+"</span>",className:"kc",iconSize:[38,38]})}});var b=[];P.forEach(function(p){var ic=L.divIcon({className:"kd",iconSize:[18,18],iconAnchor:[9,9],popupAnchor:[0,-10]});'
+            'var h=function(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}var V=VIEW[l]||VIEW.en;return "<div class=\\"kpop\\">"+(p.i?"<img src=\\""+p.i+"\\" alt=\\"\\">":"")+"<b>"+p.n+"</b><small>"+p.a+(p.s?" · "+p.s:"")+"</small>"+(p.p?"<em>"+(V[0]?V[0]+" ":"")+p.p+"</em>":"")+"<a href=\\""+p.u+"\\">"+V[1]+" →</a></div>"};'
+            'L.marker([p.lat,p.lng],{icon:ic,title:p.n,riseOnHover:true}).addTo(g).bindPopup(h,{maxWidth:240}).bindTooltip(p.n+(p.p?" · "+p.p:""),{direction:"top",offset:[0,-8]});b.push([p.lat,p.lng]);});'
+            'm.addLayer(g);if(b.length===1)m.setView(b[0],15);else m.fitBounds(b,{padding:[40,40],maxZoom:15});})();</script>') % (
+        root, root, MAP_CSS, heading or ('Map of new launches in %s' % E(place)), root, root, json.dumps(pts, ensure_ascii=False).replace('</', '<\\/'),
+        json.dumps({'en': ['From', 'View project'], 'zh-CN': ['起价', '查看项目'], 'zh-TW': ['起價', '查看項目'], 'ms': ['Dari', 'Lihat projek'], 'ja': ['', 'プロジェクトを見る'], 'ko': ['', '프로젝트 보기']}, ensure_ascii=False))
+
+
 def page(state, area, ids, tree, root):
     """root: prefix for links to the rest of the site ('../' live, 'https://keithnah.com/' preview)."""
     place = area or state
@@ -272,6 +347,7 @@ def page(state, area, ids, tree, root):
     <p>{intro} Keith Nah currently lists {n} project{s} here{lowtxt}. Compare starting prices, sizes, tenure and completion dates below, then open any project for its floor plans.</p>
     <div class="facts"><div><span>Projects</span><strong>{n}</strong></div><div><span>Starting from</span><strong>{low}</strong></div><div><span>Freehold</span><strong>{free} of {n}</strong></div><div><span>Completion</span><strong>{years}</strong></div></div>
   </section>
+  {map_blk}
   <section class="blk"><h2>Projects in {place}</h2><div class="cards">{cards}</div></section>
   <section class="blk"><h2>Compare at a glance</h2><div class="tbl"><table><thead>{head}</thead><tbody>{rows}</tbody></table></div></section>
   <section class="blk faq"><h2>Buying in {place}: common questions</h2>{faq}</section>
@@ -289,7 +365,7 @@ def page(state, area, ids, tree, root):
            nav=nav, wa=E(wa), crumbs=crumbs, eyebrow=E(state if area else 'Malaysia'), place=E(place), year=YEAR,
            intro=E(INTRO.get(place, '')), n=n, s='' if n == 1 else 's', lowtxt=(', starting from about %s (gross)' % rm(low[0])) if low else '',
            low=rm(low[0]) if low else '—', free=len(free), years=('%d – %d' % (years[0], years[-1]) if len(years) > 1 else (str(years[0]) if years else 'TBC')),
-           cards=cards, fcss=FW.FLOAT_CSS, floatwa=FW.float_html(E(wa)), head=head, rows=rows, faq=faq_html, more=more, states=states)
+           cards=cards, map_blk=map_block(place, ids, root), fcss=FW.FLOAT_CSS, floatwa=FW.float_html(E(wa)), head=head, rows=rows, faq=faq_html, more=more, states=states)
 
 
 def _register():
@@ -299,6 +375,25 @@ def _register():
 
 
 _register()
+
+
+def link_projects_map():
+    """All projects on a map in View Projects, above the Best New Launch Lists block (idempotent)."""
+    ids = [k for k in range(len(P))]
+    blk = map_block('Malaysia', ids, '', heading='Map of all new launches')
+    blk = blk.replace('<section class="blk">', '<section class="blk pmap-sec" id="projectMap">', 1)
+    css = ('<style>.pmap-sec{max-width:1240px;margin:0 auto;padding:60px 5vw 0;}.pmap-sec h2{font-size:clamp(26px,3vw,36px);margin-bottom:16px;}'
+           '.pmap-sec .kmap{height:480px;}@media(max-width:700px){.pmap-sec{padding:44px 16px 0;}.pmap-sec .kmap{height:380px;}}</style>')
+    block = '<!-- KN-MAP:START -->' + css + blk + '<!-- KN-MAP:END -->\n'
+    p = 'projects.html'
+    s = open(p, encoding='utf-8').read()
+    s = re.sub(r'<!-- KN-MAP:START -->.*?<!-- KN-MAP:END -->\n?', '', s, flags=re.S)
+    anchor = '<!-- KN-QUICK:START -->'
+    assert anchor in s
+    s = s.replace(anchor, block + anchor, 1)
+    open(p, 'w', encoding='utf-8').write(s)
+    import i18n_pages as I
+    I.merge_projects_page({'Map of all new launches': ('pm.h2', {}), "Pins show each project's approximate location. Tap a pin to see the project.": ('map.note', {})})
 
 
 def build(out, root):
@@ -324,4 +419,5 @@ if __name__ == '__main__':
         pages = build(os.path.join(sys.argv[2], 'area'), SITE + '/')
     else:
         pages = build('area', '../')
+    link_projects_map()
     print('area pages:', len(pages))
