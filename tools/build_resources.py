@@ -279,7 +279,7 @@ print('resources: %d area guides' % len(GUIDES))
 
 # ---------- home page: MM2H section (after the YouTube videos), linking to mm2h.html ----------
 MM = {
-    'mm_eb': ('MM2H 第二家园', {'zh-CN': 'MM2H 第二家园', 'ms': 'MM2H', 'ja': 'MM2H', 'ko': 'MM2H'}),
+    'mm_eb': ('Malaysia My Second Home', {'zh-CN': '马来西亚第二家园', 'ms': 'Malaysia My Second Home', 'ja': 'マレーシア・マイ・セカンドホーム', 'ko': '말레이시아 마이 세컨드 홈'}),
     'mm_h2': ('Live in Malaysia on a long-stay pass.', {'zh-CN': '用长期签证，住在马来西亚。', 'ms': 'Tinggal di Malaysia dengan pas jangka panjang.', 'ja': '長期滞在ビザでマレーシアに暮らす。', 'ko': '장기 체류 비자로 말레이시아에서 살기.'}),
     'mm_p': ('Malaysia My Second Home (MM2H) lets foreigners and their families live in Malaysia on a renewable pass of 5, 15 or 20 years. Many of Keith\'s clients combine it with buying a home here.',
              {'zh-CN': 'MM2H（马来西亚第二家园）让外国人和家人以 5、15 或 20 年可续签的签证住在马来西亚。很多 Keith 的客户会同时在这里买房。',
@@ -304,7 +304,7 @@ tiers = ''.join('<div class="mmh-t" style="--tc:%s"><b>%s</b><dl><dt>%s</dt><dd>
 MM_HTML = ('<!-- KN-MM2H:START -->\n<style>'
            '#mm2h-home{padding:100px 5vw;background:linear-gradient(160deg,#1d1b4f,#2b2973 70%%,#3b3c99);color:#fff;}'
            '.mmh{max-width:1220px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center;}'
-           '.mmh .eyebrow{color:#b9b4ff;} .mmh h2{font-size:clamp(30px,3.6vw,46px);color:#fff;margin:14px 0 16px;line-height:1.15;} .mmh p{opacity:.86;font-size:15.5px;font-weight:500;margin-bottom:28px;max-width:520px;}'
+           '.mmh-logo{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:6px;}.mmh-logo b{font-family:"Playfair Display",serif;font-size:clamp(52px,6vw,76px);line-height:1;letter-spacing:.02em;color:#fff;text-shadow:0 6px 30px rgba(94,96,206,.6);}.mmh-logo span{font-size:clamp(15px,1.6vw,19px);font-weight:700;letter-spacing:.06em;color:#1d1b4f;background:#b9b4ff;padding:8px 16px;border-radius:100px;}.mmh h2{font-size:clamp(28px,3.2vw,40px);color:#fff;margin:18px 0 16px;line-height:1.2;} .mmh p{opacity:.86;font-size:15.5px;font-weight:500;margin-bottom:28px;max-width:520px;}'
            '.mmh-b{display:flex;gap:12px;flex-wrap:wrap;} .mmh-b a{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:100px;font-weight:700;font-size:14px;letter-spacing:.02em;transition:transform .2s,background .2s;}'
            '.mmh-b a:hover{transform:translateY(-2px);} .mmh-go{background:#fff;color:#1d1b4f;} .mmh-wa{border:1px solid rgba(255,255,255,.35);color:#fff;} .mmh-wa:hover{background:rgba(255,255,255,.1);}'
            '.mmh-ts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;} .mmh-t{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-top:4px solid var(--tc);border-radius:16px;padding:20px 18px;}'
@@ -312,7 +312,7 @@ MM_HTML = ('<!-- KN-MM2H:START -->\n<style>'
            '.mmh small{display:block;margin-top:14px;font-size:11.5px;opacity:.6;}'
            '@media(max-width:900px){#mm2h-home{padding:70px 20px;} .mmh{grid-template-columns:1fr;gap:32px;} .mmh-ts{grid-template-columns:1fr;} .mmh-t{display:grid;grid-template-columns:110px 1fr;align-items:center;} .mmh-t dl{display:grid;grid-template-columns:auto auto;gap:2px 12px;} .mmh-t dt{margin:0;align-self:center;}}'
            '</style>\n<section id="mm2h-home"><div class="mmh"><div>'
-           '<span class="eyebrow" data-i18n="mm_eb">MM2H 第二家园</span><h2 data-i18n="mm_h2">%s</h2><p data-i18n="mm_p">%s</p>'
+           '<div class="mmh-logo"><b>MM2H</b><span data-i18n="mm_eb">Malaysia My Second Home</span></div><h2 data-i18n="mm_h2">%s</h2><p data-i18n="mm_p">%s</p>'
            '<div class="mmh-b"><a class="mmh-go" href="mm2h.html"><span data-i18n="mm_btn">%s</span> &rarr;</a>'
            '<a class="mmh-wa" href="%s" target="_blank" rel="noopener" data-i18n="mm_ask">%s</a></div></div>'
            '<div><div class="mmh-ts">%s</div><small data-i18n="mm_note">%s</small></div></div></section>\n<!-- KN-MM2H:END -->\n') % (
