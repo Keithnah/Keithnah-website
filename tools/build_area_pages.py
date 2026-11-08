@@ -197,7 +197,9 @@ def map_points(ids, root):
     return out
 
 
-MAP_CSS = ('.kc{background:rgba(94,96,206,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;}'
+MAP_CSS = ('.kmap-all{display:flex;align-items:center;gap:6px;background:#fff;border:2px solid rgba(0,0,0,.2);border-radius:8px;padding:6px 11px;font:600 13px Inter,sans-serif;color:#1d1b4f;cursor:pointer;background-clip:padding-box;}'
+           '.kmap-all:hover{background:#f3f1fa;} .kmap-all svg{width:16px;height:16px;fill:none;stroke:#5E60CE;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}'
+           '.kc{background:rgba(94,96,206,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;}'
            '.kc span{width:30px;height:30px;border-radius:50%;background:#5E60CE;color:#fff;font:700 13px Inter,sans-serif;display:flex;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 2px 8px rgba(17,17,17,.3);}'
            '.kd{background:#5E60CE;border:3px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(17,17,17,.35);cursor:pointer;transition:transform .15s;}'
            '.kd:hover{transform:scale(1.25);background:#1d1b4f;}'
@@ -228,7 +230,7 @@ def map_block(place, ids, root, heading=None):
             'var g=L.markerClusterGroup({showCoverageOnHover:false,maxClusterRadius:38,disableClusteringAtZoom:15,iconCreateFunction:function(c){return L.divIcon({html:"<span>"+c.getChildCount()+"</span>",className:"kc",iconSize:[38,38]})}});var b=[];P.forEach(function(p){var ic=L.divIcon({className:"kd",iconSize:[18,18],iconAnchor:[9,9],popupAnchor:[0,-10]});'
             'var h=function(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}var V=VIEW[l]||VIEW.en;return "<div class=\\"kpop\\">"+(p.i?"<img src=\\""+p.i+"\\" alt=\\"\\">":"")+"<b>"+p.n+"</b><small>"+p.a+(p.s?" · "+p.s:"")+"</small>"+(p.p?"<em>"+(V[0]?V[0]+" ":"")+p.p+"</em>":"")+"<a href=\\""+p.u+"\\">"+V[1]+" →</a></div>"};'
             'L.marker([p.lat,p.lng],{icon:ic,title:p.n,riseOnHover:true}).addTo(g).bindPopup(h,{maxWidth:240}).bindTooltip(p.n+(p.p?" · "+p.p:""),{direction:"top",offset:[0,-8]});b.push([p.lat,p.lng]);});'
-            'm.addLayer(g);if(b.length===1)m.setView(b[0],15);else m.fitBounds(b,{padding:[40,40],maxZoom:15});})();</script>') % (
+            'm.addLayer(g);function home(){if(b.length===1)m.setView(b[0],15);else m.fitBounds(b,{padding:[40,40],maxZoom:15});}home();var AL={en:"View all","zh-CN":"查看全部","zh-TW":"查看全部",ms:"Lihat semua",ja:"すべて表示",ko:"전체 보기"};var Ctl=L.Control.extend({options:{position:"topleft"},onAdd:function(){var d=L.DomUtil.create("button","kmap-all");d.type="button";var lb=function(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}d.innerHTML="<svg viewBox=\\"0 0 24 24\\"><path d=\\"M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5\\"/></svg><span>"+(AL[l]||AL.en)+"</span>";};lb();L.DomEvent.disableClickPropagation(d);d.onclick=function(){m.closePopup();home();};document.addEventListener("click",function(){setTimeout(lb,50)});return d;}});m.addControl(new Ctl());})();</script>') % (
         root, root, MAP_CSS, heading or ('Map of new launches in %s' % E(place)), root, root, json.dumps(pts, ensure_ascii=False).replace('</', '<\\/'),
         json.dumps({'en': ['From', 'View project'], 'zh-CN': ['起价', '查看项目'], 'zh-TW': ['起價', '查看項目'], 'ms': ['Dari', 'Lihat projek'], 'ja': ['', 'プロジェクトを見る'], 'ko': ['', '프로젝트 보기']}, ensure_ascii=False))
 
