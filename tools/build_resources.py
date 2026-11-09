@@ -272,7 +272,11 @@ for f in STATIC:
 if os.path.exists('sitemap.xml'):
     sm = open('sitemap.xml', encoding='utf-8').read()
     add = ['resources.html'] + ['guides/%s.html' % g['slug'] for g in GUIDES]
-    new = ''.join('  <url><loc>%s/%s</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>\n' % (SITE, u) for u in add if '/%s<' % u not in sm)
+    import datetime as _dt
+    today = _dt.date.today().isoformat()
+    sm = re.sub(r'  <url><loc>[^<]*/guides/[^<]*</loc><changefreq>[^\n]*\n', '', sm)   # older entries without a date
+    new = ''.join('  <url>\n    <loc>%s/%s</loc>\n    <lastmod>%s</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n' % (SITE, u, today)
+                  for u in add if '/%s<' % u not in sm)
     if new:
         open('sitemap.xml', 'w', encoding='utf-8').write(sm.replace('</urlset>', new + '</urlset>'))
 print('resources: %d area guides' % len(GUIDES))
