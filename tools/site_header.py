@@ -153,7 +153,8 @@ def js():
 
 
 def header(root, active, wa):
-    nav = ''.join('<a href="%s%s"%s>%s</a>' % (root, h, ' class="active"' if h == active else '',
+    home = root or './'   # a page in the site root needs a real link home, not href=""
+    nav = ''.join('<a href="%s"%s>%s</a>' % ((root + h) or home, ' class="active"' if h == active else '',
                                                ('<span data-nav="%s">%s</span>' % (E(t), E(t))) if t in NAV_TR else E(t)) for h, t in NAV)
     langs = ''.join('<a data-v="%s" onclick="knSetLang(\'%s\')"><img class="kn-flag" src="%simages/flags/%s.svg" alt="" width="20" height="15">%s</a>' % (c, c, root, f, n) for c, f, n in LANGS)
     curs = ''.join('<a data-v="%s" onclick="knSetCur(\'%s\')"><img class="kn-flag" src="%simages/flags/%s.svg" alt="" width="20" height="15">%s — %s</a>' % (c, c, root, f, c, n) for c, f, n in CURS)
@@ -161,7 +162,7 @@ def header(root, active, wa):
             '  <nav>%s</nav>\n  <div class="nav-right">\n'
             '    <div class="kn-sw"><span class="kn-sel" onclick="knTog(\'knLangMenu\',event)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9z"/></svg><span id="knLangLab">English</span></span><div class="kn-menu" id="knLangMenu">%s</div></div>\n'
             '    <div class="kn-sw"><span class="kn-sel" onclick="knTog(\'knCurMenu\',event)"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="5"/><circle cx="16" cy="16" r="5"/></svg><span id="knCurLab">MYR</span></span><div class="kn-menu cur" id="knCurMenu">%s</div></div>\n'
-            '    <a class="wa-btn" href="%s" target="_blank" rel="noopener">WhatsApp Keith</a>\n  <!--kn-burger-->\n  </div>\n</header>') % (root, root, nav, langs, curs, wa)
+            '    <a class="wa-btn" href="%s" target="_blank" rel="noopener">WhatsApp Keith</a>\n  <!--kn-burger-->\n  </div>\n</header>') % (home, root, nav, langs, curs, wa)
 
 
 def price_tag(text, myr):
