@@ -218,7 +218,7 @@ page = '''<!DOCTYPE html>
 </head>
 <body>
 <header>
-  <a class="logo" href=""><img src="images/f304c8479b1fe873.png" alt="Keith Nah logo"><span><b>Keith Nah 鈞晖</b><small>Keith Nah Real Estate</small></span></a>
+  <a class="logo" href="./"><img src="images/f304c8479b1fe873.png" alt="Keith Nah logo"><span><b>Keith Nah 鈞晖</b><small>Keith Nah Real Estate</small></span></a>
   <nav></nav>
   <a class="wa-btn" href="{wa}" target="_blank" rel="noopener">WhatsApp Keith</a>
 </header>
