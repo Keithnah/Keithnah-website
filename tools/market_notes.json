@@ -56,6 +56,20 @@
     },
     "href": "article/financing-property-in-malaysia-as-a-non-resident-what-you-need-to-know.html"
    }
+  ],
+  "sources": [
+   {
+    "name": "Bank Negara Malaysia",
+    "url": "https://www.bnm.gov.my/-/monetary-policy-statement-05112026"
+   },
+   {
+    "name": "The Star",
+    "url": "https://www.thestar.com.my/business/business-news/2026/11/05/bank-negara-keeps-opr-steady-at-275"
+   },
+   {
+    "name": "Malay Mail",
+    "url": "https://www.malaymail.com/amp/news/malaysia/2026/11/06/opr-stays-at-275pc-as-bank-negara-sees-no-need-to-tighten-monetary-policy-says-governor/242232"
+   }
   ]
  },
  {
@@ -114,6 +128,16 @@
      "ko": "KL 핵심 지역 임대 수익률"
     },
     "href": "article/understanding-rental-yields-in-kuala-lumpurs-prime-districts.html"
+   }
+  ],
+  "sources": [
+   {
+    "name": "EdgeProp",
+    "url": "https://www.edgeprop.my/content/1918245/jll-property-market-shows-gradual-recovery-occupiers-seek-quality-space"
+   },
+   {
+    "name": "The Star",
+    "url": "https://www.thestar.com.my/business/business-news/2026/08/31/klang-valley-residential-market-on-the-rise-in-2026"
    }
   ]
  }
