@@ -122,8 +122,8 @@ function saveTopicProposal(d) {
   var kb = [topics.map(function (t) { return { text: String(t.n), callback_data: 'pick|' + date + '|' + t.n }; }),
             [{ text: '今天不发', callback_data: 'skip|' + date }]];
   var r = tg_('sendMessage', { chat_id: chatId, text: lines.join('\n'), parse_mode: 'HTML', reply_markup: { inline_keyboard: kb } });
+  cleanupTopics_();   // before saving, so a test proposal dated 2000-01-01 survives
   props.setProperty('TOPICS_' + date, JSON.stringify({ date: date, topics: topics, choice: null, published: null, msg: r && r.result ? r.result.message_id : null }));
-  cleanupTopics_();
   return json_({ ok: !!(r && r.ok), date: date, count: topics.length });
 }
 
@@ -200,7 +200,8 @@ function setTelegramWebhook() {
 
 // Run from the editor to send yourself a sample topic message with buttons.
 function testTopics() {
-  saveTopicProposal({ date: today_(), topics: [
+  // test date 2000-01-01: the daily publisher only looks at today's topics, so a test pick is never published
+  saveTopicProposal({ date: '2000-01-01', topics: [
     { zh: '测试主题一', en: 'Test topic one' }, { zh: '测试主题二', en: 'Test topic two' }, { zh: '测试主题三', en: 'Test topic three' }] });
   console.log('Sent. Tap a button in Telegram.');
 }
