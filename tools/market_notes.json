@@ -1,1 +1,120 @@
-[]
+[
+ {
+  "date": "2026-11-10",
+  "area": {
+   "en": "Malaysia",
+   "zh-CN": "马来西亚",
+   "zh-TW": "馬來西亞",
+   "ms": "Malaysia",
+   "ja": "マレーシア",
+   "ko": "말레이시아"
+  },
+  "title": {
+   "en": "Bank Negara holds the OPR at 2.75%: what it means for your home loan",
+   "zh-CN": "BNM 维持 OPR 2.75%：房贷利率暂时不变",
+   "zh-TW": "BNM 維持 OPR 2.75%：房貸利率暫時不變",
+   "ms": "Bank Negara kekalkan OPR 2.75%: maksudnya untuk pinjaman rumah anda",
+   "ja": "中銀が OPR を2.75%に据え置き：住宅ローンへの影響",
+   "ko": "중앙은행 OPR 2.75% 동결: 주택담보대출에 주는 의미"
+  },
+  "body": {
+   "en": "Bank Negara kept the Overnight Policy Rate at 2.75% at its last meeting of 2026 on 5 November, saying growth should stay above 5% this year. The next decision is due on 21 January 2027, and some economists still see a small rise in 2027.",
+   "zh-CN": "国家银行在 11 月 5 日今年最后一次会议上维持隔夜政策利率 2.75%，并预计今年经济增长超过 5%。下一次议息是 2027 年 1 月 21 日，部分经济学家仍认为 2027 年可能小幅加息。",
+   "zh-TW": "國家銀行在 11 月 5 日今年最後一次會議上維持隔夜政策利率 2.75%，並預計今年經濟增長超過 5%。下一次議息是 2027 年 1 月 21 日，部分經濟學家仍認為 2027 年可能小幅加息。",
+   "ms": "Bank Negara mengekalkan Kadar Dasar Semalaman pada 2.75% dalam mesyuarat terakhir 2026 pada 5 November, dengan pertumbuhan dijangka melebihi 5% tahun ini. Keputusan seterusnya pada 21 Januari 2027, dan sesetengah ahli ekonomi masih menjangka kenaikan kecil pada 2027.",
+   "ja": "マレーシア中央銀行は11月5日、2026年最後の会合で政策金利（OPR）を2.75%に据え置き、今年の成長率は5%超を見込んでいます。次回の決定は2027年1月21日で、2027年の小幅な利上げを予想するエコノミストもいます。",
+   "ko": "말레이시아 중앙은행은 11월 5일 올해 마지막 회의에서 기준금리(OPR)를 2.75%로 동결했으며, 올해 성장률은 5%를 넘을 것으로 봅니다. 다음 결정은 2027년 1월 21일이며, 일부 경제학자는 2027년 소폭 인상 가능성을 보고 있습니다."
+  },
+  "take": {
+   "en": "For buyers, loan rates should stay steady for now, so this is a good window to lock in your financing and compare banks. Plan your monthly budget with some room in case rates rise by 0.25% next year.",
+   "zh-CN": "对买家来说，房贷利率短期内会保持稳定，现在是安排贷款、比较各家银行的好时机。算月供时预留一点空间，以防明年利率上调 0.25%。",
+   "zh-TW": "對買家來說，房貸利率短期內會保持穩定，現在是安排貸款、比較各家銀行的好時機。算月供時預留一點空間，以防明年利率上調 0.25%。",
+   "ms": "Bagi pembeli, kadar pinjaman dijangka stabil buat masa ini, jadi inilah masa yang baik untuk menguruskan pembiayaan dan membandingkan bank. Rancang bajet bulanan dengan sedikit ruang sekiranya kadar naik 0.25% tahun depan.",
+   "ja": "購入者にとって、ローン金利は当面安定する見込みなので、今は融資を確保し銀行を比較する良いタイミングです。来年0.25%上がる可能性に備えて、月々の予算には余裕を持たせましょう。",
+   "ko": "구매자에게는 대출 금리가 당분간 안정적일 것으로 보여, 지금이 대출을 확정하고 은행을 비교하기 좋은 때입니다. 내년에 금리가 0.25% 오를 수 있으니 월 예산에 여유를 두세요."
+  },
+  "links": [
+   {
+    "label": {
+     "en": "Work out your monthly instalment",
+     "zh-CN": "计算你的月供",
+     "zh-TW": "計算你的月供",
+     "ms": "Kira ansuran bulanan anda",
+     "ja": "月々の返済を計算",
+     "ko": "월 상환액 계산하기"
+    },
+    "href": "calculator.html"
+   },
+   {
+    "label": {
+     "en": "Financing guide for buyers",
+     "zh-CN": "买家贷款指南",
+     "zh-TW": "買家貸款指南",
+     "ms": "Panduan pembiayaan pembeli",
+     "ja": "購入者向けローンガイド",
+     "ko": "구매자 대출 가이드"
+    },
+    "href": "article/financing-property-in-malaysia-as-a-non-resident-what-you-need-to-know.html"
+   }
+  ]
+ },
+ {
+  "date": "2026-11-10",
+  "area": {
+   "en": "Kuala Lumpur",
+   "zh-CN": "吉隆坡",
+   "zh-TW": "吉隆坡",
+   "ms": "Kuala Lumpur",
+   "ja": "クアラルンプール",
+   "ko": "쿠알라룸푸르"
+  },
+  "title": {
+   "en": "JLL Q3 briefing: Kuala Lumpur property is recovering, slowly",
+   "zh-CN": "JLL 第三季报告：吉隆坡房市正在慢慢复苏",
+   "zh-TW": "JLL 第三季報告：吉隆坡房市正在慢慢復甦",
+   "ms": "Taklimat JLL S3: hartanah Kuala Lumpur pulih secara perlahan",
+   "ja": "JLL 第3四半期：クアラルンプール不動産は緩やかに回復",
+   "ko": "JLL 3분기 브리핑: 쿠알라룸푸르 부동산 완만한 회복"
+  },
+  "body": {
+   "en": "In its third-quarter briefing on 10 November, JLL described a gradual recovery, with tenants and buyers moving to better-quality buildings. Home sales picked up a little in the second quarter after a weak start to the year, but were still slightly below 2025.",
+   "zh-CN": "JLL 在 11 月 10 日的第三季简报中表示，市场正在逐步复苏，租客和买家都偏向品质更好的大楼。住宅交易在年初疲软后，第二季略有回升，但仍稍低于 2025 年。",
+   "zh-TW": "JLL 在 11 月 10 日的第三季簡報中表示，市場正在逐步復甦，租客和買家都偏向品質更好的大樓。住宅交易在年初疲軟後，第二季略有回升，但仍稍低於 2025 年。",
+   "ms": "Dalam taklimat suku ketiga pada 10 November, JLL menggambarkan pemulihan secara beransur, dengan penyewa dan pembeli beralih ke bangunan berkualiti lebih baik. Jualan rumah meningkat sedikit pada suku kedua selepas permulaan tahun yang lemah, tetapi masih sedikit di bawah 2025.",
+   "ja": "JLL は11月10日の第3四半期説明会で、テナントや購入者がより質の高い建物へ移る中、市場は緩やかに回復していると説明しました。住宅取引は年初の低迷の後、第2四半期にやや持ち直しましたが、2025年をわずかに下回っています。",
+   "ko": "JLL은 11월 10일 3분기 브리핑에서 임차인과 구매자가 더 좋은 품질의 건물로 옮겨 가며 시장이 완만하게 회복하고 있다고 밝혔습니다. 주택 거래는 연초 부진 이후 2분기에 소폭 반등했지만 2025년보다는 약간 낮습니다."
+  },
+  "take": {
+   "en": "A slow recovery is a buyer's market: there is time to compare and negotiate rather than rush. Focus on quality projects near rail lines, because that is where tenants are moving.",
+   "zh-CN": "复苏得慢，代表现在是买方市场：可以慢慢比较、谈价钱，不必急。重点看靠近轨道交通的优质项目，因为租客正往那里搬。",
+   "zh-TW": "復甦得慢，代表現在是買方市場：可以慢慢比較、談價錢，不必急。重點看靠近軌道交通的優質項目，因為租客正往那裡搬。",
+   "ms": "Pemulihan yang perlahan bermakna pasaran pembeli: ada masa untuk membanding dan berunding, tidak perlu tergesa-gesa. Fokus pada projek berkualiti berhampiran laluan rel, kerana di situlah penyewa berpindah.",
+   "ja": "回復が緩やかなのは買い手市場の証拠です。急がず比較・交渉する時間があります。テナントが移っている鉄道沿線の質の高い物件に注目しましょう。",
+   "ko": "완만한 회복은 구매자 우위 시장이라는 뜻입니다. 서두르지 말고 비교하고 협상할 시간이 있습니다. 임차인이 옮겨 가는 철도 인근의 우수한 프로젝트에 집중하세요."
+  },
+  "links": [
+   {
+    "label": {
+     "en": "KL City Centre projects",
+     "zh-CN": "KL City Centre 项目",
+     "zh-TW": "KL City Centre 項目",
+     "ms": "Projek KL City Centre",
+     "ja": "KL City Centre の物件",
+     "ko": "KL City Centre 프로젝트"
+    },
+    "href": "area/kl-city-centre.html"
+   },
+   {
+    "label": {
+     "en": "Rental yields in prime KL",
+     "zh-CN": "吉隆坡黄金地段租金回报",
+     "zh-TW": "吉隆坡黃金地段租金回報",
+     "ms": "Hasil sewa di KL utama",
+     "ja": "KL中心部の賃貸利回り",
+     "ko": "KL 핵심 지역 임대 수익률"
+    },
+    "href": "article/understanding-rental-yields-in-kuala-lumpurs-prime-districts.html"
+   }
+  ]
+ }
+]
