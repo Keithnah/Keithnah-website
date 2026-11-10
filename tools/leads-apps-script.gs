@@ -35,7 +35,7 @@ var TIME_ZONE = 'Asia/Kuala_Lumpur';
 function doPost(e) {
   var d0 = {};
   try { d0 = JSON.parse((e && e.postData && e.postData.contents) || '{}'); } catch (err) { d0 = {}; }
-  // Daily market-note topics: Telegram button presses and messages from the Claude session
+  // Daily market-note topics (Keith picks 1-3 a day): Telegram button presses and messages from the Claude session
   if (d0.update_id !== undefined) return handleTelegramUpdate(e, d0);
   if (d0.type === 'Topic Proposal') return saveTopicProposal(d0);
   if (d0.type === 'Topic Published') return markTopicPublished(d0);
@@ -109,6 +109,17 @@ function tg_(method, payload) {
   }).getContentText());
 }
 
+var MAX_PICKS = 5;   // Keith can pick 1 to all 5 topics
+
+function topicKeyboard_(o) {
+  var picked = o.picks || [];
+  var row = o.topics.map(function (t) {
+    var on = picked.indexOf(t.n) >= 0;
+    return { text: (on ? '✅ ' : '') + t.n, callback_data: 'pick|' + o.date + '|' + t.n };
+  });
+  return [row, [{ text: picked.length ? '完成 (' + picked.length + ')' : '今天不发', callback_data: (picked.length ? 'done|' : 'skip|') + o.date }]];
+}
+
 function saveTopicProposal(d) {
   var date = okDate_(d.date) || today_();
   var topics = (d.topics || []).slice(0, 5).map(function (t, i) {
@@ -117,14 +128,14 @@ function saveTopicProposal(d) {
   if (topics.length < 2) return json_({ ok: false, error: 'need at least 2 topics' });
   var props = PropertiesService.getScriptProperties();
   var chatId = props.getProperty('TELEGRAM_CHAT_ID');
-  var lines = ['📰 <b>今日市场短评：选一个主题</b> · ' + date, ''];
+  var o = { date: date, topics: topics, picks: [], closed: false, published: [] };
+  var lines = ['📰 <b>今日市场短评：选 1 至 ' + MAX_PICKS + ' 个主题</b> · ' + date, ''];
   topics.forEach(function (t) { lines.push('<b>' + t.n + '.</b> ' + esc(t.zh || t.en) + (t.en && t.zh ? '\n<i>' + esc(t.en) + '</i>' : '')); lines.push(''); });
-  lines.push('点一个数字，Keith 的短评会写好并自动上线。');
-  var kb = [topics.map(function (t) { return { text: String(t.n), callback_data: 'pick|' + date + '|' + t.n }; }),
-            [{ text: '今天不发', callback_data: 'skip|' + date }]];
-  var r = tg_('sendMessage', { chat_id: chatId, text: lines.join('\n'), parse_mode: 'HTML', reply_markup: { inline_keyboard: kb } });
+  lines.push('点数字选择（再点一次取消），选好后按「完成」。每个主题会写成一则短评并自动上线。');
+  var r = tg_('sendMessage', { chat_id: chatId, text: lines.join('\n'), parse_mode: 'HTML', reply_markup: { inline_keyboard: topicKeyboard_(o) } });
+  o.msg = r && r.result ? r.result.message_id : null;
   cleanupTopics_();   // before saving, so a test proposal dated 2000-01-01 survives
-  props.setProperty('TOPICS_' + date, JSON.stringify({ date: date, topics: topics, choice: null, published: null, msg: r && r.result ? r.result.message_id : null }));
+  props.setProperty('TOPICS_' + date, JSON.stringify(o));
   return json_({ ok: !!(r && r.ok), date: date, count: topics.length });
 }
 
@@ -132,9 +143,11 @@ function topicStatus(date) {
   date = okDate_(date) || today_();
   var raw = PropertiesService.getScriptProperties().getProperty('TOPICS_' + date);
   if (!raw) return json_({ ok: true, date: date, found: false });
-  var o = JSON.parse(raw);
-  var chosen = o.choice ? o.topics.filter(function (t) { return t.n === o.choice; })[0] : null;
-  return json_({ ok: true, date: date, found: true, skipped: o.choice === 0, choice: o.choice, chosen: chosen || null, published: o.published });
+  var o = JSON.parse(raw), done = (o.published || []).map(function (x) { return x.n; });
+  var chosen = o.closed ? o.topics.filter(function (t) { return (o.picks || []).indexOf(t.n) >= 0; }) : [];
+  var todo = chosen.filter(function (t) { return done.indexOf(t.n) < 0; });
+  return json_({ ok: true, date: date, found: true, closed: !!o.closed, skipped: !!o.closed && !(o.picks || []).length,
+                 picks: o.picks || [], chosen: chosen, todo: todo, published: o.published || [] });
 }
 
 function markTopicPublished(d) {
@@ -142,14 +155,16 @@ function markTopicPublished(d) {
   var props = PropertiesService.getScriptProperties();
   var raw = props.getProperty('TOPICS_' + date);
   if (!raw) return json_({ ok: false, error: 'no topics for ' + date });
-  var o = JSON.parse(raw);
-  if (!o.choice || o.published) return json_({ ok: true, already: !!o.published });
+  var o = JSON.parse(raw), n = parseInt(d.n, 10);
+  if (!o.closed || (o.picks || []).indexOf(n) < 0) return json_({ ok: false, error: 'topic ' + d.n + ' was not picked' });
+  o.published = o.published || [];
+  if (o.published.some(function (x) { return x.n === n; })) return json_({ ok: true, already: true });
   var url = String(d.url || '');
   if (!/^https:\/\/keithnah\.com\//.test(url)) return json_({ ok: false, error: 'bad url' });
-  o.published = { url: url, at: new Date().toISOString() };
+  o.published.push({ n: n, url: url, at: new Date().toISOString() });
   props.setProperty('TOPICS_' + date, JSON.stringify(o));
   tg_('sendMessage', { chat_id: props.getProperty('TELEGRAM_CHAT_ID'), parse_mode: 'HTML', disable_web_page_preview: true,
-    text: '✅ <b>已上线</b>：' + esc(plain(d.title) || '') + '\n' + esc(url) });
+    text: '✅ <b>已上线</b>（' + o.published.length + '/' + o.picks.length + '）：' + esc(plain(d.title) || '') + '\n' + esc(url) });
   return json_({ ok: true });
 }
 
@@ -159,26 +174,34 @@ function handleTelegramUpdate(e, u) {
   if (!secret || !e.parameter || e.parameter.tg !== secret) return ContentService.createTextOutput('ignored');
   var q = u.callback_query;
   if (!q || !q.message || String(q.message.chat.id) !== String(props.getProperty('TELEGRAM_CHAT_ID'))) return ContentService.createTextOutput('ok');
-  var parts = String(q.data || '').split('|'), act = parts[0], date = okDate_(parts[1]);
-  var raw = date && props.getProperty('TOPICS_' + date);
-  if (!raw) { tg_('answerCallbackQuery', { callback_query_id: q.id, text: '这组主题已过期。' }); return ContentService.createTextOutput('ok'); }
-  var o = JSON.parse(raw);
-  if (o.choice !== null && o.choice !== undefined) {
-    tg_('answerCallbackQuery', { callback_query_id: q.id, text: o.choice ? '今天已选第 ' + o.choice + ' 个。' : '今天已选择不发。' });
-    return ContentService.createTextOutput('ok');
-  }
-  var text;
-  if (act === 'skip') { o.choice = 0; text = '👌 今天不发短评。'; }
-  else {
-    var n = parseInt(parts[2], 10), t = o.topics.filter(function (x) { return x.n === n; })[0];
-    if (!t) { tg_('answerCallbackQuery', { callback_query_id: q.id, text: '找不到这个主题。' }); return ContentService.createTextOutput('ok'); }
-    o.choice = n; o.chosenAt = new Date().toISOString();
-    text = '✍️ 已选第 ' + n + ' 个：' + esc(t.zh || t.en) + '\n短评写好后会自动上线（约 1 小时内），上线后会通知你。';
-  }
-  props.setProperty('TOPICS_' + date, JSON.stringify(o));
-  tg_('answerCallbackQuery', { callback_query_id: q.id, text: o.choice ? '已选择 ' + o.choice : '好的' });
-  if (o.msg) tg_('editMessageReplyMarkup', { chat_id: q.message.chat.id, message_id: o.msg, reply_markup: { inline_keyboard: [] } });
-  tg_('sendMessage', { chat_id: q.message.chat.id, text: text, parse_mode: 'HTML' });
+  var lock = LockService.getScriptLock(); lock.waitLock(10000);
+  try {
+    var parts = String(q.data || '').split('|'), act = parts[0], date = okDate_(parts[1]);
+    var raw = date && props.getProperty('TOPICS_' + date);
+    if (!raw) { tg_('answerCallbackQuery', { callback_query_id: q.id, text: '这组主题已过期。' }); return ContentService.createTextOutput('ok'); }
+    var o = JSON.parse(raw); o.picks = o.picks || [];
+    if (o.closed) { tg_('answerCallbackQuery', { callback_query_id: q.id, text: '今天的选择已经完成。' }); return ContentService.createTextOutput('ok'); }
+    if (act === 'pick') {
+      var n = parseInt(parts[2], 10), i = o.picks.indexOf(n);
+      if (!o.topics.some(function (x) { return x.n === n; })) { tg_('answerCallbackQuery', { callback_query_id: q.id, text: '找不到这个主题。' }); return ContentService.createTextOutput('ok'); }
+      if (i >= 0) o.picks.splice(i, 1);
+      else if (o.picks.length >= MAX_PICKS) { tg_('answerCallbackQuery', { callback_query_id: q.id, text: '最多选 ' + MAX_PICKS + ' 个，先取消一个。' }); return ContentService.createTextOutput('ok'); }
+      else o.picks.push(n);
+      o.picks.sort(function (a, b) { return a - b; });
+      props.setProperty('TOPICS_' + date, JSON.stringify(o));
+      tg_('answerCallbackQuery', { callback_query_id: q.id, text: o.picks.length ? '已选：' + o.picks.join('、') + '，选好后按「完成」' : '已取消' });
+      if (o.msg) tg_('editMessageReplyMarkup', { chat_id: q.message.chat.id, message_id: o.msg, reply_markup: { inline_keyboard: topicKeyboard_(o) } });
+      return ContentService.createTextOutput('ok');
+    }
+    o.closed = true; o.closedAt = new Date().toISOString();
+    props.setProperty('TOPICS_' + date, JSON.stringify(o));
+    tg_('answerCallbackQuery', { callback_query_id: q.id, text: o.picks.length ? '好的' : '今天不发' });
+    if (o.msg) tg_('editMessageReplyMarkup', { chat_id: q.message.chat.id, message_id: o.msg, reply_markup: { inline_keyboard: [] } });
+    var text = o.picks.length
+      ? '✍️ 已选 ' + o.picks.length + ' 个主题：\n' + o.topics.filter(function (t) { return o.picks.indexOf(t.n) >= 0; }).map(function (t) { return '• ' + esc(t.zh || t.en); }).join('\n') + '\n短评写好后会自动上线（约 1 小时内），每则上线后会通知你。'
+      : '👌 今天不发短评。';
+    tg_('sendMessage', { chat_id: q.message.chat.id, text: text, parse_mode: 'HTML' });
+  } finally { lock.releaseLock(); }
   return ContentService.createTextOutput('ok');
 }
 
