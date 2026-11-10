@@ -117,7 +117,7 @@ function topicKeyboard_(o) {
     var on = picked.indexOf(t.n) >= 0;
     return { text: (on ? '✅ ' : '') + t.n, callback_data: 'pick|' + o.date + '|' + t.n };
   });
-  return [row, [{ text: picked.length ? '完成 (' + picked.length + ')' : '今天不发', callback_data: (picked.length ? 'done|' : 'skip|') + o.date }]];
+  return [row, [{ text: picked.length ? '📤 发送 (' + picked.length + ')' : '今天不发', callback_data: (picked.length ? 'done|' : 'skip|') + o.date }]];
 }
 
 function saveTopicProposal(d) {
@@ -131,7 +131,7 @@ function saveTopicProposal(d) {
   var o = { date: date, topics: topics, picks: [], closed: false, published: [] };
   var lines = ['📰 <b>今日市场短评：选 1 至 ' + MAX_PICKS + ' 个主题</b> · ' + date, ''];
   topics.forEach(function (t) { lines.push('<b>' + t.n + '.</b> ' + esc(t.zh || t.en) + (t.en && t.zh ? '\n<i>' + esc(t.en) + '</i>' : '')); lines.push(''); });
-  lines.push('点数字选择（再点一次取消），选好后按「完成」。每个主题会写成一则短评并自动上线。');
+  lines.push('点数字选择（再点一次取消），选好后按下方「📤 发送」。每个主题会写成一则短评并自动上线。');
   var r = tg_('sendMessage', { chat_id: chatId, text: lines.join('\n'), parse_mode: 'HTML', reply_markup: { inline_keyboard: topicKeyboard_(o) } });
   o.msg = r && r.result ? r.result.message_id : null;
   cleanupTopics_();   // before saving, so a test proposal dated 2000-01-01 survives
@@ -189,7 +189,7 @@ function handleTelegramUpdate(e, u) {
       else o.picks.push(n);
       o.picks.sort(function (a, b) { return a - b; });
       props.setProperty('TOPICS_' + date, JSON.stringify(o));
-      tg_('answerCallbackQuery', { callback_query_id: q.id, text: o.picks.length ? '已选：' + o.picks.join('、') + '，选好后按「完成」' : '已取消' });
+      tg_('answerCallbackQuery', { callback_query_id: q.id, text: o.picks.length ? '已选：' + o.picks.join('、') + '，选好后按「📤 发送」' : '已取消' });
       if (o.msg) tg_('editMessageReplyMarkup', { chat_id: q.message.chat.id, message_id: o.msg, reply_markup: { inline_keyboard: topicKeyboard_(o) } });
       return ContentService.createTextOutput('ok');
     }
