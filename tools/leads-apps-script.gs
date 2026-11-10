@@ -176,6 +176,11 @@ function handleTelegramUpdate(e, u) {
   if (!q || !q.message || String(q.message.chat.id) !== String(props.getProperty('TELEGRAM_CHAT_ID'))) return ContentService.createTextOutput('ok');
   var lock = LockService.getScriptLock(); lock.waitLock(10000);
   try {
+    // Telegram may deliver the same button press more than once (it retries when the web app answers
+    // with a redirect). Handle each press once, or a pick would be undone by its own repeat.
+    var cache = CacheService.getScriptCache();
+    if (cache.get('tgcb_' + q.id) || cache.get('tgup_' + u.update_id)) return ContentService.createTextOutput('ok');
+    cache.put('tgcb_' + q.id, '1', 21600); cache.put('tgup_' + u.update_id, '1', 21600);
     var parts = String(q.data || '').split('|'), act = parts[0], date = okDate_(parts[1]);
     var raw = date && props.getProperty('TOPICS_' + date);
     if (!raw) { tg_('answerCallbackQuery', { callback_query_id: q.id, text: '这组主题已过期。' }); return ContentService.createTextOutput('ok'); }
