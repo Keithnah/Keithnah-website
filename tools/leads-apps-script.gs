@@ -95,6 +95,7 @@ function doGet(e) {
  * Setup once: Deploy > Manage deployments > New version, then run setTelegramWebhook.
  */
 var TOPIC_KEEP_DAYS = 7;
+var WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwzuJuSItPGTzI6XOHrPo2O3LzgOsCD6VHRp11v38qtZsSiYruOqg2INeM0zSxlDMQtiA/exec';
 
 function json_(o) { return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON); }
 function today_() { return Utilities.formatDate(new Date(), TIME_ZONE, 'yyyy-MM-dd'); }
@@ -192,8 +193,9 @@ function setTelegramWebhook() {
   var props = PropertiesService.getScriptProperties();
   var secret = props.getProperty('TG_WEBHOOK_SECRET');
   if (!secret) { secret = Utilities.getUuid().replace(/-/g, ''); props.setProperty('TG_WEBHOOK_SECRET', secret); }
-  var url = ScriptApp.getService().getUrl();
-  if (!url) throw new Error('Deploy the web app first (Deploy > New deployment).');
+  // The live /exec address (the same as LEADS_ENDPOINT in lead-tracker.js). Run from the editor,
+  // ScriptApp.getService().getUrl() gives the /dev test address, which Telegram cannot open (401).
+  var url = WEB_APP_URL;
   var r = tg_('setWebhook', { url: url + '?tg=' + secret, allowed_updates: ['callback_query'], drop_pending_updates: true });
   console.log(r.ok ? 'Webhook set. Tap a button in Telegram to test.' : 'Telegram said: ' + JSON.stringify(r));
 }
@@ -314,4 +316,13 @@ function waDigits(code, phone) {
   if (!p) return '';
   if (c && p.indexOf(c) === 0 && p.length > 9) return p; // number already includes the code
   return c + p.replace(/^0+/, '');
+}
+
+// Run from the editor to see whether Telegram can reach the web app.
+function checkTelegramWebhook() {
+  var r = tg_('getWebhookInfo', {});
+  var u = r.result || {};
+  console.log('url: ' + String(u.url || '').replace(/\?tg=.*/, '?tg=(hidden)'));
+  console.log('pending updates: ' + u.pending_update_count);
+  console.log('last error: ' + (u.last_error_message || 'none') + (u.last_error_date ? ' at ' + new Date(u.last_error_date * 1000) : ''));
 }
