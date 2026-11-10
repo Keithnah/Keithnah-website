@@ -231,3 +231,63 @@ footer{border-top:1px solid var(--line);padding:26px 5vw;font-size:13px;color:va
 if NOTES:
     archive()
 print('market notes: %d (archive page market-notes.html)' % len(NOTES))
+
+
+# ---------- home page: LED news ticker with the latest 1-2 days of notes ----------
+def ticker():
+    if not NOTES:
+        return ''
+    days = sorted({n['date'] for n in NOTES}, reverse=True)[:2]
+    items = []
+    k_all = {id(n): i for i, n in enumerate(NOTES)}
+    for n in NOTES:
+        if n['date'] in days:
+            items.append(n)
+    data = [{'d': n['date'], 'a': n['area'], 't': n['title'], 'k': k_all[id(n)]} for n in items]
+    lab = {'en': ['Market Notes', 'Live'], 'zh-CN': ['每日市场短评', '最新'], 'zh-TW': ['每日市場短評', '最新'], 'ms': ['Nota Pasaran', 'Terkini'],
+           'ja': ['マーケットノート', '最新'], 'ko': ['마켓 노트', '최신']}
+    def item_html(x, l):
+        return ('<a class="tk-i" href="market-notes.html#n-%s-%d"><span class="tk-a">%s</span><span class="tk-t">%s</span><span class="tk-sep" aria-hidden="true">◆</span></a>') % (
+            x['d'], x['k'], E(pick(x['a'], l).upper() if l == 'en' else pick(x['a'], l)), E(pick(x['t'], l)))
+    row = ''.join(item_html(x, 'en') for x in data)
+    css = ('.tk{position:absolute;left:0;right:0;top:var(--tk-top,76px);z-index:3;display:flex;align-items:stretch;height:50px;background:#07071a;'
+           'border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 10px 30px rgba(7,7,26,.22);overflow:hidden;font-family:"SFMono-Regular",Menlo,Consolas,"Liberation Mono",monospace;}'
+           '.tk:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.2px);background-size:4px 4px;}'
+           '.tk:after{content:"";position:absolute;top:0;bottom:0;right:0;width:80px;pointer-events:none;z-index:2;background:linear-gradient(90deg,transparent,#07071a);}'
+           '.tk-l{position:relative;z-index:3;flex-shrink:0;display:flex;align-items:center;gap:10px;padding:0 18px 0 20px;background:#5E60CE;color:#fff;'
+           'font:800 12px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;clip-path:polygon(0 0,100% 0,calc(100% - 14px) 100%,0 100%);padding-right:30px;}'
+           '.tk-l i{width:8px;height:8px;border-radius:50%;background:#3dff8a;box-shadow:0 0 8px #3dff8a;animation:tkBlink 1.4s ease-in-out infinite;}'
+           '.tk-l small{font-weight:600;opacity:.8;letter-spacing:.08em;}'
+           '@keyframes tkBlink{50%{opacity:.25;}}'
+           '.tk-v{position:relative;flex:1;overflow:hidden;display:flex;align-items:center;}'
+           '.tk-r{display:flex;width:max-content;animation:tkRun var(--tk-dur,60s) linear infinite;will-change:transform;}'
+           '.tk:hover .tk-r{animation-play-state:paused;}'
+           '@keyframes tkRun{to{transform:translate3d(-50%,0,0);}}'
+           '.tk-i{display:inline-flex;align-items:center;gap:12px;padding:0 4px 0 26px;white-space:nowrap;font-size:15px;letter-spacing:.04em;text-decoration:none;}'
+           '.tk-a{color:#ffb547;font-weight:700;text-shadow:0 0 6px rgba(255,181,71,.75);}'
+           '.tk-t{color:#7dffb0;font-weight:600;text-shadow:0 0 6px rgba(61,255,138,.6);}'
+           '.tk-i:hover .tk-t{color:#fff;text-shadow:0 0 8px rgba(255,255,255,.8);}'
+           '.tk-sep{color:#5E60CE;font-size:11px;padding-left:20px;text-shadow:0 0 6px rgba(94,96,206,.9);}'
+           '@media(max-width:640px){.tk{height:42px;} .tk-l{font-size:10.5px;padding:0 24px 0 12px;gap:7px;} .tk-l small{display:none;} .tk-i{font-size:13px;padding-left:18px;gap:9px;} .tk-sep{padding-left:12px;}}'
+           '@media(prefers-reduced-motion:reduce){.tk-r{animation:none;} .tk-v{overflow-x:auto;}}')
+    js = ('<script>(function(){var D=%s,L=%s,r=document.getElementById("tkR"),lb=document.getElementById("tkL");if(!r)return;'
+          'function lg(){var l="en";try{l=(typeof currentLang!=="undefined"&&currentLang)||localStorage.getItem("kn_lang")||"en"}catch(e){}return L[l]?l:"en";}'
+          'function p(d,l){return typeof d==="string"?d:(d[l]||d.en||"");}function e(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML;}'
+          'function build(){var l=lg(),h=D.map(function(x){var a=p(x.a,l);return \'<a class="tk-i" href="market-notes.html#n-\'+x.d+"-"+x.k+\'"><span class="tk-a">\'+e(l==="en"?a.toUpperCase():a)+\'</span><span class="tk-t">\'+e(p(x.t,l))+\'</span><span class="tk-sep" aria-hidden="true">◆</span></a>\';}).join("");'
+          'var once=h;while(once.length<4000&&D.length)once+=h;r.innerHTML=once+once;lb.innerHTML=\'<i></i>\'+e(L[l][0])+\' <small>\'+e(L[l][1])+\'</small>\';'
+          'requestAnimationFrame(function(){var w=r.scrollWidth/2;r.style.setProperty("--tk-dur",Math.max(25,w/55)+"s");});}'
+          'function top(){var h=document.getElementById("siteHeader")||document.querySelector("header");var t=document.querySelector(".tk");if(h&&t)t.style.setProperty("--tk-top",h.getBoundingClientRect().height+"px");}top();addEventListener("resize",top);build();document.addEventListener("DOMContentLoaded",function(){var s=window.setLanguage;if(typeof s==="function")window.setLanguage=function(){var x=s.apply(this,arguments);build();return x;};build();});})();</script>') % (
+        json.dumps(data, ensure_ascii=False).replace('</', '<\\/'), json.dumps(lab, ensure_ascii=False))
+    return ('<!-- KN-TICKER:START --><style>%s</style><div class="tk" aria-label="Keith\'s latest market notes"><div class="tk-l" id="tkL"><i></i>Market Notes <small>Live</small></div>'
+            '<div class="tk-v"><div class="tk-r" id="tkR">%s%s</div></div></div>%s<!-- KN-TICKER:END -->\n') % (css, row, row, js)
+
+
+ix = open('index.html', encoding='utf-8').read()
+ix = re.sub(r'<!-- KN-TICKER:START -->.*?<!-- KN-TICKER:END -->\n', '', ix, flags=re.S)
+tk = ticker()
+if tk:
+    h0 = ix.index('<section class="hero" id="home">')
+    h1 = ix.index('</section>', h0)
+    ix = ix[:h1] + tk + ix[h1:]
+open('index.html', 'w', encoding='utf-8').write(ix)
+print('home ticker: %s' % ('on' if tk else 'off'))
