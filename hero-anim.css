@@ -1,0 +1,32 @@
+/* Hero headline: wave entrance, then "Malaysia." keeps shimmering. Only transform / opacity / background-position animate (GPU-friendly, smooth on phones). */
+.hero-content h1[data-anim]:not(.ha){opacity:0;}
+.hero-content h1.ha{animation:none;}
+.ha .hw{display:inline-block;white-space:nowrap;}
+.ha .hl{display:inline-block;opacity:0;transform:translate3d(0,.6em,0) rotate(5deg);transform-origin:50% 100%;backface-visibility:hidden;}
+.hero-content h1.ha span.hw,.hero-content h1.ha span.hl{color:#111;font-style:normal;}
+.ha.ha-on .hl{animation:kwRise 1.05s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(var(--i)*38ms + .15s);}
+@keyframes kwRise{0%{opacity:0;transform:translate3d(0,.6em,0) rotate(5deg);}55%{opacity:1;}100%{opacity:1;transform:none;}}
+
+/* Malaysia. : solid purple letters; a light layer (same text, clipped to the glyphs) sweeps across them, then sparkles twinkle */
+.hero-content h1.ha span.acc{position:relative;font-style:italic;}
+.hero-content h1.ha span.acc span.hl{font-style:italic;color:var(--gold);}
+.ha .shn{position:absolute;left:0;top:0;white-space:nowrap;pointer-events:none;font-style:italic;color:transparent;-webkit-text-fill-color:transparent;
+  background-image:linear-gradient(105deg,transparent 0%,transparent 38%,rgba(230,228,255,.35) 43%,#fff 48%,#fff 52%,rgba(230,228,255,.35) 57%,transparent 62%,transparent 100%);
+  background-size:300% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;opacity:0;}
+.ha.ha-on .shn{animation:kwShow .4s ease forwards,kwShine 3.6s cubic-bezier(.45,0,.25,1) infinite;animation-delay:calc(var(--n)*38ms + 1s),calc(var(--n)*38ms + 1s);}
+@keyframes kwShow{to{opacity:1;}}
+@keyframes kwShine{0%{background-position:100% 0;}55%,100%{background-position:0% 0;}}
+.ha .acc .glow{position:absolute;inset:-.1em -.15em;border-radius:50%;pointer-events:none;opacity:0;
+  background:radial-gradient(ellipse at center,rgba(94,96,206,.3),transparent 70%);}
+.ha.ha-on .acc .glow{animation:kwShow 1s ease forwards,kwPulse 3.6s ease-in-out infinite;animation-delay:calc(var(--n)*38ms + 1s),calc(var(--n)*38ms + 1s);}
+@keyframes kwPulse{0%,100%{transform:scale(.96);opacity:.55;}50%{transform:scale(1.04);opacity:1;}}
+
+.ha .spk{position:absolute;width:.44em;height:.44em;margin:-.22em 0 0 -.22em;z-index:2;pointer-events:none;opacity:0;transform:scale(0) rotate(0deg);}
+.ha .spk:before{content:"";position:absolute;inset:0;background:radial-gradient(circle,#fff 0 18%,transparent 19%),
+  conic-gradient(from 0deg,transparent 0 40deg,#fff 45deg,transparent 50deg 130deg,#fff 135deg,transparent 140deg 220deg,#fff 225deg,transparent 230deg 310deg,#fff 315deg,transparent 320deg);
+  filter:drop-shadow(0 0 3px #fff) drop-shadow(0 0 6px rgba(94,96,206,1)) drop-shadow(0 0 10px rgba(94,96,206,.8));border-radius:50%;}
+.ha.ha-on .spk{animation:kwSpark 2.6s ease-in-out infinite;animation-delay:calc(var(--n)*38ms + 1.3s + var(--d));}
+@keyframes kwSpark{0%,100%{opacity:0;transform:scale(0) rotate(0deg);}45%{opacity:1;transform:scale(1) rotate(45deg);}70%{opacity:0;transform:scale(.3) rotate(90deg);}}
+
+.ha.ha-still .hl{opacity:1!important;transform:none!important;animation:none!important;}
+.ha.ha-still .spk{display:none;}
