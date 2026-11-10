@@ -451,3 +451,18 @@ for k_, tr in LOC_TR.items():
     ix = ix[:d0] + '\n  "%s": %s,' % (k_, json.dumps(tr, ensure_ascii=False)) + ix[d0:]
 open('index.html', 'w', encoding='utf-8').write(ix)
 print('home: %d state cards' % len(_cards))
+
+# ---------- home page: animated headline (wave entrance, shining "Malaysia.") ----------
+import shutil as _sh
+for _f in ('hero-anim.css', 'hero-anim.js'):
+    _sh.copyfile(os.path.join(HERE, 'templates', _f), _f)
+_v = __import__('hashlib').md5((open('hero-anim.css').read() + open('hero-anim.js').read()).encode()).hexdigest()[:8]
+ix = open('index.html', encoding='utf-8').read()
+ix = re.sub(r'<!-- KN-HERO-ANIM:CSS -->.*?\n', '', ix)
+ix = re.sub(r'<!-- KN-HERO-ANIM:JS -->.*?\n', '', ix)
+ix = ix.replace('</head>', '<!-- KN-HERO-ANIM:CSS --><link rel="stylesheet" href="hero-anim.css?v=%s">\n</head>' % _v, 1)
+ix = ix.replace('</body>', '<!-- KN-HERO-ANIM:JS --><script src="hero-anim.js?v=%s" defer></script>\n</body>' % _v, 1)
+if 'data-anim="wave"' not in ix:
+    ix = ix.replace('<h1 data-i18n-html="hero_h1">', '<h1 data-i18n-html="hero_h1" data-anim="wave">', 1)
+open('index.html', 'w', encoding='utf-8').write(ix)
+print('home: animated headline')
