@@ -466,3 +466,21 @@ if 'data-anim="wave"' not in ix:
     ix = ix.replace('<h1 data-i18n-html="hero_h1">', '<h1 data-i18n-html="hero_h1" data-anim="wave">', 1)
 open('index.html', 'w', encoding='utf-8').write(ix)
 print('home: animated headline')
+
+# ---------- the header logo links to the home page on the main static pages ----------
+for f in STATIC:
+    t = open(f, encoding='utf-8').read()
+    h0 = t.find('<header')
+    if h0 < 0:
+        continue
+    h1 = t.find('</header>', h0)
+    hd = t[h0:h1]
+    new = re.sub(r'<div class="logo">(.*?</div>)\s*</div>', lambda m: '<a class="logo" href="./" aria-label="Keith Nah Real Estate home">' + m.group(1) + '\n  </a>', hd, count=1, flags=re.S)
+    if new != hd:
+        if 'a.logo{' not in t:
+            new_css = '<style id="kn-logo-link">header a.logo{color:inherit;text-decoration:none;cursor:pointer;}</style>\n</head>'
+            t = t.replace('</head>', new_css, 1)
+            h0 = t.find('<header'); h1 = t.find('</header>', h0)
+        t = t[:h0] + new + t[h1:]
+        open(f, 'w', encoding='utf-8').write(t)
+print('logo links home on the main pages')
