@@ -95,7 +95,7 @@ function doGet(e) {
  * Setup once: Deploy > Manage deployments > New version, then run setTelegramWebhook.
  */
 var TOPIC_KEEP_DAYS = 7;
-var WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwzuJuSItPGTzI6XOHrPo2O3LzgOsCD6VHRp11v38qtZsSiYruOqg2INeM0zSxlDMQtiA/exec';
+var HOOK_URL = 'https://keithnah.com/tg/hook.php';   // Telegram webhook relay on the website
 
 function json_(o) { return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON); }
 function today_() { return Utilities.formatDate(new Date(), TIME_ZONE, 'yyyy-MM-dd'); }
@@ -221,10 +221,10 @@ function setTelegramWebhook() {
   var props = PropertiesService.getScriptProperties();
   var secret = props.getProperty('TG_WEBHOOK_SECRET');
   if (!secret) { secret = Utilities.getUuid().replace(/-/g, ''); props.setProperty('TG_WEBHOOK_SECRET', secret); }
-  // The live /exec address (the same as LEADS_ENDPOINT in lead-tracker.js). Run from the editor,
-  // ScriptApp.getService().getUrl() gives the /dev test address, which Telegram cannot open (401).
-  var url = WEB_APP_URL;
-  var r = tg_('setWebhook', { url: url + '?tg=' + secret, allowed_updates: ['callback_query'], drop_pending_updates: true });
+  // Telegram calls the relay on the website (keithnah.com/tg/hook.php). It answers Telegram at once and
+  // passes the update to this web app with Telegram's secret header as ?tg=. Pointing Telegram straight at
+  // this web app works badly: it answers with a redirect, so Telegram retries and the buttons feel stuck.
+  var r = tg_('setWebhook', { url: HOOK_URL, secret_token: secret, allowed_updates: ['callback_query'], drop_pending_updates: true });
   console.log(r.ok ? 'Webhook set. Tap a button in Telegram to test.' : 'Telegram said: ' + JSON.stringify(r));
 }
 
