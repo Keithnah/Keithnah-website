@@ -3,7 +3,8 @@
 Notes live in tools/market_notes.json, newest first:
   [{"date": "2026-11-11", "area": {"en": "Kuala Lumpur", "zh-CN": "吉隆坡", ...},
     "title": {lang: text}, "body": {lang: text}, "take": {lang: text},
-    "links": [{"label": {lang: text}, "href": "article/....html"}]}]
+    "links": [{"label": {lang: text}, "href": "article/....html"}],
+    "sources": [{"name": "The Star", "url": "https://..."}]}]   (news reports the note is based on)
 Languages: en, zh-CN, zh-TW, ms, ja, ko (a missing language falls back to English).
 The section sits at the very top of the News page, above The Journal heading, and stays hidden while there are no notes.
 New notes are added by the daily topic flow (see tools/leads-apps-script.gs). Safe to run again.
@@ -26,17 +27,17 @@ RECENT = NOTES[:10]                                            # the News page s
 LBL = {
     'en': {'eb': "Keith's Market Notes", 'h2': 'One minute on the <em>market</em>, every day',
            'p': 'Keith explains what moved in Malaysian property and the economy, and what it means if you are buying.', 'all': 'All market notes', 'archive': 'Every market note, newest first.',
-           'take': "Keith's take", 'earlier': 'Earlier notes', 'foot': "Opinions are Keith's own and are not financial advice.", 'ask': 'Ask Keith about this →'},
+           'take': "Keith's take", 'src': 'Sources:', 'earlier': 'Earlier notes', 'foot': "Opinions are Keith's own and are not financial advice.", 'ask': 'Ask Keith about this →'},
     'zh-CN': {'eb': 'Keith 每日市场短评', 'h2': '每天一分钟，看懂<em>房市</em>', 'p': 'Keith 每天解读马来西亚房产和经济的变化，以及对买家的意义。', 'all': '全部短评', 'archive': '所有市场短评，最新的在最前面。',
-              'take': 'Keith 怎么看', 'earlier': '往期短评', 'foot': '以上为 Keith 的个人观点，并非投资建议。', 'ask': '就这个问 Keith →'},
+              'take': 'Keith 怎么看', 'src': '新闻来源：', 'earlier': '往期短评', 'foot': '以上为 Keith 的个人观点，并非投资建议。', 'ask': '就这个问 Keith →'},
     'zh-TW': {'eb': 'Keith 每日市場短評', 'h2': '每天一分鐘，看懂<em>房市</em>', 'p': 'Keith 每天解讀馬來西亞房產和經濟的變化，以及對買家的意義。', 'all': '全部短評', 'archive': '所有市場短評，最新的在最前面。',
-              'take': 'Keith 怎麼看', 'earlier': '往期短評', 'foot': '以上為 Keith 的個人觀點，並非投資建議。', 'ask': '就這個問 Keith →'},
+              'take': 'Keith 怎麼看', 'src': '新聞來源：', 'earlier': '往期短評', 'foot': '以上為 Keith 的個人觀點，並非投資建議。', 'ask': '就這個問 Keith →'},
     'ms': {'eb': 'Nota Pasaran Keith', 'h2': 'Seminit tentang <em>pasaran</em>, setiap hari', 'p': 'Keith menerangkan perkembangan hartanah dan ekonomi Malaysia, dan maksudnya untuk pembeli.', 'all': 'Semua nota pasaran', 'archive': 'Semua nota pasaran, yang terbaharu dahulu.',
-           'take': 'Pandangan Keith', 'earlier': 'Nota terdahulu', 'foot': 'Pendapat ini milik Keith sendiri dan bukan nasihat kewangan.', 'ask': 'Tanya Keith tentang ini →'},
+           'take': 'Pandangan Keith', 'src': 'Sumber:', 'earlier': 'Nota terdahulu', 'foot': 'Pendapat ini milik Keith sendiri dan bukan nasihat kewangan.', 'ask': 'Tanya Keith tentang ini →'},
     'ja': {'eb': 'Keith のマーケットノート', 'h2': '毎日1分で<em>市場</em>がわかる', 'p': 'マレーシアの不動産と経済の動きと、購入者にとっての意味を Keith が解説します。', 'all': 'すべてのマーケットノート', 'archive': 'すべてのマーケットノート（新しい順）。',
-           'take': 'Keith の見方', 'earlier': '過去のノート', 'foot': '内容は Keith 個人の見解であり、投資助言ではありません。', 'ask': 'これについて Keith に相談 →'},
+           'take': 'Keith の見方', 'src': '出典：', 'earlier': '過去のノート', 'foot': '内容は Keith 個人の見解であり、投資助言ではありません。', 'ask': 'これについて Keith に相談 →'},
     'ko': {'eb': 'Keith의 마켓 노트', 'h2': '매일 1분, <em>시장</em> 읽기', 'p': '말레이시아 부동산과 경제의 변화, 그리고 구매자에게 주는 의미를 Keith가 정리합니다.', 'all': '전체 마켓 노트', 'archive': '모든 마켓 노트, 최신순.',
-           'take': 'Keith의 시각', 'earlier': '지난 노트', 'foot': 'Keith 개인의 의견이며 투자 조언이 아닙니다.', 'ask': '이 내용으로 Keith에게 문의 →'},
+           'take': 'Keith의 시각', 'src': '출처:', 'earlier': '지난 노트', 'foot': 'Keith 개인의 의견이며 투자 조언이 아닙니다.', 'ask': '이 내용으로 Keith에게 문의 →'},
 }
 
 CSS = '''
@@ -69,6 +70,8 @@ CSS = '''
 .mn-i small{display:flex;gap:8px;font-size:11.5px;font-weight:600;color:var(--grey);margin-bottom:5px;} .mn-i small i{font-style:normal;color:var(--gold);font-weight:700;}
 .mn-i b{font-family:'Playfair Display',serif;font-size:17px;line-height:1.35;color:var(--ink);}
 .mn-all{display:block;text-align:center;font-size:13px;font-weight:700;color:var(--gold);padding:12px;border:1px dashed rgba(94,96,206,.4);border-radius:14px;} .mn-all:hover{background:#f6f5fc;}
+.mn-src{margin-top:16px;padding-top:12px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--grey);font-weight:600;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;}
+.mn-src a{color:var(--gold);font-weight:700;text-decoration:underline;text-underline-offset:3px;} .mn-src a:after{content:" ↗";text-decoration:none;}
 .mn-foot{margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--grey);font-weight:500;}
 .mn-foot a{font-weight:700;color:#1f9d55;}
 @media(max-width:900px){.mn-g{grid-template-columns:1fr;} .mn-f{padding:24px 22px;} .mn{padding:120px 16px 48px;} #market-notes ~ .journal-hero{padding-top:60px;}}
@@ -83,14 +86,22 @@ def pick(d, l):
     return d.get(l) or d.get('en') or next(iter(d.values()), '')
 
 
+def src_html(n, l):
+    ss = n.get('sources') or []
+    if not ss:
+        return ''
+    return '<div class="mn-src"><span data-mn="src">%s</span>%s</div>' % (E(LBL[l]['src']), ''.join(
+        '<a href="%s" target="_blank" rel="noopener nofollow">%s</a>' % (E(z['url']), E(z['name'])) for z in ss))
+
+
 def section():
     en = LBL['en']
     n0 = NOTES[0]
     first = ('<div class="mn-by"><img src="images/4382969133d212d0.jpg" alt="Keith Nah"><div><b>Keith Nah 鈞晖</b><small>Keith Nah · REN 60517</small></div></div>'
              '<div class="mn-meta"><span class="mn-tag">%s</span><span>%s</span></div><h3>%s</h3><p class="mn-b">%s</p>'
-             '<div class="mn-take"><span>%s</span><p>%s</p></div><div class="mn-l">%s</div>') % (
+             '<div class="mn-take"><span>%s</span><p>%s</p></div><div class="mn-l">%s</div>%s') % (
         E(pick(n0['area'], 'en')), E(n0['date']), E(pick(n0['title'], 'en')), E(pick(n0['body'], 'en')), E(en['take']), E(pick(n0['take'], 'en')),
-        ''.join('<a href="%s">%s</a>' % (E(x['href']), E(pick(x['label'], 'en'))) for x in n0.get('links', [])))
+        ''.join('<a href="%s">%s</a>' % (E(x['href']), E(pick(x['label'], 'en'))) for x in n0.get('links', [])), src_html(n0, 'en'))
     items = ''.join('<button type="button" class="mn-i%s" data-i="%d"><small><span>%s</span><i>%s</i></small><b>%s</b></button>' % (
         ' on' if i == 0 else '', i, E(n['date']), E(pick(n['area'], 'en')), E(pick(n['title'], 'en'))) for i, n in enumerate(RECENT))
     more = '<a class="mn-all" href="market-notes.html"><span data-mn="all">%s</span> (%d) →</a>' % (E(en['all']), len(NOTES))
@@ -106,7 +117,7 @@ def section():
             'function fd(s,l){var d=new Date(s+"T12:00:00+08:00");try{return d.toLocaleDateString(l==="en"?"en-GB":l,{day:"numeric",month:"short",year:"numeric"});}catch(x){return s;}}'
             'function show(i){cur=i;var l=lg(),T=L[l],x=N[i];f.innerHTML=\'<div class="mn-by"><img src="images/4382969133d212d0.jpg" alt="Keith Nah"><div><b>Keith Nah 鈞晖</b><small>Keith Nah · REN 60517</small></div></div>'
             '<div class="mn-meta"><span class="mn-tag">\'+e(p(x.area,l))+\'</span><span>\'+e(fd(x.date,l))+\'</span></div><h3>\'+e(p(x.title,l))+\'</h3><p class="mn-b">\'+e(p(x.body,l))+\'</p>'
-            '<div class="mn-take"><span>\'+e(T.take)+\'</span><p>\'+e(p(x.take,l))+\'</p></div><div class="mn-l">\'+(x.links||[]).map(function(a){return \'<a href="\'+a.href+\'">\'+e(p(a.label,l))+\'</a>\';}).join("")+\'</div>\';'
+            '<div class="mn-take"><span>\'+e(T.take)+\'</span><p>\'+e(p(x.take,l))+\'</p></div><div class="mn-l">\'+(x.links||[]).map(function(a){return \'<a href="\'+a.href+\'">\'+e(p(a.label,l))+\'</a>\';}).join("")+\'</div>\'+((x.sources||[]).length?\'<div class="mn-src"><span>\'+e(T.src)+\'</span>\'+x.sources.map(function(z){return \'<a href="\'+e(z.url)+\'" target="_blank" rel="noopener nofollow">\'+e(z.name)+\'</a>\';}).join("")+\'</div>\':"");'
             'document.querySelectorAll(".mn-i").forEach(function(b){b.classList.toggle("on",+b.dataset.i===i);});'
             'var a=document.getElementById("mnAsk");if(a)a.href=%s.replace("{t}",encodeURIComponent(p(x.title,"en")));}'
             'function labels(){var l=lg(),T=L[l];document.querySelectorAll("[data-mn]").forEach(function(el){el.textContent=T[el.getAttribute("data-mn")];});'
@@ -142,9 +153,9 @@ def archive():
     def card(n, k):
         return ('<article class="na" id="n-%s-%d" data-k="%d"><div class="mn-meta"><span class="mn-tag" data-f="area">%s</span><span data-d="%s">%s</span></div>'
                 '<h2 data-f="title">%s</h2><p class="mn-b" data-f="body">%s</p><div class="mn-take"><span data-mn="take">%s</span><p data-f="take">%s</p></div>'
-                '<div class="mn-l">%s</div></article>') % (
+                '<div class="mn-l">%s</div>%s</article>') % (
             n['date'], k, k, E(pick(n['area'], 'en')), n['date'], n['date'], E(pick(n['title'], 'en')), E(pick(n['body'], 'en')), E(en['take']),
-            E(pick(n['take'], 'en')), ''.join('<a href="%s" data-li="%d">%s</a>' % (E(x['href']), j, E(pick(x['label'], 'en'))) for j, x in enumerate(n.get('links', []))))
+            E(pick(n['take'], 'en')), ''.join('<a href="%s" data-li="%d">%s</a>' % (E(x['href']), j, E(pick(x['label'], 'en'))) for j, x in enumerate(n.get('links', []))), src_html(n, 'en'))
     k = 0; body = ''
     for m, ns in months:
         body += '<section class="nm"><h3 class="nm-h" data-m="%s">%s</h3>' % (m, m)
