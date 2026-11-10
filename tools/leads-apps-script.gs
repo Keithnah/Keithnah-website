@@ -33,11 +33,18 @@ var MAX_LEN = 2000;
 var TIME_ZONE = 'Asia/Kuala_Lumpur';
 
 function doPost(e) {
+  var d0 = {};
+  try { d0 = JSON.parse((e && e.postData && e.postData.contents) || '{}'); } catch (err) { d0 = {}; }
+  // Daily market-note topics: Telegram button presses and messages from the Claude session
+  if (d0.update_id !== undefined) return handleTelegramUpdate(e, d0);
+  if (d0.type === 'Topic Proposal') return saveTopicProposal(d0);
+  if (d0.type === 'Topic Published') return markTopicPublished(d0);
+
   var lock = LockService.getScriptLock();
   lock.waitLock(10000);
   var d = {}, type = '';
   try {
-    try { d = JSON.parse((e && e.postData && e.postData.contents) || '{}'); } catch (err) { d = {}; }
+    d = d0;
 
     type = clean(d.type);
     if (type !== 'WhatsApp Click' && type !== 'Quick Enquiry') {
@@ -74,8 +81,128 @@ function doPost(e) {
   return ContentService.createTextOutput('ok');
 }
 
-function doGet() {
+function doGet(e) {
+  if (e && e.parameter && e.parameter.action === 'topics') return topicStatus(e.parameter.date);
   return ContentService.createTextOutput('KNRE lead tracker is running.');
+}
+
+/* ---------- Daily market-note topics (Keith's Market Notes on the News page) ----------
+ * 1. Every morning a Claude session sends 5 topic ideas here (type "Topic Proposal").
+ * 2. This script sends them to Keith on Telegram with one button per topic.
+ * 3. Keith taps a topic; Telegram calls this web app (the webhook), the choice is saved.
+ * 4. A Claude session reads the choice (?action=topics), writes and publishes the note,
+ *    then reports back (type "Topic Published") and Keith gets the link on Telegram.
+ * Setup once: Deploy > Manage deployments > New version, then run setTelegramWebhook.
+ */
+var TOPIC_KEEP_DAYS = 7;
+
+function json_(o) { return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON); }
+function today_() { return Utilities.formatDate(new Date(), TIME_ZONE, 'yyyy-MM-dd'); }
+function okDate_(s) { return /^\d{4}-\d{2}-\d{2}$/.test(String(s || '')) ? String(s) : ''; }
+
+function tg_(method, payload) {
+  var token = PropertiesService.getScriptProperties().getProperty('TELEGRAM_BOT_TOKEN');
+  if (!token) throw new Error('TELEGRAM_BOT_TOKEN is not set.');
+  return JSON.parse(UrlFetchApp.fetch('https://api.telegram.org/bot' + token + '/' + method, {
+    method: 'post', contentType: 'application/json', payload: JSON.stringify(payload), muteHttpExceptions: true
+  }).getContentText());
+}
+
+function saveTopicProposal(d) {
+  var date = okDate_(d.date) || today_();
+  var topics = (d.topics || []).slice(0, 5).map(function (t, i) {
+    return { n: i + 1, zh: plain(t.zh).slice(0, 120), en: plain(t.en).slice(0, 160), brief: plain(t.brief).slice(0, 1500), area: plain(t.area).slice(0, 60) };
+  }).filter(function (t) { return t.zh || t.en; });
+  if (topics.length < 2) return json_({ ok: false, error: 'need at least 2 topics' });
+  var props = PropertiesService.getScriptProperties();
+  var chatId = props.getProperty('TELEGRAM_CHAT_ID');
+  var lines = ['📰 <b>今日市场短评：选一个主题</b> · ' + date, ''];
+  topics.forEach(function (t) { lines.push('<b>' + t.n + '.</b> ' + esc(t.zh || t.en) + (t.en && t.zh ? '\n<i>' + esc(t.en) + '</i>' : '')); lines.push(''); });
+  lines.push('点一个数字，Keith 的短评会写好并自动上线。');
+  var kb = [topics.map(function (t) { return { text: String(t.n), callback_data: 'pick|' + date + '|' + t.n }; }),
+            [{ text: '今天不发', callback_data: 'skip|' + date }]];
+  var r = tg_('sendMessage', { chat_id: chatId, text: lines.join('\n'), parse_mode: 'HTML', reply_markup: { inline_keyboard: kb } });
+  props.setProperty('TOPICS_' + date, JSON.stringify({ date: date, topics: topics, choice: null, published: null, msg: r && r.result ? r.result.message_id : null }));
+  cleanupTopics_();
+  return json_({ ok: !!(r && r.ok), date: date, count: topics.length });
+}
+
+function topicStatus(date) {
+  date = okDate_(date) || today_();
+  var raw = PropertiesService.getScriptProperties().getProperty('TOPICS_' + date);
+  if (!raw) return json_({ ok: true, date: date, found: false });
+  var o = JSON.parse(raw);
+  var chosen = o.choice ? o.topics.filter(function (t) { return t.n === o.choice; })[0] : null;
+  return json_({ ok: true, date: date, found: true, skipped: o.choice === 0, choice: o.choice, chosen: chosen || null, published: o.published });
+}
+
+function markTopicPublished(d) {
+  var date = okDate_(d.date) || today_();
+  var props = PropertiesService.getScriptProperties();
+  var raw = props.getProperty('TOPICS_' + date);
+  if (!raw) return json_({ ok: false, error: 'no topics for ' + date });
+  var o = JSON.parse(raw);
+  if (!o.choice || o.published) return json_({ ok: true, already: !!o.published });
+  var url = String(d.url || '');
+  if (!/^https:\/\/keithnah\.com\//.test(url)) return json_({ ok: false, error: 'bad url' });
+  o.published = { url: url, at: new Date().toISOString() };
+  props.setProperty('TOPICS_' + date, JSON.stringify(o));
+  tg_('sendMessage', { chat_id: props.getProperty('TELEGRAM_CHAT_ID'), parse_mode: 'HTML', disable_web_page_preview: true,
+    text: '✅ <b>已上线</b>：' + esc(plain(d.title) || '') + '\n' + esc(url) });
+  return json_({ ok: true });
+}
+
+function handleTelegramUpdate(e, u) {
+  var props = PropertiesService.getScriptProperties();
+  var secret = props.getProperty('TG_WEBHOOK_SECRET');
+  if (!secret || !e.parameter || e.parameter.tg !== secret) return ContentService.createTextOutput('ignored');
+  var q = u.callback_query;
+  if (!q || !q.message || String(q.message.chat.id) !== String(props.getProperty('TELEGRAM_CHAT_ID'))) return ContentService.createTextOutput('ok');
+  var parts = String(q.data || '').split('|'), act = parts[0], date = okDate_(parts[1]);
+  var raw = date && props.getProperty('TOPICS_' + date);
+  if (!raw) { tg_('answerCallbackQuery', { callback_query_id: q.id, text: '这组主题已过期。' }); return ContentService.createTextOutput('ok'); }
+  var o = JSON.parse(raw);
+  if (o.choice !== null && o.choice !== undefined) {
+    tg_('answerCallbackQuery', { callback_query_id: q.id, text: o.choice ? '今天已选第 ' + o.choice + ' 个。' : '今天已选择不发。' });
+    return ContentService.createTextOutput('ok');
+  }
+  var text;
+  if (act === 'skip') { o.choice = 0; text = '👌 今天不发短评。'; }
+  else {
+    var n = parseInt(parts[2], 10), t = o.topics.filter(function (x) { return x.n === n; })[0];
+    if (!t) { tg_('answerCallbackQuery', { callback_query_id: q.id, text: '找不到这个主题。' }); return ContentService.createTextOutput('ok'); }
+    o.choice = n; o.chosenAt = new Date().toISOString();
+    text = '✍️ 已选第 ' + n + ' 个：' + esc(t.zh || t.en) + '\n短评写好后会自动上线（约 1 小时内），上线后会通知你。';
+  }
+  props.setProperty('TOPICS_' + date, JSON.stringify(o));
+  tg_('answerCallbackQuery', { callback_query_id: q.id, text: o.choice ? '已选择 ' + o.choice : '好的' });
+  if (o.msg) tg_('editMessageReplyMarkup', { chat_id: q.message.chat.id, message_id: o.msg, reply_markup: { inline_keyboard: [] } });
+  tg_('sendMessage', { chat_id: q.message.chat.id, text: text, parse_mode: 'HTML' });
+  return ContentService.createTextOutput('ok');
+}
+
+function cleanupTopics_() {
+  var props = PropertiesService.getScriptProperties(), all = props.getProperties();
+  var limit = Utilities.formatDate(new Date(Date.now() - TOPIC_KEEP_DAYS * 864e5), TIME_ZONE, 'yyyy-MM-dd');
+  Object.keys(all).forEach(function (k) { if (k.indexOf('TOPICS_') === 0 && k.slice(7) < limit) props.deleteProperty(k); });
+}
+
+// Run once from the editor after deploying a new version: Telegram will send button presses here.
+function setTelegramWebhook() {
+  var props = PropertiesService.getScriptProperties();
+  var secret = props.getProperty('TG_WEBHOOK_SECRET');
+  if (!secret) { secret = Utilities.getUuid().replace(/-/g, ''); props.setProperty('TG_WEBHOOK_SECRET', secret); }
+  var url = ScriptApp.getService().getUrl();
+  if (!url) throw new Error('Deploy the web app first (Deploy > New deployment).');
+  var r = tg_('setWebhook', { url: url + '?tg=' + secret, allowed_updates: ['callback_query'], drop_pending_updates: true });
+  console.log(r.ok ? 'Webhook set. Tap a button in Telegram to test.' : 'Telegram said: ' + JSON.stringify(r));
+}
+
+// Run from the editor to send yourself a sample topic message with buttons.
+function testTopics() {
+  saveTopicProposal({ date: today_(), topics: [
+    { zh: '测试主题一', en: 'Test topic one' }, { zh: '测试主题二', en: 'Test topic two' }, { zh: '测试主题三', en: 'Test topic three' }] });
+  console.log('Sent. Tap a button in Telegram.');
 }
 
 /* ---------- Telegram ---------- */
