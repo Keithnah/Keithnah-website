@@ -12,7 +12,7 @@ import os
 import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DIRS = ['', 'article', 'area', 'best', 'guides', 'property', 'topic']
+DIRS = ['', 'article', 'area', 'best', 'guides', 'notes', 'property', 'topic']
 TMAX, DMAX = 65, 158
 
 
@@ -67,7 +67,7 @@ def short_desc(d):
     return cut + '…'
 
 
-nt = nd = 0
+nt = nd = nc = 0
 for d in DIRS:
     for p in sorted(glob.glob(os.path.join(ROOT, d, '*.html'))):
         rel = os.path.relpath(p, ROOT)
@@ -87,6 +87,11 @@ for d in DIRS:
             if s2 != s:
                 out = out[:m.start(1)] + html.escape(s2) + out[m.end(1):]
                 nd += 1
+        # every English page names its own address, so /index.html and / count as one page
+        if '/' not in rel and 'rel="canonical"' not in out and rel != '404.html':
+            url = 'https://keithnah.com/' + ('' if rel == 'index.html' else rel)
+            out = re.sub(r'(<meta name="description"[^>]*>)', r'\1\n<link rel="canonical" href="%s">' % url, out, count=1)
+            nc += 1
         if out != page:
             open(p, 'w', encoding='utf-8').write(out)
-print('seo_meta: shortened %d titles and %d descriptions' % (nt, nd))
+print('seo_meta: shortened %d titles and %d descriptions; %d canonical tags added' % (nt, nd, nc))

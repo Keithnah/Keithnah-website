@@ -26,6 +26,7 @@ import sys as _sys
 _sys.path.insert(0, HERE)
 import note_links as NL
 _PROJ = NL.projects()
+NL.assign_pages(NOTES)
 for _n in NOTES:
     _n['projects'] = [{'name': p['name'], 'href': 'property/%s.html' % p['slug']} for p in NL.related(_n, _PROJ)]
 RECENT = NOTES[:10]                                            # the News page shows the latest 10
@@ -117,9 +118,9 @@ def section():
     en = LBL['en']
     n0 = NOTES[0]
     first = ('<div class="mn-by"><img src="images/4382969133d212d0.jpg" alt="Keith Nah"><div><b>Keith Nah 鈞晖</b><small>Keith Nah · REN 60517</small></div></div>'
-             '<div class="mn-meta"><span class="mn-tag">%s</span><span>%s</span></div>%s<h3>%s</h3><p class="mn-b">%s</p>'
+             '<div class="mn-meta"><span class="mn-tag">%s</span><span>%s</span></div>%s<h3><a href="%s">%s</a></h3><p class="mn-b">%s</p>'
              '<div class="mn-take"><span>%s</span><p>%s</p></div><div class="mn-l">%s</div>%s') % (
-        E(pick(n0['area'], 'en')), E(n0['date']), src_html(n0, 'en'), E(pick(n0['title'], 'en')), E(pick(n0['body'], 'en')), E(en['take']), E(pick(n0['take'], 'en')),
+        E(pick(n0['area'], 'en')), E(n0['date']), src_html(n0, 'en'), E(n0['_page']), E(pick(n0['title'], 'en')), E(pick(n0['body'], 'en')), E(en['take']), E(pick(n0['take'], 'en')),
         ''.join('<a href="%s">%s</a>' % (E(x['href']), E(pick(x['label'], 'en'))) for x in n0.get('links', [])), proj_html(n0, 'en'))
     items = ''.join('<button type="button" class="mn-i%s" data-i="%d"><small><span>%s</span><i>%s</i></small><b>%s</b></button>' % (
         ' on' if i == 0 else '', i, E(n['date']), E(pick(n['area'], 'en')), E(pick(n['title'], 'en'))) for i, n in enumerate(RECENT))
@@ -135,7 +136,7 @@ def section():
             'function e(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML;}'
             'function fd(s,l){var d=new Date(s+"T12:00:00+08:00");try{return d.toLocaleDateString(l==="en"?"en-GB":l,{day:"numeric",month:"short",year:"numeric"});}catch(x){return s;}}'
             'function show(i){cur=i;var l=lg(),T=L[l],x=N[i];f.innerHTML=\'<div class="mn-by"><img src="images/4382969133d212d0.jpg" alt="Keith Nah"><div><b>Keith Nah 鈞晖</b><small>Keith Nah · REN 60517</small></div></div>'
-            '<div class="mn-meta"><span class="mn-tag">\'+e(p(x.area,l))+\'</span><span>\'+e(fd(x.date,l))+\'</span></div>\'+((x.sources||[]).length?\'<div class="mn-src"><span>\'+e(T.src)+\'</span>\'+x.sources.map(function(z){return \'<a href="\'+e(z.url)+\'" target="_blank" rel="noopener nofollow">\'+e(z.name)+\'</a>\';}).join("")+\'</div>\':"")+\'<h3>\'+e(p(x.title,l))+\'</h3><p class="mn-b">\'+e(p(x.body,l))+\'</p>'
+            '<div class="mn-meta"><span class="mn-tag">\'+e(p(x.area,l))+\'</span><span>\'+e(fd(x.date,l))+\'</span></div>\'+((x.sources||[]).length?\'<div class="mn-src"><span>\'+e(T.src)+\'</span>\'+x.sources.map(function(z){return \'<a href="\'+e(z.url)+\'" target="_blank" rel="noopener nofollow">\'+e(z.name)+\'</a>\';}).join("")+\'</div>\':"")+\'<h3><a href="\'+e(x._page)+\'">\'+e(p(x.title,l))+\'</a></h3><p class="mn-b">\'+e(p(x.body,l))+\'</p>'
             '<div class="mn-take"><span>\'+e(T.take)+\'</span><p>\'+e(p(x.take,l))+\'</p></div><div class="mn-l">\'+(x.links||[]).map(function(a){return \'<a href="\'+a.href+\'">\'+e(p(a.label,l))+\'</a>\';}).join("")+\'</div>\'+((x.projects||[]).length?\'<div class="mn-p"><span>\'+e(T.proj)+\'</span>\'+x.projects.map(function(q){return \'<a href="\'+e(q.href)+\'">\'+e(q.name)+\'</a>\';}).join("")+\'</div>\':"");'
             'document.querySelectorAll(".mn-i").forEach(function(b){b.classList.toggle("on",+b.dataset.i===i);});'
             'var a=document.getElementById("mnAsk");if(a)a.href=%s.replace("{t}",encodeURIComponent(p(x.title,"en")));}'
@@ -189,9 +190,9 @@ def archive():
         months[-1][1].append(n)
     def card(n, k):
         return ('<article class="na" id="n-%s-%d" data-k="%d"><div class="mn-meta"><span class="mn-tag" data-f="area">%s</span><span data-d="%s">%s</span></div>%s'
-                '<h2 data-f="title">%s</h2><p class="mn-b" data-f="body">%s</p><div class="mn-take"><span data-mn="take">%s</span><p data-f="take">%s</p></div>'
+                '<h2><a href="%s" data-f="title">%s</a></h2><p class="mn-b" data-f="body">%s</p><div class="mn-take"><span data-mn="take">%s</span><p data-f="take">%s</p></div>'
                 '<div class="mn-l">%s</div>%s</article>') % (
-            n['date'], k, k, E(pick(n['area'], 'en')), n['date'], n['date'], src_html(n, 'en'), E(pick(n['title'], 'en')), E(pick(n['body'], 'en')), E(en['take']),
+            n['date'], k, k, E(pick(n['area'], 'en')), n['date'], n['date'], src_html(n, 'en'), E(n['_page']), E(pick(n['title'], 'en')), E(pick(n['body'], 'en')), E(en['take']),
             E(pick(n['take'], 'en')), ''.join('<a href="%s" data-li="%d">%s</a>' % (E(x['href']), j, E(pick(x['label'], 'en'))) for j, x in enumerate(n.get('links', []))), proj_html(n, 'en', ' data-mn="proj"'))
     k = 0; cards = ''; lst = ''
     for m, ns in months:
@@ -294,6 +295,156 @@ footer{border-top:1px solid var(--line);padding:26px 5vw;font-size:13px;color:va
 
 if NOTES:
     archive()
+
+
+# ---------- one page per note: notes/<date>-<title words>.html (search engines can find each note) ----------
+NP_LBL = {
+    'en': {'home': 'Home', 'news': 'News', 'older': 'Older note', 'newer': 'Newer note', 'by': "Keith Nah's market note"},
+    'zh-CN': {'home': '首页', 'news': '新闻', 'older': '上一则', 'newer': '下一则', 'by': 'Keith Nah 市场短评'},
+    'zh-TW': {'home': '首頁', 'news': '新聞', 'older': '上一則', 'newer': '下一則', 'by': 'Keith Nah 市場短評'},
+    'ms': {'home': 'Utama', 'news': 'Berita', 'older': 'Nota sebelumnya', 'newer': 'Nota seterusnya', 'by': 'Nota pasaran Keith Nah'},
+    'ja': {'home': 'ホーム', 'news': 'ニュース', 'older': '前のノート', 'newer': '次のノート', 'by': 'Keith Nah のマーケットノート'},
+    'ko': {'home': '홈', 'news': '뉴스', 'older': '이전 노트', 'newer': '다음 노트', 'by': 'Keith Nah의 마켓 노트'},
+}
+for _l in NP_LBL:
+    NP_LBL[_l].update(LBL[_l])
+
+NP_CSS = '''
+:root{--bg:#F7F6FB;--ink:#15142b;--grey:#5f5e74;--line:rgba(21,20,43,.09);--gold:#5E60CE;}
+*{box-sizing:border-box;margin:0;padding:0;} body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+a{color:inherit;text-decoration:none;} h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.25;}
+.nw{max-width:860px;margin:0 auto;padding:120px 5vw 80px;}
+.bc{font-size:13px;color:var(--grey);font-weight:600;margin-bottom:18px;display:flex;flex-wrap:wrap;gap:6px;} .bc a{color:var(--gold);}
+.na{background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px 34px;box-shadow:0 18px 44px rgba(29,27,79,.08);position:relative;overflow:hidden;}
+.na:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(#5E60CE,#9a98f0);}
+.na h1{font-size:clamp(26px,3.6vw,38px);margin:4px 0 16px;}
+.na p.mn-b{color:#3d3c55;font-size:16px;line-height:1.85;font-weight:500;white-space:pre-line;} .na .mn-take p{white-space:pre-line;font-size:15px;}
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;}
+.pn a{display:block;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;transition:all .25s;}
+.pn a:hover{border-color:var(--gold);box-shadow:0 10px 24px rgba(29,27,79,.08);}
+.pn small{display:block;font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.pn b{font-family:'Playfair Display',serif;font-size:16px;line-height:1.35;} .pn .nx{text-align:right;grid-column:2;}
+.np-cta{margin-top:22px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--grey);}
+.np-cta a.wa{background:#25D366;color:#fff;font-weight:700;padding:12px 20px;border-radius:100px;font-size:14px;}
+.np-cta a.all{color:var(--gold);font-weight:700;}
+footer{border-top:1px solid var(--line);padding:26px 5vw;font-size:13px;color:var(--grey);text-align:center;}
+@media(max-width:640px){.na{padding:24px 20px;} .pn{grid-template-columns:1fr;} .pn .nx{grid-column:1;text-align:left;}}
+'''
+
+
+def note_pages():
+    import sys
+    sys.path.insert(0, HERE)
+    import site_header as SH
+    from urllib.parse import quote_plus
+    os.makedirs('notes', exist_ok=True)
+    keep = set()
+    en = NP_LBL['en']
+    up = lambda h: h if h.startswith(('http', '/', '#')) else '../' + h
+    for i, n in enumerate(NOTES):
+        older = NOTES[i + 1] if i + 1 < len(NOTES) else None
+        newer = NOTES[i - 1] if i > 0 else None
+        url = 'https://keithnah.com/' + n['_page']
+        title = pick(n['title'], 'en')
+        first = pick(n['body'], 'en').split('\n\n')[0]
+        wa = 'https://api.whatsapp.com/send/?phone=60102821568&text=%s&type=phone_number&app_absent=0' % quote_plus('(KNRE) Hi Keith, about your market note "%s"...' % title)
+        links = ''.join('<a href="%s" data-li="%d">%s</a>' % (E(up(x['href'])), j, E(pick(x['label'], 'en'))) for j, x in enumerate(n.get('links', [])))
+        projs = ''.join('<a href="../%s">%s</a>' % (E(x['href']), E(x['name'])) for x in n.get('projects', []))
+        pn = ''
+        if older:
+            pn += '<a class="pv" href="../%s"><small data-mn="older">%s</small><b data-pt-o="1">%s</b></a>' % (E(older['_page']), E(en['older']), E(pick(older['title'], 'en')))
+        if newer:
+            pn += '<a class="nx" href="../%s"><small data-mn="newer">%s</small><b data-pt-n="1">%s</b></a>' % (E(newer['_page']), E(en['newer']), E(pick(newer['title'], 'en')))
+        ld = [{'@context': 'https://schema.org', '@type': 'NewsArticle', 'headline': title[:110], 'description': first[:300],
+               'datePublished': n['date'] + 'T12:00:00+08:00', 'dateModified': n['date'] + 'T12:00:00+08:00', 'mainEntityOfPage': url,
+               'image': 'https://keithnah.com/images/4382969133d212d0.jpg', 'articleSection': pick(n['area'], 'en'),
+               'author': {'@type': 'Person', 'name': 'Keith Nah', 'url': 'https://keithnah.com/about-keith.html'},
+               'publisher': {'@type': 'Organization', 'name': 'Keith Nah Real Estate', 'logo': {'@type': 'ImageObject', 'url': 'https://keithnah.com/apple-touch-icon.png'}},
+               'isBasedOn': [s['url'] for s in n.get('sources', [])]},
+              {'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
+                  {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://keithnah.com/'},
+                  {'@type': 'ListItem', 'position': 2, 'name': 'News', 'item': 'https://keithnah.com/blog.html'},
+                  {'@type': 'ListItem', 'position': 3, 'name': 'Market notes', 'item': 'https://keithnah.com/market-notes.html'},
+                  {'@type': 'ListItem', 'position': 4, 'name': title, 'item': url}]}]
+        data = {'area': n['area'], 'title': n['title'], 'body': n['body'], 'take': n['take'], 'links': n.get('links', []),
+                'o': older and older['title'], 'n': newer and newer['title']}
+        js = ('<script>(function(){var N=%s,L=%s;function lg(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}return L[l]?l:"en";}'
+              'function p(d,l){return !d?"":typeof d==="string"?d:(d[l]||d.en||"");}'
+              'function go(){var l=lg(),T=L[l];document.querySelectorAll("[data-mn]").forEach(function(e){e.textContent=T[e.getAttribute("data-mn")];});'
+              'document.querySelectorAll("[data-f]").forEach(function(e){e.textContent=p(N[e.getAttribute("data-f")],l);});'
+              'document.querySelectorAll("[data-li]").forEach(function(e){e.textContent=p(N.links[+e.getAttribute("data-li")].label,l);});'
+              'var o=document.querySelector("[data-pt-o]"),x=document.querySelector("[data-pt-n]");if(o)o.textContent=p(N.o,l);if(x)x.textContent=p(N.n,l);'
+              'document.querySelectorAll("[data-d]").forEach(function(e){var d=new Date(e.getAttribute("data-d")+"T12:00:00+08:00");try{e.textContent=d.toLocaleDateString(l==="en"?"en-GB":l,{day:"numeric",month:"long",year:"numeric"});}catch(z){}});}'
+              'go();document.addEventListener("DOMContentLoaded",function(){var s=window.knSetLang;if(typeof s==="function")window.knSetLang=function(){var r=s.apply(this,arguments);go();return r;};go();});})();</script>') % (
+            json.dumps(data, ensure_ascii=False).replace('</', '<\\/'), json.dumps(NP_LBL, ensure_ascii=False))
+        page = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>%s | Keith Nah</title>
+<meta name="description" content="%s">
+<link rel="canonical" href="%s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="%s">
+<meta property="og:description" content="%s">
+<meta property="og:url" content="%s">
+<meta property="og:image" content="https://keithnah.com/images/4382969133d212d0.jpg">
+<meta property="article:published_time" content="%sT12:00:00+08:00">
+<link rel="icon" type="image/png" href="../images/f304c8479b1fe873.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">%s</script>
+<style>%s</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="../"><img src="../images/f304c8479b1fe873.png" alt="Keith Nah logo"><span><b>Keith Nah 鈞晖</b><small>Keith Nah Real Estate</small></span></a>
+  <nav></nav>
+  <a class="wa-btn" href="%s" target="_blank" rel="noopener">WhatsApp Keith</a>
+</header>
+<main class="nw">
+  <nav class="bc" aria-label="Breadcrumb"><a href="../" data-mn="home">%s</a><span>›</span><a href="../blog.html#market-notes" data-mn="news">%s</a><span>›</span><a href="../market-notes.html" data-mn="all">%s</a></nav>
+  <article class="na">
+    <div class="mn-meta"><span class="mn-tag" data-f="area">%s</span><time datetime="%s" data-d="%s">%s</time></div>
+    %s
+    <h1 data-f="title">%s</h1>
+    <p class="mn-b" data-f="body">%s</p>
+    <div class="mn-take"><span data-mn="take">%s</span><p data-f="take">%s</p></div>
+    <div class="mn-l">%s</div>
+    %s
+  </article>
+  <div class="pn">%s</div>
+  <div class="np-cta"><span data-mn="foot">%s</span><span><a class="all" href="../market-notes.html" data-mn="all">%s</a> &nbsp; <a class="wa" href="%s" target="_blank" rel="noopener" data-mn="ask">%s</a></span></div>
+</main>
+<footer>&copy; 2026 Keith Nah Real Estate. All rights reserved.</footer>
+<script src="../lead-tracker.js"></script>
+%s
+</body>
+</html>
+''' % (E(title), E(first[:300]), url, E(title), E(first[:300]), url, n['date'],
+            json.dumps(ld, ensure_ascii=False).replace('</', '<\\/'), CSS + NP_CSS, E(wa),
+            E(en['home']), E(en['news']), E(en['all']), E(pick(n['area'], 'en')), n['date'], n['date'], n['date'],
+            src_html(n, 'en'), E(title), E(pick(n['body'], 'en')), E(en['take']), E(pick(n['take'], 'en')), links,
+            ('<div class="mn-p"><span data-mn="proj">%s</span>%s</div>' % (E(en['proj']), projs)) if projs else '',
+            pn, E(en['foot']), E(en['all']), E(wa), E(en['ask']), js)
+        page = SH.apply(page, '../', 'blog.html')
+        open(n['_page'], 'w', encoding='utf-8').write(page)
+        keep.add(os.path.basename(n['_page']))
+    for f in os.listdir('notes'):
+        if f.endswith('.html') and f not in keep:
+            os.remove(os.path.join('notes', f))
+    # sitemap: one entry per note page
+    if os.path.exists('sitemap.xml'):
+        sm = open('sitemap.xml', encoding='utf-8').read()
+        sm = re.sub(r'  <url>\n    <loc>https://keithnah.com/notes/[^<]*</loc>.*?</url>\n', '', sm, flags=re.S)
+        sm = sm.replace('</urlset>', ''.join('  <url>\n    <loc>https://keithnah.com/%s</loc>\n    <lastmod>%s</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n' % (n['_page'], n['date']) for n in NOTES) + '</urlset>')
+        open('sitemap.xml', 'w', encoding='utf-8').write(sm)
+    print('note pages: %d' % len(keep))
+
+
+if NOTES:
+    note_pages()
+
 print('market notes: %d (archive page market-notes.html)' % len(NOTES))
 
 
@@ -307,12 +458,12 @@ def ticker():
     for n in NOTES:
         if n['date'] in days:
             items.append(n)
-    data = [{'d': n['date'], 'a': n['area'], 't': n['title'], 'k': k_all[id(n)]} for n in items]
+    data = [{'d': n['date'], 'a': n['area'], 't': n['title'], 'k': k_all[id(n)], 'u': n['_page']} for n in items]
     lab = {'en': ['Market Notes', 'Live'], 'zh-CN': ['每日市场短评', '最新'], 'zh-TW': ['每日市場短評', '最新'], 'ms': ['Nota Pasaran', 'Terkini'],
            'ja': ['マーケットノート', '最新'], 'ko': ['마켓 노트', '최신']}
     def item_html(x, l):
-        return ('<a class="tk-i" href="market-notes.html#n-%s-%d"><span class="tk-a">%s</span><span class="tk-t">%s</span><span class="tk-sep" aria-hidden="true">◆</span></a>') % (
-            x['d'], x['k'], E(pick(x['a'], l).upper() if l == 'en' else pick(x['a'], l)), E(pick(x['t'], l)))
+        return ('<a class="tk-i" href="%s"><span class="tk-a">%s</span><span class="tk-t">%s</span><span class="tk-sep" aria-hidden="true">◆</span></a>') % (
+            E(x['u']), E(pick(x['a'], l).upper() if l == 'en' else pick(x['a'], l)), E(pick(x['t'], l)))
     row = ''.join(item_html(x, 'en') for x in data)
     css = ('.tk{position:absolute;left:0;right:0;top:var(--tk-top,76px);z-index:3;display:flex;align-items:stretch;height:50px;background:#07071a;'
            'border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 10px 30px rgba(7,7,26,.22);overflow:hidden;font-family:"SFMono-Regular",Menlo,Consolas,"Liberation Mono",monospace;}'
@@ -337,7 +488,7 @@ def ticker():
     js = ('<script>(function(){var D=%s,L=%s,r=document.getElementById("tkR"),lb=document.getElementById("tkL");if(!r)return;'
           'function lg(){var l="en";try{l=(typeof currentLang!=="undefined"&&currentLang)||localStorage.getItem("kn_lang")||"en"}catch(e){}return L[l]?l:"en";}'
           'function p(d,l){return typeof d==="string"?d:(d[l]||d.en||"");}function e(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML;}'
-          'function build(){var l=lg(),h=D.map(function(x){var a=p(x.a,l);return \'<a class="tk-i" href="market-notes.html#n-\'+x.d+"-"+x.k+\'"><span class="tk-a">\'+e(l==="en"?a.toUpperCase():a)+\'</span><span class="tk-t">\'+e(p(x.t,l))+\'</span><span class="tk-sep" aria-hidden="true">◆</span></a>\';}).join("");'
+          'function build(){var l=lg(),h=D.map(function(x){var a=p(x.a,l);return \'<a class="tk-i" href="\'+x.u+\'"><span class="tk-a">\'+e(l==="en"?a.toUpperCase():a)+\'</span><span class="tk-t">\'+e(p(x.t,l))+\'</span><span class="tk-sep" aria-hidden="true">◆</span></a>\';}).join("");'
           'var once=h;while(once.length<4000&&D.length)once+=h;r.innerHTML=once+once;lb.innerHTML=\'<i></i>\'+e(L[l][0])+\' <small>\'+e(L[l][1])+\'</small>\';'
           'requestAnimationFrame(function(){var w=r.scrollWidth/2;r.style.setProperty("--tk-dur",Math.max(25,w/55)+"s");});}'
           'function top(){var h=document.getElementById("siteHeader")||document.querySelector("header");var t=document.querySelector(".tk");if(h&&t)t.style.setProperty("--tk-top",h.getBoundingClientRect().height+"px");}top();addEventListener("resize",top);build();document.addEventListener("DOMContentLoaded",function(){var s=window.setLanguage;if(typeof s==="function")window.setLanguage=function(){var x=s.apply(this,arguments);build();return x;};build();});})();</script>') % (

@@ -26,7 +26,7 @@ jobs:
           before = os.environ.get('BEFORE', '')
           if os.environ['EVENT'] == 'push' and before and not set(before) <= {'0'}:
               files = subprocess.run(['git', 'diff', '--name-only', '--diff-filter=AM', before, 'HEAD'], capture_output=True, text=True).stdout.split()
-              urls = [site + '/' + re.sub(r'(^|/)index\.html$', r'\1', f) for f in files if (f.endswith('.html') or f == 'llms.txt') and not f.startswith(('tg/', 'downloads/', 'tools/'))]
+              urls = [site + '/' + re.sub(r'(^|/)index\.html$', r'\1', f) for f in files if (f.endswith('.html') or f == 'llms.txt') and not f.startswith(('tg/', 'downloads/', 'tools/')) and not f.endswith('404.html')]
           else:
               urls = re.findall(r'<loc>(.*?)</loc>', open('sitemap.xml', encoding='utf-8').read())
           urls = sorted(set(urls))[:10000]

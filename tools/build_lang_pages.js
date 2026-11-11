@@ -19,7 +19,7 @@ const ROOT = path.resolve(__dirname, '..');
 const SITE = 'https://keithnah.com';
 const LANGS = { 'zh-CN': 'zh', 'zh-TW': 'zh-tw', ms: 'ms', ja: 'ja', ko: 'ko' };
 const HREFLANG = { en: 'en', 'zh-CN': 'zh-Hans', 'zh-TW': 'zh-Hant', ms: 'ms', ja: 'ja', ko: 'ko' };
-const DIRS = ['', 'article', 'area', 'best', 'guides', 'property', 'topic'];
+const DIRS = ['', 'article', 'area', 'best', 'guides', 'notes', 'property', 'topic'];
 const CACHE = path.join(__dirname, 'lang_pages_cache.json');
 const VERSION = '1';
 const ALL = process.argv.includes('--all');
@@ -39,7 +39,7 @@ function pages() {
   const out = [];
   for (const d of DIRS) {
     const dir = path.join(ROOT, d);
-    for (const f of fs.readdirSync(dir).sort()) if (f.endsWith('.html')) out.push(d ? d + '/' + f : f);
+    for (const f of fs.readdirSync(dir).sort()) if (f.endsWith('.html') && !(d === '' && f === '404.html')) out.push(d ? d + '/' + f : f);
   }
   return out;
 }

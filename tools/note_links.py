@@ -24,14 +24,46 @@ def norm(s):
     return re.sub(r'[^a-z0-9]', '', s.lower())
 
 
+def slug(title):
+    s = re.sub(r'[^a-z0-9]+', '-', title.lower().replace("'", '')).strip('-')
+    words, out = s.split('-'), ''
+    for w in words:
+        if len(out) + len(w) + 1 > 60:
+            break
+        out = (out + '-' + w).strip('-')
+    return out or 'note'
+
+
+def assign_pages(ns):
+    """Give every note its own page, notes/<date>-<title words>.html. Older notes keep their address
+    when a newer note gets the same words (the newer one gets -2)."""
+    used = set()
+    for n in reversed(ns):   # ns is newest first, so this walks oldest first
+        base = '%s-%s' % (n['date'], slug(n['title'].get('en', '') if isinstance(n['title'], dict) else n['title']))
+        name, i = base, 2
+        while name in used:
+            name, i = '%s-%d' % (base, i), i + 1
+        used.add(name)
+        n['_page'] = 'notes/%s.html' % name
+    return ns
+
+
 def notes():
-    """Notes newest first, with the same numbering as market-notes.html (#n-<date>-<k>)."""
+    """Notes newest first, with the same numbering as market-notes.html (#n-<date>-<k>) and their own pages."""
     if not os.path.exists(NOTES_PATH):
         return []
     ns = sorted(json.load(open(NOTES_PATH, encoding='utf-8')), key=lambda n: n['date'], reverse=True)
     for k, n in enumerate(ns):
         n['_id'] = 'n-%s-%d' % (n['date'], k)
-    return ns
+    return assign_pages(ns)
+
+
+if __name__ == '__main__':
+    # python3 tools/note_links.py 2026-11-11  -> the page address of each note of that day
+    import sys
+    for n in notes():
+        if len(sys.argv) < 2 or n['date'] == sys.argv[1]:
+            print('https://keithnah.com/' + n['_page'], '|', n['title'].get('en', ''))
 
 
 def projects():
