@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script id="kn-lang-url">(function(){var M={"zh-CN":"zh","zh-TW":"zh-tw","ms":"ms","ja":"ja","ko":"ko"},R=/^\/(zh|zh-tw|ms|ja|ko)(\/.*)$/,p=location.pathname,m=p.match(R),P=document.documentElement.getAttribute('data-page-lang')||'en',en=m?m[2]:p;
+function u(l){return (l==='en'?'':'/'+M[l])+en+location.search+location.hash;}window.knLangUrl=u;
+var S=Storage.prototype.setItem;function go(l){if(window.KN_RENDER||l===P||(l!=='en'&&!M[l]))return;location.href=u(l);}
+Storage.prototype.setItem=function(k,v){S.apply(this,arguments);if(k==='kn_lang'&&this===window.localStorage)go(String(v));};
+if(P!=='en')['pushState','replaceState'].forEach(function(n){var f=history[n];history[n]=function(s,t,x){if(x!=null&&!/^[a-z]+:|^\//i.test(String(x)))x=new URL(String(x),location.href).href;return f.call(this,s,t,x);};});
+try{if(P!=='en')S.call(localStorage,'kn_lang',P);else if(!window.KN_RENDER){var s=localStorage.getItem('kn_lang');if(s&&M[s])location.replace(u(s));}}catch(e){}})();</script>
+<!-- KN-HREFLANG --><link rel="alternate" hreflang="en" href="https://keithnah.com/guides/bukit-jalil.html"><link rel="alternate" hreflang="zh-Hans" href="https://keithnah.com/zh/guides/bukit-jalil.html"><link rel="alternate" hreflang="zh-Hant" href="https://keithnah.com/zh-tw/guides/bukit-jalil.html"><link rel="alternate" hreflang="ms" href="https://keithnah.com/ms/guides/bukit-jalil.html"><link rel="alternate" hreflang="ja" href="https://keithnah.com/ja/guides/bukit-jalil.html"><link rel="alternate" hreflang="ko" href="https://keithnah.com/ko/guides/bukit-jalil.html"><link rel="alternate" hreflang="x-default" href="https://keithnah.com/guides/bukit-jalil.html"><!-- /KN-HREFLANG -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bukit Jalil New Launch Guide 2026 (Free PDF) | Keith Nah Real Estate</title>

@@ -39,3 +39,10 @@ for s in STEPS:
         print(r.stderr)
         sys.exit(r.returncode)
 stamp_translations()
+
+# Last: the crawlable copies in every language (/zh/, /zh-tw/, /ms/, /ja/, /ko/), from the finished English pages.
+r = subprocess.run(['node', os.path.join(HERE, 'build_lang_pages.js')], capture_output=True, text=True)
+print('%-24s %s' % ('build_lang_pages.js', (r.stdout.strip().splitlines() or [''])[-1][:110]))
+if r.returncode:
+    print(r.stderr[-3000:])
+    sys.exit(r.returncode)

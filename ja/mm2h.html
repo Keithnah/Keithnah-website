@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" data-page-lang="ja"><head><base href="/">
+<script id="kn-lang-url">(function(){var M={"zh-CN":"zh","zh-TW":"zh-tw","ms":"ms","ja":"ja","ko":"ko"},R=/^\/(zh|zh-tw|ms|ja|ko)(\/.*)$/,p=location.pathname,m=p.match(R),P=document.documentElement.getAttribute('data-page-lang')||'en',en=m?m[2]:p;
+function u(l){return (l==='en'?'':'/'+M[l])+en+location.search+location.hash;}window.knLangUrl=u;
+var S=Storage.prototype.setItem;function go(l){if(window.KN_RENDER||l===P||(l!=='en'&&!M[l]))return;location.href=u(l);}
+Storage.prototype.setItem=function(k,v){S.apply(this,arguments);if(k==='kn_lang'&&this===window.localStorage)go(String(v));};
+if(P!=='en')['pushState','replaceState'].forEach(function(n){var f=history[n];history[n]=function(s,t,x){if(x!=null&&!/^[a-z]+:|^\//i.test(String(x)))x=new URL(String(x),location.href).href;return f.call(this,s,t,x);};});
+try{if(P!=='en')S.call(localStorage,'kn_lang',P);else if(!window.KN_RENDER){var s=localStorage.getItem('kn_lang');if(s&&M[s])location.replace(u(s));}}catch(e){}})();</script>
+<!-- KN-HREFLANG --><link rel="alternate" hreflang="en" href="https://keithnah.com/mm2h.html"><link rel="alternate" hreflang="zh-Hans" href="https://keithnah.com/zh/mm2h.html"><link rel="alternate" hreflang="zh-Hant" href="https://keithnah.com/zh-tw/mm2h.html"><link rel="alternate" hreflang="ms" href="https://keithnah.com/ms/mm2h.html"><link rel="alternate" hreflang="ja" href="https://keithnah.com/ja/mm2h.html"><link rel="alternate" hreflang="ko" href="https://keithnah.com/ko/mm2h.html"><link rel="alternate" hreflang="x-default" href="https://keithnah.com/mm2h.html"><link rel="canonical" href="https://keithnah.com/ja/mm2h.html"><!-- /KN-HREFLANG -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MM2H 第二家园 | Keith Nah</title>
+<meta name="description" content="Malaysia My Second Home は、一定の要件を満たす外国人が更新可能な複数年パスでマレーシアに居住できる長期滞在ビザプログラムです。制度の概要と、3つのティアの比較をご紹介します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F9F8F6; --ivory:#FBFAF7; --gold:#5E60CE; --ink:#111111; --grey:#5A5A5A;
+    --line:rgba(17,17,17,0.08); --black:#0C0C0C; --ease:cubic-bezier(.22,.7,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; font-weight:600;
+    line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:0.01em;}
+  a{color:inherit;text-decoration:none;}
+  .eyebrow{font-family:'Inter',sans-serif; text-transform:uppercase; letter-spacing:0.28em; font-size:11px; color:var(--gold); font-weight:500;}
+  .btn{
+    padding:15px 30px; font-size:12px; text-transform:uppercase; letter-spacing:0.14em; font-weight:700;
+    border-radius:100px; cursor:pointer; border:1px solid transparent; transition:all .35s var(--ease); display:inline-block;
+  }
+  .btn-gold{background:var(--gold); color:#fff;}
+  .btn-gold:hover{background:#111; color:#fff;}
+  .btn-dark{background:#111; color:#fff;}
+  .btn-dark:hover{background:var(--gold); color:#fff;}
+
+  /* ---------- NAV (matches other pages) ---------- */
+  header{
+    position:fixed; top:0; left:0; width:100%; z-index:50;
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+    padding:16px 5vw; background:var(--gold); border-bottom:1px solid rgba(0,0,0,0.12);
+    box-shadow:0 2px 18px rgba(17,17,17,0.08);
+  }
+  .logo{font-family:'Playfair Display',serif; font-size:19px; display:flex; align-items:center; gap:11px; color:#fff;}
+  .logo-mark-img{width:42px; height:42px; border-radius:50%; object-fit:contain;}
+  .logo-text{display:flex; flex-direction:column; line-height:1.15;}
+  .logo-text b{font-weight:800; font-size:21px; color:#fff;}
+  .logo-text small{font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.8); font-weight:500;}
+  nav{display:flex; gap:30px;}
+  nav a{font-size:15px; font-weight:500; position:relative; padding-bottom:4px; white-space:nowrap; color:#fff;}
+  nav a.active{font-weight:700;}
+  nav a::after{content:''; position:absolute; left:0; bottom:0; width:0; height:1.5px; background:#fff; transition:width .3s var(--ease);}
+  nav a:hover::after, nav a.active::after{width:100%;}
+  .whatsapp-btn{
+    display:flex; align-items:center; gap:8px; background:#25D366; color:#fff !important;
+    padding:11px 22px; border-radius:100px; font-size:12px; font-weight:600;
+    transition:transform .3s var(--ease), box-shadow .3s; white-space:nowrap;
+  }
+  .whatsapp-btn:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(37,211,102,0.4);}
+  .hamburger{display:none;}
+  .nav-right{display:flex; align-items:center; gap:12px; flex-shrink:0;}
+  .selector{
+    display:flex; align-items:center; gap:6px;
+    font-size:12px; letter-spacing:0.02em; opacity:0.95; cursor:pointer;
+    background:rgba(255,255,255,0.35); border:1px solid rgba(17,17,17,0.15);
+    color:#111;
+    padding:8px 14px; border-radius:100px; white-space:nowrap;
+  }
+  .selector svg{width:13px; height:13px; stroke:#111; fill:none; stroke-width:1.6;}
+  .lang-switch{position:relative;}
+  .lang-menu{
+    display:none; position:absolute; top:calc(100% + 8px); right:0; background:#fff;
+    border:1px solid var(--line); border-radius:12px; box-shadow:0 16px 40px rgba(17,17,17,0.14);
+    min-width:170px; padding:8px; z-index:80;
+  }
+  .lang-menu.open{display:block;}
+  .lang-menu a{
+    display:block; padding:9px 14px; font-size:13px; color:var(--ink); border-radius:8px;
+    cursor:pointer; font-weight:500; transition:background .2s;
+  }
+  .lang-menu a:hover{background:var(--bg);}
+  .lang-menu a.active{color:var(--gold); font-weight:700;}
+  @media(max-width:920px){
+    nav, .whatsapp-btn, .nav-right .selector{display:none;}
+    .hamburger{display:block; font-size:22px; cursor:pointer; color:#fff;}
+  }
+
+  /* ---------- HERO ---------- */
+  .mm2h-hero{padding:150px 5vw 60px; text-align:center; background:#fff; border-bottom:1px solid var(--line);}
+  .mm2h-hero .eyebrow{display:block; margin-bottom:16px;}
+  .mm2h-hero h1{font-size:clamp(32px,5vw,58px); margin-bottom:16px;}
+  .mm2h-hero h1 span{color:var(--gold); font-style:italic;}
+  .mm2h-hero p{color:var(--grey); font-size:16px; max-width:640px; margin:0 auto; font-weight:500;}
+
+  /* ---------- SECTION HEAD (shared) ---------- */
+  .section-head{text-align:center; max-width:680px; margin:0 auto 48px;}
+  .section-head h2{font-size:clamp(28px,3.6vw,42px); margin-top:14px;}
+  .section-head h2 span{color:var(--gold); font-style:italic;}
+  .section-head p{color:var(--grey); font-size:15px; margin-top:14px; font-weight:500;}
+
+  /* ---------- PART 1: EXPLAINER ---------- */
+  .mm2h-explain{padding:90px 5vw; background:var(--bg);}
+  .explain-grid{max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;}
+  .explain-copy p{color:var(--grey); font-size:15px; margin-bottom:18px; line-height:1.85;}
+  .explain-copy strong{color:var(--ink);}
+  .explain-facts{display:flex; flex-direction:column; gap:0; margin-top:56px;}
+  .explain-fact{
+    display:flex; gap:18px; padding:22px 0; border-bottom:1px solid var(--line);
+  }
+  .explain-fact:first-child{padding-top:0;}
+  .explain-fact-icon{
+    width:46px; height:46px; min-width:46px; border-radius:50%; background:#fff; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; color:var(--gold);
+  }
+  .explain-fact-icon svg{width:22px; height:22px;}
+  .explain-fact h4{font-size:15.5px; margin-bottom:4px;}
+  .explain-fact p{color:var(--grey); font-size:13.5px; font-weight:500; line-height:1.6;}
+
+  /* ---------- PART 2: TIER COMPARISON ---------- */
+  .mm2h-tiers{padding:90px 5vw 100px; background:#fff;}
+  .tier-grid{max-width:1180px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:26px; align-items:start;}
+  .tier-card{
+    border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--ivory);
+    display:flex; flex-direction:column; transition:transform .35s var(--ease), box-shadow .35s var(--ease);
+  }
+  .tier-card:hover{transform:translateY(-6px); box-shadow:0 24px 50px rgba(17,17,17,0.1);}
+  .tier-card.gold{transform:scale(1.04); box-shadow:0 24px 50px rgba(17,17,17,0.1); z-index:2;}
+  .tier-card.gold:hover{transform:scale(1.04) translateY(-6px);}
+  .tier-head{padding:34px 24px; text-align:center;}
+  .tier-head.silver{background:#E9E9E7;}
+  .tier-head.gold{background:#F0C230;}
+  .tier-head.platinum{background:#17171A; color:#fff;}
+  .tier-head h3{font-size:22px; letter-spacing:0.04em;}
+  .tier-head small{display:block; margin-top:4px; font-size:13px; font-weight:600; opacity:0.7;}
+  .tier-body{padding:26px 24px 30px; flex:1; display:flex; flex-direction:column;}
+  .tier-stat{margin-bottom:18px;}
+  .tier-stat span{display:block; font-size:10.5px; text-transform:uppercase; letter-spacing:0.1em; color:var(--grey); margin-bottom:3px;}
+  .tier-stat strong{display:block; font-size:19px; font-family:'Playfair Display',serif;}
+  .tier-stat em{display:block; font-style:normal; font-size:12px; color:var(--grey); margin-top:2px; font-weight:500;}
+  .tier-check{list-style:none; margin:20px 0 26px; display:flex; flex-direction:column; gap:12px;}
+  .tier-check li{display:flex; gap:10px; align-items:flex-start; font-size:12.5px; font-weight:500; line-height:1.5;}
+  .tier-check li svg{width:15px; height:15px; min-width:15px; color:var(--gold); margin-top:2px;}
+  .tier-check li b{display:block; color:var(--ink); font-weight:700; font-size:12.5px;}
+  .tier-check li small{display:block; color:var(--grey); font-size:11.5px; font-weight:500;}
+  .tier-cta{
+    margin-top:auto; text-align:center; background:#111; color:#fff; padding:14px; border-radius:100px;
+    font-size:11.5px; text-transform:uppercase; letter-spacing:0.12em; font-weight:700; transition:background .3s;
+  }
+  .tier-cta:hover{background:var(--gold);}
+  .tier-note{max-width:1180px; margin:40px auto 0; text-align:center; color:var(--grey); font-size:12.5px; font-weight:500;}
+
+  @media(max-width:1000px){
+    .explain-grid{grid-template-columns:1fr;}
+    .explain-facts{margin-top:12px;}
+    .tier-grid{grid-template-columns:1fr; max-width:420px;}
+    .tier-card.gold{transform:none;}
+    .tier-card.gold:hover{transform:translateY(-6px);}
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{background:#080808; color:rgba(255,255,255,0.5); padding:40px 5vw;}
+  .footer-inner{max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  .footer-logo{font-family:'Playfair Display',serif; font-size:16px; color:#fff; display:flex; align-items:center; gap:8px;}
+  .footer-logo-img{width:26px; height:26px; border-radius:50%; object-fit:contain;}
+  .footer-logo em{color:var(--gold); font-style:italic;}
+  .footer-inner p{font-size:11px;}
+  .float-wa{
+    position:fixed; bottom:24px; right:24px; z-index:55; background:#25D366; color:#fff;
+    width:54px; height:54px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,0.25); transition:transform .3s var(--ease);
+  }
+  .float-wa:hover{transform:scale(1.08);}
+
+  /* nav: fits 7 items */
+  nav{gap:clamp(20px,2.3vw,32px) !important;}
+  nav a{font-size:15px;}
+  html[lang="ta"] nav{gap:14px !important;} html[lang="ta"] nav a{font-size:14px;}
+  header{padding-left:3vw !important; padding-right:3vw !important; gap:16px !important;}
+  .nav-right{gap:8px !important;}
+  .selector{padding:8px 11px !important;}
+  .whatsapp-btn{padding:11px 16px !important;}
+  .logo{flex-shrink:0;} .logo-text, .logo-text b{white-space:nowrap;}
+  @media(max-width:1349px){ nav, .nav-right .selector{display:none !important;} .hamburger{display:block !important; font-size:22px; cursor:pointer; color:#fff;} }
+  .lang-menu a{display:flex !important; align-items:center; gap:10px; white-space:nowrap;}
+  #langMenu{min-width:210px;} #currMenu{min-width:275px;}
+  .kn-flag{width:20px; height:15px; flex:0 0 20px; border-radius:2px; object-fit:cover; box-shadow:0 0 0 1px rgba(0,0,0,0.08);}
+  #knLang button, #knCurr button{display:inline-flex; align-items:center; gap:8px;}
+  @media (hover:hover) and (pointer:fine){ .lang-switch::after{content:''; position:absolute; left:0; right:0; top:100%; height:14px;} }
+</style>
+<link rel="icon" type="image/png" href="images/d795398568d23a46.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style id="kn-logo-link">header a.logo{color:inherit;text-decoration:none;cursor:pointer;}</style>
+<style id="kn-float">
+/* KN-FLOAT:START */
+a.float-wa.float-wa{position:fixed;right:22px;bottom:22px;z-index:60;display:inline-flex;align-items:center;gap:11px;width:auto;height:auto;
+  padding:13px 24px 13px 18px;border-radius:100px;background:#25D366;color:#fff;font:700 16px/1 'Inter',system-ui,sans-serif;letter-spacing:0;
+  text-decoration:none;animation:knWaPulse 2.6s ease-in-out infinite;transition:transform .25s ease;}
+a.float-wa.float-wa:hover{transform:translateY(-2px) scale(1.03);color:#fff;}
+a.float-wa.float-wa svg{width:26px;height:26px;flex:0 0 26px;fill:#fff;}
+a.float-wa.float-wa .fw-txt{white-space:nowrap;}
+@keyframes knWaPulse{
+  0%,100%{box-shadow:0 0 0 4px rgba(37,211,102,.18),0 0 14px 2px rgba(37,211,102,.30),0 8px 22px rgba(0,0,0,.16);}
+  50%{box-shadow:0 0 0 12px rgba(37,211,102,.10),0 0 30px 10px rgba(37,211,102,.45),0 8px 22px rgba(0,0,0,.16);}
+}
+@media(max-width:600px){a.float-wa.float-wa{right:16px;bottom:16px;padding:11px 18px 11px 14px;font-size:14px;gap:9px;}a.float-wa.float-wa svg{width:22px;height:22px;flex-basis:22px;}}
+@media(prefers-reduced-motion:reduce){a.float-wa.float-wa{animation:none;box-shadow:0 0 0 6px rgba(37,211,102,.18),0 8px 22px rgba(0,0,0,.16);}}
+/* back to top, above the WhatsApp button */
+.kn-fab{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.kn-fab a.float-wa.float-wa{position:static;right:auto;bottom:auto;}
+.kn-top{width:48px;height:48px;border-radius:50%;background:#fff;border:1.5px solid #d6d6d6;box-shadow:0 6px 18px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:#555;
+  opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility .25s,border-color .2s,color .2s;}
+.kn-top.show{opacity:1;visibility:visible;transform:none;}
+.kn-top:hover{border-color:var(--gold,#5E60CE);color:var(--gold,#5E60CE);}
+.kn-top svg{width:20px;height:20px;}
+@media(max-width:600px){.kn-fab{right:16px;bottom:16px;gap:10px;}.kn-top{width:44px;height:44px;}}
+@media(prefers-reduced-motion:reduce){.kn-top{transition:none;}}
+/* phones: the header WhatsApp button would push the menu button off screen; the floating button stays */
+@media(max-width:560px){header .whatsapp-btn,header .wa-btn,.nav-right .whatsapp-btn{display:none!important;}.hamburger{margin-left:auto;padding:6px 4px;}}
+/* KN-FLOAT:END */
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="/ja/" aria-label="Keith Nah Real Estate home">
+    <img class="logo-mark-img" src="images/f304c8479b1fe873.png" alt="Keith Nah logo">
+    <div class="logo-text"><b>Keith Nah 鈞晖</b><small>Keith Nah Real Estate</small></div>
+  </a>
+  <nav>
+    <a href="/ja/">ホーム</a>
+    <a href="/ja/projects.html">物件を見る</a>
+    <a href="/ja/compare.html">物件を比較</a>
+    <a href="/ja/blog.html">ニュース</a>
+    <a href="/ja/calculator.html">計算ツール</a>
+    <a href="/ja/resources.html">Free Toolkit</a>
+    <a href="/ja/about-keith.html">Keithについて</a>
+  </nav>
+  <div class="nav-right">
+    <div class="lang-switch" id="langSwitch">
+      <span class="selector" id="langSelectorBtn" onclick="toggleLangMenu(event)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9z"></path></svg><span id="langSelectorLabel">日本語</span></span>
+      <div class="lang-menu" id="langMenu">
+        <a onclick="setLanguage('en')"><img class="kn-flag" src="images/flags/gb.svg" alt="" width="20" height="15">English</a>
+        <a onclick="setLanguage('zh-CN')"><img class="kn-flag" src="images/flags/cn.svg" alt="" width="20" height="15">简体中文</a>
+        <a onclick="setLanguage('zh-TW')"><img class="kn-flag" src="images/flags/tw.svg" alt="" width="20" height="15">繁體中文</a>
+        <a onclick="setLanguage('ms')"><img class="kn-flag" src="images/flags/my.svg" alt="" width="20" height="15">Bahasa Malaysia</a>
+        <a onclick="setLanguage('ja')" class="active"><img class="kn-flag" src="images/flags/jp.svg" alt="" width="20" height="15">日本語</a>
+        <a onclick="setLanguage('ko')"><img class="kn-flag" src="images/flags/kr.svg" alt="" width="20" height="15">한국어</a>
+      </div>
+    </div>
+    <div class="lang-switch" id="currSwitch">
+      <span class="selector" id="currSelectorBtn" onclick="toggleCurrMenu(event)"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="5"></circle><circle cx="16" cy="16" r="5"></circle></svg><span id="currSelectorLabel">MYR</span></span>
+      <div class="lang-menu" id="currMenu">
+        <a onclick="setCurrency('MYR')" class="active"><img class="kn-flag" src="images/flags/my.svg" alt="" width="20" height="15">MYR — Malaysian Ringgit</a>
+        <a onclick="setCurrency('USD')"><img class="kn-flag" src="images/flags/us.svg" alt="" width="20" height="15">USD — US Dollar</a>
+        <a onclick="setCurrency('SGD')"><img class="kn-flag" src="images/flags/sg.svg" alt="" width="20" height="15">SGD — Singapore Dollar</a>
+        <a onclick="setCurrency('CNY')"><img class="kn-flag" src="images/flags/cn.svg" alt="" width="20" height="15">CNY — Chinese Yuan</a>
+        <a onclick="setCurrency('JPY')"><img class="kn-flag" src="images/flags/jp.svg" alt="" width="20" height="15">JPY — Japanese Yen</a>
+        <a onclick="setCurrency('KRW')"><img class="kn-flag" src="images/flags/kr.svg" alt="" width="20" height="15">KRW — Korean Won</a>
+      </div>
+    </div>
+  <a class="whatsapp-btn" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+explore+more+on+Malaysia+Property.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">
+    <span class="wa-agent-label">WhatsApp Keith</span>
+  </a>
+  <span class="hamburger" onclick="knToggleMenu()">☰</span>
+  </div>
+</header><!-- ===================== HERO ===================== -->
+<section class="mm2h-hero">
+  <span class="eyebrow">居住プログラム</span>
+  <h1>MM2H <span>第二家园</span></h1>
+  <p>Malaysia My Second Home は、一定の要件を満たす外国人が更新可能な複数年パスでマレーシアに居住できる長期滞在ビザプログラムです。制度の概要と、3つのティアの比較をご紹介します。</p>
+</section>
+
+<!-- ===================== PART 1: WHAT IS MM2H ===================== -->
+<section class="mm2h-explain">
+  <div class="explain-grid">
+    <div class="explain-copy">
+      <span class="eyebrow">MM2Hとは</span>
+      <h2 style="margin:14px 0 20px;">かんたん解説</h2>
+      <p><strong>Malaysia My Second Home（MM2H）</strong>は、マレーシア政府が運営するビザプログラムで、外国籍の方とそのご家族が、現地の雇用主や事業を必要とせず、更新可能な長期パスでマレーシアに居住できる制度です。</p>
+      <p>承認された申請者は、マレーシアの銀行に<strong>定期預金</strong>を預け入れ、通常は一定の最低価格以上の<strong>不動産</strong>も購入します。その見返りとして、更新可能な複数年ビザが付与され、配偶者や扶養家族も同一申請で帯同できます。</p>
+      <p>本プログラムは2024年に<strong>シルバー、ゴールド、プラチナの3ティア</strong>に再編され、それぞれ異なる財務要件とビザ期間が設定されています。ティアが上がるほど、預金額と不動産購入額は大きくなり、ビザの有効期間も長くなります。</p>
+      <p>MM2Hは不動産の所有そのものとは別の制度であり、それ単体では不動産購入が資格の条件ではありません。ただし、クアラルンプールで住まいと長期滞在パスの両方を求めるKeithのお客様の間では、この2つを組み合わせるケースが一般的です。</p>
+    </div>
+    <div class="explain-facts">
+      <div class="explain-fact">
+        <div class="explain-fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"></path></svg></div>
+        <div><h4>定期預金</h4><p>マレーシアの認定銀行に預け入れ。1年目以降は一部引き出し可能です。</p></div>
+      </div>
+      <div class="explain-fact">
+        <div class="explain-fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10.5L12 4l9 6.5"></path><path d="M5 9.5V20h14V9.5"></path></svg></div>
+        <div><h4>不動産購入</h4><p>預金に加えて、マレーシア国内で最低価格以上の不動産を購入します。</p></div>
+      </div>
+      <div class="explain-fact">
+        <div class="explain-fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18M8 2v4M16 2v4"></path></svg></div>
+        <div><h4>複数年ビザ</h4><p>更新可能な長期滞在パス。ティアにより5年、15年、または20年。</p></div>
+      </div>
+      <div class="explain-fact">
+        <div class="explain-fact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.2"></circle><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"></path></svg></div>
+        <div><h4>ご家族の帯同</h4><p>配偶者および対象となる扶養家族は、通常、1件の申請にまとめて含めることができます。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PART 2: TIER COMPARISON ===================== -->
+<section class="mm2h-tiers">
+  <div class="section-head">
+    <span class="eyebrow">ティア比較</span>
+    <h2>シルバー、<span>ゴールド</span>＆プラチナ</h2>
+    <p>MM2Hは3つのティアで構成されています。以下の各列で、財務要件、ビザ期間、条件を並べて比較できます。</p>
+  </div>
+
+  <div class="tier-grid">
+
+    <!-- SILVER -->
+    <div class="tier-card">
+      <div class="tier-head silver">
+        <h3>シルバー</h3>
+        <small>银卡</small>
+      </div>
+      <div class="tier-body">
+        <div class="tier-stat"><span>定期預金</span>
+          <strong>USD 150,000</strong>
+          <em>15万美元</em></div>
+        <div class="tier-stat"><span>不動産購入</span>
+          <strong>RM 600,000</strong>
+          <em>最低60万令吉</em></div>
+        <div class="tier-stat"><span>ビザ期間</span>
+          <strong>5年（更新可）</strong>
+          <em>5年（可续签）</em></div>
+        <ul class="tier-check">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>定期預金：USD 150,000</b><small>定期存款：15万美元</small></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>不動産購入：最低 RM 600,000</b><small>购房要求：最低60万令吉</small></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>ビザ期間：5年（更新可）</b><small>签证期限：5年（可续签）</small></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>最低滞在日数：年間90日</b><small>居住要求：每年90天</small></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>年齢：25歳以上</b><small>年龄：25岁及以上</small></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>就労権：なし</b><small>工作权利：无</small></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>引き出し：1年後に定期預金の50%</b><small>提款：一年后可提取50%定存</small></div></li>
+        </ul>
+        <a href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27m+interested+in+the+MM2H+Silver+tier+and+would+like+to+find+out+more.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener" class="tier-cta">今すぐ相談</a>
+      </div>
+    </div>
+
+    <!-- GOLD -->
+    <div class="tier-card gold">
+      <div class="tier-head gold">
+        <h3>ゴールド</h3>
+        <small>金卡</small>
+      </div>
+      <div class="tier-body">
+        <div class="tier-stat"><span>定期預金</span>
+          <strong>USD 500,000</strong>
+          <em>50万美元</em></div>
+        <div class="tier-stat"><span>不動産購入</span>
+          <strong>RM 1,000,000</strong>
+          <em>最低100万令吉</em></div>
+        <div class="tier-stat"><span>ビザ期間</span>
+          <strong>15年（更新可）</strong>
+          <em>15年（可续签）</em></div>
+        <ul class="tier-check">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>定期預金：USD 500,000</b><small>定期存款：50万美元</small></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>不動産購入：最低 RM 1,000,000</b><small>购房要求：最低100万令吉</small></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>ビザ期間：15年（更新可）</b><small>签证期限：15年（可续签）</small></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>最低滞在日数：年間90日</b><small>居住要求：每年90天</small></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>年齢：25歳以上</b><small>年龄：25岁及以上</small></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>就労権：なし（投資は可）</b><small>工作权利：无（允许投资）</small></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>引き出し：1年後に定期預金の50%</b><small>提款：一年后可提取50%定存</small></div></li>
+        </ul>
+        <a href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27m+interested+in+the+MM2H+Gold+tier+and+would+like+to+find+out+more.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener" class="tier-cta">今すぐ相談</a>
+      </div>
+    </div>
+
+    <!-- PLATINUM -->
+    <div class="tier-card">
+      <div class="tier-head platinum">
+        <h3>プラチナ</h3>
+        <small>白金卡</small>
+      </div>
+      <div class="tier-body">
+        <div class="tier-stat"><span>定期預金</span>
+          <strong>USD 1,000,000</strong>
+          <em>100万美元</em></div>
+        <div class="tier-stat"><span>不動産購入</span>
+          <strong>RM 2,000,000</strong>
+          <em>最低200万令吉</em></div>
+        <div class="tier-stat"><span>ビザ期間</span>
+          <strong>20年（更新可）</strong>
+          <em>20年（可续签）</em></div>
+        <ul class="tier-check">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>定期預金：USD 1,000,000</b><small>定期存款：100万美元</small></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>不動産購入：最低 RM 2,000,000</b><small>购房要求：最低200万令吉</small></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>ビザ期間：20年（更新可）</b><small>签证期限：20年（可续签）</small></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>最低滞在日数：年間90日</b><small>居住要求：每年90天</small></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>年齢：25歳以上</b><small>年龄：25岁及以上</small></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>就労権：就労・投資ともに可</b><small>工作权利：允许工作与投资</small></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L19 7"></path></svg><div><b>引き出し：1年後に定期預金の50%</b><small>提款：一年后可提取50%定存</small></div></li>
+        </ul>
+        <a href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27m+interested+in+the+MM2H+Platinum+tier+and+would+like+to+find+out+more.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener" class="tier-cta">今すぐ相談</a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="tier-note">上記の金額は、再編後のMM2Hプログラムの要件を示す一般的な目安です。要件はマレーシア政府が定めており、変更される場合があります。最新の数値のご確認や、どのティアがご状況に適しているかの判断は、Keithがお手伝いします。</p>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="images/f304c8479b1fe873.png" alt="Keith Nah logo" class="footer-logo-img">
+      <span>Keith Nah 鈞晖 <em>| Real Estate</em></span>
+    </div>
+    <p>© 2026 Keith Nah Real Estate. 無断複写・転載を禁じます。</p>
+  </div>
+</footer>
+
+<div class="kn-fab"><button type="button" class="kn-top" id="knTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"></path></svg></button><a class="float-wa" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+explore+more+on+Malaysia+Property.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener" aria-label="Chat with Keith on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.44.79 3.06 1.2 4.72 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0012.04 2zm5.82 14.06c-.24.68-1.42 1.3-1.95 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.3-.13.58.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.41.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.68.79 1.97.94.29.14.48.21.55.33.07.12.07.7-.17 1.38z"></path></svg><span class="fw-txt">Chat with Keith</span></a></div><!--/kn-fab--><script>(function(){var b=document.getElementById('knTop');if(!b)return;function s(){b.classList.toggle('show',(window.pageYOffset||document.documentElement.scrollTop)>300);}window.addEventListener('scroll',s,{passive:true});s();b.addEventListener('click',function(){var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;window.scrollTo({top:0,behavior:r?'auto':'smooth'});});})();</script>
+
+<script>
+  // Match the CTA button label to whichever language is currently selected site-wide
+  const CTA_TEXT = {
+    en: 'Consult Now',
+    'zh-CN': '咨询申请',
+    'zh-TW': '諮詢申請',
+    ms: 'Hubungi Sekarang',
+    ta: 'இப்போது தொடர்பு கொள்ளுங்கள்',
+    ja: '今すぐ相談',
+    ko: '지금 상담하기',
+    ar: 'استشر الآن'
+  };
+  function applyCtaLanguage(){
+    let lang = 'en';
+    try { lang = localStorage.getItem('kn_lang') || 'en'; } catch(e) {}
+    const label = CTA_TEXT[lang] || CTA_TEXT.en;
+    document.querySelectorAll('.tier-cta').forEach(btn => { btn.textContent = label; });
+  }
+  applyCtaLanguage();
+</script>
+<script>
+  // ---- Language switcher (site-wide, shared with home page) ----
+  const LANG_NAMES = {"en": "English", "zh-CN": "简体中文", "zh-TW": "繁體中文", "ms": "Bahasa Malaysia", "ja": "日本語", "ko": "한국어"};
+  let currentLang = 'en';
+
+  function setLanguage(lang){
+    currentLang = lang;
+    const label = document.getElementById('langSelectorLabel');
+    if(label) label.textContent = LANG_NAMES[lang] || 'English';
+
+    document.querySelectorAll('.lang-menu a').forEach(a => a.classList.remove('active'));
+    const idx = Object.keys(LANG_NAMES).indexOf(lang);
+    const menuLinks = document.querySelectorAll('#langMenu a');
+    if(menuLinks[idx]) menuLinks[idx].classList.add('active');
+
+    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+    try { localStorage.setItem('kn_lang', lang); } catch(e) {}
+
+    const menu = document.getElementById('langMenu');
+    if(menu) menu.classList.remove('open');
+
+    if (typeof applyCtaLanguage === 'function') applyCtaLanguage();
+  }
+
+  function toggleLangMenu(e){
+    e.stopPropagation();
+    document.getElementById('langMenu').classList.toggle('open');
+  }
+
+  (function initLang(){
+    let saved = 'en';
+    try { saved = localStorage.getItem('kn_lang') || 'en'; } catch(e) {}
+    if (!(saved in LANG_NAMES)) saved = 'en';
+    setLanguage(saved);
+  })();
+
+  // ---- Currency switcher (site-wide, shared with home page) ----
+  const EXCHANGE_RATES = { MYR: 1, USD: 0.21, SGD: 0.285, CNY: 1.52, JPY: 31.5, KRW: 290 };
+  const CURRENCY_SYMBOL = { MYR: 'RM', USD: 'US$', SGD: 'S$', CNY: 'CN¥', JPY: 'JP¥', KRW: '₩' };
+  let currentCurrency = 'MYR';
+
+  function formatPrice(myrValue, currency, approx){
+    const rate = EXCHANGE_RATES[currency] || 1;
+    const converted = myrValue * rate;
+    const symbol = CURRENCY_SYMBOL[currency] || currency;
+    let display;
+    if(converted >= 1000000){ display = (converted/1000000).toFixed(2) + 'M'; }
+    else { display = Math.round(converted/1000) + 'K'; }
+    return (approx ? '~' : '') + symbol + ' ' + display;
+  }
+
+  function setCurrency(cur){
+    currentCurrency = cur;
+    document.querySelectorAll('[data-price-myr]').forEach(el => {
+      const myrValue = parseFloat(el.getAttribute('data-price-myr'));
+      const approx = el.getAttribute('data-approx') === '1';
+      el.textContent = formatPrice(myrValue, cur, approx);
+    });
+    const label = document.getElementById('currSelectorLabel');
+    if(label) label.textContent = cur;
+    document.querySelectorAll('#currMenu a').forEach(a => a.classList.remove('active'));
+    const menuLinks = document.querySelectorAll('#currMenu a');
+    const idx = Object.keys(CURRENCY_SYMBOL).indexOf(cur);
+    if(menuLinks[idx]) menuLinks[idx].classList.add('active');
+    try { localStorage.setItem('kn_currency', cur); } catch(e) {}
+    const menu = document.getElementById('currMenu');
+    if(menu) menu.classList.remove('open');
+  }
+
+  function toggleCurrMenu(e){
+    e.stopPropagation();
+    document.getElementById('currMenu').classList.toggle('open');
+  }
+
+  (function initCurrency(){
+    let saved = 'MYR';
+    try { saved = localStorage.getItem('kn_currency') || 'MYR'; } catch(e) {}
+    setCurrency(saved);
+  })();
+
+  document.addEventListener('click', function(e){
+    const switcher = document.getElementById('langSwitch');
+    if(switcher && !switcher.contains(e.target)){
+      const m = document.getElementById('langMenu');
+      if(m) m.classList.remove('open');
+    }
+    const currSwitcher = document.getElementById('currSwitch');
+    if(currSwitcher && !currSwitcher.contains(e.target)){
+      const m = document.getElementById('currMenu');
+      if(m) m.classList.remove('open');
+    }
+  });
+</script>
+
+
+<script>
+// ---- Site-wide currency: convert every "RM ..." amount in page text (cards, popups, tables) ----
+(function(){
+  const orig = new WeakMap();
+  const RE = /(?<![A-Za-z])RM\s?(\d[\d,]*(?:\.\d+)?)\s?(K|M|mil|million)?(?![A-Za-z])/g;
+  function toMyr(n, u){
+    n = parseFloat(String(n).replace(/,/g,''));
+    if(!u) return n;
+    u = u.toLowerCase();
+    return u === 'k' ? n*1e3 : n*1e6;
+  }
+  function fmt(v, cur){
+    const rate = (typeof EXCHANGE_RATES !== 'undefined' && EXCHANGE_RATES[cur]) || 1;
+    const sym = (typeof CURRENCY_SYMBOL !== 'undefined' && CURRENCY_SYMBOL[cur]) || cur;
+    const c = v * rate;
+    let s;
+    if(c >= 1e6) s = (c/1e6).toFixed(2) + 'M';
+    else if(c >= 1e4) s = Math.round(c/1000) + 'K';
+    else if(c >= 1000) s = (c/1000).toFixed(1) + 'K';
+    else s = c < 10 ? c.toFixed(2) : String(Math.round(c));
+    return sym + ' ' + s;
+  }
+  window.knApplyCurrency = function(root, force){
+    const cur = force || ((typeof currentCurrency !== 'undefined') ? currentCurrency : 'MYR');
+    const w = document.createTreeWalker(root || document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        const p = n.parentNode;
+        if(!p || /^(SCRIPT|STYLE|TEXTAREA|NOSCRIPT)$/.test(p.nodeName)) return NodeFilter.FILTER_REJECT;
+        if(p.closest && p.closest('#currMenu,#currSwitch')) return NodeFilter.FILTER_REJECT;
+        return (orig.has(n) || /RM\s?\d/.test(n.nodeValue)) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes = [];
+    while(w.nextNode()) nodes.push(w.currentNode);
+    nodes.forEach(function(n){
+      if(!orig.has(n)) orig.set(n, n.nodeValue);
+      const o = orig.get(n);
+      n.nodeValue = (cur === 'MYR') ? o : o.replace(RE, function(m, num, u){ return fmt(toMyr(num, u), cur); });
+    });
+  };
+  function wrap(name){
+    if(typeof window[name] !== 'function') return;
+    const f = window[name];
+    window[name] = function(){ const r = f.apply(this, arguments); try{ knApplyCurrency(); }catch(e){} return r; };
+  }
+  ['setCurrency','openDetailModal','selectLayout','renderTable','applyProjFilter','applyFilters'].forEach(wrap);
+  knApplyCurrency();
+})();
+</script>
+
+<script>
+// ---- Site-wide language: translate the shared header, WhatsApp button and footer on every page ----
+(function(){
+  const DIC = {"Home":{"zh-CN":"首页","zh-TW":"首頁","ms":"Utama","ta":"முகப்பு","ja":"ホーム","ko":"홈","ar":"الرئيسية"},"View Projects":{"zh-CN":"查看项目","zh-TW":"查看項目","ms":"Lihat Projek","ta":"திட்டங்களைப் பார்க்க","ja":"物件を見る","ko":"프로젝트 보기","ar":"عرض المشاريع"},"Compare Projects":{"zh-CN":"项目比较","zh-TW":"項目比較","ms":"Banding Projek","ta":"திட்டங்களை ஒப்பிடுக","ja":"物件を比較","ko":"프로젝트 비교","ar":"مقارنة المشاريع"},"Calculator":{"zh-CN":"计算器","zh-TW":"計算機","ms":"Kalkulator","ta":"கணிப்பான்","ja":"計算ツール","ko":"계산기","ar":"الحاسبة"},"News":{"zh-CN":"新闻","zh-TW":"新聞","ms":"Berita","ta":"செய்திகள்","ja":"ニュース","ko":"뉴스","ar":"الأخبار"},"About Keith":{"zh-CN":"关于 KEITH","zh-TW":"關於 KEITH","ms":"Tentang Keith","ta":"Keith பற்றி","ja":"Keithについて","ko":"Keith 소개","ar":"عن كيث"},"WhatsApp":{"zh-CN":"WhatsApp","zh-TW":"WhatsApp","ms":"WhatsApp","ta":"WhatsApp","ja":"WhatsApp","ko":"WhatsApp","ar":"واتساب"},"Premium Kuala Lumpur real estate — KL City Centre, TRX, Bukit Bintang, Bangsar and beyond.":{"zh-CN":"吉隆坡顶级房产 — 吉隆坡市中心、TRX、武吉免登、孟沙及更多地区。","zh-TW":"吉隆坡頂級房產 — 吉隆坡市中心、TRX、武吉免登、孟沙及更多地區。","ms":"Hartanah mewah Kuala Lumpur — Pusat Bandaraya KL, TRX, Bukit Bintang, Bangsar dan sekitarnya.","ta":"பிரீமியம் கோலாலம்பூர் சொத்துக்கள் — KL சிட்டி சென்டர், TRX, புக்கிட் பிந்தாங், பாங்சார் மற்றும் பல.","ja":"クアラルンプールのプレミアム不動産 — KLシティセンター、TRX、ブキビンタン、バンサーなど。","ko":"쿠알라룸푸르 프리미엄 부동산 — KL 시티센터, TRX, 부킷빈탕, 방사 등.","ar":"عقارات كوالالمبور الفاخرة — وسط مدينة كوالالمبور وTRX وبوكيت بينتانج وبانجسار وأكثر."},"Quick Links":{"zh-CN":"快速链接","zh-TW":"快速連結","ms":"Pautan Pantas","ta":"விரைவு இணைப்புகள்","ja":"クイックリンク","ko":"바로가기","ar":"روابط سريعة"},"Projects":{"zh-CN":"项目","zh-TW":"項目","ms":"Projek","ta":"திட்டங்கள்","ja":"物件","ko":"프로젝트","ar":"المشاريع"},"Legal":{"zh-CN":"法律信息","zh-TW":"法律資訊","ms":"Perundangan","ta":"சட்டப்பூர்வ","ja":"法的情報","ko":"법적 고지","ar":"قانوني"},"Privacy Policy":{"zh-CN":"隐私政策","zh-TW":"隱私政策","ms":"Dasar Privasi","ta":"தனியுரிமைக் கொள்கை","ja":"プライバシーポリシー","ko":"개인정보 처리방침","ar":"سياسة الخصوصية"},"Terms of Use":{"zh-CN":"使用条款","zh-TW":"使用條款","ms":"Terma Penggunaan","ta":"பயன்பாட்டு விதிமுறைகள்","ja":"利用規約","ko":"이용약관","ar":"شروط الاستخدام"},"Follow":{"zh-CN":"关注我们","zh-TW":"關注我們","ms":"Ikuti Kami","ta":"எங்களைப் பின்தொடருங்கள்","ja":"フォローする","ko":"팔로우","ar":"تابعنا"},"YouTube":{"zh-CN":"YouTube","zh-TW":"YouTube","ms":"YouTube","ta":"YouTube","ja":"YouTube","ko":"YouTube","ar":"يوتيوب"},"Instagram":{"zh-CN":"Instagram","zh-TW":"Instagram","ms":"Instagram","ta":"Instagram","ja":"Instagram","ko":"Instagram","ar":"إنستغرام"},"© 2026 Keith Nah Real Estate. All rights reserved.":{"zh-CN":"© 2026 Keith Nah Real Estate. 版权所有。","zh-TW":"© 2026 Keith Nah Real Estate. 版權所有。","ms":"© 2026 Keith Nah Real Estate. Hak cipta terpelihara.","ta":"© 2026 Keith Nah Real Estate. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.","ja":"© 2026 Keith Nah Real Estate. 無断複写・転載を禁じます。","ko":"© 2026 Keith Nah Real Estate. 모든 권리 보유.","ar":"© 2026 Keith Nah Real Estate. جميع الحقوق محفوظة."},"Kuala Lumpur, Malaysia":{"zh-CN":"马来西亚吉隆坡","zh-TW":"馬來西亞吉隆坡","ms":"Kuala Lumpur, Malaysia","ta":"கோலாலம்பூர், மலேசியா","ja":"クアラルンプール、マレーシア","ko":"쿠알라룸푸르, 말레이시아","ar":"كوالالمبور، ماليزيا"}};
+  const origText = new WeakMap();
+  function lang(){ return (typeof currentLang !== 'undefined' && currentLang) ? currentLang : 'en'; }
+  function tr(en, l){ const e = DIC[en]; return (l !== 'en' && e && e[l]) ? e[l] : en; }
+
+  // ---- Page content translation (units = elements holding only inline markup) ----
+  const TR = {"Residency Programme":{"zh-CN":"居留计划","ms":"Program Kediaman","ja":"居住プログラム","ko":"거주 프로그램","ar":"برنامج الإقامة","ta":"குடியிருப்பு திட்டம்","zh-TW":"居留計劃"},"MM2H <span>第二家园<\/span>":{"zh-CN":"MM2H <span>第二家园<\/span>","ms":"MM2H <span>第二家园<\/span>","ja":"MM2H <span>第二家园<\/span>","ko":"MM2H <span>第二家园<\/span>","ar":"MM2H <span>第二家园<\/span>","ta":"MM2H <span>第二家园<\/span>","zh-TW":"MM2H <span>第二家園<\/span>"},"Malaysia My Second Home — a long-stay visa programme that lets qualifying foreigners live in Malaysia on a renewable multi-year pass. Here's what it is, and how the three tiers compare.":{"zh-CN":"马来西亚我的第二家园（Malaysia My Second Home）是一项长期居留签证计划，符合条件的外国人可凭可续期的多年期签证在马来西亚居住。以下为您介绍计划内容，并对比三个级别的差异。","ms":"Malaysia My Second Home — program visa penginapan jangka panjang yang membolehkan warga asing yang layak menetap di Malaysia dengan pas berbilang tahun yang boleh diperbaharui. Berikut penerangan mengenainya dan perbandingan ketiga-tiga peringkat.","ja":"Malaysia My Second Home は、一定の要件を満たす外国人が更新可能な複数年パスでマレーシアに居住できる長期滞在ビザプログラムです。制度の概要と、3つのティアの比較をご紹介します。","ko":"Malaysia My Second Home — 자격을 갖춘 외국인이 갱신 가능한 다년간 비자로 말레이시아에 장기 거주할 수 있도록 하는 장기 체류 비자 프로그램입니다. 프로그램의 개요와 세 가지 등급의 차이를 안내해 드립니다.","ar":"Malaysia My Second Home — برنامج تأشيرة إقامة طويلة الأمد يتيح للأجانب المؤهلين العيش في ماليزيا بتصريح قابل للتجديد لعدة سنوات. إليكم تعريفه، ومقارنة بين فئاته الثلاث.","ta":"Malaysia My Second Home — தகுதி பெற்ற வெளிநாட்டினர் புதுப்பிக்கத்தக்க பல ஆண்டு அனுமதியுடன் மலேசியாவில் நீண்டகாலம் வசிக்க உதவும் நீண்டகாலத் தங்கும் விசா திட்டம். இது என்ன, மூன்று நிலைகள் எவ்வாறு ஒப்பிடப்படுகின்றன என்பது இங்கே.","zh-TW":"馬來西亞我的第二家園（Malaysia My Second Home）是一項長期居留簽證計劃，符合條件的外國人可憑可續期的多年期簽證在馬來西亞居住。以下為您介紹計劃內容，並對比三個級別的差異。"},"What Is MM2H":{"zh-CN":"什么是 MM2H","ms":"Apakah MM2H","ja":"MM2Hとは","ko":"MM2H란 무엇인가","ar":"ما هو MM2H","ta":"MM2H என்றால் என்ன","zh-TW":"什麼是 MM2H"},"A simple explanation":{"zh-CN":"简明解读","ms":"Penerangan ringkas","ja":"かんたん解説","ko":"쉽게 설명해 드립니다","ar":"شرح مبسّط","ta":"ஓர் எளிய விளக்கம்","zh-TW":"簡明解讀"},"<strong>Malaysia My Second Home (MM2H)<\/strong> is a government-run visa programme that allows foreign nationals and their dependents to reside in Malaysia on a long-term, renewable pass — without needing a local employer or business.":{"zh-CN":"<strong>马来西亚我的第二家园（MM2H）<\/strong>是由政府主导的签证计划，允许外国公民及其受抚养家属凭长期、可续期的签证居住在马来西亚，无需本地雇主或本地业务。","ms":"<strong>Malaysia My Second Home (MM2H)<\/strong> ialah program visa kendalian kerajaan yang membolehkan warga asing dan tanggungan mereka menetap di Malaysia dengan pas jangka panjang yang boleh diperbaharui — tanpa memerlukan majikan atau perniagaan tempatan.","ja":"<strong>Malaysia My Second Home（MM2H）<\/strong>は、マレーシア政府が運営するビザプログラムで、外国籍の方とそのご家族が、現地の雇用主や事業を必要とせず、更新可能な長期パスでマレーシアに居住できる制度です。","ko":"<strong>Malaysia My Second Home (MM2H)<\/strong>는 외국 국적자와 그 부양가족이 현지 고용주나 사업체 없이도 갱신 가능한 장기 비자로 말레이시아에 거주할 수 있도록 하는 정부 운영 비자 프로그램입니다.","ar":"<strong>برنامج Malaysia My Second Home (MM2H)<\/strong> هو برنامج تأشيرات تديره الحكومة، يتيح للمواطنين الأجانب ومن يعولونهم الإقامة في ماليزيا بتصريح طويل الأمد قابل للتجديد، دون الحاجة إلى جهة عمل أو نشاط تجاري محلي.","ta":"<strong>Malaysia My Second Home (MM2H)<\/strong> என்பது அரசு நடத்தும் விசா திட்டமாகும். உள்ளூர் நிறுவனமோ வணிகமோ தேவையின்றி, வெளிநாட்டினரும் அவர்களைச் சார்ந்தோரும் மலேசியாவில் நீண்டகால, புதுப்பிக்கத்தக்க அனுமதியுடன் வசிக்க இது வழிவகுக்கிறது.","zh-TW":"<strong>馬來西亞我的第二家園（MM2H）<\/strong>是由政府主導的簽證計劃，允許外國公民及其受撫養家屬憑長期、可續期的簽證居住在馬來西亞，無需本地僱主或本地業務。"},"Approved applicants place a <strong>fixed deposit<\/strong> with a Malaysian bank and typically also purchase <strong>property<\/strong> above a set minimum value. In return, they receive a multi-year visa that can be renewed, and can bring a spouse and dependents under the same application.":{"zh-CN":"获批申请人需在马来西亚银行存入<strong>定期存款<\/strong>，通常还需购买价值不低于指定标准的<strong>房产<\/strong>。作为回报，申请人将获得可续期的多年期签证，并可在同一申请下携带配偶及受抚养家属。","ms":"Pemohon yang diluluskan meletakkan <strong>deposit tetap<\/strong> di bank Malaysia dan lazimnya turut membeli <strong>hartanah<\/strong> melebihi nilai minimum yang ditetapkan. Sebagai balasan, mereka menerima visa berbilang tahun yang boleh diperbaharui, dan boleh membawa pasangan serta tanggungan di bawah permohonan yang sama.","ja":"承認された申請者は、マレーシアの銀行に<strong>定期預金<\/strong>を預け入れ、通常は一定の最低価格以上の<strong>不動産<\/strong>も購入します。その見返りとして、更新可能な複数年ビザが付与され、配偶者や扶養家族も同一申請で帯同できます。","ko":"승인된 신청자는 말레이시아 은행에 <strong>정기예금<\/strong>을 예치하며, 일반적으로 일정 최소 금액 이상의 <strong>부동산<\/strong>도 구매합니다. 그 대가로 갱신 가능한 다년간 비자를 받게 되며, 동일한 신청으로 배우자와 부양가족도 함께 동반할 수 있습니다.","ar":"يودع المتقدمون المقبولون <strong>وديعة ثابتة<\/strong> لدى أحد البنوك الماليزية، ويشترون عادةً أيضًا <strong>عقارًا<\/strong> تفوق قيمته حدًا أدنى محددًا. وفي المقابل يحصلون على تأشيرة متعددة السنوات قابلة للتجديد، ويمكنهم إضافة الزوج/الزوجة والمعالين ضمن الطلب نفسه.","ta":"ஒப்புதல் பெற்ற விண்ணப்பதாரர்கள் மலேசிய வங்கியில் <strong>நிலையான வைப்புத்தொகை<\/strong> வைப்பதுடன், பொதுவாக குறைந்தபட்ச மதிப்புக்கு மேற்பட்ட <strong>சொத்தையும்<\/strong> வாங்குகிறார்கள். அதற்குப் பதிலாக, புதுப்பிக்கக்கூடிய பல ஆண்டு விசா கிடைக்கிறது; அதே விண்ணப்பத்தின் கீழ் துணைவர் மற்றும் சார்ந்தோரையும் அழைத்து வரலாம்.","zh-TW":"獲批申請人需在馬來西亞銀行存入<strong>定期存款<\/strong>，通常還需購買價值不低於指定標準的<strong>房產<\/strong>。作為回報，申請人將獲得可續期的多年期簽證，並可在同一申請下攜帶配偶及受撫養家屬。"},"The programme was restructured in 2024 into <strong>three tiers — Silver, Gold and Platinum<\/strong> — each with its own financial requirements and visa duration. The higher the tier, the larger the deposit and property purchase, and the longer the visa validity.":{"zh-CN":"该计划于2024年重新调整为<strong>三个级别——银级、金级与白金级<\/strong>，每个级别各有不同的资金要求和签证期限。级别越高，所需存款和购房金额越大，签证有效期也越长。","ms":"Program ini disusun semula pada 2024 kepada <strong>tiga peringkat — Silver, Gold dan Platinum<\/strong> — masing-masing dengan keperluan kewangan dan tempoh visa tersendiri. Semakin tinggi peringkat, semakin besar deposit dan pembelian hartanah, serta semakin panjang tempoh sah visa.","ja":"本プログラムは2024年に<strong>シルバー、ゴールド、プラチナの3ティア<\/strong>に再編され、それぞれ異なる財務要件とビザ期間が設定されています。ティアが上がるほど、預金額と不動産購入額は大きくなり、ビザの有効期間も長くなります。","ko":"이 프로그램은 2024년에 <strong>실버, 골드, 플래티넘의 세 등급<\/strong>으로 개편되었으며, 각 등급마다 재정 요건과 비자 기간이 다릅니다. 등급이 높을수록 예치금과 부동산 구매 금액이 커지고 비자 유효 기간도 길어집니다.","ar":"أُعيدت هيكلة البرنامج في عام 2024 ليصبح <strong>ثلاث فئات — Silver وGold وPlatinum<\/strong> — لكل منها متطلباتها المالية ومدة تأشيرتها. وكلما ارتفعت الفئة زادت الوديعة وقيمة شراء العقار وطالت مدة صلاحية التأشيرة.","ta":"இத்திட்டம் 2024-இல் <strong>Silver, Gold, Platinum என மூன்று நிலைகளாக<\/strong> மறுசீரமைக்கப்பட்டது; ஒவ்வொன்றுக்கும் தனித்தனி நிதித் தேவைகளும் விசா காலமும் உண்டு. நிலை உயர உயர, வைப்புத்தொகையும் சொத்து வாங்கும் தொகையும் அதிகரிக்கும்; விசா செல்லுபடியாகும் காலமும் நீளும்.","zh-TW":"該計劃於2024年重新調整為<strong>三個級別——銀級、金級與白金級<\/strong>，每個級別各有不同的資金要求和簽證期限。級別越高，所需存款和購房金額越大，簽證有效期也越長。"},"MM2H is separate from property ownership itself — it doesn't require buying real estate to qualify on its own, but combining the two is common among Keith's clients who want both a home and a long-stay pass in Kuala Lumpur.":{"zh-CN":"MM2H 与房产所有权本身是两回事——单凭本计划并不要求购买房产，但在 Keith 的客户中，将两者结合十分常见，他们既想在吉隆坡拥有一处住所，也希望获得长期居留签证。","ms":"MM2H berasingan daripada pemilikan hartanah itu sendiri — ia tidak memerlukan pembelian hartanah untuk layak dengan sendirinya, namun menggabungkan kedua-duanya adalah lazim dalam kalangan klien Keith yang mahukan kediaman sekali gus pas penginapan jangka panjang di Kuala Lumpur.","ja":"MM2Hは不動産の所有そのものとは別の制度であり、それ単体では不動産購入が資格の条件ではありません。ただし、クアラルンプールで住まいと長期滞在パスの両方を求めるKeithのお客様の間では、この2つを組み合わせるケースが一般的です。","ko":"MM2H는 부동산 소유와는 별개입니다. 자격을 얻기 위해 부동산 구매가 반드시 필요한 것은 아니지만, 쿠알라룸푸르에서 내 집과 장기 체류 비자를 모두 원하는 Keith의 고객분들은 두 가지를 함께 진행하는 경우가 많습니다.","ar":"يختلف MM2H عن تملّك العقار بحد ذاته؛ فهو لا يشترط شراء عقار للتأهل بمفرده، لكن الجمع بينهما أمر شائع لدى عملاء Keith الذين يريدون منزلًا وتصريح إقامة طويلة في كوالالمبور.","ta":"MM2H என்பது சொத்து உரிமையிலிருந்து தனித்தது — தகுதி பெற ரியல் எஸ்டேட் வாங்க வேண்டிய அவசியம் தனியாக இல்லை; ஆயினும் கோலாலம்பூரில் வீடும் நீண்டகாலத் தங்கும் அனுமதியும் இரண்டையும் விரும்பும் Keith-இன் வாடிக்கையாளர்களிடையே இவ்விரண்டையும் இணைப்பது வழக்கம்.","zh-TW":"MM2H 與房產所有權本身是兩回事——單憑本計劃並不要求購買房產，但在 Keith 的客戶中，將兩者結合十分常見，他們既想在吉隆坡擁有一處住所，也希望獲得長期居留簽證。"},"Fixed Deposit":{"zh-CN":"定期存款","ms":"Deposit Tetap","ja":"定期預金","ko":"정기예금","ar":"وديعة ثابتة","ta":"நிலையான வைப்புத்தொகை","zh-TW":"定期存款"},"Placed with an approved Malaysian bank; partly withdrawable after the first year.":{"zh-CN":"存放于获批准的马来西亚银行；第一年之后可部分提取。","ms":"Diletakkan di bank Malaysia yang diluluskan; sebahagiannya boleh dikeluarkan selepas tahun pertama.","ja":"マレーシアの認定銀行に預け入れ。1年目以降は一部引き出し可能です。","ko":"승인된 말레이시아 은행에 예치하며, 1년 후 일부 인출이 가능합니다.","ar":"تُودع لدى بنك ماليزي معتمد، ويمكن سحب جزء منها بعد السنة الأولى.","ta":"அங்கீகரிக்கப்பட்ட மலேசிய வங்கியில் வைக்கப்படும்; முதல் ஆண்டுக்குப் பிறகு ஒரு பகுதியை திரும்பப் பெறலாம்.","zh-TW":"存放於獲批准的馬來西亞銀行；第一年之後可部分提取。"},"Property Purchase":{"zh-CN":"购置房产","ms":"Pembelian Hartanah","ja":"不動産購入","ko":"부동산 구매","ar":"شراء عقار","ta":"சொத்து கொள்முதல்","zh-TW":"購置房產"},"A minimum-value real estate purchase in Malaysia, in addition to the deposit.":{"zh-CN":"除定期存款外，还需在马来西亚购买达到最低价值要求的房地产。","ms":"Pembelian hartanah bernilai minimum di Malaysia, selain daripada deposit.","ja":"預金に加えて、マレーシア国内で最低価格以上の不動産を購入します。","ko":"예치금과 별도로 말레이시아 내 최소 금액 이상의 부동산을 구매합니다.","ar":"شراء عقار في ماليزيا بحد أدنى للقيمة، بالإضافة إلى الوديعة.","ta":"வைப்புத்தொகையுடன் கூடுதலாக, மலேசியாவில் குறைந்தபட்ச மதிப்புள்ள ரியல் எஸ்டேட் கொள்முதல்.","zh-TW":"除定期存款外，還需在馬來西亞購買達到最低價值要求的房地產。"},"Multi-Year Visa":{"zh-CN":"多年期签证","ms":"Visa Berbilang Tahun","ja":"複数年ビザ","ko":"다년간 비자","ar":"تأشيرة متعددة السنوات","ta":"பல ஆண்டு விசா","zh-TW":"多年期簽證"},"A renewable long-stay pass — 5, 15 or 20 years depending on tier.":{"zh-CN":"可续期的长期居留签证——视级别而定，为期5年、15年或20年。","ms":"Pas penginapan jangka panjang yang boleh diperbaharui — 5, 15 atau 20 tahun bergantung pada peringkat.","ja":"更新可能な長期滞在パス。ティアにより5年、15年、または20年。","ko":"갱신 가능한 장기 체류 비자로, 등급에 따라 5년, 15년 또는 20년입니다.","ar":"تصريح إقامة طويلة قابل للتجديد — 5 أو 15 أو 20 سنة بحسب الفئة.","ta":"புதுப்பிக்கத்தக்க நீண்டகாலத் தங்கும் அனுமதி — நிலையைப் பொறுத்து 5, 15 அல்லது 20 ஆண்டுகள்.","zh-TW":"可續期的長期居留簽證——視級別而定，為期5年、15年或20年。"},"Family Inclusion":{"zh-CN":"家属随行","ms":"Kemasukan Keluarga","ja":"ご家族の帯同","ko":"가족 동반","ar":"شمول الأسرة","ta":"குடும்பத்தையும் சேர்த்தல்","zh-TW":"家屬隨行"},"Spouse and eligible dependents can typically be included under one application.":{"zh-CN":"配偶及符合条件的受抚养家属通常可纳入同一份申请。","ms":"Pasangan dan tanggungan yang layak lazimnya boleh disertakan di bawah satu permohonan.","ja":"配偶者および対象となる扶養家族は、通常、1件の申請にまとめて含めることができます。","ko":"배우자와 자격을 갖춘 부양가족을 하나의 신청으로 함께 포함할 수 있습니다.","ar":"يمكن عادةً إدراج الزوج/الزوجة والمعالين المؤهلين ضمن طلب واحد.","ta":"துணைவர் மற்றும் தகுதியுள்ள சார்ந்தோரை பொதுவாக ஒரே விண்ணப்பத்தின் கீழ் சேர்க்கலாம்.","zh-TW":"配偶及符合條件的受撫養家屬通常可納入同一份申請。"},"Compare Tiers":{"zh-CN":"级别对比","ms":"Bandingkan Peringkat","ja":"ティア比較","ko":"등급 비교","ar":"قارن الفئات","ta":"நிலைகளை ஒப்பிடுக","zh-TW":"級別對比"},"Silver, <span>Gold<\/span> &amp; Platinum":{"zh-CN":"银级、<span>金级<\/span>与白金级","ms":"Silver, <span>Gold<\/span> &amp; Platinum","ja":"シルバー、<span>ゴールド<\/span>＆プラチナ","ko":"실버, <span>골드<\/span> &amp; 플래티넘","ar":"Silver، <span>Gold<\/span> &amp; Platinum","ta":"Silver, <span>Gold<\/span> &amp; Platinum","zh-TW":"銀級、<span>金級<\/span>與白金級"},"MM2H is structured into three tiers. Each column below shows the financial requirements, visa duration and conditions side by side.":{"zh-CN":"MM2H 分为三个级别。下方每一栏并列展示各级别的资金要求、签证期限及相关条件。","ms":"MM2H distrukturkan kepada tiga peringkat. Setiap lajur di bawah menunjukkan keperluan kewangan, tempoh visa dan syarat secara bersebelahan.","ja":"MM2Hは3つのティアで構成されています。以下の各列で、財務要件、ビザ期間、条件を並べて比較できます。","ko":"MM2H는 세 가지 등급으로 구성되어 있습니다. 아래 각 열에서 재정 요건, 비자 기간 및 조건을 한눈에 비교해 보실 수 있습니다.","ar":"يتكوّن MM2H من ثلاث فئات. يعرض كل عمود أدناه المتطلبات المالية ومدة التأشيرة والشروط جنبًا إلى جنب.","ta":"MM2H மூன்று நிலைகளாக அமைக்கப்பட்டுள்ளது. கீழுள்ள ஒவ்வொரு பத்தியும் நிதித் தேவைகள், விசா காலம், நிபந்தனைகளை அருகருகே காட்டுகிறது.","zh-TW":"MM2H 分為三個級別。下方每一欄並列展示各級別的資金要求、簽證期限及相關條件。"},"SILVER":{"zh-CN":"银级","ms":"SILVER","ja":"シルバー","ko":"실버","ar":"SILVER","ta":"SILVER","zh-TW":"銀級"},"<span>Fixed Deposit<\/span>\n          <strong>USD 150,000<\/strong>\n          <em>15万美元<\/em>":{"zh-CN":"<span>定期存款<\/span>\n          <strong>USD 150,000<\/strong>\n          <em>15万美元<\/em>","ms":"<span>Deposit Tetap<\/span>\n          <strong>USD 150,000<\/strong>\n          <em>15万美元<\/em>","ja":"<span>定期預金<\/span>\n          <strong>USD 150,000<\/strong>\n          <em>15万美元<\/em>","ko":"<span>정기예금<\/span>\n          <strong>USD 150,000<\/strong>\n          <em>15万美元<\/em>","ar":"<span>وديعة ثابتة<\/span>\n          <strong>USD 150,000<\/strong>\n          <em>15万美元<\/em>","ta":"<span>நிலையான வைப்புத்தொகை<\/span>\n          <strong>USD 150,000<\/strong>\n          <em>15万美元<\/em>","zh-TW":"<span>定期存款<\/span>\n          <strong>USD 150,000<\/strong>\n          <em>15萬美元<\/em>"},"<span>Property Purchase<\/span>\n          <strong>RM 600,000<\/strong>\n          <em>最低60万令吉<\/em>":{"zh-CN":"<span>购置房产<\/span>\n          <strong>RM 600,000<\/strong>\n          <em>最低60万令吉<\/em>","ms":"<span>Pembelian Hartanah<\/span>\n          <strong>RM 600,000<\/strong>\n          <em>最低60万令吉<\/em>","ja":"<span>不動産購入<\/span>\n          <strong>RM 600,000<\/strong>\n          <em>最低60万令吉<\/em>","ko":"<span>부동산 구매<\/span>\n          <strong>RM 600,000<\/strong>\n          <em>最低60万令吉<\/em>","ar":"<span>شراء عقار<\/span>\n          <strong>RM 600,000<\/strong>\n          <em>最低60万令吉<\/em>","ta":"<span>சொத்து கொள்முதல்<\/span>\n          <strong>RM 600,000<\/strong>\n          <em>最低60万令吉<\/em>","zh-TW":"<span>購置房產<\/span>\n          <strong>RM 600,000<\/strong>\n          <em>最低60萬令吉<\/em>"},"<span>Visa Duration<\/span>\n          <strong>5 Years (Renewable)<\/strong>\n          <em>5年（可续签）<\/em>":{"zh-CN":"<span>签证期限<\/span>\n          <strong>5年（可续签）<\/strong>\n          <em>5年（可续签）<\/em>","ms":"<span>Tempoh Visa<\/span>\n          <strong>5 Tahun (Boleh Diperbaharui)<\/strong>\n          <em>5年（可续签）<\/em>","ja":"<span>ビザ期間<\/span>\n          <strong>5年（更新可）<\/strong>\n          <em>5年（可续签）<\/em>","ko":"<span>비자 기간<\/span>\n          <strong>5년 (갱신 가능)<\/strong>\n          <em>5年（可续签）<\/em>","ar":"<span>مدة التأشيرة<\/span>\n          <strong>5 سنوات (قابلة للتجديد)<\/strong>\n          <em>5年（可续签）<\/em>","ta":"<span>விசா காலம்<\/span>\n          <strong>5 ஆண்டுகள் (புதுப்பிக்கத்தக்கது)<\/strong>\n          <em>5年（可续签）<\/em>","zh-TW":"<span>簽證期限<\/span>\n          <strong>5年（可續簽）<\/strong>\n          <em>5年（可續簽）<\/em>"},"<b>Fixed Deposit: USD 150,000<\/b><small>定期存款：15万美元<\/small>":{"zh-CN":"<b>定期存款：USD 150,000<\/b><small>定期存款：15万美元<\/small>","ms":"<b>Deposit Tetap: USD 150,000<\/b><small>定期存款：15万美元<\/small>","ja":"<b>定期預金：USD 150,000<\/b><small>定期存款：15万美元<\/small>","ko":"<b>정기예금: USD 150,000<\/b><small>定期存款：15万美元<\/small>","ar":"<b>وديعة ثابتة: USD 150,000<\/b><small>定期存款：15万美元<\/small>","ta":"<b>நிலையான வைப்புத்தொகை: USD 150,000<\/b><small>定期存款：15万美元<\/small>","zh-TW":"<b>定期存款：USD 150,000<\/b><small>定期存款：15萬美元<\/small>"},"<b>Property Purchase: Minimum RM 600,000<\/b><small>购房要求：最低60万令吉<\/small>":{"zh-CN":"<b>购房要求：最低 RM 600,000<\/b><small>购房要求：最低60万令吉<\/small>","ms":"<b>Pembelian Hartanah: Minimum RM 600,000<\/b><small>购房要求：最低60万令吉<\/small>","ja":"<b>不動産購入：最低 RM 600,000<\/b><small>购房要求：最低60万令吉<\/small>","ko":"<b>부동산 구매: 최소 RM 600,000<\/b><small>购房要求：最低60万令吉<\/small>","ar":"<b>شراء عقار: حد أدنى RM 600,000<\/b><small>购房要求：最低60万令吉<\/small>","ta":"<b>சொத்து கொள்முதல்: குறைந்தபட்சம் RM 600,000<\/b><small>购房要求：最低60万令吉<\/small>","zh-TW":"<b>購房要求：最低 RM 600,000<\/b><small>購房要求：最低60萬令吉<\/small>"},"<b>Visa Duration: 5 Years (Renewable)<\/b><small>签证期限：5年（可续签）<\/small>":{"zh-CN":"<b>签证期限：5年（可续签）<\/b><small>签证期限：5年（可续签）<\/small>","ms":"<b>Tempoh Visa: 5 Tahun (Boleh Diperbaharui)<\/b><small>签证期限：5年（可续签）<\/small>","ja":"<b>ビザ期間：5年（更新可）<\/b><small>签证期限：5年（可续签）<\/small>","ko":"<b>비자 기간: 5년 (갱신 가능)<\/b><small>签证期限：5年（可续签）<\/small>","ar":"<b>مدة التأشيرة: 5 سنوات (قابلة للتجديد)<\/b><small>签证期限：5年（可续签）<\/small>","ta":"<b>விசா காலம்: 5 ஆண்டுகள் (புதுப்பிக்கத்தக்கது)<\/b><small>签证期限：5年（可续签）<\/small>","zh-TW":"<b>簽證期限：5年（可續簽）<\/b><small>簽證期限：5年（可續簽）<\/small>"},"<b>Min. Stay: 90 Days/Year<\/b><small>居住要求：每年90天<\/small>":{"zh-CN":"<b>最低居住时间：每年90天<\/b><small>居住要求：每年90天<\/small>","ms":"<b>Tempoh Tinggal Minimum: 90 Hari/Tahun<\/b><small>居住要求：每年90天<\/small>","ja":"<b>最低滞在日数：年間90日<\/b><small>居住要求：每年90天<\/small>","ko":"<b>최소 체류: 연 90일<\/b><small>居住要求：每年90天<\/small>","ar":"<b>الحد الأدنى للإقامة: 90 يومًا في السنة<\/b><small>居住要求：每年90天<\/small>","ta":"<b>குறைந்தபட்ச தங்கல்: ஆண்டுக்கு 90 நாட்கள்<\/b><small>居住要求：每年90天<\/small>","zh-TW":"<b>最低居住時間：每年90天<\/b><small>居住要求：每年90天<\/small>"},"<b>Age: 25 years &amp; above<\/b><small>年龄：25岁及以上<\/small>":{"zh-CN":"<b>年龄：25岁及以上<\/b><small>年龄：25岁及以上<\/small>","ms":"<b>Umur: 25 tahun &amp; ke atas<\/b><small>年龄：25岁及以上<\/small>","ja":"<b>年齢：25歳以上<\/b><small>年龄：25岁及以上<\/small>","ko":"<b>연령: 만 25세 이상<\/b><small>年龄：25岁及以上<\/small>","ar":"<b>العمر: 25 سنة فأكثر<\/b><small>年龄：25岁及以上<\/small>","ta":"<b>வயது: 25 வயது &amp; அதற்கு மேல்<\/b><small>年龄：25岁及以上<\/small>","zh-TW":"<b>年齡：25歲及以上<\/b><small>年齡：25歲及以上<\/small>"},"<b>Work Rights: No<\/b><small>工作权利：无<\/small>":{"zh-CN":"<b>工作权利：无<\/b><small>工作权利：无<\/small>","ms":"<b>Hak Bekerja: Tidak<\/b><small>工作权利：无<\/small>","ja":"<b>就労権：なし<\/b><small>工作权利：无<\/small>","ko":"<b>취업 권리: 없음<\/b><small>工作权利：无<\/small>","ar":"<b>حق العمل: لا<\/b><small>工作权利：无<\/small>","ta":"<b>வேலை செய்யும் உரிமை: இல்லை<\/b><small>工作权利：无<\/small>","zh-TW":"<b>工作權利：無<\/b><small>工作權利：無<\/small>"},"<b>Withdrawal: 50% of FD after 1 year<\/b><small>提款：一年后可提取50%定存<\/small>":{"zh-CN":"<b>提款：一年后可提取50%定存<\/b><small>提款：一年后可提取50%定存<\/small>","ms":"<b>Pengeluaran: 50% FD selepas 1 tahun<\/b><small>提款：一年后可提取50%定存<\/small>","ja":"<b>引き出し：1年後に定期預金の50%<\/b><small>提款：一年后可提取50%定存<\/small>","ko":"<b>인출: 1년 후 정기예금의 50%<\/b><small>提款：一年后可提取50%定存<\/small>","ar":"<b>السحب: 50% من الوديعة بعد سنة واحدة<\/b><small>提款：一年后可提取50%定存<\/small>","ta":"<b>திரும்பப் பெறுதல்: 1 ஆண்டுக்குப் பிறகு நிலையான வைப்புத்தொகையில் 50%<\/b><small>提款：一年后可提取50%定存<\/small>","zh-TW":"<b>提款：一年後可提取50%定存<\/b><small>提款：一年後可提取50%定存<\/small>"},"Consult Now":{"zh-CN":"立即咨询","ms":"Rujuk Sekarang","ja":"今すぐ相談する","ko":"지금 상담하기","ar":"استشر الآن","ta":"இப்போதே ஆலோசியுங்கள்","zh-TW":"立即諮詢"},"GOLD":{"zh-CN":"金级","ms":"GOLD","ja":"ゴールド","ko":"골드","ar":"GOLD","ta":"GOLD","zh-TW":"金級"},"<span>Fixed Deposit<\/span>\n          <strong>USD 500,000<\/strong>\n          <em>50万美元<\/em>":{"zh-CN":"<span>定期存款<\/span>\n          <strong>USD 500,000<\/strong>\n          <em>50万美元<\/em>","ms":"<span>Deposit Tetap<\/span>\n          <strong>USD 500,000<\/strong>\n          <em>50万美元<\/em>","ja":"<span>定期預金<\/span>\n          <strong>USD 500,000<\/strong>\n          <em>50万美元<\/em>","ko":"<span>정기예금<\/span>\n          <strong>USD 500,000<\/strong>\n          <em>50万美元<\/em>","ar":"<span>وديعة ثابتة<\/span>\n          <strong>USD 500,000<\/strong>\n          <em>50万美元<\/em>","ta":"<span>நிலையான வைப்புத்தொகை<\/span>\n          <strong>USD 500,000<\/strong>\n          <em>50万美元<\/em>","zh-TW":"<span>定期存款<\/span>\n          <strong>USD 500,000<\/strong>\n          <em>50萬美元<\/em>"},"<span>Property Purchase<\/span>\n          <strong>RM 1,000,000<\/strong>\n          <em>最低100万令吉<\/em>":{"zh-CN":"<span>购置房产<\/span>\n          <strong>RM 1,000,000<\/strong>\n          <em>最低100万令吉<\/em>","ms":"<span>Pembelian Hartanah<\/span>\n          <strong>RM 1,000,000<\/strong>\n          <em>最低100万令吉<\/em>","ja":"<span>不動産購入<\/span>\n          <strong>RM 1,000,000<\/strong>\n          <em>最低100万令吉<\/em>","ko":"<span>부동산 구매<\/span>\n          <strong>RM 1,000,000<\/strong>\n          <em>最低100万令吉<\/em>","ar":"<span>شراء عقار<\/span>\n          <strong>RM 1,000,000<\/strong>\n          <em>最低100万令吉<\/em>","ta":"<span>சொத்து கொள்முதல்<\/span>\n          <strong>RM 1,000,000<\/strong>\n          <em>最低100万令吉<\/em>","zh-TW":"<span>購置房產<\/span>\n          <strong>RM 1,000,000<\/strong>\n          <em>最低100萬令吉<\/em>"},"<span>Visa Duration<\/span>\n          <strong>15 Years (Renewable)<\/strong>\n          <em>15年（可续签）<\/em>":{"zh-CN":"<span>签证期限<\/span>\n          <strong>15年（可续签）<\/strong>\n          <em>15年（可续签）<\/em>","ms":"<span>Tempoh Visa<\/span>\n          <strong>15 Tahun (Boleh Diperbaharui)<\/strong>\n          <em>15年（可续签）<\/em>","ja":"<span>ビザ期間<\/span>\n          <strong>15年（更新可）<\/strong>\n          <em>15年（可续签）<\/em>","ko":"<span>비자 기간<\/span>\n          <strong>15년 (갱신 가능)<\/strong>\n          <em>15年（可续签）<\/em>","ar":"<span>مدة التأشيرة<\/span>\n          <strong>15 سنة (قابلة للتجديد)<\/strong>\n          <em>15年（可续签）<\/em>","ta":"<span>விசா காலம்<\/span>\n          <strong>15 ஆண்டுகள் (புதுப்பிக்கத்தக்கது)<\/strong>\n          <em>15年（可续签）<\/em>","zh-TW":"<span>簽證期限<\/span>\n          <strong>15年（可續簽）<\/strong>\n          <em>15年（可續簽）<\/em>"},"<b>Fixed Deposit: USD 500,000<\/b><small>定期存款：50万美元<\/small>":{"zh-CN":"<b>定期存款：USD 500,000<\/b><small>定期存款：50万美元<\/small>","ms":"<b>Deposit Tetap: USD 500,000<\/b><small>定期存款：50万美元<\/small>","ja":"<b>定期預金：USD 500,000<\/b><small>定期存款：50万美元<\/small>","ko":"<b>정기예금: USD 500,000<\/b><small>定期存款：50万美元<\/small>","ar":"<b>وديعة ثابتة: USD 500,000<\/b><small>定期存款：50万美元<\/small>","ta":"<b>நிலையான வைப்புத்தொகை: USD 500,000<\/b><small>定期存款：50万美元<\/small>","zh-TW":"<b>定期存款：USD 500,000<\/b><small>定期存款：50萬美元<\/small>"},"<b>Property Purchase: Minimum RM 1,000,000<\/b><small>购房要求：最低100万令吉<\/small>":{"zh-CN":"<b>购房要求：最低 RM 1,000,000<\/b><small>购房要求：最低100万令吉<\/small>","ms":"<b>Pembelian Hartanah: Minimum RM 1,000,000<\/b><small>购房要求：最低100万令吉<\/small>","ja":"<b>不動産購入：最低 RM 1,000,000<\/b><small>购房要求：最低100万令吉<\/small>","ko":"<b>부동산 구매: 최소 RM 1,000,000<\/b><small>购房要求：最低100万令吉<\/small>","ar":"<b>شراء عقار: حد أدنى RM 1,000,000<\/b><small>购房要求：最低100万令吉<\/small>","ta":"<b>சொத்து கொள்முதல்: குறைந்தபட்சம் RM 1,000,000<\/b><small>购房要求：最低100万令吉<\/small>","zh-TW":"<b>購房要求：最低 RM 1,000,000<\/b><small>購房要求：最低100萬令吉<\/small>"},"<b>Visa Duration: 15 Years (Renewable)<\/b><small>签证期限：15年（可续签）<\/small>":{"zh-CN":"<b>签证期限：15年（可续签）<\/b><small>签证期限：15年（可续签）<\/small>","ms":"<b>Tempoh Visa: 15 Tahun (Boleh Diperbaharui)<\/b><small>签证期限：15年（可续签）<\/small>","ja":"<b>ビザ期間：15年（更新可）<\/b><small>签证期限：15年（可续签）<\/small>","ko":"<b>비자 기간: 15년 (갱신 가능)<\/b><small>签证期限：15年（可续签）<\/small>","ar":"<b>مدة التأشيرة: 15 سنة (قابلة للتجديد)<\/b><small>签证期限：15年（可续签）<\/small>","ta":"<b>விசா காலம்: 15 ஆண்டுகள் (புதுப்பிக்கத்தக்கது)<\/b><small>签证期限：15年（可续签）<\/small>","zh-TW":"<b>簽證期限：15年（可續簽）<\/b><small>簽證期限：15年（可續簽）<\/small>"},"<b>Work Rights: No (Investment Allowed)<\/b><small>工作权利：无（允许投资）<\/small>":{"zh-CN":"<b>工作权利：无（允许投资）<\/b><small>工作权利：无（允许投资）<\/small>","ms":"<b>Hak Bekerja: Tidak (Pelaburan Dibenarkan)<\/b><small>工作权利：无（允许投资）<\/small>","ja":"<b>就労権：なし（投資は可）<\/b><small>工作权利：无（允许投资）<\/small>","ko":"<b>취업 권리: 없음 (투자 가능)<\/b><small>工作权利：无（允许投资）<\/small>","ar":"<b>حق العمل: لا (الاستثمار مسموح)<\/b><small>工作权利：无（允许投资）<\/small>","ta":"<b>வேலை செய்யும் உரிமை: இல்லை (முதலீடு அனுமதிக்கப்படும்)<\/b><small>工作权利：无（允许投资）<\/small>","zh-TW":"<b>工作權利：無（允許投資）<\/b><small>工作權利：無（允許投資）<\/small>"},"PLATINUM":{"zh-CN":"白金级","ms":"PLATINUM","ja":"プラチナ","ko":"플래티넘","ar":"PLATINUM","ta":"PLATINUM","zh-TW":"白金級"},"<span>Fixed Deposit<\/span>\n          <strong>USD 1,000,000<\/strong>\n          <em>100万美元<\/em>":{"zh-CN":"<span>定期存款<\/span>\n          <strong>USD 1,000,000<\/strong>\n          <em>100万美元<\/em>","ms":"<span>Deposit Tetap<\/span>\n          <strong>USD 1,000,000<\/strong>\n          <em>100万美元<\/em>","ja":"<span>定期預金<\/span>\n          <strong>USD 1,000,000<\/strong>\n          <em>100万美元<\/em>","ko":"<span>정기예금<\/span>\n          <strong>USD 1,000,000<\/strong>\n          <em>100万美元<\/em>","ar":"<span>وديعة ثابتة<\/span>\n          <strong>USD 1,000,000<\/strong>\n          <em>100万美元<\/em>","ta":"<span>நிலையான வைப்புத்தொகை<\/span>\n          <strong>USD 1,000,000<\/strong>\n          <em>100万美元<\/em>","zh-TW":"<span>定期存款<\/span>\n          <strong>USD 1,000,000<\/strong>\n          <em>100萬美元<\/em>"},"<span>Property Purchase<\/span>\n          <strong>RM 2,000,000<\/strong>\n          <em>最低200万令吉<\/em>":{"zh-CN":"<span>购置房产<\/span>\n          <strong>RM 2,000,000<\/strong>\n          <em>最低200万令吉<\/em>","ms":"<span>Pembelian Hartanah<\/span>\n          <strong>RM 2,000,000<\/strong>\n          <em>最低200万令吉<\/em>","ja":"<span>不動産購入<\/span>\n          <strong>RM 2,000,000<\/strong>\n          <em>最低200万令吉<\/em>","ko":"<span>부동산 구매<\/span>\n          <strong>RM 2,000,000<\/strong>\n          <em>最低200万令吉<\/em>","ar":"<span>شراء عقار<\/span>\n          <strong>RM 2,000,000<\/strong>\n          <em>最低200万令吉<\/em>","ta":"<span>சொத்து கொள்முதல்<\/span>\n          <strong>RM 2,000,000<\/strong>\n          <em>最低200万令吉<\/em>","zh-TW":"<span>購置房產<\/span>\n          <strong>RM 2,000,000<\/strong>\n          <em>最低200萬令吉<\/em>"},"<span>Visa Duration<\/span>\n          <strong>20 Years (Renewable)<\/strong>\n          <em>20年（可续签）<\/em>":{"zh-CN":"<span>签证期限<\/span>\n          <strong>20年（可续签）<\/strong>\n          <em>20年（可续签）<\/em>","ms":"<span>Tempoh Visa<\/span>\n          <strong>20 Tahun (Boleh Diperbaharui)<\/strong>\n          <em>20年（可续签）<\/em>","ja":"<span>ビザ期間<\/span>\n          <strong>20年（更新可）<\/strong>\n          <em>20年（可续签）<\/em>","ko":"<span>비자 기간<\/span>\n          <strong>20년 (갱신 가능)<\/strong>\n          <em>20年（可续签）<\/em>","ar":"<span>مدة التأشيرة<\/span>\n          <strong>20 سنة (قابلة للتجديد)<\/strong>\n          <em>20年（可续签）<\/em>","ta":"<span>விசா காலம்<\/span>\n          <strong>20 ஆண்டுகள் (புதுப்பிக்கத்தக்கது)<\/strong>\n          <em>20年（可续签）<\/em>","zh-TW":"<span>簽證期限<\/span>\n          <strong>20年（可續簽）<\/strong>\n          <em>20年（可續簽）<\/em>"},"<b>Fixed Deposit: USD 1,000,000<\/b><small>定期存款：100万美元<\/small>":{"zh-CN":"<b>定期存款：USD 1,000,000<\/b><small>定期存款：100万美元<\/small>","ms":"<b>Deposit Tetap: USD 1,000,000<\/b><small>定期存款：100万美元<\/small>","ja":"<b>定期預金：USD 1,000,000<\/b><small>定期存款：100万美元<\/small>","ko":"<b>정기예금: USD 1,000,000<\/b><small>定期存款：100万美元<\/small>","ar":"<b>وديعة ثابتة: USD 1,000,000<\/b><small>定期存款：100万美元<\/small>","ta":"<b>நிலையான வைப்புத்தொகை: USD 1,000,000<\/b><small>定期存款：100万美元<\/small>","zh-TW":"<b>定期存款：USD 1,000,000<\/b><small>定期存款：100萬美元<\/small>"},"<b>Property Purchase: Minimum RM 2,000,000<\/b><small>购房要求：最低200万令吉<\/small>":{"zh-CN":"<b>购房要求：最低 RM 2,000,000<\/b><small>购房要求：最低200万令吉<\/small>","ms":"<b>Pembelian Hartanah: Minimum RM 2,000,000<\/b><small>购房要求：最低200万令吉<\/small>","ja":"<b>不動産購入：最低 RM 2,000,000<\/b><small>购房要求：最低200万令吉<\/small>","ko":"<b>부동산 구매: 최소 RM 2,000,000<\/b><small>购房要求：最低200万令吉<\/small>","ar":"<b>شراء عقار: حد أدنى RM 2,000,000<\/b><small>购房要求：最低200万令吉<\/small>","ta":"<b>சொத்து கொள்முதல்: குறைந்தபட்சம் RM 2,000,000<\/b><small>购房要求：最低200万令吉<\/small>","zh-TW":"<b>購房要求：最低 RM 2,000,000<\/b><small>購房要求：最低200萬令吉<\/small>"},"<b>Visa Duration: 20 Years (Renewable)<\/b><small>签证期限：20年（可续签）<\/small>":{"zh-CN":"<b>签证期限：20年（可续签）<\/b><small>签证期限：20年（可续签）<\/small>","ms":"<b>Tempoh Visa: 20 Tahun (Boleh Diperbaharui)<\/b><small>签证期限：20年（可续签）<\/small>","ja":"<b>ビザ期間：20年（更新可）<\/b><small>签证期限：20年（可续签）<\/small>","ko":"<b>비자 기간: 20년 (갱신 가능)<\/b><small>签证期限：20年（可续签）<\/small>","ar":"<b>مدة التأشيرة: 20 سنة (قابلة للتجديد)<\/b><small>签证期限：20年（可续签）<\/small>","ta":"<b>விசா காலம்: 20 ஆண்டுகள் (புதுப்பிக்கத்தக்கது)<\/b><small>签证期限：20年（可续签）<\/small>","zh-TW":"<b>簽證期限：20年（可續簽）<\/b><small>簽證期限：20年（可續簽）<\/small>"},"<b>Work Rights: Allowed to Work &amp; Invest<\/b><small>工作权利：允许工作与投资<\/small>":{"zh-CN":"<b>工作权利：允许工作与投资<\/b><small>工作权利：允许工作与投资<\/small>","ms":"<b>Hak Bekerja: Dibenarkan Bekerja &amp; Melabur<\/b><small>工作权利：允许工作与投资<\/small>","ja":"<b>就労権：就労・投資ともに可<\/b><small>工作权利：允许工作与投资<\/small>","ko":"<b>취업 권리: 취업 및 투자 가능<\/b><small>工作权利：允许工作与投资<\/small>","ar":"<b>حق العمل: مسموح بالعمل والاستثمار<\/b><small>工作权利：允许工作与投资<\/small>","ta":"<b>வேலை செய்யும் உரிமை: வேலை செய்யவும் முதலீடு செய்யவும் அனுமதி<\/b><small>工作权利：允许工作与投资<\/small>","zh-TW":"<b>工作權利：允許工作與投資<\/b><small>工作權利：允許工作與投資<\/small>"},"Figures above reflect the restructured MM2H programme requirements as a general guide. Requirements are set by the Malaysian government and may be updated — Keith can confirm the latest figures and help assess which tier fits your situation.":{"zh-CN":"以上数据反映调整后的 MM2H 计划要求，仅供一般参考。具体要求由马来西亚政府制定，可能随时更新——Keith 可为您确认最新数据，并协助评估哪个级别最适合您的情况。","ms":"Angka di atas mencerminkan keperluan program MM2H yang disusun semula sebagai panduan umum. Keperluan ditetapkan oleh kerajaan Malaysia dan mungkin dikemas kini — Keith boleh mengesahkan angka terkini dan membantu menilai peringkat mana yang sesuai dengan keadaan anda.","ja":"上記の金額は、再編後のMM2Hプログラムの要件を示す一般的な目安です。要件はマレーシア政府が定めており、変更される場合があります。最新の数値のご確認や、どのティアがご状況に適しているかの判断は、Keithがお手伝いします。","ko":"위의 수치는 개편된 MM2H 프로그램 요건을 참고용으로 정리한 것입니다. 요건은 말레이시아 정부가 정하며 변경될 수 있습니다. Keith가 최신 수치를 확인해 드리고, 고객님의 상황에 어떤 등급이 적합한지 함께 검토해 드립니다.","ar":"تعكس الأرقام أعلاه متطلبات برنامج MM2H بعد إعادة هيكلته، وهي للاسترشاد العام فقط. تحدد الحكومة الماليزية هذه المتطلبات وقد تُحدَّث — ويمكن لـ Keith تأكيد أحدث الأرقام ومساعدتك في تقييم الفئة الأنسب لوضعك.","ta":"மேலே உள்ள புள்ளிவிவரங்கள் மறுசீரமைக்கப்பட்ட MM2H திட்டத் தேவைகளின் பொது வழிகாட்டியாகும். தேவைகளை மலேசிய அரசு நிர்ணயிக்கிறது; அவை புதுப்பிக்கப்படலாம் — சமீபத்திய விவரங்களை Keith உறுதிப்படுத்தி, உங்கள் சூழலுக்கு எந்த நிலை பொருந்தும் என மதிப்பிட உதவுவார்.","zh-TW":"以上資料反映調整後的 MM2H 計劃要求，僅供一般參考。具體要求由馬來西亞政府制定，可能隨時更新——Keith 可為您確認最新資料，並協助評估哪個級別最適合您的情況。"}};
+  const registry = new Map();
+  function collectUnits(){
+    const BLOCK = /^(DIV|P|UL|OL|LI|H1|H2|H3|H4|H5|H6|SECTION|ARTICLE|TABLE|TR|TD|TH|THEAD|TBODY|FORM|HEADER|FOOTER|NAV|MAIN|ASIDE|BLOCKQUOTE|BUTTON|SELECT|INPUT|IMG|SVG|CANVAS|VIDEO|IFRAME)$/i;
+    const SKIP = /^(SCRIPT|STYLE|NOSCRIPT|SVG|TEXTAREA|INPUT|SELECT|OPTION|CODE|PRE)$/i;
+    const out = [];
+    function hasBlockDesc(el){ for(const c of el.children){ if(BLOCK.test(c.nodeName) || hasBlockDesc(c)) return true; } return false; }
+    function visit(el){
+      if(SKIP.test(el.nodeName)) return;
+      if(el.closest && el.closest('header,footer,.lang-menu,#currMenu,#langSwitch,#currSwitch,.float-wa,.whatsapp-btn')) return;
+      if(!/[A-Za-z]{2}/.test(el.textContent || '')) return;
+      if(!hasBlockDesc(el) && el.childNodes.length){
+        if(el.querySelector && el.querySelector('svg,img')){ for(const c of el.children) visit(c); }
+        else out.push(el);
+        return;
+      }
+      for(const c of el.children) visit(c);
+    }
+    visit(document.body);
+    return out;
+  }
+  window.knApplyContent = function(){
+    const l = lang();
+    if(typeof knApplyCurrency === 'function') knApplyCurrency(document.body, 'MYR');
+    for(const [el,key] of Array.from(registry)){ if(!el.isConnected) registry.delete(el); }
+    // register new units (only when still in their original English form)
+    collectUnits().forEach(function(el){
+      if(registry.has(el)) return;
+      const key = el.innerHTML.trim();
+      if(TR[key]) registry.set(el, key);
+    });
+    registry.forEach(function(key, el){
+      const e = TR[key];
+      el.innerHTML = (l !== 'en' && e && e[l]) ? e[l] : key;
+    });
+    if(typeof knApplyCurrency === 'function') knApplyCurrency();
+  };
+
+  window.knApplyLanguage = function(){
+    const l = lang();
+    const els = document.querySelectorAll('header nav a, footer h5, footer a, footer p, footer span, .wa-agent-label');
+    els.forEach(function(el){
+      if(el.children.length) return;
+      if(!origText.has(el)) origText.set(el, el.textContent.trim());
+      const en = origText.get(el);
+      if(el.classList.contains('wa-agent-label')){
+        const base = en.replace(/\s*Keith\s*$/,'');
+        el.textContent = (l === 'en') ? en : tr(base, l) + ' Keith';
+        return;
+      }
+      if(DIC[en]) el.textContent = tr(en, l);
+    });
+    knApplyContent();
+  };
+  if(typeof window.setLanguage === 'function'){
+    const f = window.setLanguage;
+    window.setLanguage = function(){ const r = f.apply(this, arguments); try{ knApplyLanguage(); }catch(e){} return r; };
+  }
+  if(typeof window.openArticle === 'function'){ const oa = window.openArticle; window.openArticle = function(){ const r = oa.apply(this, arguments); try{ knApplyContent(); }catch(e){} return r; }; }
+  knApplyLanguage();
+})();
+</script>
+<style>
+#knDrawer{position:fixed;inset:0;z-index:2147483000;display:none}
+#knDrawer.open{display:block}
+#knDrawer .kn-bg{position:absolute;inset:0;background:rgba(10,10,30,.55)}
+#knDrawer .kn-panel{position:absolute;top:0;right:0;bottom:0;width:min(82vw,340px);background:#1d1b4f;color:#fff;padding:20px 22px 28px;overflow-y:auto;box-shadow:-8px 0 30px rgba(0,0,0,.35);font-family:inherit}
+html[dir="rtl"] #knDrawer .kn-panel{right:auto;left:0}
+#knDrawer .kn-close{display:block;margin-left:auto;background:none;border:0;color:#fff;font-size:30px;line-height:1;cursor:pointer;padding:4px 8px}
+#knDrawer .kn-links a{display:block;color:#fff;text-decoration:none;font-size:17px;letter-spacing:.04em;padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12)}
+#knDrawer .kn-links a.active{color:#b9b4ff;font-weight:600}
+#knDrawer .kn-sub{margin:22px 0 8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#a9a6d6}
+#knDrawer .kn-chips{display:flex;flex-wrap:wrap;gap:8px}
+#knDrawer .kn-chips button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer}
+#knDrawer .kn-wa{display:block;margin-top:24px;text-align:center;background:#25d366;color:#fff;text-decoration:none;border-radius:999px;padding:13px;font-weight:600}
+</style>
+<div id="knDrawer" aria-hidden="true"><div class="kn-bg" onclick="knToggleMenu(false)"></div><div class="kn-panel"><button class="kn-close" type="button" aria-label="Close" onclick="knToggleMenu(false)">×</button><div class="kn-links" id="knLinks"></div><div class="kn-sub">Language</div><div class="kn-chips" id="knLang"></div><div class="kn-sub">Currency</div><div class="kn-chips" id="knCurr"></div><a class="kn-wa" id="knWa" target="_blank" rel="noopener" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+explore+more+on+Malaysia+Property.&amp;type=phone_number&amp;app_absent=0">WhatsApp Keith</a></div></div>
+<script>
+function knToggleMenu(force){
+  var d=document.getElementById('knDrawer'); if(!d) return;
+  var open=(typeof force==='boolean')?force:!d.classList.contains('open');
+  if(open){
+    var L=document.getElementById('knLinks'); L.innerHTML='';
+    var cur=(location.pathname.split('/').pop()||'index.html');
+    document.querySelectorAll('header nav a').forEach(function(a){
+      var h=a.getAttribute('href')||''; if(h==='#home') h='index.html';
+      var c=document.createElement('a'); c.href=h; c.textContent=a.textContent;
+      if(h===cur||(cur===''&&h==='index.html')) c.className='active';
+      c.addEventListener('click',function(){ if(h==='index.html'&&cur==='index.html'){ knToggleMenu(false);} });
+      L.appendChild(c);
+      if(h==='resources.html'){ var m2=document.createElement('a'); m2.href='mm2h.html'; m2.textContent='MM2H 第二家园'; if(cur==='mm2h.html') m2.className='active'; L.appendChild(m2); }
+    });
+    var lg=document.getElementById('knLang'); lg.innerHTML='';
+    document.querySelectorAll('#langMenu a').forEach(function(a){
+      var b=document.createElement('button'); b.type='button'; b.innerHTML=a.innerHTML;
+      b.onclick=function(){ a.click(); knToggleMenu(false); }; lg.appendChild(b);
+    });
+    var cu=document.getElementById('knCurr'); cu.innerHTML='';
+    document.querySelectorAll('#currMenu a').forEach(function(a){
+      var b=document.createElement('button'); b.type='button'; var fl=a.querySelector('img'); b.innerHTML=(fl?fl.outerHTML:'')+a.textContent.trim().split(' ')[0];
+      b.onclick=function(){ a.click(); knToggleMenu(false); }; cu.appendChild(b);
+    });
+    var w=document.querySelector('header .whatsapp-btn'); var kw=document.getElementById('knWa');
+    if(w&&w.href) kw.href=w.href;
+  }
+  d.classList.toggle('open',open); d.setAttribute('aria-hidden',open?'false':'true');
+  document.body.style.overflow=open?'hidden':'';
+}
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') knToggleMenu(false); });
+</script>
+<script id="kn-menu-hover">
+/* Language and currency menus: one open at a time; on computers they open on hover */
+(function(){
+  var P=[['langSwitch','langMenu'],['currSwitch','currMenu']];
+  var hover=window.matchMedia && matchMedia('(hover:hover) and (pointer:fine)').matches;
+  function closeAll(keep){ P.forEach(function(p){ if(p[1]!==keep){ var m=document.getElementById(p[1]); if(m) m.classList.remove('open'); } }); }
+  P.forEach(function(p){
+    var s=document.getElementById(p[0]), m=document.getElementById(p[1]); if(!s||!m) return;
+    s.addEventListener('click', function(e){
+      closeAll(p[1]);
+      if(hover && !m.contains(e.target)){ e.stopPropagation(); m.classList.add('open'); }
+    }, true);
+    if(hover){
+      s.addEventListener('mouseenter', function(){ closeAll(p[1]); m.classList.add('open'); });
+      s.addEventListener('mouseleave', function(){ m.classList.remove('open'); });
+      m.addEventListener('click', function(){ m.classList.remove('open'); });
+    }
+  });
+  document.addEventListener('click', function(e){ if(!e.target.closest('.lang-switch')) closeAll(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeAll(); });
+})();
+</script>
+<script src="lead-tracker.js"></script>
+
+
+</body></html>
