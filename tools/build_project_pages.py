@@ -548,11 +548,11 @@ def page(i):
   {layouts_blk}
   {fits_blk}
   {mo_blk}
-  {tags_blk}
   {lists_blk}
   {near_blk}
   {arts_blk}
   {notes_blk}
+  {tags_blk}
   <div class="cta"><h2>Want Keith's take on {display}?</h2><p>Ask for the latest price, available units and the full floor plans.</p><a class="wa-btn" href="{wa}" target="_blank" rel="noopener">{wasvg}WhatsApp Keith About This Project</a></div>
   <p class="note">Prices, sizes and availability are indicative and subject to change. Confirm current figures with Keith before making decisions.</p>
 </main>
