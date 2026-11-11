@@ -22,6 +22,12 @@ LANGS = ['en', 'zh-CN', 'zh-TW', 'ms', 'ja', 'ko']
 PATH = os.path.join(HERE, 'market_notes.json')
 NOTES = json.load(open(PATH, encoding='utf-8')) if os.path.exists(PATH) else []
 NOTES = sorted(NOTES, key=lambda n: n['date'], reverse=True)   # every note is kept for good
+import sys as _sys
+_sys.path.insert(0, HERE)
+import note_links as NL
+_PROJ = NL.projects()
+for _n in NOTES:
+    _n['projects'] = [{'name': p['name'], 'href': 'property/%s.html' % p['slug']} for p in NL.related(_n, _PROJ)]
 RECENT = NOTES[:10]                                            # the News page shows the latest 10
 
 LBL = {
@@ -63,6 +69,8 @@ CSS = '''
 .mn-l{display:flex;flex-wrap:wrap;gap:10px;}
 .mn-l a{font-size:13px;font-weight:700;padding:9px 16px;border-radius:100px;border:1px solid var(--line);background:#fff;transition:all .25s;}
 .mn-l a:first-child{background:#111;color:#fff;border-color:#111;} .mn-l a:hover{border-color:var(--gold);color:var(--gold);} .mn-l a:first-child:hover{background:var(--gold);color:#fff;border-color:var(--gold);}
+.mn-p{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;margin-top:14px;font-size:12px;font-weight:700;color:var(--grey);}
+.mn-p span{letter-spacing:.08em;text-transform:uppercase;font-size:11px;} .mn-p a{font-size:13px;font-weight:700;color:var(--gold);background:#f3f1fa;border-radius:100px;padding:6px 13px;} .mn-p a:hover{background:var(--gold);color:#fff;}
 .mn-list{display:flex;flex-direction:column;gap:12px;}
 .mn-list h4{font:700 12px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);margin-bottom:2px;}
 .mn-i{all:unset;box-sizing:border-box;cursor:pointer;display:block;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;transition:all .25s;}
@@ -78,6 +86,17 @@ CSS = '''
 '''
 
 WA = 'https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+about+your+market+note+%22{t}%22...&type=phone_number&app_absent=0'
+
+
+for _l, _v in NL.LBL.items():
+    LBL[_l]['proj'] = _v
+
+
+def proj_html(n, l, attr=''):
+    ps = n.get('projects') or []
+    if not ps:
+        return ''
+    return '<div class="mn-p"><span%s>%s</span>%s</div>' % (attr, E(LBL[l]['proj']), ''.join('<a href="%s">%s</a>' % (E(x['href']), E(x['name'])) for x in ps))
 
 
 def pick(d, l):
@@ -99,9 +118,9 @@ def section():
     n0 = NOTES[0]
     first = ('<div class="mn-by"><img src="images/4382969133d212d0.jpg" alt="Keith Nah"><div><b>Keith Nah 鈞晖</b><small>Keith Nah · REN 60517</small></div></div>'
              '<div class="mn-meta"><span class="mn-tag">%s</span><span>%s</span></div>%s<h3>%s</h3><p class="mn-b">%s</p>'
-             '<div class="mn-take"><span>%s</span><p>%s</p></div><div class="mn-l">%s</div>') % (
+             '<div class="mn-take"><span>%s</span><p>%s</p></div><div class="mn-l">%s</div>%s') % (
         E(pick(n0['area'], 'en')), E(n0['date']), src_html(n0, 'en'), E(pick(n0['title'], 'en')), E(pick(n0['body'], 'en')), E(en['take']), E(pick(n0['take'], 'en')),
-        ''.join('<a href="%s">%s</a>' % (E(x['href']), E(pick(x['label'], 'en'))) for x in n0.get('links', [])))
+        ''.join('<a href="%s">%s</a>' % (E(x['href']), E(pick(x['label'], 'en'))) for x in n0.get('links', [])), proj_html(n0, 'en'))
     items = ''.join('<button type="button" class="mn-i%s" data-i="%d"><small><span>%s</span><i>%s</i></small><b>%s</b></button>' % (
         ' on' if i == 0 else '', i, E(n['date']), E(pick(n['area'], 'en')), E(pick(n['title'], 'en'))) for i, n in enumerate(RECENT))
     more = '<a class="mn-all" href="market-notes.html"><span data-mn="all">%s</span> (%d) →</a>' % (E(en['all']), len(NOTES))
@@ -117,7 +136,7 @@ def section():
             'function fd(s,l){var d=new Date(s+"T12:00:00+08:00");try{return d.toLocaleDateString(l==="en"?"en-GB":l,{day:"numeric",month:"short",year:"numeric"});}catch(x){return s;}}'
             'function show(i){cur=i;var l=lg(),T=L[l],x=N[i];f.innerHTML=\'<div class="mn-by"><img src="images/4382969133d212d0.jpg" alt="Keith Nah"><div><b>Keith Nah 鈞晖</b><small>Keith Nah · REN 60517</small></div></div>'
             '<div class="mn-meta"><span class="mn-tag">\'+e(p(x.area,l))+\'</span><span>\'+e(fd(x.date,l))+\'</span></div>\'+((x.sources||[]).length?\'<div class="mn-src"><span>\'+e(T.src)+\'</span>\'+x.sources.map(function(z){return \'<a href="\'+e(z.url)+\'" target="_blank" rel="noopener nofollow">\'+e(z.name)+\'</a>\';}).join("")+\'</div>\':"")+\'<h3>\'+e(p(x.title,l))+\'</h3><p class="mn-b">\'+e(p(x.body,l))+\'</p>'
-            '<div class="mn-take"><span>\'+e(T.take)+\'</span><p>\'+e(p(x.take,l))+\'</p></div><div class="mn-l">\'+(x.links||[]).map(function(a){return \'<a href="\'+a.href+\'">\'+e(p(a.label,l))+\'</a>\';}).join("")+\'</div>\';'
+            '<div class="mn-take"><span>\'+e(T.take)+\'</span><p>\'+e(p(x.take,l))+\'</p></div><div class="mn-l">\'+(x.links||[]).map(function(a){return \'<a href="\'+a.href+\'">\'+e(p(a.label,l))+\'</a>\';}).join("")+\'</div>\'+((x.projects||[]).length?\'<div class="mn-p"><span>\'+e(T.proj)+\'</span>\'+x.projects.map(function(q){return \'<a href="\'+e(q.href)+\'">\'+e(q.name)+\'</a>\';}).join("")+\'</div>\':"");'
             'document.querySelectorAll(".mn-i").forEach(function(b){b.classList.toggle("on",+b.dataset.i===i);});'
             'var a=document.getElementById("mnAsk");if(a)a.href=%s.replace("{t}",encodeURIComponent(p(x.title,"en")));}'
             'function labels(){var l=lg(),T=L[l];document.querySelectorAll("[data-mn]").forEach(function(el){el.textContent=T[el.getAttribute("data-mn")];});'
@@ -139,6 +158,24 @@ if NOTES:
 open('blog.html', 'w', encoding='utf-8').write(s)
 
 
+def ld_json():
+    """Structured data: each note as a NewsArticle by Keith Nah, with its own address on the archive page."""
+    items, k = [], 0
+    for n in NOTES:
+        if k < 40:
+            body = pick(n['body'], 'en')
+            items.append({'@type': 'ListItem', 'position': k + 1, 'item': {
+                '@type': 'NewsArticle', 'headline': pick(n['title'], 'en')[:110],
+                'datePublished': n['date'] + 'T12:00:00+08:00', 'dateModified': n['date'] + 'T12:00:00+08:00',
+                'url': 'https://keithnah.com/market-notes.html#n-%s-%d' % (n['date'], k),
+                'description': body.split('\n\n')[0][:300], 'articleSection': pick(n['area'], 'en'), 'inLanguage': 'en',
+                'author': {'@type': 'Person', 'name': 'Keith Nah', 'url': 'https://keithnah.com/about-keith.html'},
+                'publisher': {'@type': 'Organization', 'name': 'Keith Nah Real Estate', 'logo': {'@type': 'ImageObject', 'url': 'https://keithnah.com/apple-touch-icon.png'}},
+                'isBasedOn': [s['url'] for s in n.get('sources', [])]}})
+        k += 1
+    return json.dumps({'@context': 'https://schema.org', '@type': 'ItemList', 'name': "Keith Nah's Market Notes", 'itemListElement': items}, ensure_ascii=False).replace('</', '<\\/')
+
+
 def archive():
     import sys
     sys.path.insert(0, HERE)
@@ -153,9 +190,9 @@ def archive():
     def card(n, k):
         return ('<article class="na" id="n-%s-%d" data-k="%d"><div class="mn-meta"><span class="mn-tag" data-f="area">%s</span><span data-d="%s">%s</span></div>%s'
                 '<h2 data-f="title">%s</h2><p class="mn-b" data-f="body">%s</p><div class="mn-take"><span data-mn="take">%s</span><p data-f="take">%s</p></div>'
-                '<div class="mn-l">%s</div></article>') % (
+                '<div class="mn-l">%s</div>%s</article>') % (
             n['date'], k, k, E(pick(n['area'], 'en')), n['date'], n['date'], src_html(n, 'en'), E(pick(n['title'], 'en')), E(pick(n['body'], 'en')), E(en['take']),
-            E(pick(n['take'], 'en')), ''.join('<a href="%s" data-li="%d">%s</a>' % (E(x['href']), j, E(pick(x['label'], 'en'))) for j, x in enumerate(n.get('links', []))))
+            E(pick(n['take'], 'en')), ''.join('<a href="%s" data-li="%d">%s</a>' % (E(x['href']), j, E(pick(x['label'], 'en'))) for j, x in enumerate(n.get('links', []))), proj_html(n, 'en', ' data-mn="proj"'))
     k = 0; cards = ''; lst = ''
     for m, ns in months:
         lst += '<h3 class="nl-h" data-m="%s">%s</h3>' % (m, m)
@@ -222,6 +259,7 @@ footer{border-top:1px solid var(--line);padding:26px 5vw;font-size:13px;color:va
 <title>All market notes | Keith Nah Real Estate</title>
 <meta name="description" content="Keith Nah's daily notes on Malaysian property and the economy, and what each change means for buyers.">
 <link rel="canonical" href="https://keithnah.com/market-notes.html">
+<script type="application/ld+json">%s</script>
 <link rel="icon" type="image/png" href="images/f304c8479b1fe873.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>%s</style>
@@ -245,7 +283,7 @@ footer{border-top:1px solid var(--line);padding:26px 5vw;font-size:13px;color:va
 %s
 </body>
 </html>
-''' % (css, E(en['eb']), E(en['all']), E(en['archive']), body, E(en['foot']), js)
+''' % (ld_json(), css, E(en['eb']), E(en['all']), E(en['archive']), body, E(en['foot']), js)
     open('market-notes.html', 'w', encoding='utf-8').write(SH.apply(page, '', 'blog.html'))
     if os.path.exists('sitemap.xml'):
         sm = open('sitemap.xml', encoding='utf-8').read()

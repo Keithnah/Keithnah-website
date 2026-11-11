@@ -1,0 +1,555 @@
+[
+{
+"name": "111 Menerung",
+"slug": "111-menerung",
+"state": "Kuala Lumpur",
+"area": "Damansara Heights",
+"dev": "BRDB Developments Sdn Bhd"
+},
+{
+"name": "Accent Residence",
+"slug": "accent-residence",
+"state": "Selangor",
+"area": "Petaling Jaya",
+"dev": "Avaland"
+},
+{
+"name": "Aethera Residences",
+"slug": "aethera-residences",
+"state": "Johor",
+"area": "JB City Centre",
+"dev": "UOA Group"
+},
+{
+"name": "Amaya @ BDR Sri Damansara",
+"slug": "amaya-bdr-sri-damansara",
+"state": "Selangor",
+"area": "Bandar Sri Damansara",
+"dev": "TA Global (Indo Aman Bina Sdn Bhd)"
+},
+{
+"name": "Andabreeze Residences",
+"slug": "andabreeze-residences",
+"state": "Penang",
+"area": "Batu Kawan",
+"dev": "Kerjaya Prospek Property (Kerjaya Property Sdn Bhd)"
+},
+{
+"name": "Arden",
+"slug": "arden",
+"state": "Johor",
+"area": "JB City Centre",
+"dev": "Astaka Holdings (with Kimlun Corporation)"
+},
+{
+"name": "ARRA Residences",
+"slug": "arra-residences",
+"state": "Selangor",
+"area": "Ara Damansara",
+"dev": "Puncakdana"
+},
+{
+"name": "Ascott Star Residence",
+"slug": "ascott-star-residence",
+"state": "Kuala Lumpur",
+"area": "KL City Centre",
+"dev": "Symphony Life / UMLand (Star Development JV) (Alpine Return Sdn Bhd)"
+},
+{
+"name": "Axis Causeway Square",
+"slug": "axis-causeway-square",
+"state": "Johor",
+"area": "JB City Centre",
+"dev": "Exsim Lumba Kuda Sdn Bhd"
+},
+{
+"name": "Branniganz Suites @ Bukit Bintang",
+"slug": "branniganz-suites-bukit-bintang",
+"state": "Kuala Lumpur",
+"area": "Bukit Bintang",
+"dev": "EXSIM"
+},
+{
+"name": "Brixton Causeway Square",
+"slug": "brixton-causeway-square",
+"state": "Johor",
+"area": "JB City Centre",
+"dev": ""
+},
+{
+"name": "Centrix",
+"slug": "centrix",
+"state": "Kuala Lumpur",
+"area": "KL City Centre",
+"dev": "Intan Sekitar Sdn Bhd (Subsidiary of Crest Builder Bhd)"
+},
+{
+"name": "Clouthaus",
+"slug": "clouthaus",
+"state": "Kuala Lumpur",
+"area": "KL City Centre",
+"dev": "TA Global Bhd"
+},
+{
+"name": "Core Residence",
+"slug": "core-residence",
+"state": "Kuala Lumpur",
+"area": "TRX",
+"dev": "Core Precious Development Sdn Bhd"
+},
+{
+"name": "D'Evia",
+"slug": "devia",
+"state": "Selangor",
+"area": "Kwasa Damansara",
+"dev": "EXSIM MX4 Sdn Bhd"
+},
+{
+"name": "D'Hazelton",
+"slug": "dhazelton",
+"state": "Penang",
+"area": "Paya Terubong",
+"dev": "GSD Land Sdn Bhd"
+},
+{
+"name": "Daya Residence",
+"slug": "daya-residence",
+"state": "Selangor",
+"area": "Kwasa Damansara",
+"dev": "TSR Development Sdn Bhd"
+},
+{
+"name": "Divine",
+"slug": "divine-kl-city-centre",
+"state": "Kuala Lumpur",
+"area": "KL City Centre",
+"dev": "Chin Hin Property"
+},
+{
+"name": "Dover Causeway Square",
+"slug": "dover-causeway-square",
+"state": "Johor",
+"area": "JB City Centre",
+"dev": "Exsim Lumba Kuda Sdn Bhd"
+},
+{
+"name": "Eaton Residence",
+"slug": "eaton-residence",
+"state": "Kuala Lumpur",
+"area": "KL City Centre",
+"dev": "City View Ventures Sdn Bhd (GSH Corporation)"
+},
+{
+"name": "ForestHill Residences",
+"slug": "foresthill-residences",
+"state": "Selangor",
+"area": "Damansara Perdana",
+"dev": "Ehsan Bina Group (Foresthill Damansara Land Sdn Bhd)"
+},
+{
+"name": "G'Vinton",
+"slug": "gvinton",
+"state": "Penang",
+"area": "George Town",
+"dev": "GSD Group"
+},
+{
+"name": "Golden Crown Residence",
+"slug": "golden-crown-residence",
+"state": "Kuala Lumpur",
+"area": "TRX",
+"dev": "Golden Eagle Group"
+},
+{
+"name": "Imperial Residence Pavilion Damansara Heights",
+"slug": "imperial-residence-pavilion-damansara-heights",
+"state": "Kuala Lumpur",
+"area": "Damansara Heights",
+"dev": "Pavilion Group"
+},
+{
+"name": "Jewel (Tower 2, Oxley Towers)",
+"slug": "jewel-oxley-towers",
+"state": "Kuala Lumpur",
+"area": "KL City Centre",
+"dev": "Oxley Rising Sdn Bhd (Oxley Holdings)"
+},
+{
+"name": "Keeperz Suites",
+"slug": "keeperz-suites",
+"state": "Penang",
+"area": "George Town",
+"dev": "EXSIM Waterfront Sdn Bhd"
+},
+{
+"name": "Khaya Residences",
+"slug": "khaya-residences",
+"state": "Kuala Lumpur",
+"area": "Bangsar",
+"dev": "Melati Ehsan Group (Bayu Mantap Sdn Bhd)"
+},
+{
+"name": "Laverra",
+"slug": "laverra",
+"state": "Selangor",
+"area": "Bandar Sri Damansara",
+"dev": "Land & General Bhd"
+},
+{
+"name": "Lightwater Residence",
+"slug": "lightwater-residence",
+"state": "Penang",
+"area": "Gelugor",
+"dev": "IJM Land & Perennial Holdings (JV)"
+},
+{
+"name": "Lumina Residence",
+"slug": "lumina-residence",
+"state": "Penang",
+"area": "George Town",
+"dev": "VST Group (Unicorn Solute Sdn Bhd)"
+},
+{
+"name": "MABA Suitez",
+"slug": "maba-suitez",
+"state": "Kuala Lumpur",
+"area": "KL City Centre",
+"dev": "EXSIM (JV with Malaysian Basketball Association) (Exsim Development Sdn Bhd)"
+},
+{
+"name": "Mezon @ Park Enclave",
+"slug": "mezon-park-enclave",
+"state": "Penang",
+"area": "Batu Kawan",
+"dev": "Aspen"
+},
+{
+"name": "OAKA Residences",
+"slug": "oaka-residences",
+"state": "Kuala Lumpur",
+"area": "Bukit Jalil",
+"dev": "Berjaya Hartanah Berhad"
+},
+{
+"name": "Orion Residence",
+"slug": "orion-residence",
+"state": "Kuala Lumpur",
+"area": "Bukit Bintang",
+"dev": "Welton Group (Orion Tower Sdn Bhd)"
+},
+{
+"name": "Parkside Residence",
+"slug": "parkside-residence",
+"state": "Kuala Lumpur",
+"area": "Bangsar",
+"dev": ""
+},
+{
+"name": "Pavilion Square",
+"slug": "pavilion-square",
+"state": "Kuala Lumpur",
+"area": "Bukit Bintang",
+"dev": "Pavilion Group (Armani Hartajaya Sdn Bhd)"
+},
+{
+"name": "Phoeniz Suites @ KL City Centre",
+"slug": "phoeniz-suites-kl-city-centre",
+"state": "Kuala Lumpur",
+"area": "KL City Centre",
+"dev": "EXSIM"
+},
+{
+"name": "Pinnacle Bukit Gambier",
+"slug": "pinnacle-bukit-gambier",
+"state": "Penang",
+"area": "Gelugor",
+"dev": "Pinnacle Bukit Gambir Sdn Bhd"
+},
+{
+"name": "Queens Residences 3",
+"slug": "queens-residences-3",
+"state": "Penang",
+"area": "Bayan Lepas",
+"dev": "Ideal Property Group"
+},
+{
+"name": "Ren Residences",
+"slug": "ren-residences",
+"state": "Kuala Lumpur",
+"area": "Bukit Jalil",
+"dev": "Gaya Kuasa Sdn Bhd"
+},
+{
+"name": "RIA",
+"slug": "ria",
+"state": "Selangor",
+"area": "Kwasa Damansara",
+"dev": "Sunsuria"
+},
+{
+"name": "Royal Lexis",
+"slug": "royal-lexis",
+"state": "Kuala Lumpur",
+"area": "KL City Centre",
+"dev": "KL Metro Group"
+},
+{
+"name": "Royal Suites Pavilion Damansara Heights",
+"slug": "royal-suites-pavilion-damansara-heights",
+"state": "Kuala Lumpur",
+"area": "Damansara Heights",
+"dev": "Pavilion Group"
+},
+{
+"name": "Seiras Residences",
+"slug": "seiras-residences",
+"state": "Penang",
+"area": "Batu Kawan",
+"dev": "Paramount Property"
+},
+{
+"name": "Senna Heights",
+"slug": "senna-heights",
+"state": "Selangor",
+"area": "Damansara Damai",
+"dev": "Kerjaya Prospek Property"
+},
+{
+"name": "So/KL (Tower 1, Oxley Towers)",
+"slug": "so-kl-oxley-towers",
+"state": "Kuala Lumpur",
+"area": "KL City Centre",
+"dev": "Oxley Rising Sdn Bhd (Oxley Holdings)"
+},
+{
+"name": "Sutera Suites",
+"slug": "sutera-suites",
+"state": "Kuala Lumpur",
+"area": "KL City Centre",
+"dev": "KL City Gateway Sdn Bhd (Sunsuria | Suezcap)"
+},
+{
+"name": "SWNK Houze @ BBCC",
+"slug": "swnk-houze-bbcc",
+"state": "Kuala Lumpur",
+"area": "Bukit Bintang",
+"dev": "EcoWorld (BBCC Development Sdn Bhd)"
+},
+{
+"name": "Tagbay Suites",
+"slug": "tagbay-suites",
+"state": "Melaka",
+"area": "Melaka City",
+"dev": ""
+},
+{
+"name": "The Aldenz",
+"slug": "the-aldenz",
+"state": "Selangor",
+"area": "Petaling Jaya",
+"dev": "Mightyprop Sdn Bhd (EXSIM)"
+},
+{
+"name": "The Asteriaz",
+"slug": "the-asteriaz",
+"state": "Johor",
+"area": "Kebun Teh",
+"dev": "Exsim Kebun Teh Sdn Bhd"
+},
+{
+"name": "The Atas",
+"slug": "the-atas",
+"state": "Kuala Lumpur",
+"area": "Taman Desa",
+"dev": "Maxim Global (Kaisar Maxim Sdn Bhd)"
+},
+{
+"name": "The Atera",
+"slug": "the-atera",
+"state": "Selangor",
+"area": "Petaling Jaya",
+"dev": "Aneka Sepakat Sdn Bhd (Paramount Property)"
+},
+{
+"name": "The Celestz",
+"slug": "the-celestz",
+"state": "Johor",
+"area": "Kebun Teh",
+"dev": ""
+},
+{
+"name": "The Conlay",
+"slug": "the-conlay",
+"state": "Kuala Lumpur",
+"area": "KL City Centre",
+"dev": "E&O x Mitsui Fudosan"
+},
+{
+"name": "The Kingswoodz",
+"slug": "the-kingswoodz",
+"state": "Kuala Lumpur",
+"area": "Bukit Jalil",
+"dev": "EXSIM Jalil Link Sdn Bhd"
+},
+{
+"name": "The Lighthauz",
+"slug": "the-lighthauz",
+"state": "Penang",
+"area": "Gelugor",
+"dev": "Exsim Development Sdn Bhd"
+},
+{
+"name": "The Queenswoodz",
+"slug": "the-queenswoodz",
+"state": "Kuala Lumpur",
+"area": "Bukit Jalil",
+"dev": "EXSIM (EXSIM Bukit Jalil Link Sdn Bhd)"
+},
+{
+"name": "The Vividz",
+"slug": "the-vividz",
+"state": "Kuala Lumpur",
+"area": "Bukit Jalil",
+"dev": "EXSIM Bukit Jalil City Sdn Bhd"
+},
+{
+"name": "Times Square 2",
+"slug": "times-square-2",
+"state": "Kuala Lumpur",
+"area": "Bukit Bintang",
+"dev": "Berjaya Times Square Sdn Bhd"
+},
+{
+"name": "Tujuh Residences",
+"slug": "tujuh-residences",
+"state": "Selangor",
+"area": "Kwasa Damansara",
+"dev": "MRCB Land (Kwasa Sentral Sdn Bhd)"
+},
+{
+"name": "Vi Residence",
+"slug": "vi-residence",
+"state": "Penang",
+"area": "Batu Kawan",
+"dev": ""
+},
+{
+"name": "Waterstone",
+"slug": "waterstone",
+"state": "Penang",
+"area": "Tanjung Bungah",
+"dev": "BSG Property"
+},
+{
+"name": "Westfield Residences",
+"slug": "westfield-residences",
+"state": "Selangor",
+"area": "Subang Jaya",
+"dev": "SCP Group"
+},
+{
+"name": "Zenia @ ParkCity Damansara",
+"slug": "zenia-parkcity-damansara",
+"state": "Selangor",
+"area": "Petaling Jaya",
+"dev": "ParkCity Group"
+},
+{
+"name": "Cappella Embassy",
+"slug": "cappella-embassy",
+"state": "Kuala Lumpur",
+"area": "KL City Centre",
+"dev": "TSLAW Land"
+},
+{
+"name": "Qubaz Suites",
+"slug": "qubaz-suites",
+"state": "Terengganu",
+"area": "Kuala Terengganu",
+"dev": "EXSIM Kg Tiong (KT) Sdn Bhd"
+},
+{
+"name": "The Bedrock",
+"slug": "the-bedrock",
+"state": "Sabah",
+"area": "Kota Kinabalu",
+"dev": "Jesselton Docklands 1 Sdn Bhd (BEDI Development with EXSIM)"
+},
+{
+"name": "Erinaz Suites",
+"slug": "erinaz-suites",
+"state": "Kelantan",
+"area": "Kubang Kerian",
+"dev": "EXSIM Kubang Kerian Sdn Bhd"
+},
+{
+"name": "Residensi Bayu Damai",
+"slug": "residensi-bayu-damai",
+"state": "Sabah",
+"area": "Kota Kinabalu",
+"dev": "FYT Land (KK) Sdn Bhd"
+},
+{
+"name": "Park Green Pavilion Bukit Jalil",
+"slug": "park-green-pavilion-bukit-jalil",
+"state": "Kuala Lumpur",
+"area": "Bukit Jalil",
+"dev": "Malton Berhad (Regal Path Sdn Bhd)"
+},
+{
+"name": "Laurel Residence",
+"slug": "laurel-residence",
+"state": "Kuala Lumpur",
+"area": "Bangsar South",
+"dev": ""
+},
+{
+"name": "M Aspira",
+"slug": "m-aspira",
+"state": "Kuala Lumpur",
+"area": "Taman Desa",
+"dev": "Mah Sing Group (Mah Sing Properties Sdn Bhd)"
+},
+{
+"name": "Linari Kwasa Damansara",
+"slug": "linari-kwasa-damansara",
+"state": "Selangor",
+"area": "Kwasa Damansara",
+"dev": "Serene Impian Development (Linari Damansara Sdn Bhd)"
+},
+{
+"name": "Hanaz Suites @ KL City Centre",
+"slug": "hanaz-suites",
+"state": "Kuala Lumpur",
+"area": "KL City Centre",
+"dev": "EXSIM (Sunrise Charm Sdn Bhd)"
+},
+{
+"name": "D'Tessera Residences",
+"slug": "dtessera-residences",
+"state": "Selangor",
+"area": "Petaling Jaya",
+"dev": "EXSIM (Mightyprop Sdn Bhd)"
+},
+{
+"name": "D'Nuri",
+"slug": "dnuri",
+"state": "Selangor",
+"area": "Kwasa Damansara",
+"dev": "EXSIM (EXSIM MX4 Sdn Bhd)"
+},
+{
+"name": "Stellar Damansara",
+"slug": "stellar-damansara",
+"state": "Selangor",
+"area": "Petaling Jaya",
+"dev": "OCR Group (OCR Land Development Sdn Bhd)"
+},
+{
+"name": "Dawn KL City Centre",
+"slug": "dawn-kl-city-centre",
+"state": "Kuala Lumpur",
+"area": "KL City Centre",
+"dev": "Chin Hin Property (Dawn Land Sdn Bhd)"
+}
+]
