@@ -70,7 +70,7 @@ CSS = '''
 .mn-i small{display:flex;gap:8px;font-size:11.5px;font-weight:600;color:var(--grey);margin-bottom:5px;} .mn-i small i{font-style:normal;color:var(--gold);font-weight:700;}
 .mn-i b{font-family:'Playfair Display',serif;font-size:17px;line-height:1.35;color:var(--ink);}
 .mn-all{display:block;text-align:center;font-size:13px;font-weight:700;color:var(--gold);padding:12px;border:1px dashed rgba(94,96,206,.4);border-radius:14px;} .mn-all:hover{background:#f6f5fc;}
-.mn-src{margin-top:16px;padding-top:12px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--grey);font-weight:600;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;}
+.mn-src{margin:-2px 0 12px;font-size:12.5px;color:var(--grey);font-weight:600;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;}
 .mn-src a{color:var(--gold);font-weight:700;text-decoration:underline;text-underline-offset:3px;} .mn-src a:after{content:" ↗";text-decoration:none;}
 .mn-foot{margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--grey);font-weight:500;}
 .mn-foot a{font-weight:700;color:#1f9d55;}
@@ -98,10 +98,10 @@ def section():
     en = LBL['en']
     n0 = NOTES[0]
     first = ('<div class="mn-by"><img src="images/4382969133d212d0.jpg" alt="Keith Nah"><div><b>Keith Nah 鈞晖</b><small>Keith Nah · REN 60517</small></div></div>'
-             '<div class="mn-meta"><span class="mn-tag">%s</span><span>%s</span></div><h3>%s</h3><p class="mn-b">%s</p>'
-             '<div class="mn-take"><span>%s</span><p>%s</p></div><div class="mn-l">%s</div>%s') % (
-        E(pick(n0['area'], 'en')), E(n0['date']), E(pick(n0['title'], 'en')), E(pick(n0['body'], 'en')), E(en['take']), E(pick(n0['take'], 'en')),
-        ''.join('<a href="%s">%s</a>' % (E(x['href']), E(pick(x['label'], 'en'))) for x in n0.get('links', [])), src_html(n0, 'en'))
+             '<div class="mn-meta"><span class="mn-tag">%s</span><span>%s</span></div>%s<h3>%s</h3><p class="mn-b">%s</p>'
+             '<div class="mn-take"><span>%s</span><p>%s</p></div><div class="mn-l">%s</div>') % (
+        E(pick(n0['area'], 'en')), E(n0['date']), src_html(n0, 'en'), E(pick(n0['title'], 'en')), E(pick(n0['body'], 'en')), E(en['take']), E(pick(n0['take'], 'en')),
+        ''.join('<a href="%s">%s</a>' % (E(x['href']), E(pick(x['label'], 'en'))) for x in n0.get('links', [])))
     items = ''.join('<button type="button" class="mn-i%s" data-i="%d"><small><span>%s</span><i>%s</i></small><b>%s</b></button>' % (
         ' on' if i == 0 else '', i, E(n['date']), E(pick(n['area'], 'en')), E(pick(n['title'], 'en'))) for i, n in enumerate(RECENT))
     more = '<a class="mn-all" href="market-notes.html"><span data-mn="all">%s</span> (%d) →</a>' % (E(en['all']), len(NOTES))
@@ -116,8 +116,8 @@ def section():
             'function e(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML;}'
             'function fd(s,l){var d=new Date(s+"T12:00:00+08:00");try{return d.toLocaleDateString(l==="en"?"en-GB":l,{day:"numeric",month:"short",year:"numeric"});}catch(x){return s;}}'
             'function show(i){cur=i;var l=lg(),T=L[l],x=N[i];f.innerHTML=\'<div class="mn-by"><img src="images/4382969133d212d0.jpg" alt="Keith Nah"><div><b>Keith Nah 鈞晖</b><small>Keith Nah · REN 60517</small></div></div>'
-            '<div class="mn-meta"><span class="mn-tag">\'+e(p(x.area,l))+\'</span><span>\'+e(fd(x.date,l))+\'</span></div><h3>\'+e(p(x.title,l))+\'</h3><p class="mn-b">\'+e(p(x.body,l))+\'</p>'
-            '<div class="mn-take"><span>\'+e(T.take)+\'</span><p>\'+e(p(x.take,l))+\'</p></div><div class="mn-l">\'+(x.links||[]).map(function(a){return \'<a href="\'+a.href+\'">\'+e(p(a.label,l))+\'</a>\';}).join("")+\'</div>\'+((x.sources||[]).length?\'<div class="mn-src"><span>\'+e(T.src)+\'</span>\'+x.sources.map(function(z){return \'<a href="\'+e(z.url)+\'" target="_blank" rel="noopener nofollow">\'+e(z.name)+\'</a>\';}).join("")+\'</div>\':"");'
+            '<div class="mn-meta"><span class="mn-tag">\'+e(p(x.area,l))+\'</span><span>\'+e(fd(x.date,l))+\'</span></div>\'+((x.sources||[]).length?\'<div class="mn-src"><span>\'+e(T.src)+\'</span>\'+x.sources.map(function(z){return \'<a href="\'+e(z.url)+\'" target="_blank" rel="noopener nofollow">\'+e(z.name)+\'</a>\';}).join("")+\'</div>\':"")+\'<h3>\'+e(p(x.title,l))+\'</h3><p class="mn-b">\'+e(p(x.body,l))+\'</p>'
+            '<div class="mn-take"><span>\'+e(T.take)+\'</span><p>\'+e(p(x.take,l))+\'</p></div><div class="mn-l">\'+(x.links||[]).map(function(a){return \'<a href="\'+a.href+\'">\'+e(p(a.label,l))+\'</a>\';}).join("")+\'</div>\';'
             'document.querySelectorAll(".mn-i").forEach(function(b){b.classList.toggle("on",+b.dataset.i===i);});'
             'var a=document.getElementById("mnAsk");if(a)a.href=%s.replace("{t}",encodeURIComponent(p(x.title,"en")));}'
             'function labels(){var l=lg(),T=L[l];document.querySelectorAll("[data-mn]").forEach(function(el){el.textContent=T[el.getAttribute("data-mn")];});'
@@ -151,11 +151,11 @@ def archive():
             months.append((m, []))
         months[-1][1].append(n)
     def card(n, k):
-        return ('<article class="na" id="n-%s-%d" data-k="%d"><div class="mn-meta"><span class="mn-tag" data-f="area">%s</span><span data-d="%s">%s</span></div>'
+        return ('<article class="na" id="n-%s-%d" data-k="%d"><div class="mn-meta"><span class="mn-tag" data-f="area">%s</span><span data-d="%s">%s</span></div>%s'
                 '<h2 data-f="title">%s</h2><p class="mn-b" data-f="body">%s</p><div class="mn-take"><span data-mn="take">%s</span><p data-f="take">%s</p></div>'
-                '<div class="mn-l">%s</div>%s</article>') % (
-            n['date'], k, k, E(pick(n['area'], 'en')), n['date'], n['date'], E(pick(n['title'], 'en')), E(pick(n['body'], 'en')), E(en['take']),
-            E(pick(n['take'], 'en')), ''.join('<a href="%s" data-li="%d">%s</a>' % (E(x['href']), j, E(pick(x['label'], 'en'))) for j, x in enumerate(n.get('links', []))), src_html(n, 'en'))
+                '<div class="mn-l">%s</div></article>') % (
+            n['date'], k, k, E(pick(n['area'], 'en')), n['date'], n['date'], src_html(n, 'en'), E(pick(n['title'], 'en')), E(pick(n['body'], 'en')), E(en['take']),
+            E(pick(n['take'], 'en')), ''.join('<a href="%s" data-li="%d">%s</a>' % (E(x['href']), j, E(pick(x['label'], 'en'))) for j, x in enumerate(n.get('links', []))))
     k = 0; cards = ''; lst = ''
     for m, ns in months:
         lst += '<h3 class="nl-h" data-m="%s">%s</h3>' % (m, m)
