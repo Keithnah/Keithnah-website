@@ -99,7 +99,10 @@ var HOOK_URL = 'https://keithnah.com/tg/hook.php';   // Telegram webhook relay o
 
 function json_(o) { return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON); }
 function today_() { return Utilities.formatDate(new Date(), TIME_ZONE, 'yyyy-MM-dd'); }
-function okDate_(s) { return /^\d{4}-\d{2}-\d{2}$/.test(String(s || '')) ? String(s) : ''; }
+// A topic round is "YYYY-MM-DD" or "YYYY-MM-DD-1/2/3" (morning, afternoon, evening).
+function okDate_(s) { return /^\d{4}-\d{2}-\d{2}(-[1-3])?$/.test(String(s || '')) ? String(s) : ''; }
+var ROUND_NAMES = { '1': '早上', '2': '下午', '3': '傍晚' };
+function roundLabel_(id) { var m = String(id).match(/-([1-3])$/); return m ? ROUND_NAMES[m[1]] + ' · ' + id.slice(0, 10) : id; }
 
 function tg_(method, payload) {
   var token = PropertiesService.getScriptProperties().getProperty('TELEGRAM_BOT_TOKEN');
@@ -129,7 +132,7 @@ function saveTopicProposal(d) {
   var props = PropertiesService.getScriptProperties();
   var chatId = props.getProperty('TELEGRAM_CHAT_ID');
   var o = { date: date, topics: topics, picks: [], closed: false, published: [] };
-  var lines = ['📰 <b>今日市场短评：选 1 至 ' + MAX_PICKS + ' 个主题</b> · ' + date, ''];
+  var lines = ['📰 <b>市场短评：选 1 至 ' + MAX_PICKS + ' 个主题</b> · ' + roundLabel_(date), ''];
   topics.forEach(function (t) { lines.push('<b>' + t.n + '.</b> ' + esc(t.zh || t.en) + (t.en && t.zh ? '\n<i>' + esc(t.en) + '</i>' : '')); lines.push(''); });
   lines.push('点数字选择（再点一次取消），选好后按下方「📤 发送」。每个主题会写成一则短评并自动上线。');
   var r = tg_('sendMessage', { chat_id: chatId, text: lines.join('\n'), parse_mode: 'HTML', reply_markup: { inline_keyboard: topicKeyboard_(o) } });

@@ -156,18 +156,36 @@ def archive():
                 '<div class="mn-l">%s</div>%s</article>') % (
             n['date'], k, k, E(pick(n['area'], 'en')), n['date'], n['date'], E(pick(n['title'], 'en')), E(pick(n['body'], 'en')), E(en['take']),
             E(pick(n['take'], 'en')), ''.join('<a href="%s" data-li="%d">%s</a>' % (E(x['href']), j, E(pick(x['label'], 'en'))) for j, x in enumerate(n.get('links', []))), src_html(n, 'en'))
-    k = 0; body = ''
+    k = 0; cards = ''; lst = ''
     for m, ns in months:
-        body += '<section class="nm"><h3 class="nm-h" data-m="%s">%s</h3>' % (m, m)
+        lst += '<h3 class="nl-h" data-m="%s">%s</h3>' % (m, m)
         for n in ns:
-            body += card(n, k); k += 1
-        body += '</section>'
+            cards += card(n, k)
+            lst += ('<button type="button" class="nl-i" data-k="%d"><small><span data-d="%s">%s</span><i data-la="%d">%s</i></small>'
+                    '<b data-lt="%d">%s</b></button>') % (k, n['date'], n['date'], k, E(pick(n['area'], 'en')), k, E(pick(n['title'], 'en')))
+            k += 1
+    body = ('<div class="nlay"><div class="nmain" id="nMain">%s</div><aside class="nside"><div class="nside-h"><span data-mn="all">%s</span> <em>%d</em></div>'
+            '<div class="nlist" id="nList">%s</div></aside></div>') % (cards, E(LBL['en']['all']), len(NOTES), lst)
     css = CSS + '''
 :root{--bg:#F7F6FB;--ink:#15142b;--grey:#5f5e74;--line:rgba(21,20,43,.09);--gold:#5E60CE;}
 *{box-sizing:border-box;margin:0;padding:0;} body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
 a{color:inherit;text-decoration:none;} h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.25;}
 .eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;}
-.nw{max-width:860px;margin:0 auto;padding:56px 5vw 80px;} .nw h1{font-size:clamp(30px,4.4vw,46px);margin:8px 0 8px;} .nw > p{color:var(--grey);margin-bottom:26px;}
+.nw{max-width:1240px;margin:0 auto;padding:56px 5vw 80px;}
+.nlay{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:26px;align-items:start;margin-top:8px;}
+.nmain .na{display:none;margin:0;} .nmain .na.on{display:block;animation:nIn .35s ease;}
+@keyframes nIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+.nside{position:sticky;top:96px;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 12px 30px rgba(29,27,79,.06);}
+.nside-h{padding:16px 18px;border-bottom:1px solid var(--line);font:800 13px Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);display:flex;justify-content:space-between;align-items:center;}
+.nside-h em{font-style:normal;background:#efeefb;color:var(--gold);border-radius:100px;padding:2px 10px;font-size:12px;}
+.nlist{max-height:calc(100vh - 190px);overflow-y:auto;padding:8px 10px 14px;overscroll-behavior:contain;}
+.nlist::-webkit-scrollbar{width:6px;} .nlist::-webkit-scrollbar-thumb{background:rgba(94,96,206,.3);border-radius:6px;}
+.nl-h{font:800 11px Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);margin:12px 8px 8px;}
+.nl-i{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:100%;padding:12px 12px;border-radius:12px;border:1px solid transparent;transition:background .2s,border-color .2s;}
+.nl-i:hover{background:#f6f5fc;} .nl-i.on{background:#f3f1fa;border-color:rgba(94,96,206,.45);}
+.nl-i small{display:flex;gap:8px;font-size:11.5px;font-weight:600;color:var(--grey);margin-bottom:3px;} .nl-i small i{font-style:normal;color:var(--gold);font-weight:700;}
+.nl-i b{display:block;font-family:'Playfair Display',serif;font-size:15.5px;line-height:1.35;color:var(--ink);}
+@media(max-width:960px){.nlay{grid-template-columns:1fr;gap:16px;} .nside{position:static;order:-1;} .nlist{max-height:248px;} .nside-h{padding:12px 16px;}} .nw h1{font-size:clamp(30px,4.4vw,46px);margin:8px 0 8px;} .nw > p{color:var(--grey);margin-bottom:26px;}
 .nm{margin-top:34px;} .nm-h{font:800 13px Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);margin-bottom:14px;display:flex;gap:12px;align-items:center;}
 .nm-h:after{content:"";flex:1;height:1px;background:var(--line);}
 .na{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 28px;margin-bottom:16px;scroll-margin-top:90px;}
@@ -185,7 +203,15 @@ footer{border-top:1px solid var(--line);padding:26px 5vw;font-size:13px;color:va
           'a.querySelectorAll("[data-li]").forEach(function(e){e.textContent=p(n.links[+e.getAttribute("data-li")].label,l);});});'
           'document.querySelectorAll("[data-d]").forEach(function(e){e.textContent=fd(e.getAttribute("data-d"),l,{day:"numeric",month:"short",year:"numeric"});});'
           'document.querySelectorAll("[data-m]").forEach(function(e){e.textContent=fd(e.getAttribute("data-m"),l,{month:"long",year:"numeric"});});'
+          'document.querySelectorAll("[data-la]").forEach(function(e){e.textContent=p(N[+e.getAttribute("data-la")].area,l);});'
+          'document.querySelectorAll("[data-lt]").forEach(function(e){e.textContent=p(N[+e.getAttribute("data-lt")].title,l);});'
           'document.title=T.all+" | Keith Nah Real Estate";}'
+          'function show(k,scroll){var cs=document.querySelectorAll(".na"),f=null;cs.forEach(function(c){var on=+c.dataset.k===k;c.classList.toggle("on",on);if(on)f=c;});'
+          'document.querySelectorAll(".nl-i").forEach(function(b){var on=+b.dataset.k===k;b.classList.toggle("on",on);if(on&&scroll!=="no"){var L2=document.getElementById("nList");var bt=b.offsetTop-L2.offsetTop;if(bt<L2.scrollTop||bt>L2.scrollTop+L2.clientHeight-60)L2.scrollTop=bt-60;}});'
+          'if(f){try{history.replaceState(null,"","#"+f.id);}catch(e){}if(scroll==="top"){var m=document.getElementById("nMain");var y=m.getBoundingClientRect().top+pageYOffset-90;if(pageYOffset>y)scrollTo({top:y,behavior:"smooth"});}}}'
+          'document.getElementById("nList").addEventListener("click",function(e){var b=e.target.closest(".nl-i");if(b)show(+b.dataset.k,"top");});'
+          'function fromHash(){var h=location.hash.slice(1),el=h&&document.getElementById(h);show(el&&el.classList.contains("na")?+el.dataset.k:0,"list");}'
+          'fromHash();addEventListener("hashchange",fromHash);'
           'document.addEventListener("DOMContentLoaded",function(){var s=window.knSetLang;if(typeof s==="function")window.knSetLang=function(){var r=s.apply(this,arguments);apply();return r;};apply();});apply();})();</script>') % (
         json.dumps(NOTES, ensure_ascii=False).replace('</', '<\\/'), json.dumps(LBL, ensure_ascii=False))
     page = '''<!DOCTYPE html>
