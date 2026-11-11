@@ -389,7 +389,6 @@ def note_pages():
 <meta property="og:title" content="%s">
 <meta property="og:description" content="%s">
 <meta property="og:url" content="%s">
-<meta property="og:image" content="https://keithnah.com/images/4382969133d212d0.jpg">
 <meta property="article:published_time" content="%sT12:00:00+08:00">
 <link rel="icon" type="image/png" href="../images/f304c8479b1fe873.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
