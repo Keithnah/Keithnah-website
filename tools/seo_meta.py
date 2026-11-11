@@ -12,7 +12,7 @@ import os
 import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DIRS = ['', 'article', 'area', 'best', 'guides', 'notes', 'property', 'topic']
+DIRS = ['', 'article', 'area', 'best', 'developer', 'guides', 'notes', 'property', 'station', 'topic', 'vs']
 TMAX, DMAX = 65, 158
 
 

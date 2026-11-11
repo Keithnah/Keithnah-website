@@ -137,7 +137,15 @@ if __name__ == '__main__':
     pages = sorted(glob.glob('*.html'))
     for p in pages:
         fix_page(p)
-    sub = sorted(glob.glob('property/*.html') + glob.glob('article/*.html') + glob.glob('topic/*.html') + glob.glob('area/*.html') + glob.glob('best/*.html') + glob.glob('guides/*.html'))
+    newer = sorted(glob.glob('notes/*.html') + glob.glob('developer/*.html') + glob.glob('station/*.html') + glob.glob('vs/*.html'))
+    for p in newer:   # these generators do not add the floating button themselves
+        s = open(p, encoding='utf-8').read()
+        if 'class="kn-fab"' not in s:
+            m = re.search(r'<a class="wa-btn"[^>]*href="([^"]+)"', s)
+            if m:
+                s = s.replace('</head>', '<style>' + FLOAT_CSS + '</style>\n</head>', 1).replace('</body>', float_html(m.group(1)) + '\n</body>', 1)
+                open(p, 'w', encoding='utf-8').write(s)
+    sub = sorted(glob.glob('property/*.html') + glob.glob('article/*.html') + glob.glob('topic/*.html') + glob.glob('area/*.html') + glob.glob('best/*.html') + glob.glob('guides/*.html')) + newer
     n = 0
     for p in pages + sub:
         s = open(p, encoding='utf-8').read()

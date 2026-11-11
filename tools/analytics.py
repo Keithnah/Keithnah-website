@@ -10,7 +10,7 @@ import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GA_ID = 'G-6WFGZZ4FTC'
-DIRS = ['', 'article', 'area', 'best', 'guides', 'notes', 'property', 'topic']
+DIRS = ['', 'article', 'area', 'best', 'developer', 'guides', 'notes', 'property', 'station', 'topic', 'vs']
 SNIPPET = ('<!-- KN-GA --><script async src="https://www.googletagmanager.com/gtag/js?id=%s"></script>'
            '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}'
            "if(!window.KN_RENDER){gtag('js',new Date());gtag('config','%s',{content_group:document.documentElement.getAttribute('data-page-lang')||'en'});}"

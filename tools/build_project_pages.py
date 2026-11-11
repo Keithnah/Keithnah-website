@@ -408,6 +408,28 @@ for _n in NOTE_LIST:
         NOTES_OF.setdefault(_p['slug'], []).append(_n)
 
 
+import hubs_data as HB
+HUBS = HB.compute(P, SLUGS, PLACES)
+json.dump(HUBS, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'hubs.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
+DEV_OF = {i: (b, d) for b, d in HUBS['developers'].items() for i in d['ix']}
+
+
+def hub_stations(i):
+    st = [s for s in HUBS['stations'].values() if i in s['ix']]
+    if not st:
+        return ''
+    return '<div style="margin-top:18px">%s<div class="hb-chips">%s</div></div>' % (HB.tx('b_near', tag='p', cls='hb-sub'), ''.join(
+        '<a class="hb-chip" href="../station/%s.html">🚆 %s %s</a>' % (s['slug'], E(s['label']), HB.tx('n_proj', tag='b', n=len(s['ix']))) for s in st))
+
+
+def hub_vs(i, display):
+    ps = [x for x in HUBS['pairs'] if i in (x['a'], x['b'])]
+    if not ps:
+        return ''
+    cards = ''.join('<a href="../vs/%s.html"><small>%s</small>%s vs %s</a>' % (x['slug'], E(x['area']), E(P[x['a']]['name']), E(P[x['b']]['name'])) for x in ps)
+    return '<section class="blk">%s<div class="hb-vs">%s</div></section>' % (HB.tx('b_cmp', tag='h2', x=display), cards)
+
+
 def notes_block(i):
     """Up to 3 notes: first those about this project, then the latest about its state."""
     mine = list(NOTES_OF.get(SLUGS[i], []))
@@ -475,7 +497,7 @@ def page(i):
             ('Property Type', TYPE.get(i, 'Residential')), ('Tenure', p.get('tenure')), ('Status', p.get('status')),
             ('Starting Price', p.get('price')), ('Size', p.get('size')), ('Bedrooms', p.get('rooms')), ('Completion', p.get('completion'))]
     rows += list(extra.items())
-    facts = ''.join('<tr><th scope="row">%s</th><td>%s</td></tr>' % (E(k), E(v)) for k, v in rows if v)
+    facts = ''.join('<tr><th scope="row">%s</th><td>%s%s</td></tr>' % (E(k), E(v), (' ' + HB.tx('b_devlink', tag='a', cls='hb-devlink', attrs='href="../developer/%s.html"' % DEV_OF[i][1]['slug'], n=len(DEV_OF[i][1]['ix']), d=DEV_OF[i][0])) if k == 'Developer' and i in DEV_OF else '') for k, v in rows if v)
     amen = ''.join('<li>%s</li>' % E(a) for a in (p.get('amenities') or []))
     LS = p.get('layouts') or []
     FALLBACK = '<div class="pd-layout-fallback"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="10" y="10" width="80" height="80"/><line x1="50" y1="10" x2="50" y2="60"/><line x1="10" y1="60" x2="90" y2="60"/><line x1="70" y1="60" x2="70" y2="90"/></svg></div>'
@@ -547,7 +569,7 @@ def page(i):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">{ld}</script>
-<style>{css}</style>
+<style>{css}{hub_css}</style>
 </head>
 <body>
 <header>
@@ -571,13 +593,14 @@ def page(i):
   <section class="blk"><h2>About {display}</h2><p class="lead">{overview}</p></section>
   {points_blk}
   {facts_blk}
-  <section class="blk"><h2>Location</h2><p class="lead">{loctext}</p>{amen_blk}</section>
+  <section class="blk"><h2>Location</h2><p class="lead">{loctext}</p>{amen_blk}{stn_blk}</section>
   {video_blk}
   {layouts_blk}
   {fits_blk}
   {mo_blk}
   {lists_blk}
   {near_blk}
+  {vs_blk}
   {arts_blk}
   {notes_blk}
   {tags_blk}
@@ -595,6 +618,7 @@ document.addEventListener('click',function(e){{
 }});
 </script>
 <script src="../lead-tracker.js"></script>
+{hub_js}
 </body>
 </html>
 '''.format(
@@ -618,7 +642,8 @@ document.addEventListener('click',function(e){{
         fits_blk=('<section class="blk"><h2>Who Should Consider %s?</h2><div class="fits">%s</div></section>' % (E(display), fits)) if fits else '',
         near_blk=('<section class="blk"><h2>Nearby Projects</h2><div class="cards">%s</div></section>' % near) if near else '',
         arts_blk=('<section class="blk"><h2>Related Articles</h2><div class="cards">%s</div></section>' % arts) if arts else '',
-        notes_blk=notes_block(i))
+        notes_blk=notes_block(i), stn_blk=hub_stations(i), vs_blk=hub_vs(i, display),
+        hub_css=HB.CSS, hub_js=HB.js() if (i in DEV_OF or any(i in s['ix'] for s in HUBS['stations'].values()) or any(i in (x['a'], x['b']) for x in HUBS['pairs'])) else '')
 
 
 def link_projects_page():
