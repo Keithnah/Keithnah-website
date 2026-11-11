@@ -9,3 +9,6 @@ RewriteRule ^(.*)$ https://keithnah.com/$1 [L,R=301]
 
 # Keep helper scripts in /tools private (they are for setup, not for visitors)
 RedirectMatch 404 ^/tools(/|$)
+
+# Friendly "page not found" page
+ErrorDocument 404 /404.html

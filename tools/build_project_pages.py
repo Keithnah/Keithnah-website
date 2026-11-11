@@ -353,6 +353,34 @@ document.querySelectorAll('.yt[data-id]').forEach(function(el){
 </script>"""
 
 
+try:
+    VMETA = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'video_meta.json'), encoding='utf-8'))
+except (OSError, ValueError):
+    VMETA = {}
+
+
+def _vclean(s):
+    s = re.sub(r'(?<![A-Za-z])KLCC(?![A-Za-z])', 'KL City Centre', s or '', flags=re.I)   # site wording rules apply to video titles too
+    s = re.sub(r'(?<![A-Za-z])air\s*bnb(?![A-Za-z])', 'short-stay', s, flags=re.I)
+    return re.sub(r'\s+', ' ', s.replace('#', ' ')).strip()
+
+
+def video_ld(ids, display):
+    """VideoObject structured data (needs the upload date, from tools/fetch_video_meta.py)."""
+    out = []
+    for v in ids:
+        m = VMETA.get(v)
+        if not m or not m.get('date'):
+            continue
+        title = _vclean(m.get('title')) or '%s video tour' % display
+        out.append({'@context': 'https://schema.org', '@type': 'VideoObject', 'name': title[:100],
+                    'description': '%s video tour by Keith Nah: %s' % (display, title),
+                    'thumbnailUrl': 'https://i.ytimg.com/vi/%s/hqdefault.jpg' % v, 'uploadDate': m['date'],
+                    'embedUrl': 'https://www.youtube.com/embed/%s' % v, 'url': 'https://www.youtube.com/watch?v=%s' % v,
+                    'author': {'@type': 'Person', 'name': 'Keith Nah', 'url': 'https://www.youtube.com/@KeithNahRealEstate'}})
+    return ('<script type="application/ld+json">%s</script>' % json.dumps(out, ensure_ascii=False).replace('</', '<\\/')) if out else ''
+
+
 def video_block(name, display):
     ids = VIDEOS.get(name) or []
     if not ids:
@@ -364,7 +392,7 @@ def video_block(name, display):
             v, E(display), E(display), v, E(display)) for v in ids)
     return ('<style>%s</style><section class="blk" id="video"><h2>Video Tour</h2><div class="yt-grid">%s</div>'
             '<a class="yt-more" href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener">More videos on Keith\'s YouTube channel →</a></section>%s') % (
-        YT_CSS, cards, YT_JS)
+        YT_CSS, cards, YT_JS) + video_ld(ids, display)
 
 
 # Market notes about each project (tools/note_links.py): written for the notes builder, shown on the pages.
@@ -392,8 +420,8 @@ def notes_block(i):
     if not mine:
         return ''
     data = {n['_id']: {'t': n['title'], 'a': n['area']} for n in mine}
-    cards = ''.join('<a class="art" href="../market-notes.html#%s"><small><span data-na="%s">%s</span> · %s</small><h3 data-nt="%s">%s</h3></a>' % (
-        n['_id'], n['_id'], E(n['area'].get('en', '')), E(n['date']), n['_id'], E(n['title'].get('en', ''))) for n in mine)
+    cards = ''.join('<a class="art" href="../%s"><small><span data-na="%s">%s</span> · %s</small><h3 data-nt="%s">%s</h3></a>' % (
+        n['_page'], n['_id'], E(n['area'].get('en', '')), E(n['date']), n['_id'], E(n['title'].get('en', ''))) for n in mine)
     js = ('<script>(function(){var D=%s,H=%s,l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}'
           'function go(){try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}var h=document.getElementById("knNotesH");if(h)h.textContent=H[l]||H.en;'
           'document.querySelectorAll("[data-nt]").forEach(function(e){var x=D[e.getAttribute("data-nt")];e.textContent=x.t[l]||x.t.en;});'

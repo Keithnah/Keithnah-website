@@ -44,3 +44,4 @@ Allow: /
 Disallow: /tools/
 
 Sitemap: https://keithnah.com/sitemap.xml
+Sitemap: https://keithnah.com/sitemap-images.xml
