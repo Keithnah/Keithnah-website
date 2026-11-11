@@ -822,6 +822,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
 
 
 
+
     <p data-i18n="hero_p">Keith Nah는 럭셔리 부동산 컨설턴트로서 국내외 투자자들이 쿠알라룸푸르 최고의 입지를 찾도록 돕습니다.</p>
   </div>
 
@@ -1573,19 +1574,38 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
 </section>
 
 <!-- ===================== ABOUT ===================== -->
-<section id="about">
-  <div class="about">
-    <div class="about-portrait">
-      <img src="images/6b39ef32b4958165.jpg" alt="Keith Nah, Luxury Property Consultant" class="about-portrait-img">
-    </div>
-    <div class="about-copy">
-      <span class="eyebrow" data-i18n="about_eyebrow">소개 및 문의</span>
-      <h2 data-i18n="about_h2">Keith Nah 鈞晖 소개</h2>
-      <p data-i18n="about_p">Keith Nah는 KL 시티센터, TRX, 부킷빈탕, 방사, 부킷잘릴 등 쿠알라룸푸르 최고급 지역을 전문으로 하는 럭셔리 부동산 컨설턴트입니다. 국내외 구매자가 고수익 투자 기회를 발견하고 첫 상담부터 최종 매입까지 확신을 가지고 결정할 수 있도록 돕습니다.</p>
-      <div class="stat-row">
-        <div><h3>1000+</h3><span data-i18n="stat_label">YouTube 팔로워</span></div>
-      </div>
-      <a class="yt-card" href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener">
+<section id="about"><style>
+#about{background:#E7C6FF;padding:96px 5vw;}
+#about .ab{max-width:1180px;margin:0 auto;}
+#about .eyebrow{display:block;margin-bottom:10px;}
+#about h2{font-size:clamp(32px,4vw,46px);margin-bottom:14px;}
+#about .ab-intro p[data-i18n=about_p]{color:#4a4560;font-size:15.5px;line-height:1.75;font-weight:500;}
+#about .ab-ct{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+#about .ab-ct a{display:block;background:#fff;border-radius:14px;padding:12px 16px;border:1px solid rgba(29,27,79,.08);text-decoration:none;color:#111;}
+#about .ab-ct small{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#6b6a85;font-weight:700;}
+#about .ab-ct b{font-size:15px;word-break:break-all;}
+#about .ab-scan{font:800 11px Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#4a4560;margin:0 0 12px;}
+#about .ab-qr{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+#about .ab-qr figure{margin:0;background:#fff;border-radius:16px;padding:10px 10px 8px;border:1px solid rgba(29,27,79,.08);text-align:center;}
+#about .ab-qr figure div{aspect-ratio:1;overflow:hidden;border-radius:10px;}
+#about .ab-qr img{width:100%;height:100%;object-fit:contain;display:block;background:#fff;}
+#about .ab-qr figcaption{font:800 12px Inter,sans-serif;margin-top:8px;color:var(--c);letter-spacing:.06em;}
+#about .yt-card{margin:0;}
+#about .btn{margin:0;}
+#about .ab-wa{background:#25D366!important;color:#fff!important;display:inline-flex;align-items:center;gap:8px;justify-content:center;}
+#about .ab-ghost{background:transparent!important;color:#111!important;border:1.5px solid #111!important;}
+
+#about .ab-top{display:grid;grid-template-columns:340px 1fr;gap:48px;align-items:center;}
+#about .ab-ph img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;display:block;border:8px solid #fff;box-shadow:0 24px 50px rgba(29,27,79,.22);}
+#about .ab-stats{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0;} #about .ab-stat{background:#fff;border-radius:14px;padding:10px 16px;}
+#about .ab-stat b{font:700 24px 'Playfair Display',serif;color:#5E60CE;margin-right:8px;} #about .ab-stat span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6b6a85;font-weight:700;}
+#about .ab-bar{margin-top:48px;background:#fff;border-radius:28px;padding:28px;display:grid;grid-template-columns:1fr 1.3fr;gap:32px;box-shadow:0 20px 50px rgba(29,27,79,.12);}
+#about .ab-bar h3{font:700 24px 'Playfair Display',serif;margin-bottom:14px;}
+#about .ab-bar .ab-ct a{background:#f6f5fc;} #about .ab-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;} #about .ab-btns .btn{flex:1;min-width:150px;text-align:center;padding:14px 12px;font-size:12px;}
+#about .ab-qr figure{background:#f6f5fc;border:0;}
+@media(max-width:900px){#about .ab-top{grid-template-columns:1fr;text-align:center;gap:24px;} #about .ab-ph{max-width:240px;margin:0 auto;} #about .ab-stats{justify-content:center;} #about .ab-bar{grid-template-columns:1fr;padding:20px;} #about .ab-ct{grid-template-columns:1fr;}}
+</style><div class="ab"><div class="ab-top"><div class="ab-ph"><img src="images/6b39ef32b4958165.jpg" alt="Keith Nah, Luxury Property Consultant"></div>
+<div class="ab-intro"><span class="eyebrow" data-i18n="about_eyebrow">소개 및 문의</span><h2 data-i18n="about_h2">Keith Nah 鈞晖 소개</h2><p data-i18n="about_p">Keith Nah는 KL 시티센터, TRX, 부킷빈탕, 방사, 부킷잘릴 등 쿠알라룸푸르 최고급 지역을 전문으로 하는 럭셔리 부동산 컨설턴트입니다. 국내외 구매자가 고수익 투자 기회를 발견하고 첫 상담부터 최종 매입까지 확신을 가지고 결정할 수 있도록 돕습니다.</p><div class="ab-stats"><div class="ab-stat"><b>1000+</b><span data-i18n="stat_label">YouTube 팔로워</span></div></div><a class="yt-card" href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener">
         <div class="yt-card-icon">
           <img src="images/ffb01572bcbd138e.png" alt="YouTube">
         </div>
@@ -1594,38 +1614,9 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
           <p data-i18n="ytcard_p">드론 영상, 현장 답사, 상세한 가격 분석을 확인해보세요.</p>
         </div>
         <span class="yt-card-btn" data-i18n="ytcard_btn">YouTube 보기</span>
-      </a>
-      <div class="about-actions">
-        <a href="/ko/projects.html" class="btn btn-dark" data-i18n="about_btn_projects">프로젝트 보기</a>
-        <a href="https://wa.me/60102821568?text=(KNRE)%20Hi%20Keith%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener" class="btn btn-dark wa-link" data-wa-msg="(KNRE) Hi Keith, I would like to book a consultation." data-i18n="about_btn_book">상담 예약</a>
-        <a href="https://wa.me/60102821568?text=(KNRE)%20Hi%20Keith%2C%20I%20would%20like%20to%20explore%20more%20on%20Malaysia%20Property." target="_blank" rel="noopener" class="btn btn-dark wa-link" data-wa-msg="(KNRE) Hi Keith, I would like to explore more on Malaysia Property." data-i18n="about_btn_wa">지금 WhatsApp</a>
-      </div>
-
-      <div class="contact-mini">
-        <div><span data-i18n="contact_wa_label">WhatsApp</span><strong>+60 10-282 1568</strong></div>
-        <div><span data-i18n="contact_email_label">이메일</span><strong>njh0308@hotmail.com</strong></div>
-      </div>
-
-      <div class="scan-block">
-        <div class="scan-label"><span class="hairline-mini"></span><span data-i18n="scan_label">바로 스캔하여 Keith에게 연락</span><span class="hairline-mini"></span></div>
-        <div class="scan-cards">
-          <div class="scan-card">
-            <div class="scan-frame"><img src="images/c616becce1095d0f.jpg" alt="Scan to add Keith Nah on WeChat"></div>
-            <span class="scan-caption">WeChat</span>
-          </div>
-          <div class="scan-card">
-            <div class="scan-frame"><img src="images/ff23e50978005c22.jpg" alt="Scan to message Keith Nah on WhatsApp"></div>
-            <span class="scan-caption">WhatsApp</span>
-          </div>
-          <div class="scan-card">
-            <div class="scan-frame"><img src="images/cbc1cf88db8f73b6.jpg" alt="Scan to add Keith Nah on LINE"></div>
-            <span class="scan-caption">LINE</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </a></div></div>
+<div class="ab-bar"><div><h3 data-i18n="about_eyebrow">소개 및 문의</h3><div class="ab-ct"><a href="https://wa.me/60102821568" target="_blank" rel="noopener"><small data-i18n="contact_wa_label">WhatsApp</small><b>+60 10-282 1568</b></a><a href="mailto:njh0308@hotmail.com"><small data-i18n="contact_email_label">이메일</small><b>njh0308@hotmail.com</b></a></div><div class="ab-btns"><a href="https://wa.me/60102821568?text=(KNRE)%20Hi%20Keith%2C%20I%20would%20like%20to%20explore%20more%20on%20Malaysia%20Property." target="_blank" rel="noopener" class="btn btn-dark ab-wa wa-link" data-wa-msg="(KNRE) Hi Keith, I would like to explore more on Malaysia Property." data-i18n="about_btn_wa">지금 WhatsApp</a><a href="https://wa.me/60102821568?text=(KNRE)%20Hi%20Keith%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener" class="btn btn-dark wa-link" data-wa-msg="(KNRE) Hi Keith, I would like to book a consultation." data-i18n="about_btn_book">상담 예약</a><a href="/ko/projects.html" class="btn btn-dark ab-ghost" data-i18n="about_btn_projects">프로젝트 보기</a></div></div><div><p class="ab-scan" data-i18n="scan_label">바로 스캔하여 Keith에게 연락</p><div class="ab-qr"><figure><div><img src="images/c616becce1095d0f.jpg" alt="Scan to contact Keith Nah on WeChat"></div><figcaption style="--c:#07C160">WeChat</figcaption></figure><figure><div><img src="images/ff23e50978005c22.jpg" alt="Scan to contact Keith Nah on WhatsApp"></div><figcaption style="--c:#25D366">WhatsApp</figcaption></figure><figure><div><img src="images/cbc1cf88db8f73b6.jpg" alt="Scan to contact Keith Nah on LINE"></div><figcaption style="--c:#06C755">LINE</figcaption></figure></div></div></div>
+</div></section>
 
 <!-- ===================== FOOTER ===================== -->
 <footer>
