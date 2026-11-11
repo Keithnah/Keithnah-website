@@ -31,7 +31,18 @@
       : /Mobi|Android|iPhone/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
   }
 
+  // Google Analytics: count the lead (no name, phone or email is sent to Google).
+  function gaLead(data) {
+    try {
+      if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', {
+        method: data.type === 'Quick Enquiry' ? 'Quick Enquiry' : 'WhatsApp',
+        button: data.button || '', page_name: pageName(), transport_type: 'beacon'
+      });
+    } catch (e) {}
+  }
+
   function send(data) {
+    gaLead(data);
     if (!LEADS_ENDPOINT) return;
     data.source = SOURCE_WEBSITE;
     data.page = pageName();
