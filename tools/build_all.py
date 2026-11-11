@@ -11,7 +11,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 STEPS = ['no_klcc.py', 'update_tags.py', 'update_areas.py', 'merge_project_translations.py', 'build_list_pages.py', 'build_area_pages.py', 'build_compare.py',
-         'build_project_pages.py', 'build_news_page.py', 'build_market_notes.py', 'build_guides.py', 'build_resources.py', 'float_wa.py', 'build_ai_seo.py']
+         'build_project_pages.py', 'build_news_page.py', 'build_market_notes.py', 'build_guides.py', 'build_resources.py', 'float_wa.py', 'analytics.py', 'build_ai_seo.py']
 
 
 def stamp_translations():
