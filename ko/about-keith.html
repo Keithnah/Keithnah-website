@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr" data-page-lang="ko"><head><base href="/">
+<script id="kn-lang-url">(function(){var M={"zh-CN":"zh","zh-TW":"zh-tw","ms":"ms","ja":"ja","ko":"ko"},R=/^\/(zh|zh-tw|ms|ja|ko)(\/.*)$/,p=location.pathname,m=p.match(R),P=document.documentElement.getAttribute('data-page-lang')||'en',en=m?m[2]:p;
+function u(l){return (l==='en'?'':'/'+M[l])+en+location.search+location.hash;}window.knLangUrl=u;
+var S=Storage.prototype.setItem;function go(l){if(window.KN_RENDER||l===P||(l!=='en'&&!M[l]))return;location.href=u(l);}
+Storage.prototype.setItem=function(k,v){S.apply(this,arguments);if(k==='kn_lang'&&this===window.localStorage)go(String(v));};
+if(P!=='en')['pushState','replaceState'].forEach(function(n){var f=history[n];history[n]=function(s,t,x){if(x!=null&&!/^[a-z]+:|^\//i.test(String(x)))x=new URL(String(x),location.href).href;return f.call(this,s,t,x);};});
+try{if(P!=='en')S.call(localStorage,'kn_lang',P);else if(!window.KN_RENDER){var s=localStorage.getItem('kn_lang');if(s&&M[s])location.replace(u(s));}}catch(e){}})();</script>
+<!-- KN-HREFLANG --><link rel="alternate" hreflang="en" href="https://keithnah.com/about-keith.html"><link rel="alternate" hreflang="zh-Hans" href="https://keithnah.com/zh/about-keith.html"><link rel="alternate" hreflang="zh-Hant" href="https://keithnah.com/zh-tw/about-keith.html"><link rel="alternate" hreflang="ms" href="https://keithnah.com/ms/about-keith.html"><link rel="alternate" hreflang="ja" href="https://keithnah.com/ja/about-keith.html"><link rel="alternate" hreflang="ko" href="https://keithnah.com/ko/about-keith.html"><link rel="alternate" hreflang="x-default" href="https://keithnah.com/about-keith.html"><link rel="canonical" href="https://keithnah.com/ko/about-keith.html"><!-- /KN-HREFLANG -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keith Nah 鈞晖 | Keith Nah</title>
+<meta name="description" content="Keith Nah는 현지 및 해외 구매자가 쿠알라룸푸르의 신규 분양 시장을 이해하고 탐색할 수 있도록 돕습니다. KL 시티센터와 TRX부터 Bukit Bintang, Bangsar, Bukit Jalil까지 폭넓게 다룹니다. 심도 있는 영상 소개와 솔직한 조언을 통해 복잡한 개발사…">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F9F8F6; --ivory:#FBFAF7; --gold:#5E60CE; --ink:#111111; --grey:#5A5A5A;
+    --line:rgba(17,17,17,0.08); --black:#0C0C0C; --ease:cubic-bezier(.22,.7,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; font-weight:600;
+    line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:0.01em;}
+  a{color:inherit;text-decoration:none;}
+  .eyebrow{font-family:'Inter',sans-serif; text-transform:uppercase; letter-spacing:0.28em; font-size:11px; color:var(--gold); font-weight:500;}
+  .btn{
+    padding:15px 30px; font-size:12px; text-transform:uppercase; letter-spacing:0.14em; font-weight:700;
+    border-radius:100px; cursor:pointer; border:1px solid transparent; transition:all .35s var(--ease); display:inline-block;
+  }
+  .btn-gold{background:var(--gold); color:#fff;}
+  .btn-gold:hover{background:#111; color:#fff;}
+  .btn-dark{background:#111; color:#fff;}
+  .btn-dark:hover{background:var(--gold); color:#fff;}
+  .btn-outline{background:transparent; color:var(--ink); border:1px solid var(--line);}
+  .btn-outline:hover{border-color:var(--gold); color:var(--gold);}
+
+  /* ---------- NAV (matches other pages) ---------- */
+  header{
+    position:fixed; top:0; left:0; width:100%; z-index:50;
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+    padding:16px 5vw; background:var(--gold); border-bottom:1px solid rgba(0,0,0,0.12);
+    box-shadow:0 2px 18px rgba(17,17,17,0.08);
+  }
+  .logo{font-family:'Playfair Display',serif; font-size:19px; display:flex; align-items:center; gap:11px; color:#fff;}
+  .logo-mark-img{width:42px; height:42px; border-radius:50%; object-fit:contain;}
+  .logo-text{display:flex; flex-direction:column; line-height:1.15;}
+  .logo-text b{font-weight:800; font-size:21px; color:#fff;}
+  .logo-text small{font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.8); font-weight:500;}
+  nav{display:flex; gap:26px;}
+  nav a{font-size:15px; font-weight:500; position:relative; padding-bottom:4px; white-space:nowrap; color:#fff;}
+  nav a.active{font-weight:700;}
+  nav a::after{content:''; position:absolute; left:0; bottom:0; width:0; height:1.5px; background:#fff; transition:width .3s var(--ease);}
+  nav a:hover::after, nav a.active::after{width:100%;}
+  .whatsapp-btn{
+    display:flex; align-items:center; gap:8px; background:#25D366; color:#fff !important;
+    padding:11px 22px; border-radius:100px; font-size:12px; font-weight:600;
+    transition:transform .3s var(--ease), box-shadow .3s; white-space:nowrap;
+  }
+  .whatsapp-btn:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(37,211,102,0.4);}
+  .hamburger{display:none;}
+  .nav-right{display:flex; align-items:center; gap:12px; flex-shrink:0;}
+  .selector{
+    display:flex; align-items:center; gap:6px;
+    font-size:12px; letter-spacing:0.02em; opacity:0.95; cursor:pointer;
+    background:rgba(255,255,255,0.35); border:1px solid rgba(17,17,17,0.15);
+    color:#111;
+    padding:8px 14px; border-radius:100px; white-space:nowrap;
+  }
+  .selector svg{width:13px; height:13px; stroke:#111; fill:none; stroke-width:1.6;}
+  .lang-switch{position:relative;}
+  .lang-menu{
+    display:none; position:absolute; top:calc(100% + 8px); right:0; background:#fff;
+    border:1px solid var(--line); border-radius:12px; box-shadow:0 16px 40px rgba(17,17,17,0.14);
+    min-width:170px; padding:8px; z-index:80;
+  }
+  .lang-menu.open{display:block;}
+  .lang-menu a{
+    display:block; padding:9px 14px; font-size:13px; color:var(--ink); border-radius:8px;
+    cursor:pointer; font-weight:500; transition:background .2s;
+  }
+  .lang-menu a:hover{background:var(--bg);}
+  .lang-menu a.active{color:var(--gold); font-weight:700;}
+  @media(max-width:1080px){
+    nav, .whatsapp-btn, .nav-right .selector{display:none;}
+    .hamburger{display:block; font-size:22px; cursor:pointer; color:#fff;}
+  }
+
+  /* ---------- SECTION HEAD (shared) ---------- */
+  section{padding:110px 5vw;}
+  .section-head{text-align:center; max-width:680px; margin:0 auto 56px;}
+  .section-head .eyebrow{display:block; margin-bottom:14px;}
+  .section-head h2{font-size:clamp(28px,3.6vw,42px);}
+  .section-head h2 span{color:var(--gold); font-style:italic;}
+  .section-head p{color:var(--grey); font-size:15px; margin-top:14px; font-weight:500;}
+  .hairline{width:60px; height:1px; background:var(--gold); margin:22px auto 0;}
+
+  /* ---------- HERO ---------- */
+  .keith-hero{
+    padding:150px 5vw 90px; background:#fff; border-bottom:1px solid var(--line);
+    display:grid; grid-template-columns:0.85fr 1.15fr; gap:70px; align-items:center; max-width:1180px; margin:0 auto;
+  }
+  .keith-portrait{position:relative; aspect-ratio:4/5; border-radius:6px; overflow:hidden; box-shadow:0 30px 60px rgba(17,17,17,0.14);}
+  .keith-portrait img{width:100%; height:100%; object-fit:cover; display:block;}
+  .keith-hero-copy h1{font-size:clamp(32px,4.4vw,52px); margin:14px 0 6px;}
+  .keith-hero-copy h1 em{color:var(--gold); font-style:italic; font-weight:400;}
+  .keith-hero-copy p.keith-ren{display:inline-flex; align-items:center; gap:14px; margin:4px 0 18px; padding:10px 18px 10px 10px; border-radius:16px; background:linear-gradient(135deg,#f3f1fa,#fff); border:1px solid rgba(94,96,206,.25); box-shadow:0 8px 22px rgba(29,27,79,.08); color:#1d1b4f; line-height:1.25; max-width:none;} .keith-ren .kr-ic{width:40px; height:40px; flex-shrink:0; border-radius:12px; background:#5E60CE; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(94,96,206,.35);} .keith-ren .kr-ic svg{width:22px; height:22px; fill:none; stroke:#fff; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;} .keith-ren small{display:block; font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#6b6a85;} .keith-ren b{display:block; font-size:17px; font-weight:800; letter-spacing:.02em; color:#1d1b4f;} .keith-ren .kr-sep{width:1px; align-self:stretch; background:rgba(94,96,206,.25);} @media(max-width:480px){.keith-hero-copy p.keith-ren{gap:10px; padding:8px 14px 8px 8px;} .keith-ren .kr-ic{width:34px; height:34px;} .keith-ren b{font-size:15px;} .keith-ren small{font-size:9.5px; letter-spacing:.06em;}}
+  .keith-title{font-size:15px; color:var(--grey); font-weight:600; margin-bottom:20px;}
+  .keith-hero-copy p{color:var(--grey); font-size:15px; line-height:1.85; margin-bottom:26px; max-width:540px;}
+  .keith-hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
+
+  /* ---------- STATS BAR ---------- */
+  .keith-stats{background:var(--ink); padding:0;}
+  .stats-inner{
+    max-width:1180px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr);
+  }
+  .stat-tile{padding:44px 24px; text-align:center; border-right:1px solid rgba(255,255,255,0.1);}
+  .stat-tile:last-child{border-right:none;}
+  .stat-tile h3{color:#fff; font-size:clamp(26px,3vw,34px); margin-bottom:8px;}
+  .stat-tile span{color:rgba(255,255,255,0.6); font-size:11.5px; text-transform:uppercase; letter-spacing:0.08em; font-weight:600;}
+
+  /* ---------- BIO ---------- */
+  .keith-bio{background:var(--bg);}
+  .bio-inner{max-width:820px; margin:0 auto; text-align:center;}
+  .bio-inner p{color:var(--grey); font-size:15.5px; line-height:1.9; margin-bottom:20px;}
+  .bio-inner p:last-child{margin-bottom:0;}
+
+  /* ---------- SPECIALIZATION ---------- */
+  .keith-spec{background:#fff;}
+  .spec-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:20px; max-width:1180px; margin:0 auto;}
+  .spec-card{
+    background:var(--ivory); border:1px solid var(--line); border-radius:12px; padding:30px 20px; text-align:center;
+    transition:transform .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .spec-card:hover{transform:translateY(-4px); box-shadow:0 16px 34px rgba(17,17,17,0.08);}
+  .spec-icon{
+    width:46px; height:46px; border-radius:50%; background:rgba(94,96,206,0.1); color:var(--gold);
+    display:flex; align-items:center; justify-content:center; margin:0 auto 16px;
+  }
+  .spec-icon svg{width:22px; height:22px;}
+  .spec-card h4{font-size:15.5px; margin-bottom:6px;}
+  .spec-card p{color:var(--grey); font-size:12.5px; line-height:1.5; font-weight:500;}
+
+  /* ---------- HOW KEITH WORKS ---------- */
+  .keith-process{background:var(--bg);}
+  .process-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:26px; max-width:1180px; margin:0 auto;}
+  .process-card{background:#fff; border:1px solid var(--line); border-radius:12px; padding:32px 24px; position:relative;}
+  .process-num{
+    font-family:'Playfair Display',serif; font-size:34px; color:rgba(94,96,206,0.18); font-weight:800; margin-bottom:14px;
+  }
+  .process-card h4{font-size:16px; margin-bottom:10px;}
+  .process-card p{color:var(--grey); font-size:13px; line-height:1.65; font-weight:500;}
+
+  /* ---------- YOUTUBE CARD ---------- */
+  .keith-yt{background:#fff;}
+  .yt-card{
+    max-width:820px; margin:0 auto; display:flex; align-items:center; gap:22px; padding:26px 28px;
+    background:var(--ivory); border:1px solid var(--line); border-radius:14px; transition:transform .3s var(--ease);
+  }
+  .yt-card:hover{transform:translateY(-3px);}
+  .yt-card-icon{width:52px; height:52px; min-width:52px; border-radius:50%; overflow:hidden; display:flex; align-items:center; justify-content:center; background:#fff;}
+  .yt-card-icon img{width:30px; height:30px; object-fit:contain;}
+  .yt-card-text{flex:1;}
+  .yt-card-text h5{font-size:16px; margin-bottom:4px;}
+  .yt-card-text p{color:var(--grey); font-size:13px; font-weight:500;}
+  .yt-card-btn{
+    background:#111; color:#fff; padding:12px 22px; border-radius:100px; font-size:11.5px;
+    text-transform:uppercase; letter-spacing:0.08em; font-weight:700; white-space:nowrap; transition:background .3s;
+  }
+  .yt-card:hover .yt-card-btn{background:var(--gold);}
+
+  /* ---------- CONTACT / SCAN ---------- */
+  .keith-contact{background:var(--ink); text-align:center;}
+  .keith-contact .section-head h2{color:#fff;}
+  .keith-contact .section-head p{color:rgba(255,255,255,0.6);}
+  .contact-actions{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:50px;}
+  .scan-cards{display:flex; gap:28px; justify-content:center; flex-wrap:wrap;}
+  .scan-card{display:flex; flex-direction:column; align-items:center; gap:10px;}
+  .scan-frame{width:120px; height:120px; background:#fff; border-radius:12px; padding:10px; display:flex; align-items:center; justify-content:center;}
+  .scan-frame img{width:100%; height:100%; object-fit:contain;}
+  .scan-caption{color:rgba(255,255,255,0.7); font-size:11.5px; text-transform:uppercase; letter-spacing:0.08em; font-weight:600;}
+
+  @media(max-width:980px){
+    .keith-hero{grid-template-columns:1fr; text-align:center;}
+    .keith-portrait{max-width:340px; margin:0 auto;}
+    .keith-hero-copy p{margin-left:auto; margin-right:auto;}
+    .keith-hero-actions{justify-content:center;}
+    .stats-inner{grid-template-columns:repeat(2,1fr);}
+    .stat-tile{border-bottom:1px solid rgba(255,255,255,0.1);}
+    .spec-grid{grid-template-columns:repeat(2,1fr);}
+    .process-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:640px){
+    section{padding:80px 6vw;}
+    .spec-grid, .process-grid{grid-template-columns:1fr;}
+    .yt-card{flex-direction:column; text-align:center;}
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{background:#080808; color:rgba(255,255,255,0.5); padding:40px 5vw;}
+  .footer-inner{max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  .footer-logo{font-family:'Playfair Display',serif; font-size:16px; color:#fff; display:flex; align-items:center; gap:8px;}
+  .footer-logo-img{width:26px; height:26px; border-radius:50%; object-fit:contain;}
+  .footer-logo em{color:var(--gold); font-style:italic;}
+  .footer-inner p{font-size:11px;}
+  .float-wa{
+    position:fixed; bottom:24px; right:24px; z-index:55; background:#25D366; color:#fff;
+    width:54px; height:54px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,0.25); transition:transform .3s var(--ease);
+  }
+  .float-wa:hover{transform:scale(1.08);}
+
+  /* nav: fits 7 items */
+  nav{gap:clamp(20px,2.3vw,32px) !important;}
+  nav a{font-size:15px;}
+  html[lang="ta"] nav{gap:14px !important;} html[lang="ta"] nav a{font-size:14px;}
+  header{padding-left:3vw !important; padding-right:3vw !important; gap:16px !important;}
+  .nav-right{gap:8px !important;}
+  .selector{padding:8px 11px !important;}
+  .whatsapp-btn{padding:11px 16px !important;}
+  .logo{flex-shrink:0;} .logo-text, .logo-text b{white-space:nowrap;}
+  @media(max-width:1349px){ nav, .nav-right .selector{display:none !important;} .hamburger{display:block !important; font-size:22px; cursor:pointer; color:#fff;} }
+
+/* ---------- QUICK ENQUIRY ---------- */
+.kq-card{background:linear-gradient(160deg,#1d1b4f 0%,#14132f 100%); color:#fff; border-radius:10px; padding:34px 30px 30px; box-shadow:0 30px 60px rgba(29,27,79,0.28); text-align:left; width:100%; box-sizing:border-box;}
+.kq-eyebrow{display:block; font-family:'Inter',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:#fff; margin-bottom:18px;}
+.kq-card h3{font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(26px,2.6vw,34px); line-height:1.18; color:#fff; margin:0 0 24px; letter-spacing:0;}
+.kq-card h3 em{display:block; color:#b9b4ff; font-style:italic; font-weight:500;}
+.kq-row{display:flex; gap:10px; margin-bottom:12px;}
+.kq-card input,.kq-card select{width:100%; box-sizing:border-box; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.18); color:#fff; border-radius:6px; padding:15px 16px; font:400 15px 'Inter',sans-serif; outline:none; transition:border-color .2s, background .2s; appearance:none; -webkit-appearance:none; min-width:0;}
+.kq-card input::placeholder{color:rgba(255,255,255,0.55);}
+.kq-card input:focus,.kq-card select:focus{border-color:#8f90ee; background:rgba(255,255,255,0.1);}
+.kq-card select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23ffffff' stroke-width='1.6'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; padding-right:40px; margin-bottom:12px; cursor:pointer;}
+.kq-row select{margin-bottom:0;}
+.kq-card select option{color:#111; background:#fff;}
+.kq-row .kq-name{flex:1.1;} .kq-row .kq-code{flex:0 0 96px; padding-left:12px;} .kq-row .kq-phone{flex:1;}
+.kq-card .kq-pair{display:flex; flex:1.3; gap:0; min-width:0;}
+.kq-card .kq-pair select{flex:0 0 92px; border-radius:6px 0 0 6px; margin:0; padding:15px 30px 15px 12px; background-position:right 10px center;}
+.kq-card .kq-pair input{border-radius:0 6px 6px 0; border-left:0;}
+.kq-btn{width:100%; margin-top:6px; background:#5E60CE; color:#fff; border:0; border-radius:6px; padding:17px 20px; font:700 15px 'Inter',sans-serif; letter-spacing:0.04em; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; transition:background .2s, transform .2s;}
+.kq-btn:hover{background:#7173e6; transform:translateY(-1px);}
+.kq-err{color:#ffb4b4; font-size:13px; margin:10px 0 0; min-height:0;}
+.kq-card.kq-stack .kq-row{flex-wrap:wrap;}
+@media(max-width:520px){.kq-card{padding:28px 20px 24px;} .kq-row{flex-wrap:wrap;} .kq-row .kq-name,.kq-card .kq-pair{flex:1 1 100%;}}
+
+.kq-section{background:#f5f5fa; padding:80px 5vw;}
+.kq-wrap{max-width:560px; margin:0 auto;}
+  .kq-note{font-size:11.5px; color:rgba(255,255,255,0.55); margin:10px 0 0; text-align:center;} .kq-note a{color:rgba(255,255,255,0.8); text-decoration:underline;}
+  .lang-menu a{display:flex !important; align-items:center; gap:10px; white-space:nowrap;}
+  #langMenu{min-width:210px;} #currMenu{min-width:275px;}
+  .kn-flag{width:20px; height:15px; flex:0 0 20px; border-radius:2px; object-fit:cover; box-shadow:0 0 0 1px rgba(0,0,0,0.08);}
+  #knLang button, #knCurr button{display:inline-flex; align-items:center; gap:8px;}
+  @media (hover:hover) and (pointer:fine){ .lang-switch::after{content:''; position:absolute; left:0; right:0; top:100%; height:14px;} }
+</style>
+<link rel="icon" type="image/png" href="images/d795398568d23a46.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- KN-LD:START --><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://keithnah.com/#keith", "name": "Keith Nah", "alternateName": "鈞晖", "jobTitle": "Property Consultant", "identifier": {"@type": "PropertyValue", "name": "REN", "value": "60517"}, "memberOf": {"@type": "Organization", "name": "IQI Global"}, "url": "https://keithnah.com/about-keith.html", "image": "https://keithnah.com/images/f304c8479b1fe873.png", "sameAs": ["https://www.youtube.com/@KeithNahRealEstate", "https://www.instagram.com/keithnah_/"], "worksFor": {"@id": "https://keithnah.com/#agency"}, "description": "Property consultant and content creator helping local and international buyers choose new launches in Kuala Lumpur, with drone footage, site walkthroughs and pricing breakdowns."}, {"@type": "RealEstateAgent", "@id": "https://keithnah.com/#agency", "name": "Keith Nah Real Estate", "url": "https://keithnah.com/", "logo": "https://keithnah.com/images/f304c8479b1fe873.png", "image": "https://keithnah.com/images/f304c8479b1fe873.png", "telephone": "+60102821568", "founder": {"@id": "https://keithnah.com/#keith"}, "sameAs": ["https://www.youtube.com/@KeithNahRealEstate", "https://www.instagram.com/keithnah_/"], "description": "Property consultant for new-launch condominiums and homes in Malaysia, mainly Kuala Lumpur (KL City Centre, TRX, Bukit Bintang, Bangsar, Bukit Jalil), plus Selangor, Penang, Johor, Melaka, Sabah, Terengganu and Kelantan. No agent fee for buyers on new launches.", "address": {"@type": "PostalAddress", "addressLocality": "Kuala Lumpur", "addressCountry": "MY"}, "areaServed": [{"@type": "City", "name": "Kuala Lumpur"}, {"@type": "State", "name": "Selangor"}, {"@type": "State", "name": "Penang"}, {"@type": "State", "name": "Johor"}, {"@type": "State", "name": "Melaka"}, {"@type": "State", "name": "Sabah"}, {"@type": "State", "name": "Terengganu"}, {"@type": "State", "name": "Kelantan"}], "contactPoint": {"@type": "ContactPoint", "telephone": "+60102821568", "contactType": "sales", "url": "https://wa.me/60102821568"}}, {"@type": "ProfilePage", "url": "https://keithnah.com/about-keith.html", "mainEntity": {"@id": "https://keithnah.com/#keith"}}]}</script><!-- KN-LD:END -->
+<style id="kn-logo-link">header a.logo{color:inherit;text-decoration:none;cursor:pointer;}</style>
+<style id="kn-float">
+/* KN-FLOAT:START */
+a.float-wa.float-wa{position:fixed;right:22px;bottom:22px;z-index:60;display:inline-flex;align-items:center;gap:11px;width:auto;height:auto;
+  padding:13px 24px 13px 18px;border-radius:100px;background:#25D366;color:#fff;font:700 16px/1 'Inter',system-ui,sans-serif;letter-spacing:0;
+  text-decoration:none;animation:knWaPulse 2.6s ease-in-out infinite;transition:transform .25s ease;}
+a.float-wa.float-wa:hover{transform:translateY(-2px) scale(1.03);color:#fff;}
+a.float-wa.float-wa svg{width:26px;height:26px;flex:0 0 26px;fill:#fff;}
+a.float-wa.float-wa .fw-txt{white-space:nowrap;}
+@keyframes knWaPulse{
+  0%,100%{box-shadow:0 0 0 4px rgba(37,211,102,.18),0 0 14px 2px rgba(37,211,102,.30),0 8px 22px rgba(0,0,0,.16);}
+  50%{box-shadow:0 0 0 12px rgba(37,211,102,.10),0 0 30px 10px rgba(37,211,102,.45),0 8px 22px rgba(0,0,0,.16);}
+}
+@media(max-width:600px){a.float-wa.float-wa{right:16px;bottom:16px;padding:11px 18px 11px 14px;font-size:14px;gap:9px;}a.float-wa.float-wa svg{width:22px;height:22px;flex-basis:22px;}}
+@media(prefers-reduced-motion:reduce){a.float-wa.float-wa{animation:none;box-shadow:0 0 0 6px rgba(37,211,102,.18),0 8px 22px rgba(0,0,0,.16);}}
+/* back to top, above the WhatsApp button */
+.kn-fab{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.kn-fab a.float-wa.float-wa{position:static;right:auto;bottom:auto;}
+.kn-top{width:48px;height:48px;border-radius:50%;background:#fff;border:1.5px solid #d6d6d6;box-shadow:0 6px 18px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:#555;
+  opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility .25s,border-color .2s,color .2s;}
+.kn-top.show{opacity:1;visibility:visible;transform:none;}
+.kn-top:hover{border-color:var(--gold,#5E60CE);color:var(--gold,#5E60CE);}
+.kn-top svg{width:20px;height:20px;}
+@media(max-width:600px){.kn-fab{right:16px;bottom:16px;gap:10px;}.kn-top{width:44px;height:44px;}}
+@media(prefers-reduced-motion:reduce){.kn-top{transition:none;}}
+/* phones: the header WhatsApp button would push the menu button off screen; the floating button stays */
+@media(max-width:560px){header .whatsapp-btn,header .wa-btn,.nav-right .whatsapp-btn{display:none!important;}.hamburger{margin-left:auto;padding:6px 4px;}}
+/* KN-FLOAT:END */
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="/ko/" aria-label="Keith Nah Real Estate home">
+    <img class="logo-mark-img" src="images/f304c8479b1fe873.png" alt="Keith Nah logo">
+    <div class="logo-text"><b>Keith Nah 鈞晖</b><small>Keith Nah Real Estate</small></div>
+  </a>
+  <nav>
+    <a href="/ko/">홈</a>
+    <a href="/ko/projects.html">프로젝트 보기</a>
+    <a href="/ko/compare.html">프로젝트 비교</a>
+    <a href="/ko/blog.html">뉴스</a>
+    <a href="/ko/calculator.html">계산기</a>
+    <a href="/ko/resources.html">무료 툴킷</a>
+    <a href="/ko/about-keith.html" class="active">Keith 소개</a>
+  </nav>
+  <div class="nav-right">
+    <div class="lang-switch" id="langSwitch">
+      <span class="selector" id="langSelectorBtn" onclick="toggleLangMenu(event)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9z"></path></svg><span id="langSelectorLabel">한국어</span></span>
+      <div class="lang-menu" id="langMenu">
+        <a onclick="setLanguage('en')"><img class="kn-flag" src="images/flags/gb.svg" alt="" width="20" height="15">English</a>
+        <a onclick="setLanguage('zh-CN')"><img class="kn-flag" src="images/flags/cn.svg" alt="" width="20" height="15">简体中文</a>
+        <a onclick="setLanguage('zh-TW')"><img class="kn-flag" src="images/flags/tw.svg" alt="" width="20" height="15">繁體中文</a>
+        <a onclick="setLanguage('ms')"><img class="kn-flag" src="images/flags/my.svg" alt="" width="20" height="15">Bahasa Malaysia</a>
+        <a onclick="setLanguage('ja')"><img class="kn-flag" src="images/flags/jp.svg" alt="" width="20" height="15">日本語</a>
+        <a onclick="setLanguage('ko')" class="active"><img class="kn-flag" src="images/flags/kr.svg" alt="" width="20" height="15">한국어</a>
+      </div>
+    </div>
+    <div class="lang-switch" id="currSwitch">
+      <span class="selector" id="currSelectorBtn" onclick="toggleCurrMenu(event)"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="5"></circle><circle cx="16" cy="16" r="5"></circle></svg><span id="currSelectorLabel">MYR</span></span>
+      <div class="lang-menu" id="currMenu">
+        <a onclick="setCurrency('MYR')" class="active"><img class="kn-flag" src="images/flags/my.svg" alt="" width="20" height="15">MYR — Malaysian Ringgit</a>
+        <a onclick="setCurrency('USD')"><img class="kn-flag" src="images/flags/us.svg" alt="" width="20" height="15">USD — US Dollar</a>
+        <a onclick="setCurrency('SGD')"><img class="kn-flag" src="images/flags/sg.svg" alt="" width="20" height="15">SGD — Singapore Dollar</a>
+        <a onclick="setCurrency('CNY')"><img class="kn-flag" src="images/flags/cn.svg" alt="" width="20" height="15">CNY — Chinese Yuan</a>
+        <a onclick="setCurrency('JPY')"><img class="kn-flag" src="images/flags/jp.svg" alt="" width="20" height="15">JPY — Japanese Yen</a>
+        <a onclick="setCurrency('KRW')"><img class="kn-flag" src="images/flags/kr.svg" alt="" width="20" height="15">KRW — Korean Won</a>
+      </div>
+    </div>
+  <a class="whatsapp-btn" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+explore+more+on+Malaysia+Property.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">
+    <span class="wa-agent-label">WhatsApp Keith</span>
+  </a>
+  <span class="hamburger" onclick="knToggleMenu()">☰</span>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="keith-hero">
+  <div class="keith-portrait">
+    <img src="images/4382969133d212d0.jpg" alt="Keith Nah, Property Consultant">
+  </div>
+  <div class="keith-hero-copy">
+    <span class="eyebrow">Keith 소개</span>
+    <h1>Keith Nah <em>鈞晖</em></h1>
+    <p class="keith-ren"><span class="kr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.8 4.5 5.6v5.6c0 4.6 3.1 8.6 7.5 10 4.4-1.4 7.5-5.4 7.5-10V5.6z"></path><path d="m8.6 12.2 2.4 2.4 4.6-4.8"></path></svg></span><span class="kr-a"><small>Registered Estate Negotiator</small><b>REN 60517</b></span><span class="kr-sep" aria-hidden="true"></span><span class="kr-b"><small>Agency</small><b>IQI Global</b></span></p>
+    <p class="keith-title">부동산 컨설턴트 &amp; 콘텐츠 전략가 — 쿠알라룸푸르 신규 분양</p>
+    <p>Keith Nah는 현지 및 해외 구매자가 쿠알라룸푸르의 신규 분양 시장을 이해하고 탐색할 수 있도록 돕습니다. KL 시티센터와 TRX부터 Bukit Bintang, Bangsar, Bukit Jalil까지 폭넓게 다룹니다. 심도 있는 영상 소개와 솔직한 조언을 통해 복잡한 개발사 분양 정보를 명확하고 확신 있는 결정으로 이끌어 드립니다.</p>
+    <div class="keith-hero-actions"><a href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27d+like+to+know+more+about+working+with+you.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener" class="btn btn-dark">Keith에게 WhatsApp 문의</a>
+      <a href="/ko/projects.html" class="btn btn-outline">프로젝트 보기</a></div>
+  </div>
+</section>
+
+<!-- ===================== STATS ===================== -->
+<section class="keith-stats" style="padding:0;">
+  <div class="stats-inner">
+    <div class="stat-tile"><h3>100+</h3><span>말레이시아 전역의 프로젝트</span></div>
+    <div class="stat-tile"><h3>0%</h3><span>구매자 대상 중개 수수료</span></div>
+    <div class="stat-tile"><h3>5</h3><span>다루는 KL 핵심 지역</span></div>
+    <div class="stat-tile"><h3>1000+</h3><span>YouTube 구독자</span></div>
+  </div>
+</section>
+
+<!-- ===================== YOUTUBE ===================== -->
+<section class="keith-yt">
+  <div class="section-head">
+    <span class="eyebrow">구매 전에 먼저 보세요</span>
+    <h2><span>YouTube</span>에서</h2>
+    <div class="hairline"></div>
+  </div>
+  <a class="yt-card" href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener">
+    <div class="yt-card-icon">
+      <img src="images/ffb01572bcbd138e.png" alt="YouTube">
+    </div>
+    <div class="yt-card-text">
+      <h5>Keith Nah Real Estate 구독하기</h5>
+      <p>드론 영상, 현장 답사 영상, 상세한 가격 분석을 확인해 보세요.</p>
+    </div>
+    <span class="yt-card-btn">YouTube 시청하기</span>
+  </a>
+</section>
+
+<!-- ===================== BIO ===================== -->
+<section class="keith-bio">
+  <div class="section-head">
+    <span class="eyebrow">접근 방식</span>
+    <h2>콘텐츠 중심, <span>고객 우선</span></h2>
+    <div class="hairline"></div>
+  </div>
+  <div class="bio-inner">
+    <p>Keith는 구매자가 실제로 구매하는 대상을 직접 볼 수 있을 때 더 나은 결정을 내린다는 단순한 생각을 바탕으로 사업을 쌓아 왔습니다. 화려한 브로슈어에만 의존하지 않고, 소개하는 모든 프로젝트에 대해 드론 촬영 영상, 현장 답사 영상, 상세한 가격 분석을 제작합니다. 바로 이 영상들이 그의 YouTube 구독자층을 만들어 냈습니다.</p>
+    <p>이러한 콘텐츠 중심 접근 덕분에 고객분들은 이미 충분히 정보를 갖추고 오시는 경우가 많으며, 첫 해외 구매자이든 포트폴리오를 확장하는 노련한 투자자이든 자신의 상황에 맞는 금융 옵션, 유닛 비교, 서류 절차를 더 깊이 있게 다룰 수 있습니다.</p>
+    <p>Keith는 개발사와 직접 협력하여 신규 분양에 대한 우선 접근권을 확보하고, 첫 영상 시청부터 현장 방문, 계약, 열쇠 인수까지 전 과정에서 고객을 지원합니다.</p>
+  </div>
+</section>
+
+<!-- ===================== SPECIALIZATION ===================== -->
+<section class="keith-spec">
+  <div class="section-head">
+    <span class="eyebrow">Keith의 전문 분야</span>
+    <h2>핵심 <span>지역</span></h2>
+    <div class="hairline"></div>
+    <p>신규 분양과 장기 투자에 가장 주목받는 쿠알라룸푸르의 다섯 곳입니다.</p>
+  </div>
+  <div class="spec-grid">
+    <div class="spec-card">
+      <div class="spec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2L4 7v14h16V7z"></path><path d="M9 21v-6h6v6"></path></svg></div>
+      <h4>KL 시티센터</h4>
+      <p>페트로나스 트윈 타워 바로 앞에 자리한, 도시 최고의 금융 및 라이프스타일 중심지입니다.</p>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="1"></rect><path d="M9 8h6M9 12h6M9 16h4"></path></svg></div>
+      <h4>TRX</h4>
+      <p>국제 비즈니스 지구의 분위기로 계획 개발된 말레이시아의 새로운 금융 지구입니다.</p>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M6 21V9l6-5 6 5v12"></path><path d="M10 21v-6h4v6"></path></svg></div>
+      <h4>Bukit Bintang</h4>
+      <p>Pavilion KL과 Bukit Bintang 거리를 중심으로 한 KL의 쇼핑 및 엔터테인먼트 중심지입니다.</p>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"></circle><path d="M8 12h8M12 8v8"></path></svg></div>
+      <h4>Bangsar</h4>
+      <p>외국인 거주자와 장기 주택 소유자에게 사랑받는, 녹음이 우거진 오랜 주거 지역입니다.</p>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V10l8-6 8 6v11"></path><path d="M9 21v-5h6v5"></path></svg></div>
+      <h4>Bukit Jalil</h4>
+      <p>대형 쇼핑몰과 경기장을 중심으로 임대 수요가 탄탄한 빠르게 성장하는 신도시입니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW KEITH WORKS ===================== -->
+<section class="keith-process">
+  <div class="section-head">
+    <span class="eyebrow">진행 과정</span>
+    <h2>Keith의 <span>업무 방식</span></h2>
+    <div class="hairline"></div>
+  </div>
+  <div class="process-grid">
+    <div class="process-card">
+      <div class="process-num">01</div>
+      <h4>분양 물건 발굴 및 검증</h4>
+      <p>KL 전역의 신규 개발사 분양을 입지, 가격, 품질 측면에서 먼저 검토한 후 소개합니다.</p>
+    </div>
+    <div class="process-card">
+      <div class="process-num">02</div>
+      <h4>심도 있는 영상 콘텐츠</h4>
+      <p>드론 영상, 현장 답사 영상, 상세한 가격 분석을 YouTube에서 공유합니다.</p>
+    </div>
+    <div class="process-card">
+      <div class="process-num">03</div>
+      <h4>금융 및 서류 안내</h4>
+      <p>대출 비율, 법무 비용, 구매 절차를 현지인과 외국인 구매자 모두에게 단계별로 설명해 드립니다.</p>
+    </div>
+    <div class="process-card">
+      <div class="process-num">04</div>
+      <h4>인도까지 지원</h4>
+      <p>첫 문의부터 계약, 열쇠 인수까지 직접 연락 창구가 되어 드립니다.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ===================== CONTACT ===================== -->
+<section class="kq-section" id="enquiry">
+  <div class="kq-wrap"><div class="kq-card" id="quickEnquiry">
+  <span class="kq-eyebrow" data-kq="eyebrow">빠른 문의</span>
+  <h3><span data-kq="h1">찾아드립니다:</span> <em data-kq="h2">나에게 꼭 맞는 부동산</em></h3>
+  <form class="kq-form" novalidate="" onsubmit="return knqSend(this)">
+    <div class="kq-row">
+      <input class="kq-name" type="text" name="name" autocomplete="name" data-kq-ph="name" placeholder="성함" aria-label="Full Name">
+    </div>
+    <div class="kq-row">
+      <div class="kq-pair"><select name="code" aria-label="Country code"><option value="+60">+60</option><option value="+65">+65</option><option value="+86">+86</option><option value="+852">+852</option><option value="+886">+886</option><option value="+81">+81</option><option value="+82">+82</option><option value="+62">+62</option><option value="+66">+66</option><option value="+971">+971</option><option value="+44">+44</option><option value="+61">+61</option><option value="+1">+1</option></select><input class="kq-phone" type="tel" name="phone" inputmode="tel" autocomplete="tel-national" data-kq-ph="wa" placeholder="WhatsApp 번호" aria-label="WhatsApp"></div>
+    </div>
+    <div class="kq-row"><input type="email" name="email" autocomplete="email" data-kq-ph="email" placeholder="이메일 (선택)" aria-label="Email"></div>
+    <select name="area" aria-label="Preferred Area"><option value="" data-kq="area">희망 지역</option><option value="Bukit Bintang">Bukit Bintang</option><option value="KL City Centre">KL City Centre</option><option value="TRX &amp; Merdeka Maybank">TRX &amp; Merdeka Maybank</option><option value="KL City">KL City</option><option value="Bukit Jalil">Bukit Jalil</option><option value="Petaling Jaya">Petaling Jaya</option><option value="Penang">Penang</option><option value="Johor">Johor</option><option value="Melaka">Melaka</option><option value="Not sure yet" data-kq="a_any">미정</option></select>
+    <select name="look" aria-label="Looking for"><option value="" data-kq="look">찾는 목적...</option><option value="Own stay" data-kq="l_own">실거주</option><option value="Investment" data-kq="l_inv">투자</option><option value="Rental income" data-kq="l_rent">임대 수익</option><option value="Second home / MM2H" data-kq="l_mm2h">세컨드 홈 / MM2H</option><option value="Not sure yet" data-kq="l_any">미정</option></select>
+    <button class="kq-btn" type="submit"><span data-kq="send">문의 보내기</span> <span aria-hidden="true">→</span></button>
+    <p class="kq-err" role="alert"></p><p class="kq-note">By sending, you agree to our <a href="/ko/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+  </form>
+</div></div>
+</section>
+
+<section class="keith-contact">
+  <div class="section-head">
+    <span class="eyebrow">문의하기</span>
+    <h2><span>부동산</span> 이야기를 나눠 보세요</h2>
+    <div class="hairline"></div>
+    <p>WhatsApp +60 10-282 1568 · njh0308@hotmail.com</p>
+  </div>
+  <div class="contact-actions"><a href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27d+like+to+get+in+touch+to+talk+about+my+property+plans.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener" class="btn btn-gold">지금 WhatsApp 문의</a>
+    <a href="/ko/projects.html" class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.3);">프로젝트 보기</a></div>
+  <div class="scan-cards">
+    <div class="scan-card">
+      <div class="scan-frame"><img src="images/c616becce1095d0f.jpg" alt="Scan to add Keith Nah on WeChat"></div>
+      <span class="scan-caption">WeChat</span>
+    </div>
+    <div class="scan-card">
+      <div class="scan-frame"><img src="images/ff23e50978005c22.jpg" alt="Scan to message Keith Nah on WhatsApp"></div>
+      <span class="scan-caption">WhatsApp</span>
+    </div>
+    <div class="scan-card">
+      <div class="scan-frame"><img src="images/cbc1cf88db8f73b6.jpg" alt="Scan to add Keith Nah on LINE"></div>
+      <span class="scan-caption">LINE</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="images/f304c8479b1fe873.png" alt="Keith Nah logo" class="footer-logo-img">
+      <span>Keith Nah 鈞晖 <em>| Real Estate</em></span>
+    </div>
+    <p>© 2026 Keith Nah Real Estate. 모든 권리 보유.</p>
+  </div>
+</footer>
+
+<div class="kn-fab"><button type="button" class="kn-top" id="knTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"></path></svg></button><a class="float-wa" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+explore+more+on+Malaysia+Property.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener" aria-label="Chat with Keith on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.44.79 3.06 1.2 4.72 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0012.04 2zm5.82 14.06c-.24.68-1.42 1.3-1.95 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.3-.13.58.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.41.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.68.79 1.97.94.29.14.48.21.55.33.07.12.07.7-.17 1.38z"></path></svg><span class="fw-txt">Chat with Keith</span></a></div><!--/kn-fab--><script>(function(){var b=document.getElementById('knTop');if(!b)return;function s(){b.classList.toggle('show',(window.pageYOffset||document.documentElement.scrollTop)>300);}window.addEventListener('scroll',s,{passive:true});s();b.addEventListener('click',function(){var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;window.scrollTo({top:0,behavior:r?'auto':'smooth'});});})();</script>
+
+<script>
+  // ---- Language switcher (site-wide, shared with home page) ----
+  const LANG_NAMES = {"en": "English", "zh-CN": "简体中文", "zh-TW": "繁體中文", "ms": "Bahasa Malaysia", "ja": "日本語", "ko": "한국어"};
+  let currentLang = 'en';
+
+  function setLanguage(lang){
+    currentLang = lang;
+    const label = document.getElementById('langSelectorLabel');
+    if(label) label.textContent = LANG_NAMES[lang] || 'English';
+
+    document.querySelectorAll('.lang-menu a').forEach(a => a.classList.remove('active'));
+    const idx = Object.keys(LANG_NAMES).indexOf(lang);
+    const menuLinks = document.querySelectorAll('#langMenu a');
+    if(menuLinks[idx]) menuLinks[idx].classList.add('active');
+
+    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+    try { localStorage.setItem('kn_lang', lang); } catch(e) {}
+
+    const menu = document.getElementById('langMenu');
+    if(menu) menu.classList.remove('open');
+
+    if (typeof applyCtaLanguage === 'function') applyCtaLanguage();
+  }
+
+  function toggleLangMenu(e){
+    e.stopPropagation();
+    document.getElementById('langMenu').classList.toggle('open');
+  }
+
+  (function initLang(){
+    let saved = 'en';
+    try { saved = localStorage.getItem('kn_lang') || 'en'; } catch(e) {}
+    if (!(saved in LANG_NAMES)) saved = 'en';
+    setLanguage(saved);
+  })();
+
+  // ---- Currency switcher (site-wide, shared with home page) ----
+  const EXCHANGE_RATES = { MYR: 1, USD: 0.21, SGD: 0.285, CNY: 1.52, JPY: 31.5, KRW: 290 };
+  const CURRENCY_SYMBOL = { MYR: 'RM', USD: 'US$', SGD: 'S$', CNY: 'CN¥', JPY: 'JP¥', KRW: '₩' };
+  let currentCurrency = 'MYR';
+
+  function formatPrice(myrValue, currency, approx){
+    const rate = EXCHANGE_RATES[currency] || 1;
+    const converted = myrValue * rate;
+    const symbol = CURRENCY_SYMBOL[currency] || currency;
+    let display;
+    if(converted >= 1000000){ display = (converted/1000000).toFixed(2) + 'M'; }
+    else { display = Math.round(converted/1000) + 'K'; }
+    return (approx ? '~' : '') + symbol + ' ' + display;
+  }
+
+  function setCurrency(cur){
+    currentCurrency = cur;
+    document.querySelectorAll('[data-price-myr]').forEach(el => {
+      const myrValue = parseFloat(el.getAttribute('data-price-myr'));
+      const approx = el.getAttribute('data-approx') === '1';
+      el.textContent = formatPrice(myrValue, cur, approx);
+    });
+    const label = document.getElementById('currSelectorLabel');
+    if(label) label.textContent = cur;
+    document.querySelectorAll('#currMenu a').forEach(a => a.classList.remove('active'));
+    const menuLinks = document.querySelectorAll('#currMenu a');
+    const idx = Object.keys(CURRENCY_SYMBOL).indexOf(cur);
+    if(menuLinks[idx]) menuLinks[idx].classList.add('active');
+    try { localStorage.setItem('kn_currency', cur); } catch(e) {}
+    const menu = document.getElementById('currMenu');
+    if(menu) menu.classList.remove('open');
+  }
+
+  function toggleCurrMenu(e){
+    e.stopPropagation();
+    document.getElementById('currMenu').classList.toggle('open');
+  }
+
+  (function initCurrency(){
+    let saved = 'MYR';
+    try { saved = localStorage.getItem('kn_currency') || 'MYR'; } catch(e) {}
+    setCurrency(saved);
+  })();
+
+  document.addEventListener('click', function(e){
+    const switcher = document.getElementById('langSwitch');
+    if(switcher && !switcher.contains(e.target)){
+      const m = document.getElementById('langMenu');
+      if(m) m.classList.remove('open');
+    }
+    const currSwitcher = document.getElementById('currSwitch');
+    if(currSwitcher && !currSwitcher.contains(e.target)){
+      const m = document.getElementById('currMenu');
+      if(m) m.classList.remove('open');
+    }
+  });
+</script>
+
+
+<script>
+// ---- Site-wide currency: convert every "RM ..." amount in page text (cards, popups, tables) ----
+(function(){
+  const orig = new WeakMap();
+  const RE = /(?<![A-Za-z])RM\s?(\d[\d,]*(?:\.\d+)?)\s?(K|M|mil|million)?(?![A-Za-z])/g;
+  function toMyr(n, u){
+    n = parseFloat(String(n).replace(/,/g,''));
+    if(!u) return n;
+    u = u.toLowerCase();
+    return u === 'k' ? n*1e3 : n*1e6;
+  }
+  function fmt(v, cur){
+    const rate = (typeof EXCHANGE_RATES !== 'undefined' && EXCHANGE_RATES[cur]) || 1;
+    const sym = (typeof CURRENCY_SYMBOL !== 'undefined' && CURRENCY_SYMBOL[cur]) || cur;
+    const c = v * rate;
+    let s;
+    if(c >= 1e6) s = (c/1e6).toFixed(2) + 'M';
+    else if(c >= 1e4) s = Math.round(c/1000) + 'K';
+    else if(c >= 1000) s = (c/1000).toFixed(1) + 'K';
+    else s = c < 10 ? c.toFixed(2) : String(Math.round(c));
+    return sym + ' ' + s;
+  }
+  window.knApplyCurrency = function(root, force){
+    const cur = force || ((typeof currentCurrency !== 'undefined') ? currentCurrency : 'MYR');
+    const w = document.createTreeWalker(root || document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        const p = n.parentNode;
+        if(!p || /^(SCRIPT|STYLE|TEXTAREA|NOSCRIPT)$/.test(p.nodeName)) return NodeFilter.FILTER_REJECT;
+        if(p.closest && p.closest('#currMenu,#currSwitch')) return NodeFilter.FILTER_REJECT;
+        return (orig.has(n) || /RM\s?\d/.test(n.nodeValue)) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes = [];
+    while(w.nextNode()) nodes.push(w.currentNode);
+    nodes.forEach(function(n){
+      if(!orig.has(n)) orig.set(n, n.nodeValue);
+      const o = orig.get(n);
+      n.nodeValue = (cur === 'MYR') ? o : o.replace(RE, function(m, num, u){ return fmt(toMyr(num, u), cur); });
+    });
+  };
+  function wrap(name){
+    if(typeof window[name] !== 'function') return;
+    const f = window[name];
+    window[name] = function(){ const r = f.apply(this, arguments); try{ knApplyCurrency(); }catch(e){} return r; };
+  }
+  ['setCurrency','openDetailModal','selectLayout','renderTable','applyProjFilter','applyFilters'].forEach(wrap);
+  knApplyCurrency();
+})();
+</script>
+
+<script>
+// ---- Site-wide language: translate the shared header, WhatsApp button and footer on every page ----
+(function(){
+  const DIC = {"Home": {"zh-CN": "首页", "zh-TW": "首頁", "ms": "Utama", "ta": "முகப்பு", "ja": "ホーム", "ko": "홈", "ar": "الرئيسية"}, "View Projects": {"zh-CN": "查看项目", "zh-TW": "查看項目", "ms": "Lihat Projek", "ta": "திட்டங்களைப் பார்க்க", "ja": "物件を見る", "ko": "프로젝트 보기", "ar": "عرض المشاريع"}, "Compare Projects": {"zh-CN": "项目比较", "zh-TW": "項目比較", "ms": "Banding Projek", "ta": "திட்டங்களை ஒப்பிடுக", "ja": "物件を比較", "ko": "프로젝트 비교", "ar": "مقارنة المشاريع"}, "Calculator": {"zh-CN": "计算器", "zh-TW": "計算機", "ms": "Kalkulator", "ta": "கணிப்பான்", "ja": "計算ツール", "ko": "계산기", "ar": "الحاسبة"}, "News": {"zh-CN": "新闻", "zh-TW": "新聞", "ms": "Berita", "ta": "செய்திகள்", "ja": "ニュース", "ko": "뉴스", "ar": "الأخبار"}, "Free Toolkit": {"zh-CN": "免费资源", "zh-TW": "免費資源", "ms": "Kit Percuma", "ja": "無料ツールキット", "ko": "무료 툴킷"}, "About Keith": {"zh-CN": "关于 KEITH", "zh-TW": "關於 KEITH", "ms": "Tentang Keith", "ta": "Keith பற்றி", "ja": "Keithについて", "ko": "Keith 소개", "ar": "عن كيث"}, "WhatsApp": {"zh-CN": "WhatsApp", "zh-TW": "WhatsApp", "ms": "WhatsApp", "ta": "WhatsApp", "ja": "WhatsApp", "ko": "WhatsApp", "ar": "واتساب"}, "Premium Kuala Lumpur real estate — KL City Centre, TRX, Bukit Bintang, Bangsar and beyond.": {"zh-CN": "吉隆坡顶级房产 — 吉隆坡市中心、TRX、武吉免登、孟沙及更多地区。", "zh-TW": "吉隆坡頂級房產 — 吉隆坡市中心、TRX、武吉免登、孟沙及更多地區。", "ms": "Hartanah mewah Kuala Lumpur — KL City Centre, TRX, Bukit Bintang, Bangsar dan sekitarnya.", "ta": "பிரீமியம் கோலாலம்பூர் சொத்துக்கள் — KL சிட்டி சென்டர், TRX, புக்கிட் பிந்தாங், பாங்சார் மற்றும் பல.", "ja": "クアラルンプールのプレミアム不動産 — KLシティセンター、TRX、ブキビンタン、バンサーなど。", "ko": "쿠알라룸푸르 프리미엄 부동산 — KL 시티센터, TRX, 부킷빈탕, 방사 등.", "ar": "عقارات كوالالمبور الفاخرة — وسط مدينة كوالالمبور وTRX وبوكيت بينتانج وبانجسار وأكثر."}, "Quick Links": {"zh-CN": "快速链接", "zh-TW": "快速連結", "ms": "Pautan Pantas", "ta": "விரைவு இணைப்புகள்", "ja": "クイックリンク", "ko": "바로가기", "ar": "روابط سريعة"}, "Projects": {"zh-CN": "项目", "zh-TW": "項目", "ms": "Projek", "ta": "திட்டங்கள்", "ja": "物件", "ko": "프로젝트", "ar": "المشاريع"}, "Legal": {"zh-CN": "法律信息", "zh-TW": "法律資訊", "ms": "Perundangan", "ta": "சட்டப்பூர்வ", "ja": "法的情報", "ko": "법적 고지", "ar": "قانوني"}, "Privacy Policy": {"zh-CN": "隐私政策", "zh-TW": "隱私政策", "ms": "Dasar Privasi", "ta": "தனியுரிமைக் கொள்கை", "ja": "プライバシーポリシー", "ko": "개인정보 처리방침", "ar": "سياسة الخصوصية"}, "Terms of Use": {"zh-CN": "使用条款", "zh-TW": "使用條款", "ms": "Terma Penggunaan", "ta": "பயன்பாட்டு விதிமுறைகள்", "ja": "利用規約", "ko": "이용약관", "ar": "شروط الاستخدام"}, "Follow": {"zh-CN": "关注我们", "zh-TW": "關注我們", "ms": "Ikuti Kami", "ta": "எங்களைப் பின்தொடருங்கள்", "ja": "フォローする", "ko": "팔로우", "ar": "تابعنا"}, "YouTube": {"zh-CN": "YouTube", "zh-TW": "YouTube", "ms": "YouTube", "ta": "YouTube", "ja": "YouTube", "ko": "YouTube", "ar": "يوتيوب"}, "Instagram": {"zh-CN": "Instagram", "zh-TW": "Instagram", "ms": "Instagram", "ta": "Instagram", "ja": "Instagram", "ko": "Instagram", "ar": "إنستغرام"}, "© 2026 Keith Nah Real Estate. All rights reserved.": {"zh-CN": "© 2026 Keith Nah Real Estate. 版权所有。", "zh-TW": "© 2026 Keith Nah Real Estate. 版權所有。", "ms": "© 2026 Keith Nah Real Estate. Hak cipta terpelihara.", "ta": "© 2026 Keith Nah Real Estate. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.", "ja": "© 2026 Keith Nah Real Estate. 無断複写・転載を禁じます。", "ko": "© 2026 Keith Nah Real Estate. 모든 권리 보유.", "ar": "© 2026 Keith Nah Real Estate. جميع الحقوق محفوظة."}, "Kuala Lumpur, Malaysia": {"zh-CN": "马来西亚吉隆坡", "zh-TW": "馬來西亞吉隆坡", "ms": "Kuala Lumpur, Malaysia", "ta": "கோலாலம்பூர், மலேசியா", "ja": "クアラルンプール、マレーシア", "ko": "쿠알라룸푸르, 말레이시아", "ar": "كوالالمبور، ماليزيا"}};
+  const origText = new WeakMap();
+  function lang(){ return (typeof currentLang !== 'undefined' && currentLang) ? currentLang : 'en'; }
+  function tr(en, l){ const e = DIC[en]; return (l !== 'en' && e && e[l]) ? e[l] : en; }
+
+  // ---- Page content translation (units = elements holding only inline markup) ----
+  const TR = {"About Keith":{"zh-CN":"关于 Keith","ms":"Tentang Keith","ja":"Keithについて","ko":"Keith 소개","ar":"عن Keith","ta":"Keith பற்றி","zh-TW":"關於 Keith"},"Keith Nah <em>鈞晖</em>":{"zh-CN":"Keith Nah <em>鈞晖</em>","ms":"Keith Nah <em>鈞晖</em>","ja":"Keith Nah <em>鈞晖</em>","ko":"Keith Nah <em>鈞晖</em>","ar":"Keith Nah <em>鈞晖</em>","ta":"Keith Nah <em>鈞晖</em>","zh-TW":"Keith Nah <em>鈞暉</em>"},"Property Consultant &amp; Content Strategist — Kuala Lumpur New Launches":{"zh-CN":"房产顾问兼内容策略师——吉隆坡新盘专家","ms":"Perunding Hartanah &amp; Penstrategi Kandungan — Pelancaran Baharu Kuala Lumpur","ja":"不動産コンサルタント＆コンテンツストラテジスト — クアラルンプール新規launch物件","ko":"부동산 컨설턴트 &amp; 콘텐츠 전략가 — 쿠알라룸푸르 신규 분양","ar":"مستشار عقاري واستراتيجي محتوى — الإطلاقات الجديدة في كوالالمبور","ta":"சொத்து ஆலோசகர் &amp; உள்ளடக்க வியூகவாதி — கோலாலம்பூர் புதிய திட்ட அறிமுகங்கள்","zh-TW":"房產顧問兼內容策略師——吉隆坡新盤專家"},"Keith Nah helps local and international buyers navigate Kuala Lumpur's new-launch market — from KL City Centre and TRX to Bukit Bintang, Bangsar and Bukit Jalil. Through in-depth video walkthroughs and straight-talking guidance, he turns complex developer launches into clear, confident decisions.":{"zh-CN":"Keith Nah 协助本地及国际买家把握吉隆坡新盘市场——从 吉隆坡市中心、TRX，到 Bukit Bintang、Bangsar 和 Bukit Jalil。通过深入的视频实地解析和坦诚直接的专业指引，他将复杂的发展商新盘变成清晰、可靠的决策。","ms":"Keith Nah membantu pembeli tempatan dan antarabangsa menjelajahi pasaran pelancaran baharu Kuala Lumpur — dari Pusat Bandaraya KL dan TRX hingga Bukit Bintang, Bangsar dan Bukit Jalil. Melalui tinjauan video yang mendalam dan panduan yang berterus terang, beliau menjadikan pelancaran pemaju yang rumit kepada keputusan yang jelas dan yakin.","ja":"Keith Nahは、国内外の購入者がクアラルンプールの新規launch市場を的確に進められるようサポートしています。KLシティセンターやTRXから、Bukit Bintang、Bangsar、Bukit Jalilまで、詳細な動画ウォークスルーと率直なアドバイスで、複雑なデベロッパーのlaunchを、明確で自信の持てる意思決定へと導きます。","ko":"Keith Nah는 현지 및 해외 구매자가 쿠알라룸푸르의 신규 분양 시장을 이해하고 탐색할 수 있도록 돕습니다. KL 시티센터와 TRX부터 Bukit Bintang, Bangsar, Bukit Jalil까지 폭넓게 다룹니다. 심도 있는 영상 소개와 솔직한 조언을 통해 복잡한 개발사 분양 정보를 명확하고 확신 있는 결정으로 이끌어 드립니다.","ar":"يساعد Keith Nah المشترين المحليين والدوليين على التعامل مع سوق الإطلاقات الجديدة في كوالالمبور — من وسط مدينة كوالالمبور وTRX إلى Bukit Bintang وBangsar وBukit Jalil. ومن خلال جولات فيديو معمّقة وإرشاد صريح، يحوّل إطلاقات المطورين المعقدة إلى قرارات واضحة وواثقة.","ta":"KL சிட்டி சென்டர் மற்றும் TRX முதல் Bukit Bintang, Bangsar, Bukit Jalil வரை, கோலாலம்பூரின் புதிய திட்ட சந்தையில் உள்ளூர் மற்றும் சர்வதேச வாங்குவோருக்கு Keith Nah வழிகாட்டுகிறார். ஆழமான வீடியோ நடைப்பயணங்கள் மற்றும் நேர்மையான ஆலோசனையின் மூலம், சிக்கலான டெவலப்பர் அறிமுகங்களை தெளிவான, நம்பிக்கையான முடிவுகளாக மாற்றுகிறார்.","zh-TW":"Keith Nah 協助本地及國際買家把握吉隆坡新盤市場——從 吉隆坡市中心、TRX，到 Bukit Bintang、Bangsar 和 Bukit Jalil。透過深入的影片實地解析和坦誠直接的專業指引，他將複雜的發展商新盤變成清晰、可靠的決策。"},"<a href=\"https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27d+like+to+know+more+about+working+with+you.&amp;type=phone_number&amp;app_absent=0\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-dark\">WhatsApp Keith</a>\n      <a href=\"projects.html\" class=\"btn btn-outline\">View Projects</a>":{"zh-CN":"<a href=\"https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27d+like+to+know+more+about+working+with+you.&amp;type=phone_number&amp;app_absent=0\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-dark\">WhatsApp Keith</a>\n      <a href=\"projects.html\" class=\"btn btn-outline\">查看项目</a>","ms":"<a href=\"https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27d+like+to+know+more+about+working+with+you.&amp;type=phone_number&amp;app_absent=0\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-dark\">WhatsApp Keith</a>\n      <a href=\"projects.html\" class=\"btn btn-outline\">Lihat Projek</a>","ja":"<a href=\"https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27d+like+to+know+more+about+working+with+you.&amp;type=phone_number&amp;app_absent=0\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-dark\">KeithにWhatsApp</a>\n      <a href=\"projects.html\" class=\"btn btn-outline\">プロジェクトを見る</a>","ko":"<a href=\"https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27d+like+to+know+more+about+working+with+you.&amp;type=phone_number&amp;app_absent=0\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-dark\">Keith에게 WhatsApp 문의</a>\n      <a href=\"projects.html\" class=\"btn btn-outline\">프로젝트 보기</a>","ar":"<a href=\"https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27d+like+to+know+more+about+working+with+you.&amp;type=phone_number&amp;app_absent=0\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-dark\">راسل Keith عبر WhatsApp</a>\n      <a href=\"projects.html\" class=\"btn btn-outline\">استعرض المشاريع</a>","ta":"<a href=\"https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27d+like+to+know+more+about+working+with+you.&amp;type=phone_number&amp;app_absent=0\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-dark\">Keith-ஐ WhatsApp-இல் தொடர்பு கொள்ளுங்கள்</a>\n      <a href=\"projects.html\" class=\"btn btn-outline\">திட்டங்களைக் காண்க</a>","zh-TW":"<a href=\"https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27d+like+to+know+more+about+working+with+you.&amp;type=phone_number&amp;app_absent=0\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-dark\">WhatsApp Keith</a>\n      <a href=\"projects.html\" class=\"btn btn-outline\">檢視專案</a>"},"Projects Across Malaysia":{"zh-CN":"遍及马来西亚的项目","ms":"Projek Merentasi Malaysia","ja":"マレーシア全土のプロジェクト","ko":"말레이시아 전역의 프로젝트","ar":"مشاريع في أنحاء ماليزيا","ta":"மலேசியா முழுவதும் திட்டங்கள்","zh-TW":"遍及馬來西亞的專案"},"Agent Fee To Buyers":{"zh-CN":"买家免付代理费","ms":"Yuran Ejen Kepada Pembeli","ja":"購入者様へのエージェント手数料","ko":"구매자 대상 중개 수수료","ar":"عمولة الوكيل على المشترين","ta":"வாங்குவோருக்கான முகவர் கட்டணம்","zh-TW":"買家免付代理費"},"Core KL Districts Covered":{"zh-CN":"覆盖的吉隆坡核心地段","ms":"Daerah Utama KL Diliputi","ja":"対応するKLの主要エリア","ko":"다루는 KL 핵심 지역","ar":"أحياء كوالالمبور الرئيسية المغطاة","ta":"உள்ளடக்கிய முக்கிய கோலாலம்பூர் பகுதிகள்","zh-TW":"覆蓋的吉隆坡核心地段"},"YouTube Followers":{"zh-CN":"YouTube 订阅者","ms":"Pengikut YouTube","ja":"YouTubeフォロワー","ko":"YouTube 구독자","ar":"متابعو YouTube","ta":"YouTube பின்தொடர்பவர்கள்","zh-TW":"YouTube 訂閱者"},"Watch Before You Buy":{"zh-CN":"购买前先观看","ms":"Tonton Sebelum Anda Membeli","ja":"購入前にご覧ください","ko":"구매 전에 먼저 보세요","ar":"شاهد قبل أن تشتري","ta":"வாங்குவதற்கு முன் பாருங்கள்","zh-TW":"購買前先觀看"},"On <span>YouTube</span>":{"zh-CN":"在 <span>YouTube</span>","ms":"Di <span>YouTube</span>","ja":"<span>YouTube</span>で","ko":"<span>YouTube</span>에서","ar":"على <span>YouTube</span>","ta":"<span>YouTube</span>-இல்","zh-TW":"在 <span>YouTube</span>"},"Follow Keith Nah Real Estate":{"zh-CN":"关注 Keith Nah Real Estate","ms":"Ikuti Keith Nah Real Estate","ja":"Keith Nah Real Estateをフォロー","ko":"Keith Nah Real Estate 구독하기","ar":"تابع Keith Nah Real Estate","ta":"Keith Nah Real Estate-ஐப் பின்தொடருங்கள்","zh-TW":"關注 Keith Nah Real Estate"},"Explore drone views, physical site walkthroughs, and detailed pricing breakdowns.":{"zh-CN":"探索无人机航拍、实地走访以及详尽的价格分析。","ms":"Terokai pemandangan dron, tinjauan tapak secara fizikal dan pecahan harga yang terperinci.","ja":"ドローン映像、現地ウォークスルー、詳細な価格内訳をご覧いただけます。","ko":"드론 영상, 현장 답사 영상, 상세한 가격 분석을 확인해 보세요.","ar":"استكشف لقطات الطائرات المسيّرة وجولات المواقع الفعلية وتفاصيل الأسعار الكاملة.","ta":"ட்ரோன் காட்சிகள், நேரடி தள நடைப்பயணங்கள் மற்றும் விரிவான விலை விவரங்களை ஆராயுங்கள்.","zh-TW":"探索無人機航拍、實地走訪以及詳盡的價格分析。"},"Watch YouTube":{"zh-CN":"观看 YouTube","ms":"Tonton YouTube","ja":"YouTubeを見る","ko":"YouTube 시청하기","ar":"شاهد على YouTube","ta":"YouTube-இல் பாருங்கள்","zh-TW":"觀看 YouTube"},"The Approach":{"zh-CN":"服务理念","ms":"Pendekatan","ja":"アプローチ","ko":"접근 방식","ar":"المنهج","ta":"அணுகுமுறை","zh-TW":"服務理念"},"Content-Led, <span>Client-First</span>":{"zh-CN":"内容为先，<span>客户至上</span>","ms":"Berasaskan Kandungan, <span>Utamakan Klien</span>","ja":"コンテンツ主導、<span>クライアントファースト</span>","ko":"콘텐츠 중심, <span>고객 우선</span>","ar":"قائم على المحتوى، <span>والعميل أولًا</span>","ta":"உள்ளடக்க அடிப்படை, <span>வாடிக்கையாளருக்கு முன்னுரிமை</span>","zh-TW":"內容為先，<span>客戶至上</span>"},"Keith built his practice around a simple idea: buyers make better decisions when they can actually see what they're buying. Rather than relying on glossy brochures alone, he produces drone footage, physical site walkthroughs and detailed pricing breakdowns for every project he features — the same videos that built his YouTube following.":{"zh-CN":"Keith 的业务建立在一个简单的理念上：当买家能亲眼看到所购买的物业时，才能做出更好的决定。他并不只依赖华丽的宣传册，而是为每个推荐项目制作无人机航拍、实地走访和详尽的价格分析——这些视频也正是他 YouTube 频道粉丝的由来。","ms":"Keith membina amalannya berdasarkan satu idea mudah: pembeli membuat keputusan yang lebih baik apabila mereka benar-benar dapat melihat apa yang dibeli. Bukan sekadar bergantung pada brosur berkilat, beliau menghasilkan rakaman dron, tinjauan tapak secara fizikal dan pecahan harga terperinci bagi setiap projek yang dipaparkan — video yang sama yang membina pengikut YouTube beliau.","ja":"Keithは「購入者は、購入するものを実際に目で見ることで、より良い判断ができる」というシンプルな考えを軸に事業を築いてきました。華やかなパンフレットだけに頼らず、紹介するすべてのプロジェクトについて、ドローン映像、現地ウォークスルー、詳細な価格内訳を制作しています。これらはYouTubeのフォロワーを築いてきた動画そのものです。","ko":"Keith는 구매자가 실제로 구매하는 대상을 직접 볼 수 있을 때 더 나은 결정을 내린다는 단순한 생각을 바탕으로 사업을 쌓아 왔습니다. 화려한 브로슈어에만 의존하지 않고, 소개하는 모든 프로젝트에 대해 드론 촬영 영상, 현장 답사 영상, 상세한 가격 분석을 제작합니다. 바로 이 영상들이 그의 YouTube 구독자층을 만들어 냈습니다.","ar":"بنى Keith ممارسته المهنية على فكرة بسيطة: يتخذ المشترون قرارات أفضل عندما يرون فعلًا ما سيشترونه. فبدلًا من الاعتماد على الكتيبات البراقة وحدها، يُنتج لقطات بالطائرات المسيّرة وجولات فعلية في المواقع وتفاصيل دقيقة للأسعار لكل مشروع يعرضه — وهي مقاطع الفيديو نفسها التي صنعت جمهوره على YouTube.","ta":"வாங்குவோர் தாங்கள் வாங்குவதை நேரில் காணும்போது சிறந்த முடிவுகளை எடுப்பார்கள் என்ற எளிய எண்ணத்தின் மீது Keith தன் தொழிலை கட்டமைத்துள்ளார். பளபளப்பான துண்டுப்பிரசுரங்களை மட்டும் நம்பாமல், தான் முன்வைக்கும் ஒவ்வொரு திட்டத்திற்கும் ட்ரோன் காட்சிகள், நேரடி தள நடைப்பயணங்கள், விரிவான விலை விவரங்களை உருவாக்குகிறார் — அவரது YouTube பின்தொடர்பாளர்களை உருவாக்கிய அதே வீடியோக்கள் அவை.","zh-TW":"Keith 的業務建立在一個簡單的理念上：當買家能親眼看到所購買的物業時，才能做出更好的決定。他並不只依賴華麗的宣傳冊，而是為每個推薦專案製作無人機航拍、實地走訪和詳盡的價格分析——這些影片也正是他 YouTube 頻道粉絲的由來。"},"That content-first approach means clients often arrive already well-informed, ready to go deeper into financing options, unit comparisons and paperwork specific to their situation — whether they're a first-time foreign buyer or a seasoned investor adding to a portfolio.":{"zh-CN":"这种内容先行的方式意味着客户往往在到访前就已充分了解情况，可以直接深入探讨融资方案、单位比较以及与自身情况相关的文件手续——无论是首次购房的外国买家，还是正在扩充投资组合的资深投资者。","ms":"Pendekatan mengutamakan kandungan ini bermakna klien sering tiba dengan maklumat yang baik, bersedia untuk mendalami pilihan pembiayaan, perbandingan unit dan dokumentasi yang khusus kepada keadaan mereka — sama ada mereka pembeli asing kali pertama atau pelabur berpengalaman yang menambah portfolio.","ja":"このコンテンツ重視のアプローチにより、お客様はすでに十分な情報を得た状態でご相談に来られることが多く、融資オプション、ユニット比較、個々のご状況に応じた手続きへと、より深く踏み込むことができます。初めて海外から購入される方でも、ポートフォリオを拡大する経験豊富な投資家の方でも同様です。","ko":"이러한 콘텐츠 중심 접근 덕분에 고객분들은 이미 충분히 정보를 갖추고 오시는 경우가 많으며, 첫 해외 구매자이든 포트폴리오를 확장하는 노련한 투자자이든 자신의 상황에 맞는 금융 옵션, 유닛 비교, 서류 절차를 더 깊이 있게 다룰 수 있습니다.","ar":"ويعني هذا النهج القائم على المحتوى أن العملاء يصلون غالبًا وهم على اطلاع جيد، وجاهزون للتعمق في خيارات التمويل ومقارنة الوحدات والإجراءات الخاصة بوضعهم — سواء كانوا مشترين أجانب للمرة الأولى أو مستثمرين مخضرمين يضيفون إلى محافظهم.","ta":"இந்த உள்ளடக்க-முதன்மை அணுகுமுறையால், வாடிக்கையாளர்கள் பெரும்பாலும் ஏற்கெனவே நன்கு தெரிந்தவர்களாக வருகிறார்கள்; முதல்முறை வெளிநாட்டு வாங்குபவராயினும் தங்கள் முதலீட்டுத் தொகுப்பை விரிவாக்கும் அனுபவமுள்ள முதலீட்டாளராயினும், நிதி வசதி விருப்பங்கள், யூனிட் ஒப்பீடுகள், தங்கள் நிலைக்கேற்ற ஆவணப் பணிகள் குறித்து ஆழமாகச் செல்ல அவர்கள் தயாராக இருக்கிறார்கள்.","zh-TW":"這種內容先行的方式意味著客戶往往在到訪前就已充分了解情況，可以直接深入探討融資方案、單位比較以及與自身情況相關的檔案手續——無論是首次購房的外國買家，還是正在擴充投資組合的資深投資者。"},"Keith works directly with developers to secure early access to new launches, and supports clients through the full journey — from first video, to viewing, to signing, to key collection.":{"zh-CN":"Keith 直接与发展商合作，为客户争取新盘的优先机会，并全程陪伴客户——从第一支视频、看房、签约，一直到领取钥匙。","ms":"Keith bekerjasama secara langsung dengan pemaju untuk mendapatkan akses awal kepada pelancaran baharu, dan menyokong klien sepanjang keseluruhan perjalanan — dari video pertama, tinjauan unit, penandatanganan, hingga penyerahan kunci.","ja":"Keithはデベロッパーと直接連携して新規launchへの早期アクセスを確保し、最初の動画から、内覧、契約、鍵の受け取りまで、購入の全行程をサポートします。","ko":"Keith는 개발사와 직접 협력하여 신규 분양에 대한 우선 접근권을 확보하고, 첫 영상 시청부터 현장 방문, 계약, 열쇠 인수까지 전 과정에서 고객을 지원합니다.","ar":"يعمل Keith مباشرةً مع المطورين لتأمين وصول مبكر إلى الإطلاقات الجديدة، ويرافق عملاءه طوال الرحلة — من أول فيديو، إلى المعاينة، إلى التوقيع، وصولًا إلى استلام المفاتيح.","ta":"புதிய திட்ட அறிமுகங்களுக்கு முன்கூட்டியே அணுகலைப் பெற Keith டெவலப்பர்களுடன் நேரடியாகப் பணியாற்றுகிறார்; முதல் வீடியோ முதல் பார்வையிடல், கையொப்பம், சாவி பெறுதல் வரை முழுப் பயணத்திலும் வாடிக்கையாளர்களுக்குத் துணை நிற்கிறார்.","zh-TW":"Keith 直接與發展商合作，為客戶爭取新盤的優先機會，並全程陪伴客戶——從第一支影片、看房、簽約，一直到領取鑰匙。"},"Where Keith Focuses":{"zh-CN":"Keith 的专注领域","ms":"Fokus Keith","ja":"Keithの注力エリア","ko":"Keith의 전문 분야","ar":"مجالات تركيز Keith","ta":"Keith கவனம் செலுத்தும் இடங்கள்","zh-TW":"Keith 的專注領域"},"Core <span>Districts</span>":{"zh-CN":"核心<span>地段</span>","ms":"Daerah <span>Utama</span>","ja":"主要<span>エリア</span>","ko":"핵심 <span>지역</span>","ar":"<span>الأحياء</span> الرئيسية","ta":"முக்கிய <span>பகுதிகள்</span>","zh-TW":"核心<span>地段</span>"},"Five of Kuala Lumpur's most sought-after addresses for new launches and long-term investment.":{"zh-CN":"吉隆坡五大最受追捧的地段，兼具新盘机遇与长期投资价值。","ms":"Lima alamat paling dicari di Kuala Lumpur untuk pelancaran baharu dan pelaburan jangka panjang.","ja":"新規launchと長期投資で最も人気の高い、クアラルンプールの5つのアドレスです。","ko":"신규 분양과 장기 투자에 가장 주목받는 쿠알라룸푸르의 다섯 곳입니다.","ar":"خمسة من أكثر عناوين كوالالمبور طلبًا للإطلاقات الجديدة والاستثمار طويل الأمد.","ta":"புதிய திட்ட அறிமுகங்களுக்கும் நீண்டகால முதலீட்டிற்கும் கோலாலம்பூரில் மிகவும் விரும்பப்படும் ஐந்து முகவரிகள்.","zh-TW":"吉隆坡五大最受追捧的地段，兼具新盤機遇與長期投資價值。"},"KL City Centre":{"zh-CN":"吉隆坡市中心","ms":"Pusat Bandaraya KL","ja":"KLシティセンター","ko":"KL 시티센터","ar":"وسط مدينة كوالالمبور","ta":"KL சிட்டி சென்டர்","zh-TW":"吉隆坡市中心"},"The city's premier financial and lifestyle address, steps from the Petronas Twin Towers.":{"zh-CN":"城中首屈一指的金融与生活地标，距离双子塔仅几步之遥。","ms":"Alamat kewangan dan gaya hidup utama kota ini, hanya beberapa langkah dari Menara Berkembar Petronas.","ja":"ペトロナス・ツインタワーのすぐそばに位置する、街を代表する金融・ライフスタイルのアドレス。","ko":"페트로나스 트윈 타워 바로 앞에 자리한, 도시 최고의 금융 및 라이프스타일 중심지입니다.","ar":"العنوان المالي ونمط الحياة الأرقى في المدينة، على بعد خطوات من برجي بتروناس التوأمين.","ta":"நகரின் முதன்மையான நிதி மற்றும் வாழ்க்கைமுறை முகவரி; Petronas Twin Towers-இலிருந்து சில அடிகள் தொலைவில்.","zh-TW":"城中首屈一指的金融與生活地標，距離雙子塔僅幾步之遙。"},"TRX":{"zh-CN":"TRX","ms":"TRX","ja":"TRX","ko":"TRX","ar":"TRX","ta":"TRX","zh-TW":"TRX"},"Malaysia's newest financial district, purpose-built with an international business district feel.":{"zh-CN":"马来西亚最新的金融区，以国际商业区的格局专门规划打造。","ms":"Daerah kewangan terbaharu Malaysia, dibina khas dengan nuansa daerah perniagaan antarabangsa.","ja":"マレーシアで最も新しい金融地区。国際的なビジネス街の雰囲気を備えて計画的に開発されました。","ko":"국제 비즈니스 지구의 분위기로 계획 개발된 말레이시아의 새로운 금융 지구입니다.","ar":"أحدث منطقة مالية في ماليزيا، صُمّمت خصيصًا بطابع حي أعمال دولي.","ta":"மலேசியாவின் புதிய நிதி மாவட்டம்; சர்வதேச வணிக மாவட்ட உணர்வுடன் நோக்கத்துடன் கட்டமைக்கப்பட்டது.","zh-TW":"馬來西亞最新的金融區，以國際商業區的格局專門規劃打造。"},"Bukit Bintang":{"zh-CN":"Bukit Bintang","ms":"Bukit Bintang","ja":"Bukit Bintang","ko":"Bukit Bintang","ar":"Bukit Bintang","ta":"Bukit Bintang","zh-TW":"Bukit Bintang"},"KL's retail and entertainment heart, anchored by Pavilion KL and the Bukit Bintang strip.":{"zh-CN":"吉隆坡的购物与娱乐中心，以 Pavilion KL 和 Bukit Bintang 街区为核心。","ms":"Nadi runcit dan hiburan KL, berpusatkan Pavilion KL dan jalur Bukit Bintang.","ja":"KLのショッピングとエンターテインメントの中心地。Pavilion KLとBukit Bintangのメインストリートが核となっています。","ko":"Pavilion KL과 Bukit Bintang 거리를 중심으로 한 KL의 쇼핑 및 엔터테인먼트 중심지입니다.","ar":"قلب التسوق والترفيه في كوالالمبور، ويتوسطه Pavilion KL وشارع Bukit Bintang.","ta":"கோலாலம்பூரின் சில்லறை வணிக மற்றும் பொழுதுபோக்கு மையம்; Pavilion KL மற்றும் Bukit Bintang வீதியால் அடையாளம் பெற்றது.","zh-TW":"吉隆坡的購物與娛樂中心，以 Pavilion KL 和 Bukit Bintang 街區為核心。"},"Bangsar":{"zh-CN":"Bangsar","ms":"Bangsar","ja":"Bangsar","ko":"Bangsar","ar":"Bangsar","ta":"Bangsar","zh-TW":"Bangsar"},"An established, leafy residential enclave favored by expats and long-term homeowners.":{"zh-CN":"成熟且绿意盎然的住宅区，深受外籍人士和长期屋主青睐。","ms":"Kawasan kediaman mapan yang redup, menjadi pilihan ekspatriat dan pemilik rumah jangka panjang.","ja":"緑豊かで歴史のある住宅街。駐在員や長期居住のオーナーに人気のエリアです。","ko":"외국인 거주자와 장기 주택 소유자에게 사랑받는, 녹음이 우거진 오랜 주거 지역입니다.","ar":"حي سكني عريق ومورق يفضّله المغتربون وأصحاب المنازل على المدى الطويل.","ta":"வெளிநாட்டினரும் நீண்டகால வீட்டு உரிமையாளர்களும் விரும்பும், பசுமை நிறைந்த, நிலைபெற்ற குடியிருப்புப் பகுதி.","zh-TW":"成熟且綠意盎然的住宅區，深受外籍人士和長期屋主青睞。"},"Bukit Jalil":{"zh-CN":"Bukit Jalil","ms":"Bukit Jalil","ja":"Bukit Jalil","ko":"Bukit Jalil","ar":"Bukit Jalil","ta":"Bukit Jalil","zh-TW":"Bukit Jalil"},"A fast-growing township with strong rental demand, anchored by major malls and stadiums.":{"zh-CN":"快速发展的新镇，租赁需求强劲，以大型购物中心和体育场馆为核心。","ms":"Perbandaran yang pesat membangun dengan permintaan sewaan yang kukuh, berpusatkan pusat membeli-belah dan stadium utama.","ja":"賃貸需要が旺盛な急成長のタウンシップ。大型モールやスタジアムが拠点となっています。","ko":"대형 쇼핑몰과 경기장을 중심으로 임대 수요가 탄탄한 빠르게 성장하는 신도시입니다.","ar":"بلدة سريعة النمو بطلب إيجاري قوي، تتوسطها مراكز تسوق وملاعب كبرى.","ta":"வலுவான வாடகைத் தேவையுடன் வேகமாக வளரும் நகரியம்; பெரிய வணிக வளாகங்களும் அரங்கங்களும் இதற்கு அடையாளம்.","zh-TW":"快速發展的新鎮，租賃需求強勁，以大型購物中心和體育場館為核心。"},"The Process":{"zh-CN":"服务流程","ms":"Proses","ja":"プロセス","ko":"진행 과정","ar":"العملية","ta":"செயல்முறை","zh-TW":"服務流程"},"How Keith <span>Works</span>":{"zh-CN":"Keith 如何<span>工作</span>","ms":"Cara Keith <span>Bekerja</span>","ja":"Keithの<span>仕事の進め方</span>","ko":"Keith의 <span>업무 방식</span>","ar":"كيف <span>يعمل</span> Keith","ta":"Keith <span>எவ்வாறு செயல்படுகிறார்</span>","zh-TW":"Keith 如何<span>工作</span>"},"Source &amp; Vet Launches":{"zh-CN":"筛选并评估新盘","ms":"Cari &amp; Teliti Pelancaran","ja":"launch物件の選定と精査","ko":"분양 물건 발굴 및 검증","ar":"اختيار الإطلاقات وفحصها","ta":"அறிமுகங்களைத் தேடி ஆராய்தல்","zh-TW":"篩選並評估新盤"},"Reviews new developer launches across KL for location, pricing and quality before featuring them.":{"zh-CN":"在推荐之前，从地段、价格和品质等方面审视吉隆坡各发展商的新盘。","ms":"Menyemak pelancaran baharu pemaju di seluruh KL dari segi lokasi, harga dan kualiti sebelum memaparkannya.","ja":"KL各地のデベロッパーの新規launchを、立地、価格、品質の観点から審査したうえで紹介します。","ko":"KL 전역의 신규 개발사 분양을 입지, 가격, 품질 측면에서 먼저 검토한 후 소개합니다.","ar":"يراجع إطلاقات المطورين الجديدة في كوالالمبور من حيث الموقع والسعر والجودة قبل عرضها.","ta":"கோலாலம்பூர் முழுவதும் புதிய டெவலப்பர் அறிமுகங்களை, முன்வைப்பதற்கு முன் இடம், விலை, தரம் ஆகியவற்றுக்காக மதிப்பாய்வு செய்கிறார்.","zh-TW":"在推薦之前，從地段、價格和品質等方面審視吉隆坡各發展商的新盤。"},"In-Depth Video Content":{"zh-CN":"深入的视频内容","ms":"Kandungan Video Mendalam","ja":"詳細な動画コンテンツ","ko":"심도 있는 영상 콘텐츠","ar":"محتوى فيديو معمّق","ta":"ஆழமான வீடியோ உள்ளடக்கம்","zh-TW":"深入的影片內容"},"Drone footage, physical site walkthroughs and detailed pricing breakdowns shared on YouTube.":{"zh-CN":"在 YouTube 上分享无人机航拍、实地走访以及详尽的价格分析。","ms":"Rakaman dron, tinjauan tapak secara fizikal dan pecahan harga terperinci dikongsi di YouTube.","ja":"ドローン映像、現地ウォークスルー、詳細な価格内訳をYouTubeで公開しています。","ko":"드론 영상, 현장 답사 영상, 상세한 가격 분석을 YouTube에서 공유합니다.","ar":"لقطات بالطائرات المسيّرة وجولات فعلية في المواقع وتفاصيل دقيقة للأسعار تُنشر على YouTube.","ta":"ட்ரோன் காட்சிகள், நேரடி தள நடைப்பயணங்கள், விரிவான விலை விவரங்கள் YouTube-இல் பகிரப்படுகின்றன.","zh-TW":"在 YouTube 上分享無人機航拍、實地走訪以及詳盡的價格分析。"},"Guide Financing &amp; Paperwork":{"zh-CN":"指导融资与文件手续","ms":"Bimbing Pembiayaan &amp; Dokumentasi","ja":"融資と手続きのご案内","ko":"금융 및 서류 안내","ar":"إرشاد في التمويل والإجراءات","ta":"நிதி வசதி &amp; ஆவணப் பணிகளில் வழிகாட்டுதல்","zh-TW":"指導融資與檔案手續"},"Explains loan margins, legal fees and the purchase process step by step, for local and foreign buyers alike.":{"zh-CN":"逐步讲解贷款成数、律师费用及购房流程，适用于本地和外国买家。","ms":"Menerangkan margin pinjaman, yuran guaman dan proses pembelian langkah demi langkah, untuk pembeli tempatan dan asing sama rata.","ja":"ローンのマージン、法務費用、購入プロセスを、国内外の購入者の方に一つひとつ丁寧にご説明します。","ko":"대출 비율, 법무 비용, 구매 절차를 현지인과 외국인 구매자 모두에게 단계별로 설명해 드립니다.","ar":"يشرح نسب التمويل والرسوم القانونية وخطوات الشراء خطوة بخطوة، للمشترين المحليين والأجانب على حد سواء.","ta":"உள்ளூர் மற்றும் வெளிநாட்டு வாங்குவோருக்கு, கடன் விகிதம், சட்டக் கட்டணங்கள், கொள்முதல் செயல்முறையை படிப்படியாக விளக்குகிறார்.","zh-TW":"逐步講解貸款成數、律師費用及購房流程，適用於本地和外國買家。"},"Support To Handover":{"zh-CN":"陪伴至交付","ms":"Sokongan Hingga Penyerahan","ja":"お引き渡しまでサポート","ko":"인도까지 지원","ar":"دعم حتى التسليم","ta":"ஒப்படைப்பு வரை ஆதரவு","zh-TW":"陪伴至交付"},"Stays the direct point of contact from first enquiry through to signing and key collection.":{"zh-CN":"从首次咨询到签约、领取钥匙，始终担任您的直接联络人。","ms":"Kekal sebagai orang perhubungan terus dari pertanyaan pertama hingga penandatanganan dan penyerahan kunci.","ja":"最初のお問い合わせから、契約、鍵の受け取りまで、一貫して直接のご連絡窓口を務めます。","ko":"첫 문의부터 계약, 열쇠 인수까지 직접 연락 창구가 되어 드립니다.","ar":"يبقى جهة الاتصال المباشرة من أول استفسار حتى التوقيع واستلام المفاتيح.","ta":"முதல் விசாரணை முதல் கையொப்பம், சாவி பெறுதல் வரை நேரடித் தொடர்பு நபராகத் தொடர்ந்து இருக்கிறார்.","zh-TW":"從首次諮詢到簽約、領取鑰匙，始終擔任您的直接聯絡人。"},"Get In Touch":{"zh-CN":"联系我们","ms":"Hubungi Kami","ja":"お問い合わせ","ko":"문의하기","ar":"تواصل معنا","ta":"தொடர்பு கொள்ளுங்கள்","zh-TW":"聯絡我們"},"Let's Talk <span>Property</span>":{"zh-CN":"一起聊聊<span>房产</span>","ms":"Mari Berbincang <span>Hartanah</span>","ja":"<span>不動産</span>について話しましょう","ko":"<span>부동산</span> 이야기를 나눠 보세요","ar":"لنتحدث عن <span>العقار</span>","ta":"<span>சொத்து</span> பற்றி பேசலாம்","zh-TW":"一起聊聊<span>房產</span>"},"WhatsApp +60 10-282 1568 · njh0308@hotmail.com":{"zh-CN":"WhatsApp +60 10-282 1568 · njh0308@hotmail.com","ms":"WhatsApp +60 10-282 1568 · njh0308@hotmail.com","ja":"WhatsApp +60 10-282 1568 · njh0308@hotmail.com","ko":"WhatsApp +60 10-282 1568 · njh0308@hotmail.com","ar":"WhatsApp +60 10-282 1568 · njh0308@hotmail.com","ta":"WhatsApp +60 10-282 1568 · njh0308@hotmail.com","zh-TW":"WhatsApp +60 10-282 1568 · njh0308@hotmail.com"},"<a href=\"https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27d+like+to+get+in+touch+to+talk+about+my+property+plans.&amp;type=phone_number&amp;app_absent=0\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-gold\">WhatsApp Now</a>\n    <a href=\"projects.html\" class=\"btn btn-outline\" style=\"color:#fff; border-color:rgba(255,255,255,0.3);\">View Projects</a>":{"zh-CN":"<a href=\"https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27d+like+to+get+in+touch+to+talk+about+my+property+plans.&amp;type=phone_number&amp;app_absent=0\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-gold\">立即 WhatsApp</a>\n    <a href=\"projects.html\" class=\"btn btn-outline\" style=\"color:#fff; border-color:rgba(255,255,255,0.3);\">查看项目</a>","ms":"<a href=\"https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27d+like+to+get+in+touch+to+talk+about+my+property+plans.&amp;type=phone_number&amp;app_absent=0\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-gold\">WhatsApp Sekarang</a>\n    <a href=\"projects.html\" class=\"btn btn-outline\" style=\"color:#fff; border-color:rgba(255,255,255,0.3);\">Lihat Projek</a>","ja":"<a href=\"https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27d+like+to+get+in+touch+to+talk+about+my+property+plans.&amp;type=phone_number&amp;app_absent=0\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-gold\">今すぐWhatsApp</a>\n    <a href=\"projects.html\" class=\"btn btn-outline\" style=\"color:#fff; border-color:rgba(255,255,255,0.3);\">プロジェクトを見る</a>","ko":"<a href=\"https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27d+like+to+get+in+touch+to+talk+about+my+property+plans.&amp;type=phone_number&amp;app_absent=0\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-gold\">지금 WhatsApp 문의</a>\n    <a href=\"projects.html\" class=\"btn btn-outline\" style=\"color:#fff; border-color:rgba(255,255,255,0.3);\">프로젝트 보기</a>","ar":"<a href=\"https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27d+like+to+get+in+touch+to+talk+about+my+property+plans.&amp;type=phone_number&amp;app_absent=0\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-gold\">راسل عبر WhatsApp الآن</a>\n    <a href=\"projects.html\" class=\"btn btn-outline\" style=\"color:#fff; border-color:rgba(255,255,255,0.3);\">استعرض المشاريع</a>","ta":"<a href=\"https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27d+like+to+get+in+touch+to+talk+about+my+property+plans.&amp;type=phone_number&amp;app_absent=0\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-gold\">இப்போதே WhatsApp செய்யுங்கள்</a>\n    <a href=\"projects.html\" class=\"btn btn-outline\" style=\"color:#fff; border-color:rgba(255,255,255,0.3);\">திட்டங்களைக் காண்க</a>","zh-TW":"<a href=\"https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I%27d+like+to+get+in+touch+to+talk+about+my+property+plans.&amp;type=phone_number&amp;app_absent=0\" target=\"_blank\" rel=\"noopener\" class=\"btn btn-gold\">立即 WhatsApp</a>\n    <a href=\"projects.html\" class=\"btn btn-outline\" style=\"color:#fff; border-color:rgba(255,255,255,0.3);\">檢視專案</a>"},"WeChat":{"zh-CN":"微信","ms":"WeChat","ja":"WeChat","ko":"WeChat","ar":"WeChat","ta":"WeChat","zh-TW":"微信"},"WhatsApp":{"zh-CN":"WhatsApp","ms":"WhatsApp","ja":"WhatsApp","ko":"WhatsApp","ar":"WhatsApp","ta":"WhatsApp","zh-TW":"WhatsApp"},"LINE":{"zh-CN":"LINE","ms":"LINE","ja":"LINE","ko":"LINE","ar":"LINE","ta":"LINE","zh-TW":"LINE"}};
+  const registry = new Map();
+  function collectUnits(){
+    const BLOCK = /^(DIV|P|UL|OL|LI|H1|H2|H3|H4|H5|H6|SECTION|ARTICLE|TABLE|TR|TD|TH|THEAD|TBODY|FORM|HEADER|FOOTER|NAV|MAIN|ASIDE|BLOCKQUOTE|BUTTON|SELECT|INPUT|IMG|SVG|CANVAS|VIDEO|IFRAME)$/i;
+    const SKIP = /^(SCRIPT|STYLE|NOSCRIPT|SVG|TEXTAREA|INPUT|SELECT|OPTION|CODE|PRE)$/i;
+    const out = [];
+    function hasBlockDesc(el){ for(const c of el.children){ if(BLOCK.test(c.nodeName) || hasBlockDesc(c)) return true; } return false; }
+    function visit(el){
+      if(SKIP.test(el.nodeName)) return;
+      if(el.closest && el.closest('header,footer,.lang-menu,#currMenu,#langSwitch,#currSwitch,.float-wa,.whatsapp-btn')) return;
+      if(!/[A-Za-z]{2}/.test(el.textContent || '')) return;
+      if(!hasBlockDesc(el) && el.childNodes.length){
+        if(el.querySelector && el.querySelector('svg,img')){ for(const c of el.children) visit(c); }
+        else out.push(el);
+        return;
+      }
+      for(const c of el.children) visit(c);
+    }
+    visit(document.body);
+    return out;
+  }
+  window.knApplyContent = function(){
+    const l = lang();
+    if(typeof knApplyCurrency === 'function') knApplyCurrency(document.body, 'MYR');
+    for(const [el,key] of Array.from(registry)){ if(!el.isConnected) registry.delete(el); }
+    // register new units (only when still in their original English form)
+    collectUnits().forEach(function(el){
+      if(registry.has(el)) return;
+      const key = el.innerHTML.trim();
+      if(TR[key]) registry.set(el, key);
+    });
+    registry.forEach(function(key, el){
+      const e = TR[key];
+      el.innerHTML = (l !== 'en' && e && e[l]) ? e[l] : key;
+    });
+    if(typeof knApplyCurrency === 'function') knApplyCurrency();
+  };
+
+  window.knApplyLanguage = function(){
+    const l = lang();
+    const els = document.querySelectorAll('header nav a, footer h5, footer a, footer p, footer span, .wa-agent-label');
+    els.forEach(function(el){
+      if(el.children.length) return;
+      if(!origText.has(el)) origText.set(el, el.textContent.trim());
+      const en = origText.get(el);
+      if(el.classList.contains('wa-agent-label')){
+        const base = en.replace(/\s*Keith\s*$/,'');
+        el.textContent = (l === 'en') ? en : tr(base, l) + ' Keith';
+        return;
+      }
+      if(DIC[en]) el.textContent = tr(en, l);
+    });
+    knApplyContent();
+  };
+  if(typeof window.setLanguage === 'function'){
+    const f = window.setLanguage;
+    window.setLanguage = function(){ const r = f.apply(this, arguments); try{ knApplyLanguage(); }catch(e){} return r; };
+  }
+  if(typeof window.openArticle === 'function'){ const oa = window.openArticle; window.openArticle = function(){ const r = oa.apply(this, arguments); try{ knApplyContent(); }catch(e){} return r; }; }
+  knApplyLanguage();
+})();
+</script>
+<style>
+#knDrawer{position:fixed;inset:0;z-index:2147483000;display:none}
+#knDrawer.open{display:block}
+#knDrawer .kn-bg{position:absolute;inset:0;background:rgba(10,10,30,.55)}
+#knDrawer .kn-panel{position:absolute;top:0;right:0;bottom:0;width:min(82vw,340px);background:#1d1b4f;color:#fff;padding:20px 22px 28px;overflow-y:auto;box-shadow:-8px 0 30px rgba(0,0,0,.35);font-family:inherit}
+html[dir="rtl"] #knDrawer .kn-panel{right:auto;left:0}
+#knDrawer .kn-close{display:block;margin-left:auto;background:none;border:0;color:#fff;font-size:30px;line-height:1;cursor:pointer;padding:4px 8px}
+#knDrawer .kn-links a{display:block;color:#fff;text-decoration:none;font-size:17px;letter-spacing:.04em;padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12)}
+#knDrawer .kn-links a.active{color:#b9b4ff;font-weight:600}
+#knDrawer .kn-sub{margin:22px 0 8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#a9a6d6}
+#knDrawer .kn-chips{display:flex;flex-wrap:wrap;gap:8px}
+#knDrawer .kn-chips button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer}
+#knDrawer .kn-wa{display:block;margin-top:24px;text-align:center;background:#25d366;color:#fff;text-decoration:none;border-radius:999px;padding:13px;font-weight:600}
+</style>
+<div id="knDrawer" aria-hidden="true"><div class="kn-bg" onclick="knToggleMenu(false)"></div><div class="kn-panel"><button class="kn-close" type="button" aria-label="Close" onclick="knToggleMenu(false)">×</button><div class="kn-links" id="knLinks"></div><div class="kn-sub">Language</div><div class="kn-chips" id="knLang"></div><div class="kn-sub">Currency</div><div class="kn-chips" id="knCurr"></div><a class="kn-wa" id="knWa" target="_blank" rel="noopener" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+explore+more+on+Malaysia+Property.&amp;type=phone_number&amp;app_absent=0">WhatsApp Keith</a></div></div>
+<script>
+function knToggleMenu(force){
+  var d=document.getElementById('knDrawer'); if(!d) return;
+  var open=(typeof force==='boolean')?force:!d.classList.contains('open');
+  if(open){
+    var L=document.getElementById('knLinks'); L.innerHTML='';
+    var cur=(location.pathname.split('/').pop()||'index.html');
+    document.querySelectorAll('header nav a').forEach(function(a){
+      var h=a.getAttribute('href')||''; if(h==='#home') h='index.html';
+      var c=document.createElement('a'); c.href=h; c.textContent=a.textContent;
+      if(h===cur||(cur===''&&h==='index.html')) c.className='active';
+      c.addEventListener('click',function(){ if(h==='index.html'&&cur==='index.html'){ knToggleMenu(false);} });
+      L.appendChild(c);
+      if(h==='resources.html'){ var m2=document.createElement('a'); m2.href='mm2h.html'; m2.textContent='MM2H 第二家园'; if(cur==='mm2h.html') m2.className='active'; L.appendChild(m2); }
+    });
+    var lg=document.getElementById('knLang'); lg.innerHTML='';
+    document.querySelectorAll('#langMenu a').forEach(function(a){
+      var b=document.createElement('button'); b.type='button'; b.innerHTML=a.innerHTML;
+      b.onclick=function(){ a.click(); knToggleMenu(false); }; lg.appendChild(b);
+    });
+    var cu=document.getElementById('knCurr'); cu.innerHTML='';
+    document.querySelectorAll('#currMenu a').forEach(function(a){
+      var b=document.createElement('button'); b.type='button'; var fl=a.querySelector('img'); b.innerHTML=(fl?fl.outerHTML:'')+a.textContent.trim().split(' ')[0];
+      b.onclick=function(){ a.click(); knToggleMenu(false); }; cu.appendChild(b);
+    });
+    var w=document.querySelector('header .whatsapp-btn'); var kw=document.getElementById('knWa');
+    if(w&&w.href) kw.href=w.href;
+  }
+  d.classList.toggle('open',open); d.setAttribute('aria-hidden',open?'false':'true');
+  document.body.style.overflow=open?'hidden':'';
+}
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') knToggleMenu(false); });
+</script>
+<script>
+(function(){
+  var KQ={"en": {"eyebrow": "Quick Enquiry", "h1": "Let's Find Your", "h2": "Perfect Property", "name": "Full Name", "wa": "WhatsApp", "email": "Email Address (Optional)", "area": "Preferred Area", "look": "I'm Looking For...", "send": "Send Enquiry", "err": "Please enter your name and WhatsApp number.", "a_any": "Not sure yet", "l_own": "Own stay", "l_inv": "Investment", "l_rent": "Rental income", "l_mm2h": "Second home / MM2H", "l_any": "Not sure yet"}, "zh-CN": {"eyebrow": "快速咨询", "h1": "为您找到", "h2": "理想房产", "name": "姓名", "wa": "WhatsApp 号码", "email": "电邮（选填）", "area": "偏好区域", "look": "我想寻找…", "send": "发送咨询", "err": "请填写姓名和 WhatsApp 号码。", "a_any": "暂未确定", "l_own": "自住", "l_inv": "投资", "l_rent": "租金收入", "l_mm2h": "第二家园 / MM2H", "l_any": "暂未确定"}, "zh-TW": {"eyebrow": "快速諮詢", "h1": "為您找到", "h2": "理想房產", "name": "姓名", "wa": "WhatsApp 號碼", "email": "電郵（選填）", "area": "偏好區域", "look": "我想尋找…", "send": "發送諮詢", "err": "請填寫姓名和 WhatsApp 號碼。", "a_any": "暫未確定", "l_own": "自住", "l_inv": "投資", "l_rent": "租金收入", "l_mm2h": "第二家園 / MM2H", "l_any": "暫未確定"}, "ms": {"eyebrow": "Pertanyaan Pantas", "h1": "Mari Cari", "h2": "Hartanah Idaman Anda", "name": "Nama Penuh", "wa": "WhatsApp", "email": "Alamat E-mel (Pilihan)", "area": "Kawasan Pilihan", "look": "Saya Sedang Mencari...", "send": "Hantar Pertanyaan", "err": "Sila masukkan nama dan nombor WhatsApp anda.", "a_any": "Belum pasti", "l_own": "Diduduki sendiri", "l_inv": "Pelaburan", "l_rent": "Pendapatan sewa", "l_mm2h": "Rumah kedua / MM2H", "l_any": "Belum pasti"}, "ta": {"eyebrow": "விரைவு விசாரணை", "h1": "உங்களுக்கான", "h2": "சரியான சொத்தை", "name": "முழு பெயர்", "wa": "WhatsApp", "email": "மின்னஞ்சல் (விருப்பம்)", "area": "விருப்பமான பகுதி", "look": "நான் தேடுவது...", "send": "விசாரணை அனுப்பு", "err": "உங்கள் பெயர் மற்றும் WhatsApp எண்ணை உள்ளிடவும்.", "a_any": "இன்னும் உறுதியில்லை", "l_own": "சொந்த வசிப்பு", "l_inv": "முதலீடு", "l_rent": "வாடகை வருமானம்", "l_mm2h": "இரண்டாவது வீடு / MM2H", "l_any": "இன்னும் உறுதியில்லை"}, "ja": {"eyebrow": "クイックお問い合わせ", "h1": "あなたにぴったりの", "h2": "理想の物件を", "name": "お名前", "wa": "WhatsApp番号", "email": "メールアドレス（任意）", "area": "希望エリア", "look": "探している物件...", "send": "送信する", "err": "お名前とWhatsApp番号を入力してください。", "a_any": "未定", "l_own": "自己居住", "l_inv": "投資", "l_rent": "賃貸収入", "l_mm2h": "セカンドハウス / MM2H", "l_any": "未定"}, "ko": {"eyebrow": "빠른 문의", "h1": "찾아드립니다:", "h2": "나에게 꼭 맞는 부동산", "name": "성함", "wa": "WhatsApp 번호", "email": "이메일 (선택)", "area": "희망 지역", "look": "찾는 목적...", "send": "문의 보내기", "err": "성함과 WhatsApp 번호를 입력해 주세요.", "a_any": "미정", "l_own": "실거주", "l_inv": "투자", "l_rent": "임대 수익", "l_mm2h": "세컨드 홈 / MM2H", "l_any": "미정"}, "ar": {"eyebrow": "استفسار سريع", "h1": "لنجد لك", "h2": "العقار المثالي", "name": "الاسم الكامل", "wa": "واتساب", "email": "البريد الإلكتروني (اختياري)", "area": "المنطقة المفضلة", "look": "أبحث عن...", "send": "إرسال الاستفسار", "err": "يرجى إدخال اسمك ورقم واتساب.", "a_any": "لم أحدد بعد", "l_own": "سكن شخصي", "l_inv": "استثمار", "l_rent": "دخل إيجاري", "l_mm2h": "منزل ثانٍ / MM2H", "l_any": "لم أحدد بعد"}};
+  function apply(){
+    var l=document.documentElement.getAttribute('lang')||'en'; var d=KQ[l]||KQ.en;
+    document.querySelectorAll('[data-kq]').forEach(function(e){ e.textContent=d[e.getAttribute('data-kq')]; });
+    document.querySelectorAll('[data-kq-ph]').forEach(function(e){ e.setAttribute('placeholder',d[e.getAttribute('data-kq-ph')]); });
+  }
+  window.knqErr=function(){ var l=document.documentElement.getAttribute('lang')||'en'; return (KQ[l]||KQ.en).err; };
+  window.knqSend=function(f){
+    var n=f.name.value.trim(), p=f.phone.value.replace(/[^0-9]/g,''), er=f.querySelector('.kq-err');
+    if(!n||p.length<6){ er.textContent=window.knqErr(); (n?f.phone:f.name).focus(); return false; }
+    er.textContent='';
+    var m='(KNRE) Hi Keith, I would like to make an enquiry.\nName: '+n+'\nWhatsApp: '+f.code.value+' '+f.phone.value.trim();
+    if(f.email.value.trim()) m+='\nEmail: '+f.email.value.trim();
+    if(f.area.value) m+='\nPreferred area: '+f.area.value;
+    if(f.look.value) m+='\nLooking for: '+f.look.value;
+    window.open('https://api.whatsapp.com/send/?phone=60102821568&text='+encodeURIComponent(m).replace(/%20/g,'+')+'&type=phone_number&app_absent=0','_blank','noopener');
+    return false;
+  };
+  new MutationObserver(apply).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
+  apply();
+})();
+</script><script id="kn-menu-hover">
+/* Language and currency menus: one open at a time; on computers they open on hover */
+(function(){
+  var P=[['langSwitch','langMenu'],['currSwitch','currMenu']];
+  var hover=window.matchMedia && matchMedia('(hover:hover) and (pointer:fine)').matches;
+  function closeAll(keep){ P.forEach(function(p){ if(p[1]!==keep){ var m=document.getElementById(p[1]); if(m) m.classList.remove('open'); } }); }
+  P.forEach(function(p){
+    var s=document.getElementById(p[0]), m=document.getElementById(p[1]); if(!s||!m) return;
+    s.addEventListener('click', function(e){
+      closeAll(p[1]);
+      if(hover && !m.contains(e.target)){ e.stopPropagation(); m.classList.add('open'); }
+    }, true);
+    if(hover){
+      s.addEventListener('mouseenter', function(){ closeAll(p[1]); m.classList.add('open'); });
+      s.addEventListener('mouseleave', function(){ m.classList.remove('open'); });
+      m.addEventListener('click', function(){ m.classList.remove('open'); });
+    }
+  });
+  document.addEventListener('click', function(e){ if(!e.target.closest('.lang-switch')) closeAll(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeAll(); });
+})();
+</script>
+<script src="lead-tracker.js"></script>
+
+
+</body></html>
