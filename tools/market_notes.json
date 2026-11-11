@@ -2,6 +2,152 @@
  {
   "date": "2026-11-11",
   "area": {
+   "en": "Penang",
+   "zh-CN": "槟城",
+   "zh-TW": "檳城",
+   "ms": "Pulau Pinang",
+   "ja": "ペナン",
+   "ko": "페낭"
+  },
+  "title": {
+   "en": "Penang Mutiara LRT speeds up: what a 2031 opening means for buyers",
+   "zh-CN": "槟城 Mutiara LRT 加速施工：2031 年通车，对买家意味着什么",
+   "zh-TW": "檳城 Mutiara LRT 加速施工：2031 年通車，對買家意味著什麼",
+   "ms": "LRT Mutiara Pulau Pinang dipercepat: maksud pembukaan 2031 untuk pembeli",
+   "ja": "ペナンの Mutiara LRT 工事が加速：2031年開業が購入者に意味すること",
+   "ko": "페낭 Mutiara LRT 공사 가속: 2031년 개통이 구매자에게 주는 의미"
+  },
+  "body": {
+   "en": "Construction of Penang's Mutiara Line LRT is picking up speed, with 16 work sites now active along the route on Penang island, The Star reported in late October. The line runs about 29.7 km, and passenger service is expected to start in December 2031.\n\nIn August, MRT Corp awarded the RM3.03 billion systems contract, covering the trains and signalling, to a joint venture of MRCB and Theta Edge. The project also includes a sea link from George Town to Penang Sentral in Butterworth, and MRT Corp has said the line could later be extended towards Tanjung Bungah. Reports differ on the final number of stations, so it is best to check the official station list before relying on any one location.\n\nWork on the ground also means short-term disruption. The city council has ordered traffic diversions and night-time roadworks on some stretches, so daily travel along the route may be slower for a while before the line brings the benefit.",
+   "zh-CN": "《星报》10 月底报道，槟城 Mutiara 轻快铁正在加速施工，目前槟岛沿线已有 16 个工地动工。全线约 29.7 公里，预计 2031 年 12 月开始载客。\n\n8 月，MRT Corp 把价值 RM30.3 亿、包括列车和讯号系统的系统合约颁给 MRCB 和 Theta Edge 的联营公司。这项工程也包括一条从乔治市通往北海槟城中央车站（Penang Sentral）的跨海段，MRT Corp 也表示，未来可能延伸到丹绒武雅。各家报道的车站数量不一致，所以在看某个地点之前，最好先核对官方的车站名单。\n\n动工也意味着短期的不便。市政厅已在部分路段实施改道和夜间施工，所以在轻快铁带来好处之前，沿线的日常交通可能会慢一阵子。",
+   "zh-TW": "《星報》10 月底報道，檳城 Mutiara 輕快鐵正在加速施工，目前檳島沿線已有 16 個工地動工。全線約 29.7 公里，預計 2031 年 12 月開始載客。\n\n8 月，MRT Corp 把價值 RM30.3 億、包括列車和訊號系統的系統合約頒給 MRCB 和 Theta Edge 的聯營公司。這項工程也包括一條從喬治市通往北海檳城中央車站（Penang Sentral）的跨海段，MRT Corp 也表示，未來可能延伸到丹絨武雅。各家報道的車站數量不一致，所以在看某個地點之前，最好先核對官方的車站名單。\n\n動工也意味著短期的不便。市政廳已在部分路段實施改道和夜間施工，所以在輕快鐵帶來好處之前，沿線的日常交通可能會慢一陣子。",
+   "ms": "Pembinaan LRT Laluan Mutiara Pulau Pinang semakin rancak, dengan 16 tapak kerja kini aktif di sepanjang laluan di pulau, lapor The Star pada akhir Oktober. Laluan sepanjang kira-kira 29.7 km ini dijangka mula membawa penumpang pada Disember 2031.\n\nPada Ogos, MRT Corp menganugerahkan kontrak sistem bernilai RM3.03 bilion, merangkumi tren dan isyarat, kepada usaha sama MRCB dan Theta Edge. Projek ini juga merangkumi laluan merentas laut dari George Town ke Penang Sentral di Butterworth, dan MRT Corp berkata laluan itu boleh dilanjutkan ke Tanjung Bungah kemudian. Laporan berbeza tentang jumlah stesen, jadi semak senarai stesen rasmi sebelum bergantung pada mana-mana lokasi.\n\nKerja di tapak juga bermakna gangguan jangka pendek. Majlis bandaraya telah mengarahkan lencongan trafik dan kerja jalan pada waktu malam di beberapa bahagian, jadi perjalanan harian di sepanjang laluan mungkin lebih perlahan buat seketika sebelum LRT membawa manfaat.",
+   "ja": "The Star は10月下旬、ペナンの Mutiara Line LRT の工事が加速し、ペナン島の沿線で16の工区が稼働していると報じました。全長は約29.7kmで、2031年12月に旅客運行を始める予定です。\n\n8月には MRT Corp が、車両や信号を含む30.3億リンギットのシステム契約を MRCB と Theta Edge の合弁会社に発注しました。計画にはジョージタウンからバターワースの Penang Sentral への海上区間も含まれ、MRT Corp は将来 Tanjung Bungah 方面への延伸もあり得るとしています。駅の数は報道によって異なるため、特定の場所を検討する前に公式の駅一覧を確認するのが確実です。\n\n工事が進む間は短期的な不便もあります。市議会は一部区間で迂回路と夜間工事を指示しており、LRT の恩恵が出るまでは、沿線の日常の移動が遅くなることもあります。",
+   "ko": "The Star는 10월 말 페낭 Mutiara Line LRT 공사가 속도를 내고 있으며, 현재 페낭섬 노선을 따라 16개 공사 현장이 가동 중이라고 보도했습니다. 노선 길이는 약 29.7km이며 2031년 12월 승객 운행을 시작할 예정입니다.\n\n8월에 MRT Corp는 차량과 신호를 포함한 30.3억 링깃 규모의 시스템 계약을 MRCB와 Theta Edge 합작사에 발주했습니다. 사업에는 조지타운에서 버터워스의 Penang Sentral까지 이어지는 해상 구간도 포함되며, MRT Corp는 향후 Tanjung Bungah 방향 연장 가능성도 언급했습니다. 역 개수는 보도마다 달라서, 특정 지역을 볼 때는 공식 역 목록을 먼저 확인하는 것이 좋습니다.\n\n공사 중에는 단기적인 불편도 따릅니다. 시의회가 일부 구간에 우회로와 야간 공사를 지시했기 때문에, LRT의 혜택이 오기 전까지는 노선 주변 일상 이동이 한동안 느려질 수 있습니다."
+  },
+  "take": {
+   "en": "Rail lines usually lift nearby property twice: once when stations are confirmed, and again when the trains actually run. With opening still about five years away, the second lift is a long-term story, so buy for what the home is worth today and treat the LRT as an upside rather than the reason to buy.\n\nFor home buyers, the best spots are within a short walk of a confirmed station, not just 'near the line'. For investors, think about who will rent there in 2032: workers heading to Bayan Lepas, George Town or across to Butterworth. Avoid paying a big premium for a project whose selling point is a station that is not on the official list.\n\nMy checklist: check the official alignment and station names, measure the real walking distance, ask how the construction will affect access in the next few years, and compare prices with similar projects further from the line. My free Penang guide lists the projects I cover there, with a map, and you can WhatsApp me to talk it through.",
+   "zh-CN": "轨道交通通常会让附近房价涨两次：一次是车站确定的时候，一次是真正通车的时候。距离通车还有大约五年，第二次上涨是长期的事，所以要按房子今天的价值来买，把轻快铁当作额外的好处，而不是买房的理由。\n\n自住买家最好选离已确定车站步行几分钟的地点，而不只是「靠近路线」。投资者要想一想 2032 年谁会在那里租房：去 Bayan Lepas、乔治市或过海到北海上班的人。如果一个项目的卖点是一个不在官方名单上的车站，就不要为它多付溢价。\n\n我的检查清单：核对官方路线和车站名称、实际量一量步行距离、问清楚未来几年施工会不会影响进出，并和离路线远一点的同类项目比较价格。我的免费槟城懒人包列出了我负责的项目和地图，也欢迎 WhatsApp 我一起讨论。",
+   "zh-TW": "軌道交通通常會讓附近房價漲兩次：一次是車站確定的時候，一次是真正通車的時候。距離通車還有大約五年，第二次上漲是長期的事，所以要按房子今天的價值來買，把輕快鐵當作額外的好處，而不是買房的理由。\n\n自住買家最好選離已確定車站步行幾分鐘的地點，而不只是「靠近路線」。投資者要想一想 2032 年誰會在那裡租房：去 Bayan Lepas、喬治市或過海到北海上班的人。如果一個項目的賣點是一個不在官方名單上的車站，就不要為它多付溢價。\n\n我的檢查清單：核對官方路線和車站名稱、實際量一量步行距離、問清楚未來幾年施工會不會影響進出，並和離路線遠一點的同類項目比較價格。我的免費檳城懶人包列出了我負責的項目和地圖，也歡迎 WhatsApp 我一起討論。",
+   "ms": "Laluan rel biasanya menaikkan nilai hartanah berdekatan dua kali: sekali apabila stesen disahkan, dan sekali lagi apabila tren benar-benar beroperasi. Dengan pembukaan masih kira-kira lima tahun lagi, kenaikan kedua ialah kisah jangka panjang, jadi beli berdasarkan nilai rumah hari ini dan anggap LRT sebagai bonus, bukan sebab untuk membeli.\n\nBagi pembeli rumah, lokasi terbaik ialah dalam jarak berjalan kaki yang dekat dengan stesen yang disahkan, bukan sekadar 'dekat laluan'. Bagi pelabur, fikirkan siapa yang akan menyewa di situ pada 2032: pekerja ke Bayan Lepas, George Town atau menyeberang ke Butterworth. Elakkan membayar premium besar untuk projek yang menjual stesen yang tiada dalam senarai rasmi.\n\nSenarai semak saya: semak jajaran dan nama stesen rasmi, ukur jarak berjalan kaki sebenar, tanya bagaimana pembinaan akan menjejaskan akses beberapa tahun akan datang, dan bandingkan harga dengan projek serupa yang lebih jauh dari laluan. Panduan Pulau Pinang percuma saya menyenaraikan projek yang saya uruskan dengan peta, dan anda boleh WhatsApp saya untuk berbincang.",
+   "ja": "鉄道は通常、周辺の不動産を2回押し上げます。駅が確定したときと、実際に運行が始まったときです。開業までまだ約5年あるので、2回目の上昇は長期の話です。今日の価値で買い、LRT は購入の理由ではなくおまけと考えましょう。\n\n自分で住むなら、単に「路線の近く」ではなく、確定した駅から歩いてすぐの場所が最適です。投資家は、2032年にそこで誰が部屋を借りるかを考えてください。Bayan Lepas、ジョージタウン、対岸のバターワースへ通勤する人たちです。公式一覧にない駅を売りにする物件に、大きなプレミアムを払うのは避けましょう。\n\n私のチェックリスト：公式のルートと駅名を確認する、実際の徒歩距離を測る、今後数年の工事がアクセスにどう影響するか聞く、路線から少し離れた同じような物件と価格を比べる。無料のペナン・ガイドに私が扱う物件と地図をまとめています。WhatsApp でのご相談もどうぞ。",
+   "ko": "철도는 보통 주변 부동산 가치를 두 번 끌어올립니다. 역이 확정될 때, 그리고 실제로 열차가 다닐 때입니다. 개통까지 아직 약 5년이 남아 두 번째 상승은 장기적인 이야기이므로, 오늘의 가치로 사고 LRT는 구매 이유가 아니라 덤으로 생각하세요.\n\n실거주라면 단순히 '노선 근처'가 아니라 확정된 역에서 걸어서 가까운 곳이 가장 좋습니다. 투자자라면 2032년에 그곳에 누가 세를 들지 생각해 보세요. Bayan Lepas, 조지타운, 또는 바다 건너 버터워스로 출근하는 사람들입니다. 공식 목록에 없는 역을 내세우는 프로젝트에 큰 웃돈을 내는 것은 피하세요.\n\n제 체크리스트: 공식 노선과 역 이름을 확인하고, 실제 도보 거리를 재고, 앞으로 몇 년간 공사가 진입에 어떤 영향을 주는지 묻고, 노선에서 조금 떨어진 비슷한 프로젝트와 가격을 비교하세요. 무료 페낭 가이드에 제가 다루는 프로젝트와 지도를 정리해 두었고, WhatsApp으로 상담하셔도 됩니다."
+  },
+  "links": [
+   {
+    "label": {
+     "en": "Free Penang guide (PDF)",
+     "zh-CN": "免费槟城懒人包（PDF）",
+     "zh-TW": "免費檳城懶人包（PDF）",
+     "ms": "Panduan Pulau Pinang percuma (PDF)",
+     "ja": "無料ペナン・ガイド（PDF）",
+     "ko": "무료 페낭 가이드 (PDF)"
+    },
+    "href": "guides/penang.html"
+   },
+   {
+    "label": {
+     "en": "Is the Penang LRT operating soon?",
+     "zh-CN": "槟城轻快铁快通车了吗？",
+     "zh-TW": "檳城輕快鐵快通車了嗎？",
+     "ms": "Adakah LRT Pulau Pinang akan beroperasi?",
+     "ja": "ペナン LRT はもうすぐ開業？",
+     "ko": "페낭 LRT 곧 개통할까?"
+    },
+    "href": "article/is-the-penang-lrt-finally-operating-soon.html"
+   }
+  ],
+  "sources": [
+   {
+    "name": "The Star",
+    "url": "https://www.thestar.com.my/metro/metro-news/2026/10/27/penang-lrt-construction-gathers-pace"
+   },
+   {
+    "name": "NST",
+    "url": "https://www.nst.com.my/amp/news/regional/2026/08/1505081/rm303bil-penang-mutiara-lrt-systems-contract-awarded-mrcb-theta-edge"
+   },
+   {
+    "name": "The Star",
+    "url": "https://www.thestar.com.my/news/nation/2026/06/09/mutiara-line-is-expandable-says-mrt-corp"
+   }
+  ]
+ },
+ {
+  "date": "2026-11-11",
+  "area": {
+   "en": "Malaysia",
+   "zh-CN": "马来西亚",
+   "zh-TW": "馬來西亞",
+   "ms": "Malaysia",
+   "ja": "マレーシア",
+   "ko": "말레이시아"
+  },
+  "title": {
+   "en": "First-home stamp duty waiver runs to 2027: how buyers under RM500k save",
+   "zh-CN": "首购族印花税全免延长至 2027 年：RM50 万以下的房子怎么省",
+   "zh-TW": "首購族印花稅全免延長至 2027 年：RM50 萬以下的房子怎麼省",
+   "ms": "Pengecualian duti setem rumah pertama hingga 2027: penjimatan bawah RM500k",
+   "ja": "初めての住宅購入の印紙税免除は2027年まで：50万リンギット以下の節約術",
+   "ko": "첫 주택 인지세 면제 2027년까지: 50만 링깃 이하 구매자의 절약법"
+  },
+  "body": {
+   "en": "Malaysians buying their first home priced at RM500,000 or less pay no stamp duty on the transfer document or the loan agreement until 31 December 2027. The extension was announced in Budget 2026. For a RM500,000 home, Savills estimates the saving at about RM9,000 on the transfer plus roughly RM2,000 on the loan agreement.\n\nThe same Budget doubled the Housing Credit Guarantee Scheme (SJKP) to RM20 billion. The scheme guarantees home loans for buyers who find it hard to get financing, including gig workers and the self-employed who have no fixed monthly salary. It aims to help up to about 80,000 first-time buyers, and by September 2025 it had already backed about RM23 billion in loans for over 97,000 people.\n\nThe waiver is only for Malaysian citizens buying their first home, and the RM500,000 cap is strict. These measures come as banks approve fewer housing loans, so preparing your loan early matters more than ever.",
+   "zh-CN": "大马公民买第一间房，只要房价在 RM50 万或以下，在 2027 年 12 月 31 日之前，转让文件和贷款合约都不用付印花税。这项延长在 2026 年财政预算案中宣布。以一间 RM50 万的房子为例，Savills 估计转让可省约 RM9,000，贷款合约再省约 RM2,000。\n\n同一份预算案也把住屋信贷担保计划（SJKP）加倍到 RM200 亿。这个计划为难以申请贷款的买家提供担保，包括没有固定月薪的零工和自雇人士，目标是帮助大约 8 万名首购族。截至 2025 年 9 月，计划已为超过 9 万 7 千人担保了约 RM230 亿的贷款。\n\n这项豁免只适用于购买第一间房的大马公民，而且 RM50 万的上限很严格。现在银行批准的房贷越来越少，所以提早准备贷款比以前更重要。",
+   "zh-TW": "大馬公民買第一間房，只要房價在 RM50 萬或以下，在 2027 年 12 月 31 日之前，轉讓文件和貸款合約都不用付印花稅。這項延長在 2026 年財政預算案中宣佈。以一間 RM50 萬的房子為例，Savills 估計轉讓可省約 RM9,000，貸款合約再省約 RM2,000。\n\n同一份預算案也把住屋信貸擔保計劃（SJKP）加倍到 RM200 億。這個計劃為難以申請貸款的買家提供擔保，包括沒有固定月薪的零工和自僱人士，目標是幫助大約 8 萬名首購族。截至 2025 年 9 月，計劃已為超過 9 萬 7 千人擔保了約 RM230 億的貸款。\n\n這項豁免只適用於購買第一間房的大馬公民，而且 RM50 萬的上限很嚴格。現在銀行批准的房貸越來越少，所以提早準備貸款比以前更重要。",
+   "ms": "Rakyat Malaysia yang membeli rumah pertama berharga RM500,000 ke bawah tidak perlu membayar duti setem atas surat cara pindah milik dan perjanjian pinjaman sehingga 31 Disember 2027. Lanjutan ini diumumkan dalam Belanjawan 2026. Untuk rumah RM500,000, Savills menganggarkan penjimatan kira-kira RM9,000 bagi pindah milik dan sekitar RM2,000 bagi perjanjian pinjaman.\n\nBelanjawan yang sama menggandakan Skim Jaminan Kredit Perumahan (SJKP) kepada RM20 bilion. Skim ini menjamin pinjaman perumahan untuk pembeli yang sukar mendapat pembiayaan, termasuk pekerja gig dan individu bekerja sendiri tanpa gaji bulanan tetap. Ia bertujuan membantu kira-kira 80,000 pembeli rumah pertama, dan setakat September 2025 telah menjamin kira-kira RM23 bilion pinjaman untuk lebih 97,000 orang.\n\nPengecualian ini hanya untuk warganegara Malaysia yang membeli rumah pertama, dan had RM500,000 adalah ketat. Langkah ini datang ketika bank meluluskan lebih sedikit pinjaman perumahan, jadi menyediakan pinjaman lebih awal kini lebih penting.",
+   "ja": "マレーシア国民が50万リンギット以下の初めての住宅を買う場合、2027年12月31日まで、移転書類とローン契約の印紙税がかかりません。この延長は2026年度予算で発表されました。50万リンギットの住宅なら、Savills の試算で移転で約9,000リンギット、ローン契約で約2,000リンギットの節約になります。\n\n同じ予算で、住宅信用保証制度（SJKP）が200億リンギットに倍増されました。固定月給のないギグワーカーや自営業者など、融資を受けにくい購入者の住宅ローンを保証する制度で、約8万人の初めての購入者の支援を目指しています。2025年9月時点で、すでに9万7千人以上、約230億リンギットのローンを保証しています。\n\n免除の対象は初めて住宅を買うマレーシア国民だけで、50万リンギットの上限は厳格です。銀行の住宅ローン承認が減っている今、ローンの準備を早めに始めることがこれまで以上に大切です。",
+   "ko": "말레이시아 국민이 50만 링깃 이하의 첫 주택을 사면 2027년 12월 31일까지 소유권 이전 서류와 대출 계약에 인지세가 붙지 않습니다. 이 연장은 2026년 예산안에서 발표되었습니다. 50만 링깃 주택이라면 Savills는 이전 서류에서 약 9,000링깃, 대출 계약에서 약 2,000링깃을 아낄 수 있다고 추산합니다.\n\n같은 예산안은 주택신용보증제도(SJKP)를 200억 링깃으로 두 배 늘렸습니다. 고정 월급이 없는 긱 노동자와 자영업자처럼 대출받기 어려운 구매자의 주택담보대출을 보증하는 제도로, 약 8만 명의 첫 주택 구매자를 돕는 것이 목표입니다. 2025년 9월 기준으로 이미 9만 7천 명 이상에게 약 230억 링깃의 대출을 보증했습니다.\n\n면제는 첫 주택을 사는 말레이시아 국민에게만 적용되며, 50만 링깃 상한은 엄격합니다. 은행의 주택담보대출 승인이 줄어드는 지금, 대출을 일찍 준비하는 것이 그 어느 때보다 중요합니다."
+  },
+  "take": {
+   "en": "About RM11,000 saved is real money for a first home, roughly the cost of furnishing a small unit or a few months of instalments. If you are a first-time buyer and your budget is around RM500,000, it is worth staying under the cap, because going even slightly above it means you lose the full exemption.\n\nTiming also matters. The waiver ends on 31 December 2027, so for a new launch, ask your lawyer when the transfer and loan documents will be stamped, and make sure that falls before the deadline. If you are self-employed or work freelance, ask your bank about SJKP early, because a guarantee can be the difference between a rejection and an approval.\n\nMy checklist for first-time buyers: confirm you have never owned a home, keep the price at or below RM500,000, get your loan pre-approval or SJKP eligibility checked first, and then shortlist. My list of new launches under RM500,000 is a good place to start, and you can WhatsApp me for help with the paperwork.",
+   "zh-CN": "省下约 RM11,000，对第一间房来说是一笔实在的钱，大约够布置一间小单位，或付几个月的月供。如果你是首购族、预算在 RM50 万左右，最好把房价控制在上限以内，因为只要超过一点，就会失去全额豁免。\n\n时间点也很重要。豁免在 2027 年 12 月 31 日结束，如果是买新楼盘，要问律师转让和贷款文件什么时候盖印花，确保在截止日期之前。如果你是自雇或自由职业者，提早问银行有关 SJKP 的资格，因为有了担保，可能就是被拒和获批的差别。\n\n我给首购族的检查清单：确认自己从来没有拥有过房子、房价保持在 RM50 万或以下、先申请贷款预批或查询 SJKP 资格，然后才挑项目。我整理的 RM50 万以下新楼盘清单是个好起点，文件上需要帮忙也可以 WhatsApp 我。",
+   "zh-TW": "省下約 RM11,000，對第一間房來說是一筆實在的錢，大約夠佈置一間小單位，或付幾個月的月供。如果你是首購族、預算在 RM50 萬左右，最好把房價控制在上限以內，因為只要超過一點，就會失去全額豁免。\n\n時間點也很重要。豁免在 2027 年 12 月 31 日結束，如果是買新樓盤，要問律師轉讓和貸款文件什麼時候蓋印花，確保在截止日期之前。如果你是自僱或自由職業者，提早問銀行有關 SJKP 的資格，因為有了擔保，可能就是被拒和獲批的差別。\n\n我給首購族的檢查清單：確認自己從來沒有擁有過房子、房價保持在 RM50 萬或以下、先申請貸款預批或查詢 SJKP 資格，然後才挑項目。我整理的 RM50 萬以下新樓盤清單是個好起點，文件上需要幫忙也可以 WhatsApp 我。",
+   "ms": "Penjimatan kira-kira RM11,000 ialah wang sebenar untuk rumah pertama, lebih kurang kos melengkapkan unit kecil atau beberapa bulan ansuran. Jika anda pembeli kali pertama dengan bajet sekitar RM500,000, berbaloi untuk kekal di bawah had, kerana melebihi walaupun sedikit bermakna anda hilang pengecualian penuh.\n\nMasa juga penting. Pengecualian tamat pada 31 Disember 2027, jadi untuk projek baharu, tanya peguam bila dokumen pindah milik dan pinjaman akan disetemkan, dan pastikan sebelum tarikh akhir. Jika anda bekerja sendiri atau bebas, tanya bank tentang SJKP awal-awal, kerana jaminan boleh menjadi perbezaan antara ditolak dan diluluskan.\n\nSenarai semak saya untuk pembeli kali pertama: pastikan anda tidak pernah memiliki rumah, kekalkan harga RM500,000 ke bawah, semak pra-kelulusan pinjaman atau kelayakan SJKP dahulu, kemudian barulah senarai pendek projek. Senarai projek baharu bawah RM500,000 saya ialah titik mula yang baik, dan anda boleh WhatsApp saya untuk bantuan dokumen.",
+   "ja": "約1万1,000リンギットの節約は、初めての住宅にとって大きな金額で、小さな部屋の家具代や数か月分の返済に相当します。初めての購入で予算が50万リンギット前後なら、上限以内に収める価値があります。少しでも超えると全額免除が受けられなくなるからです。\n\nタイミングも大切です。免除は2027年12月31日で終わるので、新築の場合は移転書類とローン書類にいつ印紙が押されるかを弁護士に確認し、期限内に収まるようにしましょう。自営業やフリーランスの方は、早めに銀行に SJKP について相談してください。保証があるかどうかで、否決と承認が分かれることもあります。\n\n初めての購入者向けチェックリスト：住宅を所有したことがないか確認する、価格を50万リンギット以下に保つ、先にローンの事前承認か SJKP の資格を確認する、それから物件を絞り込む。50万リンギット以下の新築一覧が出発点としておすすめです。書類のお手伝いは WhatsApp でどうぞ。",
+   "ko": "약 1만 1천 링깃 절약은 첫 집에 있어 실질적인 돈으로, 작은 집 가구를 들이거나 몇 달 치 상환액에 해당합니다. 첫 구매이고 예산이 50만 링깃 안팎이라면 상한 안으로 맞추는 것이 좋습니다. 조금만 넘어도 전액 면제를 받을 수 없기 때문입니다.\n\n시점도 중요합니다. 면제는 2027년 12월 31일에 끝나므로, 신규 분양이라면 이전 서류와 대출 서류에 언제 인지가 찍히는지 변호사에게 확인하고 기한 안에 들어오게 하세요. 자영업자나 프리랜서라면 일찍 은행에 SJKP를 문의하세요. 보증 여부가 거절과 승인을 가를 수 있습니다.\n\n첫 구매자를 위한 체크리스트: 주택을 소유한 적이 없는지 확인하고, 가격을 50만 링깃 이하로 유지하며, 먼저 대출 사전 승인이나 SJKP 자격을 확인한 뒤 프로젝트를 고르세요. 제가 정리한 50만 링깃 이하 신규 분양 목록이 좋은 출발점이며, 서류 관련 도움은 WhatsApp으로 요청하세요."
+  },
+  "links": [
+   {
+    "label": {
+     "en": "New launches under RM500k",
+     "zh-CN": "RM50 万以下新楼盘",
+     "zh-TW": "RM50 萬以下新樓盤",
+     "ms": "Projek baharu bawah RM500k",
+     "ja": "50万リンギット以下の新築",
+     "ko": "50만 링깃 이하 신규 분양"
+    },
+    "href": "best/new-launch-under-rm500k.html"
+   },
+   {
+    "label": {
+     "en": "Work out your monthly instalment",
+     "zh-CN": "计算你的月供",
+     "zh-TW": "計算你的月供",
+     "ms": "Kira ansuran bulanan anda",
+     "ja": "月々の返済を計算",
+     "ko": "월 상환액 계산하기"
+    },
+    "href": "calculator.html"
+   }
+  ],
+  "sources": [
+   {
+    "name": "The Star",
+    "url": "https://www.thestar.com.my/business/business-news/2025/10/10/budget-2026-stamp-duty-exemption-extended-for-first-time-homebuyers"
+   },
+   {
+    "name": "The Star",
+    "url": "https://www.thestar.com.my/news/nation/2025/10/10/budget-2026-housing-credit-guarantee-scheme-doubles-to-rm20bil-to-help-first-time-homebuyers"
+   },
+   {
+    "name": "EdgeProp",
+    "url": "https://www.edgeprop.my/content/1914036/rehda-welcomes-continued-provisions-made-budget-2026-first-time-homebuyers"
+   }
+  ]
+ },
+ {
+  "date": "2026-11-11",
+  "area": {
    "en": "Malaysia",
    "zh-CN": "马来西亚",
    "zh-TW": "馬來西亞",
