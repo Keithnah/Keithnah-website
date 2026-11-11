@@ -461,9 +461,17 @@ ix = open('index.html', encoding='utf-8').read()
 ix = re.sub(r'<!-- KN-HERO-ANIM:CSS -->.*?\n', '', ix)
 ix = re.sub(r'<!-- KN-HERO-ANIM:JS -->.*?\n', '', ix)
 ix = ix.replace('</head>', '<!-- KN-HERO-ANIM:CSS --><link rel="stylesheet" href="hero-anim.css?v=%s">\n</head>' % _v, 1)
-ix = ix.replace('</body>', '<!-- KN-HERO-ANIM:JS --><script src="hero-anim.js?v=%s" defer></script>\n</body>' % _v, 1)
 if 'data-anim="wave"' not in ix:
     ix = ix.replace('<h1 data-i18n-html="hero_h1">', '<h1 data-i18n-html="hero_h1" data-anim="wave">', 1)
+# The headline script runs straight after the headline, so the title shows without waiting for the whole page.
+_h1 = ix.index('data-anim="wave"')
+_e = ix.index('</h1>', _h1) + len('</h1>')
+ix = ix[:_e] + '\n<!-- KN-HERO-ANIM:JS --><script>' + open('hero-anim.js', encoding='utf-8').read().strip().replace('\n', ' ') + '</script>\n' + ix[_e:]
+# First screen first: the hero photo downloads before anything else.
+ix = re.sub(r'<!-- KN-HERO-PRELOAD -->.*?\n', '', ix)
+_hero = re.search(r"\.hero\{[^}]*?url\('([^']+)'\)", ix).group(1)
+ix = ix.replace('<meta name="viewport" content="width=device-width, initial-scale=1.0">\n',
+                '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n<!-- KN-HERO-PRELOAD --><link rel="preload" as="image" href="%s" fetchpriority="high">\n' % _hero, 1)
 open('index.html', 'w', encoding='utf-8').write(ix)
 print('home: animated headline')
 

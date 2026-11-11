@@ -37,11 +37,16 @@
     })(h, false);
     h.style.setProperty('--n', n);
   }
+  var T0 = Date.now();
+  function plain() { var c = h.cloneNode(true); c.querySelectorAll('[aria-hidden="true"]').forEach(function (e) { e.remove(); }); return c.textContent.replace(/\s+/g, ''); }
   function run() {
     if (h.dataset.split && h.dataset.split === h.innerHTML) return;
+    var same = h.dataset.txt && h.dataset.txt === plain();
     split();
     h.classList.remove('ha-on'); h.classList.add('ha');
-    h.dataset.split = h.innerHTML;
+    h.dataset.split = h.innerHTML; h.dataset.txt = plain();
+    /* the same words drawn again after the entrance has started: show them in place, keep the shine */
+    if (same && Date.now() - T0 > 400) { h.classList.add('ha-done', 'ha-on'); return; }
     if (reduce) { h.classList.add('ha-still'); return; }
     requestAnimationFrame(function () { requestAnimationFrame(function () { h.classList.add('ha-on'); }); });
   }
