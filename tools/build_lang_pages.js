@@ -96,6 +96,13 @@ async function render(ctx, base, rel, lang, all) {
       const o = el.id && src.getElementById(el.id);
       if (o) el.replaceWith(document.importNode(o, true));
     });
+    // Scripts that the page added while running (e.g. the project translations) are loaded by the page
+    // itself again; written into the HTML they would block the first paint.
+    const srcs = new Set([...src.querySelectorAll('script[src]')].map(s => s.getAttribute('src').split('?')[0].replace(/^(\.\.\/|\.\/)+/, '')));
+    document.querySelectorAll('script[src]').forEach(s => {
+      const k = s.getAttribute('src').split('?')[0].replace(/^(\.\.\/|\.\/)+/, '');
+      if (!srcs.has(k)) s.remove();
+    });
     const enUrl = new URL(site + '/' + rel);
     const prefix = '/' + dirName;
     document.querySelectorAll('a[href]').forEach(a => {
