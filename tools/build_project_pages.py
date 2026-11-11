@@ -42,6 +42,11 @@ E = lambda s: html.escape(str(s if s is not None else ''), quote=True)
 src = open('projects.html', encoding='utf-8').read()
 
 
+try:
+    COORDS = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'project_coords.json'), encoding='utf-8'))
+except Exception:
+    COORDS = {}
+
 def js_json(name):
     i = src.index('const %s = ' % name) if ('const %s = ' % name) in src else src.index('var %s = ' % name)
     i = src.index('=', i) + 1
@@ -362,6 +367,42 @@ def video_block(name, display):
         YT_CSS, cards, YT_JS)
 
 
+# Market notes about each project (tools/note_links.py): written for the notes builder, shown on the pages.
+import note_links as NL
+PIDX = [{'name': P[i]['name'], 'slug': SLUGS[i], 'state': (PLACES[i] if i < len(PLACES) else ('', ''))[0],
+         'area': (PLACES[i] if i < len(PLACES) else ('', P[i].get('tag', '')))[1],
+         'dev': str((P[i].get('details_extra') or {}).get('Developer', ''))} for i in range(len(P))]
+json.dump(PIDX, open(NL.INDEX, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
+NOTE_LIST = NL.notes()
+NOTES_OF = {}
+for _n in NOTE_LIST:
+    for _p in NL.related(_n, PIDX):
+        NOTES_OF.setdefault(_p['slug'], []).append(_n)
+
+
+def notes_block(i):
+    """Up to 3 notes: first those about this project, then the latest about its state."""
+    mine = list(NOTES_OF.get(SLUGS[i], []))
+    for n in NOTE_LIST:
+        if len(mine) >= 3:
+            break
+        if n not in mine and n['area'].get('en') == PIDX[i]['state']:
+            mine.append(n)
+    mine = mine[:3]
+    if not mine:
+        return ''
+    data = {n['_id']: {'t': n['title'], 'a': n['area']} for n in mine}
+    cards = ''.join('<a class="art" href="../market-notes.html#%s"><small><span data-na="%s">%s</span> · %s</small><h3 data-nt="%s">%s</h3></a>' % (
+        n['_id'], n['_id'], E(n['area'].get('en', '')), E(n['date']), n['_id'], E(n['title'].get('en', ''))) for n in mine)
+    js = ('<script>(function(){var D=%s,H=%s,l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}'
+          'function go(){try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}var h=document.getElementById("knNotesH");if(h)h.textContent=H[l]||H.en;'
+          'document.querySelectorAll("[data-nt]").forEach(function(e){var x=D[e.getAttribute("data-nt")];e.textContent=x.t[l]||x.t.en;});'
+          'document.querySelectorAll("[data-na]").forEach(function(e){var x=D[e.getAttribute("data-na")];e.textContent=x.a[l]||x.a.en;});}'
+          'go();document.addEventListener("DOMContentLoaded",go);})();</script>') % (
+        json.dumps(data, ensure_ascii=False).replace('</', '<\\/'), json.dumps(NL.NOTES_LBL, ensure_ascii=False))
+    return '<section class="blk"><h2 id="knNotesH">%s</h2><div class="cards">%s</div>%s</section>' % (E(NL.NOTES_LBL['en']), cards, js)
+
+
 def page(i):
     p, tg, slug = P[i], TAGS[i], SLUGS[i]
     name, display = p['name'], tg[0]
@@ -444,6 +485,20 @@ def page(i):
          'description': p.get('overview', ''), 'image': (SITE + '/' + photo) if photo else None,
          'address': {'@type': 'PostalAddress', 'streetAddress': p['loc'], 'addressCountry': 'MY'},
          'keywords': ', '.join(tg)}]
+    # Richer place data for search engines: map position, town/state, and the key facts as properties.
+    _loc = [x.strip() for x in (p.get('loc') or '').split(',') if x.strip()]
+    if len(_loc) >= 2:
+        ld[1]['address']['addressLocality'] = _loc[-2]
+        ld[1]['address']['addressRegion'] = _loc[-1]
+    _c = COORDS.get(name)
+    if _c:
+        ld[1]['geo'] = {'@type': 'GeoCoordinates', 'latitude': _c[0], 'longitude': _c[1]}
+    _facts = dict(rows)
+    ld[1]['additionalProperty'] = [{'@type': 'PropertyValue', 'name': k_, 'value': str(_facts[k_])}
+                                   for k_ in ('Starting Price', 'Size', 'Bedrooms', 'Tenure', 'Completion', 'Status', 'Developer') if _facts.get(k_)]
+    _u = re.sub(r'[^0-9]', '', str(_facts.get('Total Units') or _facts.get('Number of Units') or ''))
+    if _u and len(_u) <= 5:
+        ld[1]['numberOfAccommodationUnits'] = {'@type': 'QuantitativeValue', 'value': int(_u)}
     ld[1] = {k: v for k, v in ld[1].items() if v}
 
     return '''<!DOCTYPE html>
@@ -497,6 +552,7 @@ def page(i):
   {lists_blk}
   {near_blk}
   {arts_blk}
+  {notes_blk}
   <div class="cta"><h2>Want Keith's take on {display}?</h2><p>Ask for the latest price, available units and the full floor plans.</p><a class="wa-btn" href="{wa}" target="_blank" rel="noopener">{wasvg}WhatsApp Keith About This Project</a></div>
   <p class="note">Prices, sizes and availability are indicative and subject to change. Confirm current figures with Keith before making decisions.</p>
 </main>
@@ -533,7 +589,8 @@ document.addEventListener('click',function(e){{
         tags_blk=('<section class="blk tg-sec"><h2>Popular Searches for %s</h2><p class="tg-sub">Tap a tag to see every project that matches it.</p><div class="tg-box">%s</div></section>' % (E(display), tags)) if tg else '',
         fits_blk=('<section class="blk"><h2>Who Should Consider %s?</h2><div class="fits">%s</div></section>' % (E(display), fits)) if fits else '',
         near_blk=('<section class="blk"><h2>Nearby Projects</h2><div class="cards">%s</div></section>' % near) if near else '',
-        arts_blk=('<section class="blk"><h2>Related Articles</h2><div class="cards">%s</div></section>' % arts) if arts else '')
+        arts_blk=('<section class="blk"><h2>Related Articles</h2><div class="cards">%s</div></section>' % arts) if arts else '',
+        notes_blk=notes_block(i))
 
 
 def link_projects_page():

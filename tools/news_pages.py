@@ -231,7 +231,9 @@ def write_pages():
             if not I.tr(p):
                 missing.add((aid, p[:60]))
         ld = [{'@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'datePublished': iso(a['date']),
-               'author': {'@type': 'Person', 'name': 'Keith Nah'}, 'publisher': {'@type': 'Organization', 'name': 'Keith Nah Real Estate'},
+               'dateModified': iso(a.get('updated') or a['date']),
+               'author': {'@type': 'Person', 'name': 'Keith Nah', 'url': SITE + '/about-keith.html'},
+               'publisher': {'@type': 'Organization', 'name': 'Keith Nah Real Estate', 'url': SITE + '/', 'logo': {'@type': 'ImageObject', 'url': SITE + '/apple-touch-icon.png'}},
                'description': excerpt(a['intro'], 300), 'mainEntityOfPage': url, 'articleSection': html.unescape(a['cat'])},
               {'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
                   {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': SITE + '/'},
