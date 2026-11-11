@@ -10,7 +10,7 @@ from urllib.parse import urljoin
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://keithnah.com/'
-DIRS = ['', 'property', 'area', 'best', 'article', 'guides', 'topic']
+DIRS = ['', 'property', 'area', 'best', 'article', 'guides', 'topic', 'developer', 'station', 'vs']
 SKIP = ('images/flags/', 'f304c8479b1fe873')   # flags and the logo
 os.chdir(ROOT)
 urls, total = [], 0

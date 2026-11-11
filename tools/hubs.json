@@ -1,0 +1,575 @@
+{
+"developers": {
+"Chin Hin": {
+"slug": "chin-hin",
+"ix": [
+78,
+17
+]
+},
+"Exsim": {
+"slug": "exsim",
+"ix": [
+8,
+9,
+14,
+76,
+75,
+18,
+68,
+74,
+25,
+30,
+36,
+66,
+49,
+50,
+67,
+55,
+56,
+57,
+58
+]
+},
+"Kerjaya": {
+"slug": "kerjaya",
+"ix": [
+4,
+44
+]
+},
+"Oxley": {
+"slug": "oxley",
+"ix": [
+24,
+45
+]
+},
+"Paramount": {
+"slug": "paramount",
+"ix": [
+43,
+52
+]
+},
+"Pavilion": {
+"slug": "pavilion",
+"ix": [
+23,
+35,
+42
+]
+},
+"TA Global": {
+"slug": "ta-global",
+"ix": [
+3,
+12
+]
+}
+},
+"stations": {
+"Ampang Park": {
+"label": "Ampang Park MRT & LRT",
+"slug": "ampang-park-mrt-and-lrt",
+"lines": [
+"MRT",
+"LRT"
+],
+"ix": [
+65,
+74
+]
+},
+"Asia Jaya": {
+"label": "Asia Jaya LRT",
+"slug": "asia-jaya-lrt",
+"lines": [
+"LRT"
+],
+"ix": [
+1,
+52
+]
+},
+"Awan Besar": {
+"label": "Awan Besar LRT",
+"slug": "awan-besar-lrt",
+"lines": [
+"LRT"
+],
+"ix": [
+32,
+55,
+58
+]
+},
+"Bukit Bintang": {
+"label": "Bukit Bintang MRT & Monorail",
+"slug": "bukit-bintang-mrt-and-monorail",
+"lines": [
+"MRT",
+"Monorail"
+],
+"ix": [
+9,
+33,
+59
+]
+},
+"Bukit Chagar": {
+"label": "Bukit Chagar RTS",
+"slug": "bukit-chagar-rts",
+"lines": [
+"RTS"
+],
+"ix": [
+2,
+5
+]
+},
+"Dang Wangi": {
+"label": "Dang Wangi LRT",
+"slug": "dang-wangi-lrt",
+"lines": [
+"LRT"
+],
+"ix": [
+11,
+74
+]
+},
+"Hang Tuah": {
+"label": "Hang Tuah LRT & Monorail",
+"slug": "hang-tuah-lrt-and-monorail",
+"lines": [
+"LRT",
+"Monorail"
+],
+"ix": [
+47,
+59
+]
+},
+"Kepong Sentral": {
+"label": "Kepong Sentral KTM",
+"slug": "kepong-sentral-ktm",
+"lines": [
+"KTM"
+],
+"ix": [
+3,
+27
+]
+},
+"KL City Centre": {
+"label": "KL City Centre LRT",
+"slug": "kl-city-centre-lrt",
+"lines": [
+"LRT"
+],
+"ix": [
+78,
+17
+]
+},
+"Kwasa Damansara": {
+"label": "Kwasa Damansara MRT",
+"slug": "kwasa-damansara-mrt",
+"lines": [
+"MRT"
+],
+"ix": [
+73,
+40,
+60
+]
+},
+"Kwasa Sentral": {
+"label": "Kwasa Sentral MRT",
+"slug": "kwasa-sentral-mrt",
+"lines": [
+"MRT"
+],
+"ix": [
+14,
+76,
+16
+]
+},
+"Merdeka": {
+"label": "Merdeka MRT",
+"slug": "merdeka-mrt",
+"lines": [
+"MRT"
+],
+"ix": [
+30,
+47
+]
+},
+"Pavilion Damansara Heights": {
+"label": "Pavilion Damansara Heights MRT",
+"slug": "pavilion-damansara-heights-mrt",
+"lines": [
+"MRT"
+],
+"ix": [
+23,
+42
+]
+}
+},
+"pairs": [
+{
+"a": 3,
+"b": 27,
+"slug": "amaya-bdr-sri-damansara-vs-laverra",
+"area": "Bandar Sri Damansara",
+"state": "Selangor"
+},
+{
+"a": 26,
+"b": 34,
+"slug": "khaya-residences-vs-parkside-residence",
+"area": "Bangsar",
+"state": "Kuala Lumpur"
+},
+{
+"a": 4,
+"b": 43,
+"slug": "andabreeze-residences-vs-seiras-residences",
+"area": "Batu Kawan",
+"state": "Penang"
+},
+{
+"a": 4,
+"b": 61,
+"slug": "andabreeze-residences-vs-vi-residence",
+"area": "Batu Kawan",
+"state": "Penang"
+},
+{
+"a": 31,
+"b": 43,
+"slug": "mezon-park-enclave-vs-seiras-residences",
+"area": "Batu Kawan",
+"state": "Penang"
+},
+{
+"a": 31,
+"b": 61,
+"slug": "mezon-park-enclave-vs-vi-residence",
+"area": "Batu Kawan",
+"state": "Penang"
+},
+{
+"a": 43,
+"b": 61,
+"slug": "seiras-residences-vs-vi-residence",
+"area": "Batu Kawan",
+"state": "Penang"
+},
+{
+"a": 9,
+"b": 47,
+"slug": "branniganz-suites-bukit-bintang-vs-swnk-houze-bbcc",
+"area": "Bukit Bintang",
+"state": "Kuala Lumpur"
+},
+{
+"a": 9,
+"b": 59,
+"slug": "branniganz-suites-bukit-bintang-vs-times-square-2",
+"area": "Bukit Bintang",
+"state": "Kuala Lumpur"
+},
+{
+"a": 33,
+"b": 35,
+"slug": "orion-residence-vs-pavilion-square",
+"area": "Bukit Bintang",
+"state": "Kuala Lumpur"
+},
+{
+"a": 47,
+"b": 59,
+"slug": "swnk-houze-bbcc-vs-times-square-2",
+"area": "Bukit Bintang",
+"state": "Kuala Lumpur"
+},
+{
+"a": 32,
+"b": 57,
+"slug": "oaka-residences-vs-the-queenswoodz",
+"area": "Bukit Jalil",
+"state": "Kuala Lumpur"
+},
+{
+"a": 39,
+"b": 55,
+"slug": "ren-residences-vs-the-kingswoodz",
+"area": "Bukit Jalil",
+"state": "Kuala Lumpur"
+},
+{
+"a": 39,
+"b": 57,
+"slug": "ren-residences-vs-the-queenswoodz",
+"area": "Bukit Jalil",
+"state": "Kuala Lumpur"
+},
+{
+"a": 39,
+"b": 58,
+"slug": "ren-residences-vs-the-vividz",
+"area": "Bukit Jalil",
+"state": "Kuala Lumpur"
+},
+{
+"a": 55,
+"b": 58,
+"slug": "the-kingswoodz-vs-the-vividz",
+"area": "Bukit Jalil",
+"state": "Kuala Lumpur"
+},
+{
+"a": 37,
+"b": 56,
+"slug": "pinnacle-bukit-gambier-vs-the-lighthauz",
+"area": "Gelugor",
+"state": "Penang"
+},
+{
+"a": 8,
+"b": 10,
+"slug": "axis-causeway-square-vs-brixton-causeway-square",
+"area": "JB City Centre",
+"state": "Johor"
+},
+{
+"a": 8,
+"b": 18,
+"slug": "axis-causeway-square-vs-dover-causeway-square",
+"area": "JB City Centre",
+"state": "Johor"
+},
+{
+"a": 10,
+"b": 18,
+"slug": "brixton-causeway-square-vs-dover-causeway-square",
+"area": "JB City Centre",
+"state": "Johor"
+},
+{
+"a": 50,
+"b": 53,
+"slug": "the-asteriaz-vs-the-celestz",
+"area": "Kebun Teh",
+"state": "Johor"
+},
+{
+"a": 65,
+"b": 24,
+"slug": "cappella-embassy-vs-jewel-oxley-towers",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 65,
+"b": 41,
+"slug": "cappella-embassy-vs-royal-lexis",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 65,
+"b": 54,
+"slug": "cappella-embassy-vs-the-conlay",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 11,
+"b": 17,
+"slug": "centrix-vs-divine-kl-city-centre",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 11,
+"b": 74,
+"slug": "centrix-vs-hanaz-suites",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 11,
+"b": 36,
+"slug": "centrix-vs-phoeniz-suites-kl-city-centre",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 12,
+"b": 19,
+"slug": "clouthaus-vs-eaton-residence",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 12,
+"b": 45,
+"slug": "clouthaus-vs-so-kl-oxley-towers",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 12,
+"b": 54,
+"slug": "clouthaus-vs-the-conlay",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 78,
+"b": 74,
+"slug": "dawn-kl-city-centre-vs-hanaz-suites",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 78,
+"b": 30,
+"slug": "dawn-kl-city-centre-vs-maba-suitez",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 78,
+"b": 46,
+"slug": "dawn-kl-city-centre-vs-sutera-suites",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 17,
+"b": 36,
+"slug": "divine-kl-city-centre-vs-phoeniz-suites-kl-city-centre",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 19,
+"b": 36,
+"slug": "eaton-residence-vs-phoeniz-suites-kl-city-centre",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 19,
+"b": 45,
+"slug": "eaton-residence-vs-so-kl-oxley-towers",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 74,
+"b": 30,
+"slug": "hanaz-suites-vs-maba-suitez",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 24,
+"b": 45,
+"slug": "jewel-oxley-towers-vs-so-kl-oxley-towers",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 24,
+"b": 54,
+"slug": "jewel-oxley-towers-vs-the-conlay",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 30,
+"b": 46,
+"slug": "maba-suitez-vs-sutera-suites",
+"area": "KL City Centre",
+"state": "Kuala Lumpur"
+},
+{
+"a": 69,
+"b": 67,
+"slug": "residensi-bayu-damai-vs-the-bedrock",
+"area": "Kota Kinabalu",
+"state": "Sabah"
+},
+{
+"a": 14,
+"b": 16,
+"slug": "devia-vs-daya-residence",
+"area": "Kwasa Damansara",
+"state": "Selangor"
+},
+{
+"a": 14,
+"b": 60,
+"slug": "devia-vs-tujuh-residences",
+"area": "Kwasa Damansara",
+"state": "Selangor"
+},
+{
+"a": 16,
+"b": 73,
+"slug": "daya-residence-vs-linari-kwasa-damansara",
+"area": "Kwasa Damansara",
+"state": "Selangor"
+},
+{
+"a": 16,
+"b": 60,
+"slug": "daya-residence-vs-tujuh-residences",
+"area": "Kwasa Damansara",
+"state": "Selangor"
+},
+{
+"a": 73,
+"b": 40,
+"slug": "linari-kwasa-damansara-vs-ria",
+"area": "Kwasa Damansara",
+"state": "Selangor"
+},
+{
+"a": 75,
+"b": 49,
+"slug": "dtessera-residences-vs-the-aldenz",
+"area": "Petaling Jaya",
+"state": "Selangor"
+},
+{
+"a": 75,
+"b": 52,
+"slug": "dtessera-residences-vs-the-atera",
+"area": "Petaling Jaya",
+"state": "Selangor"
+},
+{
+"a": 49,
+"b": 52,
+"slug": "the-aldenz-vs-the-atera",
+"area": "Petaling Jaya",
+"state": "Selangor"
+},
+{
+"a": 13,
+"b": 22,
+"slug": "core-residence-vs-golden-crown-residence",
+"area": "TRX",
+"state": "Kuala Lumpur"
+}
+]
+}

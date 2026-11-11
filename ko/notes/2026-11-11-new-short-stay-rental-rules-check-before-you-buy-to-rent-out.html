@@ -111,6 +111,47 @@ main .wa-btn{white-space:normal;max-width:100%;text-align:center;justify-content
 #knMnav .kn-mchips button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer;}
 #knMnav .kn-mchips button.on{background:#fff;color:#1d1b4f;}
 </style>
+<style>
+/* KN-FLOAT:START */
+a.float-wa.float-wa{position:fixed;right:22px;bottom:22px;z-index:60;display:inline-flex;align-items:center;gap:11px;width:auto;height:auto;
+  padding:13px 24px 13px 18px;border-radius:100px;background:#25D366;color:#fff;font:700 16px/1 'Inter',system-ui,sans-serif;letter-spacing:0;
+  text-decoration:none;animation:knWaPulse 2.6s ease-in-out infinite;transition:transform .25s ease;}
+a.float-wa.float-wa:hover{transform:translateY(-2px) scale(1.03);color:#fff;}
+a.float-wa.float-wa svg{width:26px;height:26px;flex:0 0 26px;fill:#fff;}
+a.float-wa.float-wa .fw-txt{white-space:nowrap;}
+@keyframes knWaPulse{
+  0%,100%{box-shadow:0 0 0 4px rgba(37,211,102,.18),0 0 14px 2px rgba(37,211,102,.30),0 8px 22px rgba(0,0,0,.16);}
+  50%{box-shadow:0 0 0 12px rgba(37,211,102,.10),0 0 30px 10px rgba(37,211,102,.45),0 8px 22px rgba(0,0,0,.16);}
+}
+@media(max-width:600px){a.float-wa.float-wa{right:16px;bottom:16px;padding:11px 18px 11px 14px;font-size:14px;gap:9px;}a.float-wa.float-wa svg{width:22px;height:22px;flex-basis:22px;}}
+@media(prefers-reduced-motion:reduce){a.float-wa.float-wa{animation:none;box-shadow:0 0 0 6px rgba(37,211,102,.18),0 8px 22px rgba(0,0,0,.16);}}
+/* back to top, above the WhatsApp button */
+.kn-fab{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.kn-fab a.float-wa.float-wa{position:static;right:auto;bottom:auto;}
+.kn-top{width:48px;height:48px;border-radius:50%;background:#fff;border:1.5px solid #d6d6d6;box-shadow:0 6px 18px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:#555;
+  opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility .25s,border-color .2s,color .2s;}
+.kn-top.show{opacity:1;visibility:visible;transform:none;}
+.kn-top:hover{border-color:var(--gold,#5E60CE);color:var(--gold,#5E60CE);}
+.kn-top svg{width:20px;height:20px;}
+@media(max-width:600px){.kn-fab{right:16px;bottom:16px;gap:10px;}.kn-top{width:44px;height:44px;}}
+@media(prefers-reduced-motion:reduce){.kn-top{transition:none;}}
+/* phones: the header WhatsApp button would push the menu button off screen; the floating button stays */
+@media(max-width:560px){header .whatsapp-btn,header .wa-btn,.nav-right .whatsapp-btn{display:none!important;}.hamburger{margin-left:auto;padding:6px 4px;}}
+/* KN-FLOAT:END */
+</style>
+<style id="kn-mnav-css">
+.kn-burger{display:none;margin-left:auto;background:none;border:0;color:#fff;font-size:26px;line-height:1;padding:6px 4px;cursor:pointer;}
+@media(max-width:1100px){.kn-burger{display:block;}}
+#knMnav{position:fixed;inset:0;z-index:2147483000;display:none;}
+#knMnav.open{display:block;}
+#knMnav .kn-mbg{position:absolute;inset:0;background:rgba(10,10,30,.55);}
+#knMnav .kn-mpanel{position:absolute;top:0;right:0;bottom:0;width:min(82vw,340px);background:#1d1b4f;color:#fff;padding:20px 22px 28px;overflow-y:auto;box-shadow:-8px 0 30px rgba(0,0,0,.35);}
+html[dir=rtl] #knMnav .kn-mpanel{right:auto;left:0;}
+#knMnav .kn-mclose{display:block;margin-left:auto;background:none;border:0;color:#fff;font-size:30px;line-height:1;cursor:pointer;padding:4px 8px;}
+#knMnav .kn-mlinks a{display:block;color:#fff;text-decoration:none;font-size:17px;letter-spacing:.04em;padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12);}
+#knMnav .kn-mlinks a.active{color:#b9b4ff;font-weight:600;}
+#knMnav .kn-mwa{display:block;margin-top:24px;text-align:center;background:#25d366;color:#fff;text-decoration:none;border-radius:999px;padding:13px;font-weight:600;}
+</style>
 <!-- KN-GA --><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-6WFGZZ4FTC"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}if(!window.KN_RENDER){gtag('js',new Date());gtag('config','G-6WFGZZ4FTC',{content_group:document.documentElement.getAttribute('data-page-lang')||'en'});}</script><!-- /KN-GA -->
 </head>
 <body>
@@ -121,7 +162,7 @@ main .wa-btn{white-space:normal;max-width:100%;text-align:center;justify-content
     <div class="kn-sw"><span class="kn-sel" onclick="knTog('knLangMenu',event)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9z"></path></svg><span id="knLangLab">한국어</span></span><div class="kn-menu" id="knLangMenu"><a data-v="en" onclick="knSetLang('en')"><img class="kn-flag" src="../images/flags/gb.svg" alt="" width="20" height="15">English</a><a data-v="zh-CN" onclick="knSetLang('zh-CN')"><img class="kn-flag" src="../images/flags/cn.svg" alt="" width="20" height="15">简体中文</a><a data-v="zh-TW" onclick="knSetLang('zh-TW')"><img class="kn-flag" src="../images/flags/tw.svg" alt="" width="20" height="15">繁體中文</a><a data-v="ms" onclick="knSetLang('ms')"><img class="kn-flag" src="../images/flags/my.svg" alt="" width="20" height="15">Bahasa Malaysia</a><a data-v="ja" onclick="knSetLang('ja')"><img class="kn-flag" src="../images/flags/jp.svg" alt="" width="20" height="15">日本語</a><a data-v="ko" onclick="knSetLang('ko')" class="active"><img class="kn-flag" src="../images/flags/kr.svg" alt="" width="20" height="15">한국어</a></div></div>
     <div class="kn-sw"><span class="kn-sel" onclick="knTog('knCurMenu',event)"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="5"></circle><circle cx="16" cy="16" r="5"></circle></svg><span id="knCurLab">MYR</span></span><div class="kn-menu cur" id="knCurMenu"><a data-v="MYR" onclick="knSetCur('MYR')" class="active"><img class="kn-flag" src="../images/flags/my.svg" alt="" width="20" height="15">MYR — Malaysian Ringgit</a><a data-v="USD" onclick="knSetCur('USD')"><img class="kn-flag" src="../images/flags/us.svg" alt="" width="20" height="15">USD — US Dollar</a><a data-v="SGD" onclick="knSetCur('SGD')"><img class="kn-flag" src="../images/flags/sg.svg" alt="" width="20" height="15">SGD — Singapore Dollar</a><a data-v="CNY" onclick="knSetCur('CNY')"><img class="kn-flag" src="../images/flags/cn.svg" alt="" width="20" height="15">CNY — Chinese Yuan</a><a data-v="JPY" onclick="knSetCur('JPY')"><img class="kn-flag" src="../images/flags/jp.svg" alt="" width="20" height="15">JPY — Japanese Yen</a><a data-v="KRW" onclick="knSetCur('KRW')"><img class="kn-flag" src="../images/flags/kr.svg" alt="" width="20" height="15">KRW — Korean Won</a></div></div>
     <a class="wa-btn" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+about+your+market+note+%22New+short-stay+rental+rules%3A+check+before+you+buy+to+rent+out%22...&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">WhatsApp Keith</a>
-  <!--kn-burger-->
+  <!--kn-burger--><button type="button" class="kn-burger" aria-label="Menu" onclick="knMnav()">☰</button>
   </div>
 </header>
 <main class="nw">
@@ -179,6 +220,9 @@ function drawer(){var p=document.querySelector('#knMnav .kn-mlinks');if(!p||docu
 document.addEventListener('DOMContentLoaded',function(){drawer();knSetLang(get('kn_lang','en'));});
 })();
 </script>
+<div class="kn-fab"><button type="button" class="kn-top" id="knTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"></path></svg></button><a class="float-wa" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+about+your+market+note+%22New+short-stay+rental+rules%3A+check+before+you+buy+to+rent+out%22...&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener" aria-label="Chat with Keith on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.44.79 3.06 1.2 4.72 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0012.04 2zm5.82 14.06c-.24.68-1.42 1.3-1.95 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.3-.13.58.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.41.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.68.79 1.97.94.29.14.48.21.55.33.07.12.07.7-.17 1.38z"></path></svg><span class="fw-txt">Chat with Keith</span></a></div><!--/kn-fab--><script>(function(){var b=document.getElementById('knTop');if(!b)return;function s(){b.classList.toggle('show',(window.pageYOffset||document.documentElement.scrollTop)>300);}window.addEventListener('scroll',s,{passive:true});s();b.addEventListener('click',function(){var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;window.scrollTo({top:0,behavior:r?'auto':'smooth'});});})();</script>
+<div id="knMnav" aria-hidden="true"><div class="kn-mbg" onclick="knMnav(false)"></div><div class="kn-mpanel"><button type="button" class="kn-mclose" aria-label="Close" onclick="knMnav(false)">×</button><div class="kn-mlinks"><a href="/ko/"><span data-nav="Home">홈</span></a><a href="/ko/projects.html"><span data-nav="View Projects">프로젝트 보기</span></a><a href="/ko/compare.html"><span data-nav="Compare Projects">프로젝트 비교</span></a><a href="/ko/blog.html" class="active"><span data-nav="News">뉴스</span></a><a href="/ko/calculator.html"><span data-nav="Calculator">계산기</span></a><a href="/ko/resources.html"><span data-nav="Free Toolkit">무료 툴킷</span></a><a href="/ko/mm2h.html">MM2H 第二家园</a><a href="/ko/about-keith.html"><span data-nav="About Keith">Keith 소개</span></a></div><div class="kn-msub">Language</div><div class="kn-mchips"><button type="button" data-v="en" onclick="knSetLang(this.getAttribute('data-v'))">English</button><button type="button" data-v="zh-CN" onclick="knSetLang(this.getAttribute('data-v'))">简体中文</button><button type="button" data-v="zh-TW" onclick="knSetLang(this.getAttribute('data-v'))">繁體中文</button><button type="button" data-v="ms" onclick="knSetLang(this.getAttribute('data-v'))">Bahasa Malaysia</button><button type="button" data-v="ja" onclick="knSetLang(this.getAttribute('data-v'))">日本語</button><button type="button" data-v="ko" onclick="knSetLang(this.getAttribute('data-v'))" class="on">한국어</button></div><div class="kn-msub">Currency</div><div class="kn-mchips"><button type="button" data-v="MYR" onclick="knSetCur(this.getAttribute('data-v'))" class="on">MYR</button><button type="button" data-v="USD" onclick="knSetCur(this.getAttribute('data-v'))">USD</button><button type="button" data-v="SGD" onclick="knSetCur(this.getAttribute('data-v'))">SGD</button><button type="button" data-v="CNY" onclick="knSetCur(this.getAttribute('data-v'))">CNY</button><button type="button" data-v="JPY" onclick="knSetCur(this.getAttribute('data-v'))">JPY</button><button type="button" data-v="KRW" onclick="knSetCur(this.getAttribute('data-v'))">KRW</button></div><a class="kn-mwa" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+about+your+market+note+%22New+short-stay+rental+rules%3A+check+before+you+buy+to+rent+out%22...&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">Chat with Keith</a></div></div><!--/knMnav-->
+<script>function knMnav(o){var d=document.getElementById('knMnav');if(!d)return;o=(o===undefined)?!d.classList.contains('open'):o;d.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';}document.addEventListener('keydown',function(e){if(e.key==='Escape')knMnav(false);});</script>
 
 
 </body></html>
