@@ -20,7 +20,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 os.chdir(ROOT)
 SITE = 'https://keithnah.com/'
-DIRS = ['', 'article', 'area', 'best', 'developer', 'guides', 'notes', 'property', 'station', 'topic', 'vs']
+DIRS = ['', 'article', 'area', 'best', 'developer', 'guides', 'mm2h', 'notes', 'property', 'station', 'topic', 'vs']
 
 
 def exists(path):

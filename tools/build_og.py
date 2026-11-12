@@ -19,7 +19,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 os.chdir(ROOT)
 SITE = 'https://keithnah.com/'
-DIRS = ['', 'area', 'article', 'best', 'developer', 'guides', 'notes', 'station', 'topic', 'vs']
+DIRS = ['', 'area', 'article', 'best', 'developer', 'guides', 'mm2h', 'notes', 'station', 'topic', 'vs']
 CACHE = os.path.join(HERE, 'og_cache.json')
 FALLBACK = 'images/18c3c17601a2ba81.jpg'   # Kuala Lumpur skyline (home hero)
 SKIP_IMG = ('f304c8479b1fe873', 'images/flags/', 'images/og/', 'ffb01572bcbd138e')   # logo, flags, share images, YouTube icon

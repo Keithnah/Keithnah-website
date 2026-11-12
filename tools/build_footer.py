@@ -13,7 +13,7 @@ import re
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 os.chdir(ROOT)
-DIRS = ['', 'article', 'area', 'best', 'developer', 'guides', 'notes', 'property', 'station', 'topic', 'vs']
+DIRS = ['', 'article', 'area', 'best', 'developer', 'guides', 'mm2h', 'notes', 'property', 'station', 'topic', 'vs']
 WA = 'https://wa.me/60102821568?text=' + 'Hi%20Keith%2C%20I%20would%20like%20to%20explore%20more%20on%20Malaysia%20Property.'
 LANGS = ['en', 'zh-CN', 'zh-TW', 'ms', 'ja', 'ko']
 

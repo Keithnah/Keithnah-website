@@ -19,7 +19,7 @@ os.chdir(ROOT)
 sys.path.insert(0, HERE)
 import hubs_data as HB
 
-DIRS = ['', 'article', 'area', 'best', 'developer', 'guides', 'notes', 'property', 'station', 'topic', 'vs']
+DIRS = ['', 'article', 'area', 'best', 'developer', 'guides', 'mm2h', 'notes', 'property', 'station', 'topic', 'vs']
 src = open('projects.html', encoding='utf-8').read()
 i = src.index('const PROJECT_DETAILS = ')
 P = json.JSONDecoder().raw_decode(src[src.index('=', i) + 1:].lstrip())[0]

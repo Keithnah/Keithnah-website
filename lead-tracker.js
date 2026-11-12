@@ -16,8 +16,8 @@
   };
 
   function pageName() {
-    var sub = { property: 'Project page: ', article: 'Article: ', topic: 'Topic: ' };
-    var m = location.pathname.match(/\/(property|article|topic)\//);
+    var sub = { property: 'Project page: ', article: 'Article: ', topic: 'Topic: ', mm2h: 'MM2H article: ' };
+    var m = location.pathname.match(/\/(property|article|topic|mm2h)\//);
     if (m) {
       var h = document.querySelector('h1');
       return sub[m[1]] + (h ? h.textContent.trim() : location.pathname.split('/').pop());
@@ -59,6 +59,9 @@
       fetch(LEADS_ENDPOINT, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain' }, body: body });
     } catch (e) {}
   }
+
+  // Other forms on the site (e.g. the MM2H enquiry form) record their lead through this.
+  window.knLead = function (data) { send(data); };
 
   function isWhatsApp(href) {
     return /(^|\/\/)(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)\/|^whatsapp:/i.test(href || '');
