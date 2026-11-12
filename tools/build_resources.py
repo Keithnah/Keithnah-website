@@ -132,8 +132,6 @@ ICON = {
 CARDS = [
     ('c1', 'area-guides.jpg', 'layers', '#guides', ' data-open="areas"'),
     ('c2', 'mm2h-guide.jpg', 'book', 'mm2h.html', ''),
-    ('c3', 'compare.jpg', 'cols', 'compare.html#popular', ''),
-    ('c4', 'map.jpg', 'pin', 'projects.html#projectMap', ''),
     ('c5', 'videos.jpg', 'play', 'https://www.youtube.com/@KeithNahRealEstate/videos', ' target="_blank" rel="noopener"'),
     ('c6', 'calculator.jpg', 'calc', 'calculator.html', ''),
     ('c7', 'consult.jpg', 'chat', waq('Hi Keith, I would like one-to-one advice on Malaysia property.'), ' target="_blank" rel="noopener"'),

@@ -2719,17 +2719,6 @@
   <url><loc>https://keithnah.com/ja/station/bukit-chagar-rts.html</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://keithnah.com/ko/station/bukit-chagar-rts.html</loc><lastmod>2026-11-12</lastmod></url>
   <url>
-    <loc>https://keithnah.com/station/dang-wangi-lrt.html</loc>
-    <lastmod>2026-11-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url><loc>https://keithnah.com/zh/station/dang-wangi-lrt.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://keithnah.com/zh-tw/station/dang-wangi-lrt.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://keithnah.com/ms/station/dang-wangi-lrt.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://keithnah.com/ja/station/dang-wangi-lrt.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://keithnah.com/ko/station/dang-wangi-lrt.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url>
     <loc>https://keithnah.com/station/hang-tuah-lrt-and-monorail.html</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -2740,17 +2729,6 @@
   <url><loc>https://keithnah.com/ms/station/hang-tuah-lrt-and-monorail.html</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://keithnah.com/ja/station/hang-tuah-lrt-and-monorail.html</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://keithnah.com/ko/station/hang-tuah-lrt-and-monorail.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url>
-    <loc>https://keithnah.com/station/kepong-sentral-ktm.html</loc>
-    <lastmod>2026-11-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url><loc>https://keithnah.com/zh/station/kepong-sentral-ktm.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://keithnah.com/zh-tw/station/kepong-sentral-ktm.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://keithnah.com/ms/station/kepong-sentral-ktm.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://keithnah.com/ja/station/kepong-sentral-ktm.html</loc><lastmod>2026-11-12</lastmod></url>
-  <url><loc>https://keithnah.com/ko/station/kepong-sentral-ktm.html</loc><lastmod>2026-11-12</lastmod></url>
   <url>
     <loc>https://keithnah.com/station/kl-city-centre-lrt.html</loc>
     <lastmod>2026-11-12</lastmod>
@@ -2806,6 +2784,17 @@
   <url><loc>https://keithnah.com/ms/station/pavilion-damansara-heights-mrt.html</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://keithnah.com/ja/station/pavilion-damansara-heights-mrt.html</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://keithnah.com/ko/station/pavilion-damansara-heights-mrt.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url>
+    <loc>https://keithnah.com/station/sri-damansara-west-mrt.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url><loc>https://keithnah.com/zh/station/sri-damansara-west-mrt.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://keithnah.com/zh-tw/station/sri-damansara-west-mrt.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://keithnah.com/ms/station/sri-damansara-west-mrt.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://keithnah.com/ja/station/sri-damansara-west-mrt.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://keithnah.com/ko/station/sri-damansara-west-mrt.html</loc><lastmod>2026-11-12</lastmod></url>
   <url>
     <loc>https://keithnah.com/station/</loc>
     <lastmod>2026-11-12</lastmod>

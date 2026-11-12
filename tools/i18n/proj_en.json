@@ -71,7 +71,7 @@
 "t0069": "Level 12: Energy Lab, Karaoke Suites, Urban Oasis, Child Care Center, Play Garden, Racket Court, Entertainment Lounge, Laundry Room, Social Chamber, Grill Terrace, Serenity Garden, Meditation Deck. Level 13: Multipurpose Hall, Horizon Lounge, Garden Pavilion, Co-working, Breeze Deck, Altitude Deck. Level 52: Sky Infinity Pool, Wading Cove, Sky Deck, BBQ Sky Deck, Tree Promenade, Sky Heated Pool, Sun Deck",
 "t0070": "Defect Liability",
 "t0071": "24 months",
-"t0072": "Amaya sits in Bandar Sri Damansara, with Sri Damansara Sentral MRT station about 0.5 km away and Kepong Sentral KTM about 2.0 km. ParkCity Medical Centre and The International School @ ParkCity are about 2.5 km away, The Curve, IKEA and IPC about 4.5 km, Mont Kiara and Desa Sri Hartamas about 5.0 km and Pavilion Damansara Heights about 8.0 km.",
+"t0072": "Amaya sits in Bandar Sri Damansara, close to Sri Damansara West MRT station, with Sri Damansara Sentral MRT station about 0.5 km away. ParkCity Medical Centre and The International School @ ParkCity are about 2.5 km away, The Curve, IKEA and IPC about 4.5 km, Mont Kiara and Desa Sri Hartamas about 5.0 km and Pavilion Damansara Heights about 8.0 km.",
 "t0073": "Freehold, 68-storey Tower A with 634 units on a 15-acre site, 6+1 lifts and 12 units per floor",
 "t0074": "1 to 3-bedroom homes from 554–1,230 sqft, priced from RM561,000 (about RM950–1,000 psf, gross)",
 "t0075": "Direct link to MRT, connected to a shopping mall, with sky pool, sky gym and sky badminton / pickleball courts",
@@ -533,7 +533,7 @@
 "t0531": "Partially furnished",
 "t0532": "Certification",
 "t0533": "Provisional GreenRE",
-"t0534": "Laverra sits in Bandar Sri Damansara, with Sri Damansara West MRT Station on the MRT Putrajaya Line about 500m away, plus the Sri Damansara Sentral and East stations, Kepong Sentral KTM Commuter Station and neighbourhood retail, schools and medical centres nearby.",
+"t0534": "Laverra sits in Bandar Sri Damansara, with Sri Damansara West MRT Station on the MRT Putrajaya Line about 500m away, plus the Sri Damansara Sentral and East stations and neighbourhood retail, schools and medical centres nearby.",
 "t0535": "Freehold, 1,008 units in 2 towers (55 and 60 storeys) on 2.83 acres",
 "t0536": "725 – 1,150 sqft, 2 to 4 bedrooms, from RM696,700 (gross)",
 "t0537": "Level 9 podium with infinity lap pool, gym, playground and elderly-friendly area",
@@ -1494,7 +1494,7 @@
 "t1492": "3 + 1 service lift; 10 units per floor on most levels",
 "t1493": "Condominium: 2 side-by-side bays per unit; Parkhome: 3 bays",
 "t1494": "Hanaz Suites is a freehold, Japanese-inspired tower of serviced suites and office suites in KL City Centre, close to the Petronas Twin Towers and Avenue K. Its 45 storeys hold 270 units from 323 sqft studio office suites to 657 sqft serviced suites, with a double-sided Sakura and Sensu sky pool on Level 42 and sky facilities on Levels 40 and 43.",
-"t1495": "Hanaz Suites is off Jalan Yap Kwan Seng in KL City Centre, a short walk from the Petronas Twin Towers, Avenue K and Four Seasons Hotel. Ampang Park LRT, Dang Wangi LRT and the Monorail are close by, and Pavilion, Bukit Bintang, The Intermark and Prince Court Medical Centre are a few minutes away.",
+"t1495": "Hanaz Suites is off Jalan Yap Kwan Seng in KL City Centre, a short walk from the Petronas Twin Towers, Avenue K and Four Seasons Hotel. KL City Centre LRT and Ampang Park LRT are close by, and Pavilion, Bukit Bintang, The Intermark and Prince Court Medical Centre are a few minutes away.",
 "t1496": "Freehold KL City Centre tower of 270 serviced suites and office suites, 45 storeys",
 "t1497": "Units from 323 to 657 sqft, from RM756,200 (gross)",
 "t1498": "Level 42 double-sided sky pool (Sakura and Sensu) with sky fitness and meeting spaces",
@@ -1652,5 +1652,7 @@
 "t1650": "From about RM2,048 psf (Gross)",
 "t1651": "RM0.70 psf (incl. sinking fund)",
 "t1652": "5 + 1 service lift",
-"t1653": "No allocated car park; residents can rent bays"
+"t1653": "No allocated car park; residents can rent bays",
+"t1654": "Sri Damansara West MRT Station",
+"t1655": "KL City Centre LRT Station"
 }
