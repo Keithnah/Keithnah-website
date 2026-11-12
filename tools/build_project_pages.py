@@ -700,7 +700,7 @@ def link_home_page():
 
 def write_sitemap():
     main = [('', '1.0', 'weekly'), ('projects.html', '0.9', 'weekly'), ('compare.html', '0.7', 'monthly'),
-            ('blog.html', '0.8', 'weekly'), ('calculator.html', '0.7', 'monthly'), ('mm2h.html', '0.7', 'monthly'), ('resources.html', '0.7', 'monthly'),
+            ('blog.html', '0.8', 'weekly'), ('calculator.html', '0.7', 'monthly'), ('find-my-home.html', '0.7', 'weekly'), ('mm2h.html', '0.7', 'monthly'), ('resources.html', '0.7', 'monthly'),
             ('about-keith.html', '0.8', 'monthly'), ('privacy-policy.html', '0.3', 'yearly'), ('terms-of-use.html', '0.3', 'yearly')]
     rows = [(SITE + '/' + u, pr, cf) for u, pr, cf in main] + [('%s/%s/%s.html' % (SITE, OUT, s), '0.8', 'monthly') for s in SLUGS]
     import glob
