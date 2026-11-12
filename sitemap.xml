@@ -56,6 +56,17 @@
   <url><loc>https://keithnah.com/ja/calculator.html</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://keithnah.com/ko/calculator.html</loc><lastmod>2026-11-12</lastmod></url>
   <url>
+    <loc>https://keithnah.com/find-my-home.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url><loc>https://keithnah.com/zh/find-my-home.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://keithnah.com/zh-tw/find-my-home.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://keithnah.com/ms/find-my-home.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://keithnah.com/ja/find-my-home.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://keithnah.com/ko/find-my-home.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url>
     <loc>https://keithnah.com/mm2h.html</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>

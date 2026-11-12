@@ -236,3 +236,37 @@ page = '''<!DOCTYPE html>
 ''' % (CSS, E(en['eb']), E(en['h1']), E(en['p']), JS % (json.dumps(data, ensure_ascii=False), json.dumps(T, ensure_ascii=False), json.dumps(STATES)))
 open('find-my-home.html', 'w', encoding='utf-8').write(SH.apply(page, '', 'projects.html'))
 print('find my home: %d projects, %d states' % (len(data), len(STATES)))
+
+
+# ---------- entry points: a link under the home hero buttons and under the projects search ----------
+LINK = {'en': ('Not sure where to start?', 'Find your home in 3 minutes →'),
+        'zh-CN': ('不知道从哪里开始？', '3 分钟帮你找房 →'),
+        'ms': ('Tidak pasti mahu mula di mana?', 'Cari rumah anda dalam 3 minit →'),
+        'ja': ('どこから探せばいいか迷ったら', '3分でおうち探し →'),
+        'ko': ('어디서부터 시작할지 모르겠다면?', '3분 만에 내 집 찾기 →')}
+LINK['zh-TW'] = tuple(_cc(x) for x in LINK['zh-CN'])
+
+
+def entry(cls):
+    return ('<!-- KN-QUIZ:START --><style>.kq{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 10px;align-items:center;'
+            'font:500 15px Inter,sans-serif;margin:%s;}.kq span{opacity:.75;}.kq a{display:inline-flex;align-items:center;padding:8px 16px;'
+            'border-radius:999px;background:#5E60CE;color:#fff;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s;}'
+            '.kq a:hover{background:#4a4cc0;transform:translateY(-2px);box-shadow:0 8px 20px rgba(94,96,206,.35);}</style>'
+            '<div class="kq %s"><span data-kq="0">%s</span><a href="find-my-home.html" data-kq="1">%s</a></div>'
+            '<script>(function(){var L=%s;function f(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}var t=L[l]||L.en;'
+            'document.querySelectorAll("[data-kq]").forEach(function(x){x.textContent=t[+x.getAttribute("data-kq")];});}f();'
+            'document.addEventListener("DOMContentLoaded",function(){var s=window.setLanguage;if(typeof s==="function")window.setLanguage=function(){var r=s.apply(this,arguments);f();return r;};f();});})();</script>'
+            '<!-- KN-QUIZ:END -->') % ('-36px 0 40px' if cls == 'kq-home' else '18px 0 0', cls, html.escape(LINK['en'][0]), html.escape(LINK['en'][1]),
+                                       json.dumps(LINK, ensure_ascii=False))
+
+
+def put(page, anchor, block):
+    t = open(page, encoding='utf-8').read()
+    t = re.sub(r'<!-- KN-QUIZ:START -->.*?<!-- KN-QUIZ:END -->', '', t, flags=re.S)
+    i = t.index(anchor) + len(anchor)
+    open(page, 'w', encoding='utf-8').write(t[:i] + block + t[i:])
+
+
+put('index.html', 'data-i18n="hero_btn_wa">WhatsApp Keith</a>\n  </div>', entry('kq-home'))
+put('projects.html', '  </form>', entry('kq-proj'))
+print('find-my-home.html written, entry links on home and projects')
