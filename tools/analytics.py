@@ -15,6 +15,13 @@ SNIPPET = ('<!-- KN-GA --><script async src="https://www.googletagmanager.com/gt
            '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}'
            "if(!window.KN_RENDER){gtag('js',new Date());gtag('config','%s',{content_group:document.documentElement.getAttribute('data-page-lang')||'en'});}"
            '</script><!-- /KN-GA -->') % (GA_ID, GA_ID)
+# Microsoft Clarity (heatmaps and session recordings). Empty = off. The project ID is public
+# (it is in every page anyway), not a secret: clarity.microsoft.com > project > Settings > Overview.
+CLARITY_ID = ''
+if CLARITY_ID:
+    SNIPPET = SNIPPET.replace('<!-- /KN-GA -->', '<script>if(!window.KN_RENDER){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};'
+        't=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);'
+        '})(window,document,"clarity","script","%s");}</script><!-- /KN-GA -->' % CLARITY_ID)
 BLOCK = re.compile(r'<!-- KN-GA -->.*?<!-- /KN-GA -->\n?', re.S)
 
 n = 0
