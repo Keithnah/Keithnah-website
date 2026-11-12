@@ -128,17 +128,6 @@
 5
 ]
 },
-"Dang Wangi": {
-"label": "Dang Wangi LRT",
-"slug": "dang-wangi-lrt",
-"lines": [
-"LRT"
-],
-"ix": [
-11,
-74
-]
-},
 "Hang Tuah": {
 "label": "Hang Tuah LRT & Monorail",
 "slug": "hang-tuah-lrt-and-monorail",
@@ -151,17 +140,6 @@
 59
 ]
 },
-"Kepong Sentral": {
-"label": "Kepong Sentral KTM",
-"slug": "kepong-sentral-ktm",
-"lines": [
-"KTM"
-],
-"ix": [
-3,
-27
-]
-},
 "KL City Centre": {
 "label": "KL City Centre LRT",
 "slug": "kl-city-centre-lrt",
@@ -170,7 +148,8 @@
 ],
 "ix": [
 78,
-17
+17,
+74
 ]
 },
 "Kwasa Damansara": {
@@ -217,6 +196,17 @@
 "ix": [
 23,
 42
+]
+},
+"Sri Damansara West": {
+"label": "Sri Damansara West MRT",
+"slug": "sri-damansara-west-mrt",
+"lines": [
+"MRT"
+],
+"ix": [
+3,
+27
 ]
 }
 },

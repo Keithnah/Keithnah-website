@@ -196,6 +196,51 @@ page = '''<!DOCTYPE html>
        ''.join('<th>%s</th>' % kd('th%d' % j) for j in range(1, 8)), table, kd('note'), kd('cta'), KDJS)
 open('market-data.html', 'w', encoding='utf-8').write(SH.apply(page, '', 'blog.html'))
 
+# a Market Data panel on the News page, right after Keith's Market Notes
+NT = {'eb': ['Market Data', '市场数据', 'Data Pasaran', 'マーケットデータ', '마켓 데이터'],
+      'h': ['New launch prices, area by area', '各地区新盘价格一览', 'Harga projek baharu, kawasan demi kawasan', 'エリアごとの新築価格', '지역별 신규 분양 가격'],
+      'p': ['Median entry price per sq ft of the new launches on this site, worked out from developers\' published starting prices.',
+            '根据发展商公布的起价，算出本网站新楼盘每平方尺入门价格的中位数。',
+            'Median harga masuk setiap kaki persegi projek baharu di laman ini, dikira daripada harga permulaan yang diterbitkan pemaju.',
+            'デベロッパー公表の最低価格から算出した、当サイト掲載の新築物件の1平方フィートあたり入口価格の中央値。',
+            '개발사가 공개한 시작가로 계산한 이 사이트 신규 분양의 평방피트당 진입 가격 중앙값.'],
+      'js': ['Prices by area', '各地区价格', 'Harga mengikut kawasan', 'エリア別の価格', '지역별 가격'],
+      'b': ['See all areas →', '查看所有地区 →', 'Lihat semua kawasan →', 'すべてのエリアを見る →', '모든 지역 보기 →']}
+for k, v in NT.items():
+    TT['nd_' + k] = [v[0], v[1], _cc(v[1]), v[2], v[3], v[4]]
+KDJS = ('<script>(function(){var T=%s,L=%s;function f(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}var i=Math.max(0,L.indexOf(l));'
+        'document.querySelectorAll("[data-kd]").forEach(function(x){var s=(T[x.getAttribute("data-kd")]||[])[i];if(!s)return;'
+        'x.textContent=s.replace(/\\{(\\w+)\\}/g,function(m,k){return x.getAttribute("data-"+k)||m;});});}f();'
+        'document.addEventListener("DOMContentLoaded",function(){var s=window.knSetLang;if(typeof s==="function")window.knSetLang=function(){var r=s.apply(this,arguments);f();return r;};f();});})();</script>'
+        ) % (json.dumps(TT, ensure_ascii=False), json.dumps(LANGS))
+top6 = bars[:6]
+nd_tiles = ''.join('<a class="nd-t" href="market-data.html"><small>%s</small><b>RM%s</b><span>%s</span></a>' % (E(s), format(summary(by_state[s])['psf'], ','), kd('tile', n=len(by_state[s])))
+                   for s in states[:4] if summary(by_state[s])['psf'])
+nd_bars = ''.join('<div class="nd-b"><span>%s</span><i><em style="width:%.1f%%"></em></i><b>RM%s</b></div>' % (E(a[1]), 100 * s['psf'] / top, format(s['psf'], ',')) for a, s in top6)
+ND = ('<!-- KN-ND:START --><style>.nd{max-width:1180px;margin:0 auto;padding:30px 5vw 50px}.nd-in{background:#fff;border:1px solid rgba(21,20,43,.08);border-radius:26px;padding:30px;'
+      'box-shadow:0 18px 44px rgba(29,27,79,.08);display:grid;grid-template-columns:1fr 1.1fr;gap:30px;align-items:center}'
+      '.nd-h small{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#5E60CE;font-weight:800}.nd-h h2{font-family:"Playfair Display",Georgia,serif;font-size:clamp(26px,3vw,34px);line-height:1.2;margin:6px 0 10px}'
+      '.nd-h p{color:#5f5e74;font-size:14.5px;margin:0 0 16px}.nd-ts{display:grid;grid-template-columns:1fr 1fr;gap:10px}.nd-t{display:block;background:#f6f5ff;border-radius:16px;padding:14px 16px;text-decoration:none;color:#15142b}'
+      '.nd-t small{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#5f5e74}.nd-t b{display:block;font-size:24px;font-weight:800}.nd-t span{font-size:12px;color:#5f5e74}'
+      '.nd-b{display:grid;grid-template-columns:130px 1fr 74px;gap:10px;align-items:center;padding:7px 0;font-size:14px}.nd-b span{font-weight:700}.nd-b i{height:12px;background:#efeefb;border-radius:99px;overflow:hidden}'
+      '.nd-b em{display:block;height:100%%;border-radius:99px;background:linear-gradient(90deg,#5E60CE,#9a98f0)}.nd-b b{text-align:right}'
+      '.nd a.nd-go{display:inline-block;margin-top:14px;color:#5E60CE;font-weight:700;text-decoration:none}@media(max-width:900px){.nd-in{grid-template-columns:1fr;padding:22px}.nd-b{grid-template-columns:100px 1fr 66px}}</style>'
+      '<section class="nd" id="market-data"><div class="nd-in"><div class="nd-h">%s<h2>%s</h2><p>%s</p><div class="nd-ts">%s</div></div>'
+      '<div>%s<a class="nd-go" href="market-data.html">%s</a></div></div></section>%s<!-- KN-ND:END -->') % (
+    '<small>%s</small>' % kd('nd_eb'), kd('nd_h'), kd('nd_p'), nd_tiles, nd_bars, kd('nd_b'), KDJS)
+b = open('blog.html', encoding='utf-8').read()
+b = re.sub(r'<!-- KN-ND:START -->.*?<!-- KN-ND:END -->', '', b, flags=re.S)
+i_faq = b.find('<section class="nw-sec nf-sec" id="faq"')
+b = b[:i_faq] + ND + '\n' + b[i_faq:] if i_faq > 0 else b.replace('<!-- KN-NOTES:END -->', '<!-- KN-NOTES:END -->' + ND, 1)
+# a "Market Data" button after "Buying Guide" among the buttons at the top of the News page
+b = re.sub(r'<!-- KN-NDJ:START -->.*?<!-- KN-NDJ:END -->', '', b, flags=re.S)
+JB = ('<!-- KN-NDJ:START --><a class="nw-jump-btn" href="#market-data"><span class="nw-jump-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">'
+      '<path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></span><span class="nw-jump-txt"><b>%s</b><small>%s</small></span><span class="nw-jump-arrow" aria-hidden="true">&darr;</span></a><!-- KN-NDJ:END -->') % (kd('nd_eb'), kd('nd_js'))
+m = re.search(r'<a class="nw-jump-btn" href="#buying-guide">.*?</a>', b, re.S)
+if m:
+    b = b[:m.end()] + JB + b[m.end():]
+open('blog.html', 'w', encoding='utf-8').write(b)
+
 # a link from every area page
 LINK = ('<!-- KN-MD:START --><style>.kn-mdl{max-width:1100px;margin:10px auto 34px;padding:0 5vw}.kn-mdl a{display:block;padding:16px 20px;border-radius:16px;'
         'background:#F3F1FF;color:#3b3cb0;font-weight:700;font-size:15px;text-decoration:none;border:1px solid rgba(94,96,206,.18)}.kn-mdl a:hover{background:#e9e6ff}</style>'
