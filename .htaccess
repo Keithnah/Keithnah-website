@@ -12,3 +12,19 @@ RedirectMatch 404 ^/tools(/|$)
 
 # Friendly "page not found" page
 ErrorDocument 404 /404.html
+
+# Security headers: HTTPS only, no framing by other sites, no content-type guessing
+<IfModule mod_headers.c>
+Header always set Strict-Transport-Security "max-age=31536000"
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+</IfModule>
+
+# Browsers keep the shared data files for a week; a new build changes their ?v= address
+<IfModule mod_headers.c>
+<FilesMatch "\.(js|css)$">
+Header set Cache-Control "public, max-age=604800"
+</FilesMatch>
+</IfModule>
