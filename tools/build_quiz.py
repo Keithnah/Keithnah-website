@@ -267,6 +267,10 @@ def put(page, anchor, block):
     open(page, 'w', encoding='utf-8').write(t[:i] + block + t[i:])
 
 
-put('index.html', 'data-i18n="hero_btn_wa">WhatsApp Keith</a>\n  </div>', entry('kq-home'))
+# home page: no link (Keith's choice); remove an old one if present
+_h = open('index.html', encoding='utf-8').read()
+_h2 = re.sub(r'<!-- KN-QUIZ:START -->.*?<!-- KN-QUIZ:END -->', '', _h, flags=re.S)
+if _h2 != _h:
+    open('index.html', 'w', encoding='utf-8').write(_h2)
 put('projects.html', '  </form>', entry('kq-proj'))
-print('find-my-home.html written, entry links on home and projects')
+print('find-my-home.html written, entry link on the projects page')
