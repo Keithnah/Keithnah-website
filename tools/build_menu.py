@@ -43,6 +43,7 @@ L = {  # key: [en, zh-CN, zh-TW, ms, ja, ko]
     'about': ['Meet Keith', '认识 Keith', '認識 Keith', 'Kenali Keith', 'Keith について', 'Keith 소개'],
     'enq': ['Quick Enquiry', '快速咨询', '快速諮詢', 'Pertanyaan Pantas', 'かんたんお問い合わせ', '빠른 문의'],
     'mm2henq': ['MM2H Enquiry', 'MM2H 咨询', 'MM2H 諮詢', 'Pertanyaan MM2H', 'MM2H のお問い合わせ', 'MM2H 문의'],
+    'h2h': ['Project Head to Head', '项目正面比较', '項目正面比較', 'Projek Bersemuka', '物件を直接比較', '프로젝트 정면 비교'],
     'faq': ['Common FAQ', '常见问题', '常見問題', 'Soalan Lazim', 'よくある質問', '자주 묻는 질문'],
     'blogs': ['Blogs', '文章', '文章', 'Blog', 'ブログ', '블로그'],
     'fareas': ['Free Area Guide Download', '免费地区指南下载', '免費地區指南下載', 'Muat Turun Panduan Kawasan Percuma', '無料エリアガイドをダウンロード', '무료 지역 가이드 다운로드'],
@@ -56,7 +57,7 @@ L = {  # key: [en, zh-CN, zh-TW, ms, ja, ko]
 MENU = {
     'projects.html': [('browse', 'projects.html#projSearch'), ('map', 'projects.html#projectMap'), ('all', 'projects.html#projGrid'),
                       ('best', 'best/index.html'), ('dev', 'developer/index.html'), ('station', 'station/index.html'), ('tag', 'projects.html#tagSection')],
-    'compare.html': [('popular', 'compare.html#popular'), ('vs', 'vs/index.html')],
+    'compare.html': [('h2h', 'compare.html'), ('vs', 'vs/index.html'), ('popular', 'compare.html#popular')],
     'blog.html': [('notes', 'market-notes.html'), ('guide', 'blog.html#buying-guide'), ('data', 'market-data.html'), ('faq', 'blog.html#faq'), ('blogs', 'blog.html#blog')],
     'resources.html': [('fareas', 'resources.html#guides'), ('fmm2h', 'mm2h.html'), ('fwatch', 'https://www.youtube.com/@KeithNahRealEstate/videos'), ('fcalc', 'calculator.html'), ('fadvice', WA)],
     'about-keith.html': [('contact', 'about-keith.html#quickEnquiry')],
