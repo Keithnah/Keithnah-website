@@ -708,6 +708,7 @@ def write_sitemap():
     rows += [('%s/best/' % SITE, '0.8', 'weekly')] + [('%s/%s' % (SITE, p), '0.7', 'weekly') for p in sorted(glob.glob('best/*.html')) if not p.endswith('index.html')]
     rows += [('%s/%s' % (SITE, p), '0.6', 'monthly') for p in sorted(glob.glob('topic/*.html'))]
     rows += [('%s/%s' % (SITE, p), '0.6', 'yearly') for p in sorted(glob.glob('article/*.html'))]
+    rows += [('%s/%s' % (SITE, p), '0.6', 'monthly') for p in sorted(glob.glob('mm2h/*.html'))]
     x = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     x += ''.join('  <url>\n    <loc>%s</loc>\n    <lastmod>%s</lastmod>\n    <changefreq>%s</changefreq>\n    <priority>%s</priority>\n  </url>\n' % (E(u), TODAY, cf, pr) for u, pr, cf in rows)
     open('sitemap.xml', 'w', encoding='utf-8').write(x + '</urlset>\n')
