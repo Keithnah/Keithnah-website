@@ -4,7 +4,7 @@
 - mm2h.html gets an "MM2H Library" section (articles in two groups) and an MM2H enquiry form
   under the tier comparison. The form saves the enquiry in the KNRE Leads sheet and Telegram
   (through lead-tracker.js, as a Quick Enquiry marked "MM2H"), then offers WhatsApp.
-PREVIEW: English only, not in build_all yet.
+Articles in English and Chinese (zh-CN, zh-TW); page labels and the form in all 6 languages.
 """
 import html
 import json
@@ -82,7 +82,7 @@ def article_page(a):
   <a class="wa-btn" href="{wa}" target="_blank" rel="noopener">WhatsApp Keith</a>
 </header>
 <div class="ma-top"><div class="in"><div class="ma-cr"><a href="../">Home</a> › <a href="../mm2h.html">MM2H</a> › {grp}</div>
-<span class="ma-tag">{grp}</span><h1>{title}</h1><p>{desc}</p><small>By Keith Nah · {read} min read</small></div></div>
+<span class="ma-tag">{grp}</span><h1>{title}</h1><p>{desc}</p><small data-mr="{read}">By Keith Nah · {read} min read</small></div></div>
 <main class="ma"><div class="ma-f">{facts}</div>{secs}
 <div class="ma-k"><img src="../images/f304c8479b1fe873.png" alt=""><div><b>Keith's take</b><p>{take}</p></div></div>
 <div class="ma-src"><b>Sources</b><ul>{src}</ul></div>
@@ -129,9 +129,9 @@ def library():
     tabs, panes = '', ''
     for k, (g, name, d) in enumerate(GROUPS):
         items = [a for a in A if a['group'] == g]
-        tabs += '<button type="button" data-g="%s"%s>%s<i>%d</i></button>' % (g, ' class="on"' if k == 0 else '', E(name), len(items))
-        lst = ''.join('<a class="ml-a" href="mm2h/%s.html"><i>%02d</i><div><b>%s</b><small>%s · %d min read</small></div><span>→</span></a>'
-                      % (a['slug'], n + 1, E(a['title']), E((a['desc'][:120].rsplit(' ', 1)[0] + '…') if len(a['desc']) > 120 else a['desc']), a['read'])
+        tabs += '<button type="button" data-g="%s"%s><span>%s</span><i>%d</i></button>' % (g, ' class="on"' if k == 0 else '', E(name), len(items))
+        lst = ''.join('<a class="ml-a" href="mm2h/%s.html"><i>%02d</i><div><b>%s</b><small>%s</small></div><span>→</span></a>'
+                      % (a['slug'], n + 1, E(a['title']), E(a['desc']))
                       for n, a in enumerate(items))
         panes += '<div class="ml-g" data-g="%s"%s><p class="gd">%s</p><div class="ml-l">%s</div></div>' % (g, '' if k == 0 else ' hidden', E(d), lst)
     return ('<section class="ml" id="library"><span class="eb">MM2H Library</span><h2>Read before you apply</h2>'
@@ -160,7 +160,7 @@ FORM = ('<section class="me" id="enquire"><div class="me-in"><div><span class="e
         + sel('when', 'When would you like to move', ['Within 6 months', '6 to 12 months', '1 to 2 years', 'Just exploring'])
         + '<div class="full"><label for="me_msg">Anything else Keith should know</label><textarea id="me_msg" name="msg"></textarea></div>'
         '<p class="er" role="alert"></p><button type="submit">Send my MM2H enquiry</button>'
-        '<p class="nt">By sending, you agree to our <a href="privacy-policy.html">Privacy Policy</a>. Keith only uses your details to reply to this enquiry.</p></form></div></section>')
+        '<p class="nt"><span>By sending, you agree to our Privacy Policy. Keith only uses your details to reply to this enquiry.</span> <a href="privacy-policy.html">Privacy Policy</a></p></form></div></section>')
 
 JS = r'''<script>(function(){
 document.querySelectorAll(".ml-tabs button").forEach(function(b){b.addEventListener("click",function(){var g=b.getAttribute("data-g");
@@ -173,10 +173,106 @@ var lines=["(KNRE) Hi Keith, I filled in the MM2H enquiry form on your website."
 if(typeof window.knLead==="function")window.knLead({type:"Quick Enquiry",button:"MM2H enquiry form",name:v("name"),code:v("code"),phone:v("phone"),email:v("email"),area:v("area"),look:"MM2H"+(v("tier")?": "+v("tier"):""),message:msg});
 f.innerHTML='<div class="me-ok"><b>Thank you, '+nm+'</b><p>Keith has your MM2H enquiry and will reply on WhatsApp within a day. Want to start the chat now?</p><a target="_blank" rel="noopener" href="https://api.whatsapp.com/send/?phone=60102821568&type=phone_number&app_absent=0&text='+encodeURIComponent(msg)+'">Message Keith on WhatsApp</a></div>';});})();</script>'''
 
+
+
+# ---------- translations: every element whose whole text is a known English phrase gets data-mt ----------
+import opencc
+_cc = opencc.OpenCC('s2tw').convert
+CH = {  # en: [zh-CN, ms, ja, ko]
+ 'Understand MM2H': ['了解 MM2H', 'Fahami MM2H', 'MM2H を知る', 'MM2H 이해하기'],
+ 'MM2H vs other countries': ['MM2H 对比其他国家', 'MM2H berbanding negara lain', 'MM2H と他国の比較', 'MM2H vs 다른 나라'],
+ 'Tiers, costs, property rules and the steps, explained plainly.': ['等级、费用、买房规定和申请步骤，用简单的话说清楚。', 'Tahap, kos, peraturan hartanah dan langkah, diterangkan dengan mudah.', '各ティア、費用、不動産のルール、手続きをわかりやすく解説。', '등급, 비용, 부동산 규정, 절차를 쉽게 설명합니다.'],
+ 'How Malaysia compares with other long-stay and residency programmes.': ['马来西亚和其他国家长住、居留计划的比较。', 'Perbandingan Malaysia dengan program tinggal lama dan residensi lain.', 'マレーシアと他国の長期滞在・居住プログラムの比較。', '말레이시아와 다른 나라 장기 체류·거주 프로그램 비교.'],
+ 'MM2H Library': ['MM2H 文章库', 'Perpustakaan MM2H', 'MM2H ライブラリー', 'MM2H 라이브러리'],
+ 'Read before you apply': ['申请前先读', 'Baca sebelum memohon', '申請前に読む', '신청 전에 읽어 보세요'],
+ 'Short, plain-English articles on how MM2H works, what it costs and how it compares with other countries. Written by Keith from what his clients ask.': ['简短易懂的文章，说明 MM2H 怎么运作、要花多少钱，以及和其他国家怎么比。由 Keith 根据客户常问的问题撰写。', 'Artikel ringkas tentang cara MM2H berfungsi, kosnya dan perbandingannya dengan negara lain. Ditulis oleh Keith berdasarkan soalan pelanggannya.', 'MM2H の仕組み、費用、他国との比較を短くわかりやすくまとめた記事。お客様からよくある質問をもとに Keith が書いています。', 'MM2H의 작동 방식, 비용, 다른 나라와의 비교를 짧고 쉽게 정리한 글. 고객들의 질문을 바탕으로 Keith가 썼습니다.'],
+ 'MM2H enquiry': ['MM2H 咨询', 'Pertanyaan MM2H', 'MM2H のお問い合わせ', 'MM2H 문의'],
+ 'Tell Keith about your MM2H plan': ['告诉 Keith 你的 MM2H 计划', 'Beritahu Keith tentang rancangan MM2H anda', 'MM2H の計画を Keith に伝える', 'Keith에게 MM2H 계획을 알려 주세요'],
+ 'Share a few details and Keith will reply within a day with homes that meet your tier, the area that suits your family, and the next steps.': ['留下一些资料，Keith 会在一天内回复：符合你等级的房子、适合你家庭的地区，以及下一步。', 'Kongsi sedikit maklumat dan Keith akan membalas dalam sehari dengan rumah yang memenuhi tahap anda, kawasan yang sesuai untuk keluarga dan langkah seterusnya.', 'いくつか情報をお知らせいただければ、Keith が1日以内に、ティアに合う物件、ご家族に合うエリア、次のステップをご案内します。', '몇 가지 정보를 남기시면 Keith가 하루 안에 등급에 맞는 집, 가족에게 맞는 지역, 다음 단계를 알려 드립니다.'],
+ 'Homes that meet both the MM2H and the foreign buyer minimum': ['同时符合 MM2H 和外国人购房门槛的房子', 'Rumah yang memenuhi minimum MM2H dan pembeli asing', 'MM2H と外国人購入の最低価格の両方を満たす物件', 'MM2H와 외국인 구매 최저가를 모두 충족하는 집'],
+ 'Introduction to a licensed MM2H agent for the application': ['介绍持牌 MM2H 代理处理申请', 'Pengenalan kepada ejen MM2H berlesen untuk permohonan', '申請のための認可 MM2H エージェントのご紹介', '신청을 위한 공인 MM2H 에이전트 소개'],
+ 'Help with the purchase, from booking to keys': ['协助买房，从订房到交钥匙', 'Bantuan pembelian, dari tempahan hingga kunci', '予約から鍵の受け取りまで購入をサポート', '예약부터 열쇠 인도까지 구매 지원'],
+ 'Full name *': ['姓名 *', 'Nama penuh *', 'お名前 *', '성명 *'],
+ 'WhatsApp number *': ['WhatsApp 号码 *', 'Nombor WhatsApp *', 'WhatsApp 番号 *', 'WhatsApp 번호 *'],
+ 'Email': ['电邮', 'E-mel', 'メール', '이메일'],
+ 'Nationality': ['国籍', 'Kewarganegaraan', '国籍', '국적'],
+ 'Age of main applicant': ['主申请人年龄', 'Umur pemohon utama', '主申請者の年齢', '주 신청자 나이'],
+ 'Who is moving': ['谁一起搬来', 'Siapa yang berpindah', '移住する人', '이주하는 사람'],
+ 'Programme of interest': ['想申请的计划', 'Program yang diminati', '関心のあるプログラム', '관심 있는 프로그램'],
+ 'Preferred area': ['想住的地区', 'Kawasan pilihan', '希望エリア', '선호 지역'],
+ 'Property budget': ['买房预算', 'Bajet hartanah', '物件の予算', '부동산 예산'],
+ 'When would you like to move': ['想什么时候搬', 'Bila anda mahu berpindah', 'いつ頃移住したいですか', '언제 이주하고 싶으세요'],
+ 'Anything else Keith should know': ['还有什么要告诉 Keith', 'Apa-apa lagi yang Keith perlu tahu', 'Keith に伝えたいこと', 'Keith가 알아야 할 다른 내용'],
+ 'Choose': ['请选择', 'Pilih', '選択', '선택'],
+ 'Not sure yet': ['还不确定', 'Belum pasti', 'まだ決めていない', '아직 모르겠어요'],
+ 'Just me': ['只有我', 'Saya seorang', '自分だけ', '저 혼자'],
+ 'Me and my partner': ['我和伴侣', 'Saya dan pasangan', '自分とパートナー', '저와 배우자'],
+ 'Family with children': ['带孩子的家庭', 'Keluarga dengan anak', '子ども連れの家族', '자녀가 있는 가족'],
+ 'Family with parents': ['带父母的家庭', 'Keluarga dengan ibu bapa', '親と一緒の家族', '부모님과 함께하는 가족'],
+ 'Within 6 months': ['6 个月内', 'Dalam 6 bulan', '6か月以内', '6개월 이내'],
+ '6 to 12 months': ['6 至 12 个月', '6 hingga 12 bulan', '6〜12か月', '6~12개월'],
+ '1 to 2 years': ['1 至 2 年', '1 hingga 2 tahun', '1〜2年', '1~2년'],
+ 'Just exploring': ['只是了解一下', 'Sekadar meninjau', '情報収集中', '알아보는 중'],
+ '60 or above': ['60 岁或以上', '60 atau lebih', '60歳以上', '60세 이상'],
+ 'Send my MM2H enquiry': ['送出我的 MM2H 咨询', 'Hantar pertanyaan MM2H saya', 'MM2H のお問い合わせを送信', 'MM2H 문의 보내기'],
+ 'By sending, you agree to our Privacy Policy. Keith only uses your details to reply to this enquiry.': ['送出即表示你同意我们的隐私政策。Keith 只会用你的资料回复这次咨询。', 'Dengan menghantar, anda bersetuju dengan Dasar Privasi kami. Keith hanya menggunakan maklumat anda untuk membalas pertanyaan ini.', '送信すると、プライバシーポリシーに同意したものとみなされます。いただいた情報はこのお問い合わせへの返信にのみ使います。', '보내시면 개인정보 처리방침에 동의하는 것으로 간주됩니다. Keith는 이 문의에 답하는 데만 정보를 사용합니다.'],
+ 'Privacy Policy': ['隐私政策', 'Dasar Privasi', 'プライバシーポリシー', '개인정보 처리방침'],
+ '21 to 24': ['21 至 24 岁', '21 hingga 24', '21〜24歳', '21~24세'], '25 to 34': ['25 至 34 岁', '25 hingga 34', '25〜34歳', '25~34세'],
+ '35 to 49': ['35 至 49 岁', '35 hingga 49', '35〜49歳', '35~49세'], '50 to 59': ['50 至 59 岁', '50 hingga 59', '50〜59歳', '50~59세'],
+ 'RM500,000 to RM600,000': ['RM50 万至 RM60 万', 'RM500,000 hingga RM600,000', 'RM50万〜RM60万', 'RM50만~RM60만'],
+ 'RM600,000 to RM1 million': ['RM60 万至 RM100 万', 'RM600,000 hingga RM1 juta', 'RM60万〜RM100万', 'RM60만~RM100만'],
+ 'RM1 million to RM2 million': ['RM100 万至 RM200 万', 'RM1 juta hingga RM2 juta', 'RM100万〜RM200万', 'RM100만~RM200만'],
+ 'Above RM2 million': ['RM200 万以上', 'Melebihi RM2 juta', 'RM200万超', 'RM200만 이상'],
+ # article page chrome
+ "Keith's take": ['Keith 的看法', 'Pandangan Keith', 'Keith の見解', 'Keith의 의견'],
+ 'Sources': ['资料来源', 'Sumber', '出典', '출처'],
+ 'Ask Keith on WhatsApp': ['WhatsApp 问 Keith', 'Tanya Keith di WhatsApp', 'WhatsApp で Keith に相談', 'WhatsApp으로 Keith에게 문의'],
+ 'Fill in the MM2H enquiry form': ['填写 MM2H 咨询表格', 'Isi borang pertanyaan MM2H', 'MM2H お問い合わせフォームに記入', 'MM2H 문의 양식 작성'],
+ 'More from the MM2H library': ['MM2H 文章库的其他文章', 'Lagi dari perpustakaan MM2H', 'MM2H ライブラリーの他の記事', 'MM2H 라이브러리의 다른 글'],
+ 'All MM2H articles →': ['全部 MM2H 文章 →', 'Semua artikel MM2H →', 'MM2H の記事一覧 →', '모든 MM2H 글 →'],
+ 'MM2H terms are set by the Malaysian government and change from time to time. This article is a guide, not immigration or tax advice; confirm the current rules with a licensed MM2H agent.': ['MM2H 条件由马来西亚政府制定，会不时更改。本文仅供参考，不构成移民或税务建议；请向持牌 MM2H 代理确认最新规定。', 'Syarat MM2H ditetapkan oleh kerajaan Malaysia dan berubah dari semasa ke semasa. Artikel ini panduan, bukan nasihat imigresen atau cukai; sahkan peraturan terkini dengan ejen MM2H berlesen.', 'MM2H の条件はマレーシア政府が定め、随時変更されます。本記事は参考情報であり、移民や税務の助言ではありません。最新のルールは認可 MM2H エージェントにご確認ください。', 'MM2H 조건은 말레이시아 정부가 정하며 수시로 바뀝니다. 이 글은 참고용이며 이민·세무 자문이 아닙니다. 최신 규정은 공인 MM2H 에이전트에게 확인하세요.'],
+}
+TR = {}
+for en, v in CH.items():
+    TR[E(en)] = {'zh-CN': v[0], 'zh-TW': _cc(v[0]), 'ms': v[1], 'ja': v[2], 'ko': v[3]}
+ZH = json.load(open(os.path.join(HERE, 'mm2h_articles_zh.json'), encoding='utf-8'))
+for a in A:
+    z = ZH.get(a['slug'])
+    if not z:
+        continue
+    pairs = [(a['title'], z['title']), (a['desc'], z['desc']), (a['take'], z['take'])]
+    pairs += [(x, y) for p, q in zip(a['facts'], z['facts']) for x, y in zip(p, q)]
+    pairs += [(x, y) for p, q in zip(a['sections'], z['sections']) for x, y in zip(p, q)]
+    for en, zh in pairs:
+        TR.setdefault(E(en), {}).update({'zh-CN': zh, 'zh-TW': _cc(zh)})
+MIN_READ = {'zh-CN': '{n} 分钟阅读', 'zh-TW': '{n} 分鐘閱讀', 'ms': '{n} minit bacaan', 'ja': '{n}分で読めます', 'ko': '{n}분 읽기'}
+
+
+def translate(page):
+    """Tag every element whose whole text is a known phrase, and add the script that swaps it."""
+    used, keys = {}, {}
+
+    def tag(m):
+        txt = m.group(3)
+        if txt not in TR:
+            return m.group(0)
+        k = keys.setdefault(txt, len(keys))
+        used[k] = dict(TR[txt], en=txt)
+        return '<%s%s data-mt="%d">%s</%s>' % (m.group(1), m.group(2), k, txt, m.group(1))
+    page = re.sub(r'<(h1|h2|h3|p|b|small|span|label|option|button|li|summary|a)((?:\s[^<>]*)?)>([^<>]+)</\1>', tag, page)
+    js = ('<script>(function(){var T=%s,R=%s;function f(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}'
+          'document.querySelectorAll("[data-mt]").forEach(function(x){var t=T[x.getAttribute("data-mt")];if(!t)return;var v=t[l]||t.en;'
+          'if(x.tagName==="OPTION"&&!x.hasAttribute("value"))x.setAttribute("value",t.en);x.innerHTML=v;});'
+          'document.querySelectorAll("[data-mr]").forEach(function(x){var n=x.getAttribute("data-mr");x.textContent=R[l]?R[l].replace("{n}",n):"By Keith Nah · "+n+" min read";});}f();'
+          'document.addEventListener("DOMContentLoaded",function(){var s=window.knSetLang;if(typeof s==="function")window.knSetLang=function(){var r=s.apply(this,arguments);f();return r;};f();});})();</script>'
+          ) % (json.dumps({str(k): v for k, v in used.items()}, ensure_ascii=False), json.dumps({k: 'Keith Nah · ' + v for k, v in MIN_READ.items()}, ensure_ascii=False))
+    return page.replace('</body>', js + '\n</body>', 1)
+
+
 os.makedirs('mm2h', exist_ok=True)
 keep = set()
 for a in A:
-    open('mm2h/%s.html' % a['slug'], 'w', encoding='utf-8').write(article_page(a))
+    open('mm2h/%s.html' % a['slug'], 'w', encoding='utf-8').write(translate(article_page(a)))
     keep.add(a['slug'] + '.html')
 for f in os.listdir('mm2h'):
     if f.endswith('.html') and f not in keep:
@@ -187,9 +283,16 @@ t = open('mm2h.html', encoding='utf-8').read()
 t = re.sub(r'<!-- KN-MM2H:START -->.*?<!-- KN-MM2H:END -->\n?', '', t, flags=re.S)
 i = t.index('<section class="mm2h-tiers">')
 j = t.index('</section>', i) + len('</section>')
-t = t[:j] + '\n<!-- KN-MM2H:START -->' + LIB_CSS + library() + FORM + JS + '<!-- KN-MM2H:END -->' + t[j:]
+t = t[:j] + '\n<!-- KN-MM2H:START -->' + translate(LIB_CSS + library() + FORM + JS + '</body>').replace('</body>', '') + '<!-- KN-MM2H:END -->' + t[j:]
 # the old intro said MM2H does not need a property purchase; since 2024 every federal tier does
 t = t.replace("MM2H is separate from property ownership itself — it doesn't require buying real estate to qualify on its own, but combining the two is common among Keith's clients who want both a home and a long-stay pass in Kuala Lumpur.",
               "Since 2024 every federal tier also needs a residential property purchase above a minimum price, so choosing the tier and choosing the home go together. Keith helps clients match the two.")
+NEW = "Since 2024 every federal tier also needs a residential property purchase above a minimum price, so choosing the tier and choosing the home go together. Keith helps clients match the two."
+NEW_TR = {'zh-CN': '自 2024 年起，每个联邦等级都必须购买一套达到最低价格的住宅，所以选等级和选房子要一起考虑。Keith 会帮客户把两者配合好。',
+          'ms': 'Sejak 2024, setiap tahap persekutuan juga memerlukan pembelian hartanah kediaman melebihi harga minimum, jadi memilih tahap dan memilih rumah perlu dibuat bersama. Keith membantu klien memadankan kedua-duanya.',
+          'ja': '2024年以降、連邦の各ティアでは最低価格以上の住宅購入も必要です。そのため、ティア選びと住まい選びは一緒に考えることになります。Keith が両方を合わせるお手伝いをします。',
+          'ko': '2024년부터 모든 연방 등급은 최저 가격 이상의 주택 구입도 필요합니다. 그래서 등급 선택과 집 선택을 함께 해야 합니다. Keith가 두 가지를 맞추도록 도와드립니다.'}
+NEW_TR['zh-TW'] = _cc(NEW_TR['zh-CN'])
+t = re.sub(r'("' + re.escape(NEW) + r'":)\{[^{}]*\}', lambda m: m.group(1) + json.dumps(NEW_TR, ensure_ascii=False), t, count=1)
 open(out, 'w', encoding='utf-8').write(t)
 print('mm2h: %d article page(s), library and enquiry form on %s' % (len(A), out))
