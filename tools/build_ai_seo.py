@@ -15,7 +15,7 @@ import re
 SITE = 'https://keithnah.com'
 INDEXNOW_KEY = '7c1f4b9e2d8a4f63a5e0b6d91c3e8f27'  # public by design: IndexNow checks it at /<key>.txt
 WHATSAPP = '+60102821568'
-SAME_AS = ['https://www.youtube.com/@KeithNahRealEstate', 'https://www.instagram.com/keithnah_/']
+SAME_AS = ['https://www.facebook.com/KeithNahRealEstate', 'https://www.youtube.com/@KeithNahRealEstate', 'https://www.instagram.com/keithnah_/']
 LOGO = SITE + '/images/f304c8479b1fe873.png'
 
 AI_BOTS = ['Googlebot', 'Bingbot', 'Google-Extended', 'GPTBot', 'OAI-SearchBot', 'ChatGPT-User',
