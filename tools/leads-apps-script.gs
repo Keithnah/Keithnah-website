@@ -440,7 +440,7 @@ function updateDone_(d) {
 function siteCheck_(d) {
   var props = PropertiesService.getScriptProperties();
   var last = +props.getProperty('LAST_SITE_CHECK') || 0;
-  if (Date.now() - last < 5 * 24 * 3600 * 1000) return json_({ ok: false, error: 'already sent this week' });
+  if (Date.now() - last < 20 * 3600 * 1000) return json_({ ok: false, error: 'already sent this week' });
   props.setProperty('LAST_SITE_CHECK', String(Date.now()));
   var okUrl = function (s) { return /^\/[\w\-\/.%]*$/.test(String(s)); };
   var lines = ['🩺 <b>每周网站检查</b>（' + (parseInt(d.pages, 10) || 0) + ' 页）'];
