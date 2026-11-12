@@ -31,6 +31,8 @@ def stamp_translations():
     print('%-24s translation files version %s' % ('stamp', v))
 
 
+# The big data blocks live in assets/data/ between builds; the generators need them inline.
+subprocess.run([sys.executable, os.path.join(HERE, 'externalize.py'), 'in'], check=True)
 for s in STEPS:
     r = subprocess.run([sys.executable, os.path.join(HERE, s)], capture_output=True, text=True)
     last = (r.stdout.strip().splitlines() or [''])[-1]
@@ -39,6 +41,11 @@ for s in STEPS:
         print(r.stderr)
         sys.exit(r.returncode)
 stamp_translations()
+r = subprocess.run([sys.executable, os.path.join(HERE, 'externalize.py'), 'out'], capture_output=True, text=True)
+print('%-24s %s' % ('externalize.py', r.stdout.strip()))
+if r.returncode:
+    print(r.stderr)
+    sys.exit(r.returncode)
 
 # Last: the crawlable copies in every language (/zh/, /zh-tw/, /ms/, /ja/, /ko/), from the finished English pages.
 r = subprocess.run(['node', os.path.join(HERE, 'build_lang_pages.js')], capture_output=True, text=True)
