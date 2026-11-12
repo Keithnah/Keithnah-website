@@ -1,0 +1,16 @@
+# Every Monday morning (Malaysia time): check the site for broken links, news source links that
+# no longer work, and projects missing a price, developer, completion date or photo.
+# The summary goes to the Apps Script web app, which sends it to Keith on Telegram.
+# Run it by hand from the Actions tab to test.
+name: Weekly site check
+on:
+  schedule:
+    - cron: '7 1 * * 1'
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check links and project data, send the summary
+        run: python3 tools/site_check.py --external --post

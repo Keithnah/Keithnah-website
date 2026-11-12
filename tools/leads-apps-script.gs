@@ -39,6 +39,8 @@ function doPost(e) {
   if (d0.update_id !== undefined) return handleTelegramUpdate(e, d0);
   if (d0.type === 'Topic Proposal') return saveTopicProposal(d0);
   if (d0.type === 'Topic Published') return markTopicPublished(d0);
+  if (d0.type === 'Site Check') return siteCheck_(d0);
+  if (d0.type === 'Update Done') return updateDone_(d0);
 
   var lock = LockService.getScriptLock();
   lock.waitLock(10000);
@@ -83,6 +85,7 @@ function doPost(e) {
 
 function doGet(e) {
   if (e && e.parameter && e.parameter.action === 'topics') return topicStatus(e.parameter.date);
+  if (e && e.parameter && e.parameter.action === 'updates') return json_({ ok: true, updates: pendingUpdates_() });
   return ContentService.createTextOutput('KNRE lead tracker is running.');
 }
 
@@ -175,6 +178,7 @@ function handleTelegramUpdate(e, u) {
   var props = PropertiesService.getScriptProperties();
   var secret = props.getProperty('TG_WEBHOOK_SECRET');
   if (!secret || !e.parameter || e.parameter.tg !== secret) return ContentService.createTextOutput('ignored');
+  if (u.message) return handleTelegramMessage_(u);
   var q = u.callback_query;
   if (!q || !q.message || String(q.message.chat.id) !== String(props.getProperty('TELEGRAM_CHAT_ID'))) return ContentService.createTextOutput('ok');
   var lock = LockService.getScriptLock(); lock.waitLock(10000);
@@ -227,7 +231,7 @@ function setTelegramWebhook() {
   // Telegram calls the relay on the website (keithnah.com/tg/hook.php). It answers Telegram at once and
   // passes the update to this web app with Telegram's secret header as ?tg=. Pointing Telegram straight at
   // this web app works badly: it answers with a redirect, so Telegram retries and the buttons feel stuck.
-  var r = tg_('setWebhook', { url: HOOK_URL, secret_token: secret, allowed_updates: ['callback_query'], drop_pending_updates: true });
+  var r = tg_('setWebhook', { url: HOOK_URL, secret_token: secret, allowed_updates: ['callback_query', 'message'], drop_pending_updates: true });
   console.log(r.ok ? 'Webhook set. Tap a button in Telegram to test.' : 'Telegram said: ' + JSON.stringify(r));
 }
 
@@ -356,4 +360,151 @@ function checkTelegramWebhook() {
   console.log('url: ' + String(u.url || '').replace(/\?tg=.*/, '?tg=(hidden)'));
   console.log('pending updates: ' + u.pending_update_count);
   console.log('last error: ' + (u.last_error_message || 'none') + (u.last_error_date ? ' at ' + new Date(u.last_error_date * 1000) : ''));
+}
+
+
+/* ---------- Website updates from Telegram ----------
+ * Keith sends e.g. "/update Clouthaus starting price now RM1.2M" (or /改, 更新) to the bot.
+ * The request is queued here; the hourly Claude publishing session reads ?action=updates,
+ * makes the change on keithnah.com, publishes it, and reports back (type "Update Done").
+ * Only messages from TELEGRAM_CHAT_ID are accepted. Needs setTelegramWebhook to be run again
+ * once, so Telegram also sends messages (not only button presses).
+ */
+var MAX_UPDATES = 20;
+
+function handleTelegramMessage_(u) {
+  var props = PropertiesService.getScriptProperties(), m = u.message;
+  if (!m.chat || String(m.chat.id) !== String(props.getProperty('TELEGRAM_CHAT_ID'))) return ContentService.createTextOutput('ok');
+  var cache = CacheService.getScriptCache();
+  if (cache.get('tgup_' + u.update_id)) return ContentService.createTextOutput('ok');
+  cache.put('tgup_' + u.update_id, '1', 21600);
+  var text = String(m.text || '').trim();
+  var cmd = text.match(/^(\/update(?:@\w+)?|\/改|\/更新|更新|修改)\s*([\s\S]*)$/i);
+  if (cmd) {
+    var req = cmd[2].trim().slice(0, 1500);
+    if (!req) {
+      tg_('sendMessage', { chat_id: m.chat.id, text: '请在 /update 后面写要改什么，例如：\n/update Clouthaus 起价改成 RM1,200,000' });
+      return ContentService.createTextOutput('ok');
+    }
+    var lock = LockService.getScriptLock(); lock.waitLock(10000);
+    try {
+      var list = pendingUpdates_();
+      if (list.length >= MAX_UPDATES) {
+        tg_('sendMessage', { chat_id: m.chat.id, text: '待处理的更新已经有 ' + list.length + ' 个，请等它们完成后再发。' });
+        return ContentService.createTextOutput('ok');
+      }
+      var id = Utilities.formatDate(new Date(), TIME_ZONE, 'yyyyMMdd-HHmmss') + '-' + Math.floor(Math.random() * 1000);
+      list.push({ id: id, text: req, at: new Date().toISOString() });
+      props.setProperty('SITE_UPDATES', JSON.stringify(list));
+    } finally { lock.releaseLock(); }
+    tg_('sendMessage', { chat_id: m.chat.id, parse_mode: 'HTML', text: '📝 收到网站更新：\n<i>' + esc(req) + '</i>\n一小时内会更新（早上 9 点到晚上 11 点），完成后会通知你。' });
+  } else if (/^\/(help|start)/i.test(text)) {
+    tg_('sendMessage', { chat_id: m.chat.id, text: '可以用的指令：\n/update 要改的内容 — 更新网站资料，例如「/update Clouthaus 起价改成 RM1,200,000」\n/report — 马上发本周网站数据报告\n/updates — 查看还在等待的更新' });
+  } else if (/^\/report/i.test(text)) {
+    try { weeklyReport(); } catch (err) { tg_('sendMessage', { chat_id: m.chat.id, text: '报告失败：' + err.message }); }
+  } else if (/^\/updates/i.test(text)) {
+    var l = pendingUpdates_();
+    tg_('sendMessage', { chat_id: m.chat.id, text: l.length ? '等待中的更新：\n' + l.map(function (x) { return '• ' + x.text; }).join('\n') : '没有等待中的更新。' });
+  }
+  return ContentService.createTextOutput('ok');
+}
+
+function pendingUpdates_() {
+  try { return JSON.parse(PropertiesService.getScriptProperties().getProperty('SITE_UPDATES') || '[]'); } catch (e) { return []; }
+}
+
+function updateDone_(d) {
+  var props = PropertiesService.getScriptProperties();
+  var lock = LockService.getScriptLock(); lock.waitLock(10000);
+  var item;
+  try {
+    var list = pendingUpdates_();
+    item = list.filter(function (x) { return x.id === d.id; })[0];
+    if (!item) return json_({ ok: false, error: 'no such update' });
+    if (d.status !== 'unclear') props.setProperty('SITE_UPDATES', JSON.stringify(list.filter(function (x) { return x.id !== d.id; })));
+  } finally { lock.releaseLock(); }
+  var url = String(d.url || '');
+  if (url && !/^https:\/\/keithnah\.com\//.test(url)) url = '';
+  var head = d.status === 'done' ? '✅ 网站已更新' : d.status === 'unclear' ? '❓ 需要你确认' : '⚠️ 没有更新';
+  var text = head + '：' + esc(item.text) + (d.message ? '\n' + esc(plain(d.message)) : '') + (url ? '\n' + esc(url) : '');
+  if (d.status === 'unclear') {
+    text += '\n（请回复新的 /update 说明清楚，这一条会删除）';
+    props.setProperty('SITE_UPDATES', JSON.stringify(pendingUpdates_().filter(function (x) { return x.id !== d.id; })));
+  }
+  tg_('sendMessage', { chat_id: props.getProperty('TELEGRAM_CHAT_ID'), parse_mode: 'HTML', disable_web_page_preview: true, text: text });
+  return json_({ ok: true });
+}
+
+
+/* ---------- Weekly site check (from .github/workflows/site-check.yml) ---------- */
+function siteCheck_(d) {
+  var props = PropertiesService.getScriptProperties();
+  var last = +props.getProperty('LAST_SITE_CHECK') || 0;
+  if (Date.now() - last < 5 * 24 * 3600 * 1000) return json_({ ok: false, error: 'already sent this week' });
+  props.setProperty('LAST_SITE_CHECK', String(Date.now()));
+  var okUrl = function (s) { return /^\/[\w\-\/.%]*$/.test(String(s)); };
+  var lines = ['🩺 <b>每周网站检查</b>（' + (parseInt(d.pages, 10) || 0) + ' 页）'];
+  var bt = parseInt(d.broken_total, 10) || 0;
+  lines.push(bt ? '❌ 坏链接 ' + bt + ' 个：' : '✅ 没有坏链接');
+  (d.broken || []).slice(0, 8).forEach(function (b) { if (okUrl(b.path)) lines.push('• ' + esc(b.path) + '（' + (parseInt(b.count, 10) || 1) + ' 页）'); });
+  var sb = (d.sources || []).filter(function (s) { return /^https?:\/\//.test(s.url); });
+  lines.push(sb.length ? '📰 新闻来源失效 ' + sb.length + ' 个：' : '✅ 新闻来源链接都正常');
+  sb.slice(0, 5).forEach(function (s) { lines.push('• ' + esc(plain(s.note)).slice(0, 60)); });
+  var g = d.gap_counts || {}, names = { price: '没有价格', developer: '没有发展商', completion: '没有完工日期', photo: '没有照片' };
+  var gl = Object.keys(names).filter(function (k) { return +g[k] > 0; });
+  if (gl.length) {
+    lines.push('📋 项目资料待补：');
+    gl.forEach(function (k) { lines.push('• ' + names[k] + ' ' + (+g[k]) + ' 个：' + esc(((d.gaps || {})[k] || []).slice(0, 6).map(plain).join('、'))); });
+    lines.push('可以用 /update 补上，例如「/update Arden 起价 RM600,000」');
+  } else lines.push('✅ 项目资料齐全');
+  tg_('sendMessage', { chat_id: props.getProperty('TELEGRAM_CHAT_ID'), parse_mode: 'HTML', disable_web_page_preview: true, text: lines.join('\n') });
+  return json_({ ok: true });
+}
+
+
+/* ---------- Weekly Google Analytics report to Telegram ----------
+ * Setup once:
+ * 1. In this Apps Script editor: Services (+) > Google Analytics Data API > Add.
+ * 2. Script Properties: GA4_PROPERTY_ID = the number in GA Admin > Property details (not the G- ID).
+ * 3. Run setupWeeklyReport once (it sends a report now and every Monday at 9am).
+ */
+function setupWeeklyReport() {
+  ScriptApp.getProjectTriggers().forEach(function (tr) { if (tr.getHandlerFunction() === 'weeklyReport') ScriptApp.deleteTrigger(tr); });
+  ScriptApp.newTrigger('weeklyReport').timeBased().onWeekDay(ScriptApp.WeekDay.MONDAY).atHour(9).inTimezone(TIME_ZONE).create();
+  weeklyReport();
+}
+
+function gaRun_(id, body) {
+  return AnalyticsData.Properties.runReport(body, 'properties/' + id);
+}
+
+function weeklyReport() {
+  var props = PropertiesService.getScriptProperties(), id = props.getProperty('GA4_PROPERTY_ID');
+  var chat = props.getProperty('TELEGRAM_CHAT_ID');
+  if (!id) { tg_('sendMessage', { chat_id: chat, text: '还没设定 GA4_PROPERTY_ID，无法生成报告。' }); return; }
+  var ranges = [{ startDate: '7daysAgo', endDate: 'yesterday', name: 'now' }, { startDate: '14daysAgo', endDate: '8daysAgo', name: 'before' }];
+  var tot = gaRun_(id, { dateRanges: ranges, metrics: [{ name: 'activeUsers' }, { name: 'sessions' }, { name: 'screenPageViews' }] });
+  var val = function (r, range, m) {
+    var row = (r.rows || []).filter(function (x) { return !x.dimensionValues || x.dimensionValues.some(function (v) { return v.value === range; }); })[0];
+    return row ? +row.metricValues[m].value : 0;
+  };
+  var ch = function (a, b) { if (!b) return ''; var p = Math.round((a - b) / b * 100); return '（' + (p >= 0 ? '+' : '') + p + '%）'; };
+  var u1 = val(tot, 'now', 0), u0 = val(tot, 'before', 0), s1 = val(tot, 'now', 1), v1 = val(tot, 'now', 2), v0 = val(tot, 'before', 2);
+  var ev = gaRun_(id, { dateRanges: [ranges[0]], dimensions: [{ name: 'eventName' }], metrics: [{ name: 'eventCount' }],
+    dimensionFilter: { filter: { fieldName: 'eventName', inListFilter: { values: ['generate_lead', 'quiz_complete', 'page_not_found'] } } } });
+  var evc = {}; (ev.rows || []).forEach(function (r) { evc[r.dimensionValues[0].value] = +r.metricValues[0].value; });
+  var top = function (dim, n) {
+    var r = gaRun_(id, { dateRanges: [ranges[0]], dimensions: [{ name: dim }], metrics: [{ name: 'screenPageViews' }], limit: n,
+      orderBys: [{ metric: { metricName: 'screenPageViews' }, desc: true }] });
+    return (r.rows || []).map(function (x) { return [x.dimensionValues[0].value, +x.metricValues[0].value]; });
+  };
+  var pages = top('pageTitle', 5), countries = top('country', 5), langs = top('contentGroup', 6);
+  var L = ['📊 <b>keithnah.com 本周数据</b>（过去 7 天）',
+    '👥 访客 ' + u1 + ch(u1, u0) + ' · 浏览 ' + v1 + ch(v1, v0) + ' · 访问 ' + s1,
+    '💬 WhatsApp / 询问：' + (evc.generate_lead || 0) + ' · 找房问答完成：' + (evc.quiz_complete || 0) + ' · 404：' + (evc.page_not_found || 0),
+    '', '🔝 最多人看的页面：'];
+  pages.forEach(function (p, i) { L.push((i + 1) + '. ' + esc(p[0].replace(/\s*\|\s*Keith Nah.*$/, '')).slice(0, 60) + ' — ' + p[1]); });
+  L.push('', '🌍 国家：' + countries.map(function (c) { return esc(c[0]) + ' ' + c[1]; }).join('、'));
+  L.push('🈯 语言版本：' + langs.map(function (c) { return esc(c[0] === '(not set)' ? 'en' : c[0]) + ' ' + c[1]; }).join('、'));
+  tg_('sendMessage', { chat_id: chat, parse_mode: 'HTML', disable_web_page_preview: true, text: L.join('\n') });
 }
