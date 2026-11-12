@@ -54,8 +54,8 @@ for k, (name, lo, fd, yrs) in enumerate(TIERS):
     items = ''.join('<a class="mx-p" href="property/%s.html"><img src="%s" alt="%s" loading="lazy"><span><b>%s</b><small>%s</small><em>From %s</em></span></a>'
                     % (x['s'], x['img'], E(x['n']), E(x['n']), E(x['a']), HB.rm(x['p'])) for x in pick)
     cards += ('<div class="mx-tc"><div class="mx-th %s"><b>%s</b><span>Property from %s</span></div>'
-              '<p><b>%d</b> projects on this site start at %s or more.</p><div class="mx-ps">%s</div></div>'
-              % (name.lower(), name, HB.rm(lo), len(lst), HB.rm(lo), items))
+              '<p><b>%d</b> project%s on this site start%s at %s or more.</p><div class="mx-ps">%s</div></div>'
+              % (name.lower(), name, HB.rm(lo), len(lst), '' if len(lst) == 1 else 's', 's' if len(lst) == 1 else '', HB.rm(lo), items))
 
 FAQ = [
     ('Do I have to buy property to get MM2H?',
