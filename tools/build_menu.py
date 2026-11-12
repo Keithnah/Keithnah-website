@@ -63,9 +63,9 @@ MENU = {
 }
 
 CSS = ('<style id="kn-submenu-css">'
-       '.knm-g{position:relative;display:inline-flex;align-items:center}.knm-g>a:after{content:"";display:inline-block;width:6px;height:6px;margin-left:7px;'
-       'border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:translateY(-2px) rotate(45deg);opacity:.75;transition:transform .2s}'
-       '.knm-g:hover>a:after,.knm-g:focus-within>a:after{transform:translateY(1px) rotate(225deg)}'
+       '.knm-g{position:relative;display:inline-flex;align-items:center}.knm-c{display:inline-block;width:6px;height:6px;margin:0 0 3px 7px;pointer-events:none;'
+       'border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);opacity:.75;transition:transform .2s}'
+       'header .knm-g>a{margin-right:0!important}.knm-g:hover .knm-c,.knm-g:focus-within .knm-c{transform:translateY(3px) rotate(225deg)}#knMnav .knm-c{display:none}'
        '.knm-d{position:absolute;top:100%;left:50%;transform:translate(-50%,8px);min-width:230px;padding:10px;background:#fff;border-radius:16px;'
        'box-shadow:0 18px 40px rgba(20,18,60,.18);border:1px solid rgba(21,20,43,.08);opacity:0;visibility:hidden;transition:opacity .18s,transform .18s,visibility .18s;z-index:1000}'
        '.knm-d:before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}'
@@ -73,7 +73,7 @@ CSS = ('<style id="kn-submenu-css">'
        'header nav .knm-d a,.knm-d a{display:block!important;margin:0!important;padding:10px 14px!important;border-radius:10px;color:#15142b!important;font-size:14px!important;'
        'font-weight:600!important;letter-spacing:0!important;text-transform:none!important;white-space:nowrap;text-decoration:none!important;opacity:1!important}'
        '.knm-d a:after{display:none!important}.knm-d a:hover{background:#f1efff;color:#5E60CE!important}'
-       '#knMnav .knm-g{display:block}#knMnav .knm-g>a:after{display:none}#knMnav .knm-d{position:static;transform:none;opacity:1;visibility:visible;background:none;box-shadow:none;border:0;padding:0 0 6px;min-width:0}'
+       '#knMnav .knm-g{display:block}#knMnav .knm-d{position:static;transform:none;opacity:1;visibility:visible;background:none;box-shadow:none;border:0;padding:0 0 6px;min-width:0}'
        '#knMnav .knm-d a{color:rgba(255,255,255,.78)!important;font-size:14.5px!important;font-weight:500!important;padding:9px 4px 9px 18px!important;border-bottom:0!important;border-radius:0}'
        '#knMnav .knm-d a:hover{background:none;color:#fff!important}nav.nw-jump{display:flex!important}.kn-links a.knm-ms{padding-left:22px!important;font-size:14.5px!important;opacity:.8;border-bottom:0!important}'
        '</style>')
@@ -103,7 +103,7 @@ def fix(t, prefix):
     if not m:
         return t
     nav = m.group(1)
-    nav = re.sub(r'<div class="knm-g">(<a\b.*?</a>)<div class="knm-d">.*?</div></div>', r'\1', nav, flags=re.S)  # undo an earlier run
+    nav = re.sub(r'<div class="knm-g">(<a\b.*?</a>)(?:<span class="knm-c"[^>]*></span>)?<div class="knm-d">.*?</div></div>', r'\1', nav, flags=re.S)  # undo an earlier run
     nav = re.sub(r'\s*<a\b[^>]*href="(?:\.\./)*calculator\.html"[^>]*>.*?</a>', '', nav, flags=re.S)  # Calculator moves to Free Toolkit
 
     def group(a):
@@ -111,7 +111,7 @@ def fix(t, prefix):
         key = href.split('/')[-1].split('#')[0]
         if key not in MENU:
             return a.group(0)
-        return '<div class="knm-g">%s%s</div>' % (a.group(0), sub(prefix, MENU[key]))
+        return '<div class="knm-g">%s<span class="knm-c" aria-hidden="true"></span>%s</div>' % (a.group(0), sub(prefix, MENU[key]))
     nav = re.sub(r'<a\b[^>]*>.*?</a>', group, nav, flags=re.S)
     head = head[:m.start(1)] + nav + head[m.end(1):]
     t = t[:h0] + head + t[h1:]

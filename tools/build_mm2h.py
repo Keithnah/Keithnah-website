@@ -26,7 +26,7 @@ WA = 'https://api.whatsapp.com/send/?phone=60102821568&type=phone_number&app_abs
 
 ART_CSS = '''
 :root{--ink:#15142b;--grey:#5f5e74;--line:rgba(21,20,43,.09);--gold:#5E60CE;--bg:#F7F6FB;}
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}a{color:inherit}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}a{color:inherit;text-decoration:none}.ma-src a{text-decoration:underline}
 h1,h2{font-family:'Playfair Display',Georgia,serif;line-height:1.2}
 .ma-top{background:linear-gradient(135deg,#1d1b4f,#3b3cb0);color:#fff;padding:120px 5vw 46px}
 .ma-top .in{max-width:860px;margin:0 auto}.ma-cr{font-size:13px;opacity:.75}.ma-cr a{text-decoration:none}
