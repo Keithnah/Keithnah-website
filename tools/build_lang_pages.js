@@ -127,6 +127,14 @@ async function render(ctx, base, rel, lang, all) {
     let h1 = '';
     if (hx) { const c = hx.cloneNode(true); c.querySelectorAll('[aria-hidden="true"]').forEach(e => e.remove()); c.querySelectorAll('br').forEach(e => e.replaceWith(' ')); h1 = clean(c.textContent); if (/^(zh|ja)/.test(lang)) h1 = h1.replace(/([\u3000-\u9fff\uff00-\uffef]) (?=[\u3000-\u9fff\uff00-\uffef])/g, '$1'); }
     if (h1 && lang !== 'en') document.title = h1 + ' | Keith Nah';
+    // Pages whose heading is not translated (a name, or English-only legal text): fixed titles per language.
+    const FIXED = {
+      'mm2h.html': {'zh-CN': 'MM2H 第二家园', 'zh-TW': 'MM2H 第二家園', ms: 'MM2H Malaysia Rumah Keduaku', ja: 'MM2H マレーシア・マイ・セカンドホーム', ko: 'MM2H 말레이시아 마이 세컨드 홈'},
+      'about-keith.html': {'zh-CN': '关于 Keith Nah 鈞晖', 'zh-TW': '關於 Keith Nah 鈞暉', ms: 'Tentang Keith Nah', ja: 'Keith Nah について', ko: 'Keith Nah 소개'},
+      'privacy-policy.html': {'zh-CN': '隐私政策', 'zh-TW': '隱私權政策', ms: 'Dasar Privasi', ja: 'プライバシーポリシー', ko: '개인정보 처리방침'},
+      'terms-of-use.html': {'zh-CN': '使用条款', 'zh-TW': '使用條款', ms: 'Terma Penggunaan', ja: '利用規約', ko: '이용약관'}};
+    const fx = FIXED[enUrl.pathname.replace(/^\//, '')];
+    if (fx && fx[lang]) { document.title = fx[lang] + ' | Keith Nah'; h1 = h1 || fx[lang]; }
     const md = document.querySelector('meta[name="description"]');
     const para = [...document.querySelectorAll('main p, section p, .hero p')].map(e => clean(e.textContent)).find(s => s.length > 40 && !/[a-z]{4,} [a-z]{4,} [a-z]{4,}/i.test(s) || (lang === 'ms' && s.length > 60));
     if (md && para) md.setAttribute('content', para.length > 160 ? para.slice(0, 157) + '…' : para);
