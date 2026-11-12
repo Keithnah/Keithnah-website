@@ -100,6 +100,16 @@ def footer(pre):
             ) % (pre, html.escape(T['tag'][0]), FB, YT, IG, ''.join(cols), html.escape(T['copy'][0]), T['loc'][0], js)
 
 
+NESTED = {'compare.html'}
+# Dark sections right above the (dark) footer look odd: make them light.
+LIGHT_CTA = {'calculator.html', 'about-keith.html'}
+LIGHT_CTA_CSS = ('<style id="kn-light-cta">.calc-cta,.keith-contact{background:#F3F1FF!important;color:#1a1a2e!important}'
+                 '.calc-cta h2,.keith-contact h2{color:#121212!important}.keith-contact h2 span{color:#5E60CE!important}'
+                 '.calc-cta p,.keith-contact p,.keith-contact .scan-caption{color:#555!important}.keith-contact .eyebrow{color:#5E60CE!important}'
+                 '.keith-contact .btn-outline{color:#121212!important;border-color:rgba(18,18,18,.25)!important}'
+                 '.keith-contact .btn-outline:hover{background:#121212!important;color:#fff!important}'
+                 '.keith-contact .scan-frame{box-shadow:0 8px 24px rgba(30,30,80,.10)}</style>')
+
 n = 0
 for d in DIRS:
     for f in sorted(glob.glob(os.path.join(d, '*.html') if d else '*.html')):
@@ -107,7 +117,14 @@ for d in DIRS:
         if '<footer' not in t:
             continue
         new = footer('/' if f == '404.html' else ('../' if d else ''))
-        t2 = re.sub(r'<footer\b[^>]*>.*?</footer>', lambda m: new, t, count=1, flags=re.S)
+        if f in NESTED:  # the old footer sat inside the page's content box: put the new one at the end of the page
+            t2 = re.sub(r'<footer\b[^>]*>.*?</footer>', '', t, count=1, flags=re.S)
+            t2 = re.sub(r'(</div><!-- /kn-wrap -->)?\s*</body>', '</div><!-- /kn-wrap -->' + new + '\n</body>', t2, count=1)  # the content box is never closed
+        else:
+            t2 = re.sub(r'<footer\b[^>]*>.*?</footer>', lambda m: new, t, count=1, flags=re.S)
+        t2 = re.sub(r'<style id="kn-light-cta">.*?</style>', '', t2, flags=re.S)
+        if f in LIGHT_CTA:
+            t2 = t2.replace('</head>', LIGHT_CTA_CSS + '</head>', 1)
         if t2 != t:
             open(f, 'w', encoding='utf-8').write(t2)
             n += 1
