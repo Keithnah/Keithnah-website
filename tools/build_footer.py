@@ -34,6 +34,7 @@ T = {  # key: [en, zh-CN, zh-TW, ms, ja, ko]
     'calc': ['Loan Calculator', '房贷计算器', '房貸計算器', 'Kalkulator Pinjaman', 'ローン計算機', '대출 계산기'],
     'mm2h': ['MM2H Guide', 'MM2H 指南', 'MM2H 指南', 'Panduan MM2H', 'MM2H ガイド', 'MM2H 가이드'],
     'notes': ['Market Notes', '每日市场短评', '每日市場短評', 'Nota Pasaran', 'マーケットノート', '마켓 노트'],
+    'data': ['Market Data', '市场数据', '市場數據', 'Data Pasaran', 'マーケットデータ', '마켓 데이터'],
     'journal': ['The Journal', '房产资讯', '房產資訊', 'Jurnal', 'ジャーナル', '저널'],
     'best': ['Best New Launches', '精选新盘', '精選新盤', 'Projek Baharu Terbaik', 'おすすめ新築物件', '추천 신규 분양'],
     'kit': ['Free Toolkit', '免费工具包', '免費工具包', 'Kit Percuma', '無料ツールキット', '무료 툴킷'],
@@ -51,7 +52,7 @@ AREAS = [('KL City Centre', 'area/kl-city-centre.html'), ('Bukit Bintang', 'area
          ('Bangsar', 'area/bangsar.html'), ('Penang', 'area/penang.html'), ('Johor Bahru', 'area/jb-city-centre.html')]
 COLS = [('h_ex', [('projects', 'projects.html'), ('quiz', 'find-my-home.html'), ('compare', 'compare.html'),
                   ('calc', 'calculator.html'), ('mm2h', 'mm2h.html')]),
-        ('h_in', [('notes', 'market-notes.html'), ('journal', 'blog.html'), ('best', 'best/index.html'), ('kit', 'resources.html')]),
+        ('h_in', [('notes', 'market-notes.html'), ('data', 'market-data.html'), ('journal', 'blog.html'), ('best', 'best/index.html'), ('kit', 'resources.html')]),
         ('h_ar', None),
         ('h_ab', [('about', 'about-keith.html'), ('wa', WA), ('priv', 'privacy-policy.html'), ('terms', 'terms-of-use.html')])]
 

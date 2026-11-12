@@ -67,6 +67,17 @@
   <url><loc>https://keithnah.com/ja/find-my-home.html</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://keithnah.com/ko/find-my-home.html</loc><lastmod>2026-11-12</lastmod></url>
   <url>
+    <loc>https://keithnah.com/market-data.html</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url><loc>https://keithnah.com/zh/market-data.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://keithnah.com/zh-tw/market-data.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://keithnah.com/ms/market-data.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://keithnah.com/ja/market-data.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://keithnah.com/ko/market-data.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url>
     <loc>https://keithnah.com/mm2h.html</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
