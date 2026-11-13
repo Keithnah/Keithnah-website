@@ -43,23 +43,23 @@ for k, p in enumerate(P):
 NAMES = {p['name']: IDX[k]['slug'] for k, p in enumerate(P)}
 
 T = {
-    'en': {'saved': 'Saved', 'title': 'My saved projects', 'sub': 'Saved on this device. Send the list to Keith for the latest prices and floor plans.',
+    'en': {'saved': 'Saved', 'cmpb': 'Compare', 'title': 'My saved projects', 'sub': 'Saved on this device. Send the list to Keith for the latest prices and floor plans.',
            'empty': 'Tap the heart on any project to save it here.', 'wa': 'Send my list to Keith on WhatsApp', 'cmp': 'Compare these side by side',
            'save': 'Save', 'savedb': 'Saved', 'from': 'From {p}', 'por': 'Price on request', 'rm': 'Remove', 'close': 'Close',
            'msg': '(KNRE) Hi Keith, these are the projects I saved on your website:'},
-    'zh-CN': {'saved': '已收藏', 'title': '我的收藏项目', 'sub': '收藏保存在这部设备上。把清单发给 Keith，获取最新价格和户型图。',
+    'zh-CN': {'saved': '已收藏', 'cmpb': '对比', 'title': '我的收藏项目', 'sub': '收藏保存在这部设备上。把清单发给 Keith，获取最新价格和户型图。',
               'empty': '按任何项目上的爱心，就会收藏在这里。', 'wa': '把清单 WhatsApp 给 Keith', 'cmp': '对比这些项目',
               'save': '收藏', 'savedb': '已收藏', 'from': '{p} 起', 'por': '价格请询问', 'rm': '移除', 'close': '关闭',
               'msg': '(KNRE) Hi Keith, these are the projects I saved on your website:'},
-    'ms': {'saved': 'Disimpan', 'title': 'Projek yang saya simpan', 'sub': 'Disimpan pada peranti ini. Hantar senarai kepada Keith untuk harga dan pelan lantai terkini.',
+    'ms': {'saved': 'Disimpan', 'cmpb': 'Banding', 'title': 'Projek yang saya simpan', 'sub': 'Disimpan pada peranti ini. Hantar senarai kepada Keith untuk harga dan pelan lantai terkini.',
            'empty': 'Tekan ikon hati pada mana-mana projek untuk menyimpannya di sini.', 'wa': 'Hantar senarai kepada Keith di WhatsApp', 'cmp': 'Bandingkan projek ini',
            'save': 'Simpan', 'savedb': 'Disimpan', 'from': 'Dari {p}', 'por': 'Harga atas permintaan', 'rm': 'Buang', 'close': 'Tutup',
            'msg': '(KNRE) Hi Keith, these are the projects I saved on your website:'},
-    'ja': {'saved': '保存済み', 'title': '保存した物件', 'sub': 'この端末に保存されています。リストを Keith に送ると、最新の価格と間取り図が届きます。',
+    'ja': {'saved': '保存済み', 'cmpb': '比較', 'title': '保存した物件', 'sub': 'この端末に保存されています。リストを Keith に送ると、最新の価格と間取り図が届きます。',
            'empty': '物件のハートを押すと、ここに保存されます。', 'wa': 'リストを WhatsApp で Keith に送る', 'cmp': 'これらの物件を比較',
            'save': '保存', 'savedb': '保存済み', 'from': '{p} から', 'por': '価格はお問い合わせ', 'rm': '削除', 'close': '閉じる',
            'msg': '(KNRE) Hi Keith, these are the projects I saved on your website:'},
-    'ko': {'saved': '저장됨', 'title': '저장한 프로젝트', 'sub': '이 기기에 저장됩니다. 목록을 Keith에게 보내면 최신 가격과 평면도를 받을 수 있습니다.',
+    'ko': {'saved': '저장됨', 'cmpb': '비교', 'title': '저장한 프로젝트', 'sub': '이 기기에 저장됩니다. 목록을 Keith에게 보내면 최신 가격과 평면도를 받을 수 있습니다.',
            'empty': '프로젝트의 하트를 누르면 여기에 저장됩니다.', 'wa': '목록을 WhatsApp으로 Keith에게 보내기', 'cmp': '이 프로젝트들 비교하기',
            'save': '저장', 'savedb': '저장됨', 'from': '{p}부터', 'por': '가격 문의', 'rm': '삭제', 'close': '닫기',
            'msg': '(KNRE) Hi Keith, these are the projects I saved on your website:'},
@@ -89,10 +89,19 @@ CSS = ('.kv-h{position:absolute;top:12px;right:12px;z-index:5;width:40px;height:
        '.kv-i button{border:0;background:none;cursor:pointer;padding:0}.kv-i button svg{width:22px;height:22px;fill:#ff3b5c;stroke:#ff3b5c}'
        '.kv-a{padding:16px 22px 22px;display:grid;gap:10px}.kv-a a{text-align:center;padding:14px;border-radius:14px;font-weight:700;font-size:14.5px;text-decoration:none}'
        '.kv-a .w{background:#25D366;color:#fff;box-shadow:0 10px 24px rgba(37,211,102,.3)}.kv-a .c{border:1.5px solid #d9d6ea;color:#15142b}.kv-a .c[hidden]{display:none}'
+       '.kv-top{display:flex;align-items:center;gap:6px}.kv-tb,.kv-tc{display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 13px;border-radius:999px;'
+       'border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.14);color:#fff!important;font:600 13px Inter,sans-serif;cursor:pointer;text-decoration:none!important;white-space:nowrap;transition:background .2s}'
+       '.kv-tb:hover,.kv-tc:hover{background:rgba(255,255,255,.26)}.kv-tb:after,.kv-tc:after{display:none!important}'
+       '.kv-tb svg{width:17px;height:17px;fill:none;stroke:#fff;stroke-width:2}.kv-tb.on svg{fill:#ff3b5c;stroke:#ff3b5c}'
+       '.kv-tc svg{width:17px;height:17px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}'
+       '.kv-tb i{font-style:normal;min-width:20px;height:20px;line-height:20px;text-align:center;background:#ff3b5c;color:#fff;border-radius:999px;font-size:11.5px;font-weight:700;padding:0 5px}'
+       '.kv-tb i.z{background:rgba(255,255,255,.25)}'
+       '@media(max-width:1679px){.kv-tb span,.kv-tc span{display:none}.kv-tb,.kv-tc{padding:0 10px}}'
        '@media(max-width:600px){.kv-pill{left:14px;bottom:18px;padding:11px 15px}}')
 
 JS = r'''(function(){var D=%s,N=%s,T=%s,CSS=%s;
 var H='<svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.5-9.2C1 8.2 3.4 4.5 7 4.5c2 0 3.4 1.1 5 3 1.6-1.9 3-3 5-3 3.6 0 6 3.7 4.5 7.3C19.5 16.4 12 21 12 21z"/></svg>';
+var C='<svg viewBox="0 0 24 24"><path d="M4 8h14l-4-4M20 16H6l4 4"/></svg>';
 var LP=(location.pathname.match(/^\/(zh-tw|zh|ms|ja|ko)\//)||[,""])[1],root=LP?"/"+LP+"/":"/";
 function lg(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}return T[l]?l:"en";}
 function t(k){return T[lg()][k]||T.en[k];}
@@ -102,10 +111,12 @@ function has(s){return get().indexOf(s)>-1;}
 function toggle(s){var a=get(),i=a.indexOf(s);if(i>-1)a.splice(i,1);else{a.unshift(s);if(typeof gtag==="function")gtag("event","save_project",{project:D[s][0]});}put(a);sync();}
 function e(x){var d=document.createElement("div");d.textContent=x;return d.innerHTML;}
 function money(v){return v>=1e6?"RM"+(v/1e6).toFixed(2).replace(/\.?0+$/,"")+"M":"RM"+Math.round(v/1e3)+"K";}
-var pill,bg,dr;
+var pill,bg,dr,top=null;
 function ui(){var st=document.createElement("style");st.setAttribute("data-kv","");st.textContent=CSS;document.head.appendChild(st);
 pill=document.createElement("button");pill.type="button";pill.className="kv-pill";pill.onclick=open;document.body.appendChild(pill);
 bg=document.createElement("div");bg.className="kv-bg";bg.onclick=close;document.body.appendChild(bg);
+var nr=document.querySelector("header .nav-right");if(nr){top=document.createElement("div");top.className="kv-top";
+top.innerHTML='<button type="button" class="kv-tb"></button><a class="kv-tc" href="'+root+'compare.html"></a>';nr.insertBefore(top,nr.firstChild);top.querySelector(".kv-tb").onclick=open;}
 dr=document.createElement("aside");dr.className="kv-d";dr.setAttribute("aria-label","Saved projects");document.body.appendChild(dr);}
 function open(){draw();bg.classList.add("show");dr.classList.add("show");}
 function close(){bg.classList.remove("show");dr.classList.remove("show");}
@@ -116,7 +127,9 @@ dr.innerHTML='<div class="hd"><h3>'+e(t("title"))+'</h3><button type="button" cl
 (a.length?'<div class="kv-a"><a class="w" target="_blank" rel="noopener" href="https://api.whatsapp.com/send/?phone=60102821568&type=phone_number&app_absent=0&text='+encodeURIComponent(msg)+'">'+e(t("wa"))+'</a><a class="c" href="'+root+'compare.html?p='+a.slice(0,4).join(",")+'"'+(a.length<2?' hidden':'')+'>'+e(t("cmp"))+'</a></div>':'');
 dr.querySelector(".x").onclick=close;dr.querySelectorAll("[data-rm]").forEach(function(b){b.onclick=function(){toggle(b.getAttribute("data-rm"));draw();};});
 var w=dr.querySelector(".kv-a .w");if(w)w.addEventListener("click",function(){if(typeof gtag==="function")gtag("event","generate_lead",{method:"saved_list",count:a.length});});}
-function sync(){var n=get().length;pill.innerHTML=H+e(t("saved"))+' <i>'+n+'</i>';pill.classList.toggle("show",n>0);
+function sync(){var a=get(),n=a.length;pill.innerHTML=H+e(t("saved"))+' <i>'+n+'</i>';pill.classList.toggle("show",n>0&&!top);
+if(top){var tb=top.querySelector(".kv-tb"),tc=top.querySelector(".kv-tc"),x=H+'<span>'+e(t("saved"))+'</span><i'+(n?'':' class="z"')+'>'+n+'</i>';if(tb.innerHTML!==x)tb.innerHTML=x;tb.classList.toggle("on",n>0);tb.setAttribute("aria-label",t("saved")+" ("+n+")");
+var y=C+'<span>'+e(t("cmpb"))+'</span>';if(tc.innerHTML!==y)tc.innerHTML=y;tc.setAttribute("aria-label",t("cmpb"));tc.href=root+"compare.html"+(n>1?"?p="+a.slice(0,4).join(","):"");}
 document.querySelectorAll("[data-kv]").forEach(function(b){var on=has(b.getAttribute("data-kv"));b.classList.toggle("on",on);b.setAttribute("aria-pressed",on);
 if(b.classList.contains("kv-sv")){var tx=" "+t(on?"savedb":"save");if(b.lastChild.textContent!==tx)b.lastChild.textContent=tx;}else b.setAttribute("aria-label",t(on?"savedb":"save"));});}
 function heart(s,cls){var b=document.createElement("button");b.type="button";b.className=cls;b.setAttribute("data-kv",s);b.innerHTML=H+(cls==="kv-sv"?" ":"");if(cls==="kv-sv")b.appendChild(document.createTextNode(""));
@@ -125,7 +138,7 @@ function cards(){var P=typeof PROJECT_DETAILS!=="undefined"?PROJECT_DETAILS:null
 var p=P&&P[+c.getAttribute("data-idx")],s=p&&N[p.name],m=c.querySelector(".proj-media")||c;if(!s)return;if(getComputedStyle(m).position==="static")m.style.position="relative";m.appendChild(heart(s,"kv-h"));});sync();}
 function page(){var m=location.pathname.match(/\/property\/([a-z0-9-]+)\.html$/);if(!m||!D[m[1]])return;var h=document.querySelector("h1");if(!h||document.querySelector(".kv-sv"))return;
 var c=document.querySelector(".ctas");if(c)c.appendChild(heart(m[1],"kv-sv"));else h.insertAdjacentElement("afterend",heart(m[1],"kv-sv"));}
-function start(){document.querySelectorAll(".kv-h,.kv-sv,.kv-pill,.kv-bg,.kv-d,style[data-kv]").forEach(function(x){x.remove();});ui();page();cards();sync();var g=document.getElementById("projGrid");if(g)new MutationObserver(function(){cards();}).observe(g,{childList:true,subtree:true});
+function start(){document.querySelectorAll(".kv-top,.kv-h,.kv-sv,.kv-pill,.kv-bg,.kv-d,style[data-kv]").forEach(function(x){x.remove();});ui();page();cards();sync();var g=document.getElementById("projGrid");if(g)new MutationObserver(function(){cards();}).observe(g,{childList:true,subtree:true});
 var s=window.knSetLang;if(typeof s==="function")window.knSetLang=function(){var r=s.apply(this,arguments);sync();if(dr.classList.contains("show"))draw();return r;};
 document.addEventListener("keydown",function(ev){if(ev.key==="Escape")close();});}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start);else start();})();'''
