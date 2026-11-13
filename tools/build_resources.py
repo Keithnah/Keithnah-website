@@ -343,31 +343,31 @@ TK_HEAD = {'h': ['Free tools for every buyer', '每位买家都用得上的免�
            'all': ['See the full toolkit', '查看全部工具', '查看全部工具', 'Lihat semua alat', 'ツールキットをすべて見る', '전체 툴킷 보기']}
 TK_T.update(TK_HEAD)
 tk_cards = ''.join(
-    '<a class="tk-c" href="{h}"{x}><img src="images/res/{img}" alt="" loading="lazy" width="1200" height="700">'
-    '<span class="tk-b"><span class="tk-g" data-tk="{k}g">{g}</span><b data-tk="{k}t">{t}</b><small data-tk="{k}d">{d}</small>'
+    '<a class="ftk-c" href="{h}"{x}><img src="images/res/{img}" alt="" loading="lazy" width="1200" height="700">'
+    '<span class="ftk-b"><span class="ftk-g" data-tk="{k}g">{g}</span><b data-tk="{k}t">{t}</b><small data-tk="{k}d">{d}</small>'
     '<em><span data-tk="{k}b">{b}</span> &rarr;</em></span></a>'.format(
         h=E('resources.html#guides' if h == '#guides' else h), x='' if h == '#guides' else x, img=img, k=k,
         g=E(en[k + 'g']), t=E(en[k + 't']), d=E(en[k + 'd']), b=E(en[k + 'b']))
     for k, img, ic, h, x in CARDS)
 TK_HTML = ('<!-- KN-TK:START --><style>'
- '#home-toolkit{padding:90px 0 80px;background:#f7f6fb;overflow:hidden}.tk-h{max-width:1220px;margin:0 auto 30px;padding:0 5vw;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}'
- '.tk-h .eyebrow{display:block;margin-bottom:8px}.tk-h h2{font-family:"Playfair Display",serif;font-size:clamp(28px,3.6vw,42px);line-height:1.15;margin:0}.tk-h a{color:var(--gold,#5E60CE);font-weight:700;font-size:14.5px;text-decoration:none;white-space:nowrap}'
- '.tk-v{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%%,#000 96%%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%%,#000 96%%,transparent)}'
- '.tk-r{display:flex;gap:22px;width:max-content;padding:6px 0 18px;animation:tkSlide 55s linear infinite}.tk-v:hover .tk-r,.tk-v:focus-within .tk-r{animation-play-state:paused}'
- '@keyframes tkSlide{to{transform:translateX(calc(-50%% - 11px))}}'
- '.tk-c{flex:0 0 330px;background:#fff;border-radius:22px;overflow:hidden;text-decoration:none;color:#15142b;box-shadow:0 14px 34px rgba(29,27,79,.09);border:1px solid rgba(21,20,43,.06);transition:transform .3s,box-shadow .3s}'
- '.tk-c:hover{transform:translateY(-6px);box-shadow:0 22px 46px rgba(29,27,79,.16)}.tk-c img{display:block;width:100%%;height:180px;object-fit:cover}'
- '.tk-b{display:flex;flex-direction:column;gap:6px;padding:18px 20px 20px}.tk-g{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#1f7a45;background:#e9f9ef;padding:4px 10px;border-radius:99px}'
- '.tk-b b{font:700 19px/1.3 "Playfair Display",serif}.tk-b small{font-size:13.5px;color:#5f5e74;line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}'
- '.tk-b em{font-style:normal;font-weight:700;font-size:14px;color:var(--gold,#5E60CE);margin-top:4px}'
- '@media(max-width:600px){.tk-c{flex-basis:270px}.tk-c img{height:150px}#home-toolkit{padding:64px 0 56px}}'
- '@media(prefers-reduced-motion:reduce){.tk-r{animation:none}.tk-v{overflow-x:auto}}'
- '</style><section id="home-toolkit"><div class="tk-h"><div><span class="eyebrow" data-tk="eyebrow">%s</span><h2 data-tk="h">%s</h2></div>'
- '<a href="resources.html" data-tk="all">%s</a></div><div class="tk-v"><div class="tk-r">%s%s</div></div></section>'
+ '#home-toolkit{padding:90px 0 80px;background:#f7f6fb;overflow:hidden}.ftk-h{max-width:1220px;margin:0 auto 30px;padding:0 5vw;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}'
+ '.ftk-h .eyebrow{display:block;margin-bottom:8px}.ftk-h h2{font-family:"Playfair Display",serif;font-size:clamp(28px,3.6vw,42px);line-height:1.15;margin:0}.ftk-h a{color:var(--gold,#5E60CE);font-weight:700;font-size:14.5px;text-decoration:none;white-space:nowrap}'
+ '.ftk-v{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%%,#000 96%%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%%,#000 96%%,transparent)}'
+ '.ftk-r{display:flex;gap:22px;width:max-content;padding:6px 0 18px;animation:ftkSlide 55s linear infinite}.ftk-v:hover .ftk-r,.ftk-v:focus-within .ftk-r{animation-play-state:paused}'
+ '@keyframes ftkSlide{to{transform:translateX(calc(-50%% - 11px))}}'
+ '.ftk-c{flex:0 0 330px;background:#fff;border-radius:22px;overflow:hidden;text-decoration:none;color:#15142b;box-shadow:0 14px 34px rgba(29,27,79,.09);border:1px solid rgba(21,20,43,.06);transition:transform .3s,box-shadow .3s}'
+ '.ftk-c:hover{transform:translateY(-6px);box-shadow:0 22px 46px rgba(29,27,79,.16)}.ftk-c img{display:block;width:100%%;height:180px;object-fit:cover}'
+ '.ftk-b{display:flex;flex-direction:column;gap:6px;padding:18px 20px 20px}.ftk-g{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#1f7a45;background:#e9f9ef;padding:4px 10px;border-radius:99px}'
+ '.ftk-b b{font:700 19px/1.3 "Playfair Display",serif}.ftk-b small{font-size:13.5px;color:#5f5e74;line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}'
+ '.ftk-b em{font-style:normal;font-weight:700;font-size:14px;color:var(--gold,#5E60CE);margin-top:4px}'
+ '@media(max-width:600px){.ftk-c{flex-basis:270px}.ftk-c img{height:150px}#home-toolkit{padding:64px 0 56px}}'
+ '@media(prefers-reduced-motion:reduce){.ftk-r{animation:none}.ftk-v{overflow-x:auto}}'
+ '</style><section id="home-toolkit"><div class="ftk-h"><div><span class="eyebrow" data-tk="eyebrow">%s</span><h2 data-tk="h">%s</h2></div>'
+ '<a href="resources.html" data-tk="all">%s</a></div><div class="ftk-v"><div class="ftk-r">%s%s</div></div></section>'
  '<script>(function(){var T=%s,L=["en","zh-CN","zh-TW","ms","ja","ko"];function f(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}var i=Math.max(0,L.indexOf(l));'
  'document.querySelectorAll("[data-tk]").forEach(function(x){var v=T[x.getAttribute("data-tk")];if(v)x.textContent=v[i];});}f();'
  'document.addEventListener("DOMContentLoaded",function(){["setLanguage","knSetLang"].forEach(function(n){var s=window[n];if(typeof s==="function")window[n]=function(){var r=s.apply(this,arguments);f();return r;};});f();});})();</script>'
- '<!-- KN-TK:END -->\n') % (E(en['eyebrow']), E(TK_HEAD['h'][0]), E(TK_HEAD['all'][0]), tk_cards, tk_cards.replace('<a class="tk-c"', '<a class="tk-c" aria-hidden="true" tabindex="-1"'),
+ '<!-- KN-TK:END -->\n') % (E(en['eyebrow']), E(TK_HEAD['h'][0]), E(TK_HEAD['all'][0]), tk_cards, tk_cards.replace('<a class="ftk-c"', '<a class="ftk-c" aria-hidden="true" tabindex="-1"'),
                           json.dumps(TK_T, ensure_ascii=False))
 FAQ_CSS = ('<!-- KN-FAQ2:START --><style>'
  '#faq .section-head{max-width:1180px;margin-left:auto;margin-right:auto;text-align:left}#faq .section-head .hairline{display:none}'
