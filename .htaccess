@@ -22,9 +22,13 @@ Header always set Referrer-Policy "strict-origin-when-cross-origin"
 Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
 </IfModule>
 
-# Browsers keep the shared data files for a week; a new build changes their ?v= address
+# Browsers keep scripts and styles for a day (data files also change their ?v= address with each build)
 <IfModule mod_headers.c>
+# Pages: always check for a newer version, so visitors see updates straight away
+<FilesMatch "\.html$">
+Header set Cache-Control "no-cache"
+</FilesMatch>
 <FilesMatch "\.(js|css)$">
-Header set Cache-Control "public, max-age=604800"
+Header set Cache-Control "public, max-age=86400"
 </FilesMatch>
 </IfModule>
