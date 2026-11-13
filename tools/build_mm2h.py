@@ -4,7 +4,7 @@
 - mm2h.html gets an "MM2H Library" section (articles in two groups) and an MM2H enquiry form
   under the tier comparison. The form saves the enquiry in the KNRE Leads sheet and Telegram
   (through lead-tracker.js, as a Quick Enquiry marked "MM2H"), then offers WhatsApp.
-Articles in English and Chinese (zh-CN, zh-TW); page labels and the form in all 6 languages.
+Articles and page labels in all 6 languages (tools/mm2h_articles_zh.json, tools/mm2h_articles_i18n.json).
 """
 import html
 import json
@@ -245,6 +245,18 @@ for a in A:
     pairs += [(x, y) for p, q in zip(a['sections'], z['sections']) for x, y in zip(p, q)]
     for en, zh in pairs:
         TR.setdefault(E(en), {}).update({'zh-CN': zh, 'zh-TW': _cc(zh)})
+# Malay, Japanese and Korean article texts
+OT = json.load(open(os.path.join(HERE, 'mm2h_articles_i18n.json'), encoding='utf-8'))
+for lang, arts in OT.items():
+    for a in A:
+        z = arts.get(a['slug'])
+        if not z:
+            continue
+        pairs = [(a['title'], z['title']), (a['desc'], z['desc']), (a['take'], z['take'])]
+        pairs += [(x, y) for p, q in zip(a['facts'], z['facts']) for x, y in zip(p, q)]
+        pairs += [(x, y) for p, q in zip(a['sections'], z['sections']) for x, y in zip(p, q)]
+        for en, tr in pairs:
+            TR.setdefault(E(en), {})[lang] = tr
 MIN_READ = {'zh-CN': '{n} 分钟阅读', 'zh-TW': '{n} 分鐘閱讀', 'ms': '{n} minit bacaan', 'ja': '{n}分で読めます', 'ko': '{n}분 읽기'}
 
 
