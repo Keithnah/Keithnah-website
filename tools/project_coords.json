@@ -393,5 +393,105 @@
   3.1598,
   101.7072,
   "address"
+ ],
+ "Aras Residences": [
+  3.0721,
+  101.6658,
+  "manual"
+ ],
+ "Aricia Residences": [
+  3.1195,
+  101.712,
+  "manual"
+ ],
+ "Arte Solaris": [
+  3.174424,
+  101.659158,
+  "project"
+ ],
+ "Aster Hill Sri Petaling": [
+  3.075043,
+  101.69046,
+  "project"
+ ],
+ "Aurum Business Centre": [
+  3.061404,
+  101.687077,
+  "project"
+ ],
+ "Ayanna Resort Residences": [
+  3.053346,
+  101.680294,
+  "project"
+ ],
+ "EkoTitiwangsa": [
+  3.174691,
+  101.696394,
+  "project"
+ ],
+ "Est8 Seputeh": [
+  3.115732,
+  101.680283,
+  "project"
+ ],
+ "Ambience KL": [
+  3.0628,
+  101.6952,
+  "manual"
+ ],
+ "Gen Starz Residences": [
+  3.098471,
+  101.67616,
+  "project"
+ ],
+ "Lunar Seputeh": [
+  3.109365,
+  101.67726,
+  "project"
+ ],
+ "M Aurora": [
+  3.096825,
+  101.675875,
+  "project"
+ ],
+ "Stellaris Riana Dutamas": [
+  3.185954,
+  101.666334,
+  "project"
+ ],
+ "Tangen Residences": [
+  3.184826,
+  101.646341,
+  "project"
+ ],
+ "Vox Residence Sentul": [
+  3.199106,
+  101.690171,
+  "project"
+ ],
+ "R&F Princess Cove Seine Region": [
+  1.4626,
+  103.769,
+  "manual"
+ ],
+ "R&F Princess Cove New Casa": [
+  1.4612,
+  103.7672,
+  "manual"
+ ],
+ "Enlace Suites II": [
+  3.096505,
+  101.665283,
+  "project"
+ ],
+ "Bangsar Hill Park Talisa (Tower B & C)": [
+  3.130813,
+  101.67338,
+  "project"
+ ],
+ "Bangsar Hill Park (Tower D & E)": [
+  3.129174,
+  101.675727,
+  "project"
  ]
 }

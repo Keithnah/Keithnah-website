@@ -1,4 +1,8 @@
 {
+ "bangsar": {
+  "h": "edd1308ca4c6",
+  "pages": 6
+ },
  "batu-kawan": {
   "h": "38ffea764e05",
   "pages": 6
@@ -8,8 +12,8 @@
   "pages": 7
  },
  "bukit-jalil": {
-  "h": "f8824a023790",
-  "pages": 7
+  "h": "4033c98cc746",
+  "pages": 8
  },
  "damansara-heights": {
   "h": "9c595c4295b8",
@@ -20,12 +24,12 @@
   "pages": 6
  },
  "jb-city-centre": {
-  "h": "6fa03495abd6",
-  "pages": 7
+  "h": "afae3ef80614",
+  "pages": 8
  },
  "johor": {
-  "h": "8c9ee4bcf04c",
-  "pages": 8
+  "h": "c5c38a5a08dc",
+  "pages": 9
  },
  "kl-city-centre": {
   "h": "2dd01cc91ac3",

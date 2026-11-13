@@ -18,7 +18,7 @@ os.chdir(ROOT)
 ZONES = {
     'Kuala Lumpur': [
         ('centre', ['KL City Centre', 'Bukit Bintang', 'TRX', 'Chow Kit', 'Titiwangsa', 'Jalan Ipoh', 'Pudu', 'Imbi']),
-        ('west', ['Bangsar', 'Bangsar South', 'Damansara Heights', 'Mont Kiara', 'Sri Hartamas', 'Desa ParkCity', 'Segambut', 'Kepong', 'Bukit Tunku']),
+        ('west', ['Bangsar', 'Bangsar South', 'Damansara Heights', 'Mont Kiara', 'North Kiara', 'Pantai Dalam', 'Sri Hartamas', 'Desa ParkCity', 'Segambut', 'Kepong', 'Bukit Tunku']),
         ('south', ['Bukit Jalil', 'Taman Desa', 'Kuchai Lama', 'OUG', 'Sri Petaling', 'Seputeh', 'Mid Valley', 'Old Klang Road', 'Sungai Besi']),
         ('ne', ['Ampang', 'Cheras', 'Setapak', 'Wangsa Maju', 'Sentul', 'Jalan Kuching', 'Taman Melawati'])],
     'Selangor': [

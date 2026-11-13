@@ -58,7 +58,7 @@ def compare_cards(c, todo, index):
         x = re.sub(r'(<div class="cmp-card-foot">\s*<strong>)[^<]*(</strong>)', lambda m_: m_.group(1) + E(p['price_short']) + m_.group(2), x)
         assert 'Tagbay' not in x
         out += x
-    end = c.index('  </div>\n    <div class="cmp-empty" id="cmpEmpty">')
+    end = re.search(r'  </div>\n\s*<div class="cmp-empty" id="cmpEmpty">', c).start()
     return c[:end] + out + c[end:]
 
 
@@ -127,7 +127,15 @@ def main(spec_path):
         c = c.replace('data-idx="48"', 'data-idx="%d"' % k).replace('openDetailModal(48)', 'openDetailModal(%d)' % k)
         assert 'Tagbay' not in c, c[:300]
         cards += c
-    end = s.index('  </div></div>\n  </div>', s.index('id="projGrid"')) + len('  </div>')  # after the last card, inside the grid
+    # after the last card, inside the grid: find the last card and its matching closing tag
+    st = s.rindex('<div class="proj-card"', s.index('id="projGrid"'), s.index('id="projEmpty"'))
+    depth, pos = 0, st
+    for m_ in re.finditer(r'<div\b|</div>', s[st:]):
+        depth += 1 if m_.group(0) == '<div' else -1
+        if depth == 0:
+            pos = st + m_.end()
+            break
+    end = pos
     s = s[:end] + '\n' + cards.rstrip('\n') + s[end:]
     # hero line with the project count
     s = re.sub(r'<p>\d+ active and completed projects', '<p>%d active and completed projects' % len(D), s, count=1)  # update its translations in i18n-projects-*.js too
@@ -143,11 +151,12 @@ def main(spec_path):
     c = compare_cards(c, todo, index)
     counts = {}
     for x in C:
-        counts[x['tag']] = counts.get(x['tag'], 0) + 1
+        counts[x.get('tag')] = counts.get(x.get('tag'), 0) + 1
     for tag in sorted({p['tag'] for p in todo}):
         btn = '<div class="cmp-filter-btn" data-tag="%s">' % E(tag)
-        if btn not in c:
-            last = list(re.finditer(r'\n      <div class="cmp-filter-btn" data-tag="[^"]+">[^<]*</div>', c))[-1]
+        olds = list(re.finditer(r'\n      <div class="cmp-filter-btn" data-tag="[^"]+">[^<]*</div>', c))
+        if btn not in c and olds:  # older compare pages only; area filters are now built by update_areas.py
+            last = olds[-1]
             c = c[:last.end()] + '\n      %s%s (%d)</div>' % (btn, E(tag), counts[tag]) + c[last.end():]
     c = re.sub(r'(<div class="cmp-filter-btn" data-tag="([^"]+)">)([^<(]*)\(\d+\)(</div>)',
                lambda m_: '%s%s(%d)%s' % (m_.group(1), m_.group(3), counts.get(html.unescape(m_.group(2)), 0), m_.group(4)), c)

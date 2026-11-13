@@ -551,5 +551,145 @@
 "state": "Kuala Lumpur",
 "area": "KL City Centre",
 "dev": "Chin Hin Property (Dawn Land Sdn Bhd)"
+},
+{
+"name": "Aras Residences",
+"slug": "aras-residences",
+"state": "Kuala Lumpur",
+"area": "OUG",
+"dev": "WCT Land (WCT OUG Development Sdn Bhd)"
+},
+{
+"name": "Aricia Residences",
+"slug": "aricia-residences",
+"state": "Kuala Lumpur",
+"area": "Sungai Besi",
+"dev": ""
+},
+{
+"name": "Arte Solaris",
+"slug": "arte-solaris",
+"state": "Kuala Lumpur",
+"area": "Mont Kiara",
+"dev": "Arte Corp (Solaris Ceria Sdn Bhd)"
+},
+{
+"name": "Aster Hill Sri Petaling",
+"slug": "aster-hill-sri-petaling",
+"state": "Kuala Lumpur",
+"area": "Sri Petaling",
+"dev": ""
+},
+{
+"name": "Aurum Business Centre",
+"slug": "aurum-business-centre",
+"state": "Kuala Lumpur",
+"area": "Sri Petaling",
+"dev": ""
+},
+{
+"name": "Ayanna Resort Residences",
+"slug": "ayanna-resort-residences",
+"state": "Kuala Lumpur",
+"area": "Bukit Jalil",
+"dev": ""
+},
+{
+"name": "EkoTitiwangsa",
+"slug": "ekotitiwangsa",
+"state": "Kuala Lumpur",
+"area": "Titiwangsa",
+"dev": "Ekovest Berhad"
+},
+{
+"name": "Est8 Seputeh",
+"slug": "est8",
+"state": "Kuala Lumpur",
+"area": "Seputeh",
+"dev": ""
+},
+{
+"name": "Ambience KL",
+"slug": "ambience-kl",
+"state": "Kuala Lumpur",
+"area": "Sungai Besi",
+"dev": "Faithview Group"
+},
+{
+"name": "Gen Starz Residences",
+"slug": "gen-starz-residences",
+"state": "Kuala Lumpur",
+"area": "Old Klang Road",
+"dev": "Majestic Gen Sdn Bhd"
+},
+{
+"name": "Lunar Seputeh",
+"slug": "lunar-seputeh",
+"state": "Kuala Lumpur",
+"area": "Seputeh",
+"dev": ""
+},
+{
+"name": "M Aurora",
+"slug": "m-aurora",
+"state": "Kuala Lumpur",
+"area": "Old Klang Road",
+"dev": "Mah Sing Group"
+},
+{
+"name": "Stellaris Riana Dutamas",
+"slug": "stellaris-riana-dutamas",
+"state": "Kuala Lumpur",
+"area": "Segambut",
+"dev": "IJM Land & FCW Holdings (Riana Dutamas)"
+},
+{
+"name": "Tangen Residences",
+"slug": "tangen-residences",
+"state": "Kuala Lumpur",
+"area": "North Kiara",
+"dev": ""
+},
+{
+"name": "Vox Residence Sentul",
+"slug": "vox-residence",
+"state": "Kuala Lumpur",
+"area": "Sentul",
+"dev": "Kerjaya Prospek Property Sdn Bhd"
+},
+{
+"name": "R&F Princess Cove Seine Region",
+"slug": "r-and-f-princess-cove-seine-region",
+"state": "Johor",
+"area": "JB City Centre",
+"dev": "R&F Development Sdn Bhd"
+},
+{
+"name": "R&F Princess Cove New Casa",
+"slug": "r-and-f-princess-cove-new-casa",
+"state": "Johor",
+"area": "JB City Centre",
+"dev": "R&F Development Sdn Bhd"
+},
+{
+"name": "Enlace Suites II",
+"slug": "enlace-suites-ii",
+"state": "Kuala Lumpur",
+"area": "Pantai Dalam",
+"dev": ""
+},
+{
+"name": "Bangsar Hill Park Talisa (Tower B & C)",
+"slug": "talisa-bangsar-hill-park",
+"state": "Kuala Lumpur",
+"area": "Bangsar",
+"dev": "Sunsuria (Bangsar Hill Park Development Sdn Bhd)"
+},
+{
+"name": "Bangsar Hill Park (Tower D & E)",
+"slug": "bangsar-hill-park-tower-d-and-e",
+"state": "Kuala Lumpur",
+"area": "Bangsar",
+"dev": "Sunsuria (Bangsar Hill Park Development Sdn Bhd)"
 }
 ]
