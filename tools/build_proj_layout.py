@@ -14,13 +14,28 @@ import json, os, re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 
-# KL areas by zone. Areas not listed fall into "Other areas".
-ZONES = [
-    ('centre', ['KL City Centre', 'Bukit Bintang', 'TRX', 'Chow Kit', 'Titiwangsa', 'Jalan Ipoh', 'Pudu', 'Imbi']),
-    ('west', ['Bangsar', 'Bangsar South', 'Damansara Heights', 'Mont Kiara', 'Sri Hartamas', 'Desa ParkCity', 'Segambut', 'Kepong', 'Bukit Tunku']),
-    ('south', ['Bukit Jalil', 'Taman Desa', 'Kuchai Lama', 'OUG', 'Sri Petaling', 'Seputeh', 'Mid Valley', 'Old Klang Road', 'Sungai Besi']),
-    ('ne', ['Ampang', 'Cheras', 'Setapak', 'Wangsa Maju', 'Sentul', 'Jalan Kuching', 'Taman Melawati']),
-]
+# Areas by zone for the bigger states. Areas not listed fall into "Other areas".
+ZONES = {
+    'Kuala Lumpur': [
+        ('centre', ['KL City Centre', 'Bukit Bintang', 'TRX', 'Chow Kit', 'Titiwangsa', 'Jalan Ipoh', 'Pudu', 'Imbi']),
+        ('west', ['Bangsar', 'Bangsar South', 'Damansara Heights', 'Mont Kiara', 'Sri Hartamas', 'Desa ParkCity', 'Segambut', 'Kepong', 'Bukit Tunku']),
+        ('south', ['Bukit Jalil', 'Taman Desa', 'Kuchai Lama', 'OUG', 'Sri Petaling', 'Seputeh', 'Mid Valley', 'Old Klang Road', 'Sungai Besi']),
+        ('ne', ['Ampang', 'Cheras', 'Setapak', 'Wangsa Maju', 'Sentul', 'Jalan Kuching', 'Taman Melawati'])],
+    'Selangor': [
+        ('pj', ['Petaling Jaya', 'Ara Damansara', 'Damansara Perdana', 'Damansara Damai', 'Damansara Utama', 'Mutiara Damansara', 'Kota Damansara', 'Bandar Utama']),
+        ('kwasa', ['Kwasa Damansara', 'Bandar Sri Damansara', 'Sungai Buloh', 'Kwasa Sentral']),
+        ('subang', ['Subang Jaya', 'USJ', 'Shah Alam', 'Glenmarie']),
+        ('ssel', ['Puchong', 'Cyberjaya', 'Kajang', 'Seri Kembangan', 'Bangi', 'Semenyih', 'Putrajaya']),
+        ('klang', ['Klang', 'Setia Alam', 'Bukit Raja'])],
+    'Penang': [
+        ('island', ['George Town', 'Gelugor', 'Tanjung Bungah', 'Paya Terubong', 'Bayan Lepas', 'Air Itam', 'Tanjung Tokong', 'Batu Ferringhi', 'Jelutong']),
+        ('mainland', ['Batu Kawan', 'Butterworth', 'Bukit Mertajam', 'Seberang Perai', 'Simpang Ampat'])],
+}
+ZKEYS = {'en': {'pj': 'PJ & Damansara', 'kwasa': 'Kwasa & Sungai Buloh', 'subang': 'Subang & Shah Alam', 'ssel': 'South Selangor', 'klang': 'Klang', 'island': 'Penang Island', 'mainland': 'Penang Mainland'},
+         'zh-CN': {'pj': '八打灵再也 & Damansara', 'kwasa': 'Kwasa & 双溪毛糯', 'subang': '梳邦 & 莎阿南', 'ssel': '南雪兰莪', 'klang': '巴生', 'island': '槟岛', 'mainland': '槟城威省'},
+         'ms': {'pj': 'PJ & Damansara', 'kwasa': 'Kwasa & Sungai Buloh', 'subang': 'Subang & Shah Alam', 'ssel': 'Selangor Selatan', 'klang': 'Klang', 'island': 'Pulau Pinang', 'mainland': 'Seberang Perai'},
+         'ja': {'pj': 'PJ・Damansara', 'kwasa': 'Kwasa・Sungai Buloh', 'subang': 'Subang・Shah Alam', 'ssel': 'セランゴール南部', 'klang': 'Klang', 'island': 'ペナン島', 'mainland': 'ペナン本土側'},
+         'ko': {'pj': 'PJ & Damansara', 'kwasa': 'Kwasa & Sungai Buloh', 'subang': 'Subang & Shah Alam', 'ssel': '슬랑오르 남부', 'klang': 'Klang', 'island': '페낭 섬', 'mainland': '페낭 본토'}}
 
 T = {
     'en': {'centre': 'City Centre', 'west': 'West KL', 'south': 'South KL', 'ne': 'North & East KL', 'other': 'Other areas',
@@ -46,6 +61,8 @@ T = {
 }
 import opencc
 _cc = opencc.OpenCC('s2tw').convert
+for _l in ZKEYS:
+    T[_l].update(ZKEYS[_l])
 T['zh-TW'] = {k: _cc(v) for k, v in T['zh-CN'].items()}
 
 CSS = r'''
@@ -89,8 +106,9 @@ document.querySelectorAll('.sb-zg').forEach(function(g){g.querySelectorAll('.sb-
 var oc=document.querySelector('.pl-bar #sbCount');if(oc){var ob=oc.parentNode;ob.parentNode.insertBefore(oc,ob);}
 document.querySelectorAll('[data-pl],.pl-h,.pl-x').forEach(function(x){x.remove();});
 grid.querySelectorAll('.pl-hide').forEach(function(c){c.classList.remove('pl-hide');});
-var KL='Kuala Lumpur',ZOF={};ZONES.forEach(function(z){z[1].forEach(function(a){ZOF[a]=z[0];});});
-function zoneOf(a){return ZOF[a]||'other';}
+var KL='Kuala Lumpur',ZOF={};Object.keys(ZONES).forEach(function(s){ZOF[s]={};ZONES[s].forEach(function(z){z[1].forEach(function(a){ZOF[s][a]=z[0];});});});
+function zoneOf(s,a){return ZONES[s]?(ZOF[s][a]||'other'):null;}
+function zorder(s){return ZONES[s]?ZONES[s].map(function(z){return z[0];}).concat(['other']):[];}
 function lg(){var l='en';try{l=localStorage.getItem('kn_lang')||document.documentElement.lang||'en'}catch(e){}return T[l]?l:'en';}
 function t(k,n){var s=(T[lg()][k]||T.en[k]);return n==null?s:s.replace('{n}',n);}
 function slug(x){return x.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -103,15 +121,15 @@ function price(c){var p=String(D(c).price||''),m=p.replace(/,/g,'').match(/RM\s*
 function comp(c){var s=String(D(c).completion||'');if(/^completed/i.test(s))return 0;var y=s.match(/\b(20[2-4]\d)\b/);if(!y)return null;var q=s.match(/Q([1-4])\s*20/i),mo=s.match(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+20/i);
 var f=q?(+q[1]-1)/4:(mo?'janfebmaraprmayjunjulaugsepoctnovdec'.indexOf(mo[1].toLowerCase())/36:0.99);return +y[1]+f;}
 /* ---------- 1. KL zones in the side filter ---------- */
-var klBox=box.querySelector('.sb-state[data-state="'+KL+'"] .sb-areas');
+Object.keys(ZONES).forEach(function(ST){var klBox=box.querySelector('.sb-state[data-state="'+ST+'"] .sb-areas');
 if(klBox){var allBtn=klBox.querySelector('.sb-area[data-area="All"]'),guide=klBox.querySelector('.sb-guide'),groups={};
-  klBox.querySelectorAll('.sb-area:not([data-area="All"])').forEach(function(b){var z=zoneOf(b.getAttribute('data-area'));(groups[z]=groups[z]||[]).push(b);});
-  ZONES.map(function(z){return z[0];}).concat(['other']).forEach(function(z){if(!groups[z])return;
+  klBox.querySelectorAll('.sb-area:not([data-area="All"])').forEach(function(b){var z=zoneOf(ST,b.getAttribute('data-area'));(groups[z]=groups[z]||[]).push(b);});
+  var zs=zorder(ST).filter(function(z){return groups[z];});if(zs.length<2&&zs[0]==='other')return;zs.forEach(function(z){if(!groups[z])return;
     var g=document.createElement('div');g.className='sb-zg';g.setAttribute('data-pl','');g.setAttribute('data-zone',z);
     var n=groups[z].reduce(function(s,b){return s+(+(b.querySelector('em')||{}).textContent||0);},0);
     var zb=document.createElement('button');zb.type='button';zb.className='sb-zone';zb.setAttribute('data-zone',z);zb.innerHTML='<span></span><em>'+n+'</em>';g.appendChild(zb);
     groups[z].forEach(function(b){g.appendChild(b);});klBox.insertBefore(g,guide||null);});
-  if(allBtn)klBox.insertBefore(allBtn,klBox.firstChild);}
+  if(allBtn)klBox.insertBefore(allBtn,klBox.firstChild);}});
 /* ---------- state ---------- */
 var S={s:'All',a:'All',z:null,sort:'az',open:{},shown:12};
 function readSide(){var cur=box.querySelector('.sb-state.current');if(!cur||box.querySelector('.sb-all.active'))return ['All','All'];var a=cur.querySelector('.sb-area.active');return [cur.getAttribute('data-state'),a?a.getAttribute('data-area'):'All'];}
@@ -137,24 +155,24 @@ chips.addEventListener('click',function(e){var b=e.target.closest('.pl-c');if(!b
   if(p[0]==='all')box.querySelector('.sb-all').click();
   else if(p[0]==='state')box.querySelector('.sb-state[data-state="'+p[1]+'"] .sb-area[data-area="All"]').click();
   else if(p[0]==='area')box.querySelector('.sb-state[data-state="'+S.s+'"] .sb-area[data-area="'+p[1].replace(/"/g,'\\"')+'"]').click();
-  else if(p[0]==='zone')showZone(p[1]);
+  else if(p[0]==='zone')showZone(S.s,p[1]);
   setTimeout(function(){var y=grid.getBoundingClientRect().top+window.pageYOffset-150;if(window.pageYOffset>y)window.scrollTo({top:y,behavior:'smooth'});},30);});
 /* ---------- zone filter ---------- */
-function showZone(z){if(typeof window.knShowArea==='function')window.knShowArea(KL,'All');var n=0;
-  cards.forEach(function(c){var ok=c.getAttribute('data-state')===KL&&zoneOf(c.getAttribute('data-area'))===z;c.style.display=ok?'flex':'none';if(ok)n++;});
+function showZone(ST,z){if(typeof window.knShowArea==='function')window.knShowArea(ST,'All');var n=0;
+  cards.forEach(function(c){var ok=c.getAttribute('data-state')===ST&&zoneOf(ST,c.getAttribute('data-area'))===z;c.style.display=ok?'flex':'none';if(ok)n++;});
   box.querySelectorAll('.sb-area').forEach(function(b){b.classList.remove('active');});
-  box.querySelectorAll('.sb-zone').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-zone')===z);});
-  var cur=document.getElementById('sbCurrent');if(cur)cur.textContent=(box.querySelector('.sb-state[data-state="'+KL+'"] .sb-name')||{}).textContent+' › '+t(z);
+  box.querySelectorAll('.sb-zone').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-zone')===z&&b.closest('.sb-state').getAttribute('data-state')===ST);});
+  var cur=document.getElementById('sbCurrent');if(cur)cur.textContent=(box.querySelector('.sb-state[data-state="'+ST+'"] .sb-name')||{}).textContent+' › '+t(z);
   var c=document.getElementById('sbCount');if(c)c.textContent=(n===1?t('n1'):t('n',n))+' · '+t(z);
-  S.s=KL;S.a='All';S.z=z;S.open={};S.shown=12;layout();}
+  S.s=ST;S.a='All';S.z=z;S.open={};S.shown=12;layout();}
 /* ---------- 2. sections per area + 5. show more + 6. map ---------- */
 function clear(){grid.querySelectorAll('.pl-h,.pl-x').forEach(function(x){x.remove();});cards.forEach(function(c){c.classList.remove('pl-hide');});var m=document.querySelector('.pl-more');if(m)m.remove();}
 function layout(){clear();var vis=visible(),lim=MOB()?4:6;
   if(S.s!=='All'&&S.a==='All'&&vis.length){var by={},areas=[];vis.forEach(function(c){var a=c.getAttribute('data-area');if(!by[a]){by[a]=[];areas.push(a);}by[a].push(c);});
-    var zi=function(a){var z=zoneOf(a),i=ZONES.map(function(q){return q[0];}).indexOf(z);return S.s===KL?(i<0?9:i):0;};
+    var zi=function(a){var i=zorder(S.s).indexOf(zoneOf(S.s,a));return i<0?0:i;};
     areas.sort(function(a,b){return zi(a)-zi(b)||by[b].length-by[a].length||(a<b?-1:1);});
     if(areas.length>1){var frag=document.createDocumentFragment(),lastZ=null;
-      areas.forEach(function(a){var list=sorted(by[a]),z=S.s===KL?zoneOf(a):null,h=document.createElement('div');h.className='pl-h';
+      areas.forEach(function(a){var list=sorted(by[a]),z=zoneOf(S.s,a),h=document.createElement('div');h.className='pl-h';
         h.innerHTML='<h3>'+(z&&z!==lastZ&&!S.z?'<i>'+t(z)+'</i>':'')+a.replace(/</g,'&lt;')+'<small>'+(list.length===1?t('n1'):t('n',list.length))+'</small></h3><a href="'+root+'area/'+slug(a)+'.html">'+t('guide')+'</a>';lastZ=z;
         frag.appendChild(h);list.forEach(function(c,i){if(i>=lim&&!S.open[a])c.classList.add('pl-hide');frag.appendChild(c);});
         if(list.length>lim){var x=document.createElement('div');x.className='pl-x';x.innerHTML='<button type="button">'+(S.open[a]?t('less'):t('all',list.length))+'</button>';
@@ -174,14 +192,14 @@ function zoom(vis){var m=window.KN_MAP,P=window.KN_MAP_P;if(!m||!P||!window.L)re
   try{if(b.length===1)m.setView(b[0],15);else m.fitBounds(b,{padding:[40,40],maxZoom:15});}catch(e){}}
 /* ---------- hooks ---------- */
 function sync(){var r=readSide();S.s=r[0];S.a=r[1];S.z=null;S.open={};S.shown=12;box.querySelectorAll('.sb-zone').forEach(function(b){b.classList.remove('active');});layout();}
-box.addEventListener('click',function(e){var z=e.target.closest('.sb-zone');if(z){showZone(z.getAttribute('data-zone'));box.classList.remove('open');return;}
+box.addEventListener('click',function(e){var z=e.target.closest('.sb-zone');if(z){showZone(z.closest('.sb-state').getAttribute('data-state'),z.getAttribute('data-zone'));box.classList.remove('open');return;}
   if(e.target.closest('.sb-all,.sb-area'))setTimeout(sync,0);});
 document.addEventListener('click',function(e){if(e.target.closest('.ptag,#tagSection .ts-opt,#tsClear,.ts-chip,#psGo'))setTimeout(function(){S.s='All';S.a='All';S.z=null;S.shown=12;layout();},10);},true);
-function hashZone(){var h='';try{h=decodeURIComponent((location.hash||'').slice(1));}catch(e){}var m=h.match(/^Kuala Lumpur\/zone:(\w+)$/);if(!m)return false;showZone(m[1]);setTimeout(function(){grid.scrollIntoView({behavior:'smooth',block:'start'});},80);return true;}
+function hashZone(){var h='';try{h=decodeURIComponent((location.hash||'').slice(1));}catch(e){}var m=h.match(/^(.+)\/zone:(\w+)$/);if(!m||!ZONES[m[1]])return false;showZone(m[1],m[2]);setTimeout(function(){grid.scrollIntoView({behavior:'smooth',block:'start'});},80);return true;}
 window.addEventListener('hashchange',function(){setTimeout(function(){if(!hashZone())sync();},120);});
 function texts(){bar.querySelector('span').textContent=t('sort');['az','plh','phl','comp'].forEach(function(k,i){sel.options[i].textContent=t(k);});
   box.querySelectorAll('.sb-zone').forEach(function(b){b.querySelector('span').textContent=t(b.getAttribute('data-zone'));});}
-['setLanguage','knSetLang'].forEach(function(fn){var f=window[fn];if(typeof f==='function')window[fn]=function(){var r=f.apply(this,arguments);try{texts();if(S.z)showZone(S.z);else layout();}catch(err){}return r;};});
+['setLanguage','knSetLang'].forEach(function(fn){var f=window[fn];if(typeof f==='function')window[fn]=function(){var r=f.apply(this,arguments);try{texts();if(S.z)showZone(S.s,S.z);else layout();}catch(err){}return r;};});
 var mq=window.matchMedia('(max-width:900px)');if(mq.addEventListener)mq.addEventListener('change',function(){layout();});
 texts();setTimeout(function(){if(!hashZone())sync();},150);
 })();'''
@@ -204,7 +222,7 @@ def main():
     i = s.index('<!-- KN-AREAS:JS:END -->') + len('<!-- KN-AREAS:JS:END -->\n')
     s = s[:i] + block + s[i:]
     open(p, 'w', encoding='utf-8').write(s)
-    print('projects layout: %d KL zones, sort, sections, mobile chips, map zoom' % len(ZONES))
+    print('projects layout: zones for %s, sort, sections, mobile chips, map zoom' % ', '.join(ZONES))
 
 
 if __name__ == '__main__':

@@ -83,11 +83,22 @@ ST = {  # [en, zh-CN, zh-TW, ms, ja, ko]
     'Kelantan': ['Kelantan', '吉兰丹', '吉蘭丹', 'Kelantan', 'クランタン', '클란탄'],
 }
 ALLOF = ['All {s}', '全部{s}', '全部{s}', 'Semua {s}', '{s}のすべて', '{s} 전체']
-ZL = {z: [ZT[l][z] for l in ['en', 'zh-CN', 'zh-TW', 'ms', 'ja', 'ko']] for z in ['centre', 'west', 'south', 'ne', 'other']}
+ZL = {z: [ZT[l][z] for l in ['en', 'zh-CN', 'zh-TW', 'ms', 'ja', 'ko']] for z in {q[0] for v in ZONES.values() for q in v} | {'other'}}
 
 
 def _esc(x):
     return x.replace('&', '&amp;').replace('<', '&lt;').replace('"', '&quot;')
+
+
+def _slug(x):
+    return re.sub(r'^-|-$', '', re.sub(r'[^a-z0-9]+', '-', x.lower().replace('&', 'and')))
+
+
+def area_href(prefix, st, a):
+    """An area with its own landing page links there; otherwise to the filtered project list."""
+    if os.path.exists(os.path.join(ROOT, 'area', _slug(a) + '.html')):
+        return prefix + 'area/' + _slug(a) + '.html'
+    return prefix + 'projects.html#' + urllib.parse.quote(st + '/' + a)
 
 
 def flyout(prefix):
@@ -101,17 +112,19 @@ def flyout(prefix):
         name = ST.get(st, [st] * 6)[0]
         left += '<a class="knm-fs%s" data-fs="%d" href="%s"><span data-kst="%s">%s</span><em>%d</em></a>' % (on, i, h(st), _esc(st), _esc(name), cnt[st])
         areas = sorted({a for s, a in PLACES if s == st}, key=lambda a: (-acnt[(st, a)], a))
-        if st == 'Kuala Lumpur':
-            zof = {a: z for z, lst in ZONES for a in lst}
-            groups = [(z, [a for a in areas if zof.get(a, 'other') == z]) for z in [q[0] for q in ZONES] + ['other']]
+        if st in ZONES:
+            zof = {a: z for z, lst in ZONES[st] for a in lst}
+            groups = [(z, [a for a in areas if zof.get(a, 'other') == z]) for z in [q[0] for q in ZONES[st]] + ['other']]
             groups = [g for g in groups if g[1]]
+            if len(groups) == 1 and groups[0][0] == 'other':
+                groups = [(None, areas)]
         else:
             groups = [(None, areas)]
         cols = ''
         for z, lst in groups:
-            head = ('<a class="knm-fz" href="%s" data-kz="%s">%s</a>' % (h(st + '/zone:' + z), z, ZL[z][0])) if z else ''
+            head = ('<a class="knm-fz" href="%s" data-kz="%s">%s</a>' % (h(st + '/zone:' + z), z, _esc(ZL[z][0]))) if z else ''
             cols += '<div class="knm-col%s">%s%s</div>' % ('' if z else ' knm-one', head, ''.join(
-                '<a class="knm-fa" href="%s">%s<em>%d</em></a>' % (h(st + '/' + a), _esc(a), acnt[(st, a)]) for a in lst))
+                '<a class="knm-fa" href="%s">%s<em>%d</em></a>' % (area_href(prefix, st, a), _esc(a), acnt[(st, a)]) for a in lst))
         right += ('<div class="knm-fp%s" data-fp="%d"><a class="knm-fall" href="%s"><span data-kall="%s">%s</span> (%d) →</a><div class="knm-cols">%s</div></div>'
                   % (on, i, h(st), _esc(st), ALLOF[0].replace('{s}', _esc(ST.get(st, [st])[0])), cnt[st], cols))
     return '<div class="knm-fly"><div class="knm-fl">%s</div><div class="knm-fr">%s</div></div>' % (left, right)
@@ -142,8 +155,8 @@ CSS = ('<style id="kn-submenu-css">'
        '.knm-d a em{font-style:normal;font-size:11.5px;color:#8b8aa0;font-weight:600}a.knm-fs.on{background:#f1efff;color:#5E60CE!important}'
        '.knm-fr{flex:1;padding:14px 16px 16px;max-height:min(560px,72vh);overflow:auto}.knm-fp{display:none}.knm-fp.on{display:block}'
        'header nav .knm-d a.knm-fall{display:inline-block!important;color:#5E60CE!important;font-size:13px!important;padding:6px 10px!important;margin-bottom:6px!important}'
-       '.knm-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px 14px}.knm-one{grid-column:1/-1;column-count:3;column-gap:14px}.knm-one a{break-inside:avoid}'
-       'header nav .knm-d a.knm-fz{font-size:11px!important;font-weight:700!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:#a0782c!important;padding:10px 10px 6px!important}'
+       '.knm-cols{display:block}.knm-col{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 14px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px solid #f0eef8}.knm-col:last-child{border-bottom:0;margin-bottom:0}.knm-col .knm-fz{grid-column:1/-1}'
+       'header nav .knm-d a.knm-fz{font-size:11px!important;font-weight:700!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:#a0782c!important;padding:10px 10px 6px!important;white-space:normal!important;line-height:1.4}'
        'header nav .knm-d a.knm-fa{display:flex!important;justify-content:space-between;gap:8px;font-weight:500!important;color:#3a3950!important;white-space:normal}'
        '#knMnav .knm-fly,#knMnav .knm-ar{display:none!important}'
        '@media(max-width:1349px){.knm-fly{display:none!important}}'

@@ -152,6 +152,21 @@ th{background:#5E60CE;color:#fff;font-weight:600;font-size:12.5px;letter-spacing
 .note{font-size:12px;color:var(--grey);margin-bottom:40px;}
 footer{border-top:1px solid var(--line);padding:26px 5vw;font-size:13px;color:var(--grey);text-align:center;}
 @media(max-width:760px){.facts{grid-template-columns:1fr 1fr;}.facts div:nth-child(3){border-left:0;}.facts div{border-top:1px solid var(--line);}.facts div:nth-child(-n+2){border-top:0;}}
+.hero2{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:34px;align-items:center;position:relative;overflow:hidden;
+  margin:6px 0 40px;padding:46px 44px;border-radius:24px;color:#fff;isolation:isolate;
+  background:linear-gradient(115deg,rgba(29,27,79,.97) 0%,rgba(46,43,125,.93) 45%,rgba(94,96,206,.80) 100%),var(--hero,none) center/cover no-repeat,#2e2b7d;
+  box-shadow:0 24px 60px -24px rgba(29,27,79,.55)}
+.hero2:after{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;border:1px solid rgba(255,255,255,.14);z-index:-1}
+.hero2 .eyebrow{color:#c9c7ff;display:inline-flex;align-items:center;gap:10px}.hero2 .eyebrow:before{content:"";width:26px;height:1.5px;background:#c9c7ff}
+.hero2 h1{color:#fff;font-size:clamp(30px,4vw,46px);margin:12px 0 14px}
+.hero2 p{color:rgba(255,255,255,.84);font-size:15.5px;max-width:620px}
+.h2-b{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.h2-b .wa-btn{margin-left:0!important}
+.h2-go{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,.55);color:#fff;border-radius:100px;padding:10px 20px;font-weight:600;font-size:14px;transition:background .2s}
+.h2-go:hover{background:rgba(255,255,255,.14)}
+.hero2 .facts{grid-template-columns:1fr 1fr;gap:12px;background:none;border:0;border-radius:0;margin:0}
+.hero2 .facts div{border:1px solid rgba(255,255,255,.18)!important;border-radius:16px;padding:18px 18px 16px;background:rgba(255,255,255,.09);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.hero2 .facts span{color:rgba(255,255,255,.7)}.hero2 .facts strong{display:block;color:#fff;font-size:24px;margin-top:6px;line-height:1.2}
+@media(max-width:860px){.hero2{grid-template-columns:1fr;padding:30px 22px;gap:24px;border-radius:20px}.hero2 .facts div{padding:14px}.hero2 .facts strong{font-size:20px}}
 '''
 
 NAV = [('', 'Home'), ('projects.html', 'View Projects'), ('compare.html', 'Compare Projects'), ('blog.html', 'News'),
@@ -233,6 +248,14 @@ def map_block(place, ids, root, heading=None):
             'm.addLayer(g);function home(){if(b.length===1)m.setView(b[0],15);else m.fitBounds(b,{padding:[40,40],maxZoom:15});}home();var AL={en:"View all","zh-CN":"查看全部","zh-TW":"查看全部",ms:"Lihat semua",ja:"すべて表示",ko:"전체 보기"};var Ctl=L.Control.extend({options:{position:"topleft"},onAdd:function(){var d=L.DomUtil.create("button","kmap-all");d.type="button";var lb=function(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}d.innerHTML="<svg viewBox=\\"0 0 24 24\\"><path d=\\"M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5\\"/></svg><span>"+(AL[l]||AL.en)+"</span>";};lb();L.DomEvent.disableClickPropagation(d);d.onclick=function(){m.closePopup();home();};document.addEventListener("click",function(){setTimeout(lb,50)});return d;}});m.addControl(new Ctl());})();</script>') % (
         root, root, MAP_CSS, heading or ('Map of new launches in %s' % E(place)), root, root, json.dumps(pts, ensure_ascii=False).replace('</', '<\\/'),
         json.dumps({'en': ['From', 'View project'], 'zh-CN': ['起价', '查看项目'], 'zh-TW': ['起價', '查看項目'], 'ms': ['Dari', 'Lihat projek'], 'ja': ['', 'プロジェクトを見る'], 'ko': ['', '프로젝트 보기']}, ensure_ascii=False))
+
+
+def hero_img(ids, root):
+    """Background photo for the page header: the first project in the area that has one."""
+    for k in ids:
+        if PHOTO.get(k):
+            return ' style="--hero:url(\'%s%s\')"' % (root, E(PHOTO[k]))
+    return ''
 
 
 def page(state, area, ids, tree, root):
@@ -343,14 +366,17 @@ def page(state, area, ids, tree, root):
 </header>
 <main class="wrap">
   <nav class="crumbs" aria-label="Breadcrumb">{crumbs}</nav>
-  <section class="hero">
+  <section class="hero hero2"{heroimg}>
+    <div class="h2-l">
     <span class="eyebrow">{eyebrow}</span>
     <h1>New Launch Condos in {place} ({year})</h1>
     <p>{intro} Keith Nah currently lists {n} project{s} here{lowtxt}. Compare starting prices, sizes, tenure and completion dates below, then open any project for its floor plans.</p>
+    <div class="h2-b"><a class="wa-btn" href="{wa}" target="_blank" rel="noopener">WhatsApp Keith</a><a class="h2-go" href="#area-projects"><span>Projects in {place}</span> <i aria-hidden="true">↓</i></a></div>
+    </div>
     <div class="facts"><div><span>Projects</span><strong>{n}</strong></div><div><span>Starting from</span><strong>{low}</strong></div><div><span>Freehold</span><strong>{free} of {n}</strong></div><div><span>Completion</span><strong>{years}</strong></div></div>
   </section>
   {map_blk}
-  <section class="blk"><h2>Projects in {place}</h2><div class="cards">{cards}</div></section>
+  <section class="blk" id="area-projects"><h2>Projects in {place}</h2><div class="cards">{cards}</div></section>
   <section class="blk"><h2>Compare at a glance</h2><div class="tbl"><table><thead>{head}</thead><tbody>{rows}</tbody></table></div></section>
   <section class="blk faq"><h2>Buying in {place}: common questions</h2>{faq}</section>
   {more}
@@ -367,7 +393,7 @@ def page(state, area, ids, tree, root):
            nav=nav, wa=E(wa), crumbs=crumbs, eyebrow=E(state if area else 'Malaysia'), place=E(place), year=YEAR,
            intro=E(INTRO.get(place, '')), n=n, s='' if n == 1 else 's', lowtxt=(', starting from about %s (gross)' % rm(low[0])) if low else '',
            low=rm(low[0]) if low else '—', free=len(free), years=('%d – %d' % (years[0], years[-1]) if len(years) > 1 else (str(years[0]) if years else 'TBC')),
-           cards=cards, map_blk=map_block(place, ids, root), fcss=FW.FLOAT_CSS, floatwa=FW.float_html(E(wa)), head=head, rows=rows, faq=faq_html, more=more, states=states)
+           cards=cards, map_blk=map_block(place, ids, root), heroimg=hero_img(ids, root), fcss=FW.FLOAT_CSS, floatwa=FW.float_html(E(wa)), head=head, rows=rows, faq=faq_html, more=more, states=states)
 
 
 def _register():
