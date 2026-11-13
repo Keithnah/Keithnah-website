@@ -2359,11 +2359,28 @@
   },
   "layouts": [
    {
+    "type": "Type A",
+    "size": "527 sqft",
+    "rooms": "2 Rooms",
+    "tag": "Entry",
+    "desc": "The smallest layout.",
+    "img": "images/2c88e336294b4293.jpg"
+   },
+   {
+    "type": "Type A2",
+    "size": "625 sqft",
+    "rooms": "2 Rooms",
+    "tag": "",
+    "desc": "A mid-size family layout.",
+    "img": "images/0d8962f82c169b94.jpg"
+   },
+   {
     "type": "Type C",
     "size": "840 sqft",
-    "rooms": "3 Bedrooms",
+    "rooms": "3 Rooms",
     "tag": "Show unit",
-    "desc": "The largest layout."
+    "desc": "The largest layout.",
+    "img": "images/c1ca21d5d8372fb6.jpg"
    }
   ],
   "tags": [
@@ -2444,16 +2461,26 @@
    {
     "type": "Type A",
     "size": "527 sqft",
-    "rooms": "1 Bedroom",
+    "rooms": "2 Rooms",
     "tag": "Entry",
-    "desc": "The smallest layout."
+    "desc": "The smallest layout.",
+    "img": "images/032782822d3559ad.jpg"
    },
    {
-    "type": "Type C",
-    "size": "947 sqft",
-    "rooms": "3 Bedrooms",
-    "tag": "Largest",
-    "desc": "The largest layout."
+    "type": "Type C6",
+    "size": "840 sqft",
+    "rooms": "3 Rooms",
+    "tag": "",
+    "desc": "A larger family layout.",
+    "img": "images/cde2aa42f90a48f2.jpg"
+   },
+   {
+    "type": "Type B2",
+    "size": "872 sqft",
+    "rooms": "2 Rooms",
+    "tag": "",
+    "desc": "The largest layout.",
+    "img": "images/27087862c45bc1c2.jpg"
    }
   ],
   "tags": [
