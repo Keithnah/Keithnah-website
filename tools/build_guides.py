@@ -165,7 +165,7 @@ def pdf_html(g, map_png):
     pages = []
     # cover
     pages.append('<section class="pg cover"><div class="ph" style="background-image:url(\'%s\')"></div><div class="sh"></div>'
-                 '<div class="brand"><img src="file://%s/images/f304c8479b1fe873.png" alt=""><div>Keith Nah 鈞晖<small>KEITH NAH REAL ESTATE</small></div></div>'
+                 '<div class="brand"><img src="file://%s/images/f304c8479b1fe873.png" alt=""><div>Keith Nah 鈞晖<small>MALAYSIA REAL ESTATE</small></div></div>'
                  '<div class="in"><span class="tag">Free buyer\'s guide · %s</span><h1>%s</h1><h2>New launch projects, compared side by side</h2>'
                  '<div class="st"><div><b>%d</b><span>Projects</span></div><div><b>%s</b><span>Starting from</span></div><div><b>%d of %d</b><span>Freehold</span></div><div><b>%s</b><span>Completion</span></div></div></div></section>' % (
                      cov, ROOT, MONTH, E(g['area']), g['n'], rm(f['low']), f['free'], g['n'], E(yr_txt)))
@@ -405,7 +405,7 @@ def landing(g, all_g):
            'dl': '<svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>'}
     wa_q = waq('Hi Keith, I downloaded the %s guide and have a few questions.' % g['area'])
     body = '''<header>
-  <a class="logo" href="../"><img src="../images/f304c8479b1fe873.png" alt="Keith Nah logo"><span><b>Keith Nah 鈞晖</b><small>Keith Nah Real Estate</small></span></a>
+  <a class="logo" href="../"><img src="../images/f304c8479b1fe873.png" alt="Keith Nah logo"><span><b>Keith Nah 鈞晖</b><small>Malaysia Real Estate</small></span></a>
   <nav></nav>
   <a class="wa-btn" href="{wa}" target="_blank" rel="noopener">WhatsApp Keith</a>
 </header>

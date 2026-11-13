@@ -158,7 +158,7 @@ def header(root, active, wa):
                                                ('<span data-nav="%s">%s</span>' % (E(t), E(t))) if t in NAV_TR else E(t)) for h, t in NAV)
     langs = ''.join('<a data-v="%s" onclick="knSetLang(\'%s\')"><img class="kn-flag" src="%simages/flags/%s.svg" alt="" width="20" height="15">%s</a>' % (c, c, root, f, n) for c, f, n in LANGS)
     curs = ''.join('<a data-v="%s" onclick="knSetCur(\'%s\')"><img class="kn-flag" src="%simages/flags/%s.svg" alt="" width="20" height="15">%s — %s</a>' % (c, c, root, f, c, n) for c, f, n in CURS)
-    return ('<header>\n  <a class="logo" href="%s"><img src="%simages/f304c8479b1fe873.png" alt="Keith Nah logo"><span><b>Keith Nah 鈞晖</b><small>Keith Nah Real Estate</small></span></a>\n'
+    return ('<header>\n  <a class="logo" href="%s"><img src="%simages/f304c8479b1fe873.png" alt="Keith Nah logo"><span><b>Keith Nah 鈞晖</b><small>Malaysia Real Estate</small></span></a>\n'
             '  <nav>%s</nav>\n  <div class="nav-right">\n'
             '    <div class="kn-sw"><span class="kn-sel" onclick="knTog(\'knLangMenu\',event)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9z"/></svg><span id="knLangLab">English</span></span><div class="kn-menu" id="knLangMenu">%s</div></div>\n'
             '    <div class="kn-sw"><span class="kn-sel" onclick="knTog(\'knCurMenu\',event)"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="5"/><circle cx="16" cy="16" r="5"/></svg><span id="knCurLab">MYR</span></span><div class="kn-menu cur" id="knCurMenu">%s</div></div>\n'
