@@ -317,5 +317,11 @@
 "yt.more": "Keith의 YouTube 채널에서 더 많은 영상 보기 →",
 "map.note": "핀은 각 프로젝트의 대략적인 위치입니다. 핀을 누르면 프로젝트를 볼 수 있습니다.",
 "tpl.map_h2": "{place} 신규 분양 지도",
-"pm.h2": "전체 신규 분양 지도"
+"pm.h2": "전체 신규 분양 지도",
+"pp.cta_price": "최신 가격표 받기",
+"pp.cta_brochure": "브로슈어와 상세 자료 받기",
+"pp.cta_units": "남은 세대 확인하기",
+"pp.cta_view": "방문 또는 영상 투어 예약",
+"pp.cta_fit": "나에게 맞을까요? Keith에게 문의",
+"pp.cta_foreign": "외국인 구매자? 구매 가능 여부 확인"
 }
