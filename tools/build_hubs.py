@@ -410,6 +410,10 @@ blk = '<style>%s</style><section class="hb-wrap">%s%s<div class="hb-vs">%s</div>
 
 
 def after_cmp_hero(t):
+    # Keith: the head-to-head comparisons sit right above "Popular comparisons"
+    k = t.find('<!-- KN-CMP-PRESETS:START -->')
+    if k >= 0:
+        return k
     i = t.find('class="cmp-hero"')
     if i < 0:
         return None
