@@ -4,11 +4,11 @@
   "pages": 6
  },
  "batu-kawan": {
-  "h": "38ffea764e05",
+  "h": "658c6d5f6980",
   "pages": 6
  },
  "bukit-bintang": {
-  "h": "55205399604b",
+  "h": "791c287c9922",
   "pages": 7
  },
  "bukit-jalil": {
@@ -16,11 +16,15 @@
   "pages": 8
  },
  "damansara-heights": {
-  "h": "9c595c4295b8",
+  "h": "082e36647090",
   "pages": 6
  },
  "gelugor": {
   "h": "e8fbe8ba55e2",
+  "pages": 6
+ },
+ "george-town": {
+  "h": "3f67a7e6fa96",
   "pages": 6
  },
  "jb-city-centre": {
@@ -32,11 +36,11 @@
   "pages": 9
  },
  "kl-city-centre": {
-  "h": "2dd01cc91ac3",
+  "h": "2113b860a239",
   "pages": 13
  },
  "kwasa-damansara": {
-  "h": "4f818775e07b",
+  "h": "885a32cfebcc",
   "pages": 7
  },
  "penang": {
@@ -44,11 +48,11 @@
   "pages": 11
  },
  "petaling-jaya": {
-  "h": "c05a8152fc72",
+  "h": "9e7d70baddc7",
   "pages": 7
  },
  "selangor": {
-  "h": "e65e742ae961",
+  "h": "550d8d356f26",
   "pages": 14
  }
 }
