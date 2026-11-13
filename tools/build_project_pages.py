@@ -110,6 +110,21 @@ def wa(msg):
     return 'https://api.whatsapp.com/send/?phone=%s&text=%s&type=phone_number&app_absent=0' % (WA, quote_plus('(KNRE) ' + msg))
 
 
+# Section WhatsApp buttons: each one says what the visitor gets, and the message tells Keith what they asked for
+CTA_TXT = {'price': ('Get the Latest Price List', "Hi Keith, I'd like the latest price list for %s."),
+           'brochure': ('Get the Brochure & Full Details', 'Hi Keith, please send me the brochure and full details of %s.'),
+           'units': ('Check Available Units', 'Hi Keith, which units are still available at %s?'),
+           'view': ('Book a Viewing or Video Tour', "Hi Keith, I'd like to book a viewing or a video tour of %s."),
+           'fit': ('Is This Right for Me? Ask Keith', 'Hi Keith, is %s right for my budget and needs?'),
+           'foreign': ('Foreign Buyer? Check If You Can Buy', "Hi Keith, I'm a foreign buyer. Can I buy at %s?")}
+
+
+def cta(kind, name, wrap=True):
+    label, msg = CTA_TXT[kind]
+    a = '<a class="wa-btn" href="%s" target="_blank" rel="noopener" data-cta="%s">%s<span>%s</span></a>' % (E(wa(msg % name)), kind, WA_SVG, E(label))
+    return '<div class="sec-cta">%s</div>' % a if wrap else a
+
+
 TAG_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L3 13V3h10l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>'
 WA_SVG = '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.44.79 3.06 1.2 4.72 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0012.04 2zm5.8 14.06c-.24.68-1.42 1.3-1.95 1.34-.5.04-.97.23-3.27-.68-2.77-1.09-4.53-3.93-4.67-4.11-.13-.18-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.25-.27.54-.34.72-.34l.52.01c.17 0 .39-.06.61.47.24.56.79 1.92.86 2.06.07.14.11.3.02.48-.09.18-.13.29-.27.45-.13.16-.28.35-.4.47-.13.13-.27.28-.12.55.16.27.7 1.15 1.5 1.86 1.03.92 1.9 1.2 2.17 1.34.27.13.43.11.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.88.27.14.45.2.52.32.07.11.07.66-.17 1.34z"/></svg>'
 
@@ -127,6 +142,7 @@ header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-
 header nav{display:flex;gap:24px;flex-wrap:wrap;}
 header nav a{color:#fff;font-size:15px;}
 header nav a.active,header nav a:hover{text-decoration:underline;text-underline-offset:6px;}
+.sec-cta{margin-top:18px}.sec-cta .wa-btn{padding:12px 24px;font-size:14px;white-space:normal;text-align:left}main .wa-btn span{display:inline!important}
 .wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:11px 22px;border-radius:100px;font-size:13px;font-weight:600;white-space:nowrap;}
 .wa-btn:hover{box-shadow:0 10px 24px rgba(37,211,102,0.35);}
 @media(max-width:1100px){header nav{display:none;}}
@@ -586,14 +602,14 @@ def page(i):
       <h1>{display}</h1>
       <p class="loc">{loc}</p>
       <div class="price"><small>Starting Price</small>{price}</div>{moline}
-      <div class="ctas"><a class="wa-btn" href="{wa}" target="_blank" rel="noopener">{wasvg}WhatsApp Keith</a><a class="btn2" href="../compare.html">Compare projects</a></div>
+      <div class="ctas">{cta_price}<a class="btn2" href="../compare.html">Compare projects</a></div>
     </div>
   </div>
   <div class="stats">{stats}</div>
-  <section class="blk"><h2>About {display}</h2><p class="lead">{overview}</p></section>
+  <section class="blk"><h2>About {display}</h2><p class="lead">{overview}</p>{cta_brochure}</section>
   {points_blk}
   {facts_blk}
-  <section class="blk"><h2>Location</h2><p class="lead">{loctext}</p>{amen_blk}{stn_blk}</section>
+  <section class="blk"><h2>Location</h2><p class="lead">{loctext}</p>{amen_blk}{stn_blk}{cta_view}</section>
   {video_blk}
   {layouts_blk}
   {fits_blk}
@@ -623,6 +639,7 @@ document.addEventListener('click',function(e){{
 </html>
 '''.format(
         floatwa=FW.float_html(E(wa(msg))),
+        cta_price=cta('price', name, False), cta_brochure=cta('brochure', name), cta_view=cta('view', name),
         title=E(title), desc=E(desc), kw=E(', '.join(tg)), url=E(url), icon=E(up(ICON)), logo=E(up(LOGO)),
         ogimg=('<meta property="og:image" content="%s/%s">\n' % (SITE, E(photo))) if photo else '',
         ld=json.dumps(ld, ensure_ascii=False).replace('</', '<\\/'), css=CSS, nav=nav, wa=E(wa(msg)), wasvg=WA_SVG,
@@ -633,13 +650,13 @@ document.addEventListener('click',function(e){{
         status=E(p.get('status')), ptype=E(TYPE.get(i, 'Residential')), loc=E(p['loc']), price=SH.price_tag(E(p.get('price')), _myr(p.get('price'))), moline=mo_line(p), mo_blk=mo_block(p, name), video_blk=video_block(name, display),
         tags=tags, stats=stats, overview=E(p.get('overview')), loctext=E(p.get('loc_text')),
         points_blk=('<section class="blk"><h2>Top Highlights</h2><div class="points">%s</div></section>' % points) if points else '',
-        facts_blk=('<section class="blk"><h2>Project Details</h2><div class="pi"><div class="pi-head">Project Information</div><table>%s</table></div></section>' % facts) if facts else '',
+        facts_blk=('<section class="blk"><h2>Project Details</h2><div class="pi"><div class="pi-head">Project Information</div><table>%s</table></div>%s</section>' % (facts, cta('foreign', name))) if facts else '',
         amen_blk=('<ul class="amen">%s</ul>' % amen) if amen else '',
-        layouts_blk=('<section class="blk"><h2>%s Floor Plans &amp; Unit Types</h2><div class="layouts">%s</div></section>' % (E(display), layouts)) if layouts else '',
+        layouts_blk=('<section class="blk"><h2>%s Floor Plans &amp; Unit Types</h2><div class="layouts">%s</div>%s</section>' % (E(display), layouts, cta('units', name))) if layouts else '',
         lists_blk=(('<section class="blk"><h2>Featured in these lists</h2><div class="lst-chips">%s</div></section>' % ''.join(
             '<a class="lst-chip" href="../best/%s.html">%s</a>' % (E(s), E(t2)) for s, t2 in LISTS_OF.get(str(i), []))) if LISTS_OF.get(str(i)) else ''),
         tags_blk=('<section class="blk tg-sec"><h2>Popular Searches for %s</h2><p class="tg-sub">Tap a tag to see every project that matches it.</p><div class="tg-box">%s</div></section>' % (E(display), tags)) if tg else '',
-        fits_blk=('<section class="blk"><h2>Who Should Consider %s?</h2><div class="fits">%s</div></section>' % (E(display), fits)) if fits else '',
+        fits_blk=('<section class="blk"><h2>Who Should Consider %s?</h2><div class="fits">%s</div>%s</section>' % (E(display), fits, cta('fit', name))) if fits else '',
         near_blk=('<section class="blk"><h2>Nearby Projects</h2><div class="cards">%s</div></section>' % near) if near else '',
         arts_blk=('<section class="blk"><h2>Related Articles</h2><div class="cards">%s</div></section>' % arts) if arts else '',
         notes_blk=notes_block(i), stn_blk=hub_stations(i), vs_blk=hub_vs(i, display),

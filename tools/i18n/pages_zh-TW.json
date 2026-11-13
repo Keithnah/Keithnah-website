@@ -317,5 +317,11 @@
 "yt.more": "在 Keith 的 YouTube 頻道看更多視頻 →",
 "map.note": "圖釘顯示每個項目的大概位置。點擊圖釘查看項目。",
 "tpl.map_h2": "{place}新盤地圖",
-"pm.h2": "全部新盤地圖"
+"pm.h2": "全部新盤地圖",
+"pp.cta_price": "獲取最新價格表",
+"pp.cta_brochure": "索取宣傳冊和完整資料",
+"pp.cta_units": "查詢還有哪些單位",
+"pp.cta_view": "預約看房或視頻帶看",
+"pp.cta_fit": "適合我嗎？問問 Keith",
+"pp.cta_foreign": "外國買家？看看能不能買"
 }
