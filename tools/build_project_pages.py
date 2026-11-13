@@ -116,7 +116,7 @@ CTA_TXT = {'price': ('Get the Latest Price List', "Hi Keith, I'd like the latest
            'units': ('Check Available Units', 'Hi Keith, which units are still available at %s?'),
            'view': ('Book a Viewing or Video Tour', "Hi Keith, I'd like to book a viewing or a video tour of %s."),
            'fit': ('Is This Right for Me? Ask Keith', 'Hi Keith, is %s right for my budget and needs?'),
-           'foreign': ('Foreign Buyer? Check If You Can Buy', "Hi Keith, I'm a foreign buyer. Can I buy at %s?")}
+           'terms': ('Ask About Tenure, Title & Fees', 'Hi Keith, I have questions about the tenure, title and fees of %s.')}
 
 
 def cta(kind, name, wrap=True):
@@ -650,7 +650,7 @@ document.addEventListener('click',function(e){{
         status=E(p.get('status')), ptype=E(TYPE.get(i, 'Residential')), loc=E(p['loc']), price=SH.price_tag(E(p.get('price')), _myr(p.get('price'))), moline=mo_line(p), mo_blk=mo_block(p, name), video_blk=video_block(name, display),
         tags=tags, stats=stats, overview=E(p.get('overview')), loctext=E(p.get('loc_text')),
         points_blk=('<section class="blk"><h2>Top Highlights</h2><div class="points">%s</div></section>' % points) if points else '',
-        facts_blk=('<section class="blk"><h2>Project Details</h2><div class="pi"><div class="pi-head">Project Information</div><table>%s</table></div>%s</section>' % (facts, cta('foreign', name))) if facts else '',
+        facts_blk=('<section class="blk"><h2>Project Details</h2><div class="pi"><div class="pi-head">Project Information</div><table>%s</table></div>%s</section>' % (facts, cta('terms', name))) if facts else '',
         amen_blk=('<ul class="amen">%s</ul>' % amen) if amen else '',
         layouts_blk=('<section class="blk"><h2>%s Floor Plans &amp; Unit Types</h2><div class="layouts">%s</div>%s</section>' % (E(display), layouts, cta('units', name))) if layouts else '',
         lists_blk=(('<section class="blk"><h2>Featured in these lists</h2><div class="lst-chips">%s</div></section>' % ''.join(
