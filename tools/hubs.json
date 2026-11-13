@@ -35,7 +35,7 @@
 "slug": "ijm",
 "ix": [
 28,
-91
+90
 ]
 },
 "Kerjaya": {
@@ -43,14 +43,14 @@
 "ix": [
 4,
 44,
-93
+92
 ]
 },
 "Mah Sing": {
 "slug": "mah-sing",
 "ix": [
 72,
-90
+89
 ]
 },
 "Oxley": {
@@ -167,17 +167,6 @@
 74
 ]
 },
-"Kuchai": {
-"label": "Kuchai MRT",
-"slug": "kuchai-mrt",
-"lines": [
-"MRT"
-],
-"ix": [
-82,
-72
-]
-},
 "Kwasa Damansara": {
 "label": "Kwasa Damansara MRT",
 "slug": "kwasa-damansara-mrt",
@@ -245,7 +234,7 @@
 "state": "Selangor"
 },
 {
-"a": 97,
+"a": 96,
 "b": 26,
 "slug": "talisa-bangsar-hill-park-vs-khaya-residences",
 "area": "Bangsar",
@@ -322,14 +311,14 @@
 "state": "Kuala Lumpur"
 },
 {
-"a": 84,
+"a": 83,
 "b": 32,
 "slug": "ayanna-resort-residences-vs-oaka-residences",
 "area": "Bukit Jalil",
 "state": "Kuala Lumpur"
 },
 {
-"a": 84,
+"a": 83,
 "b": 57,
 "slug": "ayanna-resort-residences-vs-the-queenswoodz",
 "area": "Bukit Jalil",
@@ -393,7 +382,7 @@
 },
 {
 "a": 8,
-"b": 94,
+"b": 93,
 "slug": "axis-causeway-square-vs-r-and-f-princess-cove-seine-region",
 "area": "JB City Centre",
 "state": "Johor"
@@ -407,14 +396,14 @@
 },
 {
 "a": 10,
-"b": 94,
+"b": 93,
 "slug": "brixton-causeway-square-vs-r-and-f-princess-cove-seine-region",
 "area": "JB City Centre",
 "state": "Johor"
 },
 {
 "a": 18,
-"b": 94,
+"b": 93,
 "slug": "dover-causeway-square-vs-r-and-f-princess-cove-seine-region",
 "area": "JB City Centre",
 "state": "Johor"
@@ -623,21 +612,14 @@
 "state": "Selangor"
 },
 {
-"a": 86,
-"b": 89,
+"a": 85,
+"b": 88,
 "slug": "est8-vs-lunar-seputeh",
 "area": "Seputeh",
 "state": "Kuala Lumpur"
 },
 {
-"a": 82,
-"b": 83,
-"slug": "aster-hill-sri-petaling-vs-aurum-business-centre",
-"area": "Sri Petaling",
-"state": "Kuala Lumpur"
-},
-{
-"a": 87,
+"a": 86,
 "b": 80,
 "slug": "ambience-kl-vs-aricia-residences",
 "area": "Sungai Besi",

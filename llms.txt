@@ -166,7 +166,6 @@ The site is available in English, 简体中文, 繁體中文, Bahasa Malaysia, �
 - [Lunar Seputeh](https://keithnah.com/property/lunar-seputeh.html): Lunar Seputeh, 9 Seputeh, Old Klang Road, Kuala Lumpur: From RM607,800 (Gross), 683 – 1,646 sqft, 1+1 – 4+1 Bedrooms, Leasehold (until 2113).
 
 ### Sri Petaling
-- [Aster Hill Sri Petaling](https://keithnah.com/property/aster-hill-sri-petaling.html): Aster Hill Sri Petaling, Sri Petaling, Kuala Lumpur: From RM500,000 (Gross), 846 – 1,077 sqft, 3 Bedrooms, Freehold. Completion Q1 2027.
 - [Aurum Business Centre](https://keithnah.com/property/aurum-business-centre.html): Aurum Business Centre, Sri Petaling, Kuala Lumpur: From RM417,545 (Gross), 527 – 679 sqft, 1 – 2 Bedrooms, Freehold. Completion Est. Q4 2029.
 
 ### Subang Jaya
@@ -210,7 +209,7 @@ The site is available in English, 简体中文, 繁體中文, Bahasa Malaysia, �
 - [Kelantan New Launch Condos 2026](https://keithnah.com/area/kelantan.html): 1 new property launches in Kelantan: starting prices from RM379,200, sizes, tenure and completion dates, with floor plans for each project.
 - [KL City Centre New Launch Condos 2026](https://keithnah.com/area/kl-city-centre.html): 15 new property launches in KL City Centre, Kuala Lumpur: starting prices from RM595,000, sizes, tenure and completion dates, with floor plans for each project.
 - [Kota Kinabalu New Launch Condos 2026](https://keithnah.com/area/kota-kinabalu.html): 2 new property launches in Kota Kinabalu, Sabah: starting prices from RM499,800, sizes, tenure and completion dates, with floor plans for each project.
-- [Kuala Lumpur New Launch Condos 2026](https://keithnah.com/area/kuala-lumpur.html): 54 new property launches in Kuala Lumpur: starting prices from RM339,000, sizes, tenure and completion dates, with floor plans for each project.
+- [Kuala Lumpur New Launch Condos 2026](https://keithnah.com/area/kuala-lumpur.html): 53 new property launches in Kuala Lumpur: starting prices from RM339,000, sizes, tenure and completion dates, with floor plans for each project.
 - [Kuala Terengganu New Launch Condos 2026](https://keithnah.com/area/kuala-terengganu.html): 1 new property launches in Kuala Terengganu, Terengganu: starting prices from RM473,700, sizes, tenure and completion dates, with floor plans for each project.
 - [Kubang Kerian New Launch Condos 2026](https://keithnah.com/area/kubang-kerian.html): 1 new property launches in Kubang Kerian, Kelantan: starting prices from RM379,200, sizes, tenure and completion dates, with floor plans for each project.
 - [Kwasa Damansara New Launch Condos 2026](https://keithnah.com/area/kwasa-damansara.html): 6 new property launches in Kwasa Damansara, Selangor: starting prices from RM270,000, sizes, tenure and completion dates, with floor plans for each project.
@@ -229,7 +228,7 @@ The site is available in English, 简体中文, 繁體中文, Bahasa Malaysia, �
 - [Selangor New Launch Condos 2026](https://keithnah.com/area/selangor.html): 18 new property launches in Selangor: starting prices from RM270,000, sizes, tenure and completion dates, with floor plans for each project.
 - [Sentul New Launch Condos 2026](https://keithnah.com/area/sentul.html): 1 new property launches in Sentul, Kuala Lumpur: starting prices from RM523,200, sizes, tenure and completion dates, with floor plans for each project.
 - [Seputeh New Launch Condos 2026](https://keithnah.com/area/seputeh.html): 2 new property launches in Seputeh, Kuala Lumpur: starting prices from RM529,000, sizes, tenure and completion dates, with floor plans for each project.
-- [Sri Petaling New Launch Condos 2026](https://keithnah.com/area/sri-petaling.html): 2 new property launches in Sri Petaling, Kuala Lumpur: starting prices from RM417,500, sizes, tenure and completion dates, with floor plans for each project.
+- [Sri Petaling New Launch Condos 2026](https://keithnah.com/area/sri-petaling.html): 1 new property launches in Sri Petaling, Kuala Lumpur: starting prices from RM417,500, sizes, tenure and completion dates, with floor plans for each project.
 - [Subang Jaya New Launch Condos 2026](https://keithnah.com/area/subang-jaya.html): 1 new property launches in Subang Jaya, Selangor: starting prices from RM639,000, sizes, tenure and completion dates, with floor plans for each project.
 - [Sungai Besi New Launch Condos 2026](https://keithnah.com/area/sungai-besi.html): 2 new property launches in Sungai Besi, Kuala Lumpur: starting prices from RM448,200, sizes, tenure and completion dates, with floor plans for each project.
 - [Taman Desa New Launch Condos 2026](https://keithnah.com/area/taman-desa.html): 2 new property launches in Taman Desa, Kuala Lumpur: starting prices from RM538,800, sizes, tenure and completion dates, with floor plans for each project.
