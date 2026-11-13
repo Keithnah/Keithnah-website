@@ -2,8 +2,6 @@
 
 - A state checker (pills; the card shows the minimum price for strata and landed homes, the stamp
   duty on transfer and state consent), modelled on the quick checks foreign buyers ask first.
-- Projects on this site whose starting price meets the foreign-buyer minimum of their state
-  (worked out from the project data, so it updates itself), plus projects where only larger units qualify.
 - Costs, the buying steps, MM2H (links to mm2h.html and the MM2H library) and an FAQ.
 Texts are in T per language; the page swaps them in the browser like resources.html.
 Run by tools/build_all.py before build_menu.py (which adds "Foreign Buyers" to the main menu).
@@ -83,7 +81,7 @@ COUNT = {k: sum(1 for x in OK if x[0] == k) for k, *_ in CHECK}
 T = {'en': {
     'title': 'Buying Property in Malaysia as a Foreigner', 'eyebrow': 'Foreign Buyers',
     'lead': 'Yes, foreigners can buy property in Malaysia, freehold included.',
-    'sub': 'Each state sets a minimum price, the purchase needs state consent and stamp duty is charged at a flat rate. Check your state below, see which projects qualify, then ask Keith to confirm the unit you like.',
+    'sub': 'Each state sets a minimum price, the purchase needs state consent and stamp duty is charged at a flat rate. Check your state below, then ask Keith to confirm the unit you like.',
     'b_check': 'Check your state', 'b_wa': 'Ask Keith on WhatsApp',
     'f1t': 'Freehold or leasehold', 'f1d': 'Foreigners can own both, with a strata or individual title in their own name.',
     'f2t': 'Minimum price by state', 'f2d': 'From RM500,000 to RM2 million or more, depending on the state and property type.',
@@ -92,7 +90,7 @@ T = {'en': {
     'ck_eb': 'Quick check', 'ck_h': 'Can you buy property in Malaysia?', 'ck_p': 'Pick a state to see the minimum price for foreign buyers.',
     'ck_strata': 'Minimum price (strata: condo, serviced apartment)', 'ck_landed': 'Minimum price (landed)',
     'ck_stamp': 'Stamp duty on transfer', 'ck_stamp_v': '8% flat', 'ck_consent': 'State authority consent', 'ck_consent_v': 'Required',
-    'ck_ask': 'Ask Keith', 'ck_see': 'See the {n} projects that qualify', 'ck_none': 'No project on this site meets the minimum yet. Ask Keith about larger units.',
+    'ck_ask': 'Ask Keith', 'ck_go': 'Ask Keith which units qualify here →', 'ck_see': 'See the {n} projects that qualify', 'ck_none': 'No project on this site meets the minimum yet. Ask Keith about larger units.',
     'ck_note': 'A general guide to the current minimums. States revise them and some set different levels by district or title; Bumiputera lots and low-cost or affordable homes cannot be sold to foreigners. Keith confirms the figure for each unit before you book.',
     'n_kl': 'Kuala Lumpur is where most foreign buyers start: KL City Centre, Bukit Bintang and TRX have the widest choice above the minimum.',
     'n_sel': 'Selangor has one of the highest minimums, so most condos here are below it. Foreign buyers usually look at Kuala Lumpur or at larger homes.',
@@ -138,7 +136,7 @@ T = {'en': {
 }, 'zh-CN': {
     'title': '外国人在马来西亚买房', 'eyebrow': '外国买家',
     'lead': '可以，外国人可以在马来西亚买房，永久地契也可以。',
-    'sub': '每个州都有最低价格门槛，购买需要州政府批准，印花税按固定税率计算。先在下面查你的州属，看看哪些项目符合，再请 Keith 确认你看中的单位。',
+    'sub': '每个州都有最低价格门槛，购买需要州政府批准，印花税按固定税率计算。先在下面查你的州属，再请 Keith 确认你看中的单位。',
     'b_check': '查你的州属', 'b_wa': 'WhatsApp 问 Keith',
     'f1t': '永久或租赁地契', 'f1d': '外国人两种都可以拥有，分层地契或独立地契都可以写在自己名下。',
     'f2t': '各州最低价格', 'f2d': '从 RM500,000 到 RM200 万或以上，视州属和房产类型而定。',
@@ -147,7 +145,7 @@ T = {'en': {
     'ck_eb': '快速查询', 'ck_h': '你可以在马来西亚买房吗？', 'ck_p': '选一个州属，看外国买家的最低价格。',
     'ck_strata': '最低价格（分层：公寓、服务式公寓）', 'ck_landed': '最低价格（有地房产）',
     'ck_stamp': '转让印花税', 'ck_stamp_v': '固定 8%', 'ck_consent': '州政府批准', 'ck_consent_v': '需要',
-    'ck_ask': '问 Keith', 'ck_see': '查看符合条件的 {n} 个项目', 'ck_none': '本站暂时没有项目达到最低价格，可以问 Keith 较大的单位。',
+    'ck_ask': '问 Keith', 'ck_go': '问 Keith 这里哪些单位符合 →', 'ck_see': '查看符合条件的 {n} 个项目', 'ck_none': '本站暂时没有项目达到最低价格，可以问 Keith 较大的单位。',
     'ck_note': '以上为现行最低价格的大致参考。各州会调整，有些州按地区或地契类型设不同门槛；土著保留单位和低价、可负担房屋不能卖给外国人。下订前 Keith 会为每个单位确认实际门槛。',
     'n_kl': '吉隆坡是大部分外国买家的首选：KL City Centre、Bukit Bintang 和 TRX 达到门槛的选择最多。',
     'n_sel': '雪兰莪的门槛是最高之一，这里大部分公寓都低于门槛，外国买家通常看吉隆坡或较大的房子。',
@@ -192,6 +190,7 @@ T = {'en': {
     'disc': '本页为外国买家的一般参考，不是法律或税务意见。最低价格、印花税和批准规定由联邦和州政府制定，会不时更改。',
 }}
 T['zh-TW'] = {k: _cc(v) for k, v in T['zh-CN'].items()}
+T.update(json.load(open(os.path.join(HERE, 'i18n', 'foreign.json'), encoding='utf-8')))  # ms, ja, ko
 for l in LANGS:   # languages not translated yet show English
     T.setdefault(l, T['en'])
 en = T['en']
@@ -213,13 +212,14 @@ facts = ''.join('<div class="fx"><i>%s</i><div>%s%s</div></div>' % (SV(IC[f]), r
 pills = ''.join('<button type="button" class="pl%s" data-k="%s">%s</button>' % (' on' if i == 0 else '', k, r('s_' + k)) for i, (k, *_) in enumerate(CHECK))
 CK = {k: {'s': money(s), 'l': money(l), 'n': COUNT[k]} for k, _, _, s, l in CHECK}
 k0 = CHECK[0][0]
+wa_state = {k: waq("Hi Keith, I am a foreign buyer looking at %s. Which units meet the minimum price?" % T['en']['s_' + k]) for k, *_ in CHECK}
 ask = r('ck_ask')
 card = ('<div class="ck-card"><h3 id="ckName">%s</h3><p class="ck-n" id="ckNote" data-r="n_%s">%s</p><dl>'
         '<div><dt>%s</dt><dd id="ckS">%s</dd></div><div><dt>%s</dt><dd id="ckL">%s</dd></div>'
         '<div><dt>%s</dt><dd>%s</dd></div><div><dt>%s</dt><dd>%s</dd></div></dl>'
-        '<a class="ck-go" id="ckGo" href="#projects">%s</a></div>') % (
+        '<a class="ck-go" id="ckGo" href="%s" target="_blank" rel="noopener" data-r="ck_go">%s</a></div>') % (
     E(en['s_' + k0]), k0, E(en['n_' + k0]), r('ck_strata'), CK[k0]['s'] or ask, r('ck_landed'), CK[k0]['l'] or ask,
-    r('ck_stamp'), r('ck_stamp_v'), r('ck_consent'), r('ck_consent_v'), E(en['ck_see'].replace('{n}', str(CK[k0]['n']))))
+    r('ck_stamp'), r('ck_stamp_v'), r('ck_consent'), r('ck_consent_v'), E(wa_state[k0]), E(en['ck_go']))
 
 
 def pcard(k, v, i):
@@ -250,7 +250,6 @@ FAQ_LD = json.dumps({'@context': 'https://schema.org', '@type': 'FAQPage', 'main
     {'@type': 'Question', 'name': en['q%d' % n], 'acceptedAnswer': {'@type': 'Answer', 'text': en['a%d' % n]}} for n in range(1, 9)]}, ensure_ascii=False)
 CHAT = svg_wa = '<svg viewBox="0 0 24 24"><path d="M20.5 3.5A11 11 0 0 0 3.2 17.1L2 22l5-1.3A11 11 0 1 0 20.5 3.5z"/></svg>'
 wa_main = waq('Hi Keith, I am a foreign buyer. Can you check which projects I can buy?')
-wa_state = {k: waq("Hi Keith, I am a foreign buyer looking at %s. Which units meet the minimum price?" % T['en']['s_' + k]) for k, *_ in CHECK}
 
 CSS = '''
 :root{--bg:#F9F8F6;--ink:#111;--grey:#5A5A5A;--line:rgba(17,17,17,0.08);--gold:#5E60CE;--deep:#1d1b4f;--soft:#f3f1fa;}
@@ -309,7 +308,7 @@ function lang(){var l='en';try{l=localStorage.getItem('kn_lang')||'en'}catch(e){
 var cur='%s';
 function show(){var L=T[lang()],c=CK[cur];document.getElementById('ckName').textContent=L['s_'+cur];var n=document.getElementById('ckNote');n.setAttribute('data-r','n_'+cur);n.textContent=L['n_'+cur];
 document.getElementById('ckS').textContent=c.s||L.ck_ask;document.getElementById('ckL').textContent=c.l||L.ck_ask;
-var g=document.getElementById('ckGo');if(c.n){g.textContent=L.ck_see.replace('{n}',c.n);g.href='#projects';g.removeAttribute('target');}else{g.textContent=L.ck_none;g.href=WA[cur];g.target='_blank';}}
+document.getElementById('ckGo').href=WA[cur];}
 function apply(){var L=T[lang()];document.querySelectorAll('[data-r]').forEach(function(el){var v=L[el.getAttribute('data-r')];if(v)el.textContent=v;});show();
 document.title=L.title+' | Keith Nah';}
 function filt(k){document.querySelectorAll('.fp .pl').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-f')===k);});
@@ -317,11 +316,11 @@ document.querySelectorAll('.pc[data-k],.chip[data-k]').forEach(function(a){a.sty
 var m=document.querySelector('.more');if(m)m.style.display=(k==='all'||m.querySelector('.chip[data-k="'+k+'"]'))?'':'none';}
 document.addEventListener('click',function(e){var p=e.target.closest('.ck .pl');if(p){cur=p.getAttribute('data-k');document.querySelectorAll('.ck .pl').forEach(function(b){b.classList.toggle('on',b===p);});show();return;}
 var f=e.target.closest('.fp .pl');if(f){filt(f.getAttribute('data-f'));return;}
-if(e.target.closest('#ckGo')&&CK[cur].n)filt(cur);});
+});
 document.addEventListener('DOMContentLoaded',function(){var s=window.knSetLang;if(typeof s==='function')window.knSetLang=function(){var r=s.apply(this,arguments);apply();return r;};apply();});
 apply();})();</script>''' % (json.dumps(T, ensure_ascii=False), json.dumps(CK), json.dumps(wa_state), k0)
 
-desc = 'Can foreigners buy property in Malaysia? Minimum prices by state, 8% stamp duty, state consent, costs, MM2H and the new launches foreign buyers can consider.'
+desc = 'Can foreigners buy property in Malaysia? Minimum prices by state, 8% stamp duty, state consent, costs, MM2H and how buying works.'
 page = '''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -347,8 +346,6 @@ page = '''<!DOCTYPE html>
     <div class="btns"><a class="bt bt-p" href="#check">{bcheck}</a><a class="bt bt-w" href="{wa}" target="_blank" rel="noopener">{chat}{bwa}</a></div></section>
   <section class="fxs">{facts}</section>
   <section class="ck" id="check">{ckeb}<h2 data-r="ck_h">{ckh}</h2>{ckp}<div class="pls">{pills}</div>{card}{cknote}</section>
-  <section class="sec fp" id="projects">{pjeb}<h2 data-r="pj_h">{pjh}</h2>{pjp}<div class="pls">{fpills}</div><div class="pg">{grid}</div>
-    {more}{pjnote}</section>
   <section class="sec" id="costs">{coeb}<h2 data-r="co_h">{coh}</h2><div class="cos">{costs}</div>{conote}</section>
   <section class="sec" id="steps">{steb}<h2 data-r="st_h">{sth}</h2><ol class="steps">{steps}</ol></section>
   <section class="sec" id="mm2h"><div class="mm"><div><div class="mm-logo">MM2H</div>{mmeb}<h2 data-r="mm_h">{mmh}</h2>{mmp}
@@ -381,4 +378,4 @@ if os.path.exists('sitemap.xml'):
         sm = sm.replace('</urlset>', '  <url>\n    <loc>%s/foreign-buyers.html</loc>\n    <lastmod>%s</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n</urlset>' % (
             SITE, _dt.date.today().isoformat()))
         open('sitemap.xml', 'w', encoding='utf-8').write(sm)
-print('foreign-buyers: %d projects meet the minimum, %d with larger units' % (len(OK), len(LARGER)))
+print('foreign-buyers: written')

@@ -63,7 +63,7 @@ MENU = {
     'projects.html': [('browse', 'projects.html#projSearch'), ('map', 'projects.html#projectMap'), ('all', 'projects.html#projGrid'), ('state', 'projects.html#projGrid'),
                       ('best', 'best/index.html'), ('dev', 'developer/index.html'), ('station', 'station/index.html'), ('tag', 'projects.html#tagSection')],
     'compare.html': [('h2h', 'compare.html#cmpFilters'), ('vs', 'vs/index.html'), ('popular', 'compare.html#popular')],
-    'foreign-buyers.html': [('fcheck', 'foreign-buyers.html#check'), ('fproj', 'foreign-buyers.html#projects'), ('fcost', 'foreign-buyers.html#costs'),
+    'foreign-buyers.html': [('fcheck', 'foreign-buyers.html#check'), ('fcost', 'foreign-buyers.html#costs'),
                             ('fsteps', 'foreign-buyers.html#steps'), ('mm2h', 'mm2h.html'), ('faq', 'foreign-buyers.html#faq')],
     'blog.html': [('notes', 'market-notes.html'), ('guide', 'blog.html#buying-guide'), ('data', 'market-data.html'), ('faq', 'blog.html#faq'), ('blogs', 'blog.html#blog')],
     'resources.html': [('fareas', 'resources.html#guides'), ('fmm2h', 'mm2h.html'), ('fwatch', 'https://www.youtube.com/@KeithNahRealEstate/videos'), ('fcalc', 'calculator.html'), ('fadvice', WA)],
