@@ -614,8 +614,8 @@
   "tenure": "Leasehold (until 2108)",
   "size": "566 – 999 sqft",
   "size_short": "566-999 sqft",
-  "rooms": "Layouts on request",
-  "rooms_short": "Layouts on request",
+  "rooms": "1 – 3 Bedrooms",
+  "rooms_short": "1 to 3 Beds",
   "completion": "Est. Q4 2027",
   "completion_short": "Q4 2027",
   "status": "Under Construction",
@@ -668,18 +668,36 @@
   },
   "layouts": [
    {
-    "type": "Smallest layout",
+    "type": "Type A",
     "size": "566 sqft",
-    "rooms": "Floor plan on request",
+    "rooms": "1 Bedroom",
     "tag": "Entry",
-    "desc": "The smallest layout."
+    "desc": "The smallest layout.",
+    "img": "images/531307f258ee7079.jpg"
    },
    {
-    "type": "Type C and D",
-    "size": "Up to 999 sqft",
-    "rooms": "Show units",
+    "type": "Type B",
+    "size": "855 sqft",
+    "rooms": "2 Bedrooms",
+    "tag": "",
+    "desc": "A 2-bedroom home.",
+    "img": "images/1aba2a7cb475711c.jpg"
+   },
+   {
+    "type": "Type C",
+    "size": "999 sqft",
+    "rooms": "3 Bedrooms",
     "tag": "Show unit",
-    "desc": "The larger layouts, shown in the show units."
+    "desc": "A 3-bedroom family home.",
+    "img": "images/3d750c626c032ea4.jpg"
+   },
+   {
+    "type": "Type D",
+    "size": "999 sqft",
+    "rooms": "3 Bedrooms",
+    "tag": "Show unit",
+    "desc": "A 3-bedroom home.",
+    "img": "images/ff7e42dc41c39edd.jpg"
    }
   ],
   "tags": [
@@ -1028,10 +1046,11 @@
   "layouts": [
    {
     "type": "Type T6",
-    "size": "1,421 sqft",
-    "rooms": "3 Bedrooms",
+    "size": "1,426 sqft",
+    "rooms": "3 Bedrooms + Study, 2 Bathrooms",
     "tag": "",
-    "desc": "A Phase 2 family layout."
+    "desc": "A Phase 2 family layout.",
+    "img": "images/43f5c68a4e1b1531.jpg"
    }
   ],
   "tags": [

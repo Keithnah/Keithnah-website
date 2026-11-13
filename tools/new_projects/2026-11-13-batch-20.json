@@ -305,14 +305,16 @@
     "size": "477 – 964 sqft",
     "rooms": "1+1 to 2 Rooms",
     "tag": "Entry",
-    "desc": "Simplex office suites on levels 1 to 23, 19 units per floor."
+    "desc": "Simplex office suites on levels 1 to 23, 19 units per floor.",
+    "img": "images/733b845ca46ecd6d.jpg"
    },
    {
     "type": "Serviced Apartment (Duplex)",
     "size": "790 – 2,051 sqft",
     "rooms": "2 to 3 Bedrooms",
     "tag": "Duplex",
-    "desc": "Two-level serviced apartments on levels 23A to 33, 17 units per floor."
+    "desc": "Two-level serviced apartments on levels 23A to 33, 17 units per floor.",
+    "img": "images/66cc08b76f95be13.jpg"
    }
   ],
   "tags": [
@@ -1486,9 +1488,10 @@
    {
     "type": "Type D",
     "size": "1,550 sqft",
-    "rooms": "4 Bedrooms",
+    "rooms": "4 Bedrooms, 3 Bathrooms",
     "tag": "",
-    "desc": "A large 4-bedroom home."
+    "desc": "A large 4-bedroom home.",
+    "img": "images/f3eb3c03feaf04f7.jpg"
    },
    {
     "type": "Type A",
