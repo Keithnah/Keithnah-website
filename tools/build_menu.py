@@ -157,7 +157,7 @@ CSS = ('<style id="kn-submenu-css">'
        'header nav .knm-d a.knm-fall{display:inline-block!important;color:#5E60CE!important;font-size:13px!important;padding:6px 10px!important;margin-bottom:6px!important}'
        '.knm-cols{display:block}.knm-col{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 14px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px solid #f0eef8}.knm-col:last-child{border-bottom:0;margin-bottom:0}.knm-col .knm-fz{grid-column:1/-1}'
        'header nav .knm-d a.knm-fz{font-size:11px!important;font-weight:700!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:#a0782c!important;padding:10px 10px 6px!important;white-space:normal!important;line-height:1.4}'
-       'header nav .knm-d a.knm-fa{display:flex!important;justify-content:space-between;gap:8px;font-weight:500!important;color:#3a3950!important;white-space:normal}'
+       'header nav .knm-d a.knm-fa{display:flex!important;justify-content:space-between;gap:8px;font-weight:650!important;color:#15142b!important;white-space:normal;font-size:14.5px!important}'
        '#knMnav .knm-fly,#knMnav .knm-ar{display:none!important}'
        '@media(max-width:1349px){.knm-fly{display:none!important}}'
        '</style>')
