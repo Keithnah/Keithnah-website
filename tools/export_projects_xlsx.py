@@ -64,6 +64,14 @@ STATES = ['Kuala Lumpur', 'Selangor', 'Penang', 'Johor', 'Melaka', 'Sabah', 'Ter
 CODE = {'Kuala Lumpur': 'KL', 'Selangor': 'SGR', 'Penang': 'PNG', 'Johor': 'JHR', 'Melaka': 'MLK', 'Sabah': 'SBH', 'Terengganu': 'TRG', 'Kelantan': 'KTN'}
 def ST(i): return PLACES[i][0]
 def AR(i): return PLACES[i][1]
+sys.path.insert(0, os.path.join(SITE, 'tools'))
+from build_proj_layout import ZONES as _ZONES, T as _ZT
+def ZN(i):
+    st, ar = PLACES[i]
+    if st not in _ZONES: return ''
+    for z, lst in _ZONES[st]:
+        if ar in lst: return _ZT['en'][z]
+    return _ZT['en']['other']
 AREA_N = Counter((ST(i), AR(i)) for i in range(len(D)))
 order = sorted(range(len(D)), key=lambda i: (STATES.index(ST(i)) if ST(i) in STATES else 99, -AREA_N[(ST(i), AR(i))], AR(i), D[i]['name'].lower()))
 def folder_of(i): return os.path.join(IMG_DIR, slug(ST(i)), slug(AR(i)), slug(D[i]['name']))
@@ -134,7 +142,7 @@ for n, i in enumerate(order, 1):
         for k, t in enumerate(items, 1): kv(str(k), t)
         r += 1
     section('1. BASIC INFORMATION')
-    kv('Project name', p['name']); kv('State', ST(i)); kv('Area', AR(i)); kv('Website section (old)', p['tag']); kv('Location', p.get('loc'))
+    kv('Project name', p['name']); kv('State', ST(i)); kv('Zone', ZN(i)); kv('Area', AR(i)); kv('Website section (old)', p['tag']); kv('Location', p.get('loc'))
     kv('Property type', cm.get('type')); kv('Status', p.get('status'))
     kv('Starting price', p.get('price')); kv('Price (short, card)', cm.get('price'))
     kv('Tenure', p.get('tenure')); kv('Size', p.get('size')); kv('Bedrooms', p.get('rooms'))
@@ -185,31 +193,31 @@ for col in range(1, 14): wsI.cell(1, col).fill = fill_navy
 wsI.row_dimensions[1].height = 32
 wsI['A2'] = f'{len(D)} projects · exported {datetime.date.today().isoformat()} · sorted by state, then area · one sheet per state and per project (click a name). Update by running tools/export_projects_xlsx.py after every project change.'
 wsI['A2'].font = Font(name=F, size=9, italic=True, color='666666')
-heads = ['#', 'Project', 'State', 'Area', 'Developer', 'Status', 'Tenure', 'Starting price', 'Size', 'Bedrooms', 'Completion', 'Location', 'Type']
+heads = ['#', 'Project', 'State', 'Zone', 'Area', 'Developer', 'Status', 'Tenure', 'Starting price', 'Size', 'Bedrooms', 'Completion', 'Location', 'Type']
 for col, h in enumerate(heads, 1):
     x = wsI.cell(4, col, h); x.font = f_hdr; x.fill = fill_pur; x.border = box; x.alignment = Alignment(vertical='center', wrap_text=True)
 for n, i in enumerate(order, 1):
     p = D[i]; cm = CMP[i]; row = 4 + n
     dev = p.get('details_extra', {}).get('Developer') or META[i].get('d') or '-'
-    vals = [n, p['name'], ST(i), AR(i), dev, p.get('status'), p.get('tenure'), p.get('price'), p.get('size'), p.get('rooms'), p.get('completion'), p.get('loc'), cm.get('type')]
+    vals = [n, p['name'], ST(i), ZN(i), AR(i), dev, p.get('status'), p.get('tenure'), p.get('price'), p.get('size'), p.get('rooms'), p.get('completion'), p.get('loc'), cm.get('type')]
     for col, v in enumerate(vals, 1):
         x = wsI.cell(row, col, v); x.font = f_val; x.border = box; x.alignment = Alignment(vertical='top', wrap_text=True)
         if n % 2 == 0: x.fill = fill_grey
     wsI.cell(row, 2).hyperlink = f"#'{names[i]}'!A1"; wsI.cell(row, 2).font = f_link
-for col, w in zip('ABCDEFGHIJKLM', [5, 34, 16, 22, 24, 18, 18, 34, 20, 18, 24, 34, 18]): wsI.column_dimensions[col].width = w
+for col, w in zip('ABCDEFGHIJKLMN', [5, 34, 16, 20, 22, 24, 18, 18, 34, 20, 18, 24, 34, 18]): wsI.column_dimensions[col].width = w
 wsI.freeze_panes = 'C5'; wsI.auto_filter.ref = f'A4:M{4 + len(D)}'
 
 # ---------- MASTER (flat, all fields) for easy import
 wsM = wb.create_sheet('MASTER TABLE', 1)
 base_cols = ['name', 'tag', 'status', 'price', 'tenure', 'size', 'rooms', 'completion', 'loc', 'overview', 'loc_text']
 extra_cols = [k for k, _ in EXTRA_KEYS.most_common()]
-head = ['Project', 'State', 'Area', 'Website section (old)', 'Status', 'Starting price', 'Tenure', 'Size', 'Bedrooms', 'Completion', 'Location', 'Overview', 'Location text', 'Top 3 highlights', 'Selling points', 'Amenities', 'Buyer fit', 'Related projects', 'Layout types', 'Property type', 'Completion years', 'Completed?'] + extra_cols
+head = ['Project', 'State', 'Zone', 'Area', 'Website section (old)', 'Status', 'Starting price', 'Tenure', 'Size', 'Bedrooms', 'Completion', 'Location', 'Overview', 'Location text', 'Top 3 highlights', 'Selling points', 'Amenities', 'Buyer fit', 'Related projects', 'Layout types', 'Property type', 'Completion years', 'Completed?'] + extra_cols
 for col, h in enumerate(head, 1):
     x = wsM.cell(1, col, h); x.font = f_hdr; x.fill = fill_navy; x.alignment = Alignment(wrap_text=True, vertical='center'); x.border = box
 for n, i in enumerate(order, 1):
     p = D[i]; row = 1 + n
     vals = [p[k] if k not in ('name',) else p['name'] for k in base_cols]
-    vals[1:1] = [ST(i), AR(i)]
+    vals[1:1] = [ST(i), ZN(i), AR(i)]
     vals += [' | '.join(p.get('points', [])), ' | '.join(p.get('selling_points', [])), ', '.join(p.get('amenities', [])),
              ' | '.join(f"{b['title']}: {b['desc']}" for b in p.get('buyer_fit', [])), ', '.join(pname(x) for x in p.get('nearby', [])),
              ', '.join(l.get('type', '') for l in p.get('layouts', [])), CMP[i].get('type'), ', '.join(map(str, META[i].get('y', []))), 'Yes' if META[i].get('c') else 'No']
@@ -217,7 +225,7 @@ for n, i in enumerate(order, 1):
     for col, v in enumerate(vals, 1):
         x = wsM.cell(row, col, v); x.font = f_val; x.alignment = Alignment(vertical='top', wrap_text=True); x.border = box
 for col in range(1, len(head) + 1):
-    wsM.column_dimensions[get_column_letter(col)].width = 60 if col in (12, 13, 14, 15, 17) else 24
+    wsM.column_dimensions[get_column_letter(col)].width = 60 if col in (13, 14, 15, 16, 18) else 24
 wsM.column_dimensions['A'].width = 32
 wsM.freeze_panes = 'B2'; wsM.auto_filter.ref = f'A1:{get_column_letter(len(head))}{1 + len(D)}'
 

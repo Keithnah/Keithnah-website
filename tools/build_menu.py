@@ -20,9 +20,10 @@ L = {  # key: [en, zh-CN, zh-TW, ms, ja, ko]
     'browse': ['Browse Projects', '浏览项目', '瀏覽項目', 'Semak Imbas Projek', '物件を探す', '프로젝트 둘러보기'],
     'all': ['All Project List', '全部项目列表', '全部項目列表', 'Senarai Semua Projek', '全物件リスト', '전체 프로젝트 목록'],
     'short': ['Project Shortlist', '帮我挑项目', '幫我挑項目', 'Senarai Pendek Projek', 'おすすめ物件診断', '프로젝트 추천'],
-    'dev': ['By Developer', '按发展商', '按發展商', 'Mengikut Pemaju', 'デベロッパー別', '개발사별'],
-    'station': ['By Station', '按地铁站', '按捷運站', 'Mengikut Stesen', '駅別', '역별'],
-    'tag': ['By Tag', '按标签', '按標籤', 'Mengikut Tag', 'タグ別', '태그별'],
+    'dev': ['Search by Developer', '按发展商搜索', '按發展商搜尋', 'Cari Mengikut Pemaju', 'デベロッパーから探す', '개발사별 검색'],
+    'station': ['Search by Station', '按地铁站搜索', '按捷運站搜尋', 'Cari Mengikut Stesen', '駅から探す', '역별 검색'],
+    'tag': ['Search by Tag', '按标签搜索', '按標籤搜尋', 'Cari Mengikut Tag', 'タグから探す', '태그별 검색'],
+    'state': ['Search by State', '按州属搜索', '按州屬搜尋', 'Cari Mengikut Negeri', '州から探す', '주별 검색'],
     'best': ['Best New Launches', '精选新盘', '精選新盤', 'Projek Baharu Terbaik', 'おすすめ新築物件', '추천 신규 분양'],
     'map': ['Project Map', '项目地图', '項目地圖', 'Peta Projek', '物件マップ', '프로젝트 지도'],
     'cmp': ['Compare Side by Side', '并排比较', '並排比較', 'Banding Sebelah-menyebelah', '並べて比較', '나란히 비교'],
@@ -55,13 +56,78 @@ L = {  # key: [en, zh-CN, zh-TW, ms, ja, ko]
  'wa': ['WhatsApp Keith', 'WhatsApp Keith', 'WhatsApp Keith', 'WhatsApp Keith', 'WhatsApp で相談', 'WhatsApp 문의'],
 }
 MENU = {
-    'projects.html': [('browse', 'projects.html#projSearch'), ('map', 'projects.html#projectMap'), ('all', 'projects.html#projGrid'),
+    'projects.html': [('browse', 'projects.html#projSearch'), ('map', 'projects.html#projectMap'), ('all', 'projects.html#projGrid'), ('state', 'projects.html#projGrid'),
                       ('best', 'best/index.html'), ('dev', 'developer/index.html'), ('station', 'station/index.html'), ('tag', 'projects.html#tagSection')],
     'compare.html': [('h2h', 'compare.html#cmpFilters'), ('vs', 'vs/index.html'), ('popular', 'compare.html#popular')],
     'blog.html': [('notes', 'market-notes.html'), ('guide', 'blog.html#buying-guide'), ('data', 'market-data.html'), ('faq', 'blog.html#faq'), ('blogs', 'blog.html#blog')],
     'resources.html': [('fareas', 'resources.html#guides'), ('fmm2h', 'mm2h.html'), ('fwatch', 'https://www.youtube.com/@KeithNahRealEstate/videos'), ('fcalc', 'calculator.html'), ('fadvice', WA)],
     'about-keith.html': [('contact', 'about-keith.html#quickEnquiry')],
 }
+
+
+# ---- "Search by State" flyout: states on the left, areas (KL by zone) on the right ----
+import sys, urllib.parse, collections
+sys.path.insert(0, HERE)
+from build_proj_layout import ZONES, T as ZT
+_pm = re.search(r'window\.KN_PLACES = (\[.*?\]);', open('projects.html', encoding='utf-8').read(), re.S)
+PLACES = json.loads(_pm.group(1)) if _pm else []
+ST_ORDER = ["Kuala Lumpur", "Selangor", "Penang", "Johor", "Melaka", "Sabah", "Terengganu", "Kelantan"]
+ST = {  # [en, zh-CN, zh-TW, ms, ja, ko]
+    'Kuala Lumpur': ['Kuala Lumpur', '吉隆坡', '吉隆坡', 'Kuala Lumpur', 'クアラルンプール', '쿠알라룸푸르'],
+    'Selangor': ['Selangor', '雪兰莪', '雪蘭莪', 'Selangor', 'セランゴール', '슬랑오르'],
+    'Penang': ['Penang', '槟城', '檳城', 'Pulau Pinang', 'ペナン', '페낭'],
+    'Johor': ['Johor', '柔佛', '柔佛', 'Johor', 'ジョホール', '조호르'],
+    'Melaka': ['Melaka', '马六甲', '馬六甲', 'Melaka', 'マラッカ', '믈라카'],
+    'Sabah': ['Sabah', '沙巴', '沙巴', 'Sabah', 'サバ', '사바'],
+    'Terengganu': ['Terengganu', '登嘉楼', '登嘉樓', 'Terengganu', 'トレンガヌ', '트렝가누'],
+    'Kelantan': ['Kelantan', '吉兰丹', '吉蘭丹', 'Kelantan', 'クランタン', '클란탄'],
+}
+ALLOF = ['All {s}', '全部{s}', '全部{s}', 'Semua {s}', '{s}のすべて', '{s} 전체']
+ZL = {z: [ZT[l][z] for l in ['en', 'zh-CN', 'zh-TW', 'ms', 'ja', 'ko']] for z in {q[0] for v in ZONES.values() for q in v} | {'other'}}
+
+
+def _esc(x):
+    return x.replace('&', '&amp;').replace('<', '&lt;').replace('"', '&quot;')
+
+
+def _slug(x):
+    return re.sub(r'^-|-$', '', re.sub(r'[^a-z0-9]+', '-', x.lower().replace('&', 'and')))
+
+
+def area_href(prefix, st, a):
+    """An area with its own landing page links there; otherwise to the filtered project list."""
+    if os.path.exists(os.path.join(ROOT, 'area', _slug(a) + '.html')):
+        return prefix + 'area/' + _slug(a) + '.html'
+    return prefix + 'projects.html#' + urllib.parse.quote(st + '/' + a)
+
+
+def flyout(prefix):
+    cnt = collections.Counter(s for s, a in PLACES)
+    acnt = collections.Counter((s, a) for s, a in PLACES)
+    states = [x for x in ST_ORDER if cnt[x]] + sorted(x for x in cnt if x not in ST_ORDER)
+    h = lambda q: prefix + 'projects.html#' + urllib.parse.quote(q)
+    left, right = '', ''
+    for i, st in enumerate(states):
+        on = ' on' if i == 0 else ''
+        name = ST.get(st, [st] * 6)[0]
+        left += '<a class="knm-fs%s" data-fs="%d" href="%s"><span data-kst="%s">%s</span><em>%d</em></a>' % (on, i, h(st), _esc(st), _esc(name), cnt[st])
+        areas = sorted({a for s, a in PLACES if s == st}, key=lambda a: (-acnt[(st, a)], a))
+        if st in ZONES:
+            zof = {a: z for z, lst in ZONES[st] for a in lst}
+            groups = [(z, [a for a in areas if zof.get(a, 'other') == z]) for z in [q[0] for q in ZONES[st]] + ['other']]
+            groups = [g for g in groups if g[1]]
+            if len(groups) == 1 and groups[0][0] == 'other':
+                groups = [(None, areas)]
+        else:
+            groups = [(None, areas)]
+        cols = ''
+        for z, lst in groups:
+            head = ('<a class="knm-fz" href="%s" data-kz="%s">%s</a>' % (h(st + '/zone:' + z), z, _esc(ZL[z][0]))) if z else ''
+            cols += '<div class="knm-col%s">%s%s</div>' % ('' if z else ' knm-one', head, ''.join(
+                '<a class="knm-fa" href="%s">%s<em>%d</em></a>' % (area_href(prefix, st, a), _esc(a), acnt[(st, a)]) for a in lst))
+        right += ('<div class="knm-fp%s" data-fp="%d"><a class="knm-fall" href="%s"><span data-kall="%s">%s</span> (%d) →</a><div class="knm-cols">%s</div></div>'
+                  % (on, i, h(st), _esc(st), ALLOF[0].replace('{s}', _esc(ST.get(st, [st])[0])), cnt[st], cols))
+    return '<div class="knm-fly"><div class="knm-fl">%s</div><div class="knm-fr">%s</div></div>' % (left, right)
 
 CSS = ('<style id="kn-submenu-css">'
        'html{scroll-padding-top:96px}'  # menu links to #sections: keep the section title below the fixed header
@@ -78,12 +144,34 @@ CSS = ('<style id="kn-submenu-css">'
        '#knMnav .knm-g{display:block}#knMnav .knm-d{position:static;transform:none;opacity:1;visibility:visible;background:none;box-shadow:none;border:0;padding:0 0 6px;min-width:0}'
        '#knMnav .knm-d a{color:rgba(255,255,255,.78)!important;font-size:14.5px!important;font-weight:500!important;padding:9px 4px 9px 18px!important;border-bottom:0!important;border-radius:0}'
        '#knMnav .knm-d a:hover{background:none;color:#fff!important}nav.nw-jump{display:flex!important}.kn-links a.knm-ms{padding-left:22px!important;font-size:14.5px!important;opacity:.8;border-bottom:0!important}'
+       '.knm-st{display:flex;align-items:center}.knm-st>a{flex:1}.knm-ar{width:7px;height:7px;margin:0 12px 0 4px;border-right:1.6px solid #15142b;border-top:1.6px solid #15142b;transform:rotate(45deg);flex:0 0 auto;pointer-events:none}'
+       '.knm-st:hover>a{background:#f1efff;color:#5E60CE!important}'
+       '.knm-fly{position:absolute;left:calc(100% + 8px);top:0;width:720px;display:flex;background:#fff;border-radius:16px;box-shadow:0 18px 40px rgba(20,18,60,.18);'
+       'border:1px solid rgba(21,20,43,.08);opacity:0;visibility:hidden;transition:opacity .15s,visibility .15s;text-align:left}'
+       '.knm-fly:before{content:"";position:absolute;left:-14px;top:0;bottom:0;width:14px}'
+       '.knm-st:hover .knm-fly,.knm-st:focus-within .knm-fly{opacity:1;visibility:visible}'
+       '.knm-fl{width:200px;flex:0 0 200px;padding:10px;border-right:1px solid #eeecf6}'
+       'header nav .knm-d a.knm-fs{display:flex!important;justify-content:space-between;align-items:center;gap:8px}'
+       '.knm-d a em{font-style:normal;font-size:11.5px;color:#8b8aa0;font-weight:600}a.knm-fs.on{background:#f1efff;color:#5E60CE!important}'
+       '.knm-fr{flex:1;padding:14px 16px 16px;max-height:min(560px,72vh);overflow:auto}.knm-fp{display:none}.knm-fp.on{display:block}'
+       'header nav .knm-d a.knm-fall{display:inline-block!important;color:#5E60CE!important;font-size:13px!important;padding:6px 10px!important;margin-bottom:6px!important}'
+       '.knm-cols{display:block}.knm-col{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 14px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px solid #f0eef8}.knm-col:last-child{border-bottom:0;margin-bottom:0}.knm-col .knm-fz{grid-column:1/-1}'
+       'header nav .knm-d a.knm-fz{font-size:11px!important;font-weight:700!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:#a0782c!important;padding:10px 10px 6px!important;white-space:normal!important;line-height:1.4}'
+       'header nav .knm-d a.knm-fa{display:flex!important;justify-content:space-between;gap:8px;font-weight:500!important;color:#3a3950!important;white-space:normal}'
+       '#knMnav .knm-fly,#knMnav .knm-ar{display:none!important}'
+       '@media(max-width:1349px){.knm-fly{display:none!important}}'
        '</style>')
 
-JS = ('<script id="kn-submenu-js">(function(){var T=%s,LG=["en","zh-CN","zh-TW","ms","ja","ko"];function f(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}'
-      'var i=Math.max(0,LG.indexOf(l));document.querySelectorAll("[data-km]").forEach(function(a){var v=T[a.getAttribute("data-km")];if(v)a.textContent=v[i];});}f();'
+JS = ('<script id="kn-submenu-js">(function(){var ST=__ST__,ZL=__ZL__,AO=__AO__,T=%s,LG=["en","zh-CN","zh-TW","ms","ja","ko"];function f(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}'
+      'var i=Math.max(0,LG.indexOf(l));document.querySelectorAll("[data-km]").forEach(function(a){var v=T[a.getAttribute("data-km")];if(v)a.textContent=v[i];});'
+      'document.querySelectorAll("[data-kst]").forEach(function(a){var v=ST[a.getAttribute("data-kst")];if(v)a.textContent=v[i];});'
+      'document.querySelectorAll("[data-kz]").forEach(function(a){var v=ZL[a.getAttribute("data-kz")];if(v)a.textContent=v[i];});'
+      'document.querySelectorAll("[data-kall]").forEach(function(a){var v=ST[a.getAttribute("data-kall")];a.textContent=AO[i].replace("{s}",v?v[i]:a.getAttribute("data-kall"));});}f();'
+      'document.addEventListener("mouseover",function(e){var s=e.target.closest&&e.target.closest(".knm-fs");if(!s)return;var fly=s.closest(".knm-fly"),k=s.getAttribute("data-fs");'
+      'fly.querySelectorAll(".knm-fs").forEach(function(x){x.classList.toggle("on",x===s);});fly.querySelectorAll(".knm-fp").forEach(function(x){x.classList.toggle("on",x.getAttribute("data-fp")===k);});});'
       'document.addEventListener("DOMContentLoaded",function(){["knSetLang","setLanguage"].forEach(function(n){var s=window[n];if(typeof s==="function")window[n]=function(){var r=s.apply(this,arguments);f();return r;};});f();});})();</script>'
       ) % json.dumps({k: v for k, v in L.items()}, ensure_ascii=False)
+JS = JS.replace('__ST__', json.dumps(ST, ensure_ascii=False)).replace('__ZL__', json.dumps(ZL, ensure_ascii=False)).replace('__AO__', json.dumps(ALLOF, ensure_ascii=False))
 
 
 def sub(prefix, items):
@@ -91,7 +179,8 @@ def sub(prefix, items):
     for k, href in items:
         full = href if href.startswith('http') else prefix + href
         ext = ' target="_blank" rel="noopener"' if href.startswith('http') else ''
-        out += '<a class="knm-s" href="%s"%s data-km="%s">%s</a>' % (full.replace('&', '&amp;'), ext, k, L[k][0])
+        link = '<a class="knm-s" href="%s"%s data-km="%s">%s</a>' % (full.replace('&', '&amp;'), ext, k, L[k][0])
+        out += ('<div class="knm-st">%s<i class="knm-ar" aria-hidden="true"></i>%s</div>' % (link, flyout(prefix))) if k == 'state' else link
     return '<div class="knm-d">%s</div>' % out
 
 
@@ -105,7 +194,8 @@ def fix(t, prefix):
     if not m:
         return t
     nav = m.group(1)
-    nav = re.sub(r'<div class="knm-g">(<a\b.*?</a>)(?:<span class="knm-c"[^>]*></span>)?<div class="knm-d">.*?</div></div>', r'\1', nav, flags=re.S)  # undo an earlier run
+    nav = re.sub(r'<div class="knm-g">(<a\b.*?</a>)(?:<span class="knm-c"[^>]*></span>)?<div class="knm-d">.*?</div><!--/knm-g--></div>', r'\1', nav, flags=re.S)  # undo an earlier run
+    nav = re.sub(r'<div class="knm-g">(<a\b.*?</a>)(?:<span class="knm-c"[^>]*></span>)?<div class="knm-d">(?:(?!<div).)*?</div></div>', r'\1', nav, flags=re.S)  # older runs (no nested divs)
     nav = re.sub(r'\s*<a\b[^>]*href="(?:\.\./)*calculator\.html"[^>]*>.*?</a>', '', nav, flags=re.S)  # Calculator moves to Free Toolkit
 
     def group(a):
@@ -113,7 +203,7 @@ def fix(t, prefix):
         key = href.split('/')[-1].split('#')[0]
         if key not in MENU:
             return a.group(0)
-        return '<div class="knm-g">%s<span class="knm-c" aria-hidden="true"></span>%s</div>' % (a.group(0), sub(prefix, MENU[key]))
+        return '<div class="knm-g">%s<span class="knm-c" aria-hidden="true"></span>%s<!--/knm-g--></div>' % (a.group(0), sub(prefix, MENU[key]))
     nav = re.sub(r'<a\b[^>]*>.*?</a>', group, nav, flags=re.S)
     head = head[:m.start(1)] + nav + head[m.end(1):]
     t = t[:h0] + head + t[h1:]
@@ -121,8 +211,11 @@ def fix(t, prefix):
     t = re.sub(r'<script id="kn-submenu-js">.*?</script>', '', t, flags=re.S)
     t = t.replace('</head>', CSS + '</head>', 1).replace('</body>', JS + '</body>', 1)
     # the phone menu on the main pages copies every menu link: show the sub-pages indented
+    t = re.sub(r"(?: if\(a\.classList\.contains\('knm-s'\)\) c\.className='knm-ms';)+", "", t)
     t = t.replace("var c=document.createElement('a'); c.href=h; c.textContent=a.textContent;",
                   "var c=document.createElement('a'); c.href=h; c.textContent=a.textContent; if(a.classList.contains('knm-s')) c.className='knm-ms';")
+    t = t.replace("document.querySelectorAll('header nav a').forEach(function(a){\n", "document.querySelectorAll('header nav a').forEach(function(a){ if(a.closest('.knm-fly'))return;\n")
+    t = t.replace("forEach(function(a){ if(a.closest('.knm-fly'))return; if(a.closest('.knm-fly'))return;", "forEach(function(a){ if(a.closest('.knm-fly'))return;")
     t = t.replace("if(h==='resources.html'){ var m2=document.createElement('a');", "if(false){ var m2=document.createElement('a');")
     return t
 
