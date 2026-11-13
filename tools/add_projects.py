@@ -44,11 +44,12 @@ def wa(name):
 
 def compare_cards(c, todo, index):
     """Card markup in the compare page's project picker, copied from an existing card."""
-    tpl = re.search(r'  <div class="cmp-card" data-idx="48".*?\n  </div>\n', c, re.S).group(0)
+    m48 = re.search(r'  <div class="cmp-card" data-idx="(\d+)"(?:(?!\n  </div>\n).)*?<h4>Tagbay Suites</h4>.*?\n  </div>\n', c, re.S)
+    tpl, i48 = m48.group(0), m48.group(1)
     out = ''
     for p in todo:
         k = index[p['name']]
-        x = tpl.replace('data-idx="48" onclick="toggleSelect(48)"', 'data-idx="%d" onclick="toggleSelect(%d)"' % (k, k))
+        x = tpl.replace('data-idx="%s" onclick="toggleSelect(%s)"' % (i48, i48), 'data-idx="%d" onclick="toggleSelect(%d)"' % (k, k))
         x = re.sub(r'data-search="[^"]*"', 'data-search="%s"' % E(('%s %s %s' % (p['name'], p['tag'], p['area'])).lower()), x)
         x = re.sub(r'\s*<img class="cmp-card-photo"[^>]*>', '', x, count=1)
         x = re.sub(r'<span class="cmp-card-status [^"]+">[^<]*</span>', '<span class="cmp-card-status %s">%s</span>' % (STATUS_CLASS[p['status']], E(p['status'])), x)
@@ -105,7 +106,8 @@ def main(spec_path):
         '<option value="%s">%s</option>' % (E(x), E(x)) for x in devs) + m.group(3) + s[m.end():]
 
     # 5) Cards: copy an existing card's markup
-    tpl = re.search(r'  <div class="proj-card"[^>]*data-idx="48".*?\n  </div>\n', s, re.S).group(0)
+    T48 = [k for k, p in enumerate(D) if p['name'] == 'Tagbay Suites'][0]  # template card
+    tpl = re.search(r'  <div class="proj-card"[^>]*data-idx="%d".*?\n  </div>\n' % T48, s, re.S).group(0)
     assert 'Tagbay Suites' in tpl, 'template card moved'
     cards = ''
     for p in todo:
@@ -124,7 +126,7 @@ def main(spec_path):
         for label, val in [('Size', p['size_short']), ('Rooms', p['rooms_short']), ('Tenure', p['tenure']), ('Completion', p['completion_short'])]:
             c = re.sub(r'(<small>%s</small><strong>)[^<]*(</strong>)' % label, lambda m_, v=val: m_.group(1) + E(v) + m_.group(2), c)
         c = re.sub(r'(<strong class="proj-price">)[^<]*(</strong>)', lambda m_: m_.group(1) + E(p['price_short']) + m_.group(2), c)
-        c = c.replace('data-idx="48"', 'data-idx="%d"' % k).replace('openDetailModal(48)', 'openDetailModal(%d)' % k)
+        c = c.replace('data-idx="%d"' % T48, 'data-idx="%d"' % k).replace('openDetailModal(%d)' % T48, 'openDetailModal(%d)' % k)
         assert 'Tagbay' not in c, c[:300]
         cards += c
     # after the last card, inside the grid: find the last card and its matching closing tag
@@ -144,7 +146,7 @@ def main(spec_path):
     # 6) compare.html
     c = open('compare.html', encoding='utf-8').read()
     C, c0, c1 = js_value(c, 'const PROJECTS = ')
-    icon = C[48]['icon']
+    icon = [x for x in C if x['name'] == 'Tagbay Suites'][0]['icon']
     C += [{'name': p['name'], 'tag': p['tag'], 'type': p['type'], 'tenure': p['tenure'], 'status': p['status'], 'completion': p['completion_short'],
            'price': p['price_short'], 'size': p['size_short'], 'rooms': p['rooms_short'], 'loc': p['loc'], 'icon': icon, 'grad': '#1e1a20,#3a2e3f'} for p in todo]
     c = c[:c0] + json.dumps(C, ensure_ascii=False, separators=(',', ':')) + c[c1:]

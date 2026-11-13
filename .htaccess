@@ -41,3 +41,5 @@ Redirect gone /zh-tw/property/lightwater-residence.html
 Redirect gone /ms/property/lightwater-residence.html
 Redirect gone /ja/property/lightwater-residence.html
 Redirect gone /ko/property/lightwater-residence.html
+RedirectMatch 301 ^/guides/gelugor\.html$ /resources.html
+RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/guides/gelugor\.html$ /$1/resources.html
