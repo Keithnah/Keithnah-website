@@ -35,15 +35,14 @@
 "slug": "kerjaya",
 "ix": [
 4,
-43,
-91
+43
 ]
 },
 "Mah Sing": {
 "slug": "mah-sing",
 "ix": [
 71,
-88
+87
 ]
 },
 "Oxley": {
@@ -213,8 +212,8 @@
 "KTM"
 ],
 "ix": [
-120,
-119
+112,
+111
 ]
 },
 "Sri Damansara West": {
@@ -231,7 +230,7 @@
 },
 "pairs": [
 {
-"a": 114,
+"a": 108,
 "b": 6,
 "slug": "amara-residences-vs-arra-residences",
 "area": "Ara Damansara",
@@ -246,20 +245,20 @@
 },
 {
 "a": 3,
-"b": 115,
+"b": 109,
 "slug": "amaya-bdr-sri-damansara-vs-the-arden-bandar-sri-damansara",
 "area": "Bandar Sri Damansara",
 "state": "Selangor"
 },
 {
 "a": 27,
-"b": 115,
+"b": 109,
 "slug": "laverra-vs-the-arden-bandar-sri-damansara",
 "area": "Bandar Sri Damansara",
 "state": "Selangor"
 },
 {
-"a": 95,
+"a": 93,
 "b": 26,
 "slug": "talisa-bangsar-hill-park-vs-khaya-residences",
 "area": "Bangsar",
@@ -385,20 +384,6 @@
 "state": "Kuala Lumpur"
 },
 {
-"a": 117,
-"b": 118,
-"slug": "levia-residence-vs-the-maxxon",
-"area": "Cheras",
-"state": "Kuala Lumpur"
-},
-{
-"a": 107,
-"b": 108,
-"slug": "myra-cove-vs-sanderling-2",
-"area": "Cyberjaya",
-"state": "Selangor"
-},
-{
 "a": 36,
 "b": 55,
 "slug": "pinnacle-bukit-gambier-vs-the-lighthauz",
@@ -421,7 +406,7 @@
 },
 {
 "a": 8,
-"b": 92,
+"b": 90,
 "slug": "axis-causeway-square-vs-r-and-f-princess-cove-seine-region",
 "area": "JB City Centre",
 "state": "Johor"
@@ -435,14 +420,14 @@
 },
 {
 "a": 10,
-"b": 92,
+"b": 90,
 "slug": "brixton-causeway-square-vs-r-and-f-princess-cove-seine-region",
 "area": "JB City Centre",
 "state": "Johor"
 },
 {
 "a": 18,
-"b": 92,
+"b": 90,
 "slug": "dover-causeway-square-vs-r-and-f-princess-cove-seine-region",
 "area": "JB City Centre",
 "state": "Johor"
@@ -630,7 +615,7 @@
 "state": "Selangor"
 },
 {
-"a": 113,
+"a": 107,
 "b": 63,
 "slug": "atwater-corporate-tower-vs-zenia-parkcity-damansara",
 "area": "Petaling Jaya",
@@ -658,49 +643,42 @@
 "state": "Selangor"
 },
 {
-"a": 99,
-"b": 101,
+"a": 95,
+"b": 97,
 "slug": "anya-at-shorea-park-vs-avantro-residences",
 "area": "Puchong",
 "state": "Selangor"
 },
 {
-"a": 99,
-"b": 106,
+"a": 95,
+"b": 102,
 "slug": "anya-at-shorea-park-vs-the-wyn-residences",
 "area": "Puchong",
 "state": "Selangor"
 },
 {
-"a": 101,
-"b": 106,
+"a": 97,
+"b": 102,
 "slug": "avantro-residences-vs-the-wyn-residences",
 "area": "Puchong",
 "state": "Selangor"
 },
 {
-"a": 120,
-"b": 119,
+"a": 112,
+"b": 111,
 "slug": "arte-star-milano-vs-arte-star-the-regal",
 "area": "Salak Selatan",
 "state": "Kuala Lumpur"
 },
 {
-"a": 84,
-"b": 87,
+"a": 83,
+"b": 86,
 "slug": "est8-vs-lunar-seputeh",
 "area": "Seputeh",
 "state": "Kuala Lumpur"
 },
 {
-"a": 97,
-"b": 98,
-"slug": "alamanda-heights-vs-trinity-nordic-residences",
-"area": "Seri Kembangan",
-"state": "Selangor"
-},
-{
-"a": 85,
+"a": 84,
 "b": 79,
 "slug": "ambience-kl-vs-aricia-residences",
 "area": "Sungai Besi",

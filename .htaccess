@@ -35,6 +35,72 @@ Header set Cache-Control "public, max-age=86400"
 </IfModule>
 
 # Removed projects (410 Gone)
+Redirect gone /property/trinity-nordic-residences.html
+Redirect gone /zh/property/trinity-nordic-residences.html
+Redirect gone /zh-tw/property/trinity-nordic-residences.html
+Redirect gone /ms/property/trinity-nordic-residences.html
+Redirect gone /ja/property/trinity-nordic-residences.html
+Redirect gone /ko/property/trinity-nordic-residences.html
+Redirect gone /property/alamanda-heights.html
+Redirect gone /zh/property/alamanda-heights.html
+Redirect gone /zh-tw/property/alamanda-heights.html
+Redirect gone /ms/property/alamanda-heights.html
+Redirect gone /ja/property/alamanda-heights.html
+Redirect gone /ko/property/alamanda-heights.html
+Redirect gone /vs/alamanda-heights-vs-trinity-nordic-residences.html
+Redirect gone /zh/vs/alamanda-heights-vs-trinity-nordic-residences.html
+Redirect gone /zh-tw/vs/alamanda-heights-vs-trinity-nordic-residences.html
+Redirect gone /ms/vs/alamanda-heights-vs-trinity-nordic-residences.html
+Redirect gone /ja/vs/alamanda-heights-vs-trinity-nordic-residences.html
+Redirect gone /ko/vs/alamanda-heights-vs-trinity-nordic-residences.html
+Redirect gone /property/sanderling-2.html
+Redirect gone /zh/property/sanderling-2.html
+Redirect gone /zh-tw/property/sanderling-2.html
+Redirect gone /ms/property/sanderling-2.html
+Redirect gone /ja/property/sanderling-2.html
+Redirect gone /ko/property/sanderling-2.html
+Redirect gone /property/myra-cove.html
+Redirect gone /zh/property/myra-cove.html
+Redirect gone /zh-tw/property/myra-cove.html
+Redirect gone /ms/property/myra-cove.html
+Redirect gone /ja/property/myra-cove.html
+Redirect gone /ko/property/myra-cove.html
+Redirect gone /vs/myra-cove-vs-sanderling-2.html
+Redirect gone /zh/vs/myra-cove-vs-sanderling-2.html
+Redirect gone /zh-tw/vs/myra-cove-vs-sanderling-2.html
+Redirect gone /ms/vs/myra-cove-vs-sanderling-2.html
+Redirect gone /ja/vs/myra-cove-vs-sanderling-2.html
+Redirect gone /ko/vs/myra-cove-vs-sanderling-2.html
+Redirect gone /property/the-maxxon.html
+Redirect gone /zh/property/the-maxxon.html
+Redirect gone /zh-tw/property/the-maxxon.html
+Redirect gone /ms/property/the-maxxon.html
+Redirect gone /ja/property/the-maxxon.html
+Redirect gone /ko/property/the-maxxon.html
+Redirect gone /property/levia-residence.html
+Redirect gone /zh/property/levia-residence.html
+Redirect gone /zh-tw/property/levia-residence.html
+Redirect gone /ms/property/levia-residence.html
+Redirect gone /ja/property/levia-residence.html
+Redirect gone /ko/property/levia-residence.html
+Redirect gone /vs/levia-residence-vs-the-maxxon.html
+Redirect gone /zh/vs/levia-residence-vs-the-maxxon.html
+Redirect gone /zh-tw/vs/levia-residence-vs-the-maxxon.html
+Redirect gone /ms/vs/levia-residence-vs-the-maxxon.html
+Redirect gone /ja/vs/levia-residence-vs-the-maxxon.html
+Redirect gone /ko/vs/levia-residence-vs-the-maxxon.html
+Redirect gone /property/vox-residence.html
+Redirect gone /zh/property/vox-residence.html
+Redirect gone /zh-tw/property/vox-residence.html
+Redirect gone /ms/property/vox-residence.html
+Redirect gone /ja/property/vox-residence.html
+Redirect gone /ko/property/vox-residence.html
+Redirect gone /property/ekotitiwangsa.html
+Redirect gone /zh/property/ekotitiwangsa.html
+Redirect gone /zh-tw/property/ekotitiwangsa.html
+Redirect gone /ms/property/ekotitiwangsa.html
+Redirect gone /ja/property/ekotitiwangsa.html
+Redirect gone /ko/property/ekotitiwangsa.html
 Redirect gone /property/bayu-timur-residences.html
 Redirect gone /zh/property/bayu-timur-residences.html
 Redirect gone /zh-tw/property/bayu-timur-residences.html
@@ -73,3 +139,13 @@ RedirectMatch 301 ^/area/pantai-dalam\.html$ /area/pantai-sentral-park.html
 RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/area/pantai-dalam\.html$ /$1/area/pantai-sentral-park.html
 RedirectMatch 301 ^/guides/shah\-alam\.html$ /resources.html
 RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/guides/shah\-alam\.html$ /$1/resources.html
+RedirectMatch 301 ^/area/seri\-kembangan\.html$ /area/selangor.html
+RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/area/seri\-kembangan\.html$ /$1/area/selangor.html
+RedirectMatch 301 ^/area/cyberjaya\.html$ /area/selangor.html
+RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/area/cyberjaya\.html$ /$1/area/selangor.html
+RedirectMatch 301 ^/area/sentul\.html$ /area/kuala-lumpur.html
+RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/area/sentul\.html$ /$1/area/kuala-lumpur.html
+RedirectMatch 301 ^/area/cheras\.html$ /area/kuala-lumpur.html
+RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/area/cheras\.html$ /$1/area/kuala-lumpur.html
+RedirectMatch 301 ^/area/titiwangsa\.html$ /area/kuala-lumpur.html
+RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/area/titiwangsa\.html$ /$1/area/kuala-lumpur.html
