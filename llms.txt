@@ -167,8 +167,8 @@ The site is available in English, 简体中文, 繁體中文, Bahasa Malaysia, �
 - [Gen Starz Residences](https://keithnah.com/property/gen-starz-residences.html): Gen Starz Residences, Old Klang Road, Kuala Lumpur: From RM593,000 (Gross), 650 – 874 sqft, 2 – 3 Rooms, Freehold. Completion Sep 2028.
 - [M Aurora](https://keithnah.com/property/m-aurora.html): M Aurora, Old Klang Road, Kuala Lumpur: From RM339,000 (Gross), 556 – 1,019 sqft, 1+1 – 4 Bedrooms, Freehold. Completion 54 months from SPA (est. 2030).
 
-### Pantai Dalam
-- [Enlace Suites II](https://keithnah.com/property/enlace-suites-ii.html): Enlace Suites II, Pantai Sentral Park, Pantai Dalam, Kuala Lumpur: From RM626,000 (Gross), 506 – 2,034 sqft, Studio – 5 Bedrooms, Leasehold (99 years from…
+### Pantai Sentral Park
+- [Enlace Suites II](https://keithnah.com/property/enlace-suites-ii.html): Enlace Suites II, Pantai Sentral Park, Kuala Lumpur: From RM626,000 (Gross), 506 – 2,034 sqft, Studio – 5 Bedrooms, Leasehold (99 years from 2024).
 
 ### Paya Terubong
 - [D'Hazelton](https://keithnah.com/property/dhazelton.html): D'Hazelton, Farlim, Paya Terubong, Penang: From RM450,000 (Gross), 900 – 1,000 sqft, 3 Bedrooms, Freehold. Completion Est. 2029.
@@ -259,6 +259,7 @@ The site is available in English, 简体中文, 繁體中文, Bahasa Malaysia, �
 - [Old Klang Road New Launch Condos 2026](https://keithnah.com/area/old-klang-road.html): 2 new property launches in Old Klang Road, Kuala Lumpur: starting prices from RM339,000, sizes, tenure and completion dates, with floor plans for each project.
 - [New Launch Condos in OUG 2026](https://keithnah.com/area/oug.html): 1 new property launches in OUG, Kuala Lumpur: starting prices from RM666,000, sizes, tenure and completion dates, with floor plans for each project.
 - [Pantai Dalam New Launch Condos 2026](https://keithnah.com/area/pantai-dalam.html): 1 new property launches in Pantai Dalam, Kuala Lumpur: starting prices from RM626,000, sizes, tenure and completion dates, with floor plans for each project.
+- [Pantai Sentral Park New Launch Condos 2026](https://keithnah.com/area/pantai-sentral-park.html): 1 new property launches in Pantai Sentral Park, Kuala Lumpur: starting prices from RM626,000, sizes, tenure and completion dates, with floor plans for each…
 - [Paya Terubong New Launch Condos 2026](https://keithnah.com/area/paya-terubong.html): 1 new property launches in Paya Terubong, Penang: starting prices from RM450,000, sizes, tenure and completion dates, with floor plans for each project.
 - [Penang New Launch Condos 2026](https://keithnah.com/area/penang.html): 12 new property launches in Penang: starting prices from RM433,000, sizes, tenure and completion dates, with floor plans for each project.
 - [Petaling Jaya New Launch Condos 2026](https://keithnah.com/area/petaling-jaya.html): 7 new property launches in Petaling Jaya, Selangor: starting prices from RM622,200, sizes, tenure and completion dates, with floor plans for each project.
