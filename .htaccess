@@ -33,3 +33,13 @@ Header set Cache-Control "no-cache"
 Header set Cache-Control "public, max-age=86400"
 </FilesMatch>
 </IfModule>
+
+# Removed projects (410 Gone)
+Redirect gone /property/lightwater-residence.html
+Redirect gone /zh/property/lightwater-residence.html
+Redirect gone /zh-tw/property/lightwater-residence.html
+Redirect gone /ms/property/lightwater-residence.html
+Redirect gone /ja/property/lightwater-residence.html
+Redirect gone /ko/property/lightwater-residence.html
+RedirectMatch 301 ^/guides/gelugor\.html$ /resources.html
+RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/guides/gelugor\.html$ /$1/resources.html

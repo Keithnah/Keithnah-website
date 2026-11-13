@@ -441,17 +441,6 @@
   <url><loc>https://keithnah.com/ja/property/laverra.html</loc><lastmod>2026-11-13</lastmod></url>
   <url><loc>https://keithnah.com/ko/property/laverra.html</loc><lastmod>2026-11-13</lastmod></url>
   <url>
-    <loc>https://keithnah.com/property/lightwater-residence.html</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url><loc>https://keithnah.com/zh/property/lightwater-residence.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/zh-tw/property/lightwater-residence.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/ms/property/lightwater-residence.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/ja/property/lightwater-residence.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/ko/property/lightwater-residence.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url>
     <loc>https://keithnah.com/property/lumina-residence.html</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -3677,14 +3666,14 @@
   <url><loc>https://keithnah.com/ja/guides/damansara-heights.html</loc><lastmod>2026-11-13</lastmod></url>
   <url><loc>https://keithnah.com/ko/guides/damansara-heights.html</loc><lastmod>2026-11-13</lastmod></url>
   <url>
-    <loc>https://keithnah.com/guides/gelugor.html</loc>
+    <loc>https://keithnah.com/guides/george-town.html</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url><loc>https://keithnah.com/zh/guides/gelugor.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/zh-tw/guides/gelugor.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/ms/guides/gelugor.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/ja/guides/gelugor.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/ko/guides/gelugor.html</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://keithnah.com/zh/guides/george-town.html</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://keithnah.com/zh-tw/guides/george-town.html</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://keithnah.com/ms/guides/george-town.html</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://keithnah.com/ja/guides/george-town.html</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://keithnah.com/ko/guides/george-town.html</loc><lastmod>2026-11-13</lastmod></url>
 </urlset>
