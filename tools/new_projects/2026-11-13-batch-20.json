@@ -179,35 +179,40 @@
     "size": "550 sqft",
     "rooms": "1+1 Bedrooms, 1 Bathroom",
     "tag": "Entry",
-    "desc": "A 1+1-bedroom home with 1 bathroom, for singles and couples."
+    "desc": "A 1+1-bedroom home with 1 bathroom, for singles and couples.",
+    "img": "images/21976ebb0639bf29.jpg"
    },
    {
     "type": "Type B1",
     "size": "757 sqft",
     "rooms": "2+1 Bedrooms, 2 Bathrooms",
     "tag": "",
-    "desc": "A 2+1-bedroom, 2-bathroom home with a flexible extra room."
+    "desc": "A 2+1-bedroom, 2-bathroom home with a flexible extra room.",
+    "img": "images/d7af2a56365360d1.jpg"
    },
    {
     "type": "Type C1",
     "size": "872 sqft",
     "rooms": "3+1 Bedrooms, 2 Bathrooms",
     "tag": "Show unit",
-    "desc": "A 3+1-bedroom, 2-bathroom family home."
+    "desc": "A 3+1-bedroom, 2-bathroom family home.",
+    "img": "images/9e667a8a14e77007.jpg"
    },
    {
     "type": "Type D1 (Duplex)",
     "size": "1,410 sqft",
     "rooms": "3+1 Bedrooms, 3 Bathrooms",
     "tag": "Duplex",
-    "desc": "A two-level duplex with 3+1 bedrooms and 3 bathrooms."
+    "desc": "A two-level duplex with 3+1 bedrooms and 3 bathrooms.",
+    "img": "images/c7a5fa7425285928.jpg"
    },
    {
     "type": "Type D2 (Duplex)",
     "size": "1,420 sqft",
     "rooms": "3+1 Bedrooms, 3 Bathrooms",
     "tag": "Largest",
-    "desc": "The largest duplex, with 3+1 bedrooms and 3 bathrooms over two floors."
+    "desc": "The largest duplex, with 3+1 bedrooms and 3 bathrooms over two floors.",
+    "img": "images/93838a8f50104084.jpg"
    }
   ],
   "tags": [
@@ -400,14 +405,16 @@
     "size": "527 sqft",
     "rooms": "1 Bedroom, 1 Bathroom",
     "tag": "Entry",
-    "desc": "A 1-bedroom suite with a kitchen and a living room, 274 units."
+    "desc": "A 1-bedroom suite with a kitchen and a living room, 274 units.",
+    "img": "images/dd953b13c53fae12.jpg"
    },
    {
     "type": "Type B",
     "size": "679 sqft",
     "rooms": "2 Bedrooms, 2 Bathrooms",
     "tag": "Popular",
-    "desc": "A 2-bedroom, 2-bathroom suite with a living room and kitchen, 182 units."
+    "desc": "A 2-bedroom, 2-bathroom suite with a living room and kitchen, 182 units.",
+    "img": "images/737e7c7aa76cb6d4.jpg"
    }
   ],
   "tags": [
@@ -1099,42 +1106,48 @@
     "size": "683 sqft",
     "rooms": "1+1 Bedrooms, 1 Bathroom",
     "tag": "Entry",
-    "desc": "A 1+1-bedroom home with a balcony, 93 units."
+    "desc": "A 1+1-bedroom home with a balcony, 93 units.",
+    "img": "images/ae1b4ee8e802df4b.jpg"
    },
    {
     "type": "Type B1 / B1A",
     "size": "841 sqft",
     "rooms": "2 Bedrooms, 2 Bathrooms",
     "tag": "",
-    "desc": "A 2-bedroom, 2-bathroom home with a balcony."
+    "desc": "A 2-bedroom, 2-bathroom home with a balcony.",
+    "img": "images/81e437e4673cb148.jpg"
    },
    {
     "type": "Type B2",
     "size": "930 sqft",
     "rooms": "3 Bedrooms, 2 Bathrooms",
     "tag": "",
-    "desc": "A 3-bedroom, 2-bathroom home with a reading room."
+    "desc": "A 3-bedroom, 2-bathroom home with a reading room.",
+    "img": "images/cbc61d25eb3933e3.jpg"
    },
    {
     "type": "Type C1 (Dual-key)",
     "size": "1,280 sqft",
     "rooms": "3 Bedrooms, 3 Bathrooms + Powder Room",
     "tag": "Dual-key",
-    "desc": "A 3-bedroom dual-key home with ensuite bathrooms and a powder room."
+    "desc": "A 3-bedroom dual-key home with ensuite bathrooms and a powder room.",
+    "img": "images/b1694d8f7e54ef24.jpg"
    },
    {
     "type": "Type C2 / C2A",
     "size": "1,280 sqft",
     "rooms": "3 Bedrooms, 3 Bathrooms + Powder Room",
     "tag": "",
-    "desc": "A 3-bedroom home with an ensuite for every room and a powder room."
+    "desc": "A 3-bedroom home with an ensuite for every room and a powder room.",
+    "img": "images/6723cf0f1fd7f38d.jpg"
    },
    {
     "type": "Type D",
     "size": "1,646 sqft",
     "rooms": "4+1 Bedrooms, 4 Bathrooms + Powder Room",
     "tag": "Largest",
-    "desc": "The largest home: 4+1 bedrooms with a study room and a powder room."
+    "desc": "The largest home: 4+1 bedrooms with a study room and a powder room.",
+    "img": "images/b4beea9032a3cff4.jpg"
    }
   ],
   "tags": [
@@ -1350,21 +1363,24 @@
     "size": "766 sqft",
     "rooms": "2 Bedrooms, 2 Bathrooms",
     "tag": "Show unit",
-    "desc": "A 2-bedroom, 2-bathroom home, the most compact layout."
+    "desc": "A 2-bedroom, 2-bathroom home, the most compact layout.",
+    "img": "images/d27e8c67f0601007.jpg"
    },
    {
     "type": "Type B1",
     "size": "884 sqft",
     "rooms": "3 Bedrooms, 2 Bathrooms",
     "tag": "Show unit",
-    "desc": "A 3-bedroom, 2-bathroom family home."
+    "desc": "A 3-bedroom, 2-bathroom family home.",
+    "img": "images/5087a55fc8f1c5a5.jpg"
    },
    {
     "type": "Larger types",
     "size": "Up to 1,206 sqft",
     "rooms": "3+1 Bedrooms",
     "tag": "Largest",
-    "desc": "The largest layouts, with 3+1 bedrooms."
+    "desc": "The largest layouts, with 3+1 bedrooms.",
+    "img": "images/25b0faf320df4b5c.jpg"
    }
   ],
   "tags": [
@@ -1688,42 +1704,48 @@
     "size": "471 sqft",
     "rooms": "Studio",
     "tag": "Entry",
-    "desc": "A studio with a walk-in wardrobe and an L-shaped kitchen."
+    "desc": "A studio with a walk-in wardrobe and an L-shaped kitchen.",
+    "img": "images/45317bf53e4af686.jpg"
    },
    {
     "type": "Type V6 (1 Bedroom)",
     "size": "544 sqft",
     "rooms": "1 Bedroom, 1 Bathroom",
     "tag": "",
-    "desc": "A 1-bedroom home with a balcony off the living room."
+    "desc": "A 1-bedroom home with a balcony off the living room.",
+    "img": "images/5d90c9c07c7b02f6.jpg"
    },
    {
     "type": "Type G (2 Bedrooms)",
     "size": "933 sqft",
     "rooms": "2 Bedrooms, 2 Bathrooms",
     "tag": "",
-    "desc": "A 2-bedroom home with an expansive balcony and bay windows."
+    "desc": "A 2-bedroom home with an expansive balcony and bay windows.",
+    "img": "images/064b96e5fc878783.jpg"
    },
    {
     "type": "Type A (3 Bedrooms)",
     "size": "1,181 sqft",
     "rooms": "3 Bedrooms, 2 Bathrooms",
     "tag": "Family",
-    "desc": "A 3-bedroom home with an indoor garden."
+    "desc": "A 3-bedroom home with an indoor garden.",
+    "img": "images/3b5df376407ecc9c.jpg"
    },
    {
     "type": "Type E (Dual-key)",
     "size": "1,317 sqft",
     "rooms": "Dual-key (2+1)",
     "tag": "Dual-key",
-    "desc": "A dual-key home, like owning two units under one title."
+    "desc": "A dual-key home, like owning two units under one title.",
+    "img": "images/e4a27dcc727e00d5.jpg"
    },
    {
     "type": "Type H1 (4 Bedrooms)",
     "size": "1,471 sqft",
     "rooms": "4 Bedrooms, 3 Bathrooms",
     "tag": "Largest",
-    "desc": "A 4-bedroom home with 2 suites and an indoor garden."
+    "desc": "A 4-bedroom home with 2 suites and an indoor garden.",
+    "img": "images/d0b3fef8d0425bfb.jpg"
    }
   ],
   "tags": [
@@ -1936,56 +1958,64 @@
     "size": "506 sqft",
     "rooms": "Studio, 1 Bathroom",
     "tag": "Entry",
-    "desc": "A studio suite."
+    "desc": "A studio suite.",
+    "img": "images/3c2451bfa4490360.jpg"
    },
    {
     "type": "Type B / B(m)",
     "size": "613 sqft",
     "rooms": "1 Bedroom, 1 Bathroom",
     "tag": "",
-    "desc": "A 1-bedroom suite with a balcony."
+    "desc": "A 1-bedroom suite with a balcony.",
+    "img": "images/1fc2b21dbfe854d9.jpg"
    },
    {
     "type": "Type C1 / C2",
     "size": "979 sqft",
     "rooms": "2 Bedrooms, 2 Bathrooms",
     "tag": "",
-    "desc": "A 2-bedroom, 2-bathroom suite with a balcony."
+    "desc": "A 2-bedroom, 2-bathroom suite with a balcony.",
+    "img": "images/d728b29b10b60bf2.jpg"
    },
    {
     "type": "Type D1",
     "size": "1,227 sqft",
     "rooms": "3 Bedrooms, 3 Bathrooms",
     "tag": "Family",
-    "desc": "A 3-bedroom, 3-bathroom home with a utility room."
+    "desc": "A 3-bedroom, 3-bathroom home with a utility room.",
+    "img": "images/5cc5e2072951cd25.jpg"
    },
    {
     "type": "Type D2",
     "size": "1,485 sqft",
     "rooms": "4 Bedrooms, 3 Bathrooms",
     "tag": "",
-    "desc": "A 4-bedroom, 3-bathroom home with a utility room."
+    "desc": "A 4-bedroom, 3-bathroom home with a utility room.",
+    "img": "images/d9d07482933f8f61.jpg"
    },
    {
     "type": "Type E / E(m)",
     "size": "1,593 sqft",
     "rooms": "4 Bedrooms, 4 Bathrooms",
     "tag": "",
-    "desc": "A 4-bedroom home with a maid's room, on levels 33 to 37."
+    "desc": "A 4-bedroom home with a maid's room, on levels 33 to 37.",
+    "img": "images/1f5de056b451453a.jpg"
    },
    {
     "type": "Type G1 – G3 (Garden duplex)",
     "size": "1,001 – 1,593 sqft",
     "rooms": "2 to 3 Bedrooms",
     "tag": "Garden",
-    "desc": "Duplex garden units on level 8 with a private garden of 183 to 377 sqft."
+    "desc": "Duplex garden units on level 8 with a private garden of 183 to 377 sqft.",
+    "img": "images/5b51008d0cef910f.jpg"
    },
    {
     "type": "Type RG1 / RG2 (Roof garden)",
     "size": "1,862 – 2,034 sqft",
     "rooms": "5 Bedrooms, 4 Bathrooms",
     "tag": "Largest",
-    "desc": "Duplex roof units on level 38 with an open terrace and an entertainment room."
+    "desc": "Duplex roof units on level 38 with an open terrace and an entertainment room.",
+    "img": "images/3febcbe68aab0f8d.jpg"
    }
   ],
   "tags": [
