@@ -177,12 +177,13 @@ function sync(){var r=readSide();S.s=r[0];S.a=r[1];S.z=null;S.open={};S.shown=12
 box.addEventListener('click',function(e){var z=e.target.closest('.sb-zone');if(z){showZone(z.getAttribute('data-zone'));box.classList.remove('open');return;}
   if(e.target.closest('.sb-all,.sb-area'))setTimeout(sync,0);});
 document.addEventListener('click',function(e){if(e.target.closest('.ptag,#tagSection .ts-opt,#tsClear,.ts-chip,#psGo'))setTimeout(function(){S.s='All';S.a='All';S.z=null;S.shown=12;layout();},10);},true);
-window.addEventListener('hashchange',function(){setTimeout(sync,120);});
+function hashZone(){var h='';try{h=decodeURIComponent((location.hash||'').slice(1));}catch(e){}var m=h.match(/^Kuala Lumpur\/zone:(\w+)$/);if(!m)return false;showZone(m[1]);setTimeout(function(){grid.scrollIntoView({behavior:'smooth',block:'start'});},80);return true;}
+window.addEventListener('hashchange',function(){setTimeout(function(){if(!hashZone())sync();},120);});
 function texts(){bar.querySelector('span').textContent=t('sort');['az','plh','phl','comp'].forEach(function(k,i){sel.options[i].textContent=t(k);});
   box.querySelectorAll('.sb-zone').forEach(function(b){b.querySelector('span').textContent=t(b.getAttribute('data-zone'));});}
 ['setLanguage','knSetLang'].forEach(function(fn){var f=window[fn];if(typeof f==='function')window[fn]=function(){var r=f.apply(this,arguments);try{texts();if(S.z)showZone(S.z);else layout();}catch(err){}return r;};});
 var mq=window.matchMedia('(max-width:900px)');if(mq.addEventListener)mq.addEventListener('change',function(){layout();});
-texts();setTimeout(sync,150);
+texts();setTimeout(function(){if(!hashZone())sync();},150);
 })();'''
 
 
@@ -206,4 +207,5 @@ def main():
     print('projects layout: %d KL zones, sort, sections, mobile chips, map zoom' % len(ZONES))
 
 
-main()
+if __name__ == '__main__':
+    main()
