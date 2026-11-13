@@ -10,6 +10,7 @@
                                  Google Sheet / Telegram as the Quick Enquiry, then the PDF downloads.
 Never put agent-only information in a guide (rebates, packages, commission and so on).
 """
+import glob
 import hashlib
 import html
 import json
@@ -505,4 +506,20 @@ if __name__ == '__main__':
     open('downloads/guides/.htaccess', 'w', encoding='utf-8').write(
         '# The area guide PDFs are only sent through guides/get.php, after the enquiry form.\n'
         '<IfModule mod_authz_core.c>\nRequire all denied\n</IfModule>\n<IfModule !mod_authz_core.c>\nOrder allow,deny\nDeny from all\n</IfModule>\n')
+    # guides that dropped out (e.g. an area lost projects): delete their files, send old links to the Free Toolkit page
+    keep = {g['slug'] for g in gs}
+    ht = open('.htaccess', encoding='utf-8').read()
+    for f in glob.glob('guides/*.html'):
+        sl = os.path.basename(f)[:-5]
+        if sl in keep:
+            continue
+        for x in [f] + ['%s/%s' % (l, f) for l in ('zh', 'zh-tw', 'ms', 'ja', 'ko')] + ['downloads/guides/%s.pdf' % sl] + glob.glob('images/guides/%s-*.jpg' % sl):
+            if os.path.exists(x):
+                os.remove(x)
+        for rule in ['RedirectMatch 301 ^/guides/%s\\.html$ /resources.html' % re.escape(sl),
+                     'RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/guides/%s\\.html$ /$1/resources.html' % re.escape(sl)]:
+            if rule not in ht:
+                ht = ht.rstrip('\n') + '\n' + rule + '\n'
+        print('guide removed:', sl)
+    open('.htaccess', 'w', encoding='utf-8').write(ht)
     print('guides: %d landing pages, %d PDFs' % (len(gs), sum(os.path.exists('downloads/guides/%s.pdf' % g['slug']) for g in gs)))
