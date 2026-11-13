@@ -73,14 +73,16 @@
     "size": "971 sqft",
     "rooms": "3+1 Bedrooms, 2 Bathrooms",
     "tag": "Show unit",
-    "desc": "A 3+1-bedroom family home with 2 bathrooms."
+    "desc": "A 3+1-bedroom family home with 2 bathrooms.",
+    "img": "images/ff24a7c54a36c11d.jpg"
    },
    {
     "type": "Type A",
     "size": "1,050 sqft",
     "rooms": "3+1 Bedrooms, 2 Bathrooms",
     "tag": "Largest",
-    "desc": "The larger 3+1-bedroom layout with 2 bathrooms."
+    "desc": "The larger 3+1-bedroom layout with 2 bathrooms.",
+    "img": "images/a468c5896ec48742.jpg"
    }
   ],
   "tags": [
@@ -166,14 +168,16 @@
     "size": "937 – 1,228 sqft",
     "rooms": "3 – 4 Bedrooms",
     "tag": "Family",
-    "desc": "Family homes from 3 bedrooms."
+    "desc": "Family homes from 3 bedrooms.",
+    "img": "images/8f270821e73490cc.jpg"
    },
    {
     "type": "Duplex",
     "size": "2,014 sqft",
-    "rooms": "5 Bedrooms",
+    "rooms": "5 Bedrooms, 4 Bathrooms",
     "tag": "Largest",
-    "desc": "A two-level duplex with 5 bedrooms."
+    "desc": "A two-level duplex with 5 bedrooms.",
+    "img": "images/07a1c3938514a8bc.jpg"
    }
   ],
   "tags": [
@@ -256,23 +260,26 @@
    {
     "type": "Type A",
     "size": "560 sqft",
-    "rooms": "Smallest layout",
+    "rooms": "1+1 Bedrooms, 1 Bathroom",
     "tag": "Entry",
-    "desc": "The most compact layout."
+    "desc": "The most compact layout.",
+    "img": "images/f790724b350cbb0a.jpg"
    },
    {
     "type": "Type B",
     "size": "915 sqft",
-    "rooms": "Family layout",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
     "tag": "",
-    "desc": "A mid-size family layout."
+    "desc": "A mid-size family layout.",
+    "img": "images/4af29603c1492565.jpg"
    },
    {
     "type": "Type D",
     "size": "1,389 sqft",
-    "rooms": "4 Bedrooms",
+    "rooms": "4 Bedrooms, 3 Bathrooms",
     "tag": "Show unit",
-    "desc": "The largest layout, with 4 bedrooms."
+    "desc": "The largest layout, with 4 bedrooms.",
+    "img": "images/a717ee71fd82b870.jpg"
    }
   ],
   "tags": [
@@ -358,28 +365,32 @@
     "size": "560 sqft",
     "rooms": "1+1 Bedrooms",
     "tag": "Entry",
-    "desc": "A compact 1+1-bedroom home."
+    "desc": "A compact 1+1-bedroom home.",
+    "img": "images/41e4424d9564142f.jpg"
    },
    {
     "type": "Type B",
     "size": "807 sqft",
-    "rooms": "Mid-size layout",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
     "tag": "Show unit",
-    "desc": "A layout with 2 car parks."
+    "desc": "A layout with 2 car parks.",
+    "img": "images/ccdc1121fd7181b7.jpg"
    },
    {
     "type": "Type C",
     "size": "936 sqft",
-    "rooms": "Mid-size layout",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
     "tag": "Show unit",
-    "desc": "A larger layout with 2 car parks."
+    "desc": "A larger layout with 2 car parks.",
+    "img": "images/f7388f54f62ff6ac.jpg"
    },
    {
     "type": "Type D",
     "size": "1,055 sqft",
-    "rooms": "4 Bedrooms",
+    "rooms": "4 Bedrooms, 2 Bathrooms",
     "tag": "Largest",
-    "desc": "The largest layout, with 4 bedrooms."
+    "desc": "The largest layout, with 4 bedrooms.",
+    "img": "images/779e2feec63d2fe3.jpg"
    }
   ],
   "tags": [
@@ -462,23 +473,26 @@
    {
     "type": "Type B4",
     "size": "893 sqft",
-    "rooms": "Family layout",
+    "rooms": "2+1 Bedrooms, 2 Bathrooms",
     "tag": "Show unit",
-    "desc": "A family layout shown in the show unit."
+    "desc": "A family layout shown in the show unit.",
+    "img": "images/65b6280cf465c19f.jpg"
    },
    {
     "type": "Type C2",
     "size": "1,033 sqft",
-    "rooms": "Family layout",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
     "tag": "Show unit",
-    "desc": "A larger family layout."
+    "desc": "A larger family layout.",
+    "img": "images/b882ad2df94e434e.jpg"
    },
    {
-    "type": "Type E",
-    "size": "1,389 sqft",
-    "rooms": "4 Bedrooms",
-    "tag": "Largest",
-    "desc": "The largest layout, with 4 bedrooms."
+    "type": "Type D2",
+    "size": "1,184 sqft",
+    "rooms": "4 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 4-bedroom home.",
+    "img": "images/25d135e7becdd94b.jpg"
    }
   ],
   "tags": [
@@ -562,16 +576,18 @@
    {
     "type": "Type B1",
     "size": "739 sqft",
-    "rooms": "2 Bedrooms",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
     "tag": "Show unit",
-    "desc": "A 2-bedroom home."
+    "desc": "A 2-bedroom home.",
+    "img": "images/ef43dcdeb49f13cb.jpg"
    },
    {
     "type": "Type G",
     "size": "1,184 sqft",
-    "rooms": "4 Bedrooms",
+    "rooms": "4 Bedrooms, 2 Bathrooms",
     "tag": "Show unit",
-    "desc": "The largest layout, with 4 bedrooms."
+    "desc": "The largest layout, with 4 bedrooms.",
+    "img": "images/b02ad12fae932f2d.jpg"
    }
   ],
   "tags": [
@@ -742,7 +758,8 @@
     "size": "3,399 sqft",
     "rooms": "4+2 Bedrooms",
     "tag": "",
-    "desc": "A three-storey semi-detached home."
+    "desc": "A three-storey semi-detached home.",
+    "img": "images/08cfe7fae61a3465.jpg"
    }
   ],
   "tags": [
@@ -827,14 +844,16 @@
     "size": "450 sqft",
     "rooms": "1+1 Bedrooms, 1 Bathroom",
     "tag": "Entry",
-    "desc": "A compact 1+1-bedroom home."
+    "desc": "A compact 1+1-bedroom home.",
+    "img": "images/ff57068e481468a3.jpg"
    },
    {
     "type": "Type B/B1",
     "size": "750 sqft",
     "rooms": "3 Bedrooms, 2 Bathrooms",
     "tag": "Show unit",
-    "desc": "A 3-bedroom home with 2 car parks."
+    "desc": "A 3-bedroom home with 2 car parks.",
+    "img": "images/e604ebc439f70c4a.jpg"
    }
   ],
   "tags": [
@@ -920,14 +939,16 @@
     "size": "700 sqft",
     "rooms": "2 Bedrooms, 2 Bathrooms",
     "tag": "Show unit",
-    "desc": "A 2-bedroom home."
+    "desc": "A 2-bedroom home.",
+    "img": "images/d2dfdb1857160f28.jpg"
    },
    {
     "type": "Type C",
     "size": "850 sqft",
     "rooms": "3 Bedrooms, 2 Bathrooms",
     "tag": "Show unit",
-    "desc": "A 3-bedroom home."
+    "desc": "A 3-bedroom home.",
+    "img": "images/7bebb6cca0a3f747.jpg"
    }
   ],
   "tags": [
@@ -1092,18 +1113,20 @@
   },
   "layouts": [
    {
-    "type": "Type D2A-2",
-    "size": "969 sqft",
-    "rooms": "3 Bedrooms",
-    "tag": "Show unit",
-    "desc": "A 3-bedroom family home."
+    "type": "Type D1-1",
+    "size": "958 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 3-bedroom family home.",
+    "img": "images/2311272d7cc7d288.jpg"
    },
    {
     "type": "Type F1",
     "size": "1,324 sqft",
     "rooms": "3+1 Bedrooms",
     "tag": "Show unit",
-    "desc": "The largest layout, with 3+1 bedrooms."
+    "desc": "The largest layout, with 3+1 bedrooms.",
+    "img": "images/78246011791efe01.jpg"
    }
   ],
   "tags": [
@@ -1188,28 +1211,32 @@
     "size": "550 sqft",
     "rooms": "1+1 Bedrooms, 1 Bathroom",
     "tag": "Show unit",
-    "desc": "A compact 1+1-bedroom home."
+    "desc": "A compact 1+1-bedroom home.",
+    "img": "images/10d19cd7c1a50fb5.jpg"
    },
    {
     "type": "Type B",
     "size": "829 sqft",
     "rooms": "3 Bedrooms, 2 Bathrooms",
     "tag": "",
-    "desc": "A 3-bedroom home."
+    "desc": "A 3-bedroom home.",
+    "img": "images/8e9dc7be80829649.jpg"
    },
    {
     "type": "Type C",
     "size": "958 sqft",
     "rooms": "3 Bedrooms, 2 Bathrooms",
     "tag": "",
-    "desc": "A larger 3-bedroom home."
+    "desc": "A larger 3-bedroom home.",
+    "img": "images/d36ed6425085a319.jpg"
    },
    {
     "type": "Type D",
     "size": "958 sqft",
     "rooms": "4 Bedrooms, 2 Bathrooms",
     "tag": "Largest",
-    "desc": "A 4-bedroom home."
+    "desc": "A 4-bedroom home.",
+    "img": "images/f83a5b8c59442852.jpg"
    }
   ],
   "tags": [
@@ -1293,28 +1320,32 @@
     "size": "1,000 sqft",
     "rooms": "3 Bedrooms, 2 Bathrooms",
     "tag": "Entry",
-    "desc": "A 3-bedroom family home."
+    "desc": "A 3-bedroom family home.",
+    "img": "images/c0d99c733f714155.jpg"
    },
    {
     "type": "Type B",
     "size": "1,100 sqft",
     "rooms": "3 Bedrooms, 3 Bathrooms",
     "tag": "",
-    "desc": "A 3-bedroom home."
+    "desc": "A 3-bedroom home.",
+    "img": "images/681bd1a48a2bcbe4.jpg"
    },
    {
     "type": "Type C",
     "size": "1,200 sqft",
     "rooms": "3 Bedrooms, 4 Bathrooms (dual key)",
     "tag": "Dual key",
-    "desc": "A dual-key layout."
+    "desc": "A dual-key layout.",
+    "img": "images/2431479661e87c24.jpg"
    },
    {
     "type": "Type D",
     "size": "1,280 sqft",
     "rooms": "3 Bedrooms, 4 Bathrooms (dual key)",
     "tag": "Show unit",
-    "desc": "The largest dual-key layout."
+    "desc": "The largest dual-key layout.",
+    "img": "images/c3a3a545e74b9756.jpg"
    }
   ],
   "tags": [
@@ -1392,14 +1423,16 @@
     "size": "4,280 – 4,393 sqft",
     "rooms": "5+1 Bedrooms, 7 Bathrooms",
     "tag": "Largest",
-    "desc": "A three-storey semi-detached home."
+    "desc": "A three-storey semi-detached home.",
+    "img": "images/45da7e24989f1ed0.jpg"
    },
    {
     "type": "Type C / D (2-storey Semi-D)",
     "size": "3,345 – 3,347 sqft",
     "rooms": "4 Bedrooms, 6 Bathrooms",
     "tag": "",
-    "desc": "A two-storey semi-detached home."
+    "desc": "A two-storey semi-detached home.",
+    "img": "images/c4b00a055e82b215.jpg"
    }
   ],
   "tags": [
@@ -1479,7 +1512,8 @@
     "size": "2,982 – 3,339 sqft",
     "rooms": "5 Bedrooms",
     "tag": "",
-    "desc": "Three-storey superlink homes."
+    "desc": "Three-storey superlink homes.",
+    "img": "images/64944d30a3f91559.jpg"
    }
   ],
   "tags": [
@@ -1559,14 +1593,16 @@
     "size": "1,101 sqft",
     "rooms": "3 Bedrooms, 2 Bathrooms",
     "tag": "",
-    "desc": "A 3-bedroom home."
+    "desc": "A 3-bedroom home.",
+    "img": "images/dd6820aa8127d9d6.jpg"
    },
    {
     "type": "Type T4",
     "size": "1,420 sqft",
     "rooms": "4 Bedrooms, 2 Bathrooms",
     "tag": "Largest",
-    "desc": "A 4-bedroom home."
+    "desc": "A 4-bedroom home.",
+    "img": "images/75555f4e6cbf6627.jpg"
    }
   ],
   "tags": [
@@ -1652,21 +1688,24 @@
     "size": "549 sqft",
     "rooms": "1+1 Bedrooms, 1 Bathroom",
     "tag": "Entry",
-    "desc": "A compact 1+1-bedroom home."
+    "desc": "A compact 1+1-bedroom home.",
+    "img": "images/629b382811d751ed.jpg"
    },
    {
     "type": "Type C",
     "size": "872 sqft",
     "rooms": "2 Bedrooms, 2 Bathrooms",
     "tag": "Show unit",
-    "desc": "A 2-bedroom home."
+    "desc": "A 2-bedroom home.",
+    "img": "images/72386a30609d2a97.jpg"
    },
    {
     "type": "Type E",
     "size": "1,389 sqft",
     "rooms": "3 Bedrooms, 2 Bathrooms",
     "tag": "Show unit",
-    "desc": "The largest layout."
+    "desc": "The largest layout.",
+    "img": "images/0f5502e011ffa564.jpg"
    }
   ],
   "tags": [
@@ -1745,7 +1784,8 @@
     "size": "1,417 – 16,547 sqft",
     "rooms": "Office",
     "tag": "",
-    "desc": "Office spaces up to whole floors."
+    "desc": "Office spaces up to whole floors.",
+    "img": "images/2913946fd2172c7d.jpg"
    }
   ],
   "tags": [
@@ -1831,28 +1871,32 @@
     "size": "630 sqft (655 sqft built-up)",
     "rooms": "2 Rooms, 2 Bathrooms",
     "tag": "Entry",
-    "desc": "The smallest layout."
+    "desc": "The smallest layout.",
+    "img": "images/10939ab7a1221920.jpg"
    },
    {
     "type": "Type B/B1",
     "size": "880 sqft (934 sqft built-up)",
     "rooms": "3 Rooms, 2 Bathrooms",
     "tag": "Show unit",
-    "desc": "A family layout."
+    "desc": "A family layout.",
+    "img": "images/cc943eb48ed33106.jpg"
    },
    {
     "type": "Type C/C1",
     "size": "1,050 sqft (1,112 sqft built-up)",
     "rooms": "4 Rooms, 2 Bathrooms",
     "tag": "",
-    "desc": "A larger family layout."
+    "desc": "A larger family layout.",
+    "img": "images/016687ec2bdedc3c.jpg"
    },
    {
     "type": "Type D",
     "size": "1,230 sqft (1,272 sqft built-up)",
     "rooms": "4 Rooms, 3 Bathrooms",
     "tag": "Largest",
-    "desc": "The largest layout."
+    "desc": "The largest layout.",
+    "img": "images/197d78fbdf563059.jpg"
    }
   ],
   "tags": [
@@ -1934,7 +1978,8 @@
     "size": "1,087 sqft",
     "rooms": "Office Suite",
     "tag": "Show unit",
-    "desc": "An office suite shown in the show unit."
+    "desc": "An office suite shown in the show unit.",
+    "img": "images/cd968c8e1a91ba1c.jpg"
    }
   ],
   "tags": [
@@ -2013,7 +2058,8 @@
     "size": "553 sqft",
     "rooms": "2 Bedrooms, 1 Bathroom",
     "tag": "",
-    "desc": "Every home is 553 sqft with 2 bedrooms."
+    "desc": "Every home is 553 sqft with 2 bedrooms.",
+    "img": "images/6a7c66f381c7808d.jpg"
    }
   ],
   "tags": [
@@ -2094,21 +2140,24 @@
     "size": "938 sqft",
     "rooms": "3 Bedrooms, 2 Bathrooms",
     "tag": "",
-    "desc": "A 3-bedroom home."
+    "desc": "A 3-bedroom home.",
+    "img": "images/e45f879a10cd0186.jpg"
    },
    {
     "type": "Type C",
     "size": "1,109 sqft",
     "rooms": "3+1 Bedrooms, 3 Bathrooms",
     "tag": "",
-    "desc": "A larger family home."
+    "desc": "A larger family home.",
+    "img": "images/ec2b424ea70c9376.jpg"
    },
    {
     "type": "Type D",
     "size": "1,364 sqft",
     "rooms": "4+1 Bedrooms, 3 Bathrooms",
     "tag": "Largest",
-    "desc": "The largest layout, with 3 to 4 car parks."
+    "desc": "The largest layout, with 3 to 4 car parks.",
+    "img": "images/dedb2d3e8e41906a.jpg"
    }
   ],
   "tags": [
@@ -2194,21 +2243,24 @@
     "size": "1,000 sqft",
     "rooms": "3 Bedrooms, 2 Bathrooms",
     "tag": "Entry",
-    "desc": "A 3-bedroom family home."
+    "desc": "A 3-bedroom family home.",
+    "img": "images/570925b792ccc0b7.jpg"
    },
    {
     "type": "Type B",
     "size": "1,150 sqft",
     "rooms": "4 Bedrooms, 2 Bathrooms",
     "tag": "",
-    "desc": "A 4-bedroom home."
+    "desc": "A 4-bedroom home.",
+    "img": "images/f2581ac58c3ae0eb.jpg"
    },
    {
     "type": "Type C",
     "size": "1,500 sqft",
     "rooms": "5 Bedrooms, 3 Bathrooms",
     "tag": "Show unit",
-    "desc": "A 5-bedroom home."
+    "desc": "A 5-bedroom home.",
+    "img": "images/61cb40b40a401437.jpg"
    }
   ],
   "tags": [
