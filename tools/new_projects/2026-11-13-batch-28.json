@@ -1046,7 +1046,7 @@
    2028
   ],
   "loc": "Cyberjaya, Selangor",
-  "overview": "Sanderling 2 is the second phase of Sanderling in an award-winning township in Cyberjaya: two 26-storey towers with 606 freehold homes on 5.30 acres. Homes of 958 to 1,324 sqft have 3 to 3+1 bedrooms and 2 car parks, with a facilities podium of about 400,000 sqft.",
+  "overview": "Sanderling 2 is the second phase of Sanderling in an award-winning township in Cyberjaya: two 26-storey towers with 606 freehold homes on 5.30 acres. Homes of 958 to 1,324 sqft have 3 to 3+1 bedrooms and 2 car parks, with a large facilities podium.",
   "points": [
    "Freehold, 606 homes in two 26-storey towers on 5.30 acres",
    "3 to 3+1 bedrooms, 958 to 1,324 sqft, from RM496,800 (gross)",
@@ -2027,93 +2027,6 @@
    "new launch condo Selangor",
    "雪兰莪新楼盘"
   ]
- },
- {
-  "name": "Botanica Hills",
-  "tag": "Rawang",
-  "state": "Selangor",
-  "area": "Rawang",
-  "developer_group": "",
-  "type": "Residential",
-  "price": "From RM802,000 (Gross)",
-  "price_short": "From RM802,000",
-  "tenure": "Freehold",
-  "size": "1,658 – 1,865 sqft",
-  "size_short": "1,658-1,865 sqft",
-  "rooms": "4 Bedrooms",
-  "rooms_short": "4 Beds",
-  "completion": "Est. Q3 2028",
-  "completion_short": "Q3 2028",
-  "status": "Under Construction",
-  "years": [
-   2028
-  ],
-  "loc": "Templer, Rawang, Selangor",
-  "overview": "Botanica Hills is a freehold landed township of 55.72 acres in the Templer area near Rawang, designed for green living. Phase 2 has 140 two-storey terrace homes of 20 x 60 ft with 4 bedrooms and 3 bathrooms, with no maintenance fees.",
-  "points": [
-   "Freehold landed homes in a 55.72-acre township",
-   "Two- and three-storey terraces with 4 bedrooms, from RM802,000 (gross)",
-   "Individual title and no maintenance fees"
-  ],
-  "selling_points": [
-   "Freehold, individual title",
-   "No maintenance fees",
-   "Nature setting near Templer Park",
-   "4 bedrooms and 3 bathrooms",
-   "Landed homes within reach of the Klang Valley"
-  ],
-  "amenities": [
-   "Templer Park",
-   "Serendah Recreational Waterfall",
-   "Rawang town"
-  ],
-  "loc_text": "Botanica Hills is in the Templer area near Rawang, Selangor, close to Templer Park and the Rawang Bypass, with highway access to the Klang Valley.",
-  "buyer_fit": [
-   {
-    "title": "Families",
-    "desc": "4-bedroom landed homes."
-   },
-   {
-    "title": "First-time Landed Buyers",
-    "desc": "Freehold terraces from RM802,000 (gross)."
-   }
-  ],
-  "details_extra": {
-   "Land Area": "55.72 acres (Phase 2 about 6.66 acres)",
-   "Units": "Phase 1: 91, Phase 2: 140, Phase 3: 164",
-   "Land Size": "20 x 60 ft (Phase 2)",
-   "Title": "Individual title",
-   "Price per Sqft": "Est. RM480 psf (Gross)",
-   "Maintenance Fee": "None"
-  },
-  "layouts": [
-   {
-    "type": "Type A",
-    "size": "1,860 – 1,865 sqft",
-    "rooms": "4 Bedrooms, 3 Bathrooms",
-    "tag": "",
-    "desc": "A terrace home."
-   },
-   {
-    "type": "Type B",
-    "size": "1,658 – 1,660 sqft",
-    "rooms": "4 Bedrooms, 3 Bathrooms",
-    "tag": "",
-    "desc": "A terrace home."
-   }
-  ],
-  "tags": [
-   "Botanica Hills",
-   "Botanica Hills Rawang",
-   "Botanica Hills price",
-   "Botanica Hills floor plan",
-   "new project Rawang",
-   "Rawang landed house for sale",
-   "freehold landed Selangor",
-   "new launch landed Selangor",
-   "雪兰莪新楼盘"
-  ],
-  "no_developer": true
  },
  {
   "name": "Levia Residence",
