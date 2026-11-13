@@ -581,13 +581,6 @@
 "dev": ""
 },
 {
-"name": "EkoTitiwangsa",
-"slug": "ekotitiwangsa",
-"state": "Kuala Lumpur",
-"area": "Titiwangsa",
-"dev": "Ekovest Berhad"
-},
-{
 "name": "Est8 Seputeh",
 "slug": "est8",
 "state": "Kuala Lumpur",
@@ -637,13 +630,6 @@
 "dev": ""
 },
 {
-"name": "Vox Residence Sentul",
-"slug": "vox-residence",
-"state": "Kuala Lumpur",
-"area": "Sentul",
-"dev": "Kerjaya Prospek Property Sdn Bhd"
-},
-{
 "name": "R&F Princess Cove Seine Region",
 "slug": "r-and-f-princess-cove-seine-region",
 "state": "Johor",
@@ -677,20 +663,6 @@
 "state": "Kuala Lumpur",
 "area": "Bangsar",
 "dev": "Sunsuria (Bangsar Hill Park Development Sdn Bhd)"
-},
-{
-"name": "Alamanda Heights",
-"slug": "alamanda-heights",
-"state": "Selangor",
-"area": "Seri Kembangan",
-"dev": ""
-},
-{
-"name": "Trinity Nordic Residences",
-"slug": "trinity-nordic-residences",
-"state": "Selangor",
-"area": "Seri Kembangan",
-"dev": ""
 },
 {
 "name": "Anya at Shorea Park",
@@ -749,20 +721,6 @@
 "dev": ""
 },
 {
-"name": "Myra Cove",
-"slug": "myra-cove",
-"state": "Selangor",
-"area": "Cyberjaya",
-"dev": ""
-},
-{
-"name": "Sanderling 2",
-"slug": "sanderling-2",
-"state": "Selangor",
-"area": "Cyberjaya",
-"dev": ""
-},
-{
 "name": "Casa D'Arcadia",
 "slug": "casa-darcadia",
 "state": "Selangor",
@@ -816,20 +774,6 @@
 "slug": "residensi-kamelia",
 "state": "Selangor",
 "area": "Bandar Sri Damansara",
-"dev": ""
-},
-{
-"name": "Levia Residence",
-"slug": "levia-residence",
-"state": "Kuala Lumpur",
-"area": "Cheras",
-"dev": ""
-},
-{
-"name": "The Maxxon",
-"slug": "the-maxxon",
-"state": "Kuala Lumpur",
-"area": "Cheras",
 "dev": ""
 },
 {

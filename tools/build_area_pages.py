@@ -447,5 +447,26 @@ if __name__ == '__main__':
         pages = build(os.path.join(sys.argv[2], 'area'), SITE + '/')
     else:
         pages = build('area', '../')
+        # areas that lost all their projects: delete the old pages, send old links to the state page
+        import glob
+        from build_proj_layout import ZONES as _Z
+        st_of = {a: st for st, zs in _Z.items() for _z, lst in zs for a in lst}
+        keep = set(pages) | {'index'}
+        ht = open('.htaccess', encoding='utf-8').read()
+        for f in glob.glob('area/*.html'):
+            sl = os.path.basename(f)[:-5]
+            if sl in keep:
+                continue
+            st = next((v for k, v in st_of.items() if slug(k) == sl), None)
+            to = 'area/%s.html' % slug(st) if st and os.path.exists('area/%s.html' % slug(st)) else 'projects.html'
+            for x in [f] + ['%s/%s' % (l, f) for l in ('zh', 'zh-tw', 'ms', 'ja', 'ko')]:
+                if os.path.exists(x):
+                    os.remove(x)
+            for rule in ['RedirectMatch 301 ^/area/%s\\.html$ /%s' % (re.escape(sl), to),
+                         'RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/area/%s\\.html$ /$1/%s' % (re.escape(sl), to)]:
+                if rule not in ht:
+                    ht = ht.rstrip('\n') + '\n' + rule + '\n'
+            print('area page removed:', sl, '->', to)
+        open('.htaccess', 'w', encoding='utf-8').write(ht)
     link_projects_map()
     print('area pages:', len(pages))
