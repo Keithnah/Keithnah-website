@@ -51,3 +51,5 @@ RedirectMatch 301 ^/guides/damansara\-heights\.html$ /resources.html
 RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/guides/damansara\-heights\.html$ /$1/resources.html
 RedirectMatch 301 ^/guides/batu\-kawan\.html$ /resources.html
 RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/guides/batu\-kawan\.html$ /$1/resources.html
+RedirectMatch 301 ^/area/pantai-dalam\.html$ /area/pantai-sentral-park.html
+RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/area/pantai-dalam\.html$ /$1/area/pantai-sentral-park.html
