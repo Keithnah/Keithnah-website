@@ -160,6 +160,11 @@ CSS = ('<style id="kn-submenu-css">'
        'header nav .knm-d a.knm-fa{display:flex!important;justify-content:space-between;gap:8px;font-weight:650!important;color:#15142b!important;white-space:normal;font-size:14.5px!important}'
        '#knMnav .knm-fly,#knMnav .knm-ar{display:none!important}'
        '@media(max-width:1349px){.knm-fly{display:none!important}}'
+       # light lavender menus, selected item in solid site purple
+       'header .knm-d,header .knm-fly{background:linear-gradient(160deg,#F7F6FF 0%,#ECEBFB 100%)!important;border-color:#DEDCF7!important}'
+       'header .knm-fl{background:rgba(94,96,206,.08)!important;border-right-color:#DEDCF7!important;border-radius:16px 0 0 16px}'
+       'header .knm-d a:hover,header .knm-st:hover>a,header a.knm-fs.on{background:#5E60CE!important;color:#fff!important}'
+       'header a.knm-fs.on em,header .knm-d a:hover em{color:rgba(255,255,255,.8)!important}header .knm-col{border-bottom-color:#DEDCF7!important}'
        '</style>')
 
 JS = ('<script id="kn-submenu-js">(function(){var ST=__ST__,ZL=__ZL__,AO=__AO__,T=%s,LG=["en","zh-CN","zh-TW","ms","ja","ko"];function f(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}'
