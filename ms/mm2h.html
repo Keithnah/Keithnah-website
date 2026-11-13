@@ -709,7 +709,7 @@ function knToggleMenu(force){
     var cur=(location.pathname.split('/').pop()||'index.html');
     document.querySelectorAll('header nav a').forEach(function(a){
       var h=a.getAttribute('href')||''; if(h==='#home') h='index.html';
-      var c=document.createElement('a'); c.href=h; c.textContent=a.textContent; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms';
+      var c=document.createElement('a'); c.href=h; c.textContent=a.textContent; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms';
       if(h===cur||(cur===''&&h==='index.html')) c.className='active';
       c.addEventListener('click',function(){ if(h==='index.html'&&cur==='index.html'){ knToggleMenu(false);} });
       L.appendChild(c);
@@ -756,6 +756,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape') knToggleMe
 })();
 </script>
 <script src="lead-tracker.js"></script>
+
 
 
 
