@@ -64,6 +64,7 @@ MENU = {
 }
 
 CSS = ('<style id="kn-submenu-css">'
+       'html{scroll-padding-top:96px}'  # menu links to #sections: keep the section title below the fixed header
        '.knm-g{position:relative;display:inline-flex;align-items:center}.knm-c{display:inline-block;width:6px;height:6px;margin:0 0 3px 7px;pointer-events:none;'
        'border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);opacity:.75;transition:transform .2s}'
        'header .knm-g>a{margin-right:0!important}.knm-g:hover .knm-c,.knm-g:focus-within .knm-c{transform:translateY(3px) rotate(225deg)}#knMnav .knm-c{display:none}'

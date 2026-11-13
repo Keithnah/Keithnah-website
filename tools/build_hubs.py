@@ -129,7 +129,7 @@ def shell(rel, title, desc, body, ld, msg):
 </body>
 </html>
 ''' % (E(title), E(desc), url, E(title), E(desc), url, json.dumps(ld, ensure_ascii=False).replace('</', '<\\/'), CSS, HB.CSS, E(wa(msg)), body, HB.js())
-    page = SH.apply(page, '../', 'projects.html')
+    page = SH.apply(page, '../', 'compare.html' if rel.startswith('vs/') else 'projects.html')
     os.makedirs(os.path.dirname(rel), exist_ok=True)
     open(rel, 'w', encoding='utf-8').write(page)
     return url
