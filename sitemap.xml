@@ -4402,4 +4402,15 @@
   <url><loc>https://keithnah.com/ms/guides/bangsar.html</loc><lastmod>2026-11-13</lastmod></url>
   <url><loc>https://keithnah.com/ja/guides/bangsar.html</loc><lastmod>2026-11-13</lastmod></url>
   <url><loc>https://keithnah.com/ko/guides/bangsar.html</loc><lastmod>2026-11-13</lastmod></url>
+  <url>
+    <loc>https://keithnah.com/foreign-buyers.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url><loc>https://keithnah.com/zh/foreign-buyers.html</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://keithnah.com/zh-tw/foreign-buyers.html</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://keithnah.com/ms/foreign-buyers.html</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://keithnah.com/ja/foreign-buyers.html</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://keithnah.com/ko/foreign-buyers.html</loc><lastmod>2026-11-13</lastmod></url>
 </urlset>
