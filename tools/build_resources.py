@@ -336,6 +336,62 @@ for k, (en_, tr) in MM.items():
 open('index.html', 'w', encoding='utf-8').write(ix)
 print('home: MM2H section')
 
+# ---------- home page: Free Toolkit slideshow under the MM2H section, and the FAQ in two columns ----------
+TK_KEYS = ['eyebrow', 'title'] + [k + s for k, _, _, _, _ in CARDS for s in 'tdbg']
+TK_T = {k: [T[l].get(k, T['en'][k]) for l in ['en', 'zh-CN', 'zh-TW', 'ms', 'ja', 'ko']] for k in TK_KEYS}
+TK_HEAD = {'h': ['Free tools for every buyer', '每位买家都用得上的免费工具', '每位買家都用得上的免費工具', 'Alat percuma untuk setiap pembeli', 'すべての購入者のための無料ツール', '모든 구매자를 위한 무료 도구'],
+           'all': ['See the full toolkit', '查看全部工具', '查看全部工具', 'Lihat semua alat', 'ツールキットをすべて見る', '전체 툴킷 보기']}
+TK_T.update(TK_HEAD)
+tk_cards = ''.join(
+    '<a class="tk-c" href="{h}"{x}><img src="images/res/{img}" alt="" loading="lazy" width="1200" height="700">'
+    '<span class="tk-b"><span class="tk-g" data-tk="{k}g">{g}</span><b data-tk="{k}t">{t}</b><small data-tk="{k}d">{d}</small>'
+    '<em><span data-tk="{k}b">{b}</span> &rarr;</em></span></a>'.format(
+        h=E('resources.html#guides' if h == '#guides' else h), x='' if h == '#guides' else x, img=img, k=k,
+        g=E(en[k + 'g']), t=E(en[k + 't']), d=E(en[k + 'd']), b=E(en[k + 'b']))
+    for k, img, ic, h, x in CARDS)
+TK_HTML = ('<!-- KN-TK:START --><style>'
+ '#home-toolkit{padding:90px 0 80px;background:#f7f6fb;overflow:hidden}.tk-h{max-width:1220px;margin:0 auto 30px;padding:0 5vw;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}'
+ '.tk-h .eyebrow{display:block;margin-bottom:8px}.tk-h h2{font-family:"Playfair Display",serif;font-size:clamp(28px,3.6vw,42px);line-height:1.15;margin:0}.tk-h a{color:var(--gold,#5E60CE);font-weight:700;font-size:14.5px;text-decoration:none;white-space:nowrap}'
+ '.tk-v{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%%,#000 96%%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%%,#000 96%%,transparent)}'
+ '.tk-r{display:flex;gap:22px;width:max-content;padding:6px 0 18px;animation:tkSlide 55s linear infinite}.tk-v:hover .tk-r,.tk-v:focus-within .tk-r{animation-play-state:paused}'
+ '@keyframes tkSlide{to{transform:translateX(calc(-50%% - 11px))}}'
+ '.tk-c{flex:0 0 330px;background:#fff;border-radius:22px;overflow:hidden;text-decoration:none;color:#15142b;box-shadow:0 14px 34px rgba(29,27,79,.09);border:1px solid rgba(21,20,43,.06);transition:transform .3s,box-shadow .3s}'
+ '.tk-c:hover{transform:translateY(-6px);box-shadow:0 22px 46px rgba(29,27,79,.16)}.tk-c img{display:block;width:100%%;height:180px;object-fit:cover}'
+ '.tk-b{display:flex;flex-direction:column;gap:6px;padding:18px 20px 20px}.tk-g{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#1f7a45;background:#e9f9ef;padding:4px 10px;border-radius:99px}'
+ '.tk-b b{font:700 19px/1.3 "Playfair Display",serif}.tk-b small{font-size:13.5px;color:#5f5e74;line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}'
+ '.tk-b em{font-style:normal;font-weight:700;font-size:14px;color:var(--gold,#5E60CE);margin-top:4px}'
+ '@media(max-width:600px){.tk-c{flex-basis:270px}.tk-c img{height:150px}#home-toolkit{padding:64px 0 56px}}'
+ '@media(prefers-reduced-motion:reduce){.tk-r{animation:none}.tk-v{overflow-x:auto}}'
+ '</style><section id="home-toolkit"><div class="tk-h"><div><span class="eyebrow" data-tk="eyebrow">%s</span><h2 data-tk="h">%s</h2></div>'
+ '<a href="resources.html" data-tk="all">%s</a></div><div class="tk-v"><div class="tk-r">%s%s</div></div></section>'
+ '<script>(function(){var T=%s,L=["en","zh-CN","zh-TW","ms","ja","ko"];function f(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}var i=Math.max(0,L.indexOf(l));'
+ 'document.querySelectorAll("[data-tk]").forEach(function(x){var v=T[x.getAttribute("data-tk")];if(v)x.textContent=v[i];});}f();'
+ 'document.addEventListener("DOMContentLoaded",function(){["setLanguage","knSetLang"].forEach(function(n){var s=window[n];if(typeof s==="function")window[n]=function(){var r=s.apply(this,arguments);f();return r;};});f();});})();</script>'
+ '<!-- KN-TK:END -->\n') % (E(en['eyebrow']), E(TK_HEAD['h'][0]), E(TK_HEAD['all'][0]), tk_cards, tk_cards.replace('<a class="tk-c"', '<a class="tk-c" aria-hidden="true" tabindex="-1"'),
+                          json.dumps(TK_T, ensure_ascii=False))
+FAQ_CSS = ('<!-- KN-FAQ2:START --><style>'
+ '#faq .section-head{max-width:1180px;margin-left:auto;margin-right:auto;text-align:left}#faq .section-head .hairline{display:none}'
+ '#faq .faq-list{max-width:1180px;display:grid;grid-template-columns:1fr 1fr;column-gap:44px;row-gap:0;align-items:start}'
+ '#faq .faq-item{background:none;border:0;border-bottom:1px solid rgba(21,20,43,.12);border-radius:0!important}'
+ '#faq .faq-q{padding:22px 34px 22px 0;font-family:Inter,sans-serif;font-size:16.5px;font-weight:700;position:relative}'
+ '#faq .faq-q .faq-icon{display:none}#faq .faq-q:after{content:"+";position:absolute;right:4px;top:50%%;transform:translateY(-50%%);font:400 24px/1 Inter,sans-serif;color:var(--gold,#5E60CE)}'
+ '#faq .faq-item.open .faq-q:after{content:"\\2212"}#faq .faq-a p{padding:0 34px 20px 0}'
+ '#faqMoreBtn{background:#fff!important;color:#15142b!important;border:1.5px solid #15142b!important;text-transform:none!important;letter-spacing:0!important;font-size:15px!important;padding:14px 32px!important}'
+ '#faqMoreBtn:hover{background:#15142b!important;color:#fff!important}'
+ '@media(max-width:800px){#faq .faq-list{grid-template-columns:1fr}}</style>'
+ '<script>(function(){function tidy(){document.querySelectorAll("#faq .faq-q").forEach(function(q){q.childNodes.forEach(function(n){if(n.nodeType===3&&n.nodeValue.indexOf("\u25BE")>-1)n.nodeValue=n.nodeValue.replace(/\\s*\u25BE/g,"");});});}'
+ 'document.addEventListener("DOMContentLoaded",function(){var L=document.querySelector("#faq .faq-list");if(!L)return;var it=[].slice.call(L.querySelectorAll(".faq-item"));'
+ 'it.forEach(function(x,i){if(i<12&&x.classList.contains("faq-extra")){x.classList.remove("faq-extra");x.style.display="";}});'
+ 'if(!L.hasAttribute("data-cols")){var f=it.slice(0,12),o=[];for(var i=0;i<6;i++){o.push(f[i]);if(f[i+6])o.push(f[i+6]);}o.concat(it.slice(12)).forEach(function(x){L.appendChild(x);});L.setAttribute("data-cols","1");}'
+ 'tidy();["setLanguage","knSetLang"].forEach(function(n){var s=window[n];if(typeof s==="function")window[n]=function(){var r=s.apply(this,arguments);tidy();return r;};});});})();</script>'
+ '<!-- KN-FAQ2:END -->\n')
+ix = open('index.html', encoding='utf-8').read()
+ix = re.sub(r'<!-- KN-TK:START -->.*?<!-- KN-TK:END -->\n?', '', ix, flags=re.S)
+ix = re.sub(r'<!-- KN-FAQ2:START -->.*?<!-- KN-FAQ2:END -->\n?', '', ix, flags=re.S)
+ix = ix.replace('<!-- KN-MM2H:END -->\n', '<!-- KN-MM2H:END -->\n' + TK_HTML + FAQ_CSS, 1)
+open('index.html', 'w', encoding='utf-8').write(ix)
+print('home: Free Toolkit slideshow and two-column FAQ')
+
 # ---------- credential badge (REN number + agency) on the home and About Keith pages ----------
 REN_HTML = ('<p class="keith-ren"><span class="kr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.8 4.5 5.6v5.6c0 4.6 3.1 8.6 7.5 10 4.4-1.4 7.5-5.4 7.5-10V5.6z"/>'
             '<path d="m8.6 12.2 2.4 2.4 4.6-4.8"/></svg></span><span class="kr-a"><small>Registered Estate Negotiator</small><b>REN 60517</b></span>'
