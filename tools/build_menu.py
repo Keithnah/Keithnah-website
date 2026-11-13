@@ -34,6 +34,10 @@ L = {  # key: [en, zh-CN, zh-TW, ms, ja, ko]
     'data': ['Market Data', '市场数据', '市場數據', 'Data Pasaran', 'マーケットデータ', '마켓 데이터'],
     'guide': ['Buying Guide', '买房指南', '買房指南', 'Panduan Membeli', '購入ガイド', '구매 가이드'],
     'foreign': ['Foreign Buyers', '外国买家', '外國買家', 'Pembeli Asing', '外国人購入者', '외국인 구매자'],
+    'fcheck': ['Can I Buy? State Check', '我可以买吗？州属查询', '我可以買嗎？州屬查詢', 'Boleh Saya Beli? Semak Negeri', '購入できる？州別チェック', '구매 가능할까? 주별 확인'],
+    'fproj': ['Projects for Foreign Buyers', '外国人必看项目', '外國人必看項目', 'Projek untuk Pembeli Asing', '外国人向け物件', '외국인 추천 프로젝트'],
+    'fcost': ['Costs & Taxes', '费用和税务', '費用和稅務', 'Kos & Cukai', '費用と税金', '비용 및 세금'],
+    'fsteps': ['How Buying Works', '购买流程', '購買流程', 'Cara Membeli', '購入の流れ', '구매 절차'],
     'videos': ['Videos', '视频', '影片', 'Video', '動画', '동영상'],
     'kit': ['All Free Tools', '全部免费工具', '全部免費工具', 'Semua Alat Percuma', '無料ツール一覧', '모든 무료 도구'],
     'calc': ['Loan Calculator', '房贷计算器', '房貸計算器', 'Kalkulator Pinjaman', 'ローン計算機', '대출 계산기'],
@@ -59,6 +63,8 @@ MENU = {
     'projects.html': [('browse', 'projects.html#projSearch'), ('map', 'projects.html#projectMap'), ('all', 'projects.html#projGrid'), ('state', 'projects.html#projGrid'),
                       ('best', 'best/index.html'), ('dev', 'developer/index.html'), ('station', 'station/index.html'), ('tag', 'projects.html#tagSection')],
     'compare.html': [('h2h', 'compare.html#cmpFilters'), ('vs', 'vs/index.html'), ('popular', 'compare.html#popular')],
+    'foreign-buyers.html': [('fcheck', 'foreign-buyers.html#check'), ('fcost', 'foreign-buyers.html#costs'),
+                            ('fsteps', 'foreign-buyers.html#steps'), ('mm2h', 'mm2h.html'), ('faq', 'foreign-buyers.html#faq')],
     'blog.html': [('notes', 'market-notes.html'), ('guide', 'blog.html#buying-guide'), ('data', 'market-data.html'), ('faq', 'blog.html#faq'), ('blogs', 'blog.html#blog')],
     'resources.html': [('fareas', 'resources.html#guides'), ('fmm2h', 'mm2h.html'), ('fwatch', 'https://www.youtube.com/@KeithNahRealEstate/videos'), ('fcalc', 'calculator.html'), ('fadvice', WA)],
     'about-keith.html': [('contact', 'about-keith.html#quickEnquiry')],
@@ -204,6 +210,10 @@ def fix(t, prefix):
     nav = re.sub(r'<div class="knm-g">(<a\b.*?</a>)(?:<span class="knm-c"[^>]*></span>)?<div class="knm-d">.*?</div><!--/knm-g--></div>', r'\1', nav, flags=re.S)  # undo an earlier run
     nav = re.sub(r'<div class="knm-g">(<a\b.*?</a>)(?:<span class="knm-c"[^>]*></span>)?<div class="knm-d">(?:(?!<div).)*?</div></div>', r'\1', nav, flags=re.S)  # older runs (no nested divs)
     nav = re.sub(r'\s*<a\b[^>]*href="(?:\.\./)*calculator\.html"[^>]*>.*?</a>', '', nav, flags=re.S)  # Calculator moves to Free Toolkit
+    # Foreign Buyers: a main menu item just before News
+    nav = re.sub(r'\s*<a\b[^>]*href="(?:\.\./|/)*foreign-buyers\.html"[^>]*>.*?</a>', '', nav, flags=re.S)
+    fb = '<a href="%sforeign-buyers.html" data-km="foreign"%s>Foreign Buyers</a>' % (prefix, ' class="active"' if 'foreign-buyers.html' in t[:t.find('<header')] and 'rel="canonical" href="https://keithnah.com/foreign-buyers.html"' in t else '')
+    nav = re.sub(r'(\s*)(<a\b[^>]*href="(?:\.\./|/)*blog\.html")', lambda m: m.group(1) + fb + m.group(1) + m.group(2), nav, count=1)
 
     def group(a):
         href = re.search(r'href="([^"]*)"', a.group(0)).group(1)
