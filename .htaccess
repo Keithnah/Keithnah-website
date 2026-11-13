@@ -35,6 +35,24 @@ Header set Cache-Control "public, max-age=86400"
 </IfModule>
 
 # Removed projects (410 Gone)
+Redirect gone /property/bayu-timur-residences.html
+Redirect gone /zh/property/bayu-timur-residences.html
+Redirect gone /zh-tw/property/bayu-timur-residences.html
+Redirect gone /ms/property/bayu-timur-residences.html
+Redirect gone /ja/property/bayu-timur-residences.html
+Redirect gone /ko/property/bayu-timur-residences.html
+Redirect gone /vs/bayu-timur-residences-vs-myra-senja-subang-2.html
+Redirect gone /zh/vs/bayu-timur-residences-vs-myra-senja-subang-2.html
+Redirect gone /zh-tw/vs/bayu-timur-residences-vs-myra-senja-subang-2.html
+Redirect gone /ms/vs/bayu-timur-residences-vs-myra-senja-subang-2.html
+Redirect gone /ja/vs/bayu-timur-residences-vs-myra-senja-subang-2.html
+Redirect gone /ko/vs/bayu-timur-residences-vs-myra-senja-subang-2.html
+Redirect gone /property/bayu-mori-park.html
+Redirect gone /zh/property/bayu-mori-park.html
+Redirect gone /zh-tw/property/bayu-mori-park.html
+Redirect gone /ms/property/bayu-mori-park.html
+Redirect gone /ja/property/bayu-mori-park.html
+Redirect gone /ko/property/bayu-mori-park.html
 Redirect gone /property/lightwater-residence.html
 Redirect gone /zh/property/lightwater-residence.html
 Redirect gone /zh-tw/property/lightwater-residence.html
@@ -53,3 +71,5 @@ RedirectMatch 301 ^/guides/batu\-kawan\.html$ /resources.html
 RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/guides/batu\-kawan\.html$ /$1/resources.html
 RedirectMatch 301 ^/area/pantai-dalam\.html$ /area/pantai-sentral-park.html
 RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/area/pantai-dalam\.html$ /$1/area/pantai-sentral-park.html
+RedirectMatch 301 ^/guides/shah\-alam\.html$ /resources.html
+RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/guides/shah\-alam\.html$ /$1/resources.html
