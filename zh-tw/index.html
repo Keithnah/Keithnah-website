@@ -855,6 +855,7 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
 
 
 
+
     <p data-i18n="hero_p">Keith Nah 是一位豪宅房產顧問，協助本地及國際投資者發掘吉隆坡最優質的地段。</p>
   </div>
 
@@ -1954,7 +1955,7 @@ function knToggleMenu(force){
     var cur=(location.pathname.split('/').pop()||'index.html');
     document.querySelectorAll('header nav a').forEach(function(a){
       var h=a.getAttribute('href')||''; if(h==='#home') h='index.html';
-      var c=document.createElement('a'); c.href=h; c.textContent=a.textContent; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms';
+      var c=document.createElement('a'); c.href=h; c.textContent=a.textContent; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms'; if(a.classList.contains('knm-s')) c.className='knm-ms';
       if(h===cur||(cur===''&&h==='index.html')) c.className='active';
       c.addEventListener('click',function(){ if(h==='index.html'&&cur==='index.html'){ knToggleMenu(false);} });
       L.appendChild(c);
@@ -2026,6 +2027,7 @@ document.addEventListener('keydown',function(e){ if(e.key==='Escape') knToggleMe
 <script id="kn-page-links">var KN_HOME_SLUGS = ["pavilion-square", "maba-suitez", "zenia-parkcity-damansara", "clouthaus", "accent-residence", "the-queenswoodz"];
 window.openDetailModal=function(i){ var s=KN_HOME_SLUGS[i]; if(s) location.href='property/'+s+'.html'; };</script>
 <script src="lead-tracker.js"></script>
+
 
 
 
