@@ -1332,28 +1332,6 @@
   <url><loc>https://keithnah.com/ja/property/sanderling-2.html</loc><lastmod>2026-11-13</lastmod></url>
   <url><loc>https://keithnah.com/ko/property/sanderling-2.html</loc><lastmod>2026-11-13</lastmod></url>
   <url>
-    <loc>https://keithnah.com/property/bayu-mori-park.html</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url><loc>https://keithnah.com/zh/property/bayu-mori-park.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/zh-tw/property/bayu-mori-park.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/ms/property/bayu-mori-park.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/ja/property/bayu-mori-park.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/ko/property/bayu-mori-park.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url>
-    <loc>https://keithnah.com/property/bayu-timur-residences.html</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url><loc>https://keithnah.com/zh/property/bayu-timur-residences.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/zh-tw/property/bayu-timur-residences.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/ms/property/bayu-timur-residences.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/ja/property/bayu-timur-residences.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/ko/property/bayu-timur-residences.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url>
     <loc>https://keithnah.com/property/casa-darcadia.html</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -4232,17 +4210,6 @@
   <url><loc>https://keithnah.com/ja/vs/alamanda-heights-vs-trinity-nordic-residences.html</loc><lastmod>2026-11-13</lastmod></url>
   <url><loc>https://keithnah.com/ko/vs/alamanda-heights-vs-trinity-nordic-residences.html</loc><lastmod>2026-11-13</lastmod></url>
   <url>
-    <loc>https://keithnah.com/vs/bayu-timur-residences-vs-myra-senja-subang-2.html</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url><loc>https://keithnah.com/zh/vs/bayu-timur-residences-vs-myra-senja-subang-2.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/zh-tw/vs/bayu-timur-residences-vs-myra-senja-subang-2.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/ms/vs/bayu-timur-residences-vs-myra-senja-subang-2.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/ja/vs/bayu-timur-residences-vs-myra-senja-subang-2.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/ko/vs/bayu-timur-residences-vs-myra-senja-subang-2.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url>
     <loc>https://keithnah.com/vs/ambience-kl-vs-aricia-residences.html</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -4590,17 +4557,6 @@
   <url><loc>https://keithnah.com/ja/guides/bukit-bintang.html</loc><lastmod>2026-11-13</lastmod></url>
   <url><loc>https://keithnah.com/ko/guides/bukit-bintang.html</loc><lastmod>2026-11-13</lastmod></url>
   <url>
-    <loc>https://keithnah.com/guides/shah-alam.html</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url><loc>https://keithnah.com/zh/guides/shah-alam.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/zh-tw/guides/shah-alam.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/ms/guides/shah-alam.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/ja/guides/shah-alam.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://keithnah.com/ko/guides/shah-alam.html</loc><lastmod>2026-11-13</lastmod></url>
-  <url>
     <loc>https://keithnah.com/guides/bandar-sri-damansara.html</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -4611,4 +4567,15 @@
   <url><loc>https://keithnah.com/ms/guides/bandar-sri-damansara.html</loc><lastmod>2026-11-13</lastmod></url>
   <url><loc>https://keithnah.com/ja/guides/bandar-sri-damansara.html</loc><lastmod>2026-11-13</lastmod></url>
   <url><loc>https://keithnah.com/ko/guides/bandar-sri-damansara.html</loc><lastmod>2026-11-13</lastmod></url>
+  <url>
+    <loc>https://keithnah.com/guides/bangsar.html</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url><loc>https://keithnah.com/zh/guides/bangsar.html</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://keithnah.com/zh-tw/guides/bangsar.html</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://keithnah.com/ms/guides/bangsar.html</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://keithnah.com/ja/guides/bangsar.html</loc><lastmod>2026-11-13</lastmod></url>
+  <url><loc>https://keithnah.com/ko/guides/bangsar.html</loc><lastmod>2026-11-13</lastmod></url>
 </urlset>

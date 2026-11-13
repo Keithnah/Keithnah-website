@@ -213,8 +213,8 @@
 "KTM"
 ],
 "ix": [
-122,
-121
+120,
+119
 ]
 },
 "Sri Damansara West": {
@@ -231,7 +231,7 @@
 },
 "pairs": [
 {
-"a": 116,
+"a": 114,
 "b": 6,
 "slug": "amara-residences-vs-arra-residences",
 "area": "Ara Damansara",
@@ -246,14 +246,14 @@
 },
 {
 "a": 3,
-"b": 117,
+"b": 115,
 "slug": "amaya-bdr-sri-damansara-vs-the-arden-bandar-sri-damansara",
 "area": "Bandar Sri Damansara",
 "state": "Selangor"
 },
 {
 "a": 27,
-"b": 117,
+"b": 115,
 "slug": "laverra-vs-the-arden-bandar-sri-damansara",
 "area": "Bandar Sri Damansara",
 "state": "Selangor"
@@ -385,8 +385,8 @@
 "state": "Kuala Lumpur"
 },
 {
-"a": 119,
-"b": 120,
+"a": 117,
+"b": 118,
 "slug": "levia-residence-vs-the-maxxon",
 "area": "Cheras",
 "state": "Kuala Lumpur"
@@ -630,7 +630,7 @@
 "state": "Selangor"
 },
 {
-"a": 115,
+"a": 113,
 "b": 63,
 "slug": "atwater-corporate-tower-vs-zenia-parkcity-damansara",
 "area": "Petaling Jaya",
@@ -679,8 +679,8 @@
 "state": "Selangor"
 },
 {
-"a": 122,
-"b": 121,
+"a": 120,
+"b": 119,
 "slug": "arte-star-milano-vs-arte-star-the-regal",
 "area": "Salak Selatan",
 "state": "Kuala Lumpur"
@@ -697,13 +697,6 @@
 "b": 98,
 "slug": "alamanda-heights-vs-trinity-nordic-residences",
 "area": "Seri Kembangan",
-"state": "Selangor"
-},
-{
-"a": 110,
-"b": 113,
-"slug": "bayu-timur-residences-vs-myra-senja-subang-2",
-"area": "Shah Alam",
 "state": "Selangor"
 },
 {
