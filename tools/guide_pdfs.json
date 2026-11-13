@@ -1,4 +1,8 @@
 {
+ "bandar-sri-damansara": {
+  "h": "c07b22fc639f",
+  "pages": 6
+ },
  "bangsar": {
   "h": "edd1308ca4c6",
   "pages": 6
@@ -8,7 +12,7 @@
   "pages": 6
  },
  "bukit-bintang": {
-  "h": "791c287c9922",
+  "h": "55205399604b",
   "pages": 7
  },
  "bukit-jalil": {
@@ -36,11 +40,11 @@
   "pages": 9
  },
  "kl-city-centre": {
-  "h": "2113b860a239",
+  "h": "2dd01cc91ac3",
   "pages": 13
  },
  "kwasa-damansara": {
-  "h": "885a32cfebcc",
+  "h": "4f818775e07b",
   "pages": 7
  },
  "penang": {
@@ -48,11 +52,19 @@
   "pages": 11
  },
  "petaling-jaya": {
-  "h": "9e7d70baddc7",
-  "pages": 7
+  "h": "2c4d48be5f17",
+  "pages": 8
+ },
+ "puchong": {
+  "h": "99121d2e646f",
+  "pages": 8
  },
  "selangor": {
-  "h": "550d8d356f26",
-  "pages": 14
+  "h": "fe2542130d7b",
+  "pages": 27
+ },
+ "shah-alam": {
+  "h": "a8f16d7cda12",
+  "pages": 7
  }
 }

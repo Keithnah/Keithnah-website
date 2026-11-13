@@ -206,6 +206,17 @@
 41
 ]
 },
+"Salak Selatan": {
+"label": "Salak Selatan KTM",
+"slug": "salak-selatan-ktm",
+"lines": [
+"KTM"
+],
+"ix": [
+122,
+121
+]
+},
 "Sri Damansara West": {
 "label": "Sri Damansara West MRT",
 "slug": "sri-damansara-west-mrt",
@@ -220,9 +231,30 @@
 },
 "pairs": [
 {
+"a": 116,
+"b": 6,
+"slug": "amara-residences-vs-arra-residences",
+"area": "Ara Damansara",
+"state": "Selangor"
+},
+{
 "a": 3,
 "b": 27,
 "slug": "amaya-bdr-sri-damansara-vs-laverra",
+"area": "Bandar Sri Damansara",
+"state": "Selangor"
+},
+{
+"a": 3,
+"b": 117,
+"slug": "amaya-bdr-sri-damansara-vs-the-arden-bandar-sri-damansara",
+"area": "Bandar Sri Damansara",
+"state": "Selangor"
+},
+{
+"a": 27,
+"b": 117,
+"slug": "laverra-vs-the-arden-bandar-sri-damansara",
 "area": "Bandar Sri Damansara",
 "state": "Selangor"
 },
@@ -351,6 +383,20 @@
 "slug": "the-kingswoodz-vs-the-vividz",
 "area": "Bukit Jalil",
 "state": "Kuala Lumpur"
+},
+{
+"a": 119,
+"b": 120,
+"slug": "levia-residence-vs-the-maxxon",
+"area": "Cheras",
+"state": "Kuala Lumpur"
+},
+{
+"a": 107,
+"b": 108,
+"slug": "myra-cove-vs-sanderling-2",
+"area": "Cyberjaya",
+"state": "Selangor"
 },
 {
 "a": 36,
@@ -584,6 +630,13 @@
 "state": "Selangor"
 },
 {
+"a": 115,
+"b": 63,
+"slug": "atwater-corporate-tower-vs-zenia-parkcity-damansara",
+"area": "Petaling Jaya",
+"state": "Selangor"
+},
+{
 "a": 74,
 "b": 48,
 "slug": "dtessera-residences-vs-the-aldenz",
@@ -605,11 +658,53 @@
 "state": "Selangor"
 },
 {
+"a": 99,
+"b": 101,
+"slug": "anya-at-shorea-park-vs-avantro-residences",
+"area": "Puchong",
+"state": "Selangor"
+},
+{
+"a": 99,
+"b": 106,
+"slug": "anya-at-shorea-park-vs-the-wyn-residences",
+"area": "Puchong",
+"state": "Selangor"
+},
+{
+"a": 101,
+"b": 106,
+"slug": "avantro-residences-vs-the-wyn-residences",
+"area": "Puchong",
+"state": "Selangor"
+},
+{
+"a": 122,
+"b": 121,
+"slug": "arte-star-milano-vs-arte-star-the-regal",
+"area": "Salak Selatan",
+"state": "Kuala Lumpur"
+},
+{
 "a": 84,
 "b": 87,
 "slug": "est8-vs-lunar-seputeh",
 "area": "Seputeh",
 "state": "Kuala Lumpur"
+},
+{
+"a": 97,
+"b": 98,
+"slug": "alamanda-heights-vs-trinity-nordic-residences",
+"area": "Seri Kembangan",
+"state": "Selangor"
+},
+{
+"a": 110,
+"b": 113,
+"slug": "bayu-timur-residences-vs-myra-senja-subang-2",
+"area": "Shah Alam",
+"state": "Selangor"
 },
 {
 "a": 85,
