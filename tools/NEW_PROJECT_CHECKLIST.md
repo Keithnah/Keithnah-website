@@ -8,10 +8,9 @@ When Keith adds a project:
    (KL: centre / west / south / ne; Selangor: pj / kwasa / subang / ssel / klang; Penang: island / mainland).
    An area not listed shows under "Other areas". The View Projects filter, the menu "Search by State" and the
    project sections all read `ZONES`.
-3. Keith's own project sheet "Keith - All Project Details" (Google Sheets id
-   `1TbA2zatqHux0jIoINR29Rt7mbrKccs2SCrsrnJlHlG0`) also gets a row, in the right tab:
-   KL, PJ & Others, PENANG, JOHOR, LANDED (EXSIM KL / EXSIM OTHER for Exsim projects).
-   Columns: MAIN PROJECTS, LAND SIZE, TENURE, COMPLETION, TITLE, UNIT, FLOOR, LIFT, M.FEE, CARPARK, SIZE, LAYOUT,
-   PRICE (SPA), NETT.P, PSF, BOOKING FEE, PACKAGE, LEGAL FEE, COMM, REMARK.
-   That sheet is private to Keith; nett prices, packages and commission never go on the website.
-4. Run `python3 tools/build_all.py`.
+3. Run `python3 tools/build_all.py`.
+4. Keith's project file is **WEBSITE_PROJECT.xlsx** ("the website project file"). It is made from the site data:
+   `python3 tools/externalize.py in && python3 tools/export_projects_xlsx.py <scratchpad>/export && python3 tools/externalize.py out`
+   It has INDEX (with State / Zone / Area columns), BY STATE, one sheet per state and per project, plus
+   project_images.zip and projects_by_state.json. Send Keith the new WEBSITE_PROJECT.xlsx after every project change.
+   (It is NOT the Google Sheet "Keith - All Project Details"; that is Keith's private sales sheet.)
