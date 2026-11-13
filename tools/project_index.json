@@ -544,5 +544,320 @@
 "state": "Kuala Lumpur",
 "area": "KL City Centre",
 "dev": "Chin Hin Property (Dawn Land Sdn Bhd)"
+},
+{
+"name": "Aras Residences",
+"slug": "aras-residences",
+"state": "Kuala Lumpur",
+"area": "OUG",
+"dev": "WCT Land (WCT OUG Development Sdn Bhd)"
+},
+{
+"name": "Aricia Residences",
+"slug": "aricia-residences",
+"state": "Kuala Lumpur",
+"area": "Sungai Besi",
+"dev": ""
+},
+{
+"name": "Arte Solaris",
+"slug": "arte-solaris",
+"state": "Kuala Lumpur",
+"area": "Mont Kiara",
+"dev": "Arte Corp (Solaris Ceria Sdn Bhd)"
+},
+{
+"name": "Aurum Business Centre",
+"slug": "aurum-business-centre",
+"state": "Kuala Lumpur",
+"area": "Sri Petaling",
+"dev": ""
+},
+{
+"name": "Ayanna Resort Residences",
+"slug": "ayanna-resort-residences",
+"state": "Kuala Lumpur",
+"area": "Bukit Jalil",
+"dev": ""
+},
+{
+"name": "EkoTitiwangsa",
+"slug": "ekotitiwangsa",
+"state": "Kuala Lumpur",
+"area": "Titiwangsa",
+"dev": "Ekovest Berhad"
+},
+{
+"name": "Est8 Seputeh",
+"slug": "est8",
+"state": "Kuala Lumpur",
+"area": "Seputeh",
+"dev": ""
+},
+{
+"name": "Ambience KL",
+"slug": "ambience-kl",
+"state": "Kuala Lumpur",
+"area": "Sungai Besi",
+"dev": "Faithview Group"
+},
+{
+"name": "Gen Starz Residences",
+"slug": "gen-starz-residences",
+"state": "Kuala Lumpur",
+"area": "Old Klang Road",
+"dev": "Majestic Gen Sdn Bhd"
+},
+{
+"name": "Lunar Seputeh",
+"slug": "lunar-seputeh",
+"state": "Kuala Lumpur",
+"area": "Seputeh",
+"dev": ""
+},
+{
+"name": "M Aurora",
+"slug": "m-aurora",
+"state": "Kuala Lumpur",
+"area": "Old Klang Road",
+"dev": "Mah Sing Group"
+},
+{
+"name": "Stellaris Riana Dutamas",
+"slug": "stellaris-riana-dutamas",
+"state": "Kuala Lumpur",
+"area": "Segambut",
+"dev": "IJM Land & FCW Holdings (Riana Dutamas)"
+},
+{
+"name": "Tangen Residences",
+"slug": "tangen-residences",
+"state": "Kuala Lumpur",
+"area": "North Kiara",
+"dev": ""
+},
+{
+"name": "Vox Residence Sentul",
+"slug": "vox-residence",
+"state": "Kuala Lumpur",
+"area": "Sentul",
+"dev": "Kerjaya Prospek Property Sdn Bhd"
+},
+{
+"name": "R&F Princess Cove Seine Region",
+"slug": "r-and-f-princess-cove-seine-region",
+"state": "Johor",
+"area": "JB City Centre",
+"dev": "R&F Development Sdn Bhd"
+},
+{
+"name": "R&F Princess Cove New Casa",
+"slug": "r-and-f-princess-cove-new-casa",
+"state": "Johor",
+"area": "JB City Centre",
+"dev": "R&F Development Sdn Bhd"
+},
+{
+"name": "Enlace Suites II",
+"slug": "enlace-suites-ii",
+"state": "Kuala Lumpur",
+"area": "Pantai Dalam",
+"dev": ""
+},
+{
+"name": "Bangsar Hill Park Talisa (Tower B & C)",
+"slug": "talisa-bangsar-hill-park",
+"state": "Kuala Lumpur",
+"area": "Bangsar",
+"dev": "Sunsuria (Bangsar Hill Park Development Sdn Bhd)"
+},
+{
+"name": "Bangsar Hill Park (Tower D & E)",
+"slug": "bangsar-hill-park-tower-d-and-e",
+"state": "Kuala Lumpur",
+"area": "Bangsar",
+"dev": "Sunsuria (Bangsar Hill Park Development Sdn Bhd)"
+},
+{
+"name": "Alamanda Heights",
+"slug": "alamanda-heights",
+"state": "Selangor",
+"area": "Seri Kembangan",
+"dev": ""
+},
+{
+"name": "Trinity Nordic Residences",
+"slug": "trinity-nordic-residences",
+"state": "Selangor",
+"area": "Seri Kembangan",
+"dev": ""
+},
+{
+"name": "Anya at Shorea Park",
+"slug": "anya-at-shorea-park",
+"state": "Selangor",
+"area": "Puchong",
+"dev": ""
+},
+{
+"name": "Nara at Shorea Park",
+"slug": "nara-at-shorea-park",
+"state": "Selangor",
+"area": "Puchong",
+"dev": ""
+},
+{
+"name": "Avantro Residences",
+"slug": "avantro-residences",
+"state": "Selangor",
+"area": "Puchong",
+"dev": ""
+},
+{
+"name": "Trinity Rainfora Residences",
+"slug": "trinity-rainfora-residences",
+"state": "Selangor",
+"area": "Puchong",
+"dev": ""
+},
+{
+"name": "Danau Puchong",
+"slug": "danau-puchong",
+"state": "Selangor",
+"area": "Puchong",
+"dev": ""
+},
+{
+"name": "Erica Residence",
+"slug": "erica-residence",
+"state": "Selangor",
+"area": "Puchong",
+"dev": ""
+},
+{
+"name": "Loop Residences",
+"slug": "loop-residences",
+"state": "Selangor",
+"area": "Puchong",
+"dev": ""
+},
+{
+"name": "The WYN Residences",
+"slug": "the-wyn-residences",
+"state": "Selangor",
+"area": "Puchong",
+"dev": ""
+},
+{
+"name": "Myra Cove",
+"slug": "myra-cove",
+"state": "Selangor",
+"area": "Cyberjaya",
+"dev": ""
+},
+{
+"name": "Sanderling 2",
+"slug": "sanderling-2",
+"state": "Selangor",
+"area": "Cyberjaya",
+"dev": ""
+},
+{
+"name": "Bayu @ Mori Park",
+"slug": "bayu-mori-park",
+"state": "Selangor",
+"area": "Shah Alam",
+"dev": ""
+},
+{
+"name": "Bayu Timur Residences",
+"slug": "bayu-timur-residences",
+"state": "Selangor",
+"area": "Shah Alam",
+"dev": ""
+},
+{
+"name": "Casa D'Arcadia",
+"slug": "casa-darcadia",
+"state": "Selangor",
+"area": "Shah Alam",
+"dev": ""
+},
+{
+"name": "Seri Embun",
+"slug": "seri-embun",
+"state": "Selangor",
+"area": "Shah Alam",
+"dev": ""
+},
+{
+"name": "Myra Senja @ Subang 2",
+"slug": "myra-senja-subang-2",
+"state": "Selangor",
+"area": "Shah Alam",
+"dev": ""
+},
+{
+"name": "Luminar Residence",
+"slug": "luminar-residence",
+"state": "Selangor",
+"area": "Subang Jaya",
+"dev": ""
+},
+{
+"name": "Atwater Corporate Tower",
+"slug": "atwater-corporate-tower",
+"state": "Selangor",
+"area": "Petaling Jaya",
+"dev": ""
+},
+{
+"name": "Amara Residences",
+"slug": "amara-residences",
+"state": "Selangor",
+"area": "Ara Damansara",
+"dev": ""
+},
+{
+"name": "The Arden Bandar Sri Damansara",
+"slug": "the-arden-bandar-sri-damansara",
+"state": "Selangor",
+"area": "Bandar Sri Damansara",
+"dev": ""
+},
+{
+"name": "Residensi Kamelia",
+"slug": "residensi-kamelia",
+"state": "Selangor",
+"area": "Bandar Sri Damansara",
+"dev": ""
+},
+{
+"name": "Levia Residence",
+"slug": "levia-residence",
+"state": "Kuala Lumpur",
+"area": "Cheras",
+"dev": ""
+},
+{
+"name": "The Maxxon",
+"slug": "the-maxxon",
+"state": "Kuala Lumpur",
+"area": "Cheras",
+"dev": ""
+},
+{
+"name": "Arte Star The Regal",
+"slug": "arte-star-the-regal",
+"state": "Kuala Lumpur",
+"area": "Salak Selatan",
+"dev": ""
+},
+{
+"name": "Arte Star Milano",
+"slug": "arte-star-milano",
+"state": "Kuala Lumpur",
+"area": "Salak Selatan",
+"dev": ""
 }
 ]

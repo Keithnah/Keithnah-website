@@ -1,0 +1,2276 @@
+[
+ {
+  "name": "Aras Residences",
+  "tag": "OUG",
+  "state": "Kuala Lumpur",
+  "area": "OUG",
+  "developer_group": "WCT",
+  "type": "Residential",
+  "price": "From RM666,000 (Gross)",
+  "price_short": "From RM666,000",
+  "tenure": "Freehold",
+  "size": "850 – 1,062 sqft",
+  "size_short": "850-1,062 sqft",
+  "rooms": "2 – 3 Bedrooms",
+  "rooms_short": "2-3 Bedrooms",
+  "completion": "Q4 2029",
+  "completion_short": "Q4 2029",
+  "status": "Under Construction",
+  "years": [
+   2029
+  ],
+  "loc": "WCity OUG, Jalan Awan Besar, Kuala Lumpur",
+  "overview": "Aras Residences is a freehold parkfront development in WCity OUG, off Jalan Awan Besar in south Kuala Lumpur. Two 56-storey towers hold 1,272 homes of 850 and 1,062 sqft, with 2- and 3-bedroom layouts, set beside the OUG township and minutes from Mid Valley, Bukit Jalil and Sri Petaling.",
+  "points": [
+   "Freehold, 1,272 homes in two 56-storey towers on 3.35 acres",
+   "2- and 3-bedroom homes of 850 and 1,062 sqft, from RM666,000 (gross)",
+   "In WCity OUG, linked to Old Klang Road, the NPE, KESAS and the KL-Seremban Highway"
+  ],
+  "selling_points": [
+   "Freehold title in an established south KL neighbourhood",
+   "Two practical layouts: 2 bedrooms (850 sqft) or 3 bedrooms (1,062 sqft), both with 2 bathrooms",
+   "Air-conditioners in the living room and bedrooms, water heaters with a rain shower in the master bath, shower screens and a digital lockset",
+   "Five passenger lifts plus a fire lift per floor, and multi-tier security",
+   "Close to Mid Valley Megamall, Pavilion Bukit Jalil, IMU and Columbia Asia Hospital Bukit Jalil"
+  ],
+  "amenities": [
+   "Pearl Shopping Gallery",
+   "Mid Valley Megamall",
+   "Taman Desa Medical Centre",
+   "IMU Healthcare",
+   "Columbia Asia Hospital Bukit Jalil",
+   "Bukit Jalil National Stadium",
+   "SJK(C) La Salle",
+   "Asia Pacific University (APU)"
+  ],
+  "loc_text": "Aras Residences sits in WCity OUG on Jalan Awan Besar, between Old Klang Road and Bukit Jalil. The NPE, KESAS, MEX and KL-Seremban Highway are all close by, so Mid Valley, KL city centre, Petaling Jaya and Bukit Jalil are a short drive, and schools such as SJK(C) La Salle and hospitals including IMU and Columbia Asia are nearby.",
+  "buyer_fit": [
+   {
+    "title": "First Home Buyers",
+    "desc": "Freehold 2-bedroom homes from 850 sqft in a mature part of south KL."
+   },
+   {
+    "title": "Young Families",
+    "desc": "3 bedrooms and 2 bathrooms in 1,062 sqft, near schools and Mid Valley."
+   },
+   {
+    "title": "Investors",
+    "desc": "Freehold units close to Mid Valley, Bukit Jalil and the main highways."
+   }
+  ],
+  "details_extra": {
+   "Developer": "WCT Land (WCT OUG Development Sdn Bhd)",
+   "Land Area": "3.35 acres",
+   "Total Units": "1,272 units: Tower A 636, Tower B 636",
+   "Building Height": "56 storeys per tower",
+   "Title": "Commercial (HDA)",
+   "Price per Sqft": "From about RM783 psf (Gross)",
+   "Maintenance Fee": "RM0.39 psf (incl. sinking fund)",
+   "Lifts": "5 passenger lifts + 1 fire lift; 14 units per floor",
+   "Car Parks": "8 elevated levels and 4 lower-ground levels",
+   "Security": "Multi-tier security",
+   "Furnishing": "Air-conditioners in the living room and bedrooms, water heaters, shower screens, digital lockset"
+  },
+  "layouts": [
+   {
+    "type": "Type A / A1",
+    "size": "850 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "Entry",
+    "desc": "A 2-bedroom, 2-bathroom home with a balcony and an open living and dining area.",
+    "img": "images/cb9dd6843c535699.jpg"
+   },
+   {
+    "type": "Type B / B1",
+    "size": "1,062 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Family",
+    "desc": "A 3-bedroom, 2-bathroom family home with a wide living and dining area and a balcony.",
+    "img": "images/eff13d708fa81582.jpg"
+   }
+  ],
+  "tags": [
+   "Aras Residences",
+   "Aras Residences OUG",
+   "Aras Residences price",
+   "Aras Residences floor plan",
+   "new project OUG",
+   "OUG condo for sale",
+   "freehold condo KL",
+   "new launch condo KL",
+   "WCT new project",
+   "吉隆坡新楼盘"
+  ]
+ },
+ {
+  "name": "Aricia Residences",
+  "tag": "Sungai Besi",
+  "state": "Kuala Lumpur",
+  "area": "Sungai Besi",
+  "developer_group": "",
+  "type": "Residential",
+  "price": "From RM461,000 (Gross)",
+  "price_short": "From RM461,000",
+  "tenure": "Freehold",
+  "size": "550 – 1,420 sqft",
+  "size_short": "550-1,420 sqft",
+  "rooms": "1+1 – 3+1 Bedrooms",
+  "rooms_short": "1+1 to 3+1 Beds",
+  "completion": "Est. Q2 2029",
+  "completion_short": "Q2 2029",
+  "status": "Under Construction",
+  "years": [
+   2029
+  ],
+  "loc": "Sungai Besi, Kuala Lumpur",
+  "overview": "Aricia Residences is a freehold, butterfly-inspired high-rise in Sungai Besi, about 4 km from Kuala Lumpur city centre. Two towers of 49 and 46 levels hold 787 homes from 550 to 1,420 sqft, from 1+1-bedroom units to 3+1-bedroom duplexes, with a smart home system, a 50 m infinity pool and GreenRE certification.",
+  "points": [
+   "Freehold, 787 homes in two towers (49 and 46 levels) on 2.615 acres",
+   "1+1 to 3+1 bedrooms from 550 sqft, and duplexes from 1,410 sqft, from RM461,000 (gross)",
+   "1.3 km to LRT Chan Sow Lin and 1.6 km to MRT Chan Sow Lin, about 4 km from the city centre"
+  ],
+  "selling_points": [
+   "Freehold title within 4 km of KL city centre",
+   "Smart home system and a fitted kitchen with hood and hob",
+   "Duplex homes of 1,410 and 1,420 sqft with 3+1 bedrooms and 3 bathrooms",
+   "50 m infinity pool, gym, badminton and pickleball courts, co-working lounge and music lounge",
+   "Pet-friendly, family-friendly and GreenRE certified"
+  ],
+  "amenities": [
+   "LRT & MRT Chan Sow Lin",
+   "IKEA Cheras",
+   "MyTown Shopping Centre",
+   "Sunway Velocity Mall",
+   "AEON Mall Taman Maluri",
+   "LaLaport Bukit Bintang",
+   "Sunway Medical Centre Velocity",
+   "Imperial International College"
+  ],
+  "loc_text": "Aricia is in Sungai Besi, about 4 km from Kuala Lumpur city centre, beside the Sungai Besi Expressway, the KL-Seremban Highway and the East-West Expressway. LRT Chan Sow Lin is 1.3 km and MRT Chan Sow Lin 1.6 km away; IKEA Cheras, MyTown, Sunway Velocity and LaLaport Bukit Bintang are all within 3.5 km, and TRX and Pavilion KL are about 4 km away.",
+  "buyer_fit": [
+   {
+    "title": "Young Professionals",
+    "desc": "1+1-bedroom homes from 550 sqft near two rail stations and the city centre."
+   },
+   {
+    "title": "Families",
+    "desc": "3+1-bedroom layouts and duplexes up to 1,420 sqft with family facilities."
+   },
+   {
+    "title": "Investors",
+    "desc": "Freehold units 4 km from KL city centre, close to malls and colleges."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "2.615 acres",
+   "Total Units": "787 units: Tower A 438, Tower B 349",
+   "Building Height": "Tower A 49 levels, Tower B 46 levels",
+   "Title": "Commercial (HDA)",
+   "Price per Sqft": "From about RM779 psf (Gross)",
+   "Maintenance Fee": "RM0.38 psf (incl. sinking fund)",
+   "Lifts": "3 passenger lifts + 1 service lift",
+   "Car Parks": "Single or tandem parking",
+   "Security": "Multi-tier security",
+   "Certification": "GreenRE certified"
+  },
+  "layouts": [
+   {
+    "type": "Type A1",
+    "size": "550 sqft",
+    "rooms": "1+1 Bedrooms, 1 Bathroom",
+    "tag": "Entry",
+    "desc": "A 1+1-bedroom home with 1 bathroom, for singles and couples."
+   },
+   {
+    "type": "Type B1",
+    "size": "757 sqft",
+    "rooms": "2+1 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 2+1-bedroom, 2-bathroom home with a flexible extra room."
+   },
+   {
+    "type": "Type C1",
+    "size": "872 sqft",
+    "rooms": "3+1 Bedrooms, 2 Bathrooms",
+    "tag": "Show unit",
+    "desc": "A 3+1-bedroom, 2-bathroom family home."
+   },
+   {
+    "type": "Type D1 (Duplex)",
+    "size": "1,410 sqft",
+    "rooms": "3+1 Bedrooms, 3 Bathrooms",
+    "tag": "Duplex",
+    "desc": "A two-level duplex with 3+1 bedrooms and 3 bathrooms."
+   },
+   {
+    "type": "Type D2 (Duplex)",
+    "size": "1,420 sqft",
+    "rooms": "3+1 Bedrooms, 3 Bathrooms",
+    "tag": "Largest",
+    "desc": "The largest duplex, with 3+1 bedrooms and 3 bathrooms over two floors."
+   }
+  ],
+  "tags": [
+   "Aricia Residences",
+   "Aricia Sungai Besi",
+   "Aricia Residences price",
+   "Aricia Residences floor plan",
+   "new project Sungai Besi",
+   "Sungai Besi condo for sale",
+   "freehold condo KL",
+   "new launch condo KL",
+   "吉隆坡新楼盘"
+  ]
+ },
+ {
+  "name": "Arte Solaris",
+  "tag": "Mont Kiara",
+  "state": "Kuala Lumpur",
+  "area": "Mont Kiara",
+  "developer_group": "Arte Corp",
+  "type": "Serviced Apartment",
+  "price": "From RM580,000 (Gross)",
+  "price_short": "From RM580,000",
+  "tenure": "Leasehold (until 2118)",
+  "size": "477 – 2,051 sqft",
+  "size_short": "477-2,051 sqft",
+  "rooms": "1+1 – 3 Bedrooms",
+  "rooms_short": "1+1 to 3 Beds",
+  "completion": "Q4 2026",
+  "completion_short": "Q4 2026",
+  "status": "Under Construction",
+  "years": [
+   2026
+  ],
+  "loc": "Solaris Mont Kiara, Kuala Lumpur",
+  "overview": "Arte Solaris is a palatial-themed tower on one of the last prime plots of Solaris Mont Kiara, fronting the main road into the enclave. Its 603 units combine 433 simplex office suites from 477 sqft with 170 duplex serviced apartments up to 2,051 sqft, a step from Solaris Mont Kiara and Publika, and close to the area's international schools.",
+  "points": [
+   "603 units: 433 simplex office suites (477-964 sqft) and 170 duplex serviced apartments (790-2,051 sqft)",
+   "1+1 to 3 rooms, from RM580,000 (gross), a lower entry price than most of Mont Kiara",
+   "100 m to Solaris Mont Kiara and 650 m to Publika, with Mont Kiara International School 1 km away"
+  ],
+  "selling_points": [
+   "Palatial facade and facilities that blend architecture, painting and sculpture",
+   "Duplex serviced apartments on levels 23A to 33, simplex suites on levels 1 to 23",
+   "Royale \"Trevi\" pool, luxe gym, treillage garden, sky lounge and sky deck",
+   "Semi-furnished, with Daikin air-conditioners and KONE lifts",
+   "Walking distance to cafes, groceries and clinics in Solaris Mont Kiara"
+  ],
+  "amenities": [
+   "Solaris Mont Kiara",
+   "Publika Shopping Gallery",
+   "1 Mont Kiara",
+   "Mont Kiara International School",
+   "Garden International School",
+   "French School of Kuala Lumpur",
+   "Global Doctors Hospital",
+   "Kiara Medical Centre"
+  ],
+  "loc_text": "Arte Solaris faces the main entrance road of Solaris Mont Kiara, the established expatriate neighbourhood of north-west KL. Solaris Mont Kiara is 100 m away, Publika 650 m and 1 Mont Kiara 1.7 km, with Mont Kiara International School 1 km and Garden International School 2.4 km away. The PLUS, DUKE, SPRINT, NKVE and LDP highways link it to KL city centre, about 10 km away.",
+  "buyer_fit": [
+   {
+    "title": "Investors",
+    "desc": "Office suites from 477 sqft in Mont Kiara, a popular rental area with expats."
+   },
+   {
+    "title": "Families",
+    "desc": "Duplex serviced apartments up to 2,051 sqft near international schools."
+   },
+   {
+    "title": "Young Professionals",
+    "desc": "A lower-priced entry to Mont Kiara, steps from Publika and Solaris."
+   }
+  ],
+  "details_extra": {
+   "Developer": "Arte Corp (Solaris Ceria Sdn Bhd)",
+   "Land Area": "1.01 acres",
+   "Total Units": "603 units: 433 office suites, 170 serviced apartments",
+   "Building Height": "52 levels including car park floors (33 residential storeys)",
+   "Title": "Commercial; serviced apartments under HDA",
+   "Price per Sqft": "From about RM1,150 psf (Gross)",
+   "Maintenance Fee": "About RM0.44 psf (incl. sinking fund)",
+   "Lifts": "4 lifts + 1 fire lift (KONE)",
+   "Car Parks": "Office suites 1; serviced apartments 2 to 3",
+   "Security": "Multi-tier security",
+   "Furnishing": "Semi-furnished"
+  },
+  "layouts": [
+   {
+    "type": "Office Suite (Simplex)",
+    "size": "477 – 964 sqft",
+    "rooms": "1+1 to 2 Rooms",
+    "tag": "Entry",
+    "desc": "Simplex office suites on levels 1 to 23, 19 units per floor."
+   },
+   {
+    "type": "Serviced Apartment (Duplex)",
+    "size": "790 – 2,051 sqft",
+    "rooms": "2 to 3 Bedrooms",
+    "tag": "Duplex",
+    "desc": "Two-level serviced apartments on levels 23A to 33, 17 units per floor."
+   }
+  ],
+  "tags": [
+   "Arte Solaris",
+   "Arte Solaris Mont Kiara",
+   "Arte Solaris price",
+   "Arte Solaris floor plan",
+   "new project Mont Kiara",
+   "Mont Kiara condo for sale",
+   "Mont Kiara serviced apartment",
+   "new launch condo KL",
+   "Arte Corp new project",
+   "吉隆坡新楼盘"
+  ]
+ },
+ {
+  "name": "Aurum Business Centre",
+  "tag": "Sri Petaling",
+  "state": "Kuala Lumpur",
+  "area": "Sri Petaling",
+  "developer_group": "",
+  "type": "Commercial Suites",
+  "price": "From RM417,545 (Gross)",
+  "price_short": "From RM417,545",
+  "tenure": "Freehold",
+  "size": "527 – 679 sqft",
+  "size_short": "527-679 sqft",
+  "rooms": "1 – 2 Bedrooms",
+  "rooms_short": "1-2 Bedrooms",
+  "completion": "Est. Q4 2029",
+  "completion_short": "Q4 2029",
+  "status": "New Launch",
+  "years": [
+   2029
+  ],
+  "loc": "Sri Petaling, Kuala Lumpur",
+  "overview": "Aurum Business Centre is a freehold mixed development in Sri Petaling, combining Aurum Suites with retail and shop offices. The 49-level tower holds 456 SOHO suites of 527 and 679 sqft, with only 10 suites per floor served by 5 lifts, and a 600 m covered walkway to MRT Taman Naga Emas.",
+  "points": [
+   "Freehold, 456 suites and 17 retail units in a 49-level tower on 2.3 acres",
+   "1-bedroom (527 sqft) and 2-bedroom (679 sqft) suites, from RM417,545 (gross)",
+   "600 m covered walkway to MRT Taman Naga Emas, 3 stops to TRX and 5 to KL City Centre"
+  ],
+  "selling_points": [
+   "Freehold title with a 600 m covered walkway to the MRT",
+   "Only 10 suites per floor, served by 5 lifts",
+   "2.6 m-high windows and naturally ventilated rooms and bathrooms",
+   "Flexible layouts that work as a home, an office or both",
+   "Pool, podium lounge, co-working space, gym, games lounge and pickleball court"
+  ],
+  "amenities": [
+   "MRT Taman Naga Emas",
+   "Sri Petaling Commercial Hub",
+   "Kuchai Entrepreneurs Park",
+   "Pavilion Bukit Jalil",
+   "Mid Valley Megamall",
+   "IMU Healthcare",
+   "SK Bandar Baru Sri Petaling",
+   "Bukit Jalil Recreational Park"
+  ],
+  "loc_text": "Aurum Business Centre is in Sri Petaling, south Kuala Lumpur, with a 600 m covered walkway to MRT Taman Naga Emas on the Putrajaya Line. The Sri Petaling commercial hub is 1.2 km away, LRT Bukit Jalil 3.2 km, Pavilion Bukit Jalil 7 km and Mid Valley Megamall 7.4 km, with schools, IMU and TBS close by.",
+  "buyer_fit": [
+   {
+    "title": "Young Professionals",
+    "desc": "Compact freehold suites from 527 sqft, a short covered walk from the MRT."
+   },
+   {
+    "title": "Home Office Owners",
+    "desc": "Flexible SOHO layouts that work as a home, an office or both."
+   },
+   {
+    "title": "Investors",
+    "desc": "Entry-priced freehold units near the MRT and Sri Petaling's busy commercial hub."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "2.3 acres",
+   "Total Units": "456 suites (Type A 274, Type B 182) and 17 retail units",
+   "Building Height": "49 levels",
+   "Title": "Commercial (HDA), SOHO",
+   "Price per Sqft": "From about RM793 psf (Gross)",
+   "Maintenance Fee": "About RM0.50 psf (incl. sinking fund)",
+   "Lifts": "4 + 1 lifts; 10 units per floor",
+   "Car Parks": "Type A 1 bay; Type B 1+1 tandem",
+   "Security": "Multi-tier security",
+   "Furnishing": "Air-conditioners, storage water heaters and a digital lock"
+  },
+  "layouts": [
+   {
+    "type": "Type A",
+    "size": "527 sqft",
+    "rooms": "1 Bedroom, 1 Bathroom",
+    "tag": "Entry",
+    "desc": "A 1-bedroom suite with a kitchen and a living room, 274 units."
+   },
+   {
+    "type": "Type B",
+    "size": "679 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "Popular",
+    "desc": "A 2-bedroom, 2-bathroom suite with a living room and kitchen, 182 units."
+   }
+  ],
+  "tags": [
+   "Aurum Business Centre",
+   "Aurum Suites Sri Petaling",
+   "Aurum Business Centre price",
+   "Aurum Business Centre floor plan",
+   "new project Sri Petaling",
+   "Sri Petaling SOHO for sale",
+   "freehold SOHO KL",
+   "new launch KL near MRT",
+   "吉隆坡新楼盘"
+  ]
+ },
+ {
+  "name": "Ayanna Resort Residences",
+  "tag": "Bukit Jalil",
+  "state": "Kuala Lumpur",
+  "area": "Bukit Jalil",
+  "developer_group": "",
+  "type": "Residential",
+  "price": "From RM753,000 (Gross)",
+  "price_short": "From RM753,000",
+  "tenure": "Freehold",
+  "size": "1,155 – 2,453 sqft",
+  "size_short": "1,155-2,453 sqft",
+  "rooms": "3 – 4+2 Bedrooms",
+  "rooms_short": "3 to 4+2 Beds",
+  "completion": "Q2 2027",
+  "completion_short": "Q2 2027",
+  "status": "Under Construction",
+  "years": [
+   2027
+  ],
+  "loc": "Bukit Jalil, Kuala Lumpur",
+  "overview": "Ayanna Resort Residences is a freehold, resort-style residence with a residential title in Bukit Jalil. Two towers of 42 and 44 storeys on 4.9 acres hold 824 large family homes from 1,155 to 2,453 sqft, with 2 to 4 car park bays each, a 1.3-acre recreational park with an interactive stream and semi-D style sky living.",
+  "points": [
+   "Freehold residential title, 824 homes in two towers on 4.9 acres",
+   "3 to 4+2-bedroom homes from 1,155 to 2,453 sqft, from RM753,000 (gross), some with a dual-key option",
+   "1.5 km to LRT Alam Sutera and 3.5 km to Pavilion Bukit Jalil"
+  ],
+  "selling_points": [
+   "Freehold with a residential title, uncommon for high-rise homes in KL",
+   "Large layouts from 1,155 sqft, with 2 to 4 car park bays per unit",
+   "1.3-acre recreational park with an interactive stream, and pet-friendly facilities",
+   "Kitchen cabinet with hood and hob, smart home system, water heater, air-conditioners and shower screens",
+   "EV charging stations and a low maintenance fee of RM0.27 psf"
+  ],
+  "amenities": [
+   "LRT Alam Sutera (1.5 km)",
+   "Pavilion Bukit Jalil (3.5 km)",
+   "KPJ Kinrara (1.8 km)",
+   "Giant Kinrara (2.5 km)",
+   "Tzu Chi International School (3.9 km)",
+   "Bukit Jalil Recreational Park (4 km)",
+   "IOI Mall Puchong (6.3 km)",
+   "Sunway Medical Centre (6 km)"
+  ],
+  "loc_text": "Ayanna is in the mature Bukit Jalil neighbourhood, linked by the Bukit Jalil Highway, KL-Seremban Expressway, LDP, KESAS, MEX and NPE. LRT Alam Sutera is 1.5 km and LRT Kinrara BK5 2.5 km away, Pavilion Bukit Jalil 3.5 km and Bukit Jalil Recreational Park 4 km, with Tzu Chi International School, IMU and Sunway University within about 7 km.",
+  "buyer_fit": [
+   {
+    "title": "Growing Families",
+    "desc": "3 to 4+2 bedrooms from 1,155 sqft, with a park and stream for children."
+   },
+   {
+    "title": "Multi-generation Families",
+    "desc": "Dual-key layouts of 1,178 and 2,316 sqft, and 2 to 4 car parks per unit."
+   },
+   {
+    "title": "Upgraders",
+    "desc": "Freehold residential-title homes in Bukit Jalil at a competitive psf."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "4.9 acres",
+   "Total Units": "824 units: Block A 333, Block B 491",
+   "Building Height": "Block A 42 storeys, Block B 44 storeys",
+   "Title": "Residential, Freehold",
+   "Price per Sqft": "From about RM639 psf (Gross)",
+   "Maintenance Fee": "RM0.27 psf (incl. sinking fund)",
+   "Lifts": "3 lifts + 1 service lift; Tower A 9 units per floor, Tower B 13",
+   "Car Parks": "2 to 4 bays per unit",
+   "Security": "Multi-tier security",
+   "Furnishing": "Partially furnished: kitchen cabinet with hood and hob, smart home system, water heater, air-conditioners, shower screens"
+  },
+  "layouts": [
+   {
+    "type": "1,155 sqft layout",
+    "size": "1,155 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Entry",
+    "desc": "A 3-bedroom, 2-bathroom home with a study alcove.",
+    "img": "images/473b2dea60c73dce.jpg"
+   },
+   {
+    "type": "1,178 sqft (Dual-key)",
+    "size": "1,178 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Dual-key",
+    "desc": "A 3-bedroom dual-key home with a study alcove.",
+    "img": "images/85e26ed73e6b5975.jpg"
+   },
+   {
+    "type": "Type A1",
+    "size": "1,365 sqft",
+    "rooms": "3+1 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 3+1-bedroom, 2-bathroom home with a glass balustrade balcony.",
+    "img": "images/f939d43980e72c3a.jpg"
+   },
+   {
+    "type": "Type A2",
+    "size": "1,384 sqft",
+    "rooms": "4 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 4-bedroom, 2-bathroom family home.",
+    "img": "images/e4176bc1ec6b1115.jpg"
+   },
+   {
+    "type": "Type A3",
+    "size": "1,388 sqft",
+    "rooms": "4 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 4-bedroom, 2-bathroom home with a balcony.",
+    "img": "images/fac116f6279f67b5.jpg"
+   },
+   {
+    "type": "1,678 sqft layout",
+    "size": "1,678 sqft",
+    "rooms": "4+1 Bedrooms, 3 Bathrooms",
+    "tag": "Spacious",
+    "desc": "A 4+1-bedroom, 3-bathroom home.",
+    "img": "images/e2933fa61623047d.jpg"
+   },
+   {
+    "type": "1,859 sqft layout",
+    "size": "1,859 sqft",
+    "rooms": "4+2 Bedrooms, 3+1 Bathrooms",
+    "tag": "",
+    "desc": "A 4+2-bedroom home with 3+1 bathrooms.",
+    "img": "images/b8a01f3fcbad479d.jpg"
+   },
+   {
+    "type": "2,316 sqft (Dual-key)",
+    "size": "2,316 sqft",
+    "rooms": "4+2 Bedrooms, 3+1 Bathrooms",
+    "tag": "Largest",
+    "desc": "A large dual-key home with 4+2 bedrooms, for multi-generation living.",
+    "img": "images/4e9666eb467bcddd.jpg"
+   }
+  ],
+  "tags": [
+   "Ayanna Resort Residences",
+   "Ayanna Bukit Jalil",
+   "Ayanna price",
+   "Ayanna floor plan",
+   "new project Bukit Jalil",
+   "Bukit Jalil condo for sale",
+   "freehold condo KL",
+   "new launch condo KL",
+   "吉隆坡新楼盘"
+  ]
+ },
+ {
+  "name": "EkoTitiwangsa",
+  "tag": "Titiwangsa",
+  "state": "Kuala Lumpur",
+  "area": "Titiwangsa",
+  "developer_group": "Ekovest",
+  "type": "Serviced Apartment",
+  "price": "From RM434,700 (Gross)",
+  "price_short": "From RM434,700",
+  "tenure": "Freehold",
+  "size": "690 – 1,120 sqft",
+  "size_short": "690-1,120 sqft",
+  "rooms": "1+1 – 3 Bedrooms",
+  "rooms_short": "1+1 to 3 Beds",
+  "completion": "Q1 2028",
+  "completion_short": "Q1 2028",
+  "status": "Under Construction",
+  "years": [
+   2028
+  ],
+  "loc": "Titiwangsa, Kuala Lumpur",
+  "overview": "EkoTitiwangsa is a freehold integrated development beside Taman Tasik Titiwangsa, with views of the KL city skyline. Two serviced apartment blocks hold about 500 low-density homes from 690 to 1,120 sqft, alongside an office tower and retail shops, with direct access to the DUKE highway and a shuttle service to nearby LRT and MRT stations.",
+  "points": [
+   "Freehold, about 500 serviced apartments in Block B (196) and Block C (304), plus an office tower",
+   "1+1 to 3-bedroom homes from 690 to 1,120 sqft, from RM434,700 (gross)",
+   "Next to Taman Tasik Titiwangsa and DUKE, with a shuttle to LRT and MRT stations"
+  ],
+  "selling_points": [
+   "Freehold title close to KL city centre, with skyline views to KL City Centre, KL Tower and Merdeka 118",
+   "Low density: about 500 homes, 7 to 12 units per floor",
+   "Six layouts, including a 1,120 sqft dual-key home with 2 car parks",
+   "Shuttle service, multi-tier security and direct DUKE access",
+   "Low maintenance fee of RM0.30 psf, including sinking fund"
+  ],
+  "amenities": [
+   "Taman Tasik Titiwangsa",
+   "Istana Budaya",
+   "LRT Titiwangsa",
+   "MRT Titiwangsa",
+   "Kuala Lumpur Hospital",
+   "KL City Centre",
+   "DUKE Highway",
+   "Middle Ring Road 2"
+  ],
+  "loc_text": "EkoTitiwangsa sits beside Taman Tasik Titiwangsa and the DUKE highway, just north of KL city centre. Istana Budaya, Kuala Lumpur Hospital and the Titiwangsa LRT, MRT and Monorail interchange are close by, and DUKE and the Middle Ring Road 2 link it to Ampang, Gombak, Sentul and Kepong.",
+  "buyer_fit": [
+   {
+    "title": "Young Professionals",
+    "desc": "1+1-bedroom homes from 690 sqft near the city centre and rail lines."
+   },
+   {
+    "title": "Families",
+    "desc": "2- and 3-bedroom layouts beside Titiwangsa Lake Gardens."
+   },
+   {
+    "title": "Investors",
+    "desc": "Freehold units close to KL city centre, with a dual-key option."
+   }
+  ],
+  "details_extra": {
+   "Developer": "Ekovest Berhad",
+   "Land Area": "2.30 acres",
+   "Total Units": "Serviced apartments: Block B 196, Block C 304; office tower Block A 115",
+   "Building Height": "Block B levels 9-36, Block C levels 9-33A",
+   "Title": "Commercial (HDA)",
+   "Price per Sqft": "From about RM630 psf (Gross)",
+   "Maintenance Fee": "RM0.30 psf (incl. sinking fund)",
+   "Lifts": "6 lifts per block; Block B 7 units per floor, Block C 12",
+   "Car Parks": "1 bay per unit (2 for the 1,120 sqft unit), Podium 3-6",
+   "Security": "Multi-tier security"
+  },
+  "layouts": [
+   {
+    "type": "Type B1 (B1a) / B (Ba) / B2 (B2a)",
+    "size": "690 sqft",
+    "rooms": "1+1 or 2 Bedrooms, 1 Bathroom",
+    "tag": "Entry",
+    "desc": "A 690 sqft home with a study area, as 1+1 or 2 bedrooms.",
+    "img": "images/b87b6f92d2e542c1.jpg"
+   },
+   {
+    "type": "Type A",
+    "size": "806 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 2-bedroom, 2-bathroom home with a balcony.",
+    "img": "images/9711bc8bada3bdbe.jpg"
+   },
+   {
+    "type": "Type C (Ca) / C1 / C2",
+    "size": "809 sqft",
+    "rooms": "1+1 or 2 Bedrooms, 2 Bathrooms",
+    "tag": "Show unit",
+    "desc": "An 809 sqft home with a study area and 2 bathrooms.",
+    "img": "images/6c5c2ff100d032e4.jpg"
+   },
+   {
+    "type": "Type E",
+    "size": "845 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 2-bedroom, 2-bathroom home with a balcony.",
+    "img": "images/41cdbf517c461ab4.jpg"
+   },
+   {
+    "type": "Type D",
+    "size": "854 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 2-bedroom, 2-bathroom corner layout with a balcony.",
+    "img": "images/47fe123aef292657.jpg"
+   },
+   {
+    "type": "Type F (Dual-key)",
+    "size": "1,120 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Dual-key",
+    "desc": "A 3-bedroom dual-key home with 2 car parks.",
+    "img": "images/d99fb45fb44dc10d.jpg"
+   }
+  ],
+  "tags": [
+   "EkoTitiwangsa",
+   "Eko Titiwangsa",
+   "EkoTitiwangsa price",
+   "EkoTitiwangsa floor plan",
+   "new project Titiwangsa",
+   "Titiwangsa condo for sale",
+   "freehold condo KL",
+   "new launch condo KL",
+   "Ekovest new project",
+   "吉隆坡新楼盘"
+  ]
+ },
+ {
+  "name": "Est8 Seputeh",
+  "tag": "Seputeh",
+  "state": "Kuala Lumpur",
+  "area": "Seputeh",
+  "developer_group": "",
+  "type": "Serviced Apartment",
+  "price": "From RM529,000 (Gross)",
+  "price_short": "From RM529,000",
+  "tenure": "Leasehold (until 2118)",
+  "size": "543 – 1,947 sqft",
+  "size_short": "543-1,947 sqft",
+  "rooms": "1 – 4 Bedrooms",
+  "rooms_short": "1-4 Bedrooms",
+  "completion": "Est. Q3 2026",
+  "completion_short": "Q3 2026",
+  "status": "Under Construction",
+  "years": [
+   2026
+  ],
+  "loc": "Seputeh, Kuala Lumpur (beside Mid Valley City)",
+  "overview": "Est8 is a garden-themed residential enclave in Seputeh, a few hundred metres from Mid Valley Megamall and The Gardens Mall. Two suite towers and a block of villas hold 821 homes from 543 to 1,947 sqft, built around the \"Valley of Dreams\" masterplan with more than 40 facilities, sky gardens and a 50 m lap pool, with a covered walkway to Mid Valley and the KTM and LRT stations.",
+  "points": [
+   "821 homes in Tower A (432), Tower B (372) and 17 villas on 2.9 acres",
+   "Suites and villas from 543 to 1,947 sqft, from RM529,000 (gross)",
+   "300 m to Mid Valley Megamall and Mid Valley KTM, with a covered walkway"
+  ],
+  "selling_points": [
+   "Walking distance to Mid Valley Megamall and The Gardens Mall, with a covered walkway",
+   "More than 40 facilities: 50 m lap pool, sand beach, celebrity kitchen, business centre and gym",
+   "Sky gardens on several levels, including a rooftop garden on Tower A",
+   "Passive ventilation design and an app for bills, bookings and maintenance",
+   "City-view units from level 30, and EV charging bays"
+  ],
+  "amenities": [
+   "Mid Valley Megamall (300 m)",
+   "The Gardens Mall (500 m)",
+   "Mid Valley KTM (300 m)",
+   "Seputeh KTM (400 m)",
+   "Abdullah Hukum LRT (800 m)",
+   "KL Sentral (2 km)",
+   "Pantai Hospital Kuala Lumpur (1.5 km)",
+   "Valley International School (1.5 km)"
+  ],
+  "loc_text": "Est8 is in Seputeh, next to Mid Valley City and KL Eco City. Mid Valley Megamall and Mid Valley KTM station are 300 m away, The Gardens Mall 500 m, Abdullah Hukum LRT 800 m and KL Sentral 2 km. The Federal Highway, SALAK Highway, Jalan Syed Putra and Jalan Klang Lama are close by, and Bangsar South, Bangsar and KL city centre are a short drive.",
+  "buyer_fit": [
+   {
+    "title": "Young Professionals",
+    "desc": "Compact suites from 543 sqft, a short walk from Mid Valley and the KTM."
+   },
+   {
+    "title": "Families",
+    "desc": "Larger suites up to 1,947 sqft and villas, with schools within 2 km."
+   },
+   {
+    "title": "Investors",
+    "desc": "Units next to Mid Valley City, one of KL's busiest shopping and office hubs."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "2.9 acres",
+   "Total Units": "821 units: Tower A 432, Tower B 372, villas (Block C) 17",
+   "Building Height": "Tower A 42 levels, Tower B 41 levels, villas 2 levels",
+   "Title": "Commercial (HDA)",
+   "Price per Sqft": "From about RM822 psf (Gross)",
+   "Maintenance Fee": "RM0.44 psf (incl. sinking fund)",
+   "Lifts": "Tower A 5+1, Tower B 4+1",
+   "Car Parks": "1 to 3 bays depending on unit type; 8 EV charging bays",
+   "Security": "3-tier security"
+  },
+  "layouts": [
+   {
+    "type": "Suites (Tower A & B)",
+    "size": "543 – 1,947 sqft",
+    "rooms": "1 to 4 Bedrooms",
+    "tag": "",
+    "desc": "Suites in a range of sizes in Towers A and B, many with city or garden views."
+   },
+   {
+    "type": "Villas (Block C)",
+    "size": "966 – 1,184 sqft",
+    "rooms": "Villa",
+    "tag": "Villa",
+    "desc": "17 low-rise villas set among the podium gardens."
+   }
+  ],
+  "tags": [
+   "Est8",
+   "Est8 Seputeh",
+   "Est8 Mid Valley",
+   "Est8 price",
+   "Est8 floor plan",
+   "new project Seputeh",
+   "Mid Valley condo for sale",
+   "new launch condo KL",
+   "吉隆坡新楼盘"
+  ]
+ },
+ {
+  "name": "Ambience KL",
+  "tag": "Sungai Besi",
+  "state": "Kuala Lumpur",
+  "area": "Sungai Besi",
+  "developer_group": "Faithview",
+  "type": "Residential",
+  "price": "From RM448,230 (Gross)",
+  "price_short": "From RM448,230",
+  "tenure": "Freehold",
+  "size": "669 – 1,080 sqft",
+  "size_short": "669-1,080 sqft",
+  "rooms": "2 – 4 Bedrooms",
+  "rooms_short": "2-4 Bedrooms",
+  "completion": "Approx. Q3 2027",
+  "completion_short": "Q3 2027",
+  "status": "Under Construction",
+  "years": [
+   2027
+  ],
+  "loc": "Sungai Besi, Kuala Lumpur",
+  "overview": "Ambience KL (Residensi Ambien) is a freehold, 31-storey residential tower in Sungai Besi, south Kuala Lumpur. Its 482 homes range from 669 to 1,080 sqft, with 2, 3 and 4 bedrooms, about 800 m from MRT Taman Naga Emas on the Putrajaya Line.",
+  "points": [
+   "Freehold, 482 homes in a 31-storey tower on 1.64 acres",
+   "2-, 3- and 4-bedroom homes from 669 to 1,080 sqft, from RM448,230 (gross)",
+   "About 800 m to MRT Taman Naga Emas (Putrajaya Line)"
+  ],
+  "selling_points": [
+   "Freehold title at an entry price for 2 to 4 bedrooms in KL",
+   "4-bedroom layouts up to 1,080 sqft with 2 to 3 car parks",
+   "Pool, jacuzzi, gym, gourmet kitchen, sauna, co-working area and rooftop viewing deck",
+   "Near MRT Taman Naga Emas and the Sungai Besi Expressway",
+   "Low maintenance fee of about RM0.30 psf"
+  ],
+  "amenities": [
+   "MRT Taman Naga Emas (800 m)",
+   "Sri Petaling Commercial Hub",
+   "NSK Trade City",
+   "Terminal Bersepadu Selatan (TBS)",
+   "Pavilion Bukit Jalil",
+   "Mid Valley Megamall",
+   "IMU Healthcare",
+   "Bukit Jalil National Stadium"
+  ],
+  "loc_text": "Ambience KL is in Sungai Besi, south Kuala Lumpur, about 800 m from MRT Taman Naga Emas on the Putrajaya Line. The Sungai Besi Expressway and the KL-Seremban Highway link it to the city centre, Bukit Jalil and Cheras, with Sri Petaling's eateries, TBS and Pavilion Bukit Jalil a short drive away.",
+  "buyer_fit": [
+   {
+    "title": "First Home Buyers",
+    "desc": "Freehold 2-bedroom homes from 669 sqft at an entry price."
+   },
+   {
+    "title": "Families",
+    "desc": "3- and 4-bedroom layouts up to 1,080 sqft with 2 to 3 car parks."
+   },
+   {
+    "title": "Investors",
+    "desc": "Freehold units near the MRT, suited to room or whole-unit rental."
+   }
+  ],
+  "details_extra": {
+   "Developer": "Faithview Group",
+   "Land Area": "1.64 acres",
+   "Total Units": "482 units",
+   "Building Height": "31 floors",
+   "Title": "Commercial (HDA)",
+   "Price per Sqft": "From about RM670 psf (Gross)",
+   "Maintenance Fee": "About RM0.30 psf (sinking fund extra)",
+   "Lifts": "4 + 1 service lift; 20 units per floor (levels 9-31)",
+   "Car Parks": "Type A 1, Type B 2, Type C 2 to 3",
+   "Security": "Multi-tier security"
+  },
+  "layouts": [
+   {
+    "type": "Type A",
+    "size": "From 669 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "Entry",
+    "desc": "A 2-bedroom, 2-bathroom home with a balcony and 1 car park.",
+    "img": "images/031b12912587e5bb.jpg"
+   },
+   {
+    "type": "Type B",
+    "size": "3-bedroom",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Popular",
+    "desc": "A 3-bedroom, 2-bathroom family home with 2 car parks.",
+    "img": "images/da9a6e781f012237.jpg"
+   },
+   {
+    "type": "Type C",
+    "size": "Up to 1,080 sqft",
+    "rooms": "4 Bedrooms, 3 Bathrooms",
+    "tag": "Largest",
+    "desc": "A 4-bedroom home with 3 bathrooms and 2 to 3 car parks.",
+    "img": "images/1d85550bf7403a4c.jpg"
+   }
+  ],
+  "tags": [
+   "Ambience KL",
+   "Residensi Ambien",
+   "Ambience KL Sungai Besi",
+   "Ambience KL price",
+   "Ambience KL floor plan",
+   "new project Sungai Besi",
+   "Sungai Besi condo for sale",
+   "freehold condo KL",
+   "Faithview new project",
+   "吉隆坡新楼盘"
+  ]
+ },
+ {
+  "name": "Gen Starz Residences",
+  "tag": "Old Klang Road",
+  "state": "Kuala Lumpur",
+  "area": "Old Klang Road",
+  "developer_group": "Majestic Gen",
+  "type": "Serviced Apartment",
+  "price": "From RM593,000 (Gross)",
+  "price_short": "From RM593,000",
+  "tenure": "Freehold",
+  "size": "650 – 874 sqft",
+  "size_short": "650-874 sqft",
+  "rooms": "2 – 3 Rooms",
+  "rooms_short": "2-3 Rooms",
+  "completion": "Sep 2028",
+  "completion_short": "Q3 2028",
+  "status": "Under Construction",
+  "years": [
+   2028
+  ],
+  "loc": "Old Klang Road, Kuala Lumpur",
+  "overview": "Gen Starz Residences is a freehold serviced residence on Old Klang Road, Kuala Lumpur. A single 36-floor tower on 1.34 acres holds 360 units of 650 to 874 sqft, only 10 per floor, with hackable walls for flexible layouts, dual-key-ready 3-room units and facilities on the podium and the rooftop.",
+  "points": [
+   "Freehold, 360 units in one tower, 10 units per floor, on 1.34 acres",
+   "2- and 3-room units from 650 to 874 sqft, from RM593,000 (gross)",
+   "On Old Klang Road, close to Mid Valley, with a proposed MRT station within walking distance"
+  ],
+  "selling_points": [
+   "Freehold title on Old Klang Road, minutes from Mid Valley and KL city centre",
+   "Low density: only 10 units per floor",
+   "Hackable walls for flexible layouts, and 180 dual-key-ready Type C units",
+   "Pool, kids' pool, gym, multipurpose hall, little forest and rooftop facilities",
+   "Targeting GreenRE (Silver) certification, with infrastructure for EV charging"
+  ],
+  "amenities": [
+   "Mid Valley Megamall",
+   "KL Gateway Mall",
+   "Pantai Hospital Kuala Lumpur",
+   "Taman Desa",
+   "Jalan Gembira",
+   "Terminal Bersepadu Selatan (TBS)",
+   "KL City Centre",
+   "Federal Highway"
+  ],
+  "loc_text": "Gen Starz is on Old Klang Road in south Kuala Lumpur, between Mid Valley, Taman Desa and Pantai Dalam. Jalan Klang Lama, the Federal Highway and the NPE link it to KL city centre, Petaling Jaya and Bukit Jalil, and a proposed MRT 3 station is planned within walking distance, subject to the final alignment.",
+  "buyer_fit": [
+   {
+    "title": "Young Professionals",
+    "desc": "Freehold 2-room units from 650 sqft, close to Mid Valley and the city."
+   },
+   {
+    "title": "Small Families",
+    "desc": "3-room, 2-bathroom units of 874 sqft with 2 car parks."
+   },
+   {
+    "title": "Investors",
+    "desc": "Dual-key-ready units on Old Klang Road, near a proposed MRT station."
+   }
+  ],
+  "details_extra": {
+   "Developer": "Majestic Gen Sdn Bhd",
+   "Land Area": "1.34 acres",
+   "Total Units": "360 units: Type A 108, Type B 72, Type C 180",
+   "Building Height": "36 residential floors (levels 8 to 43) above 8 car park levels",
+   "Title": "Commercial, serviced apartment",
+   "Car Parks": "Type A 1, Type B 1 to 2, Type C 2",
+   "Security": "3-tier security (guard house, lobby, lift)",
+   "Lifts": "10 units per floor",
+   "Green Building": "Targeting GreenRE (Silver)"
+  },
+  "layouts": [
+   {
+    "type": "Type A",
+    "size": "650 sqft",
+    "rooms": "2 Rooms, 1 Bathroom",
+    "tag": "Entry",
+    "desc": "A 2-room, 1-bathroom unit with a balcony and a hackable wall.",
+    "img": "images/f8cb248780a8dac2.jpg"
+   },
+   {
+    "type": "Type B",
+    "size": "756 sqft",
+    "rooms": "2 Rooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 2-room, 2-bathroom unit with a separate dining area.",
+    "img": "images/df5e526eb5376bd1.jpg"
+   },
+   {
+    "type": "Type C",
+    "size": "874 sqft",
+    "rooms": "3 Rooms, 2 Bathrooms",
+    "tag": "Dual-key ready",
+    "desc": "A 3-room, 2-bathroom unit, dual-key ready, with 2 car parks.",
+    "img": "images/026bf06387da9e26.jpg"
+   }
+  ],
+  "tags": [
+   "Gen Starz Residences",
+   "Genstarz",
+   "Gen Starz Old Klang Road",
+   "Gen Starz price",
+   "Gen Starz floor plan",
+   "new project Old Klang Road",
+   "Old Klang Road condo for sale",
+   "freehold condo KL",
+   "Majestic Gen new project",
+   "吉隆坡新楼盘"
+  ]
+ },
+ {
+  "name": "Lunar Seputeh",
+  "tag": "Seputeh",
+  "state": "Kuala Lumpur",
+  "area": "Seputeh",
+  "developer_group": "",
+  "type": "Residential",
+  "price": "From RM607,800 (Gross)",
+  "price_short": "From RM607,800",
+  "tenure": "Leasehold (until 2113)",
+  "size": "683 – 1,646 sqft",
+  "size_short": "683-1,646 sqft",
+  "rooms": "1+1 – 4+1 Bedrooms",
+  "rooms_short": "1+1 to 4+1 Beds",
+  "completion": "Expected Jan 2031",
+  "completion_short": "2031",
+  "status": "New Launch",
+  "years": [
+   2031
+  ],
+  "loc": "9 Seputeh, Old Klang Road, Kuala Lumpur",
+  "overview": "Lunar Seputeh is the latest phase of 9 Seputeh, a 17.4-acre integrated riverfront development on Old Klang Road. A 50-storey tower holds 483 condominiums with a residential title, from 683 to 1,646 sqft and 1+1 to 4+1 bedrooms, with more than 40 Japanese-inspired facilities, direct access to the OKR-NPE link bridge and Mid Valley City about 700 m away.",
+  "points": [
+   "483 condominiums with a residential title in a 50-storey tower on 2.32 acres",
+   "1+1 to 4+1-bedroom homes from 683 to 1,646 sqft, from RM607,800 (gross)",
+   "About 700 m to Mid Valley City and 2 km to KL Sentral and Bangsar South"
+  ],
+  "selling_points": [
+   "Part of the 17.4-acre 9 Seputeh development, with a 1 km linear park (Promenade Boulevard)",
+   "Direct access to the OKR-NPE link bridge, 700 m to Mid Valley City",
+   "More than 40 facilities, including an infinity pool, onsen bath, sauna, sound studio and sky dining on level 45",
+   "Ensuite bathrooms in every room for C and D types, a dual-key Type C1 and a 4+1-bedroom Type D",
+   "Kitchen cabinets with hood and hob, air-conditioners in the living room and every bedroom, and water heaters"
+  ],
+  "amenities": [
+   "Mid Valley Megamall (700 m)",
+   "The Gardens Mall",
+   "KL Sentral (2 km)",
+   "Bangsar South (2 km)",
+   "Promenade Boulevard linear park",
+   "OKR-NPE link bridge",
+   "Pantai Hospital Kuala Lumpur",
+   "KL Gateway Mall"
+  ],
+  "loc_text": "Lunar Seputeh is in 9 Seputeh along Old Klang Road, with direct access to the OKR-NPE link bridge. Mid Valley City is about 700 m away, and KL Sentral and Bangsar South about 2 km. The NPE, Federal Highway and SPE link it to KL city centre and Petaling Jaya, and the 1 km Promenade Boulevard park is right at the doorstep.",
+  "buyer_fit": [
+   {
+    "title": "Young Professionals",
+    "desc": "1+1-bedroom homes from 683 sqft, 700 m from Mid Valley."
+   },
+   {
+    "title": "Families",
+    "desc": "3- to 4+1-bedroom homes up to 1,646 sqft beside a 1 km linear park."
+   },
+   {
+    "title": "Investors",
+    "desc": "A dual-key option and a city-fringe location near KL Sentral."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "2.32 acres",
+   "Total Units": "483 condominiums",
+   "Building Height": "50 storeys",
+   "Title": "Residential",
+   "Price per Sqft": "About RM860 to RM900 psf (Gross)",
+   "Maintenance Fee": "About RM0.495 psf (incl. sinking fund)",
+   "Lifts": "5 + 1 lifts; 14 units per floor (levels 13-43), 7 (43A-50)",
+   "Car Parks": "Type A 1, Type B 2, Types C and D 3",
+   "Security": "Multi-tier security",
+   "Furnishing": "Kitchen cabinets, hob and hood, air-conditioners in the living room and each bedroom, water heaters"
+  },
+  "layouts": [
+   {
+    "type": "Type A",
+    "size": "683 sqft",
+    "rooms": "1+1 Bedrooms, 1 Bathroom",
+    "tag": "Entry",
+    "desc": "A 1+1-bedroom home with a balcony, 93 units."
+   },
+   {
+    "type": "Type B1 / B1A",
+    "size": "841 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 2-bedroom, 2-bathroom home with a balcony."
+   },
+   {
+    "type": "Type B2",
+    "size": "930 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 3-bedroom, 2-bathroom home with a reading room."
+   },
+   {
+    "type": "Type C1 (Dual-key)",
+    "size": "1,280 sqft",
+    "rooms": "3 Bedrooms, 3 Bathrooms + Powder Room",
+    "tag": "Dual-key",
+    "desc": "A 3-bedroom dual-key home with ensuite bathrooms and a powder room."
+   },
+   {
+    "type": "Type C2 / C2A",
+    "size": "1,280 sqft",
+    "rooms": "3 Bedrooms, 3 Bathrooms + Powder Room",
+    "tag": "",
+    "desc": "A 3-bedroom home with an ensuite for every room and a powder room."
+   },
+   {
+    "type": "Type D",
+    "size": "1,646 sqft",
+    "rooms": "4+1 Bedrooms, 4 Bathrooms + Powder Room",
+    "tag": "Largest",
+    "desc": "The largest home: 4+1 bedrooms with a study room and a powder room."
+   }
+  ],
+  "tags": [
+   "Lunar Seputeh",
+   "Lunar 9 Seputeh",
+   "Lunar Seputeh price",
+   "Lunar Seputeh floor plan",
+   "new project Seputeh",
+   "Old Klang Road condo for sale",
+   "Mid Valley condo for sale",
+   "new launch condo KL",
+   "吉隆坡新楼盘"
+  ]
+ },
+ {
+  "name": "M Aurora",
+  "tag": "Old Klang Road",
+  "state": "Kuala Lumpur",
+  "area": "Old Klang Road",
+  "developer_group": "Mah Sing",
+  "type": "Serviced Apartment",
+  "price": "From RM339,000 (Gross)",
+  "price_short": "From RM339,000",
+  "tenure": "Freehold",
+  "size": "556 – 1,019 sqft",
+  "size_short": "556-1,019 sqft",
+  "rooms": "1+1 – 4 Bedrooms",
+  "rooms_short": "1+1 to 4 Beds",
+  "completion": "54 months from SPA (est. 2030)",
+  "completion_short": "2030",
+  "status": "New Launch",
+  "years": [
+   2030
+  ],
+  "loc": "Old Klang Road, Kuala Lumpur",
+  "overview": "M Aurora is a freehold serviced residence on Old Klang Road, inspired by the aurora borealis. Two 46-storey towers on 5.24 acres hold 1,544 homes from 556 to 1,019 sqft, with 1+1 to 4 bedrooms, podium facilities, a sky garden and pool or city views, from about RM339,000.",
+  "points": [
+   "Freehold, 1,544 homes in two 46-storey towers on 5.24 acres",
+   "1+1 to 4-bedroom homes from 556 to 1,019 sqft, from RM339,000 (gross)",
+   "On Old Klang Road, linked to the NPE, Federal Highway, KESAS and the KL-Seremban Expressway"
+  ],
+  "selling_points": [
+   "Freehold title at one of the lowest entry prices on Old Klang Road",
+   "Five layouts, from a 1+1-bedroom suite to a 4-bedroom family home",
+   "Podium facilities with a large pool, plus a sky garden",
+   "1 to 3 car parks per unit, with EV charging and smart features",
+   "Low indicative maintenance fee of RM0.30 psf"
+  ],
+  "amenities": [
+   "Mid Valley Megamall",
+   "Pearl Shopping Gallery",
+   "KL Gateway Mall",
+   "Pantai Hospital Kuala Lumpur",
+   "Taman Desa",
+   "Bukit Jalil",
+   "NPE Highway",
+   "Federal Highway"
+  ],
+  "loc_text": "M Aurora is on Old Klang Road in south Kuala Lumpur, with easy access to the NPE, Federal Highway, KESAS, Jalan Klang Lama and the KL-Seremban Expressway. Mid Valley, Taman Desa, Kuchai Lama and Bukit Jalil are a short drive, and LRT and KTM stations are nearby.",
+  "buyer_fit": [
+   {
+    "title": "First Home Buyers",
+    "desc": "Freehold 1+1 and 2-bedroom homes from about RM339,000."
+   },
+   {
+    "title": "Families",
+    "desc": "3- and 4-bedroom layouts up to 1,019 sqft with balconies."
+   },
+   {
+    "title": "Investors",
+    "desc": "Low entry prices on Old Klang Road, close to Mid Valley."
+   }
+  ],
+  "details_extra": {
+   "Developer": "Mah Sing Group",
+   "Land Area": "5.24 acres",
+   "Total Units": "1,544 homes: Tower A 747, Tower B 797; 9 retail units",
+   "Building Height": "46 storeys",
+   "Title": "Serviced residence",
+   "Maintenance Fee": "RM0.30 psf (indicative, sinking fund extra)",
+   "Lifts": "5 passenger lifts + 1 service lift per tower; 20-21 units per floor",
+   "Car Parks": "1 to 3 bays per unit, Levels 1 to 7",
+   "Security": "Multi-tier security"
+  },
+  "layouts": [
+   {
+    "type": "Type A",
+    "size": "556 sqft",
+    "rooms": "1+1 Bedrooms, 1 Bathroom",
+    "tag": "Entry",
+    "desc": "A 1+1-bedroom suite with 1 bathroom.",
+    "img": "images/9c08d885e6b5475a.jpg"
+   },
+   {
+    "type": "Type B",
+    "size": "737 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 2-bedroom, 2-bathroom home.",
+    "img": "images/a035852eef1741eb.jpg"
+   },
+   {
+    "type": "Type C",
+    "size": "858 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Balcony",
+    "desc": "A 3-bedroom, 2-bathroom home with a balcony.",
+    "img": "images/65c706fe3d5e1691.jpg"
+   },
+   {
+    "type": "Type D",
+    "size": "916 sqft",
+    "rooms": "3 Bedrooms, 3 Bathrooms",
+    "tag": "",
+    "desc": "A 3-bedroom, 3-bathroom home with a balcony.",
+    "img": "images/8769ae024b5b08e0.jpg"
+   },
+   {
+    "type": "Type E",
+    "size": "1,019 sqft",
+    "rooms": "4 Bedrooms, 3 Bathrooms",
+    "tag": "Largest",
+    "desc": "A 4-bedroom, 3-bathroom family home with a balcony.",
+    "img": "images/586aa8b50cd901ee.jpg"
+   }
+  ],
+  "tags": [
+   "M Aurora",
+   "M Aurora Old Klang Road",
+   "M Aurora price",
+   "M Aurora floor plan",
+   "new project Old Klang Road",
+   "Old Klang Road condo for sale",
+   "freehold condo KL",
+   "Mah Sing new project",
+   "吉隆坡新楼盘"
+  ]
+ },
+ {
+  "name": "Stellaris Riana Dutamas",
+  "tag": "Segambut",
+  "state": "Kuala Lumpur",
+  "area": "Segambut",
+  "developer_group": "IJM Land",
+  "type": "Residential",
+  "price": "From RM519,000 (Gross)",
+  "price_short": "From RM519,000",
+  "tenure": "Freehold",
+  "size": "766 – 1,206 sqft",
+  "size_short": "766-1,206 sqft",
+  "rooms": "2 – 3+1 Bedrooms",
+  "rooms_short": "2 to 3+1 Beds",
+  "completion": "Q3 2029",
+  "completion_short": "Q3 2029",
+  "status": "Under Construction",
+  "years": [
+   2029
+  ],
+  "loc": "Riana Dutamas, Segambut, Kuala Lumpur",
+  "overview": "Stellaris is the third phase of Riana Dutamas in Segambut, a freehold development by IJM Land and FCW. Two 37-storey towers on 5.78 acres hold 1,143 homes from 766 to 1,206 sqft, each with 2 car parks, close to Dutamas, Mont Kiara and Segambut MRT and KTM stations.",
+  "points": [
+   "Freehold, 1,143 homes in two 37-storey towers on 5.78 acres",
+   "2- to 3+1-bedroom homes from 766 to 1,206 sqft, from RM519,000 (gross)",
+   "Every unit comes with 2 car parks"
+  ],
+  "selling_points": [
+   "Freehold title in Segambut, next to Dutamas and Mont Kiara",
+   "2 car parks for every unit",
+   "Landscaped podium with pools, gardens and a putting green",
+   "Low maintenance fee of RM0.35 psf, including sinking fund",
+   "Part of the established Riana Dutamas township"
+  ],
+  "amenities": [
+   "Segambut MRT",
+   "Segambut KTM",
+   "Publika Shopping Gallery",
+   "Solaris Dutamas",
+   "Mont Kiara",
+   "Desa ParkCity",
+   "Sri Hartamas",
+   "KL City Centre"
+  ],
+  "loc_text": "Stellaris is in Riana Dutamas on Jalan Segambut, north-west Kuala Lumpur, close to Dutamas, Publika, Mont Kiara and Sri Hartamas. Segambut MRT and KTM stations are nearby, and the DUKE, Jalan Duta, SPRINT and the Middle Ring Road 2 link it to the city centre, Kepong and Damansara.",
+  "buyer_fit": [
+   {
+    "title": "Young Families",
+    "desc": "2- and 3-bedroom freehold homes near Mont Kiara, each with 2 car parks."
+   },
+   {
+    "title": "Upgraders",
+    "desc": "Layouts up to 1,206 sqft with 3+1 bedrooms."
+   },
+   {
+    "title": "Investors",
+    "desc": "Freehold units next to Dutamas and Mont Kiara, near the MRT."
+   }
+  ],
+  "details_extra": {
+   "Developer": "IJM Land & FCW Holdings (Riana Dutamas)",
+   "Land Area": "5.78 acres",
+   "Total Units": "1,143 units: Tower A 478, Tower B 665; 4 retail units",
+   "Building Height": "37 storeys",
+   "Title": "Commercial (HDA)",
+   "Price per Sqft": "From about RM700 psf (Gross)",
+   "Maintenance Fee": "RM0.35 psf (incl. sinking fund)",
+   "Lifts": "Tower A 3+1, Tower B 5+1; 15 and 22 units per floor",
+   "Car Parks": "2 car parks for every unit",
+   "Security": "Multi-tier security"
+  },
+  "layouts": [
+   {
+    "type": "Type A1",
+    "size": "766 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "Show unit",
+    "desc": "A 2-bedroom, 2-bathroom home, the most compact layout."
+   },
+   {
+    "type": "Type B1",
+    "size": "884 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Show unit",
+    "desc": "A 3-bedroom, 2-bathroom family home."
+   },
+   {
+    "type": "Larger types",
+    "size": "Up to 1,206 sqft",
+    "rooms": "3+1 Bedrooms",
+    "tag": "Largest",
+    "desc": "The largest layouts, with 3+1 bedrooms."
+   }
+  ],
+  "tags": [
+   "Stellaris Riana Dutamas",
+   "Stellaris",
+   "Riana Dutamas 3",
+   "Stellaris Segambut price",
+   "Stellaris floor plan",
+   "new project Segambut",
+   "Segambut condo for sale",
+   "freehold condo KL",
+   "IJM Land new project",
+   "吉隆坡新楼盘"
+  ]
+ },
+ {
+  "name": "Tangen Residences",
+  "tag": "North Kiara",
+  "state": "Kuala Lumpur",
+  "area": "North Kiara",
+  "developer_group": "",
+  "type": "Residential",
+  "price": "From RM659,000 (Gross)",
+  "price_short": "From RM659,000",
+  "tenure": "Freehold",
+  "size": "1,033 – 1,582 sqft",
+  "size_short": "1,033-1,582 sqft",
+  "rooms": "3 – 4 Bedrooms",
+  "rooms_short": "3-4 Bedrooms",
+  "completion": "Expected Oct 2027",
+  "completion_short": "Q4 2027",
+  "status": "Under Construction",
+  "years": [
+   2027
+  ],
+  "loc": "North Kiara, Kuala Lumpur",
+  "overview": "Tangen Residences is a freehold condominium with a residential title in North Kiara, Kuala Lumpur. A single 49-storey tower on 2.8 acres holds 413 large family homes of 1,033 to 1,582 sqft, only 8 to 10 per floor, each with 2 to 3 side-by-side car parks, sky semi-D and bungalow style layouts and a 50 m infinity lap pool.",
+  "points": [
+   "Freehold residential title, 413 homes in one 49-storey tower on 2.8 acres",
+   "3- and 4-bedroom homes from 1,033 to 1,582 sqft, from RM659,000 (gross)",
+   "2 to 3 side-by-side car parks per unit, and only 8 to 10 units per floor"
+  ],
+  "selling_points": [
+   "Freehold with a residential title, in the North Kiara and Mont Kiara area",
+   "Sky semi-D and bungalow style layouts with large balconies",
+   "2 to 3 side-by-side car parks for every unit",
+   "50 m infinity lap pool, wet and dry kids' play areas and multigenerational facilities",
+   "Green features: solar panels for common areas, rainwater harvesting, LED lighting and EV charging"
+  ],
+  "amenities": [
+   "Mont Kiara",
+   "Publika Shopping Gallery",
+   "Desa ParkCity",
+   "Kepong",
+   "Segambut",
+   "Sri Hartamas",
+   "KL City Centre",
+   "DUKE Highway"
+  ],
+  "loc_text": "Tangen Residences is in North Kiara, between Mont Kiara, Segambut and Kepong in north-west Kuala Lumpur. Mont Kiara, Publika, Sri Hartamas and Desa ParkCity are a short drive, and the DUKE, Jalan Duta, MRR2 and NKVE link it to the city centre and Petaling Jaya. Several international schools are nearby.",
+  "buyer_fit": [
+   {
+    "title": "Growing Families",
+    "desc": "3- and 4-bedroom homes up to 1,582 sqft with 2 to 3 car parks."
+   },
+   {
+    "title": "Multi-generation Families",
+    "desc": "Sky semi-D style homes with large balconies and family facilities."
+   },
+   {
+    "title": "Upgraders",
+    "desc": "Freehold residential-title homes near Mont Kiara at about RM670 psf."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "2.8 acres",
+   "Total Units": "413 units",
+   "Building Height": "49 floors",
+   "Title": "Residential, Freehold",
+   "Price per Sqft": "From about RM670 psf (Gross)",
+   "Maintenance Fee": "About RM0.33 psf (incl. sinking fund)",
+   "Lifts": "4 + 1 lifts; 8 to 10 units per floor",
+   "Car Parks": "2 to 3 side-by-side bays per unit",
+   "Security": "Multi-tier security with 24-hour guard patrol and restricted floor access"
+  },
+  "layouts": [
+   {
+    "type": "Type C",
+    "size": "1,033 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Entry",
+    "desc": "A 3-bedroom, 2-bathroom family home.",
+    "img": "images/ba7b2a2857e3a245.jpg"
+   },
+   {
+    "type": "Type B",
+    "size": "1,281 sqft",
+    "rooms": "4 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 4-bedroom, 2-bathroom home with a wide living area.",
+    "img": "images/7d0596fc7f431ed2.jpg"
+   },
+   {
+    "type": "Type D",
+    "size": "1,550 sqft",
+    "rooms": "4 Bedrooms",
+    "tag": "",
+    "desc": "A large 4-bedroom home."
+   },
+   {
+    "type": "Type A",
+    "size": "1,582 sqft",
+    "rooms": "4 Bedrooms, 3 Bathrooms",
+    "tag": "Largest",
+    "desc": "A sky semi-D style home with 4 bedrooms, 3 bathrooms, a large balcony and an L-shaped hackable wall.",
+    "img": "images/f47191c23c4662e3.jpg"
+   }
+  ],
+  "tags": [
+   "Tangen Residences",
+   "Tangen North Kiara",
+   "Tangen Residences price",
+   "Tangen floor plan",
+   "new project North Kiara",
+   "Mont Kiara condo for sale",
+   "freehold condo KL",
+   "new launch condo KL",
+   "吉隆坡新楼盘"
+  ]
+ },
+ {
+  "name": "Vox Residence Sentul",
+  "tag": "Sentul",
+  "state": "Kuala Lumpur",
+  "area": "Sentul",
+  "developer_group": "Kerjaya Prospek",
+  "type": "Residential",
+  "price": "From RM523,200 (Gross)",
+  "price_short": "From RM523,200",
+  "tenure": "Freehold",
+  "size": "667 – 947 sqft",
+  "size_short": "667-947 sqft",
+  "rooms": "2 – 3 Bedrooms",
+  "rooms_short": "2-3 Bedrooms",
+  "completion": "Est. Q3 2027",
+  "completion_short": "Q3 2027",
+  "status": "Under Construction",
+  "years": [
+   2027
+  ],
+  "loc": "Jalan Sentul Pasar, Sentul, Kuala Lumpur",
+  "overview": "Vox Residence is a freehold, 52-storey serviced condominium in Sentul, on the northern edge of Kuala Lumpur city centre. Its 587 homes of 667 to 947 sqft have 2 or 3 bedrooms and come partially furnished, with a resort-style podium and rooftop facilities and quick links to the city centre.",
+  "points": [
+   "Freehold, 587 homes in one 52-storey tower on 2.247 acres",
+   "2- and 3-bedroom homes from 667 to 947 sqft, from RM523,200 (gross)",
+   "Expected to complete in Q3 2027, about a year ahead of schedule"
+  ],
+  "selling_points": [
+   "Freehold title in Sentul, close to KL city centre",
+   "Partially furnished: kitchen cabinets, hob and hood, fridge, washer-dryer, Daikin air-conditioners, lighting and built-in wardrobes",
+   "Digital smart lock, shower screens, water heaters and mirrors",
+   "Pool and landscaped podium, plus rooftop facilities",
+   "14 units per floor with 4 lifts and a service lift"
+  ],
+  "amenities": [
+   "KTM Sentul",
+   "LRT Sentul Timur",
+   "Sentul Park",
+   "KL City Centre",
+   "Titiwangsa",
+   "Jalan Ipoh",
+   "DUKE Highway",
+   "Middle Ring Road 2"
+  ],
+  "loc_text": "Vox Residence is on Jalan Sentul Pasar in Sentul, just north of Kuala Lumpur city centre. Sentul KTM and the LRT stations at Sentul and Sentul Timur are nearby, Sentul Park is close by, and the DUKE, Jalan Ipoh and the Middle Ring Road 2 link it to the city centre, Titiwangsa, Kepong and Gombak.",
+  "buyer_fit": [
+   {
+    "title": "First Home Buyers",
+    "desc": "Freehold 2-bedroom homes from 667 sqft, partially furnished."
+   },
+   {
+    "title": "Young Families",
+    "desc": "3-bedroom, 2-bathroom layouts up to 947 sqft near the city centre."
+   },
+   {
+    "title": "Investors",
+    "desc": "Furnished freehold units in Sentul, close to rail lines into KL."
+   }
+  ],
+  "details_extra": {
+   "Developer": "Kerjaya Prospek Property Sdn Bhd",
+   "Land Area": "2.247 acres",
+   "Total Units": "587 units",
+   "Building Height": "52 storeys",
+   "Title": "Commercial (HDA)",
+   "Maintenance Fee": "About RM0.35 psf (sinking fund 10% extra)",
+   "Lifts": "4 + 1 service lift; 14 units per floor",
+   "Car Parks": "1 to 2 bays per unit",
+   "Security": "Multi-tier security",
+   "Furnishing": "Partially furnished: kitchen cabinets, hob, hood, fridge, washer-dryer, air-conditioners, lighting, wardrobes, smart lock"
+  },
+  "layouts": [
+   {
+    "type": "Type A1 / A1a",
+    "size": "667 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "Entry",
+    "desc": "A 2-bedroom, 2-bathroom home with a balcony.",
+    "img": "images/e88122dfdeba56d4.jpg"
+   },
+   {
+    "type": "Type B1 / B1a",
+    "size": "839 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Popular",
+    "desc": "A 3-bedroom, 2-bathroom home with a balcony.",
+    "img": "images/6390ee2fd5e78a05.jpg"
+   },
+   {
+    "type": "Type B2",
+    "size": "839 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 3-bedroom, 2-bathroom home with a different room arrangement.",
+    "img": "images/8ade048cd8aa117e.jpg"
+   },
+   {
+    "type": "Type C1 / C1a",
+    "size": "947 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Largest",
+    "desc": "The largest 3-bedroom layout, with a wide living and dining area.",
+    "img": "images/beba799cf73f475d.jpg"
+   }
+  ],
+  "tags": [
+   "Vox Residence",
+   "Vox Residence Sentul",
+   "Vox Sentul price",
+   "Vox Residence floor plan",
+   "new project Sentul",
+   "Sentul condo for sale",
+   "freehold condo KL",
+   "new launch condo KL",
+   "Kerjaya Prospek new project",
+   "吉隆坡新楼盘"
+  ]
+ },
+ {
+  "name": "R&F Princess Cove Seine Region",
+  "tag": "JB City Centre",
+  "state": "Johor",
+  "area": "JB City Centre",
+  "developer_group": "R&F",
+  "type": "Serviced Apartment",
+  "price": "From RM690,000 (Gross)",
+  "price_short": "From RM690,000",
+  "tenure": "Freehold",
+  "size": "471 – 1,471 sqft",
+  "size_short": "471-1,471 sqft",
+  "rooms": "Studio – 4 Bedrooms",
+  "rooms_short": "Studio to 4 Beds",
+  "completion": "Completed",
+  "completion_short": "Completed",
+  "status": "Completed",
+  "years": [],
+  "loc": "Jalan Tanjung Puteri, Johor Bahru (beside the JB-Woodlands Causeway)",
+  "overview": "Seine Region is Phase 2 of R&F Princess Cove, the freehold 116-acre waterfront development beside the JB-Woodlands Causeway and the JB CIQ. Its 10 completed blocks hold 3,724 serviced apartments from studios to 4-bedroom and dual-key homes, many with sea and Singapore views, next to R&F Mall, the Opera House and the RTS Link to Woodlands North.",
+  "points": [
+   "Completed and freehold: 3,724 units in 10 blocks on 8.9 acres (Phase 2 of the 116-acre Princess Cove)",
+   "Studios from 471 sqft up to 4-bedroom homes of 1,471 sqft and dual-key units of 1,317 sqft, from RM690,000",
+   "Beside the JB CIQ and the RTS Link, with Singapore and Johor Strait views"
+  ],
+  "selling_points": [
+   "Completed homes, ready to move in or rent out, with no construction wait",
+   "Next to the JB CIQ, the JB-Woodlands Causeway and the RTS Link station at Bukit Chagar",
+   "Sea-view units facing the Johor Strait and the Singapore skyline",
+   "Air-conditioners, renovated bathrooms with water heaters, a plaster ceiling with lighting and a fitted kitchen with oven",
+   "Sky lounge with an infinity pool, gym, yoga room, jogging track and an international kindergarten"
+  ],
+  "amenities": [
+   "JB CIQ (Bangunan Sultan Iskandar)",
+   "RTS Link (Bukit Chagar)",
+   "R&F Mall",
+   "Opera House by R&F",
+   "JB Sentral",
+   "Johor Bahru City Square",
+   "Hospital Sultanah Aminah",
+   "Foon Yew High School"
+  ],
+  "loc_text": "R&F Princess Cove is on Jalan Tanjung Puteri in the heart of Johor Bahru, right beside the JB CIQ and the JB-Woodlands Causeway, with a link bridge to the checkpoint. The RTS Link to Woodlands North, JB Sentral and JB City Square are minutes away, and Singapore's Woodlands is just across the strait.",
+  "buyer_fit": [
+   {
+    "title": "Singapore Commuters",
+    "desc": "Completed homes next to the CIQ and the RTS Link to Woodlands North."
+   },
+   {
+    "title": "Investors",
+    "desc": "Freehold, completed units for rental, with dual-key options."
+   },
+   {
+    "title": "MM2H & Foreign Buyers",
+    "desc": "Sea-view waterfront homes in JB city centre, priced above RM500,000 for foreigners."
+   }
+  ],
+  "details_extra": {
+   "Developer": "R&F Development Sdn Bhd",
+   "Land Area": "8.9 acres (Phase 2), part of the 116-acre R&F Princess Cove",
+   "Total Units": "3,724 units in 10 blocks",
+   "Building Height": "Car parks on levels 1-7; residences on levels 9 to 49/50",
+   "Title": "Commercial, serviced apartment",
+   "Maintenance Fee": "RM0.42 psf + 10% sinking fund",
+   "Lifts": "4 lifts; 6 units per floor",
+   "Car Parks": "1 bay per unit",
+   "Security": "3-tier security, digital locks, visitor management and CCTV",
+   "Furnishing": "Air-conditioners, renovated bathrooms with water heaters, plaster ceiling and lighting, fitted kitchen with hob, hood and oven"
+  },
+  "layouts": [
+   {
+    "type": "Type D (Studio)",
+    "size": "471 sqft",
+    "rooms": "Studio",
+    "tag": "Entry",
+    "desc": "A studio with a walk-in wardrobe and an L-shaped kitchen."
+   },
+   {
+    "type": "Type V6 (1 Bedroom)",
+    "size": "544 sqft",
+    "rooms": "1 Bedroom, 1 Bathroom",
+    "tag": "",
+    "desc": "A 1-bedroom home with a balcony off the living room."
+   },
+   {
+    "type": "Type G (2 Bedrooms)",
+    "size": "933 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 2-bedroom home with an expansive balcony and bay windows."
+   },
+   {
+    "type": "Type A (3 Bedrooms)",
+    "size": "1,181 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Family",
+    "desc": "A 3-bedroom home with an indoor garden."
+   },
+   {
+    "type": "Type E (Dual-key)",
+    "size": "1,317 sqft",
+    "rooms": "Dual-key (2+1)",
+    "tag": "Dual-key",
+    "desc": "A dual-key home, like owning two units under one title."
+   },
+   {
+    "type": "Type H1 (4 Bedrooms)",
+    "size": "1,471 sqft",
+    "rooms": "4 Bedrooms, 3 Bathrooms",
+    "tag": "Largest",
+    "desc": "A 4-bedroom home with 2 suites and an indoor garden."
+   }
+  ],
+  "tags": [
+   "R&F Princess Cove Seine Region",
+   "R&F Princess Cove",
+   "Princess Cove Phase 2",
+   "R&F Princess Cove price",
+   "Princess Cove JB",
+   "JB condo near CIQ",
+   "RTS Link condo JB",
+   "completed condo Johor Bahru",
+   "R&F Johor",
+   "新山富力公主湾"
+  ]
+ },
+ {
+  "name": "R&F Princess Cove New Casa",
+  "tag": "JB City Centre",
+  "state": "Johor",
+  "area": "JB City Centre",
+  "developer_group": "R&F",
+  "type": "Serviced Apartment",
+  "price": "Price on Request",
+  "price_short": "Price on Request",
+  "tenure": "Freehold",
+  "size": "313 – 1,555 sqft",
+  "size_short": "313-1,555 sqft",
+  "rooms": "Studio – 4 Bedrooms",
+  "rooms_short": "Studio to 4 Beds",
+  "completion": "52 months from SPA",
+  "completion_short": "TBC",
+  "status": "Under Construction",
+  "years": [],
+  "loc": "Jalan Tanjung Puteri, Johor Bahru (beside the JB-Woodlands Causeway)",
+  "overview": "New Casa is Phase 3 of R&F Princess Cove, the freehold 116-acre waterfront development beside the JB CIQ and the JB-Woodlands Causeway. Twelve blocks on 11.44 acres will hold 4,385 serviced apartments, from 313 sqft studios to 4-bedroom homes and dual-key units, plus penthouses of 2,558 to 3,979 sqft, close to the RTS Link to Singapore.",
+  "points": [
+   "Freehold: 4,385 residences and 63 retail units in 12 blocks on 11.44 acres",
+   "Studios from 313 sqft to 4-bedroom homes of 1,555 sqft, dual-key 3-bedroom units and penthouses up to 3,979 sqft",
+   "In the same waterfront precinct as R&F Mall and the JB CIQ, near the RTS Link"
+  ],
+  "selling_points": [
+   "Freehold homes beside the JB CIQ and the RTS Link to Woodlands North",
+   "Wide choice: studios, 1-, 2-, 3- and 4-bedroom homes, dual-key units and penthouses",
+   "Part of R&F Princess Cove, with R&F Mall, a marina and the Opera House",
+   "Only 8 to 17 units per floor, served by 3 passenger lifts and a service lift",
+   "Indicative maintenance fee of RM0.30 to RM0.40 psf"
+  ],
+  "amenities": [
+   "JB CIQ (Bangunan Sultan Iskandar)",
+   "RTS Link (Bukit Chagar)",
+   "R&F Mall",
+   "Opera House by R&F",
+   "JB Sentral",
+   "Johor Bahru City Square",
+   "Hospital Sultanah Aminah",
+   "Foon Yew High School"
+  ],
+  "loc_text": "New Casa is part of R&F Princess Cove on Jalan Tanjung Puteri, right beside the JB CIQ and the JB-Woodlands Causeway. The RTS Link to Woodlands North, JB Sentral and JB City Square are minutes away, with Singapore just across the strait.",
+  "buyer_fit": [
+   {
+    "title": "Singapore Commuters",
+    "desc": "Homes next to the CIQ and close to the RTS Link to Woodlands North."
+   },
+   {
+    "title": "Investors",
+    "desc": "Freehold studios from 313 sqft and dual-key 3-bedroom units for rental."
+   },
+   {
+    "title": "Families",
+    "desc": "3- and 4-bedroom homes up to 1,555 sqft in JB city centre."
+   }
+  ],
+  "details_extra": {
+   "Developer": "R&F Development Sdn Bhd",
+   "Land Area": "11.44 acres (Phase 3), part of the 116-acre R&F Princess Cove",
+   "Total Units": "4,385 residences and 63 retail units in 12 blocks",
+   "Title": "Commercial (HDA), serviced apartment",
+   "Maintenance Fee": "About RM0.30 to RM0.40 psf + 10% sinking fund (to be confirmed)",
+   "Lifts": "3 passenger lifts + 1 service lift; 8 to 17 units per floor"
+  },
+  "layouts": [
+   {
+    "type": "Type A / A(M) (Studio)",
+    "size": "313 sqft",
+    "rooms": "Studio",
+    "tag": "Entry",
+    "desc": "A compact studio."
+   },
+   {
+    "type": "Type B1 / B2",
+    "size": "555 – 577 sqft",
+    "rooms": "1 Bedroom, 1 Bathroom",
+    "tag": "",
+    "desc": "A 1-bedroom, 1-bathroom home."
+   },
+   {
+    "type": "Type C1 – C5",
+    "size": "820 – 894 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "2-bedroom, 2-bathroom homes in five layouts."
+   },
+   {
+    "type": "Type D3 / D3(M)",
+    "size": "1,156 – 1,161 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Family",
+    "desc": "A 3-bedroom, 2-bathroom family home."
+   },
+   {
+    "type": "Type D2 / D2(M) (Dual-key)",
+    "size": "1,275 sqft",
+    "rooms": "3 Bedrooms, 3 Bathrooms",
+    "tag": "Dual-key",
+    "desc": "A 3-bedroom, 3-bathroom dual-key home."
+   },
+   {
+    "type": "Type E / E(M)",
+    "size": "1,555 sqft",
+    "rooms": "4 Bedrooms, 3 Bathrooms",
+    "tag": "Largest",
+    "desc": "A 4-bedroom, 3-bathroom home."
+   }
+  ],
+  "tags": [
+   "R&F Princess Cove New Casa",
+   "Princess Cove Phase 3",
+   "R&F Princess Cove",
+   "Princess Cove JB new launch",
+   "JB condo near CIQ",
+   "RTS Link condo JB",
+   "new launch Johor Bahru",
+   "R&F Johor",
+   "新山富力公主湾"
+  ]
+ },
+ {
+  "name": "Enlace Suites II",
+  "tag": "Pantai Dalam",
+  "state": "Kuala Lumpur",
+  "area": "Pantai Dalam",
+  "developer_group": "",
+  "type": "Serviced Apartment",
+  "price": "From RM626,000 (Gross)",
+  "price_short": "From RM626,000",
+  "tenure": "Leasehold (99 years from 2024)",
+  "size": "506 – 2,034 sqft",
+  "size_short": "506-2,034 sqft",
+  "rooms": "Studio – 5 Bedrooms",
+  "rooms_short": "Studio to 5 Beds",
+  "completion": "Est. Nov 2029",
+  "completion_short": "Q4 2029",
+  "status": "New Launch",
+  "years": [
+   2029
+  ],
+  "loc": "Pantai Sentral Park, Pantai Dalam, Kuala Lumpur",
+  "overview": "Enlace Suites II is the second serviced apartment tower in Pantai Sentral Park, a 58-acre integrated township beside the Bukit Kerinchi Forest Reserve, between Bangsar, KL city centre and Petaling Jaya. Its 290 suites range from 506 sqft studios to 2,034 sqft duplex garden and roof units, with a 50 m lap pool and forest-inspired facilities.",
+  "points": [
+   "290 serviced suites on levels 8 to 38, only 6 to 12 units per floor",
+   "Studios from 506 sqft to 5-bedroom roof garden units of 2,034 sqft, from RM626,000 (gross)",
+   "In Pantai Sentral Park, beside the Bukit Kerinchi Forest Reserve, with its own interchange on the NPE"
+  ],
+  "selling_points": [
+   "Next to a forest reserve, yet between Bangsar, Mid Valley and KL city centre",
+   "Wide range: studios, 1- to 4-bedroom homes, duplex garden units with private gardens and roof units with open terraces",
+   "Partially furnished: air-conditioners, kitchen cabinets, hob and hood, fridge, oven, washer-dryer, water heaters and digital lock",
+   "50 m lap pool, water and hammock gardens, gym, co-working studio and sky facilities",
+   "Pantai Sentral Park interchange with 3 ingress and 2 egress points, near the planned MRT3 Circle Line"
+  ],
+  "amenities": [
+   "LRT Universiti",
+   "KTM Pantai Dalam",
+   "Mid Valley Megamall & The Gardens",
+   "KL Gateway Mall",
+   "Nexus Bangsar South & The Sphere",
+   "University Malaya Medical Centre",
+   "Pantai Hospital (Bangsar)",
+   "University of Malaya"
+  ],
+  "loc_text": "Enlace Suites II is in Pantai Sentral Park, off the NPE in Pantai Dalam, between Bangsar, KL city centre and Petaling Jaya. LRT Universiti and KTM Pantai Dalam are nearby, with a planned MRT3 Circle Line station close by. The NPE, Federal Highway, LDP, SPE and MRR2 are all easily reached, and Mid Valley, Bangsar South and KL Gateway Mall are a short drive away.",
+  "buyer_fit": [
+   {
+    "title": "Young Professionals",
+    "desc": "Studios and 1-bedroom suites from 506 sqft near Bangsar and Mid Valley."
+   },
+   {
+    "title": "Families",
+    "desc": "3- and 4-bedroom homes, and duplex garden units with private gardens."
+   },
+   {
+    "title": "Upgraders",
+    "desc": "Roof garden units up to 2,034 sqft with open terraces and city views."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "Part of the 58-acre Pantai Sentral Park",
+   "Total Units": "290 serviced suites (Enlace Suites I: 438)",
+   "Building Height": "Serviced suites on levels 8 to 38",
+   "Title": "Commercial (HDA)",
+   "Price per Sqft": "From about RM1,200 psf (Gross)",
+   "Lifts": "4 + 1 service lift; 6 to 12 units per floor",
+   "Car Parks": "1,153 car parks for Enlace Suites I & II, plus tandem, visitor and 8 EV bays",
+   "Security": "Multi-tier security",
+   "Furnishing": "Air-conditioners, master bedroom wardrobe, kitchen cabinet, hob and hood, fridge, oven, plaster ceiling, washer-dryer, water heaters, shower screens, digital lock"
+  },
+  "layouts": [
+   {
+    "type": "Type A (Studio)",
+    "size": "506 sqft",
+    "rooms": "Studio, 1 Bathroom",
+    "tag": "Entry",
+    "desc": "A studio suite."
+   },
+   {
+    "type": "Type B / B(m)",
+    "size": "613 sqft",
+    "rooms": "1 Bedroom, 1 Bathroom",
+    "tag": "",
+    "desc": "A 1-bedroom suite with a balcony."
+   },
+   {
+    "type": "Type C1 / C2",
+    "size": "979 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 2-bedroom, 2-bathroom suite with a balcony."
+   },
+   {
+    "type": "Type D1",
+    "size": "1,227 sqft",
+    "rooms": "3 Bedrooms, 3 Bathrooms",
+    "tag": "Family",
+    "desc": "A 3-bedroom, 3-bathroom home with a utility room."
+   },
+   {
+    "type": "Type D2",
+    "size": "1,485 sqft",
+    "rooms": "4 Bedrooms, 3 Bathrooms",
+    "tag": "",
+    "desc": "A 4-bedroom, 3-bathroom home with a utility room."
+   },
+   {
+    "type": "Type E / E(m)",
+    "size": "1,593 sqft",
+    "rooms": "4 Bedrooms, 4 Bathrooms",
+    "tag": "",
+    "desc": "A 4-bedroom home with a maid's room, on levels 33 to 37."
+   },
+   {
+    "type": "Type G1 – G3 (Garden duplex)",
+    "size": "1,001 – 1,593 sqft",
+    "rooms": "2 to 3 Bedrooms",
+    "tag": "Garden",
+    "desc": "Duplex garden units on level 8 with a private garden of 183 to 377 sqft."
+   },
+   {
+    "type": "Type RG1 / RG2 (Roof garden)",
+    "size": "1,862 – 2,034 sqft",
+    "rooms": "5 Bedrooms, 4 Bathrooms",
+    "tag": "Largest",
+    "desc": "Duplex roof units on level 38 with an open terrace and an entertainment room."
+   }
+  ],
+  "tags": [
+   "Enlace Suites II",
+   "Enlace Suites 2",
+   "Pantai Sentral Park",
+   "Enlace Suites price",
+   "Enlace Suites floor plan",
+   "new project Pantai Dalam",
+   "Bangsar serviced apartment for sale",
+   "new launch condo KL",
+   "吉隆坡新楼盘"
+  ]
+ },
+ {
+  "name": "Bangsar Hill Park Talisa (Tower B & C)",
+  "tag": "Bangsar",
+  "state": "Kuala Lumpur",
+  "area": "Bangsar",
+  "developer_group": "Sunsuria",
+  "type": "Residential",
+  "price": "From RM1,123,000 (Gross)",
+  "price_short": "From RM1,123,000",
+  "tenure": "Leasehold (until 2119)",
+  "size": "917 – 1,478 sqft",
+  "size_short": "917-1,478 sqft",
+  "rooms": "2 – 3+1 Bedrooms",
+  "rooms_short": "2 to 3+1 Beds",
+  "completion": "Est. Q1 2028",
+  "completion_short": "Q1 2028",
+  "status": "Under Construction",
+  "years": [
+   2028
+  ],
+  "loc": "Lorong Maarof, Bangsar, Kuala Lumpur",
+  "overview": "Talisa (Tower C) and Talisa II (Tower B) are the urban resort towers of Bangsar Hill Park, a 5.87-acre residential masterplan on Lorong Maarof, Bangsar. The 55- and 57-storey towers hold 802 condominiums with a residential title, from 917 to 1,478 sqft, only 8 units per floor, with a semi-indoor pool, lanai units and GreenRE Silver (provisional) certification.",
+  "points": [
+   "802 condominiums with a residential title: Tower B 410 and Tower C 392, 8 units per floor",
+   "2- to 3+1-bedroom homes from 917 to 1,478 sqft, from RM1,123,000 (gross)",
+   "On Lorong Maarof, about 400 m from Bangsar's bank and shopping street"
+  ],
+  "selling_points": [
+   "A Bangsar address with a residential title, a short walk from Bangsar's cafes and shops",
+   "Only 8 units per floor, served by 5 lifts and a service lift",
+   "Air-conditioners in every room and the lanai, water boilers, built-in oven, washer-dryer, kitchen cabinets and digital lock",
+   "Semi-indoor swimming pool, gardens and rooftop facilities",
+   "GreenRE Silver (provisional), with a community shuttle service"
+  ],
+  "amenities": [
+   "Bangsar Village I & II",
+   "Bangsar Shopping Centre",
+   "Jalan Telawi",
+   "LRT Bangsar",
+   "Mid Valley Megamall",
+   "KL Sentral",
+   "Pantai Hospital Kuala Lumpur",
+   "KL Gateway Mall"
+  ],
+  "loc_text": "Talisa is in the Bangsar Hill Park masterplan on Lorong Maarof, off Jalan Maarof and Jalan Bangsar. Bangsar's banks, cafes and shops are about 400 m away, Bangsar Village and Bangsar Shopping Centre are close by, and LRT Bangsar, KL Sentral and Mid Valley are a short drive, with a dedicated shuttle service for residents.",
+  "buyer_fit": [
+   {
+    "title": "Families",
+    "desc": "3- and 3+1-bedroom homes up to 1,478 sqft in Bangsar, some with a lanai."
+   },
+   {
+    "title": "Upgraders",
+    "desc": "A new residential-title condo in one of KL's most popular neighbourhoods."
+   },
+   {
+    "title": "Expats & Investors",
+    "desc": "Bangsar location near international schools and KL Sentral."
+   }
+  ],
+  "details_extra": {
+   "Developer": "Sunsuria (Bangsar Hill Park Development Sdn Bhd)",
+   "Land Area": "5.87 acres (whole masterplan)",
+   "Total Units": "802 units: Tower B 410, Tower C 392",
+   "Building Height": "Tower B 57 storeys, Tower C 55 storeys",
+   "Title": "Residential",
+   "Price per Sqft": "From about RM917 psf (Gross)",
+   "Maintenance Fee": "About RM0.35 psf + 10% sinking fund",
+   "Lifts": "5 + 1 service lift; 8 units per floor",
+   "Security": "Multi-tier security",
+   "Furnishing": "Kitchen cabinet with hob and hood, built-in oven, air-conditioners, water boilers, washer-dryer, digital lock",
+   "Certification": "GreenRE Silver (provisional)"
+  },
+  "layouts": [
+   {
+    "type": "Type 2B",
+    "size": "917 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "Entry",
+    "desc": "A 2-bedroom, 2-bathroom home with a balcony.",
+    "img": "images/d18534c91fca7454.jpg"
+   },
+   {
+    "type": "Type 2B1",
+    "size": "917 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 2-bedroom, 2-bathroom mirror layout.",
+    "img": "images/5355a4d935126fe0.jpg"
+   },
+   {
+    "type": "Type 2A",
+    "size": "978 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 3-bedroom, 2-bathroom home with a balcony.",
+    "img": "images/9e2baa3c2ea0b98c.jpg"
+   },
+   {
+    "type": "Type 2A1",
+    "size": "978 sqft",
+    "rooms": "2+1 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 2+1-bedroom, 2-bathroom home.",
+    "img": "images/cde2eaf6957c3fde.jpg"
+   },
+   {
+    "type": "Type 3C",
+    "size": "1,372 sqft",
+    "rooms": "3+1 Bedrooms, 3+1 Bathrooms",
+    "tag": "",
+    "desc": "A 3+1-bedroom home with a utility room.",
+    "img": "images/09f3a5828ebc3d65.jpg"
+   },
+   {
+    "type": "Type 3D",
+    "size": "1,407 sqft",
+    "rooms": "3+1 Bedrooms, 2+1 Bathrooms",
+    "tag": "",
+    "desc": "A 3+1-bedroom corner home.",
+    "img": "images/2a39ca2218ea24f2.jpg"
+   },
+   {
+    "type": "Type 3A",
+    "size": "1,435 sqft",
+    "rooms": "3 Bedrooms, 3 Bathrooms + Lanai",
+    "tag": "Lanai",
+    "desc": "A 3-bedroom home with a lanai.",
+    "img": "images/ff758901b4ab6863.jpg"
+   },
+   {
+    "type": "Type 3B",
+    "size": "1,478 sqft",
+    "rooms": "3+1 Bedrooms, 3+1 Bathrooms",
+    "tag": "Largest",
+    "desc": "The largest home, with 3+1 bedrooms and a utility room.",
+    "img": "images/c10cda92c9fbbda7.jpg"
+   }
+  ],
+  "tags": [
+   "Talisa Bangsar Hill Park",
+   "Bangsar Hill Park",
+   "Talisa Bangsar",
+   "Talisa II Bangsar Hill Park",
+   "Bangsar Hill Park price",
+   "Bangsar Hill Park floor plan",
+   "new project Bangsar",
+   "Bangsar condo for sale",
+   "new launch condo KL",
+   "Sunsuria new project",
+   "吉隆坡新楼盘"
+  ]
+ },
+ {
+  "name": "Bangsar Hill Park (Tower D & E)",
+  "tag": "Bangsar",
+  "state": "Kuala Lumpur",
+  "area": "Bangsar",
+  "developer_group": "Sunsuria",
+  "type": "Residential",
+  "price": "Price on Request",
+  "price_short": "Price on Request",
+  "tenure": "Leasehold (99 years)",
+  "size": "917 – 1,478 sqft",
+  "size_short": "917-1,478 sqft",
+  "rooms": "2 – 3+1 Bedrooms",
+  "rooms_short": "2 to 3+1 Beds",
+  "completion": "2025 (Phase 1)",
+  "completion_short": "2025",
+  "status": "Completed",
+  "years": [
+   2025
+  ],
+  "loc": "Lorong Maarof, Bangsar, Kuala Lumpur",
+  "overview": "Towers D and E are Phase 1 of Bangsar Hill Park, the 5.87-acre residential masterplan on Lorong Maarof, Bangsar. Two 57-storey towers hold 812 homes with a residential title, from 917 to 1,478 sqft, with a resort-inspired pool, gourmet kitchen and BBQ area, multipurpose hall, gym and a rooftop whirlpool garden.",
+  "points": [
+   "Phase 1 of Bangsar Hill Park: 812 homes in two 57-storey towers (406 each)",
+   "2+1- to 3+1-bedroom homes from 917 to 1,478 sqft, residential title",
+   "On Lorong Maarof, reached from Jalan Maarof and Jalan Bangsar"
+  ],
+  "selling_points": [
+   "A Bangsar address with a residential title",
+   "Resort-inspired pool, pavilion, gourmet kitchen and BBQ area",
+   "Multipurpose hall, gymnasium and a rooftop whirlpool and garden",
+   "Grand lobby with drop-off",
+   "Layouts from 917 sqft 2-bedroom homes to 1,478 sqft 3+1-bedroom homes"
+  ],
+  "amenities": [
+   "Bangsar Village I & II",
+   "Bangsar Shopping Centre",
+   "Jalan Telawi",
+   "LRT Bangsar",
+   "Mid Valley Megamall",
+   "KL Sentral",
+   "Pantai Hospital Kuala Lumpur",
+   "KL Gateway Mall"
+  ],
+  "loc_text": "Bangsar Hill Park is on Lorong Maarof in Bangsar, reached from Jalan Maarof and Jalan Bangsar. Bangsar Village, Bangsar Shopping Centre and Jalan Telawi are close by, and LRT Bangsar, KL Sentral and Mid Valley are a short drive away.",
+  "buyer_fit": [
+   {
+    "title": "Families",
+    "desc": "3- and 3+1-bedroom homes up to 1,478 sqft in Bangsar."
+   },
+   {
+    "title": "Upgraders",
+    "desc": "Residential-title homes in a resort-style Bangsar development."
+   },
+   {
+    "title": "Expats & Investors",
+    "desc": "A Bangsar address near KL Sentral and Mid Valley."
+   }
+  ],
+  "details_extra": {
+   "Developer": "Sunsuria (Bangsar Hill Park Development Sdn Bhd)",
+   "Land Area": "5.87 acres (whole masterplan)",
+   "Total Units": "812 units: Block D 406, Block E 406",
+   "Building Height": "57 storeys",
+   "Title": "Residential",
+   "Security": "Multi-tier security"
+  },
+  "layouts": [
+   {
+    "type": "Type 2B / 2B1",
+    "size": "917 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "Entry",
+    "desc": "A 2-bedroom, 2-bathroom home.",
+    "img": "images/a35a8f03f1a5e1ff.jpg"
+   },
+   {
+    "type": "Type 2A / 2A1",
+    "size": "978 sqft",
+    "rooms": "2+1 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 2+1-bedroom home with a balcony.",
+    "img": "images/a3686e4cf9b2eed1.jpg"
+   },
+   {
+    "type": "Type 1A",
+    "size": "1,345 sqft",
+    "rooms": "3 Bedrooms, 3 Bathrooms",
+    "tag": "",
+    "desc": "A 3-bedroom, 3-bathroom home.",
+    "img": "images/5f47f713cf63fde2.jpg"
+   },
+   {
+    "type": "Type 3A",
+    "size": "1,435 sqft",
+    "rooms": "3 Bedrooms",
+    "tag": "",
+    "desc": "A large 3-bedroom home with a balcony.",
+    "img": "images/3ed6c023983ecddd.jpg"
+   },
+   {
+    "type": "Type 3B",
+    "size": "1,478 sqft",
+    "rooms": "3+1 Bedrooms, 4 Bathrooms",
+    "tag": "Largest",
+    "desc": "The largest home, with 3+1 bedrooms and 4 bathrooms.",
+    "img": "images/a31848b5c737abbc.jpg"
+   }
+  ],
+  "tags": [
+   "Bangsar Hill Park Tower D & E",
+   "Bangsar Hill Park",
+   "Bangsar Hill Park Tower D",
+   "Bangsar Hill Park Tower E",
+   "Bangsar Hill Park price",
+   "Bangsar condo for sale",
+   "new project Bangsar",
+   "Sunsuria Bangsar",
+   "吉隆坡新楼盘"
+  ]
+ }
+]

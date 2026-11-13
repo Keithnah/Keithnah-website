@@ -43,3 +43,11 @@ Redirect gone /ja/property/lightwater-residence.html
 Redirect gone /ko/property/lightwater-residence.html
 RedirectMatch 301 ^/guides/gelugor\.html$ /resources.html
 RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/guides/gelugor\.html$ /$1/resources.html
+RedirectMatch 301 ^/guides/bangsar\.html$ /resources.html
+RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/guides/bangsar\.html$ /$1/resources.html
+RedirectMatch 301 ^/guides/george\-town\.html$ /resources.html
+RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/guides/george\-town\.html$ /$1/resources.html
+RedirectMatch 301 ^/guides/damansara\-heights\.html$ /resources.html
+RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/guides/damansara\-heights\.html$ /$1/resources.html
+RedirectMatch 301 ^/guides/batu\-kawan\.html$ /resources.html
+RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/guides/batu\-kawan\.html$ /$1/resources.html

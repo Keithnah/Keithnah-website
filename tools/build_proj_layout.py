@@ -18,24 +18,25 @@ os.chdir(ROOT)
 ZONES = {
     'Kuala Lumpur': [
         ('centre', ['KL City Centre', 'Bukit Bintang', 'TRX', 'Chow Kit', 'Titiwangsa', 'Jalan Ipoh', 'Pudu', 'Imbi']),
-        ('west', ['Bangsar', 'Bangsar South', 'Damansara Heights', 'Mont Kiara', 'Sri Hartamas', 'Desa ParkCity', 'Segambut', 'Kepong', 'Bukit Tunku']),
-        ('south', ['Bukit Jalil', 'Taman Desa', 'Kuchai Lama', 'OUG', 'Sri Petaling', 'Seputeh', 'Mid Valley', 'Old Klang Road', 'Sungai Besi']),
+        ('west', ['Bangsar', 'Bangsar South', 'Damansara Heights', 'Mont Kiara', 'North Kiara', 'Pantai Dalam', 'Sri Hartamas', 'Desa ParkCity', 'Segambut', 'Kepong', 'Bukit Tunku']),
+        ('south', ['Bukit Jalil', 'Taman Desa', 'Kuchai Lama', 'OUG', 'Sri Petaling', 'Seputeh', 'Mid Valley', 'Old Klang Road', 'Sungai Besi', 'Salak Selatan']),
         ('ne', ['Ampang', 'Cheras', 'Setapak', 'Wangsa Maju', 'Sentul', 'Jalan Kuching', 'Taman Melawati'])],
     'Selangor': [
         ('pj', ['Petaling Jaya', 'Ara Damansara', 'Damansara Perdana', 'Damansara Damai', 'Damansara Utama', 'Mutiara Damansara', 'Kota Damansara', 'Bandar Utama']),
         ('kwasa', ['Kwasa Damansara', 'Bandar Sri Damansara', 'Sungai Buloh', 'Kwasa Sentral']),
         ('subang', ['Subang Jaya', 'USJ', 'Shah Alam', 'Glenmarie']),
         ('ssel', ['Puchong', 'Cyberjaya', 'Kajang', 'Seri Kembangan', 'Bangi', 'Semenyih', 'Putrajaya']),
-        ('klang', ['Klang', 'Setia Alam', 'Bukit Raja'])],
+        ('klang', ['Klang', 'Setia Alam', 'Bukit Raja']),
+        ('north', ['Rawang', 'Selayang', 'Batu Caves', 'Kuang'])],
     'Penang': [
         ('island', ['George Town', 'Gelugor', 'Tanjung Bungah', 'Paya Terubong', 'Bayan Lepas', 'Air Itam', 'Tanjung Tokong', 'Batu Ferringhi', 'Jelutong']),
         ('mainland', ['Batu Kawan', 'Butterworth', 'Bukit Mertajam', 'Seberang Perai', 'Simpang Ampat'])],
 }
-ZKEYS = {'en': {'pj': 'PJ & Damansara', 'kwasa': 'Kwasa & Sungai Buloh', 'subang': 'Subang & Shah Alam', 'ssel': 'South Selangor', 'klang': 'Klang', 'island': 'Penang Island', 'mainland': 'Penang Mainland'},
-         'zh-CN': {'pj': '八打灵再也 & Damansara', 'kwasa': 'Kwasa & 双溪毛糯', 'subang': '梳邦 & 莎阿南', 'ssel': '南雪兰莪', 'klang': '巴生', 'island': '槟岛', 'mainland': '槟城威省'},
-         'ms': {'pj': 'PJ & Damansara', 'kwasa': 'Kwasa & Sungai Buloh', 'subang': 'Subang & Shah Alam', 'ssel': 'Selangor Selatan', 'klang': 'Klang', 'island': 'Pulau Pinang', 'mainland': 'Seberang Perai'},
-         'ja': {'pj': 'PJ・Damansara', 'kwasa': 'Kwasa・Sungai Buloh', 'subang': 'Subang・Shah Alam', 'ssel': 'セランゴール南部', 'klang': 'Klang', 'island': 'ペナン島', 'mainland': 'ペナン本土側'},
-         'ko': {'pj': 'PJ & Damansara', 'kwasa': 'Kwasa & Sungai Buloh', 'subang': 'Subang & Shah Alam', 'ssel': '슬랑오르 남부', 'klang': 'Klang', 'island': '페낭 섬', 'mainland': '페낭 본토'}}
+ZKEYS = {'en': {'pj': 'PJ & Damansara', 'kwasa': 'Kwasa & Sungai Buloh', 'subang': 'Subang & Shah Alam', 'ssel': 'South Selangor', 'klang': 'Klang', 'north': 'North Selangor', 'island': 'Penang Island', 'mainland': 'Penang Mainland'},
+         'zh-CN': {'pj': '八打灵再也 & Damansara', 'kwasa': 'Kwasa & 双溪毛糯', 'subang': '梳邦 & 莎阿南', 'ssel': '南雪兰莪', 'klang': '巴生', 'north': '北雪兰莪', 'island': '槟岛', 'mainland': '槟城威省'},
+         'ms': {'pj': 'PJ & Damansara', 'kwasa': 'Kwasa & Sungai Buloh', 'subang': 'Subang & Shah Alam', 'ssel': 'Selangor Selatan', 'klang': 'Klang', 'north': 'Selangor Utara', 'island': 'Pulau Pinang', 'mainland': 'Seberang Perai'},
+         'ja': {'pj': 'PJ・Damansara', 'kwasa': 'Kwasa・Sungai Buloh', 'subang': 'Subang・Shah Alam', 'ssel': 'セランゴール南部', 'klang': 'Klang', 'north': 'セランゴール北部', 'island': 'ペナン島', 'mainland': 'ペナン本土側'},
+         'ko': {'pj': 'PJ & Damansara', 'kwasa': 'Kwasa & Sungai Buloh', 'subang': 'Subang & Shah Alam', 'ssel': '슬랑오르 남부', 'klang': 'Klang', 'north': '슬랑오르 북부', 'island': '페낭 섬', 'mainland': '페낭 본토'}}
 
 T = {
     'en': {'centre': 'City Centre', 'west': 'West KL', 'south': 'South KL', 'ne': 'North & East KL', 'other': 'Other areas',

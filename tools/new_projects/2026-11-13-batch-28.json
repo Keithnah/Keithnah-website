@@ -1,0 +1,2399 @@
+[
+ {
+  "name": "Alamanda Heights",
+  "tag": "Seri Kembangan",
+  "state": "Selangor",
+  "area": "Seri Kembangan",
+  "developer_group": "Multiplex Land",
+  "type": "Residential",
+  "price": "From RM565,000 (Gross)",
+  "price_short": "From RM565,000",
+  "tenure": "Freehold",
+  "size": "971 – 1,050 sqft",
+  "size_short": "971-1,050 sqft",
+  "rooms": "3+1 Bedrooms",
+  "rooms_short": "3+1 Beds",
+  "completion": "Est. Q1 2030",
+  "completion_short": "Q1 2030",
+  "status": "New Launch",
+  "years": [
+   2030
+  ],
+  "loc": "Taman Bukit Serdang, Seri Kembangan, Selangor",
+  "overview": "Alamanda Heights is a freehold 36-storey residential tower at Taman Bukit Serdang, Seri Kembangan. The 3.09-acre development holds 440 family homes of 971 and 1,050 sqft, each with 3+1 bedrooms and 2 bathrooms, over 5 car park levels and a facility floor with 37 facilities.",
+  "points": [
+   "Freehold, 440 homes in one 36-storey tower on 3.09 acres",
+   "3+1 bedrooms and 2 bathrooms in every home, 971 to 1,050 sqft, from RM565,000 (gross)",
+   "Close to MRT Serdang Raya Utara, The Mines and the KL-Seremban Highway"
+  ],
+  "selling_points": [
+   "Freehold residential title",
+   "Every home has 3+1 bedrooms and 2 bathrooms",
+   "37 facilities on a dedicated facility floor",
+   "2 to 3 car parks per home",
+   "3-tier security"
+  ],
+  "amenities": [
+   "MRT Serdang Raya Utara",
+   "The Mines Shopping Mall",
+   "AEON Taman Equine",
+   "Pavilion Bukit Jalil",
+   "KL-Seremban Highway",
+   "SILK Highway"
+  ],
+  "loc_text": "Alamanda Heights is at Taman Bukit Serdang in Seri Kembangan, about 6 km from Sri Petaling and 13 km from Puchong, with links to the KL-Seremban Highway, MEX, SILK and KESAS. MRT Serdang Raya Utara, The Mines and AEON Taman Equine are nearby.",
+  "buyer_fit": [
+   {
+    "title": "Families",
+    "desc": "3+1-bedroom homes of 971 to 1,050 sqft with 2 to 3 car parks."
+   },
+   {
+    "title": "First-time Buyers",
+    "desc": "Freehold family homes from RM565,000 (gross)."
+   },
+   {
+    "title": "Investors",
+    "desc": "Freehold residential title near the MRT and major highways."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "3.09 acres",
+   "Total Units": "440 units",
+   "Building Height": "36 storeys (5 car park levels, 1 facility level, 30 residential levels)",
+   "Title": "Residential",
+   "Price per Sqft": "RM565 – RM680 psf (Gross)",
+   "Maintenance Fee": "Est. RM0.28 psf",
+   "Lifts": "4 + 1 lifts",
+   "Car Parks": "2 – 3 per unit",
+   "Security": "3-tier security"
+  },
+  "layouts": [
+   {
+    "type": "Type B",
+    "size": "971 sqft",
+    "rooms": "3+1 Bedrooms, 2 Bathrooms",
+    "tag": "Show unit",
+    "desc": "A 3+1-bedroom family home with 2 bathrooms."
+   },
+   {
+    "type": "Type A",
+    "size": "1,050 sqft",
+    "rooms": "3+1 Bedrooms, 2 Bathrooms",
+    "tag": "Largest",
+    "desc": "The larger 3+1-bedroom layout with 2 bathrooms."
+   }
+  ],
+  "tags": [
+   "Alamanda Heights",
+   "Alamanda Heights Seri Kembangan",
+   "Alamanda Heights price",
+   "Alamanda Heights floor plan",
+   "new project Seri Kembangan",
+   "Seri Kembangan condo for sale",
+   "freehold condo Selangor",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "Trinity Nordic Residences",
+  "tag": "Seri Kembangan",
+  "state": "Selangor",
+  "area": "Seri Kembangan",
+  "developer_group": "Trinity Group",
+  "type": "Residential",
+  "price": "From RM588,888 (Gross)",
+  "price_short": "From RM588,888",
+  "tenure": "Freehold",
+  "size": "937 – 2,014 sqft",
+  "size_short": "937-2,014 sqft",
+  "rooms": "3 – 5 Bedrooms",
+  "rooms_short": "3 to 5 Beds",
+  "completion": "Est. Nov 2029",
+  "completion_short": "Nov 2029",
+  "status": "New Launch",
+  "years": [
+   2029
+  ],
+  "loc": "Seri Kembangan, Selangor",
+  "overview": "Trinity Nordic Residences is a freehold Nordic-themed development of three towers in Seri Kembangan. Its 714 homes on 4.73 acres range from 937 to 1,228 sqft family layouts with 3 to 4 bedrooms, up to 2,014 sqft duplexes with 5 bedrooms, with 2 to 4 car parks per home.",
+  "points": [
+   "Freehold, 714 homes in three towers on 4.73 acres",
+   "Typical homes 937 to 1,228 sqft and 2,014 sqft duplexes, from RM588,888 (gross)",
+   "Residential title with 2 to 4 car parks per home"
+  ],
+  "selling_points": [
+   "Freehold residential title",
+   "Family layouts from 3 bedrooms",
+   "2,014 sqft duplexes with 5 bedrooms",
+   "2 to 4 car parks per home",
+   "Nordic-themed landscape and facilities"
+  ],
+  "amenities": [
+   "Seri Kembangan town",
+   "Putrajaya",
+   "Cyberjaya",
+   "Kuala Lumpur"
+  ],
+  "loc_text": "Trinity Nordic Residences is in Seri Kembangan, Selangor, in an established neighbourhood between Kuala Lumpur, Putrajaya and Cyberjaya, with highway links towards KL and the airport.",
+  "buyer_fit": [
+   {
+    "title": "Families",
+    "desc": "3- to 5-bedroom homes with 2 to 4 car parks."
+   },
+   {
+    "title": "Upgraders",
+    "desc": "Duplexes of 2,014 sqft for larger households."
+   },
+   {
+    "title": "Investors",
+    "desc": "Freehold residential title in an established Seri Kembangan neighbourhood."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "4.73 acres",
+   "Total Units": "714 units: Tower A 234, Tower B 240, Tower C 240",
+   "Building Height": "29 storeys (Towers B and C)",
+   "Title": "Residential",
+   "Price per Sqft": "From RM628 psf (Gross)",
+   "Maintenance Fee": "RM0.30 psf (incl. sinking fund)",
+   "Lifts": "3 lifts per floor",
+   "Car Parks": "2 – 4 per unit"
+  },
+  "layouts": [
+   {
+    "type": "Typical units",
+    "size": "937 – 1,228 sqft",
+    "rooms": "3 – 4 Bedrooms",
+    "tag": "Family",
+    "desc": "Family homes from 3 bedrooms."
+   },
+   {
+    "type": "Duplex",
+    "size": "2,014 sqft",
+    "rooms": "5 Bedrooms",
+    "tag": "Largest",
+    "desc": "A two-level duplex with 5 bedrooms."
+   }
+  ],
+  "tags": [
+   "Trinity Nordic Residences",
+   "Trinity Nordic Residences Seri Kembangan",
+   "Trinity Nordic Residences price",
+   "Trinity Nordic Residences floor plan",
+   "new project Seri Kembangan",
+   "Seri Kembangan condo for sale",
+   "freehold condo Selangor",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "Anya at Shorea Park",
+  "tag": "Puchong",
+  "state": "Selangor",
+  "area": "Puchong",
+  "developer_group": "",
+  "type": "Serviced Apartment",
+  "price": "From RM504,000 (Gross)",
+  "price_short": "From RM504,000",
+  "tenure": "Freehold",
+  "size": "560 – 1,389 sqft",
+  "size_short": "560-1,389 sqft",
+  "rooms": "1 – 4 Bedrooms",
+  "rooms_short": "1 to 4 Beds",
+  "completion": "Est. Q3 2026",
+  "completion_short": "Q3 2026",
+  "status": "Under Construction",
+  "years": [
+   2026
+  ],
+  "loc": "Shorea Park, Puchong, Selangor",
+  "overview": "Anya is a freehold two-tower serviced apartment development of 750 homes on 3.91 acres in the Shorea Park township, Puchong. Layouts run from 560 sqft to 1,389 sqft with 1 to 4 bedrooms, designed for multigenerational living, with a resort-style pool deck and a rooftop garden.",
+  "points": [
+   "Freehold, 750 homes in two 33-storey towers on 3.91 acres",
+   "1 to 4 bedrooms, 560 to 1,389 sqft, from RM504,000 (gross)",
+   "Part of the Shorea Park township, completion expected Q3 2026"
+  ],
+  "selling_points": [
+   "Freehold title",
+   "Layouts for multigenerational families up to 4 bedrooms",
+   "Resort-style pool deck and facilities podium",
+   "Up to 3 car parks for larger units",
+   "Inside a park-themed township"
+  ],
+  "amenities": [
+   "Shorea Park township",
+   "Puchong town",
+   "Cyberjaya",
+   "Putrajaya"
+  ],
+  "loc_text": "Anya is in the Shorea Park township on the southern side of Puchong, between Puchong, Cyberjaya and Putrajaya.",
+  "buyer_fit": [
+   {
+    "title": "Families",
+    "desc": "Up to 4 bedrooms and 1,389 sqft for multigenerational living."
+   },
+   {
+    "title": "Young Couples",
+    "desc": "1-bedroom homes from 560 sqft."
+   },
+   {
+    "title": "Investors",
+    "desc": "Freehold units completing in 2026."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "3.91 acres",
+   "Total Units": "750 units: Tower A 390, Tower B 360",
+   "Building Height": "33 storeys",
+   "Title": "Commercial (HDA)",
+   "Price per Sqft": "From RM538 psf (Gross)",
+   "Maintenance Fee": "Est. RM0.34 psf (incl. sinking fund)",
+   "Lifts": "2 + 1 service lift"
+  },
+  "layouts": [
+   {
+    "type": "Type A",
+    "size": "560 sqft",
+    "rooms": "Smallest layout",
+    "tag": "Entry",
+    "desc": "The most compact layout."
+   },
+   {
+    "type": "Type B",
+    "size": "915 sqft",
+    "rooms": "Family layout",
+    "tag": "",
+    "desc": "A mid-size family layout."
+   },
+   {
+    "type": "Type D",
+    "size": "1,389 sqft",
+    "rooms": "4 Bedrooms",
+    "tag": "Show unit",
+    "desc": "The largest layout, with 4 bedrooms."
+   }
+  ],
+  "tags": [
+   "Anya at Shorea Park",
+   "Anya at Shorea Park Puchong",
+   "Anya at Shorea Park price",
+   "Anya at Shorea Park floor plan",
+   "new project Puchong",
+   "Puchong condo for sale",
+   "freehold condo Selangor",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ],
+  "no_developer": true
+ },
+ {
+  "name": "Nara at Shorea Park",
+  "tag": "Puchong",
+  "state": "Selangor",
+  "area": "Puchong",
+  "developer_group": "OSK Property",
+  "type": "Serviced Apartment",
+  "price": "From RM250,000 (Gross)",
+  "price_short": "From RM250,000",
+  "tenure": "Freehold",
+  "size": "560 – 1,055 sqft",
+  "size_short": "560-1,055 sqft",
+  "rooms": "1+1 – 4 Bedrooms",
+  "rooms_short": "1+1 to 4 Beds",
+  "completion": "Est. Q2 2028",
+  "completion_short": "Q2 2028",
+  "status": "New Launch",
+  "years": [
+   2028
+  ],
+  "loc": "Shorea Park, Puchong, Selangor",
+  "overview": "Nara is a freehold two-tower development of 709 homes on 3.90 acres in the Shorea Park township, Puchong, themed on living by the park. Homes range from 560 sqft with 1+1 bedrooms to 1,055 sqft with 4 bedrooms, with a facilities podium, pool and rooftop garden.",
+  "points": [
+   "Freehold, 709 homes in two 27-storey towers on 3.90 acres",
+   "1+1 to 4 bedrooms, 560 to 1,055 sqft, from RM250,000 (gross)",
+   "Inside the Shorea Park township, completion expected Q2 2028"
+  ],
+  "selling_points": [
+   "Freehold title",
+   "Wide range from 1+1 to 4 bedrooms",
+   "Facilities podium with pool and gardens",
+   "2 car parks for Types B, C and D",
+   "Park-themed township setting"
+  ],
+  "amenities": [
+   "Shorea Park township",
+   "Puchong town",
+   "Cyberjaya",
+   "Putrajaya"
+  ],
+  "loc_text": "Nara is in the Shorea Park township on the southern side of Puchong, between Puchong, Cyberjaya and Putrajaya.",
+  "buyer_fit": [
+   {
+    "title": "First-time Buyers",
+    "desc": "Entry homes from RM250,000 (gross)."
+   },
+   {
+    "title": "Families",
+    "desc": "3- and 4-bedroom layouts up to 1,055 sqft."
+   },
+   {
+    "title": "Investors",
+    "desc": "Freehold units in a growing township."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "3.90 acres",
+   "Total Units": "709 units",
+   "Building Height": "27 storeys",
+   "Title": "Commercial (HDA)",
+   "Price per Sqft": "RM446 – RM625 psf (Gross)",
+   "Lifts": "2 + 1 service lift",
+   "Car Parks": "2 for Types B, C and D"
+  },
+  "layouts": [
+   {
+    "type": "Type A",
+    "size": "560 sqft",
+    "rooms": "1+1 Bedrooms",
+    "tag": "Entry",
+    "desc": "A compact 1+1-bedroom home."
+   },
+   {
+    "type": "Type B",
+    "size": "807 sqft",
+    "rooms": "Mid-size layout",
+    "tag": "Show unit",
+    "desc": "A layout with 2 car parks."
+   },
+   {
+    "type": "Type C",
+    "size": "936 sqft",
+    "rooms": "Mid-size layout",
+    "tag": "Show unit",
+    "desc": "A larger layout with 2 car parks."
+   },
+   {
+    "type": "Type D",
+    "size": "1,055 sqft",
+    "rooms": "4 Bedrooms",
+    "tag": "Largest",
+    "desc": "The largest layout, with 4 bedrooms."
+   }
+  ],
+  "tags": [
+   "Nara at Shorea Park",
+   "Nara at Shorea Park Puchong",
+   "Nara at Shorea Park price",
+   "Nara at Shorea Park floor plan",
+   "new project Puchong",
+   "Puchong condo for sale",
+   "freehold condo Selangor",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "Avantro Residences",
+  "tag": "Puchong",
+  "state": "Selangor",
+  "area": "Puchong",
+  "developer_group": "",
+  "type": "Serviced Apartment",
+  "price": "From RM664,000 (Gross)",
+  "price_short": "From RM664,000",
+  "tenure": "Freehold",
+  "size": "550 – 1,389 sqft",
+  "size_short": "550-1,389 sqft",
+  "rooms": "1 – 4 Bedrooms",
+  "rooms_short": "1 to 4 Beds",
+  "completion": "Est. Q2 2028",
+  "completion_short": "Q2 2028",
+  "status": "Under Construction",
+  "years": [
+   2028
+  ],
+  "loc": "Bandar Kinrara, Puchong, Selangor",
+  "overview": "Avantro Residences is a freehold mixed development in Bandar Kinrara, Puchong, with three residential towers and a retail hub on 3.43 acres. Homes run from 550 to 1,389 sqft with 1 to 4 bedrooms, 10 ft ceilings and 12 ft balconies.",
+  "points": [
+   "Freehold, three residential towers and a retail hub on 3.43 acres",
+   "1 to 4 bedrooms, 550 to 1,389 sqft, from RM664,000 (gross)",
+   "10 ft ceiling height and 12 ft x 4 ft balconies"
+  ],
+  "selling_points": [
+   "Freehold title",
+   "10 ft ceilings",
+   "Retail hub within the development",
+   "EV charging bays",
+   "Facilities deck with pool"
+  ],
+  "amenities": [
+   "Bandar Kinrara",
+   "Lebuhraya Bukit Jalil",
+   "Bukit Jalil",
+   "Puchong town"
+  ],
+  "loc_text": "Avantro is in Bandar Kinrara, Puchong, a mature township next to Bukit Jalil with highway links to Kuala Lumpur.",
+  "buyer_fit": [
+   {
+    "title": "Families",
+    "desc": "3- and 4-bedroom layouts up to 1,389 sqft."
+   },
+   {
+    "title": "Young Professionals",
+    "desc": "Compact homes from 550 sqft near Bukit Jalil."
+   },
+   {
+    "title": "Investors",
+    "desc": "Freehold units in an established township."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "3.43 acres",
+   "Towers": "3 residential towers + 1 retail hub",
+   "Title": "Commercial (HDA)",
+   "Price per Sqft": "From RM761 psf (Gross)",
+   "Maintenance Fee": "RM0.35 psf (incl. sinking fund)",
+   "Ceiling Height": "10 ft",
+   "Car Parks": "EV charging bays on Level 2"
+  },
+  "layouts": [
+   {
+    "type": "Type B4",
+    "size": "893 sqft",
+    "rooms": "Family layout",
+    "tag": "Show unit",
+    "desc": "A family layout shown in the show unit."
+   },
+   {
+    "type": "Type C2",
+    "size": "1,033 sqft",
+    "rooms": "Family layout",
+    "tag": "Show unit",
+    "desc": "A larger family layout."
+   },
+   {
+    "type": "Type E",
+    "size": "1,389 sqft",
+    "rooms": "4 Bedrooms",
+    "tag": "Largest",
+    "desc": "The largest layout, with 4 bedrooms."
+   }
+  ],
+  "tags": [
+   "Avantro Residences",
+   "Avantro Residences Puchong",
+   "Avantro Residences price",
+   "Avantro Residences floor plan",
+   "new project Puchong",
+   "Puchong condo for sale",
+   "freehold condo Selangor",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ],
+  "no_developer": true
+ },
+ {
+  "name": "Trinity Rainfora Residences",
+  "tag": "Puchong",
+  "state": "Selangor",
+  "area": "Puchong",
+  "developer_group": "Trinity Group",
+  "type": "Serviced Apartment",
+  "price": "Price on Request",
+  "price_short": "Price on Request",
+  "tenure": "Freehold",
+  "size": "739 – 1,184 sqft",
+  "size_short": "739-1,184 sqft",
+  "rooms": "2 – 4 Bedrooms",
+  "rooms_short": "2 to 4 Beds",
+  "completion": "Est. Q3 2027",
+  "completion_short": "Q3 2027",
+  "status": "Under Construction",
+  "years": [
+   2027
+  ],
+  "loc": "Bandar Kinrara, Puchong, Selangor",
+  "overview": "Trinity Rainfora Residences (Gold Edition) is a freehold, rainforest-inspired development in Bandar Kinrara, Puchong, with 535 homes in two 31-storey blocks on 2.4 acres. Homes run from 739 to 1,184 sqft with 2 to 4 bedrooms, around a rainforest canopy, sky gardens and a glamping-style forest deck.",
+  "points": [
+   "Freehold, 535 homes in two blocks on 2.4 acres",
+   "2 to 4 bedrooms, 739 to 1,184 sqft",
+   "Rainforest-themed facilities and sky gardens, completion expected Q3 2027"
+  ],
+  "selling_points": [
+   "Freehold title",
+   "Rainforest-inspired landscape and sky gardens",
+   "Dual-key layout option",
+   "4 lifts per floor",
+   "Bandar Kinrara address"
+  ],
+  "amenities": [
+   "Bandar Kinrara",
+   "Lebuhraya Bukit Jalil",
+   "Bukit Jalil",
+   "Puchong town"
+  ],
+  "loc_text": "Trinity Rainfora is in Bandar Kinrara, Puchong, next to Lebuhraya Bukit Jalil, with easy access to Bukit Jalil and Kuala Lumpur.",
+  "buyer_fit": [
+   {
+    "title": "Families",
+    "desc": "3+1- and 4-bedroom layouts up to 1,184 sqft."
+   },
+   {
+    "title": "Young Couples",
+    "desc": "2-bedroom homes from 739 sqft."
+   },
+   {
+    "title": "Investors",
+    "desc": "Freehold units in Bandar Kinrara."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "2.4 acres",
+   "Total Units": "535 units",
+   "Building Height": "31 floors",
+   "Title": "Commercial",
+   "Maintenance Fee": "RM0.25 psf",
+   "Lifts": "4 lifts per floor",
+   "Car Parks": "796 car parks"
+  },
+  "layouts": [
+   {
+    "type": "Type B1",
+    "size": "739 sqft",
+    "rooms": "2 Bedrooms",
+    "tag": "Show unit",
+    "desc": "A 2-bedroom home."
+   },
+   {
+    "type": "Type G",
+    "size": "1,184 sqft",
+    "rooms": "4 Bedrooms",
+    "tag": "Show unit",
+    "desc": "The largest layout, with 4 bedrooms."
+   }
+  ],
+  "tags": [
+   "Trinity Rainfora Residences",
+   "Trinity Rainfora Residences Puchong",
+   "Trinity Rainfora Residences price",
+   "Trinity Rainfora Residences floor plan",
+   "new project Puchong",
+   "Puchong condo for sale",
+   "freehold condo Selangor",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "Danau Puchong",
+  "tag": "Puchong",
+  "state": "Selangor",
+  "area": "Puchong",
+  "developer_group": "",
+  "type": "Serviced Apartment",
+  "price": "Price on Request",
+  "price_short": "Price on Request",
+  "tenure": "Leasehold (until 2108)",
+  "size": "566 – 999 sqft",
+  "size_short": "566-999 sqft",
+  "rooms": "Layouts on request",
+  "rooms_short": "Layouts on request",
+  "completion": "Est. Q4 2027",
+  "completion_short": "Q4 2027",
+  "status": "Under Construction",
+  "years": [
+   2027
+  ],
+  "loc": "Puchong, Selangor",
+  "overview": "Danau Puchong (Residensi Danau) is a lakeside serviced apartment development of two 32-storey towers and 428 homes on 2.97 acres, close to the commercial heart of Puchong. Homes of 566 to 999 sqft look out over the lake, with a hammock garden, lap pool and sky lounges.",
+  "points": [
+   "428 homes in two 32-storey towers on 2.97 acres",
+   "566 to 999 sqft, beside a lake near Puchong town centre",
+   "Completion expected Q4 2027"
+  ],
+  "selling_points": [
+   "Lake views",
+   "Close to Puchong town centre",
+   "Hammock garden, pool deck and sky lounges",
+   "Only 10 units per floor",
+   "Residential-purpose serviced apartment"
+  ],
+  "amenities": [
+   "Puchong town centre",
+   "LDP Highway",
+   "Bandar Puteri Puchong"
+  ],
+  "loc_text": "Danau Puchong sits beside a lake close to the commercial heart of Puchong, with the LDP and other highways linking it to the rest of the Klang Valley.",
+  "buyer_fit": [
+   {
+    "title": "Families",
+    "desc": "Up to 999 sqft with lake views."
+   },
+   {
+    "title": "Young Couples",
+    "desc": "Compact homes from 566 sqft near Puchong town."
+   },
+   {
+    "title": "Investors",
+    "desc": "Lakeside units in an established suburb."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "2.97 acres",
+   "Total Units": "428 units: Tower A 214, Tower B 214",
+   "Building Height": "32 storeys",
+   "Title": "Serviced apartment (residential purpose)",
+   "Price": "Up to RM817,750 (Gross)",
+   "Maintenance Fee": "Est. RM0.35 psf (incl. sinking fund)",
+   "Lifts": "3 + 1 lifts per floor",
+   "Units per Floor": "10"
+  },
+  "layouts": [
+   {
+    "type": "Smallest layout",
+    "size": "566 sqft",
+    "rooms": "Floor plan on request",
+    "tag": "Entry",
+    "desc": "The smallest layout."
+   },
+   {
+    "type": "Type C and D",
+    "size": "Up to 999 sqft",
+    "rooms": "Show units",
+    "tag": "Show unit",
+    "desc": "The larger layouts, shown in the show units."
+   }
+  ],
+  "tags": [
+   "Danau Puchong",
+   "Danau Puchong Selangor",
+   "Danau Puchong price",
+   "Danau Puchong floor plan",
+   "new project Puchong",
+   "Puchong condo for sale",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "Erica Residence",
+  "tag": "Puchong",
+  "state": "Selangor",
+  "area": "Puchong",
+  "developer_group": "Bukit Hitam Development",
+  "type": "Residential",
+  "price": "From RM2,142,000 (Gross)",
+  "price_short": "From RM2,142,000",
+  "tenure": "Freehold",
+  "size": "3,399 sqft",
+  "size_short": "3,399 sqft",
+  "rooms": "4+2 Bedrooms",
+  "rooms_short": "4+2 Beds",
+  "completion": "Est. Q4 2026",
+  "completion_short": "Q4 2026",
+  "status": "Under Construction",
+  "years": [
+   2026
+  ],
+  "loc": "Bandar Bukit Puchong, Puchong, Selangor",
+  "overview": "Erica Residence is a freehold gated enclave of 68 three-storey semi-detached homes on 7.23 acres in Bandar Bukit Puchong. Each home has 3,399 sqft of built-up with 4+2 bedrooms on land of 35 x 70 ft and larger.",
+  "points": [
+   "Freehold, only 68 three-storey semi-detached homes on 7.23 acres",
+   "3,399 sqft built-up with 4+2 bedrooms, from RM2,142,000 (gross)",
+   "Individual residential title, completion expected Q4 2026"
+  ],
+  "selling_points": [
+   "Freehold, individual title",
+   "Low-density enclave of 68 homes",
+   "4+2 bedrooms over three storeys",
+   "Land sizes from 35 x 70 ft",
+   "Sustainability-focused design"
+  ],
+  "amenities": [
+   "Bandar Bukit Puchong",
+   "Puchong town",
+   "LDP Highway",
+   "Cyberjaya"
+  ],
+  "loc_text": "Erica Residence is in Bandar Bukit Puchong, a landed township on the southern side of Puchong.",
+  "buyer_fit": [
+   {
+    "title": "Families",
+    "desc": "4+2 bedrooms and 3,399 sqft for multigenerational families."
+   },
+   {
+    "title": "Upgraders",
+    "desc": "A step up from condominium living into a semi-D."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "7.23 acres",
+   "Total Units": "68 units",
+   "Type": "3-storey semi-detached",
+   "Land Size": "35 x 70 ft, 35 x 80 ft and 70 x 100 ft",
+   "Title": "Residential (individual title)",
+   "Price per Sqft": "RM630 – RM654 psf (Gross)"
+  },
+  "layouts": [
+   {
+    "type": "3-storey Semi-D",
+    "size": "3,399 sqft",
+    "rooms": "4+2 Bedrooms",
+    "tag": "",
+    "desc": "A three-storey semi-detached home."
+   }
+  ],
+  "tags": [
+   "Erica Residence",
+   "Erica Residence Puchong",
+   "Erica Residence price",
+   "Erica Residence floor plan",
+   "new project Puchong",
+   "Puchong landed house for sale",
+   "freehold landed Selangor",
+   "new launch landed Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "Loop Residences",
+  "tag": "Puchong",
+  "state": "Selangor",
+  "area": "Puchong",
+  "developer_group": "Glomac",
+  "type": "Serviced Apartment",
+  "price": "From RM365,610 (Gross)",
+  "price_short": "From RM365,610",
+  "tenure": "Leasehold",
+  "size": "450 – 750 sqft",
+  "size_short": "450-750 sqft",
+  "rooms": "1+1 – 3 Bedrooms",
+  "rooms_short": "1+1 to 3 Beds",
+  "completion": "Est. May 2028",
+  "completion_short": "May 2028",
+  "status": "Under Construction",
+  "years": [
+   2028
+  ],
+  "loc": "Loop City, Puchong, Selangor",
+  "overview": "Loop Residences is part of Loop City in Puchong: two towers of 33 and 35 storeys with 980 compact homes on 3.45 acres. Homes are 450 sqft with 1+1 bedrooms or 750 sqft with 3 bedrooms, with a 25 m resort-style pool, a sports court and a co-working space.",
+  "points": [
+   "980 homes in two towers on 3.45 acres",
+   "450 sqft (1+1 bedrooms) and 750 sqft (3 bedrooms), from RM365,610 (gross)",
+   "Completion expected May 2028"
+  ],
+  "selling_points": [
+   "Affordable entry price",
+   "25 m resort-style pool",
+   "Multi-purpose sports court and jogging track",
+   "Co-working space",
+   "Part of the Loop City development"
+  ],
+  "amenities": [
+   "Puchong town",
+   "LDP Highway",
+   "Bandar Puteri Puchong"
+  ],
+  "loc_text": "Loop Residences is in Loop City, Puchong, close to the town centre and the LDP Highway.",
+  "buyer_fit": [
+   {
+    "title": "Young Professionals",
+    "desc": "1+1-bedroom homes of 450 sqft."
+   },
+   {
+    "title": "Small Families",
+    "desc": "3-bedroom homes of 750 sqft."
+   },
+   {
+    "title": "Investors",
+    "desc": "Low entry price in Puchong."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "3.45 acres",
+   "Total Units": "980 units",
+   "Building Height": "Tower A 33 storeys, Tower B 35 storeys",
+   "Title": "Commercial (HDA)",
+   "Price per Sqft": "RM813 – RM817 psf (Gross)",
+   "Maintenance Fee": "Est. RM0.40 psf (incl. sinking fund)",
+   "Lifts": "3 + 1 service lift",
+   "Car Parks": "1 (450 sqft), 2 (750 sqft)"
+  },
+  "layouts": [
+   {
+    "type": "Type A/A1",
+    "size": "450 sqft",
+    "rooms": "1+1 Bedrooms, 1 Bathroom",
+    "tag": "Entry",
+    "desc": "A compact 1+1-bedroom home."
+   },
+   {
+    "type": "Type B/B1",
+    "size": "750 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Show unit",
+    "desc": "A 3-bedroom home with 2 car parks."
+   }
+  ],
+  "tags": [
+   "Loop Residences",
+   "Loop Residences Puchong",
+   "Loop Residences price",
+   "Loop Residences floor plan",
+   "new project Puchong",
+   "Puchong condo for sale",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "The WYN Residences",
+  "tag": "Puchong",
+  "state": "Selangor",
+  "area": "Puchong",
+  "developer_group": "Land & General",
+  "type": "Serviced Apartment",
+  "price": "From RM516,700 (Gross)",
+  "price_short": "From RM516,700",
+  "tenure": "Leasehold",
+  "size": "700 – 850 sqft",
+  "size_short": "700-850 sqft",
+  "rooms": "2 – 3 Bedrooms",
+  "rooms_short": "2 to 3 Beds",
+  "completion": "Est. Q2 2027",
+  "completion_short": "Q2 2027",
+  "status": "Under Construction",
+  "years": [
+   2027
+  ],
+  "loc": "Puchong, Selangor",
+  "overview": "The WYN Residences is a three-tower development in Puchong with 1,546 homes on 3.55 acres, built around a five-elements landscape. Homes are 700 sqft with 2 bedrooms or 850 sqft with 3 bedrooms, close to IOI Boulevard and the LRT.",
+  "points": [
+   "1,546 homes in three 56-storey towers on 3.55 acres",
+   "700 sqft (2 bedrooms) and 850 sqft (3 bedrooms), from RM516,700 (gross)",
+   "Completion expected Q2 2027"
+  ],
+  "selling_points": [
+   "Close to IOI Boulevard and the LRT",
+   "Five-elements themed landscape",
+   "Facilities for active and passive zones",
+   "Up to 2 car parks for 850 sqft units",
+   "Near Puchong town centre"
+  ],
+  "amenities": [
+   "IOI Boulevard",
+   "Lotus's Puchong",
+   "Columbia Asia Hospital Puchong",
+   "Bandar Puteri Puchong",
+   "Bandar Sunway"
+  ],
+  "loc_text": "The WYN Residences is in Puchong, near IOI Boulevard, Bandar Puteri and the LRT line, with Bandar Sunway a short drive away.",
+  "buyer_fit": [
+   {
+    "title": "Young Couples",
+    "desc": "2-bedroom homes of 700 sqft."
+   },
+   {
+    "title": "Small Families",
+    "desc": "3-bedroom homes of 850 sqft."
+   },
+   {
+    "title": "Investors",
+    "desc": "Near the LRT and IOI Boulevard."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "3.55 acres",
+   "Total Units": "1,546 units: Tower A 566, Tower B 489, Tower C 491",
+   "Building Height": "56 storeys",
+   "Title": "Commercial (HDA)",
+   "Price per Sqft": "RM700 – RM850 psf (Gross)",
+   "Maintenance Fee": "RM0.35 psf (incl. sinking fund)",
+   "Lifts": "4 + 1 lifts",
+   "Units per Floor": "Tower A 13, Towers B and C 10"
+  },
+  "layouts": [
+   {
+    "type": "Type B",
+    "size": "700 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "Show unit",
+    "desc": "A 2-bedroom home."
+   },
+   {
+    "type": "Type C",
+    "size": "850 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Show unit",
+    "desc": "A 3-bedroom home."
+   }
+  ],
+  "tags": [
+   "The WYN Residences",
+   "The WYN Residences Puchong",
+   "The WYN Residences price",
+   "The WYN Residences floor plan",
+   "new project Puchong",
+   "Puchong condo for sale",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "Myra Cove",
+  "tag": "Cyberjaya",
+  "state": "Selangor",
+  "area": "Cyberjaya",
+  "developer_group": "",
+  "type": "Residential",
+  "price": "From RM630,000 (Gross)",
+  "price_short": "From RM630,000",
+  "tenure": "Freehold",
+  "size": "1,233 – 2,060 sqft",
+  "size_short": "1,233-2,060 sqft",
+  "rooms": "2 – 4 Bedrooms",
+  "rooms_short": "2 to 4 Beds",
+  "completion": "Est. Q4 2028",
+  "completion_short": "Q4 2028",
+  "status": "Under Construction",
+  "years": [
+   2028
+  ],
+  "loc": "Cyberjaya, Selangor",
+  "overview": "Myra Cove is a freehold lakeside residential enclave in the heart of Cyberjaya. Phase 2 has 421 homes of 1,233 to 2,060 sqft, with an infinity lap pool, a cantilevered gym and a 4-acre private park.",
+  "points": [
+   "Freehold, lakeside, 6.39 acres in the heart of Cyberjaya",
+   "Phase 2: 421 homes of 1,233 to 2,060 sqft, from RM630,000 (gross)",
+   "Phase 1 fully sold; Phase 2 completion expected Q4 2028"
+  ],
+  "selling_points": [
+   "Freehold residential title",
+   "Lakeside setting",
+   "4-acre private park",
+   "Infinity lap pool and cantilevered gym",
+   "Large layouts with garden-terrace options"
+  ],
+  "amenities": [
+   "Cyberjaya Lake",
+   "Cyberjaya town centre",
+   "Putrajaya",
+   "MRT Putrajaya Line"
+  ],
+  "loc_text": "Myra Cove is beside the lake in the heart of Cyberjaya, close to Putrajaya.",
+  "buyer_fit": [
+   {
+    "title": "Families",
+    "desc": "Large homes up to 2,060 sqft."
+   },
+   {
+    "title": "Upgraders",
+    "desc": "Lakeside homes with a private park."
+   },
+   {
+    "title": "Investors",
+    "desc": "Freehold residential title in Cyberjaya."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "6.39 acres",
+   "Total Units": "Phase 1: 279 (sold out), Phase 2: 421",
+   "Title": "Residential",
+   "Price per Sqft": "From RM487 psf (Gross)",
+   "Maintenance Fee": "RM0.25 psf + 10% sinking fund",
+   "Lifts": "4 per floor (Phase 2)"
+  },
+  "layouts": [
+   {
+    "type": "Type T6",
+    "size": "1,421 sqft",
+    "rooms": "3 Bedrooms",
+    "tag": "",
+    "desc": "A Phase 2 family layout."
+   }
+  ],
+  "tags": [
+   "Myra Cove",
+   "Myra Cove Cyberjaya",
+   "Myra Cove price",
+   "Myra Cove floor plan",
+   "new project Cyberjaya",
+   "Cyberjaya condo for sale",
+   "freehold condo Selangor",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "Sanderling 2",
+  "tag": "Cyberjaya",
+  "state": "Selangor",
+  "area": "Cyberjaya",
+  "developer_group": "Avaland",
+  "type": "Residential",
+  "price": "From RM496,800 (Gross)",
+  "price_short": "From RM496,800",
+  "tenure": "Freehold",
+  "size": "958 – 1,324 sqft",
+  "size_short": "958-1,324 sqft",
+  "rooms": "3 – 3+1 Bedrooms",
+  "rooms_short": "3 to 3+1 Beds",
+  "completion": "Est. Q4 2028",
+  "completion_short": "Q4 2028",
+  "status": "Under Construction",
+  "years": [
+   2028
+  ],
+  "loc": "Cyberjaya, Selangor",
+  "overview": "Sanderling 2 is the second phase of Sanderling in an award-winning township in Cyberjaya: two 26-storey towers with 606 freehold homes on 5.30 acres. Homes of 958 to 1,324 sqft have 3 to 3+1 bedrooms and 2 car parks, with a large facilities podium.",
+  "points": [
+   "Freehold, 606 homes in two 26-storey towers on 5.30 acres",
+   "3 to 3+1 bedrooms, 958 to 1,324 sqft, from RM496,800 (gross)",
+   "Residential title with 2 car parks per home"
+  ],
+  "selling_points": [
+   "Freehold residential title",
+   "2 car parks per home",
+   "Large facilities podium",
+   "12 units per floor",
+   "Lake-facing township in Cyberjaya"
+  ],
+  "amenities": [
+   "Cyberjaya Lake",
+   "Cyberjaya town centre",
+   "Putrajaya",
+   "MRT Putrajaya Line"
+  ],
+  "loc_text": "Sanderling 2 is in a lakeside township in Cyberjaya, close to Putrajaya and the MRT Putrajaya Line.",
+  "buyer_fit": [
+   {
+    "title": "Families",
+    "desc": "3+1-bedroom homes up to 1,324 sqft."
+   },
+   {
+    "title": "First-time Buyers",
+    "desc": "Freehold family homes from RM496,800 (gross)."
+   },
+   {
+    "title": "Investors",
+    "desc": "Residential title in Cyberjaya."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "5.30 acres",
+   "Total Units": "606 units: Tower 7 303, Tower 8 303",
+   "Building Height": "26 floors",
+   "Title": "Residential",
+   "Price per Sqft": "From RM518 psf (Gross)",
+   "Maintenance Fee": "About RM0.30 psf",
+   "Lifts": "3 + 1 service lift",
+   "Car Parks": "2 per unit"
+  },
+  "layouts": [
+   {
+    "type": "Type D2A-2",
+    "size": "969 sqft",
+    "rooms": "3 Bedrooms",
+    "tag": "Show unit",
+    "desc": "A 3-bedroom family home."
+   },
+   {
+    "type": "Type F1",
+    "size": "1,324 sqft",
+    "rooms": "3+1 Bedrooms",
+    "tag": "Show unit",
+    "desc": "The largest layout, with 3+1 bedrooms."
+   }
+  ],
+  "tags": [
+   "Sanderling 2",
+   "Sanderling 2 Cyberjaya",
+   "Sanderling 2 price",
+   "Sanderling 2 floor plan",
+   "new project Cyberjaya",
+   "Cyberjaya condo for sale",
+   "freehold condo Selangor",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "Bayu @ Mori Park",
+  "tag": "Shah Alam",
+  "state": "Selangor",
+  "area": "Shah Alam",
+  "developer_group": "OSK Property",
+  "type": "Serviced Apartment",
+  "price": "From RM250,000 (Gross)",
+  "price_short": "From RM250,000",
+  "tenure": "Leasehold (until 2120)",
+  "size": "550 – 958 sqft",
+  "size_short": "550-958 sqft",
+  "rooms": "1+1 – 4 Bedrooms",
+  "rooms_short": "1+1 to 4 Beds",
+  "completion": "Est. Q2 2029",
+  "completion_short": "Q2 2029",
+  "status": "New Launch",
+  "years": [
+   2029
+  ],
+  "loc": "Seksyen 13, Shah Alam, Selangor",
+  "overview": "Bayu @ Mori Park is a transit-oriented development in Seksyen 13, Shah Alam, with 841 serviced apartments and 187 flexi suites in two 36-storey towers on 3.41 acres. Homes run from 550 sqft with 1+1 bedrooms to 958 sqft with 4 bedrooms.",
+  "points": [
+   "841 serviced apartments and 187 flexi suites on 3.41 acres",
+   "1+1 to 4 bedrooms, 550 to 958 sqft, from RM250,000 (gross)",
+   "Transit-oriented location in Seksyen 13, Shah Alam"
+  ],
+  "selling_points": [
+   "Transit-oriented development",
+   "Entry price from RM250,000 (gross)",
+   "Layouts up to 4 bedrooms",
+   "Facilities on Levels 8 and 9",
+   "In the Mori Park development"
+  ],
+  "amenities": [
+   "LRT3 Stadium Shah Alam",
+   "Management & Science University (MSU)",
+   "Stadium Shah Alam",
+   "Federal Highway"
+  ],
+  "loc_text": "Bayu @ Mori Park is in Seksyen 13, Shah Alam, a high-connectivity area near the LRT3 line, MSU and the Shah Alam stadium precinct.",
+  "buyer_fit": [
+   {
+    "title": "Students & Young Workers",
+    "desc": "Compact homes from 550 sqft near MSU and the LRT."
+   },
+   {
+    "title": "Families",
+    "desc": "3- and 4-bedroom layouts of 958 sqft."
+   },
+   {
+    "title": "Investors",
+    "desc": "Low entry price in a transit-oriented development."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "3.41 acres",
+   "Total Units": "841 serviced apartments + 187 flexi suites",
+   "Building Height": "36 storeys",
+   "Title": "Commercial (HDA)",
+   "Price per Sqft": "RM455 – RM702 psf (Gross)",
+   "Maintenance Fee": "Est. RM0.385 psf + 10% sinking fund",
+   "Lifts": "5 + 1 service lift"
+  },
+  "layouts": [
+   {
+    "type": "Type A",
+    "size": "550 sqft",
+    "rooms": "1+1 Bedrooms, 1 Bathroom",
+    "tag": "Show unit",
+    "desc": "A compact 1+1-bedroom home."
+   },
+   {
+    "type": "Type B",
+    "size": "829 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 3-bedroom home."
+   },
+   {
+    "type": "Type C",
+    "size": "958 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A larger 3-bedroom home."
+   },
+   {
+    "type": "Type D",
+    "size": "958 sqft",
+    "rooms": "4 Bedrooms, 2 Bathrooms",
+    "tag": "Largest",
+    "desc": "A 4-bedroom home."
+   }
+  ],
+  "tags": [
+   "Bayu @ Mori Park",
+   "Bayu @ Mori Park Shah Alam",
+   "Bayu @ Mori Park price",
+   "Bayu @ Mori Park floor plan",
+   "new project Shah Alam",
+   "Shah Alam condo for sale",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "Bayu Timur Residences",
+  "tag": "Shah Alam",
+  "state": "Selangor",
+  "area": "Shah Alam",
+  "developer_group": "Berjaya Land",
+  "type": "Residential",
+  "price": "From RM528,000 (Gross)",
+  "price_short": "From RM528,000",
+  "tenure": "Freehold",
+  "size": "1,000 – 1,280 sqft",
+  "size_short": "1,000-1,280 sqft",
+  "rooms": "3 Bedrooms",
+  "rooms_short": "3 Beds",
+  "completion": "Est. Q3 2029",
+  "completion_short": "Q3 2029",
+  "status": "New Launch",
+  "years": [
+   2029
+  ],
+  "loc": "Bukit Rimau, Shah Alam, Selangor",
+  "overview": "Bayu Timur Residences is a freehold development of 518 homes on 8.51 acres in Bukit Rimau, Shah Alam, with two low-rise blocks and two 23-storey towers. Homes of 1,000 to 1,280 sqft have 3 bedrooms, with dual-key options in the larger layouts, next to golf course views.",
+  "points": [
+   "Freehold, 518 homes on 8.51 acres in Bukit Rimau",
+   "3 bedrooms, 1,000 to 1,280 sqft, from RM528,000 (gross)",
+   "Dual-key layouts of 1,200 and 1,280 sqft"
+  ],
+  "selling_points": [
+   "Freehold residential title",
+   "Low density: 8.51 acres for 518 homes",
+   "Dual-key options",
+   "Golf course and green views",
+   "Mix of 4-storey and 23-storey blocks"
+  ],
+  "amenities": [
+   "AEON Big Bukit Rimau",
+   "Columbia Asia Hospital Bukit Rimau",
+   "Quayside Mall",
+   "Kota Permai Golf & Country Club",
+   "Tenby International School"
+  ],
+  "loc_text": "Bayu Timur is in Bukit Rimau, Shah Alam, next to Kota Kemuning, with the Federal Highway, KESAS and SKVE close by.",
+  "buyer_fit": [
+   {
+    "title": "Families",
+    "desc": "3-bedroom homes up to 1,280 sqft."
+   },
+   {
+    "title": "Investors",
+    "desc": "Dual-key layouts for owner-occupiers who rent out part of the home."
+   },
+   {
+    "title": "First-time Buyers",
+    "desc": "Freehold family homes from RM528,000 (gross)."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "8.51 acres",
+   "Total Units": "518 units: Blocks A & B 96, Blocks C & D 422",
+   "Building Height": "Blocks A & B 4 floors, Blocks C & D 23 floors",
+   "Title": "Residential",
+   "Price per Sqft": "RM528 – RM559 psf (Gross)",
+   "Maintenance Fee": "Est. RM0.30 psf (incl. sinking fund)"
+  },
+  "layouts": [
+   {
+    "type": "Type A",
+    "size": "1,000 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Entry",
+    "desc": "A 3-bedroom family home."
+   },
+   {
+    "type": "Type B",
+    "size": "1,100 sqft",
+    "rooms": "3 Bedrooms, 3 Bathrooms",
+    "tag": "",
+    "desc": "A 3-bedroom home."
+   },
+   {
+    "type": "Type C",
+    "size": "1,200 sqft",
+    "rooms": "3 Bedrooms, 4 Bathrooms (dual key)",
+    "tag": "Dual key",
+    "desc": "A dual-key layout."
+   },
+   {
+    "type": "Type D",
+    "size": "1,280 sqft",
+    "rooms": "3 Bedrooms, 4 Bathrooms (dual key)",
+    "tag": "Show unit",
+    "desc": "The largest dual-key layout."
+   }
+  ],
+  "tags": [
+   "Bayu Timur Residences",
+   "Bayu Timur Residences Shah Alam",
+   "Bayu Timur Residences price",
+   "Bayu Timur Residences floor plan",
+   "new project Shah Alam",
+   "Shah Alam condo for sale",
+   "freehold condo Selangor",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "Casa D'Arcadia",
+  "tag": "Shah Alam",
+  "state": "Selangor",
+  "area": "Shah Alam",
+  "developer_group": "S P Setia",
+  "type": "Residential",
+  "price": "From RM3,235,800 (Gross)",
+  "price_short": "From RM3,235,800",
+  "tenure": "Freehold",
+  "size": "3,345 – 4,393 sqft",
+  "size_short": "3,345-4,393 sqft",
+  "rooms": "4 – 5+1 Bedrooms",
+  "rooms_short": "4 to 5+1 Beds",
+  "completion": "Est. Dec 2027",
+  "completion_short": "Dec 2027",
+  "status": "Under Construction",
+  "years": [
+   2027
+  ],
+  "loc": "Alam Impian, Seksyen 35, Shah Alam, Selangor",
+  "overview": "Casa D'Arcadia is a low-density, resort-style enclave of 172 homes in the Cinematic Arts Precinct of Alam Impian, Shah Alam. It offers 3-storey semi-detached homes of 4,280 to 4,393 sqft and 2-storey semi-detached homes of about 3,345 sqft, around lakes and landscaped parks.",
+  "points": [
+   "Freehold, individual title, 172 homes on 9.3 acres",
+   "3-storey semi-Ds of 4,280 to 4,393 sqft and 2-storey semi-Ds of about 3,345 sqft",
+   "From RM3,235,800 (gross), completion expected Dec 2027"
+  ],
+  "selling_points": [
+   "Freehold, individual title",
+   "Low density: 172 homes",
+   "Resort-style tropical architecture",
+   "Lake and park setting",
+   "Up to 5+1 bedrooms"
+  ],
+  "amenities": [
+   "Alam Impian township",
+   "Federal Highway",
+   "KESAS Highway",
+   "Shah Alam city centre"
+  ],
+  "loc_text": "Casa D'Arcadia is in the Cinematic Arts Precinct of Alam Impian, Seksyen 35, Shah Alam, a lake-filled township with links to the KESAS and Federal Highway.",
+  "buyer_fit": [
+   {
+    "title": "Families",
+    "desc": "Semi-Ds with up to 5+1 bedrooms."
+   },
+   {
+    "title": "Upgraders",
+    "desc": "Large resort-style landed homes."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "9.3 acres",
+   "Total Units": "172 homes (semi-Ds and villas)",
+   "Title": "Residential (individual title)",
+   "Price per Sqft": "RM756 – RM815 psf (Gross)"
+  },
+  "layouts": [
+   {
+    "type": "Type A / B (3-storey Semi-D)",
+    "size": "4,280 – 4,393 sqft",
+    "rooms": "5+1 Bedrooms, 7 Bathrooms",
+    "tag": "Largest",
+    "desc": "A three-storey semi-detached home."
+   },
+   {
+    "type": "Type C / D (2-storey Semi-D)",
+    "size": "3,345 – 3,347 sqft",
+    "rooms": "4 Bedrooms, 6 Bathrooms",
+    "tag": "",
+    "desc": "A two-storey semi-detached home."
+   }
+  ],
+  "tags": [
+   "Casa D'Arcadia",
+   "Casa D'Arcadia Shah Alam",
+   "Casa D'Arcadia price",
+   "Casa D'Arcadia floor plan",
+   "new project Shah Alam",
+   "Shah Alam landed house for sale",
+   "freehold landed Selangor",
+   "new launch landed Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "Seri Embun",
+  "tag": "Shah Alam",
+  "state": "Selangor",
+  "area": "Shah Alam",
+  "developer_group": "Eastern & Oriental",
+  "type": "Residential",
+  "price": "From RM1,600,000 (Gross)",
+  "price_short": "From RM1,600,000",
+  "tenure": "Freehold",
+  "size": "2,982 – 3,339 sqft",
+  "size_short": "2,982-3,339 sqft",
+  "rooms": "5 Bedrooms",
+  "rooms_short": "5 Beds",
+  "completion": "Est. Q1 2029",
+  "completion_short": "Q1 2029",
+  "status": "New Launch",
+  "years": [
+   2029
+  ],
+  "loc": "City of Elmina, Shah Alam, Selangor",
+  "overview": "Seri Embun is a freehold hillside enclave of 360 three-storey superlink homes on 35.85 acres in the City of Elmina, Shah Alam. Homes of 2,982 to 3,339 sqft have 5 bedrooms, around a clubhouse, parks and a lake.",
+  "points": [
+   "Freehold, 360 three-storey superlink homes on 35.85 acres",
+   "5 bedrooms, 2,982 to 3,339 sqft, from RM1.6 million (gross)",
+   "Gated community in the City of Elmina"
+  ],
+  "selling_points": [
+   "Freehold",
+   "Gated and guarded",
+   "Clubhouse for residents",
+   "Hillside setting with parks and a lake",
+   "23 ft wide superlink homes"
+  ],
+  "amenities": [
+   "City of Elmina",
+   "Guthrie Corridor Expressway (GCE)",
+   "DASH Highway",
+   "NKVE"
+  ],
+  "loc_text": "Seri Embun is in the City of Elmina, Shah Alam, with the Guthrie Corridor Expressway, DASH and NKVE nearby.",
+  "buyer_fit": [
+   {
+    "title": "Families",
+    "desc": "5-bedroom homes of about 3,000 sqft and more."
+   },
+   {
+    "title": "Upgraders",
+    "desc": "Gated landed living in a township with parks."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "35.85 acres",
+   "Total Units": "360 units",
+   "Type": "3-storey superlink homes",
+   "Land Size": "23 x 75 ft",
+   "Title": "Residential strata",
+   "Maintenance Fee": "Est. RM3.30 per share unit"
+  },
+  "layouts": [
+   {
+    "type": "Type A / B",
+    "size": "2,982 – 3,339 sqft",
+    "rooms": "5 Bedrooms",
+    "tag": "",
+    "desc": "Three-storey superlink homes."
+   }
+  ],
+  "tags": [
+   "Seri Embun",
+   "Seri Embun Shah Alam",
+   "Seri Embun price",
+   "Seri Embun floor plan",
+   "new project Shah Alam",
+   "Shah Alam landed house for sale",
+   "freehold landed Selangor",
+   "new launch landed Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "Myra Senja @ Subang 2",
+  "tag": "Shah Alam",
+  "state": "Selangor",
+  "area": "Shah Alam",
+  "developer_group": "",
+  "type": "Serviced Apartment",
+  "price": "From RM658,600 (Gross)",
+  "price_short": "From RM658,600",
+  "tenure": "Leasehold",
+  "size": "1,101 – 1,420 sqft",
+  "size_short": "1,101-1,420 sqft",
+  "rooms": "3 – 4 Bedrooms",
+  "rooms_short": "3 to 4 Beds",
+  "completion": "Est. 2028",
+  "completion_short": "2028",
+  "status": "Under Construction",
+  "years": [
+   2028
+  ],
+  "loc": "Subang 2, Shah Alam, Selangor",
+  "overview": "Myra Senja is a development of three 20-storey blocks and 576 homes on 5.06 acres in Subang 2, Shah Alam. Homes of 1,101 to 1,420 sqft have 3 to 4 bedrooms and 2 car parks each, with 19 facilities and a large green lawn.",
+  "points": [
+   "576 homes in three blocks on 5.06 acres",
+   "3 to 4 bedrooms, 1,101 to 1,420 sqft, from RM658,600 (gross)",
+   "2 individual car parks per home"
+  ],
+  "selling_points": [
+   "Large layouts from 1,101 sqft",
+   "2 individual car parks",
+   "19 facilities",
+   "Only 12 units per floor",
+   "Urban residences with retail"
+  ],
+  "amenities": [
+   "Subang 2",
+   "Ara Damansara",
+   "Shah Alam"
+  ],
+  "loc_text": "Myra Senja is in Subang 2, Shah Alam, close to Ara Damansara.",
+  "buyer_fit": [
+   {
+    "title": "Families",
+    "desc": "Up to 4 bedrooms and 1,420 sqft."
+   },
+   {
+    "title": "Upgraders",
+    "desc": "Large homes with 2 car parks."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "5.06 acres",
+   "Total Units": "576 units: Blocks A, B and C, 192 each",
+   "Building Height": "Level 1 – 4 parking, Level 5 – 20 homes",
+   "Title": "Commercial (HDA)",
+   "Price per Sqft": "From RM600 psf (Gross)",
+   "Lifts": "3 per floor",
+   "Car Parks": "2 per unit"
+  },
+  "layouts": [
+   {
+    "type": "Type T2A",
+    "size": "1,101 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 3-bedroom home."
+   },
+   {
+    "type": "Type T4",
+    "size": "1,420 sqft",
+    "rooms": "4 Bedrooms, 2 Bathrooms",
+    "tag": "Largest",
+    "desc": "A 4-bedroom home."
+   }
+  ],
+  "tags": [
+   "Myra Senja @ Subang 2",
+   "Myra Senja @ Subang 2 Shah Alam",
+   "Myra Senja @ Subang 2 price",
+   "Myra Senja @ Subang 2 floor plan",
+   "new project Shah Alam",
+   "Shah Alam condo for sale",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "Luminar Residence",
+  "tag": "Subang Jaya",
+  "state": "Selangor",
+  "area": "Subang Jaya",
+  "developer_group": "",
+  "type": "Serviced Apartment",
+  "price": "From RM356,000 (Gross)",
+  "price_short": "From RM356,000",
+  "tenure": "Freehold",
+  "size": "549 – 1,389 sqft",
+  "size_short": "549-1,389 sqft",
+  "rooms": "1+1 – 3 Bedrooms",
+  "rooms_short": "1+1 to 3 Beds",
+  "completion": "Est. Q4 2029",
+  "completion_short": "Q4 2029",
+  "status": "New Launch",
+  "years": [
+   2029
+  ],
+  "loc": "Federal Highway, Subang, Selangor",
+  "overview": "Luminar Residence is the first residential phase of Federal Avenue, a freehold mixed development with direct access to the Federal Highway at Subang. Two 48-level towers hold 751 homes from 549 sqft (1+1 bedrooms) to 1,389 sqft (3 bedrooms).",
+  "points": [
+   "Freehold, 751 homes in two 48-level towers on 2.27 acres",
+   "1+1 to 3 bedrooms, 549 to 1,389 sqft, from RM356,000 (gross)",
+   "Direct access to the Federal Highway"
+  ],
+  "selling_points": [
+   "Freehold",
+   "Direct Federal Highway access",
+   "Part of a mixed development with parks and retail",
+   "2 to 3 car parks for larger units",
+   "4 + 1 lifts"
+  ],
+  "amenities": [
+   "Subang Parade",
+   "Sri KDU International School",
+   "NU Empire",
+   "AEON Mall Shah Alam",
+   "Sunway Pyramid",
+   "Subang Jaya Medical Centre"
+  ],
+  "loc_text": "Luminar Residence is on the Federal Highway at Subang, about 4 km from Subang Parade and NU Empire and within 8 km of Sunway Pyramid, Summit USJ and Monash University.",
+  "buyer_fit": [
+   {
+    "title": "Young Professionals",
+    "desc": "1+1-bedroom homes from 549 sqft."
+   },
+   {
+    "title": "Families",
+    "desc": "3-bedroom homes up to 1,389 sqft."
+   },
+   {
+    "title": "Investors",
+    "desc": "Freehold units near Subang Jaya and Sunway."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "2.27 acres",
+   "Total Units": "751 units: Tower A 358, Tower B 393",
+   "Building Height": "48 levels",
+   "Title": "Commercial (HDA)",
+   "Price per Sqft": "About RM700 psf (Gross)",
+   "Lifts": "4 + 1 lifts",
+   "Units per Floor": "10 – 11"
+  },
+  "layouts": [
+   {
+    "type": "Type A",
+    "size": "549 sqft",
+    "rooms": "1+1 Bedrooms, 1 Bathroom",
+    "tag": "Entry",
+    "desc": "A compact 1+1-bedroom home."
+   },
+   {
+    "type": "Type C",
+    "size": "872 sqft",
+    "rooms": "2 Bedrooms, 2 Bathrooms",
+    "tag": "Show unit",
+    "desc": "A 2-bedroom home."
+   },
+   {
+    "type": "Type E",
+    "size": "1,389 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Show unit",
+    "desc": "The largest layout."
+   }
+  ],
+  "tags": [
+   "Luminar Residence",
+   "Luminar Residence Subang Jaya",
+   "Luminar Residence price",
+   "Luminar Residence floor plan",
+   "new project Subang Jaya",
+   "Subang Jaya condo for sale",
+   "freehold condo Selangor",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ],
+  "no_developer": true
+ },
+ {
+  "name": "Atwater Corporate Tower",
+  "tag": "Petaling Jaya",
+  "state": "Selangor",
+  "area": "Petaling Jaya",
+  "developer_group": "Paramount Property",
+  "type": "Commercial Suites",
+  "price": "From RM1,236,100 (Gross)",
+  "price_short": "From RM1,236,100",
+  "tenure": "Leasehold (until 2116)",
+  "size": "1,417 – 16,547 sqft",
+  "size_short": "1,417-16,547 sqft",
+  "rooms": "Office Floors",
+  "rooms_short": "Office",
+  "completion": "Completed (Q3 2024)",
+  "completion_short": "Completed (Q3 2024)",
+  "status": "Completed",
+  "years": [
+   2024
+  ],
+  "loc": "Seksyen 13, Petaling Jaya, Selangor",
+  "overview": "Atwater Corporate Tower is a completed pair of corporate office towers in Seksyen 13, Petaling Jaya, billed as Petaling Jaya's finest corporate office towers. Office spaces run from 1,417 sqft to whole floors of 16,547 sqft, in a 7-storey and a 15-storey tower.",
+  "points": [
+   "Completed office towers in Seksyen 13, Petaling Jaya",
+   "Office spaces from 1,417 sqft to 16,547 sqft, from RM1,236,100 (gross)",
+   "Commercial title, leasehold until 2116"
+  ],
+  "selling_points": [
+   "Completed and ready",
+   "Strata office spaces and whole floors",
+   "Modern facilities and workspaces",
+   "Public transport links",
+   "Seksyen 13 PJ address"
+  ],
+  "amenities": [
+   "Jalan Profesor Diraja Ungku Aziz",
+   "Federal Highway",
+   "Seksyen 13 Petaling Jaya"
+  ],
+  "loc_text": "Atwater is on Jalan Profesor Diraja Ungku Aziz in Seksyen 13, Petaling Jaya, with links to the Federal Highway.",
+  "buyer_fit": [
+   {
+    "title": "Business Owners",
+    "desc": "Own the office your company works from, from 1,417 sqft."
+   },
+   {
+    "title": "Investors",
+    "desc": "Completed office space in Petaling Jaya."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "5.09 acres (commercial 2.95 acres)",
+   "Towers": "Tower A 7 storeys, Tower B 15 storeys",
+   "Title": "Commercial",
+   "Price per Sqft": "From RM856 psf (Gross)",
+   "Maintenance Fee": "RM0.72 psf (incl. sinking fund)"
+  },
+  "layouts": [
+   {
+    "type": "Office suites",
+    "size": "1,417 – 16,547 sqft",
+    "rooms": "Office",
+    "tag": "",
+    "desc": "Office spaces up to whole floors."
+   }
+  ],
+  "tags": [
+   "Atwater Corporate Tower",
+   "Atwater Corporate Tower Petaling Jaya",
+   "Atwater Corporate Tower price",
+   "Atwater Corporate Tower floor plan",
+   "new project Petaling Jaya",
+   "Petaling Jaya office for sale",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "Amara Residences",
+  "tag": "Ara Damansara",
+  "state": "Selangor",
+  "area": "Ara Damansara",
+  "developer_group": "",
+  "type": "Serviced Apartment",
+  "price": "From RM574,200 (Gross)",
+  "price_short": "From RM574,200",
+  "tenure": "Freehold",
+  "size": "630 – 1,230 sqft",
+  "size_short": "630-1,230 sqft",
+  "rooms": "2 – 4 Rooms",
+  "rooms_short": "2 to 4 Rooms",
+  "completion": "Est. Q4 2028",
+  "completion_short": "Q4 2028",
+  "status": "Under Construction",
+  "years": [
+   2028
+  ],
+  "loc": "Ara Damansara, Petaling Jaya, Selangor",
+  "overview": "Amara Residences is a freehold 28-storey mixed development in Ara Damansara with 412 serviced apartments on 2.36 acres. Homes run from 630 to 1,230 sqft, starting at Level 10, with facilities on Level 9 and a sky pool on Level 29.",
+  "points": [
+   "Freehold, 412 homes on 2.36 acres",
+   "630 to 1,230 sqft, from RM574,200 (gross)",
+   "Near LRT Ara Damansara and LRT Lembah Subang"
+  ],
+  "selling_points": [
+   "Freehold",
+   "Homes start at Level 10",
+   "Sky facilities on Level 29",
+   "2 car parks per unit",
+   "Near two LRT stations"
+  ],
+  "amenities": [
+   "LRT Ara Damansara",
+   "LRT Lembah Subang",
+   "Citta Mall",
+   "Lotus's Ara Damansara",
+   "Sime Darby Medical Centre Ara Damansara",
+   "Saujana Golf & Country Club"
+  ],
+  "loc_text": "Amara Residences is in Ara Damansara, Petaling Jaya, close to LRT Ara Damansara, LRT Lembah Subang, Citta Mall and the NKVE.",
+  "buyer_fit": [
+   {
+    "title": "Young Professionals",
+    "desc": "Homes from 630 sqft near two LRT stations."
+   },
+   {
+    "title": "Families",
+    "desc": "3-bedroom homes up to 1,230 sqft."
+   },
+   {
+    "title": "Investors",
+    "desc": "Freehold units in Ara Damansara."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "2.36 acres",
+   "Total Units": "412 units",
+   "Building Height": "28 floors (homes from Level 10)",
+   "Title": "Serviced apartment (HDA Schedule H)",
+   "Price per Sqft": "From RM912 psf (Gross)",
+   "Maintenance Fee": "RM0.38 psf (incl. sinking fund)",
+   "Car Parks": "2 per unit"
+  },
+  "layouts": [
+   {
+    "type": "Type A2",
+    "size": "630 sqft (655 sqft built-up)",
+    "rooms": "2 Rooms, 2 Bathrooms",
+    "tag": "Entry",
+    "desc": "The smallest layout."
+   },
+   {
+    "type": "Type B/B1",
+    "size": "880 sqft (934 sqft built-up)",
+    "rooms": "3 Rooms, 2 Bathrooms",
+    "tag": "Show unit",
+    "desc": "A family layout."
+   },
+   {
+    "type": "Type C/C1",
+    "size": "1,050 sqft (1,112 sqft built-up)",
+    "rooms": "4 Rooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A larger family layout."
+   },
+   {
+    "type": "Type D",
+    "size": "1,230 sqft (1,272 sqft built-up)",
+    "rooms": "4 Rooms, 3 Bathrooms",
+    "tag": "Largest",
+    "desc": "The largest layout."
+   }
+  ],
+  "tags": [
+   "Amara Residences",
+   "Amara Residences Ara Damansara",
+   "Amara Residences price",
+   "Amara Residences floor plan",
+   "new project Ara Damansara",
+   "Ara Damansara condo for sale",
+   "freehold condo Selangor",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "The Arden Bandar Sri Damansara",
+  "tag": "Bandar Sri Damansara",
+  "state": "Selangor",
+  "area": "Bandar Sri Damansara",
+  "developer_group": "Sunsuria",
+  "type": "Commercial Suites",
+  "price": "From RM542,000 (Gross)",
+  "price_short": "From RM542,000",
+  "tenure": "Freehold",
+  "size": "495 – 1,615 sqft",
+  "size_short": "495-1,615 sqft",
+  "rooms": "Office Suites",
+  "rooms_short": "Office",
+  "completion": "Est. Q1 2028",
+  "completion_short": "Q1 2028",
+  "status": "Under Construction",
+  "years": [
+   2028
+  ],
+  "loc": "Damansara Avenue, Bandar Sri Damansara",
+  "overview": "The Arden is a freehold 38-storey office tower at Damansara Avenue, Bandar Sri Damansara, with 455 office suites from 495 to 1,615 sqft. Levels 1 to 4 hold facilities and Levels 5 to 37 hold the office suites, served by 6 + 1 lifts.",
+  "points": [
+   "Freehold, 455 office suites in a 38-storey tower",
+   "Office suites of 495 to 1,615 sqft, from RM542,000 (gross)",
+   "At Damansara Avenue, Bandar Sri Damansara"
+  ],
+  "selling_points": [
+   "Freehold commercial title",
+   "Office suites from 495 sqft",
+   "Facilities on Levels 1 to 4",
+   "6 + 1 lifts per floor",
+   "Part of the Damansara Avenue development"
+  ],
+  "amenities": [
+   "Damansara Avenue",
+   "Bandar Sri Damansara",
+   "Kepong",
+   "Desa ParkCity"
+  ],
+  "loc_text": "The Arden is at Damansara Avenue in Bandar Sri Damansara, with highways towards Kepong, Desa ParkCity and Petaling Jaya.",
+  "buyer_fit": [
+   {
+    "title": "Business Owners",
+    "desc": "Office suites from 495 sqft."
+   },
+   {
+    "title": "Investors",
+    "desc": "Freehold office space in Bandar Sri Damansara."
+   }
+  ],
+  "details_extra": {
+   "Total Units": "455 office suites",
+   "Building Height": "38 floors (Levels 1 – 4 facilities, 5 – 37 offices)",
+   "Title": "Commercial",
+   "Price per Sqft": "From RM1,100 psf (Gross)",
+   "Maintenance Fee": "RM0.65 psf (incl. sinking fund)",
+   "Lifts": "6 + 1 lifts",
+   "Units per Floor": "14",
+   "Car Parks": "No allocated car park"
+  },
+  "layouts": [
+   {
+    "type": "Type G",
+    "size": "1,087 sqft",
+    "rooms": "Office Suite",
+    "tag": "Show unit",
+    "desc": "An office suite shown in the show unit."
+   }
+  ],
+  "tags": [
+   "The Arden Bandar Sri Damansara",
+   "The Arden Bandar Sri Damansara Selangor",
+   "The Arden Bandar Sri Damansara price",
+   "The Arden Bandar Sri Damansara floor plan",
+   "new project Bandar Sri Damansara",
+   "Bandar Sri Damansara office for sale",
+   "freehold condo Selangor",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "Residensi Kamelia",
+  "tag": "Bandar Sri Damansara",
+  "state": "Selangor",
+  "area": "Bandar Sri Damansara",
+  "developer_group": "Land & General",
+  "type": "Serviced Apartment",
+  "price": "From RM250,000 (Gross)",
+  "price_short": "From RM250,000",
+  "tenure": "Freehold",
+  "size": "553 sqft",
+  "size_short": "553 sqft",
+  "rooms": "2 Bedrooms",
+  "rooms_short": "2 Beds",
+  "completion": "Est. Q1 2028",
+  "completion_short": "Q1 2028",
+  "status": "Under Construction",
+  "years": [
+   2028
+  ],
+  "loc": "Bandar Sri Damansara, Selangor",
+  "overview": "Residensi Kamelia is a freehold 26-storey tower of 602 homes on 2.31 acres in Bandar Sri Damansara. Every home is 553 sqft with 2 bedrooms and 1 bathroom. It is a Selangor housing scheme (LPHS) with buyer eligibility rules.",
+  "points": [
+   "Freehold, 602 homes in one 26-storey tower",
+   "553 sqft with 2 bedrooms, RM250,000 to RM270,000",
+   "Selangor housing scheme (LPHS): buyers must meet eligibility rules"
+  ],
+  "selling_points": [
+   "Freehold",
+   "Price from RM250,000",
+   "International schools within 5 km",
+   "Near the MRT",
+   "In the award-winning Bandar Sri Damansara township"
+  ],
+  "amenities": [
+   "Bestari International School",
+   "MRT Sri Damansara",
+   "Lotus's Kepong",
+   "Sungai Buloh MRT & KTM",
+   "Desa ParkCity"
+  ],
+  "loc_text": "Residensi Kamelia is in Bandar Sri Damansara, near the MRT, the DUKE, MRR2, LDP and NKVE highways, and international schools.",
+  "buyer_fit": [
+   {
+    "title": "First-time Buyers",
+    "desc": "A freehold home from RM250,000 for eligible buyers."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "2.31 acres",
+   "Total Units": "602 units",
+   "Building Height": "26 storeys",
+   "Title": "Commercial (HDA)",
+   "Scheme": "Selangor housing scheme (LPHS); eligibility rules apply",
+   "Maintenance Fee": "RM0.35 psf + 10% sinking fund",
+   "Lifts": "3 + 1 service lift",
+   "Car Parks": "1 per unit"
+  },
+  "layouts": [
+   {
+    "type": "Type A / A1",
+    "size": "553 sqft",
+    "rooms": "2 Bedrooms, 1 Bathroom",
+    "tag": "",
+    "desc": "Every home is 553 sqft with 2 bedrooms."
+   }
+  ],
+  "tags": [
+   "Residensi Kamelia",
+   "Residensi Kamelia Bandar Sri Damansara",
+   "Residensi Kamelia price",
+   "Residensi Kamelia floor plan",
+   "new project Bandar Sri Damansara",
+   "Bandar Sri Damansara condo for sale",
+   "freehold condo Selangor",
+   "new launch condo Selangor",
+   "雪兰莪新楼盘"
+  ]
+ },
+ {
+  "name": "Levia Residence",
+  "tag": "Cheras",
+  "state": "Kuala Lumpur",
+  "area": "Cheras",
+  "developer_group": "",
+  "type": "Residential",
+  "price": "From RM684,000 (Gross)",
+  "price_short": "From RM684,000",
+  "tenure": "Leasehold",
+  "size": "938 – 1,364 sqft",
+  "size_short": "938-1,364 sqft",
+  "rooms": "3 – 4+1 Bedrooms",
+  "rooms_short": "3 to 4+1 Beds",
+  "completion": "Est. Q4 2027",
+  "completion_short": "Q4 2027",
+  "status": "Under Construction",
+  "years": [
+   2027
+  ],
+  "loc": "Cheras, Kuala Lumpur",
+  "overview": "Levia Residence is a two-tower residential development of 788 homes on 4.71 acres in Cheras, south Kuala Lumpur, near KL city centre and TRX. Homes run from 938 to 1,364 sqft with 3 to 4+1 bedrooms.",
+  "points": [
+   "788 homes in two 36-floor towers on 4.71 acres",
+   "3 to 4+1 bedrooms, 938 to 1,364 sqft, from RM684,000 (gross)",
+   "Residential title, completion expected Q4 2027"
+  ],
+  "selling_points": [
+   "Residential title",
+   "Family layouts from 938 sqft",
+   "Up to 4 car parks for the largest homes",
+   "Resort-style facilities",
+   "Good access to major highways"
+  ],
+  "amenities": [
+   "Lotus's Cheras",
+   "Middle Ring Road 2 (MRR2)",
+   "Tasik Pandan Perdana",
+   "TRX"
+  ],
+  "loc_text": "Levia is in Cheras, south Kuala Lumpur, with access to MRR2 and the main highways towards KL city centre and TRX.",
+  "buyer_fit": [
+   {
+    "title": "Families",
+    "desc": "3- to 4+1-bedroom homes up to 1,364 sqft."
+   },
+   {
+    "title": "Upgraders",
+    "desc": "Large homes with up to 4 car parks."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "4.71 acres",
+   "Total Units": "788 units",
+   "Building Height": "36 floors",
+   "Title": "Residential",
+   "Price per Sqft": "From RM730 psf (Gross)",
+   "Maintenance Fee": "Est. RM0.33 psf (incl. sinking fund)",
+   "Lifts": "3 + 1 lifts"
+  },
+  "layouts": [
+   {
+    "type": "Type B",
+    "size": "938 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 3-bedroom home."
+   },
+   {
+    "type": "Type C",
+    "size": "1,109 sqft",
+    "rooms": "3+1 Bedrooms, 3 Bathrooms",
+    "tag": "",
+    "desc": "A larger family home."
+   },
+   {
+    "type": "Type D",
+    "size": "1,364 sqft",
+    "rooms": "4+1 Bedrooms, 3 Bathrooms",
+    "tag": "Largest",
+    "desc": "The largest layout, with 3 to 4 car parks."
+   }
+  ],
+  "tags": [
+   "Levia Residence",
+   "Levia Residence Cheras",
+   "Levia Residence price",
+   "Levia Residence floor plan",
+   "new project Cheras",
+   "Cheras condo for sale",
+   "new launch condo KL",
+   "吉隆坡新楼盘"
+  ],
+  "no_developer": true
+ },
+ {
+  "name": "The Maxxon",
+  "tag": "Cheras",
+  "state": "Kuala Lumpur",
+  "area": "Cheras",
+  "developer_group": "Hexxon Group",
+  "type": "Residential",
+  "price": "From RM530,000 (Gross)",
+  "price_short": "From RM530,000",
+  "tenure": "Freehold",
+  "size": "1,000 – 1,779 sqft",
+  "size_short": "1,000-1,779 sqft",
+  "rooms": "3 – 5 Bedrooms",
+  "rooms_short": "3 to 5 Beds",
+  "completion": "Est. Q3 2028",
+  "completion_short": "Q3 2028",
+  "status": "Under Construction",
+  "years": [
+   2028
+  ],
+  "loc": "Cheras, Kuala Lumpur",
+  "overview": "The Maxxon is a freehold, fully residential development of 816 homes in two towers on 9.625 acres in Cheras, Kuala Lumpur, near the Selangor Turf Club. Homes run from 1,000 to 1,779 sqft with 3 to 5 bedrooms, with more than 40 facilities and sky facilities.",
+  "points": [
+   "Freehold, 816 homes in two towers on 9.625 acres",
+   "3 to 5 bedrooms, 1,000 to 1,779 sqft, from RM530,000 (gross)",
+   "Fully residential title"
+  ],
+  "selling_points": [
+   "Freehold residential title",
+   "Large layouts from 1,000 sqft",
+   "More than 40 facilities",
+   "Low price per sqft for KL",
+   "Highway links via SUKE, SAGA and MRR2"
+  ],
+  "amenities": [
+   "Selangor Turf Club",
+   "SUKE Highway",
+   "Cheras-Kajang Highway",
+   "MRR2",
+   "Taman Len Seng"
+  ],
+  "loc_text": "The Maxxon is in Cheras, Kuala Lumpur, near Alam Damai and the Selangor Turf Club, with SUKE, SAGA, LEKAS, BESRAYA, SILK, MEX and MRR2 nearby.",
+  "buyer_fit": [
+   {
+    "title": "Families",
+    "desc": "3- to 5-bedroom homes up to 1,779 sqft."
+   },
+   {
+    "title": "First-time Buyers",
+    "desc": "Freehold KL homes from RM530,000 (gross)."
+   },
+   {
+    "title": "Investors",
+    "desc": "Low price per sqft for freehold KL."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "9.625 acres",
+   "Total Units": "816 units: Tower A 446, Tower B 370",
+   "Building Height": "Tower B 33 storeys",
+   "Title": "Residential",
+   "Price per Sqft": "RM530 – RM547 psf (Gross)",
+   "Maintenance Fee": "RM0.25 psf + 10% sinking fund",
+   "Lifts": "3 + 1 service lift"
+  },
+  "layouts": [
+   {
+    "type": "Type A",
+    "size": "1,000 sqft",
+    "rooms": "3 Bedrooms, 2 Bathrooms",
+    "tag": "Entry",
+    "desc": "A 3-bedroom family home."
+   },
+   {
+    "type": "Type B",
+    "size": "1,150 sqft",
+    "rooms": "4 Bedrooms, 2 Bathrooms",
+    "tag": "",
+    "desc": "A 4-bedroom home."
+   },
+   {
+    "type": "Type C",
+    "size": "1,500 sqft",
+    "rooms": "5 Bedrooms, 3 Bathrooms",
+    "tag": "Show unit",
+    "desc": "A 5-bedroom home."
+   }
+  ],
+  "tags": [
+   "The Maxxon",
+   "The Maxxon Cheras",
+   "The Maxxon price",
+   "The Maxxon floor plan",
+   "new project Cheras",
+   "Cheras condo for sale",
+   "freehold condo KL",
+   "new launch condo KL",
+   "吉隆坡新楼盘"
+  ]
+ },
+ {
+  "name": "Arte Star The Regal",
+  "tag": "Salak Selatan",
+  "state": "Kuala Lumpur",
+  "area": "Salak Selatan",
+  "developer_group": "Arte Corp",
+  "type": "Serviced Apartment",
+  "price": "From RM443,000 (Gross)",
+  "price_short": "From RM443,000",
+  "tenure": "Leasehold (until 2118)",
+  "size": "527 – 840 sqft",
+  "size_short": "527-840 sqft",
+  "rooms": "1 – 3 Bedrooms",
+  "rooms_short": "1 to 3 Beds",
+  "completion": "Est. Q4 2028",
+  "completion_short": "Q4 2028",
+  "status": "Under Construction",
+  "years": [
+   2028
+  ],
+  "loc": "Salak Selatan, Kuala Lumpur",
+  "overview": "The Regal is Edition One of Arte Star in Salak Selatan, Kuala Lumpur: a 62-floor London-themed tower of 846 SOHO units beside the Salak Selatan KTM and LRT stations and the upcoming MRT Circle Line. Units run from 527 to 840 sqft.",
+  "points": [
+   "846 SOHO units in a 62-floor tower",
+   "527 to 840 sqft, from RM443,000 (gross)",
+   "Next to KTM and LRT Salak Selatan and the upcoming MRT Circle Line"
+  ],
+  "selling_points": [
+   "Rail access: KTM, LRT and future MRT",
+   "London-themed design",
+   "Pop Art pool and Tea Party rooftop",
+   "Close to Sunway Velocity Mall",
+   "East-West Link and KL-Seremban Highway"
+  ],
+  "amenities": [
+   "LRT Salak Selatan",
+   "KTM Salak Selatan",
+   "MRT Circle Line (upcoming)",
+   "Sunway Velocity Mall",
+   "EkoCheras Mall",
+   "Mid Valley Megamall"
+  ],
+  "loc_text": "Arte Star is in Salak Selatan, Kuala Lumpur, beside the KTM and LRT Salak Selatan stations and the upcoming MRT Circle Line, with the East-West Link and KL-Seremban Highway nearby.",
+  "buyer_fit": [
+   {
+    "title": "Young Professionals",
+    "desc": "SOHO units from 527 sqft at a rail hub."
+   },
+   {
+    "title": "Investors",
+    "desc": "Rail-linked units close to KL city centre."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "About 4.29 acres (whole Arte Star)",
+   "Total Units": "846 SOHO units (Edition 1)",
+   "Building Height": "62 floors",
+   "Title": "Commercial (HDA)",
+   "Price per Sqft": "RM709 – RM750 psf (Gross)",
+   "Maintenance Fee": "Est. RM0.30 psf + 10% sinking fund",
+   "Lifts": "6 + 1 service lift",
+   "Units per Floor": "17"
+  },
+  "layouts": [
+   {
+    "type": "Type C",
+    "size": "840 sqft",
+    "rooms": "3 Bedrooms",
+    "tag": "Show unit",
+    "desc": "The largest layout."
+   }
+  ],
+  "tags": [
+   "Arte Star The Regal",
+   "Arte Star The Regal Salak Selatan",
+   "Arte Star The Regal price",
+   "Arte Star The Regal floor plan",
+   "new project Salak Selatan",
+   "Salak Selatan condo for sale",
+   "new launch condo KL",
+   "吉隆坡新楼盘"
+  ]
+ },
+ {
+  "name": "Arte Star Milano",
+  "tag": "Salak Selatan",
+  "state": "Kuala Lumpur",
+  "area": "Salak Selatan",
+  "developer_group": "Arte Corp",
+  "type": "Serviced Apartment",
+  "price": "From RM396,000 (Gross)",
+  "price_short": "From RM396,000",
+  "tenure": "Leasehold (until 2118)",
+  "size": "527 – 947 sqft",
+  "size_short": "527-947 sqft",
+  "rooms": "1 – 3 Bedrooms",
+  "rooms_short": "1 to 3 Beds",
+  "completion": "Est. Q4 2029",
+  "completion_short": "Q4 2029",
+  "status": "New Launch",
+  "years": [
+   2029
+  ],
+  "loc": "Salak Selatan, Kuala Lumpur",
+  "overview": "The Milano is Edition Two of Arte Star in Salak Selatan, Kuala Lumpur: a Milan-themed, transit-oriented tower of 51 floors beside the Salak Selatan KTM and LRT stations and the upcoming MRT Circle Line. Units run from 527 to 947 sqft, with sky facilities on Level 51 and ground-floor retail.",
+  "points": [
+   "Milan-themed tower of 51 floors, Edition Two of Arte Star",
+   "527 to 947 sqft, from RM396,000 (gross)",
+   "Next to KTM and LRT Salak Selatan and the upcoming MRT Circle Line"
+  ],
+  "selling_points": [
+   "Rail access: KTM, LRT and future MRT",
+   "Milan-themed lobby and Capri Club pool",
+   "Sky facilities on Level 51",
+   "Ground-floor retail",
+   "Shares amenities with The Regal"
+  ],
+  "amenities": [
+   "LRT Salak Selatan",
+   "KTM Salak Selatan",
+   "MRT Circle Line (upcoming)",
+   "Sunway Velocity Mall",
+   "EkoCheras Mall",
+   "Mid Valley Megamall"
+  ],
+  "loc_text": "Arte Star is in Salak Selatan, Kuala Lumpur, beside the KTM and LRT Salak Selatan stations and the upcoming MRT Circle Line, with the East-West Link and KL-Seremban Highway nearby.",
+  "buyer_fit": [
+   {
+    "title": "Young Professionals",
+    "desc": "Units from 527 sqft at a rail hub."
+   },
+   {
+    "title": "Investors",
+    "desc": "Entry price from RM396,000 (gross) next to three rail lines."
+   }
+  ],
+  "details_extra": {
+   "Land Area": "About 4.29 acres (whole Arte Star)",
+   "Total Units": "2,705 SOHO units + 7 retail lots (whole Arte Star)",
+   "Building Height": "51 floors (Level 51 sky facilities)",
+   "Title": "Commercial (HDA)",
+   "Price per Sqft": "About RM750 psf (Gross)",
+   "Maintenance Fee": "Est. RM0.30 psf + 10% sinking fund",
+   "Lifts": "8 lifts",
+   "Units per Floor": "20"
+  },
+  "layouts": [
+   {
+    "type": "Type A",
+    "size": "527 sqft",
+    "rooms": "1 Bedroom",
+    "tag": "Entry",
+    "desc": "The smallest layout."
+   },
+   {
+    "type": "Type C",
+    "size": "947 sqft",
+    "rooms": "3 Bedrooms",
+    "tag": "Largest",
+    "desc": "The largest layout."
+   }
+  ],
+  "tags": [
+   "Arte Star Milano",
+   "Arte Star Milano Salak Selatan",
+   "Arte Star Milano price",
+   "Arte Star Milano floor plan",
+   "new project Salak Selatan",
+   "Salak Selatan condo for sale",
+   "new launch condo KL",
+   "吉隆坡新楼盘"
+  ]
+ }
+]
