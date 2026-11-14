@@ -88,7 +88,7 @@ T = {'en': {
     'f3t': '8% stamp duty', 'f3d': 'A flat rate on the transfer for foreign buyers from 1 January 2026.',
     'f4t': 'State consent', 'f4d': 'Your lawyer applies for it after you sign. It adds a few weeks to a few months.',
     'ck_eb': 'Quick check', 'ck_h': 'Can you buy property in Malaysia?', 'ck_p': 'Pick a state to see the minimum price for foreign buyers.',
-    'ck_strata': 'Minimum price (strata: condo, serviced apartment)', 'ck_landed': 'Minimum price (landed)',
+    'ck_strata': 'Minimum price (strata: condo, serviced apartment)', 'ck_landed': 'Minimum price (landed)', 'ck_landed_s': 'Minimum price (strata-titled landed only)',
     'ck_stamp': 'Stamp duty on transfer', 'ck_stamp_v': '8% flat', 'ck_consent': 'State authority consent', 'ck_consent_v': 'Required',
     'ck_ask': 'Ask Keith', 'ck_go': 'Ask Keith which units qualify here →', 'ck_see': 'See the {n} projects that qualify', 'ck_none': 'No project on this site meets the minimum yet. Ask Keith about larger units.',
     'ck_note': 'A general guide to the current minimums. States revise them and some set different levels by district or title; Bumiputera lots and low-cost or affordable homes cannot be sold to foreigners. Keith confirms the figure for each unit before you book.',
@@ -143,7 +143,7 @@ T = {'en': {
     'f3t': '8% 印花税', 'f3d': '2026 年 1 月 1 日起，外国买家的转让印花税为固定 8%。',
     'f4t': '州政府批准', 'f4d': '签约后由律师申请，需要几个星期到几个月。',
     'ck_eb': '快速查询', 'ck_h': '你可以在马来西亚买房吗？', 'ck_p': '选一个州属，看外国买家的最低价格。',
-    'ck_strata': '最低价格（分层：公寓、服务式公寓）', 'ck_landed': '最低价格（有地房产）',
+    'ck_strata': '最低价格（分层：公寓、服务式公寓）', 'ck_landed': '最低价格（有地房产）', 'ck_landed_s': '最低价格（仅限分层地契有地房产）',
     'ck_stamp': '转让印花税', 'ck_stamp_v': '固定 8%', 'ck_consent': '州政府批准', 'ck_consent_v': '需要',
     'ck_ask': '问 Keith', 'ck_go': '问 Keith 这里哪些单位符合 →', 'ck_see': '查看符合条件的 {n} 个项目', 'ck_none': '本站暂时没有项目达到最低价格，可以问 Keith 较大的单位。',
     'ck_note': '以上为现行最低价格的大致参考。各州会调整，有些州按地区或地契类型设不同门槛；土著保留单位和低价、可负担房屋不能卖给外国人。下订前 Keith 会为每个单位确认实际门槛。',
@@ -212,13 +212,14 @@ facts = ''.join('<div class="fx"><i>%s</i><div>%s%s</div></div>' % (SV(IC[f]), r
 pills = ''.join('<button type="button" class="pl%s" data-k="%s">%s</button>' % (' on' if i == 0 else '', k, r('s_' + k)) for i, (k, *_) in enumerate(CHECK))
 CK = {k: {'s': money(s), 'l': money(l), 'n': COUNT[k]} for k, _, _, s, l in CHECK}
 k0 = CHECK[0][0]
+LANDED_S = ['kl', 'sel']   # these states: the landed minimum is for strata-titled landed homes
 wa_state = {k: waq("Hi Keith, I am a foreign buyer looking at %s. Which units meet the minimum price?" % T['en']['s_' + k]) for k, *_ in CHECK}
 ask = r('ck_ask')
 card = ('<div class="ck-card"><h3 id="ckName">%s</h3><p class="ck-n" id="ckNote" data-r="n_%s">%s</p><dl>'
         '<div><dt>%s</dt><dd id="ckS">%s</dd></div><div><dt>%s</dt><dd id="ckL">%s</dd></div>'
         '<div><dt>%s</dt><dd>%s</dd></div><div><dt>%s</dt><dd>%s</dd></div></dl>'
         '<a class="ck-go" id="ckGo" href="%s" target="_blank" rel="noopener" data-r="ck_go">%s</a></div>') % (
-    E(en['s_' + k0]), k0, E(en['n_' + k0]), r('ck_strata'), CK[k0]['s'] or ask, r('ck_landed'), CK[k0]['l'] or ask,
+    E(en['s_' + k0]), k0, E(en['n_' + k0]), r('ck_strata'), CK[k0]['s'] or ask, '<span id="ckLl" data-r="%s">%s</span>' % (('ck_landed_s', E(en['ck_landed_s'])) if k0 in LANDED_S else ('ck_landed', E(en['ck_landed']))), CK[k0]['l'] or ask,
     r('ck_stamp'), r('ck_stamp_v'), r('ck_consent'), r('ck_consent_v'), E(wa_state[k0]), E(en['ck_go']))
 
 
@@ -303,11 +304,11 @@ footer{border-top:1px solid var(--line);padding:26px 5vw;font-size:13px;color:va
  .pg{gap:12px;} .pc-b{padding:10px 12px 12px;} .pc-b b{font-size:14px;} .cos,.steps{grid-template-columns:1fr;} .mm{padding:26px 20px;} .mts{grid-template-columns:1fr;} .mm-logo{font-size:46px;} .cta{padding:32px 20px;} .sec{padding:40px 0;}}
 '''
 
-JS = '''<script>(function(){var T=%s,CK=%s,WA=%s;
+JS = '''<script>(function(){var T=%s,CK=%s,WA=%s,LS=%s;
 function lang(){var l='en';try{l=localStorage.getItem('kn_lang')||'en'}catch(e){}return T[l]?l:'en';}
 var cur='%s';
 function show(){var L=T[lang()],c=CK[cur];document.getElementById('ckName').textContent=L['s_'+cur];var n=document.getElementById('ckNote');n.setAttribute('data-r','n_'+cur);n.textContent=L['n_'+cur];
-document.getElementById('ckS').textContent=c.s||L.ck_ask;document.getElementById('ckL').textContent=c.l||L.ck_ask;
+var ll=document.getElementById('ckLl'),lk=LS.indexOf(cur)>-1?'ck_landed_s':'ck_landed';ll.setAttribute('data-r',lk);ll.textContent=L[lk];document.getElementById('ckS').textContent=c.s||L.ck_ask;document.getElementById('ckL').textContent=c.l||L.ck_ask;
 document.getElementById('ckGo').href=WA[cur];}
 function apply(){var L=T[lang()];document.querySelectorAll('[data-r]').forEach(function(el){var v=L[el.getAttribute('data-r')];if(v)el.textContent=v;});show();
 document.title=L.title+' | Keith Nah';}
@@ -318,7 +319,7 @@ document.addEventListener('click',function(e){var p=e.target.closest('.ck .pl');
 var f=e.target.closest('.fp .pl');if(f){filt(f.getAttribute('data-f'));return;}
 });
 document.addEventListener('DOMContentLoaded',function(){var s=window.knSetLang;if(typeof s==='function')window.knSetLang=function(){var r=s.apply(this,arguments);apply();return r;};apply();});
-apply();})();</script>''' % (json.dumps(T, ensure_ascii=False), json.dumps(CK), json.dumps(wa_state), k0)
+apply();})();</script>''' % (json.dumps(T, ensure_ascii=False), json.dumps(CK), json.dumps(wa_state), json.dumps(LANDED_S), k0)
 
 desc = 'Can foreigners buy property in Malaysia? Minimum prices by state, 8% stamp duty, state consent, costs, MM2H and how buying works.'
 page = '''<!DOCTYPE html>
