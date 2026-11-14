@@ -553,25 +553,11 @@
 "dev": "WCT Land (WCT OUG Development Sdn Bhd)"
 },
 {
-"name": "Aricia Residences",
-"slug": "aricia-residences",
-"state": "Kuala Lumpur",
-"area": "Sungai Besi",
-"dev": ""
-},
-{
 "name": "Arte Solaris",
 "slug": "arte-solaris",
 "state": "Kuala Lumpur",
 "area": "Mont Kiara",
 "dev": "Arte Corp (Solaris Ceria Sdn Bhd)"
-},
-{
-"name": "Aurum Business Centre",
-"slug": "aurum-business-centre",
-"state": "Kuala Lumpur",
-"area": "Sri Petaling",
-"dev": ""
 },
 {
 "name": "Ayanna Resort Residences",
@@ -586,13 +572,6 @@
 "state": "Kuala Lumpur",
 "area": "Seputeh",
 "dev": ""
-},
-{
-"name": "Ambience KL",
-"slug": "ambience-kl",
-"state": "Kuala Lumpur",
-"area": "Sungai Besi",
-"dev": "Faithview Group"
 },
 {
 "name": "Gen Starz Residences",
@@ -767,27 +746,6 @@
 "slug": "the-arden-bandar-sri-damansara",
 "state": "Selangor",
 "area": "Bandar Sri Damansara",
-"dev": ""
-},
-{
-"name": "Residensi Kamelia",
-"slug": "residensi-kamelia",
-"state": "Selangor",
-"area": "Bandar Sri Damansara",
-"dev": ""
-},
-{
-"name": "Arte Star The Regal",
-"slug": "arte-star-the-regal",
-"state": "Kuala Lumpur",
-"area": "Salak Selatan",
-"dev": ""
-},
-{
-"name": "Arte Star Milano",
-"slug": "arte-star-milano",
-"state": "Kuala Lumpur",
-"area": "Salak Selatan",
 "dev": ""
 }
 ]

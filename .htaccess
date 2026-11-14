@@ -35,6 +35,54 @@ Header set Cache-Control "public, max-age=86400"
 </IfModule>
 
 # Removed projects (410 Gone)
+Redirect gone /property/aurum-business-centre.html
+Redirect gone /zh/property/aurum-business-centre.html
+Redirect gone /zh-tw/property/aurum-business-centre.html
+Redirect gone /ms/property/aurum-business-centre.html
+Redirect gone /ja/property/aurum-business-centre.html
+Redirect gone /ko/property/aurum-business-centre.html
+Redirect gone /property/aricia-residences.html
+Redirect gone /zh/property/aricia-residences.html
+Redirect gone /zh-tw/property/aricia-residences.html
+Redirect gone /ms/property/aricia-residences.html
+Redirect gone /ja/property/aricia-residences.html
+Redirect gone /ko/property/aricia-residences.html
+Redirect gone /property/ambience-kl.html
+Redirect gone /zh/property/ambience-kl.html
+Redirect gone /zh-tw/property/ambience-kl.html
+Redirect gone /ms/property/ambience-kl.html
+Redirect gone /ja/property/ambience-kl.html
+Redirect gone /ko/property/ambience-kl.html
+Redirect gone /vs/ambience-kl-vs-aricia-residences.html
+Redirect gone /zh/vs/ambience-kl-vs-aricia-residences.html
+Redirect gone /zh-tw/vs/ambience-kl-vs-aricia-residences.html
+Redirect gone /ms/vs/ambience-kl-vs-aricia-residences.html
+Redirect gone /ja/vs/ambience-kl-vs-aricia-residences.html
+Redirect gone /ko/vs/ambience-kl-vs-aricia-residences.html
+Redirect gone /property/arte-star-the-regal.html
+Redirect gone /zh/property/arte-star-the-regal.html
+Redirect gone /zh-tw/property/arte-star-the-regal.html
+Redirect gone /ms/property/arte-star-the-regal.html
+Redirect gone /ja/property/arte-star-the-regal.html
+Redirect gone /ko/property/arte-star-the-regal.html
+Redirect gone /property/arte-star-milano.html
+Redirect gone /zh/property/arte-star-milano.html
+Redirect gone /zh-tw/property/arte-star-milano.html
+Redirect gone /ms/property/arte-star-milano.html
+Redirect gone /ja/property/arte-star-milano.html
+Redirect gone /ko/property/arte-star-milano.html
+Redirect gone /vs/arte-star-milano-vs-arte-star-the-regal.html
+Redirect gone /zh/vs/arte-star-milano-vs-arte-star-the-regal.html
+Redirect gone /zh-tw/vs/arte-star-milano-vs-arte-star-the-regal.html
+Redirect gone /ms/vs/arte-star-milano-vs-arte-star-the-regal.html
+Redirect gone /ja/vs/arte-star-milano-vs-arte-star-the-regal.html
+Redirect gone /ko/vs/arte-star-milano-vs-arte-star-the-regal.html
+Redirect gone /property/residensi-kamelia.html
+Redirect gone /zh/property/residensi-kamelia.html
+Redirect gone /zh-tw/property/residensi-kamelia.html
+Redirect gone /ms/property/residensi-kamelia.html
+Redirect gone /ja/property/residensi-kamelia.html
+Redirect gone /ko/property/residensi-kamelia.html
 Redirect gone /property/trinity-nordic-residences.html
 Redirect gone /zh/property/trinity-nordic-residences.html
 Redirect gone /zh-tw/property/trinity-nordic-residences.html
@@ -149,3 +197,11 @@ RedirectMatch 301 ^/area/cheras\.html$ /area/kuala-lumpur.html
 RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/area/cheras\.html$ /$1/area/kuala-lumpur.html
 RedirectMatch 301 ^/area/titiwangsa\.html$ /area/kuala-lumpur.html
 RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/area/titiwangsa\.html$ /$1/area/kuala-lumpur.html
+RedirectMatch 301 ^/area/sungai\-besi\.html$ /area/kuala-lumpur.html
+RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/area/sungai\-besi\.html$ /$1/area/kuala-lumpur.html
+RedirectMatch 301 ^/area/salak\-selatan\.html$ /area/kuala-lumpur.html
+RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/area/salak\-selatan\.html$ /$1/area/kuala-lumpur.html
+RedirectMatch 301 ^/area/sri\-petaling\.html$ /area/kuala-lumpur.html
+RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/area/sri\-petaling\.html$ /$1/area/kuala-lumpur.html
+RedirectMatch 301 ^/guides/bandar\-sri\-damansara\.html$ /resources.html
+RedirectMatch 301 ^/(zh|zh-tw|ms|ja|ko)/guides/bandar\-sri\-damansara\.html$ /$1/resources.html
