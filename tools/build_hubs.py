@@ -123,7 +123,7 @@ def shell(rel, title, desc, body, ld, msg):
   <a class="wa-btn" href="%s" target="_blank" rel="noopener">WhatsApp Keith</a>
 </header>
 %s
-<footer>&copy; 2026 Keith Nah Real Estate · <a href="../projects.html">All projects</a> · <a href="../developer/">Developers</a> · <a href="../station/">Near a station</a> · <a href="../vs/">Comparisons</a> · <a href="../privacy-policy.html">Privacy Policy</a></footer>
+<footer>&copy; 2026 Keith Nah Real Estate · <a href="../projects.html">All projects</a> · <a href="../developer/">Developers</a> · <a href="../station/">Browse by station</a> · <a href="../vs/">Comparisons</a> · <a href="../privacy-policy.html">Privacy Policy</a></footer>
 <script src="../lead-tracker.js"></script>
 %s
 </body>
@@ -240,7 +240,7 @@ for name, s in stations:
         ('<section class="sec"><div class="w">%s<div class="hb-chips">%s</div></div></section>' % (TX('stn_other', tag='h2'), ''.join(
             '<a class="hb-chip" href="%s.html">🚆 %s %s</a>' % (o['slug'], E(o['label']), TX('n_proj', tag='b', n=len(o['ix']))) for o in others))) if others else '',
         TX('stn_cta', tag='h2'), TX('stn_cta_p', tag='p'), E(wa('Hi Keith, I am looking for a home near %s.' % s['label'])))
-    ld = [bc_ld(('Home', 'https://keithnah.com/'), ('Near a station', 'https://keithnah.com/station/'), (s['label'], 'https://keithnah.com/station/%s.html' % s['slug'])),
+    ld = [bc_ld(('Home', 'https://keithnah.com/'), ('Browse by station', 'https://keithnah.com/station/'), (s['label'], 'https://keithnah.com/station/%s.html' % s['slug'])),
           item_list('New condos near %s' % s['label'], ix)]
     written.append(shell('station/%s.html' % s['slug'], 'New Condos Near %s %d | Keith Nah' % (s['label'], Y),
                          '%d new launch projects near %s%s, with starting prices, tenure and floor plans.' % (len(ix), s['label'], (', from ' + HB.rm(min(prices))) if prices else ''),
@@ -250,7 +250,7 @@ body = '<main><section class="hero"><div class="w">%s%s%s</div></section><sectio
     crumbs(home, (None, TX('stn_crumb'))), TX('stn_idx_h1', tag='h1', y=Y), TX('stn_idx_p', tag='p'),
     ''.join('<a href="%s.html"><small>%s</small>🚆 %s</a>' % (s['slug'], TX('n_proj', n=len(s['ix'])), E(s['label'])) for _n, s in stations))
 written.append(shell('station/index.html', 'New Condos Near MRT, LRT & Monorail Stations %d | Keith Nah' % Y, 'New launch projects near MRT, LRT, Monorail, KTM and RTS stations in Malaysia, station by station.',
-                     body, [bc_ld(('Home', 'https://keithnah.com/'), ('Near a station', 'https://keithnah.com/station/'))], 'Hi Keith, I am looking for a home near a station.'))
+                     body, [bc_ld(('Home', 'https://keithnah.com/'), ('Browse by station', 'https://keithnah.com/station/'))], 'Hi Keith, I am looking for a home near a station.'))
 
 
 # ---------- head-to-head comparisons ----------
