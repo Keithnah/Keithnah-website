@@ -195,7 +195,7 @@ T.update(json.load(open(os.path.join(HERE, 'i18n', 'foreign.json'), encoding='ut
 # calculator links and WhatsApp buttons with a short description: key -> [en, zh-CN, ms, ja, ko]
 NEW = {
     'co1l': ['Work out stamp duty and legal fees →', '计算印花税和律师费 →', 'Kira duti setem dan yuran guaman →', '印紙税と弁護士費用を計算する →', '인지세와 변호사 비용 계산하기 →'],
-    'co_cal': ['All free calculators: loan, stamp duty, rental yield, RPGT →', '全部免费计算器：房贷、印花税、租金回报、RPGT →', 'Semua kalkulator percuma: pinjaman, duti setem, hasil sewa, RPGT →', '無料計算ツール一覧：ローン、印紙税、利回り、RPGT →', '모든 무료 계산기: 대출, 인지세, 임대 수익률, RPGT →'],
+    'co_cal': ['All free calculators: loan, stamp duty, rental yield, RPGT', '全部免费计算器：房贷、印花税、租金回报、RPGT', 'Semua kalkulator percuma: pinjaman, duti setem, hasil sewa, RPGT', '無料計算ツール一覧：ローン、印紙税、利回り、RPGT', '모든 무료 계산기: 대출, 인지세, 임대 수익률, RPGT'],
     'w1d': ['Found a unit you like? Send Keith the project name and he will confirm the minimum price and whether it is open to foreign buyers.',
             '看中一个单位？把项目名字发给 Keith，他会确认门槛，以及这个单位是否开放给外国买家。',
             'Jumpa unit yang anda suka? Hantar nama projek kepada Keith dan dia akan mengesahkan harga minimum serta sama ada ia dibuka kepada pembeli asing.',
@@ -221,6 +221,23 @@ NEW = {
             'MM2H와 주택 구매를 함께 계획하시나요? 후보를 고르기 전에 Keith가 MM2H 등급과 주의 두 가지 최저 가격을 확인해 드립니다.'],
     'w4b': ['Ask about MM2H and property', '咨询 MM2H 和买房', 'Tanya tentang MM2H dan hartanah', 'MM2H と不動産について相談', 'MM2H와 부동산 문의'],
 }
+NEW.update({
+    'bs_eb': ['Foreign buyer best choice', '外国买家精选', 'Pilihan terbaik pembeli asing', '外国人購入者向けおすすめ', '외국인 구매자 추천'],
+    'bs_h': ["Keith's best choices for foreign buyers", 'Keith 为外国买家精选的项目', 'Pilihan terbaik Keith untuk pembeli asing', 'Keith が選ぶ外国人購入者向け物件', 'Keith가 고른 외국인 구매자 추천 프로젝트'],
+    'bs_p': ['Picked by Keith in the addresses foreign buyers ask about most: KL City Centre, Bukit Bintang, TRX, Damansara Heights and Petaling Jaya. Keith confirms which units meet the minimum price before you book.',
+             'Keith 在外国买家最常问的地点挑选：KL City Centre、Bukit Bintang、TRX、Damansara Heights 和 Petaling Jaya。下订前 Keith 会确认哪些单位达到门槛。',
+             'Dipilih oleh Keith di lokasi yang paling kerap ditanya pembeli asing: KL City Centre, Bukit Bintang, TRX, Damansara Heights dan Petaling Jaya. Keith mengesahkan unit mana yang mencapai harga minimum sebelum anda menempah.',
+             '外国人購入者から特に質問の多いエリア（KL City Centre、Bukit Bintang、TRX、Damansara Heights、Petaling Jaya）から Keith が選びました。予約前に、最低価格を満たす住戸を Keith が確認します。',
+             '외국인 구매자가 가장 많이 묻는 지역(KL City Centre, Bukit Bintang, TRX, Damansara Heights, Petaling Jaya)에서 Keith가 골랐습니다. 예약 전에 최저 가격을 충족하는 세대를 Keith가 확인해 드립니다.'],
+    'bs_por': ['Price on request', '价格请询问', 'Harga atas permintaan', '価格はお問い合わせ', '가격 문의'],
+    'bs_landed': ['ParkHomes (landed) from', 'ParkHomes 有地住宅起价', 'ParkHomes (atas tanah) dari', 'ParkHomes（土地付き）', 'ParkHomes(단독) 최저'],
+    'w5d': ['Want the latest prices and available units for these projects? Keith sends you the price list and the units open to foreign buyers.',
+            '想知道这些项目的最新价格和剩余单位？Keith 会把价格表和开放给外国买家的单位发给你。',
+            'Mahu harga terkini dan unit yang masih ada untuk projek ini? Keith menghantar senarai harga dan unit yang dibuka kepada pembeli asing.',
+            'これらの物件の最新価格と空き住戸を知りたいですか？Keith が価格表と外国人が購入できる住戸をお送りします。',
+            '이 프로젝트들의 최신 가격과 남은 세대가 궁금하신가요? Keith가 가격표와 외국인에게 열린 세대를 보내 드립니다.'],
+    'w5b': ['Get prices for these projects', '索取这些项目的价格', 'Dapatkan harga projek ini', 'これらの物件の価格をもらう', '이 프로젝트 가격 받기'],
+})
 for _k, _v in NEW.items():
     for _l, _s in zip(['en', 'zh-CN', 'ms', 'ja', 'ko'], _v):
         T[_l][_k] = _s
@@ -269,6 +286,35 @@ def pcard(k, v, i):
 
 
 grid = ''.join(pcard(*x) for x in OK)
+
+# ---------- Keith's best choices for foreign buyers (shown when FB_BEST=1 until Keith approves) ----------
+SHOW_BEST = os.environ.get('FB_BEST') == '1'
+BEST = [('KL City Centre', ['Clouthaus', 'The Conlay', 'MABA Suitez']),
+        ('Bukit Bintang', ['Pavilion Square', 'Orion Residence']),
+        ('TRX', ['Golden Crown Residence']),
+        ('Damansara Heights', ['Imperial Residence Pavilion Damansara Heights', 'Royal Suites Pavilion Damansara Heights']),
+        ('Petaling Jaya', ['Zenia @ ParkCity Damansara'])]
+_IDX = {p['name']: i for i, p in enumerate(A.P)}
+
+
+def bcard(name):
+    i = _IDX[name]
+    p = A.P[i]
+    href = 'property/%s.html' % A.SLUG.get(i, A.slug(p['name']))
+    img = ('<img src="%s" alt="%s" loading="lazy">' % (E(A.PHOTO[i]), E(p['name']))) if A.PHOTO.get(i) else '<i class="noimg"></i>'
+    ten = 'fh' if (p.get('tenure') or '').lower().startswith('freehold') else 'lh'
+    ps = prices(p['price'])
+    if name.startswith('Zenia'):   # Keith picked the landed ParkHomes
+        price = '<span data-r="bs_landed">%s</span> %s' % (E(en['bs_landed']), SH.price_tag('RM2,500,000', 2500000))
+    elif ps:
+        price = '<span data-r="pj_from">%s</span> %s' % (E(en['pj_from']), SH.price_tag(money(min(ps)), int(min(ps))))
+    else:
+        price = '<span data-r="bs_por">%s</span>' % E(en['bs_por'])
+    return ('<a class="pc" href="%s"><span class="pc-i">%s<em data-r="%s">%s</em></span><span class="pc-b"><b>%s</b><small>%s</small>'
+            '<span class="pc-p">%s</span></span></a>') % (href, img, ten, E(en[ten]), E(p['name']), E(p.get('size') or ''), price)
+
+
+best = ''.join('<div class="bs-g"><h3>%s</h3><div class="pg">%s</div></div>' % (E(a), ''.join(bcard(n) for n in names)) for a, names in BEST)
 more = ''.join('<a class="chip" data-k="%s" href="property/%s.html">%s<em>%s</em></a>' % (
     k, A.SLUG.get(i, A.slug(A.P[i]['name'])), E(A.P[i]['name']), E(A.PLACES[i][1])) for k, v, i in LARGER)
 fpills = '<button type="button" class="pl on" data-f="all">%s</button>' % r('pj_all') + ''.join(
@@ -280,7 +326,8 @@ costs = ''.join('<div class="co"><b data-r="co%dt">%s</b><p data-r="co%dd">%s</p
 WAQ = {1: 'Hi Keith, I am a foreign buyer. Can you check if this unit meets the minimum price: ',
        2: 'Hi Keith, I am a foreign buyer. Please send me a full cost sheet for the unit I like.',
        3: 'Hi Keith, I am buying from overseas. Can we book a video viewing?',
-       4: 'Hi Keith, I am planning MM2H and buying a home. Can you check both minimum prices for me?'}
+       4: 'Hi Keith, I am planning MM2H and buying a home. Can you check both minimum prices for me?',
+       5: "Hi Keith, I am a foreign buyer. Please send me the latest prices and available units for your best choices for foreign buyers."}
 def wcta(n):
     return ('<div class="wcta"><p data-r="w%dd">%s</p><a class="bt bt-w" href="%s" target="_blank" rel="noopener" data-cta="fb%d">%s<span data-r="w%db">%s</span></a></div>'
             % (n, E(en['w%dd' % n]), E(waq(WAQ[n])), n, CHAT, n, E(en['w%db' % n])))
@@ -338,7 +385,7 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.25;}
 .faq{margin-top:20px;display:flex;flex-direction:column;gap:10px;max-width:900px;} .faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;}
 .faq summary{font-weight:700;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px;} .faq summary:after{content:"+";color:var(--gold);font-size:22px;line-height:1;} .faq details[open] summary:after{content:"\\2212";}
 .faq p{color:var(--grey);font-size:14.5px;margin-top:10px;}
-.co-all{display:inline-block;margin-top:12px;font-weight:700;color:var(--gold);font-size:14.5px;} .co-all:hover{text-decoration:underline;}.wcta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:#fff;border:1px solid rgba(37,211,102,.35);border-left:4px solid #25d366;border-radius:16px;padding:18px 22px;margin-top:22px;}.wcta p{flex:1 1 320px;color:var(--ink);font-size:14.5px;font-weight:500;margin:0;} .wcta .bt{flex:0 0 auto;}.cta{background:var(--deep);color:#fff;border-radius:28px;padding:44px;text-align:center;margin:20px 0 30px;} .cta h2{color:#fff;} .cta p{color:rgba(255,255,255,.75);max-width:640px;margin:8px auto 20px;}
+.co-all{display:flex;align-items:center;gap:14px;margin-top:18px;padding:16px 20px;background:linear-gradient(135deg,#5E60CE,#7b7de0);color:#fff;border-radius:16px;font-weight:700;font-size:15.5px;box-shadow:0 10px 26px rgba(94,96,206,.28);transition:transform .2s,box-shadow .2s;}.co-all:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(94,96,206,.38);} .co-all span{flex:1;}.co-all i{flex:0 0 44px;height:44px;border-radius:12px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;}.co-all svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;} .co-all .co-ar{flex:0 0 22px;transition:transform .2s;} .co-all:hover .co-ar{transform:translateX(4px);}.wcta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:#fff;border:1px solid rgba(37,211,102,.35);border-left:4px solid #25d366;border-radius:16px;padding:18px 22px;margin-top:22px;}.wcta p{flex:1 1 320px;color:var(--ink);font-size:14.5px;font-weight:500;margin:0;} .wcta .bt{flex:0 0 auto;}.bs-g{margin-top:28px;} .bs-g h3{font-family:'Inter',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:10px;} .bs-g h3:after{content:'';flex:1;height:1px;background:var(--line);} .bs-g .pg{grid-template-columns:repeat(3,minmax(0,1fr));} @media(max-width:640px){.bs-g .pg{grid-template-columns:1fr 1fr;}}.cta{background:var(--deep);color:#fff;border-radius:28px;padding:44px;text-align:center;margin:20px 0 30px;} .cta h2{color:#fff;} .cta p{color:rgba(255,255,255,.75);max-width:640px;margin:8px auto 20px;}
 .disc{font-size:12px;color:var(--grey);padding-bottom:60px;max-width:900px;}
 footer{border-top:1px solid var(--line);padding:26px 5vw;font-size:13px;color:var(--grey);text-align:center;}
 @media(max-width:980px){.fxs{grid-template-columns:repeat(2,1fr);} .pg{grid-template-columns:repeat(2,minmax(0,1fr));} .steps{grid-template-columns:1fr 1fr;} .mm{grid-template-columns:1fr;}}
@@ -391,8 +438,9 @@ page = '''<!DOCTYPE html>
   <section class="fxs">{facts}</section>
   <section class="ck" id="check">{ckeb}<h2 data-r="ck_h">{ckh}</h2>{ckp}<div class="pls">{pills}</div>{card}{cknote}</section>
   {w1}
-  <section class="sec" id="costs">{coeb}<h2 data-r="co_h">{coh}</h2><div class="cos">{costs}</div>{conote}<a class="co-all" href="calculator.html" data-r="co_cal">{cocal}</a>{w2}</section>
+  <section class="sec" id="costs">{coeb}<h2 data-r="co_h">{coh}</h2><div class="cos">{costs}</div>{conote}<a class="co-all" href="calculator.html"><i><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h2M12 18h2M16 15v3"/></svg></i><span data-r="co_cal">{cocal}</span><svg class="co-ar" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>{w2}</section>
   <section class="sec" id="steps">{steb}<h2 data-r="st_h">{sth}</h2><ol class="steps">{steps}</ol>{w3}</section>
+  {bestsec}
   <section class="sec" id="mm2h"><div class="mm"><div><div class="mm-logo">MM2H</div>{mmeb}<h2 data-r="mm_h">{mmh}</h2>{mmp}
     <div class="mm-l"><a href="mm2h.html">{mmbtn} &rarr;</a><a href="mm2h/mm2h-property-rules-foreign-buyers.html">{mmlib} &rarr;</a><a href="mm2h.html#library">{mmlib2} &rarr;</a></div></div>
     <div class="mts">{tiers}</div></div></section>
@@ -411,13 +459,13 @@ page = '''<!DOCTYPE html>
            ckeb=r('ck_eb', 'span', 'eb'), ckh=E(en['ck_h']), ckp=r('ck_p', 'p', 'sp'), pills=pills, card=card, cknote=r('ck_note', 'small'),
            pjeb=r('pj_eb', 'span', 'eb'), pjh=E(en['pj_h']), pjp=r('pj_p', 'p', 'sp'), fpills=fpills, grid=grid,
            more=('<div class="more">%s%s<div class="chips">%s</div></div>' % (r('pj_more', 'b'), r('pj_more_p', 'p'), more)) if more else '',
-           pjnote=r('pj_note', 'p', 'note'), w1=wcta(1), w2=wcta(2), w3=wcta(3), w4=wcta(4), cocal=E(en['co_cal']), coeb=r('co_eb', 'span', 'eb'), coh=E(en['co_h']), costs=costs, conote=r('co_note', 'p', 'note'),
+           pjnote=r('pj_note', 'p', 'note'), w1=wcta(1), w2=wcta(2), w3=wcta(3), w4=wcta(4), bestsec=('<section class="sec" id="best">%s<h2 data-r="bs_h">%s</h2>%s%s%s</section>' % (r('bs_eb', 'span', 'eb'), E(en['bs_h']), r('bs_p', 'p', 'sp'), best, wcta(5))) if SHOW_BEST else '', cocal=E(en['co_cal']), coeb=r('co_eb', 'span', 'eb'), coh=E(en['co_h']), costs=costs, conote=r('co_note', 'p', 'note'),
            steb=r('st_eb', 'span', 'eb'), sth=E(en['st_h']), steps=steps, mmeb=r('mm_eb', 'span', 'eb'), mmh=E(en['mm_h']), mmp=r('mm_p', 'p'),
            mmbtn=r('mm_btn'), mmlib=r('mm_lib'), mmlib2=r('mm_lib2'), tiers=tiers, fqeb=r('fq_eb', 'span', 'eb'), fqh=E(en['fq_h']), faq=faq,
            ctah=E(en['cta_h']), ctap=r('cta_p', 'p'), disc=r('disc', 'p', 'disc'), js=JS)
-open('foreign-buyers.html', 'w', encoding='utf-8').write(SH.apply(page, '', 'foreign-buyers.html'))
+open(os.environ.get('FB_OUT', 'foreign-buyers.html'), 'w', encoding='utf-8').write(SH.apply(page, '', 'foreign-buyers.html'))
 
-if os.path.exists('sitemap.xml'):
+if os.path.exists('sitemap.xml') and not os.environ.get('FB_OUT'):
     sm = open('sitemap.xml', encoding='utf-8').read()
     if '/foreign-buyers.html<' not in sm:
         import datetime as _dt
