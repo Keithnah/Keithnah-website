@@ -15,11 +15,6 @@ The site is available in English, 简体中文, 繁體中文, Bahasa Malaysia, �
 
 ## Projects
 
-### <kn-t data-pt="4">Bukit Bintang</kn-t>
-- [Branniganz Suites @ Bukit Bintang](https://keithnah.com/property/branniganz-suites-bukit-bintang.html): Branniganz Suites @ Bukit Bintang, Bukit Bintang, Kuala Lumpur: RM 803.5K, 344 – 678 sqft, Studio – 2 Bedrooms, Leasehold (~94 yrs from VP).
-- [SWNK Houze @ BBCC](https://keithnah.com/property/swnk-houze-bbcc.html): SWNK Houze @ BBCC, Bukit Bintang City Centre (BBCC), Kuala Lumpur: RM 705K, 463 – 1,238 sqft, Studio – 3 Bedrooms (Dual Key), Leasehold (94 years, to 2110).
-- [Times Square 2](https://keithnah.com/property/times-square-2.html): Times Square 2, Jalan Imbi, Bukit Bintang: RM 688K, 488 – 1,356 sqft, 1 – 3 Bedrooms, Freehold. Completion Oct 2027.
-
 ### <kn-t data-pt="4">Bukit Jalil</kn-t>
 - [Ayanna Resort Residences](https://keithnah.com/property/ayanna-resort-residences.html): Ayanna Resort Residences, Bukit Jalil, Kuala Lumpur: From RM753,000 (Gross), 1,155 – 2,453 sqft, 3 – 4+2 Bedrooms, Freehold. Completion Q2 2027.
 - [OAKA Residences](https://keithnah.com/property/oaka-residences.html): OAKA Residences, Bukit Jalil, Kuala Lumpur: From RM836,000 (Gross), 882 – 1,423 sqft, 2 – 3 Bedrooms, Freehold. Completion Est. Q1 2028.
@@ -27,20 +22,6 @@ The site is available in English, 简体中文, 繁體中文, Bahasa Malaysia, �
 - [Ren Residences](https://keithnah.com/property/ren-residences.html): Ren Residences, Bukit Jalil, Kuala Lumpur: From RM537,000 (Gross), 920 – 1,680 sqft, 3 – 4+1 Bedrooms, Leasehold (99 years). Completion Est. Q4 2027.
 - [The Kingswoodz](https://keithnah.com/property/the-kingswoodz.html): The Kingswoodz, Bukit Jalil, Kuala Lumpur: From RM422,500 (Gross), 474 – 904 sqft, 1 – 3 Bedrooms, Leasehold. Completion Q4 2028.
 - [The Vividz](https://keithnah.com/property/the-vividz.html): The Vividz, Bukit Jalil, Kuala Lumpur: From RM446,400 (Gross), 484 – 915 sqft, 1 – 3 Bedrooms, Leasehold. Completion TBC (52mo after APDL).
-
-### <kn-t data-pt="4">KL City Centre</kn-t>
-- [Ascott Star Residence](https://keithnah.com/property/ascott-star-residence.html): Ascott Star Residence, Jalan Yap Kwan Seng, KL City Centre, Kuala Lumpur: Price on Request, 700 – 2,089 sqft, 1 – 3+1 Bedrooms, Freehold.
-- [Cappella Embassy](https://keithnah.com/property/cappella-embassy.html): Cappella Embassy, Jalan Ampang, Kuala Lumpur: From RM1,577,000 (Gross), 1,109 – 10,635 sqft, 2 – 8+2 Bedrooms, Leasehold.
-- [Centrix](https://keithnah.com/property/centrix.html): Centrix, Jalan Ampang, KL City Centre: RM 857K (est.), 564 – 1,039 sqft, Studio – 3 Beds, Leasehold 99 years. Completion Est. 2028 – 2029.
-- [Dawn KL City Centre](https://keithnah.com/property/dawn-kl-city-centre.html): Dawn KL City Centre, Jalan Kampung Baru, KL City Centre, Kuala Lumpur: From RM717,000 (Gross), 350 – 804 sqft, Studio – 2 Bedrooms (incl. Dual Key), Freehold.
-- [Divine KL City Centre](https://keithnah.com/property/divine-kl-city-centre.html): Divine KL City Centre, Jalan Tun Razak, KL City Centre — 400m from Suria KL City Centre: RM 997K, 502 – 1,319 sqft, 1+1 – 3+1 Bedrooms, Leasehold (Commercial…
-- [Eaton Residence](https://keithnah.com/property/eaton-residence.html): Eaton Residence, Jalan Kia Peng, KL City Centre: RM 1.3M, 635 – 2,831 sqft, 1 – 4 Bedrooms, Leasehold 99 years (to 31/12/2114).
-- [Hanaz Suites](https://keithnah.com/property/hanaz-suites.html): Hanaz Suites, Lorong Yap Kwan Seng, KL City Centre, Kuala Lumpur: From RM756,200 (Gross), 323 – 657 sqft, Studio – 2 Bedrooms, Freehold.
-- [Jewel Oxley Towers](https://keithnah.com/property/jewel-oxley-towers.html): Jewel Oxley Towers, Jalan Ampang, KL City Centre, Kuala Lumpur: RM 1.57M, 678 – 1,227 sqft, 1 – 3+1 Bedrooms, Freehold. Completed.
-- [Phoeniz Suites @ KL City Centre](https://keithnah.com/property/phoeniz-suites-kl-city-centre.html): Phoeniz Suites @ KL City Centre, KL City Centre, KL City Centre Fringe: RM 1.016M, 484 – 678 sqft, 1 Bedroom (Dual Key available), Freehold.
-- [Royal Lexis](https://keithnah.com/property/royal-lexis.html): Royal Lexis, Jalan Sultan Ismail, Bukit Bintang: RM 1.897M, 573 – 1,155 sqft, 1 Bedroom (Dual-Key avail.), Freehold. Completion Oct 2029.
-- [So/KL Oxley Towers](https://keithnah.com/property/so-kl-oxley-towers.html): So/KL Oxley Towers, Jalan Ampang, KL City Centre, Kuala Lumpur: RM 1.38M, 578 – 995 sqft, Studio – 2+1 Bedrooms, Freehold. Completed.
-- [Sutera Suites](https://keithnah.com/property/sutera-suites.html): Sutera Suites, Jalan Sungai Baru, Kampung Baru: RM 595K, 425 – 835 sqft, Studio – 2 Beds, Leasehold. Completion Est. Q1 2031.
 
 ### <kn-t data-pt="4">Petaling Jaya</kn-t>
 - [Accent Residence](https://keithnah.com/property/accent-residence.html): Accent Residence, Jalan Kemajuan, Section 13, Petaling Jaya: Price on Request, 1,165 – 2,811 sqft, 3 – 4 Bedrooms, Leasehold. Completion 2030.
@@ -148,15 +129,31 @@ The site is available in English, 简体中文, 繁體中文, Bahasa Malaysia, �
 - [M Aurora](https://keithnah.com/property/m-aurora.html): M Aurora, Old Klang Road, Kuala Lumpur: From RM339,000 (Gross), 556 – 1,019 sqft, 1+1 – 4 Bedrooms, Freehold. Completion 54 months from SPA (est. 2030).
 
 ### Other
+- [Ascott Star Residence](https://keithnah.com/property/ascott-star-residence.html): Ascott Star Residence, Jalan Yap Kwan Seng, KL City Centre, Kuala Lumpur: Price on Request, 700 – 2,089 sqft, 1 – 3+1 Bedrooms, Freehold.
+- [Branniganz Suites @ Bukit Bintang](https://keithnah.com/property/branniganz-suites-bukit-bintang.html): Branniganz Suites @ Bukit Bintang, Bukit Bintang, Kuala Lumpur: RM 803.5K, 344 – 678 sqft, Studio – 2 Bedrooms, Leasehold (~94 yrs from VP).
+- [Cappella Embassy](https://keithnah.com/property/cappella-embassy.html): Cappella Embassy, Jalan Ampang, Kuala Lumpur: From RM1,577,000 (Gross), 1,109 – 10,635 sqft, 2 – 8+2 Bedrooms, Leasehold.
+- [Centrix](https://keithnah.com/property/centrix.html): Centrix, Jalan Ampang, KL City Centre: RM 857K (est.), 564 – 1,039 sqft, Studio – 3 Beds, Leasehold 99 years. Completion Est. 2028 – 2029.
 - [Clouthaus](https://keithnah.com/property/clouthaus.html): Clouthaus, Jalan P. Ramlee, KL City Centre: RM 1.41M, 549 – 1,216 sqft, 1 – 3 Beds, Freehold. Completion Q1 2029.
+- [Core Residence](https://keithnah.com/property/core-residence.html): Core Residence, Tun Razak Exchange (TRX), Kuala Lumpur: From RM1.5 mil (Gross), 622 – 1,572 sqft, 1 – 3 Bedrooms, Freehold.
+- [Dawn KL City Centre](https://keithnah.com/property/dawn-kl-city-centre.html): Dawn KL City Centre, Jalan Kampung Baru, KL City Centre, Kuala Lumpur: From RM717,000 (Gross), 350 – 804 sqft, Studio – 2 Bedrooms (incl. Dual Key), Freehold.
+- [Divine KL City Centre](https://keithnah.com/property/divine-kl-city-centre.html): Divine KL City Centre, Jalan Tun Razak, KL City Centre — 400m from Suria KL City Centre: RM 997K, 502 – 1,319 sqft, 1+1 – 3+1 Bedrooms, Leasehold (Commercial…
+- [Eaton Residence](https://keithnah.com/property/eaton-residence.html): Eaton Residence, Jalan Kia Peng, KL City Centre: RM 1.3M, 635 – 2,831 sqft, 1 – 4 Bedrooms, Leasehold 99 years (to 31/12/2114).
 - [Golden Crown Residence](https://keithnah.com/property/golden-crown-residence.html): Golden Crown Residence, Jalan Tun Razak, adjacent to TRX, Kuala Lumpur: From RM1,280,000 (Gross), 624 – 1,023 sqft, 1 – 2 Bedrooms, Leasehold (expires 2111).
+- [Hanaz Suites](https://keithnah.com/property/hanaz-suites.html): Hanaz Suites, Lorong Yap Kwan Seng, KL City Centre, Kuala Lumpur: From RM756,200 (Gross), 323 – 657 sqft, Studio – 2 Bedrooms, Freehold.
 - [Imperial Residence Pavilion Damansara Heights](https://keithnah.com/property/imperial-residence-pavilion-damansara-heights.html): Imperial Residence Pavilion Damansara Heights, Damansara Heights, Kuala Lumpur: Price on Request, 3,380 – 7,459 sqft, Luxury Residences, Freehold.
+- [Jewel Oxley Towers](https://keithnah.com/property/jewel-oxley-towers.html): Jewel Oxley Towers, Jalan Ampang, KL City Centre, Kuala Lumpur: RM 1.57M, 678 – 1,227 sqft, 1 – 3+1 Bedrooms, Freehold. Completed.
 - [MABA Suitez](https://keithnah.com/property/maba-suitez.html): MABA Suitez, Jalan Hang Jebat, KL City Centre: From RM699,000 (Gross), 323 – 657 sqft, Studio – 1+1 Bedrooms, Leasehold. Completion 60 months after APDL.
 - [Orion Residence](https://keithnah.com/property/orion-residence.html): Orion Residence, Jalan Bukit Bintang, Kuala Lumpur: RM 1.58M, 491 – 1,329 sqft, Studio – 3 Bedrooms (Dual Key), Freehold. Completed.
 - [Pavilion Square](https://keithnah.com/property/pavilion-square.html): Pavilion Square, Jalan Raja Chulan, Bukit Bintang: RM 1.45M, 504 – 1,272 sqft, Studio – 3 Beds, Leasehold (99 yrs, to 2122). Completion Q4 2029.
+- [Phoeniz Suites @ KL City Centre](https://keithnah.com/property/phoeniz-suites-kl-city-centre.html): Phoeniz Suites @ KL City Centre, KL City Centre, KL City Centre Fringe: RM 1.016M, 484 – 678 sqft, 1 Bedroom (Dual Key available), Freehold.
+- [Royal Lexis](https://keithnah.com/property/royal-lexis.html): Royal Lexis, Jalan Sultan Ismail, Bukit Bintang: RM 1.897M, 573 – 1,155 sqft, 1 Bedroom (Dual-Key avail.), Freehold. Completion Oct 2029.
 - [Royal Suites Pavilion Damansara Heights](https://keithnah.com/property/royal-suites-pavilion-damansara-heights.html): Royal Suites Pavilion Damansara Heights, Damansara Heights, Kuala Lumpur: Price on Request, 452 – 1,679 sqft, Suite – 3 Bedrooms, Freehold. Completion TBC.
+- [So/KL Oxley Towers](https://keithnah.com/property/so-kl-oxley-towers.html): So/KL Oxley Towers, Jalan Ampang, KL City Centre, Kuala Lumpur: RM 1.38M, 578 – 995 sqft, Studio – 2+1 Bedrooms, Freehold. Completed.
+- [Sutera Suites](https://keithnah.com/property/sutera-suites.html): Sutera Suites, Jalan Sungai Baru, Kampung Baru: RM 595K, 425 – 835 sqft, Studio – 2 Beds, Leasehold. Completion Est. Q1 2031.
+- [SWNK Houze @ BBCC](https://keithnah.com/property/swnk-houze-bbcc.html): SWNK Houze @ BBCC, Bukit Bintang City Centre (BBCC), Kuala Lumpur: RM 705K, 463 – 1,238 sqft, Studio – 3 Bedrooms (Dual Key), Leasehold (94 years, to 2110).
 - [The Conlay](https://keithnah.com/property/the-conlay.html): The Conlay, Embassy Row, KL City Centre: RM 1.49M, 635 – 1,335 sqft, 1 – 2 Bedrooms, Freehold. Completion 2025.
 - [The Queenswoodz](https://keithnah.com/property/the-queenswoodz.html): The Queenswoodz, Bukit Jalil, Kuala Lumpur: From RM723,300 (Gross), 807 – 1,410 sqft, 2+1 – 4 Bedrooms, Leasehold. Completion 52 Months After APDL.
+- [Times Square 2](https://keithnah.com/property/times-square-2.html): Times Square 2, Jalan Imbi, Bukit Bintang: RM 688K, 488 – 1,356 sqft, 1 – 3 Bedrooms, Freehold. Completion Oct 2027.
 - [Zenia @ ParkCity Damansara](https://keithnah.com/property/zenia-parkcity-damansara.html): Zenia @ ParkCity Damansara, ParkCity Damansara, Petaling Jaya: Condovillas from RM1.3 mil · ParkHomes from RM2.5 mil (Gross), 1,691 – 4,247 sqft, 3 – 5…
 
 ### Pantai Sentral Park
@@ -185,9 +182,6 @@ The site is available in English, 简体中文, 繁體中文, Bahasa Malaysia, �
 ### Subang Jaya
 - [Luminar Residence](https://keithnah.com/property/luminar-residence.html): Luminar Residence, Federal Highway, Subang, Selangor: From RM356,000 (Gross), 549 – 1,389 sqft, 1+1 – 3 Bedrooms, Freehold. Completion Est. Q4 2029.
 - [Westfield Residences](https://keithnah.com/property/westfield-residences.html): Westfield Residences, USJ 1, Subang Jaya, Selangor: From RM639,000 (Gross), 768 – 1,008 sqft, 3 – 4 Bedrooms, Freehold. Completion Est. Q1 2031.
-
-### TRX
-- [Core Residence](https://keithnah.com/property/core-residence.html): Core Residence, Tun Razak Exchange (TRX), Kuala Lumpur: From RM1.5 mil (Gross), 622 – 1,572 sqft, 1 – 3 Bedrooms, Freehold.
 
 ### Taman Desa
 - [M Aspira](https://keithnah.com/property/m-aspira.html): M Aspira, Jalan Desa, Taman Desa, Kuala Lumpur: From RM538,800 (Gross), 706 – 1,006 sqft, 2 – 4 Bedrooms, Leasehold (99 years, to 2123). Completion Est. 2029.
