@@ -90,7 +90,8 @@ header .logo b{font-family:'Playfair Display',serif;font-weight:800;font-size:21
 header .logo small{font-family:'Playfair Display',serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.8);font-weight:500;white-space:nowrap;}
 header nav{display:flex;gap:clamp(20px,2.3vw,32px);margin:0;flex-wrap:nowrap;}
 header nav a{font-size:15px;font-weight:500;position:relative;padding-bottom:4px;white-space:nowrap;color:#fff;text-decoration:none!important;}
-header nav a.active{font-weight:700;}
+header nav a.active{font-weight:500;}
+header .logo small{font-family:'Inter',sans-serif!important;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.8);font-weight:500;}
 header nav a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1.5px;background:#fff;transition:width .3s;}
 header nav a:hover::after,header nav a.active::after{width:100%;}
 .nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0;}
@@ -105,6 +106,7 @@ header nav a:hover::after,header nav a.active::after{width:100%;}
 .kn-flag{width:20px;height:15px;flex:0 0 20px;border-radius:2px;object-fit:cover;box-shadow:0 0 0 1px rgba(0,0,0,.08);}
 header .wa-btn{display:flex;align-items:center;gap:8px;background:#25D366;color:#fff!important;padding:11px 16px;border-radius:100px;font:600 12px 'Inter',sans-serif;white-space:nowrap;margin:0;}
 header .wa-btn:hover{box-shadow:0 8px 20px rgba(37,211,102,.4);}
+header .wa-btn,header .kn-sel{line-height:1.6;} header .wa-btn svg{display:block;flex:0 0 14px;} header nav{align-items:center;} header .logo{font-size:19px;}
 header .kn-burger{margin-left:0;}
 @media(max-width:1349px){header nav,.nav-right .kn-sw{display:none;} header .kn-burger{display:block;}}
 @media(max-width:560px){header .wa-btn{display:none!important;}}
@@ -162,7 +164,7 @@ def header(root, active, wa):
             '  <nav>%s</nav>\n  <div class="nav-right">\n'
             '    <div class="kn-sw"><span class="kn-sel" onclick="knTog(\'knLangMenu\',event)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9z"/></svg><span id="knLangLab">English</span></span><div class="kn-menu" id="knLangMenu">%s</div></div>\n'
             '    <div class="kn-sw"><span class="kn-sel" onclick="knTog(\'knCurMenu\',event)"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="5"/><circle cx="16" cy="16" r="5"/></svg><span id="knCurLab">MYR</span></span><div class="kn-menu cur" id="knCurMenu">%s</div></div>\n'
-            '    <a class="wa-btn" href="%s" target="_blank" rel="noopener">WhatsApp Keith</a>\n  <!--kn-burger-->\n  </div>\n</header>') % (home, root, nav, langs, curs, wa)
+            '    <a class="wa-btn" href="%s" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.2L2 22l4.9-1.3c1.5.8 3.3 1.3 5.1 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4.4 15 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/></svg><span>WhatsApp Keith</span></a>\n  <!--kn-burger-->\n  </div>\n</header>') % (home, root, nav, langs, curs, wa)
 
 
 def price_tag(text, myr):
