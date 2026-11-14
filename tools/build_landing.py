@@ -77,9 +77,22 @@ def page(slug, root='../'):
     def wbtn(text, msg, cls='lp-wa'):
         return '<a class="%s" href="%s" target="_blank" rel="noopener">%s<span>%s</span></a>' % (cls, w(msg), chat, E(text))
 
-    nav = [('overview', 'Overview'), ('five', '5 things'), ('layouts', 'Layouts'), ('price', 'Price'), ('location', 'Location'),
+    nav = [('overview', 'Overview'), ('five', '5 things'), ('details', 'Details'), ('layouts', 'Layouts'), ('price', 'Price'), ('location', 'Location'),
            ('foreign', 'Foreign buyers'), ('faq', 'FAQ')]
     navh = ''.join('<a href="#%s">%s</a>' % (k, E(v)) for k, v in nav)
+    st, area = A.PLACES[i]
+    crumbs = '<a href="{r}">Home</a><i>›</i><a href="{r}projects.html">Projects</a><i>›</i><a href="{r}area/{s}.html">{st}</a><i>›</i><a href="{r}area/{a}.html">{ar}</a><i>›</i><b>{n}</b>'.format(
+        r=root, s=A.slug(st), st=E(st), a=A.slug(area), ar=E(area), n=E(name))
+    mo = ''
+    try:
+        mo = re.search(r'data-mo>([^<]+)<', open('property/%s.html' % slug, encoding='utf-8').read()).group(1)
+    except (OSError, AttributeError):
+        pass
+    badges = ''.join('<span class="lp-bd%s">%s</span>' % (c, E(v)) for c, v in ((' dark', p.get('status')), ('', area), ('', A.TYPE.get(i, 'Residential'))) if v)
+    rows = [('Project Name', name), ('Location', p['loc']), ('Property Type', A.TYPE.get(i, 'Residential')), ('Tenure', p['tenure']), ('Status', p.get('status', '')),
+            ('Starting Price', p['price']), ('Size', p['size']), ('Bedrooms', p['rooms']), ('Completion', p['completion'])] + [(k, v) for k, v in ex.items() if k not in ('Title', 'Address')]
+    details = ''.join('<tr><th scope="row">%s</th><td>%s</td></tr>' % (E(a), E(b)) for a, b in rows if b)
+    fits = ''.join('<div><b>%s</b><p>%s</p></div>' % (E(f['title']), E(f['desc'])) for f in p.get('buyer_fit') or [])
 
     facts = [('From', re.sub(r'^From\s*', '', p['price'])), ('Size', p['size']), ('Type', p['rooms']), ('Tenure', p['tenure']), ('Completion', p['completion'])]
     factsh = ''.join('<div><small>%s</small><b>%s</b></div>' % (E(a), E(b)) for a, b in facts)
@@ -114,7 +127,7 @@ def page(slug, root='../'):
 
     return TPL.format(
         name=E(name), title=E('%s: Price, Layouts & Location | Keith Nah' % name), desc=E('%s %s.' % (name, L['hook'])), root=root, photo=E(photo),
-        navh=navh, wa_price=wa_price, chat=chat, eyebrow=E(L['eyebrow']), hook=E(L['hook']), intro=E(L['intro']), factsh=factsh,
+        navh=navh, crumbs=crumbs, mo=E(mo), badges=badges, details=details, fits=fits, loc=E(p['loc']), wa_price=wa_price, chat=chat, eyebrow=E(L['eyebrow']), hook=E(L['hook']), intro=E(L['intro']), factsh=factsh,
         overview=E(p['overview']), nums=nums, five=five, tabs=tabs, panes=panes, price=E(p['price']), psf=E(ex.get('Price per Sqft', '')),
         maint=E(ex.get('Maintenance Fee', '')), park=E(ex.get('Car Parks', '')),
         wb_list=wbtn('Request the price list', "Hi Keith, please send me the latest price list for %s."),
@@ -137,18 +150,25 @@ TPL = '''<!DOCTYPE html>
 <script type="application/ld+json">{ld}</script>
 <style>
 :root{{--ink:#15142b;--grey:#5f5e74;--line:rgba(21,20,43,.09);--gold:#5E60CE;--deep:#1d1b4f;--soft:#f3f1fa;--bg:#F9F8F6;--wa:#25d366}}
-*{{box-sizing:border-box;margin:0;padding:0}} html{{scroll-behavior:smooth;scroll-padding-top:76px}} body{{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}}
+*{{box-sizing:border-box;margin:0;padding:0}} html{{scroll-behavior:smooth;scroll-padding-top:80px}} @media(max-width:1180px){{html{{scroll-padding-top:120px}}}} body{{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}}
 a{{color:inherit;text-decoration:none}} img{{display:block;max-width:100%}} button{{font:inherit}}
 h1,h2,h3{{font-family:'Playfair Display',Georgia,serif;line-height:1.2}}
-.lp-bar{{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;gap:24px;padding:12px 4vw;transition:background .3s,box-shadow .3s}}
-.lp-bar.solid{{background:rgba(29,27,79,.96);box-shadow:0 8px 24px rgba(0,0,0,.18)}}
-.lp-logo{{display:flex;align-items:center;gap:10px;color:#fff}} .lp-logo img{{width:38px;height:38px;border-radius:50%}} .lp-logo b{{font-family:'Playfair Display',serif;font-size:17px;display:block;line-height:1.1}} .lp-logo small{{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.75}}
-.lp-nav{{display:flex;gap:22px;margin:0 auto}} .lp-nav a{{color:rgba(255,255,255,.85);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}} .lp-nav a:hover{{color:#fff}}
+.lp-bar{{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:18px;padding:10px 4vw;background:#5E60CE;box-shadow:0 6px 20px rgba(29,27,79,.18)}}
+.lp-home{{display:inline-flex;align-items:center;gap:6px;color:#fff;font-size:12.5px;font-weight:700;padding:8px 14px;border-radius:99px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);white-space:nowrap}} .lp-home:hover{{background:rgba(255,255,255,.28)}} .lp-hs{{display:none;font-style:normal}} @media(max-width:820px){{.lp-hs{{display:inline}}}}
+.lp-logo{{display:flex;align-items:center;gap:10px;color:#fff}} .lp-logo img{{width:38px;height:38px;border-radius:50%}} .lp-logo b{{font-family:'Playfair Display',serif;font-size:17px;display:block;line-height:1.1;white-space:nowrap}} .lp-logo small{{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.75}}
+.lp-nav{{display:flex;gap:20px;margin:0 auto}} .lp-nav a{{color:rgba(255,255,255,.9);font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}} .lp-nav a:hover{{color:#fff}}
 .lp-cta{{background:var(--wa);color:#fff;font-weight:700;font-size:13.5px;padding:10px 18px;border-radius:99px;white-space:nowrap}}
-.lp-hero{{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:120px 6vw 70px;color:#fff;background:#1d1b4f center/cover no-repeat;background-image:linear-gradient(180deg,rgba(15,14,40,.35),rgba(15,14,40,.15) 35%,rgba(15,14,40,.85)),url('{photo}')}}
-.lp-hero-in{{max-width:760px}} .lp-eb{{display:block;font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#b9b4ff;margin-bottom:12px}}
-.lp-hero h1{{font-size:clamp(46px,7vw,92px);letter-spacing:.02em;font-weight:600}} .lp-hook{{font-size:clamp(15px,1.6vw,19px);letter-spacing:.14em;text-transform:uppercase;margin:6px 0 18px;opacity:.95}}
-.lp-hero p.lp-intro{{font-size:16.5px;max-width:560px;opacity:.9}} .lp-facts{{display:flex;flex-wrap:wrap;gap:10px 28px;margin:26px 0}} .lp-facts small{{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.7}} .lp-facts b{{font-size:16px}}
+.lp-eb{{display:block;font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}}
+.lp-top{{max-width:1180px;margin:0 auto;padding:22px 5vw 0}} .lp-crumb{{display:flex;flex-wrap:wrap;gap:8px;font-size:13.5px;color:var(--grey);margin-bottom:22px}} .lp-crumb i{{font-style:normal;opacity:.5}} .lp-crumb b{{color:var(--ink)}}
+.lp-hero{{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}} .lp-photo{{border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:var(--soft);box-shadow:0 18px 40px rgba(29,27,79,.14)}} .lp-photo img{{width:100%;height:100%;object-fit:cover}}
+.lp-bds{{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}} .lp-bd{{font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:99px;background:#ecebfb;color:var(--gold)}} .lp-bd.dark{{background:var(--ink);color:#fff}}
+.lp-info h1{{font-size:clamp(38px,4.6vw,60px);font-weight:700}} .lp-hook{{color:var(--gold);font-weight:700;font-size:16px;margin:8px 0 4px}} .lp-locl{{color:var(--grey);font-size:15.5px}}
+.lp-sp{{margin:18px 0 6px}} .lp-sp small{{display:block;font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}} .lp-sp b{{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,38px);color:var(--gold)}}
+.lp-mo{{font-size:14.5px;color:var(--grey)}} .lp-mo b{{font-family:'Playfair Display',serif;font-size:20px;color:var(--ink);margin-left:6px}} .lp-mo a{{display:block;color:var(--gold);font-weight:600;font-size:13.5px;text-decoration:underline;margin-top:2px}}
+.lp-info .lp-btns{{margin-top:18px}} .lp-out{{display:inline-flex;align-items:center;padding:14px 22px;border-radius:99px;border:1.5px solid var(--ink);font-weight:700;font-size:14.5px}}
+.lp-facts{{display:grid;grid-template-columns:repeat(5,1fr);background:#fff;border:1px solid var(--line);border-radius:18px;margin-top:34px}} .lp-facts div{{padding:18px 20px;border-left:1px solid var(--line)}} .lp-facts div:first-child{{border:0}} .lp-facts small{{display:block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}} .lp-facts b{{font-family:'Playfair Display',serif;font-size:17px}}
+.lp-dt{{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:24px}} .lp-dt table{{width:100%;border-collapse:collapse}} .lp-dt th,.lp-dt td{{text-align:left;padding:13px 22px;border-bottom:1px solid var(--line);font-size:14.5px;vertical-align:top}} .lp-dt th{{width:32%;color:var(--grey);font-weight:600;background:#faf9fd}} .lp-dt tr:last-child th,.lp-dt tr:last-child td{{border:0}}
+.lp-fits{{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}} .lp-fits div{{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}} .lp-fits b{{font-size:16px}} .lp-fits p{{color:var(--grey);font-size:14px;margin-top:4px}}
 .lp-btns{{display:flex;gap:12px;flex-wrap:wrap}} .lp-wa,.lp-ghost{{display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:99px;font-weight:700;font-size:14.5px;transition:transform .2s}}
 .lp-wa{{background:var(--wa);color:#fff}} .lp-wa:hover,.lp-ghost:hover{{transform:translateY(-2px)}} .lp-wa svg{{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2}}
 .lp-wa2{{background:#fff;color:var(--deep);border:1.5px solid var(--line)}} .lp-ghost{{background:#fff;color:var(--deep)}}
@@ -174,20 +194,25 @@ h1,h2,h3{{font-family:'Playfair Display',Georgia,serif;line-height:1.2}}
 .lp-links{{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px}} .lp-links a{{font-weight:700;color:var(--gold)}}
 .lp-foot{{background:#080808;color:rgba(255,255,255,.55);text-align:center;padding:30px 5vw;font-size:13px;margin-top:60px}} .lp-foot a{{color:#fff}}
 .lp-float{{position:fixed;right:18px;bottom:18px;z-index:40;box-shadow:0 10px 30px rgba(37,211,102,.45);opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .3s,transform .3s}} .lp-float.show{{opacity:1;pointer-events:auto;transform:none}}
-@media(max-width:1100px){{.lp-nav{{display:none}} .lp-bar{{justify-content:space-between}}}}
+@media(max-width:1180px){{.lp-nav{{display:none}} .lp-bar{{justify-content:space-between}} .lp-cta{{margin-left:auto}}}}
 @media(max-width:820px){{.lp-nums{{grid-template-columns:1fr 1fr}} .lp-pane.on,.lp-price,.lp-loc{{grid-template-columns:1fr;display:grid}} .lp-pane{{padding:16px}} .lp-pd dl{{grid-template-columns:1fr 1fr}} .lp-nbs{{grid-template-columns:1fr}}
- .lp-hero{{padding:110px 22px 50px;min-height:92vh}} .lp-sec{{padding:64px 20px 0}} .lp-five li{{padding:18px;gap:14px}} .lp-fb{{padding:28px 22px}} .lp-logo small{{display:none}} .lp-cta{{padding:9px 14px;font-size:12.5px}}}}
-.lp-chips{{display:none}} @media(max-width:1100px){{.lp-chips{{display:flex;position:sticky;top:62px;z-index:30;gap:8px;overflow-x:auto;padding:10px 16px;background:var(--bg);border-bottom:1px solid var(--line)}} .lp-chips a{{flex:0 0 auto;font-size:13px;font-weight:700;padding:7px 14px;border-radius:99px;background:#fff;border:1px solid var(--line)}}}}
+ .lp-hero{{grid-template-columns:1fr;gap:22px}} .lp-top{{padding:16px 20px 0}} .lp-facts{{grid-template-columns:1fr 1fr}} .lp-facts div{{border-left:0;border-top:1px solid var(--line)}} .lp-fits{{grid-template-columns:1fr}} .lp-dt th,.lp-dt td{{padding:11px 14px;font-size:13.5px}} .lp-home span{{display:none}} .lp-logo>span{{display:none}} .lp-sec{{padding:64px 20px 0}} .lp-five li{{padding:18px;gap:14px}} .lp-fb{{padding:28px 22px}} .lp-logo small{{display:none}} .lp-cta{{padding:9px 14px;font-size:12.5px}}}}
+.lp-chips{{display:none}} @media(max-width:1180px){{.lp-chips{{display:flex;position:sticky;top:58px;z-index:30;gap:8px;overflow-x:auto;padding:10px 16px;background:var(--bg);border-bottom:1px solid var(--line)}} .lp-chips a{{flex:0 0 auto;font-size:13px;font-weight:700;padding:7px 14px;border-radius:99px;background:#fff;border:1px solid var(--line)}}}}
 </style>
 </head>
 <body>
 <div class="lp-bar" id="lpBar"><a class="lp-logo" href="{root}"><img src="{root}images/f304c8479b1fe873.png" alt="Keith Nah"><span><b>Keith Nah</b><small>Malaysia Real Estate</small></span></a>
+<a class="lp-home" href="{root}">&larr; <span>Back to home website</span><em class="lp-hs">Home</em></a>
 <nav class="lp-nav">{navh}</nav><a class="lp-cta" href="{wa_price}" target="_blank" rel="noopener">Get the price list</a></div>
-<section class="lp-hero"><div class="lp-hero-in"><span class="lp-eb">{eyebrow}</span><h1>{name}</h1><p class="lp-hook">{hook}</p><p class="lp-intro">{intro}</p>
-<div class="lp-facts">{factsh}</div><div class="lp-btns"><a class="lp-wa" href="{wa_price}" target="_blank" rel="noopener">{chat}<span>Get the latest price list</span></a><a class="lp-ghost" href="#layouts">See the layouts &rarr;</a></div></div></section>
+<div class="lp-top"><nav class="lp-crumb" aria-label="Breadcrumb">{crumbs}</nav>
+<section class="lp-hero"><div class="lp-photo"><img src="{photo}" alt="{name}"></div><div class="lp-info"><div class="lp-bds">{badges}</div><h1>{name}</h1><p class="lp-hook">{hook}</p><p class="lp-locl">{loc}</p>
+<div class="lp-sp"><small>Starting price</small><b>{price}</b></div><div class="lp-mo">Est. monthly instalment from<b>{mo}</b><a href="{root}calculator.html">Change down payment &amp; rate</a></div>
+<div class="lp-btns"><a class="lp-wa" href="{wa_price}" target="_blank" rel="noopener">{chat}<span>Get the latest price list</span></a><a class="lp-out" href="{root}compare.html">Compare projects</a></div></div></section>
+<div class="lp-facts">{factsh}</div></div>
 <div class="lp-chips">{navh}</div>
 <section class="lp-sec" id="overview"><span class="lp-eb">Overview</span><h2>Two towers, four layouts, in the middle of Kuala Lumpur.</h2><p>{overview}</p><div class="lp-nums">{nums}</div></section>
 <section class="lp-sec" id="five"><span class="lp-eb">Before you look</span><h2>Five things worth knowing first.</h2><ol class="lp-five">{five}</ol></section>
+<section class="lp-sec" id="details"><span class="lp-eb">Project details</span><h2>{name} at a glance.</h2><div class="lp-dt"><table>{details}</table></div><div class="lp-fits">{fits}</div></section>
 <section class="lp-sec" id="layouts"><span class="lp-eb">Layouts</span><h2>Choose a layout to see the plan.</h2><div class="lp-tabs">{tabs}</div>{panes}</section>
 <section class="lp-sec" id="price"><span class="lp-eb">Price</span><h2>Price and running costs.</h2><div class="lp-price"><div class="lp-pbox"><small>Starting price</small><b>{price}</b><p>Prices change as units sell. Ask Keith for the current price list and the units still open.</p><div class="lp-row">{wb_list}</div></div>
 <div class="lp-plist"><div><span>Price per sq ft</span><b>{psf}</b></div><div><span>Maintenance fee</span><b>{maint}</b></div><div><span>Car parks</span><b>{park}</b></div><a class="lp-map" href="{root}calculator.html">Work out the monthly instalment &rarr;</a></div></div>
@@ -198,7 +223,7 @@ h1,h2,h3{{font-family:'Playfair Display',Georgia,serif;line-height:1.2}}
 <section class="lp-more"><h2>Also worth a look nearby</h2><div class="lp-nbs">{nearby}</div><div class="lp-links"><a href="{root}compare.html">Compare projects &rarr;</a><a href="{root}projects.html">All projects &rarr;</a><a href="{root}foreign-buyers.html">Foreign buyers &rarr;</a><a href="{root}calculator.html">Calculators &rarr;</a></div></section>
 <footer class="lp-foot">&copy; 2026 Keith Nah Real Estate &middot; <a href="{root}">keithnah.com</a></footer>
 <a class="lp-wa lp-float" href="{wa_price}" target="_blank" rel="noopener">{chat}<span>WhatsApp Keith</span></a>
-<script>(function(){{var b=document.getElementById('lpBar');var f=document.querySelector('.lp-float');function s(){{b.classList.toggle('solid',window.scrollY>60);f.classList.toggle('show',window.scrollY>window.innerHeight*0.8);}}s();window.addEventListener('scroll',s,{{passive:true}});
+<script>(function(){{var b=document.getElementById('lpBar');var f=document.querySelector('.lp-float');function s(){{f.classList.toggle('show',window.scrollY>window.innerHeight*0.8);}}s();window.addEventListener('scroll',s,{{passive:true}});
 document.addEventListener('click',function(e){{var t=e.target.closest('.lp-tab');if(!t)return;var k=t.getAttribute('data-t');document.querySelectorAll('.lp-tab').forEach(function(x){{x.classList.toggle('on',x===t);}});
 document.querySelectorAll('.lp-pane').forEach(function(x){{x.classList.toggle('on',x.getAttribute('data-p')===k);}});}});}})();</script>
 </body>
