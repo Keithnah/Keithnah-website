@@ -35,8 +35,15 @@ SITE = 'https://keithnah.com'
 E = lambda s: html.escape(str(s), quote=True)
 
 
+AUTO = os.path.join(HERE, 'project_articles_auto.json')   # written by tools/gen_project_articles.py
+
+
 def load():
-    return json.load(open(PATH, encoding='utf-8')) if os.path.exists(PATH) else []
+    out = []
+    for p in (PATH, AUTO):
+        if os.path.exists(p):
+            out += json.load(open(p, encoding='utf-8'))
+    return out
 
 
 def tx(d):

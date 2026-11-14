@@ -270,10 +270,12 @@ def related(slug, name, area, n=6):
     import datetime
     import note_links as NL
     out = []
-    try:
-        arts = json.load(open(os.path.join(HERE, 'project_articles.json'), encoding='utf-8'))
-    except (OSError, ValueError):
-        arts = []
+    arts = []
+    for fn in ('project_articles.json', 'project_articles_auto.json'):
+        try:
+            arts += json.load(open(os.path.join(HERE, fn), encoding='utf-8'))
+        except (OSError, ValueError):
+            pass
     for a in arts:
         if a['project'] == slug:
             out.append((0, 'art', a['title'], 'article/%s.html' % a['slug'], a['date']))
