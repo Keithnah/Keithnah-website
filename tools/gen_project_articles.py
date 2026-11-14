@@ -293,7 +293,8 @@ def article_two(i, p, date):
 
 
 def main():
-    hand = {a['project'] for a in (json.load(open(HAND, encoding='utf-8')) if os.path.exists(HAND) else [])}
+    preview = os.environ.get('KN_PREVIEW') == '1'
+    hand = {a['project'] for a in (json.load(open(HAND, encoding='utf-8')) if os.path.exists(HAND) else []) if preview or not a.get('draft')}
     dates = json.load(open(DATES, encoding='utf-8')) if os.path.exists(DATES) else {}
     today = datetime.date.today().strftime('%d %b %Y').lstrip('0')
     arts = []

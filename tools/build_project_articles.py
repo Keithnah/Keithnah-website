@@ -39,10 +39,15 @@ AUTO = os.path.join(HERE, 'project_articles_auto.json')   # written by tools/gen
 
 
 def load():
-    out = []
+    out, seen = [], set()
+    preview = os.environ.get('KN_PREVIEW') == '1'   # drafts ("draft": true) are built only for a preview
     for p in (PATH, AUTO):
         if os.path.exists(p):
-            out += json.load(open(p, encoding='utf-8'))
+            for a in json.load(open(p, encoding='utf-8')):
+                if (a.get('draft') and not preview) or a['slug'] in seen:
+                    continue
+                seen.add(a['slug'])
+                out.append(a)
     return out
 
 

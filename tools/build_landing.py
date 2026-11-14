@@ -222,7 +222,7 @@ def view_block(p, L, T, r, rn, root, lays, ex, w, chat):
     """Keith's view: who it suits / does not suit, things to know, an investment calculator and a
     pre-booking checklist. Only for projects with a "view" entry in landing.json (facts from the
     project data; nothing invented)."""
-    V = L.get('view')
+    V = L.get('view') or (L.get('view_draft') if os.environ.get('KN_PREVIEW') == '1' else None)
     if not V:
         return ''
     def lst(key, cls):
@@ -276,8 +276,12 @@ def related(slug, name, area, n=6):
             arts += json.load(open(os.path.join(HERE, fn), encoding='utf-8'))
         except (OSError, ValueError):
             pass
+    seen = set()
     for a in arts:
-        if a['project'] == slug:
+        if a.get('draft') and os.environ.get('KN_PREVIEW') != '1':
+            continue
+        if a['project'] == slug and a['slug'] not in seen:
+            seen.add(a['slug'])
             out.append((0, 'art', a['title'], 'article/%s.html' % a['slug'], a['date']))
     has = lambda text, ph: re.search(r'(?<![A-Za-z])%s(?![A-Za-z])' % re.escape(ph), text, re.I) is not None
     en = lambda d: d.get('en', '') if isinstance(d, dict) else (d or '')
