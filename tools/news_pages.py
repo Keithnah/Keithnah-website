@@ -53,6 +53,7 @@ def load_articles():
 ARTICLES, ART_SLUGS = load_articles()
 
 PAGE_CSS = r"""
+header{padding-left:3vw;padding-right:3vw;} header nav{flex-wrap:nowrap;} header .logo{flex-shrink:0;} header .logo b,header .logo small{white-space:nowrap;}
 .art-hero{border-radius:14px;padding:46px 40px;color:#fff;margin:6px 0 34px;position:relative;overflow:hidden;}
 .art-hero .icon-art{position:absolute;right:30px;bottom:0;width:240px;opacity:.18;color:#fff;}
 .art-cat{display:inline-block;font:700 11px 'Inter',sans-serif;letter-spacing:0.14em;text-transform:uppercase;background:rgba(255,255,255,0.16);padding:6px 12px;border-radius:100px;margin-bottom:14px;}
