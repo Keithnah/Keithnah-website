@@ -110,7 +110,7 @@ def page(slug, root='../', head_src=None):
             key = 'fb_por' if not myr else ('fb_ok' if myr >= mn[0] else 'fb_low')
             T['fb'] = [T[key][j].replace('{p}', re.sub(r'^From\s*', '', p['price'])).replace('{m}', T[mn[1]][j]).replace('{s}', st) for j in range(6)]
 
-    nav = [('overview', 'nav_overview'), ('five', 'nav_five'), ('details', 'nav_details'), ('layouts', 'nav_layouts'), ('price', 'nav_price'),
+    nav = [('overview', 'nav_overview'), ('five', 'nav_five'), ('details', 'nav_details'), ('layouts', 'nav_layouts'), ('price', 'nav_price'), ('view', 'nav_view'),
            ('location', 'nav_location'), ('video', 'nav_video'), ('foreign', 'nav_foreign'), ('faq', 'nav_faq')]
     import build_project_pages as BP   # the Video Tour block of the project pages (tools/project_videos.json)
     vblk = BP.video_block(name, name)
@@ -121,6 +121,9 @@ def page(slug, root='../', head_src=None):
         nav = [x for x in nav if x[0] != 'video']
     if not T.get('fb'):
         nav = [x for x in nav if x[0] != 'foreign']
+    view = view_block(p, L, T, r, rn, root, lays=p.get('layouts') or [], ex=ex, w=w, chat=chat)
+    if not view:
+        nav = [x for x in nav if x[0] != 'view']
     navh = ''.join('<a href="#%s" data-r="%s">%s</a>' % (k, t, E(T[t][0])) for k, t in nav)
     crumbs = ('<a href="{r}" data-r="home">Home</a><i>›</i><a href="{r}projects.html">Projects</a><i>›</i><a href="{r}area/{s}.html">{st}</a><i>›</i>'
               '<a href="{r}area/{a}.html">{ar}</a><i>›</i><b>{n}</b>').format(r=root, s=A.slug(st), st=E(st), a=A.slug(area), ar=E(area), n=E(name))
@@ -200,6 +203,7 @@ def page(slug, root='../', head_src=None):
             t_lc=r('l_cmp'), t_la=r('l_all'), t_lf=r('l_fb'), t_lk=r('l_calc')).items()})
     if L.get('developer'):
         body = body.replace('<!--DEV-->', '<div class="lp-dev">%s%s</div>' % (r('eb_dev', 'span', 'lp-eb'), r('dev', 'p')))
+    body = body.replace('<!--VIEW-->', view, 1)
     if not plist:
         body = body.replace('<div class="lp-plist"></div>', '')
     js = JS % (json.dumps(T, ensure_ascii=False), json.dumps(LG))
@@ -210,6 +214,46 @@ def page(slug, root='../', head_src=None):
     I18N.USE_KN[0] = True
     out = I18N.translate(out)
     return out.replace('</body>', SH.js() + '\n</body>', 1)
+
+
+
+def view_block(p, L, T, r, rn, root, lays, ex, w, chat):
+    """Keith's view: who it suits / does not suit, things to know, an investment calculator and a
+    pre-booking checklist. Only for projects with a "view" entry in landing.json (facts from the
+    project data; nothing invented)."""
+    V = L.get('view')
+    if not V or os.environ.get('KN_VIEW', '0') != '1':   # preview only until Keith approves (KN_VIEW=1)
+        return ''
+    def lst(key, cls):
+        out = ''
+        for n, v in enumerate(V.get(key) or []):
+            T['v:%s%d' % (key, n)] = six(v)
+            out += '<li>%s</li>' % r('v:%s%d' % (key, n))
+        return ('<ul class="%s">%s</ul>' % (cls, out)) if out else ''
+    suits, nots, trade, verify = lst('suits', 'lp-ok'), lst('not', 'lp-no'), lst('trade', 'lp-tr'), lst('verify', 'lp-ck')
+    calc = ''
+    inv = V.get('inv')
+    if inv and lays:
+        opts = ''
+        for n, l in enumerate(lays):
+            m = re.search(r'([\d,]+)\s*sq', l['size'])
+            if not m:
+                continue
+            sq = int(m.group(1).replace(',', ''))
+            pr = (inv.get('prices') or {}).get(l['type'])
+            est = 0 if pr else 1
+            pr = pr or int(round(sq * inv['psf_low'], -3))
+            opts += '<option value="%d" data-sq="%d" data-est="%d">%s · %s</option>' % (pr, sq, est, E(l['type']), E(l['size']))
+        f = lambda k, v, step: '<label>%s<input type="number" data-v="%s" value="%s" step="%s" min="0"></label>' % (r(k), k, v, step)
+        calc = ('<div class="lp-inv" data-mp="%s"><h3 data-r="v_inv">%s</h3>%s<div class="lp-invf"><label>%s<select data-v="lay">%s</select></label>%s%s%s%s</div>'
+                '<p class="lp-est" hidden>%s</p><div class="lp-invo"><div>%s<b data-o="inst"></b></div><div>%s<b data-o="maint"></b></div><div class="t">%s<b data-o="be"></b></div>'
+                '<div class="k">%s<b data-o="y5"></b></div></div></div>') % (
+            inv['maint_psf'], E(T['v_inv'][0]), r('v_inv_p', 'p'), r('v_lay'), opts, f('v_price', '', 1000), f('v_loan', inv['loan'], 5), f('v_rate', inv['rate'], 0.05), f('v_yrs', inv['years'], 1),
+            r('v_est'), r('v_inst', 'small'), r('v_maint', 'small'), r('v_be', 'small'), r('v_y5', 'small'))
+    return ('<section class="lp-sec" id="view">%s%s<div class="lp-v2"><div class="lp-vc">%s%s</div><div class="lp-vc">%s%s</div></div>'
+            '<div class="lp-vc lp-vt">%s%s</div>%s<div class="lp-vc lp-vk">%s%s<div class="lp-row"><a class="lp-wa" href="%s" target="_blank" rel="noopener" data-cta="lp">%s%s</a></div></div></section>') % (
+        r('nav_view', 'span', 'lp-eb'), rn('h_view', 'h2'), r('v_suits', 'h3'), suits, r('v_not', 'h3'), nots, r('v_trade', 'h3'), trade, calc, r('v_check', 'h3'), verify,
+        w("Hi Keith, before I book %s, can you check the unit, car park, APDL date and maintenance fee for me?"), chat, r('v_wa'))
 
 
 DEFAULT_HEAD = '''<title>{title}</title>
@@ -242,7 +286,7 @@ BODY = ('<!-- class="hamburger": this page has its own menu -->\n'
         '<section class="lp-sec" id="details">{t_ebd}{t_hdet}<div class="pi"><div class="pi-head">Project Information</div><table>{details}</table></div>{fits}</section>\n'
         '{layouts}\n'
         '<section class="lp-sec" id="price">{t_ebp}{t_hp}<div class="lp-price"><div class="lp-pbox">{t_sp2}<b>{price}</b>{t_pnote}<div class="lp-row">{wb_list}</div></div>\n'
-        '<div class="lp-plist">{plist}{t_calc}</div></div><div class="lp-row">{wb_units}</div></section>\n'
+        '<div class="lp-plist">{plist}{t_calc}</div></div><div class="lp-row">{wb_units}</div></section>\n<!--VIEW-->'
         '<section class="lp-sec" id="location">{t_ebl}<h2>{loc}</h2><div class="lp-loc"><div><p>{loc_text}</p><a class="lp-map" href="{maps}" target="_blank" rel="noopener">{t_maps}</a><div class="lp-row">{wb_view}</div></div><ul>{amen}</ul></div></section>\n'
         '{video}\n{fb}\n<section class="lp-sec" id="faq">{t_ebf}{t_hfaq}<div class="lp-faq">{faqh}</div><!--DEV--></section>\n'
         '<section class="lp-more">{t_more}<div class="lp-nbs">{nearby}</div><div class="lp-links"><a href="{root}compare.html">{t_lc}</a><a href="{root}projects.html">{t_la}</a>'
@@ -256,7 +300,13 @@ var s=v[i]||v[0];if(el.hasAttribute('data-n'))s=s.replace('{n}',el.getAttribute(
 document.addEventListener('click',function(e){var t=e.target.closest('.lp-tab');if(!t)return;var k=t.getAttribute('data-t');document.querySelectorAll('.lp-tab').forEach(function(x){x.classList.toggle('on',x===t);});
 document.querySelectorAll('.lp-pane').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-p')===k);});});
 document.addEventListener('DOMContentLoaded',function(){var s=window.knSetLang;if(typeof s==='function')window.knSetLang=function(){var r=s.apply(this,arguments);apply();return r;};apply();});
-apply();})();</script>'''
+apply();
+function inv(){var b=document.querySelector('.lp-inv');if(!b)return;var q=function(k){return b.querySelector('[data-v="'+k+'"]')},o=function(k,v){b.querySelector('[data-o="'+k+'"]').textContent='RM'+Math.round(v).toLocaleString('en-US')};
+var sel=q('lay'),mp=parseFloat(b.getAttribute('data-mp'));function pick(){var op=sel.options[sel.selectedIndex];q('v_price').value=op.value;b.querySelector('.lp-est').hidden=op.getAttribute('data-est')!=='1';calc();}
+function calc(){var op=sel.options[sel.selectedIndex],P=+q('v_price').value||0,L=P*(+q('v_loan').value||0)/100,i=(+q('v_rate').value||0)/1200,n=(+q('v_yrs').value||0)*12;
+var m=n?(i?L*i/(1-Math.pow(1+i,-n)):L/n):0,mt=(+op.getAttribute('data-sq'))*mp;o('inst',m);o('maint',mt);o('be',m+mt);o('y5',P*0.05/12);}
+sel.addEventListener('change',pick);b.querySelectorAll('input').forEach(function(x){x.addEventListener('input',calc)});pick();}
+inv();})();</script>'''
 
 
 def _best_names():

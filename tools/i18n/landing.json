@@ -482,6 +482,139 @@
    "Tonton lawatan video Keith.",
    "Keith のビデオツアーを見る。",
    "Keith의 영상 투어 보기."
+  ],
+  "nav_view": [
+   "Keith's view",
+   "Keith 分析",
+   "Keith's view",
+   "Keith's view",
+   "Keith's view"
+  ],
+  "h_view": [
+   "Is {n} right for you?",
+   "{n} 适合你吗？",
+   "Is {n} right for you?",
+   "Is {n} right for you?",
+   "Is {n} right for you?"
+  ],
+  "v_suits": [
+   "Good fit if you are",
+   "适合这些买家",
+   "Good fit if you are",
+   "Good fit if you are",
+   "Good fit if you are"
+  ],
+  "v_not": [
+   "Look elsewhere if you",
+   "这些情况，建议看别的项目",
+   "Look elsewhere if you",
+   "Look elsewhere if you",
+   "Look elsewhere if you"
+  ],
+  "v_trade": [
+   "Things to know before you decide",
+   "决定前要知道的事",
+   "Things to know before you decide",
+   "Things to know before you decide",
+   "Things to know before you decide"
+  ],
+  "v_inv": [
+   "Investment: what rent does it need?",
+   "投资：要租多少才划算？",
+   "Investment: what rent does it need?",
+   "Investment: what rent does it need?",
+   "Investment: what rent does it need?"
+  ],
+  "v_inv_p": [
+   "Change the numbers to match your unit and your bank's offer. The interest rate is an example only.",
+   "按你的单位和银行的利率改数字。利率只是例子。",
+   "Change the numbers to match your unit and your bank's offer. The interest rate is an example only.",
+   "Change the numbers to match your unit and your bank's offer. The interest rate is an example only.",
+   "Change the numbers to match your unit and your bank's offer. The interest rate is an example only."
+  ],
+  "v_lay": [
+   "Layout",
+   "户型",
+   "Layout",
+   "Layout",
+   "Layout"
+  ],
+  "v_price": [
+   "Price (RM)",
+   "价格（RM）",
+   "Price (RM)",
+   "Price (RM)",
+   "Price (RM)"
+  ],
+  "v_loan": [
+   "Loan %",
+   "贷款 %",
+   "Loan %",
+   "Loan %",
+   "Loan %"
+  ],
+  "v_rate": [
+   "Interest rate %",
+   "利率 %",
+   "Interest rate %",
+   "Interest rate %",
+   "Interest rate %"
+  ],
+  "v_yrs": [
+   "Years",
+   "年数",
+   "Years",
+   "Years",
+   "Years"
+  ],
+  "v_inst": [
+   "Monthly loan instalment",
+   "每月供期",
+   "Monthly loan instalment",
+   "Monthly loan instalment",
+   "Monthly loan instalment"
+  ],
+  "v_maint": [
+   "Maintenance fee a month",
+   "每月管理费",
+   "Maintenance fee a month",
+   "Maintenance fee a month",
+   "Maintenance fee a month"
+  ],
+  "v_be": [
+   "Rent needed so you don't top up each month (instalment + maintenance)",
+   "要租到这个数，每月才不用自己贴钱（供期 + 管理费）",
+   "Rent needed so you don't top up each month (instalment + maintenance)",
+   "Rent needed so you don't top up each month (instalment + maintenance)",
+   "Rent needed so you don't top up each month (instalment + maintenance)"
+  ],
+  "v_y5": [
+   "Rent for a 5% gross yield",
+   "5% 毛回报要租到",
+   "Rent for a 5% gross yield",
+   "Rent for a 5% gross yield",
+   "Rent for a 5% gross yield"
+  ],
+  "v_est": [
+   "Estimated from the lowest price per sqft. Ask Keith for this unit's real price.",
+   "按最低每平方尺价格估算，实际价格请问 Keith。",
+   "Estimated from the lowest price per sqft. Ask Keith for this unit's real price.",
+   "Estimated from the lowest price per sqft. Ask Keith for this unit's real price.",
+   "Estimated from the lowest price per sqft. Ask Keith for this unit's real price."
+  ],
+  "v_check": [
+   "Check these before you book",
+   "下订前要确认的事",
+   "Check these before you book",
+   "Check these before you book",
+   "Check these before you book"
+  ],
+  "v_wa": [
+   "Ask Keith about these points",
+   "问 Keith 这些问题",
+   "Ask Keith about these points",
+   "Ask Keith about these points",
+   "Ask Keith about these points"
   ]
  },
  "projects": {
@@ -665,7 +798,160 @@
     "EXSIM membangunkan MABA Suitez sebagai usaha sama dengan Persatuan Bola Keranjang Malaysia (MABA), sebab itu podiumnya mempunyai gelanggang bola keranjang penuh.",
     "MABA Suitez は EXSIM とマレーシアバスケットボール協会（MABA）の共同開発で、そのためポディウムに本格的なバスケットコートがあります。",
     "MABA Suitez는 EXSIM과 말레이시아 농구협회(MABA)의 합작 개발이라 포디움에 정식 농구 코트가 있습니다."
-   ]
+   ],
+   "view": {
+    "suits": [
+     [
+      "An investor who wants a city-centre unit about 160m from Merdeka MRT, from RM699,000 (gross).",
+      "想在市中心、离 Merdeka MRT 约 160 米买投资单位的人，RM699,000 起（Gross）。",
+      "An investor who wants a city-centre unit about 160m from Merdeka MRT, from RM699,000 (gross).",
+      "An investor who wants a city-centre unit about 160m from Merdeka MRT, from RM699,000 (gross).",
+      "An investor who wants a city-centre unit about 160m from Merdeka MRT, from RM699,000 (gross)."
+     ],
+     [
+      "A business owner who wants a 323 sqft office-suite studio in the city centre.",
+      "想在市中心有一间 323 平方尺办公室套房的老板。",
+      "A business owner who wants a 323 sqft office-suite studio in the city centre.",
+      "A business owner who wants a 323 sqft office-suite studio in the city centre.",
+      "A business owner who wants a 323 sqft office-suite studio in the city centre."
+     ],
+     [
+      "A single professional or a couple who want a separate room (Type B, 1+1).",
+      "想要独立房间的单身专业人士或情侣（Type B，1+1）。",
+      "A single professional or a couple who want a separate room (Type B, 1+1).",
+      "A single professional or a couple who want a separate room (Type B, 1+1).",
+      "A single professional or a couple who want a separate room (Type B, 1+1)."
+     ],
+     [
+      "An owner who wants to live in one part and rent out the other (dual-key Type C).",
+      "想自住一边、出租另一边的业主（双钥匙 Type C）。",
+      "An owner who wants to live in one part and rent out the other (dual-key Type C).",
+      "An owner who wants to live in one part and rent out the other (dual-key Type C).",
+      "An owner who wants to live in one part and rent out the other (dual-key Type C)."
+     ]
+    ],
+    "not": [
+     [
+      "Need two or more bedrooms for a family: the largest unit is 657 sqft with 1 room.",
+      "家里需要两间房或以上：最大的单位是 657 平方尺，只有 1 间房。",
+      "Need two or more bedrooms for a family: the largest unit is 657 sqft with 1 room.",
+      "Need two or more bedrooms for a family: the largest unit is 657 sqft with 1 room.",
+      "Need two or more bedrooms for a family: the largest unit is 657 sqft with 1 room."
+     ],
+     [
+      "Only want freehold: MABA Suitez is leasehold.",
+      "只买永久地契：MABA Suitez 是租赁地契（Leasehold）。",
+      "Only want freehold: MABA Suitez is leasehold.",
+      "Only want freehold: MABA Suitez is leasehold.",
+      "Only want freehold: MABA Suitez is leasehold."
+     ],
+     [
+      "Need a car park with the unit: car parks are not included.",
+      "一定要配车位：这里的单位不包车位。",
+      "Need a car park with the unit: car parks are not included.",
+      "Need a car park with the unit: car parks are not included.",
+      "Need a car park with the unit: car parks are not included."
+     ],
+     [
+      "Want to move in soon: completion is 60 months after APDL.",
+      "想很快入住：完工期是 APDL 后 60 个月。",
+      "Want to move in soon: completion is 60 months after APDL.",
+      "Want to move in soon: completion is 60 months after APDL.",
+      "Want to move in soon: completion is 60 months after APDL."
+     ]
+    ],
+    "trade": [
+     [
+      "High price per sqft: about RM2,164 – RM2,701 psf (gross). The units are small, so compare the total price and the psf with nearby projects.",
+      "每平方尺价格高：约 RM2,164 – RM2,701 psf（Gross）。单位面积小，要同时比较总价和每平方尺价格。",
+      "High price per sqft: about RM2,164 – RM2,701 psf (gross). The units are small, so compare the total price and the psf with nearby projects.",
+      "High price per sqft: about RM2,164 – RM2,701 psf (gross). The units are small, so compare the total price and the psf with nearby projects.",
+      "High price per sqft: about RM2,164 – RM2,701 psf (gross). The units are small, so compare the total price and the psf with nearby projects."
+     ],
+     [
+      "Fewer car parks than units: 391 bays plus 6 EV bays for 914 units.",
+      "车位比单位少：914 个单位，只有 391 个车位加 6 个电动车位。",
+      "Fewer car parks than units: 391 bays plus 6 EV bays for 914 units.",
+      "Fewer car parks than units: 391 bays plus 6 EV bays for 914 units.",
+      "Fewer car parks than units: 391 bays plus 6 EV bays for 914 units."
+     ],
+     [
+      "A long wait: completion is 60 months after APDL, so ask when APDL is expected.",
+      "要等比较久：APDL 后 60 个月完工，要问清楚 APDL 预计什么时候。",
+      "A long wait: completion is 60 months after APDL, so ask when APDL is expected.",
+      "A long wait: completion is 60 months after APDL, so ask when APDL is expected.",
+      "A long wait: completion is 60 months after APDL, so ask when APDL is expected."
+     ],
+     [
+      "Foreign buyers: the entry units are below Kuala Lumpur's RM1 million minimum price.",
+      "外国买家：入门单位低于吉隆坡 RM100 万的最低价格。",
+      "Foreign buyers: the entry units are below Kuala Lumpur's RM1 million minimum price.",
+      "Foreign buyers: the entry units are below Kuala Lumpur's RM1 million minimum price.",
+      "Foreign buyers: the entry units are below Kuala Lumpur's RM1 million minimum price."
+     ],
+     [
+      "Maintenance fee RM0.99 psf: about RM320 a month for Type A and RM650 for Type C.",
+      "管理费 RM0.99 psf：Type A 每月约 RM320，Type C 约 RM650。",
+      "Maintenance fee RM0.99 psf: about RM320 a month for Type A and RM650 for Type C.",
+      "Maintenance fee RM0.99 psf: about RM320 a month for Type A and RM650 for Type C.",
+      "Maintenance fee RM0.99 psf: about RM320 a month for Type A and RM650 for Type C."
+     ]
+    ],
+    "verify": [
+     [
+      "The exact tower, floor and unit, and its price.",
+      "实际的楼栋、楼层、单位和价格。",
+      "The exact tower, floor and unit, and its price.",
+      "The exact tower, floor and unit, and its price.",
+      "The exact tower, floor and unit, and its price."
+     ],
+     [
+      "Whether you can buy a car park, and its price.",
+      "能不能买车位，车位多少钱。",
+      "Whether you can buy a car park, and its price.",
+      "Whether you can buy a car park, and its price.",
+      "Whether you can buy a car park, and its price."
+     ],
+     [
+      "The expected APDL date, so you know when it should complete.",
+      "APDL 预计日期，才知道什么时候完工。",
+      "The expected APDL date, so you know when it should complete.",
+      "The expected APDL date, so you know when it should complete.",
+      "The expected APDL date, so you know when it should complete."
+     ],
+     [
+      "The maintenance fee and sinking fund for your unit size.",
+      "你那个面积的管理费和维修基金。",
+      "The maintenance fee and sinking fund for your unit size.",
+      "The maintenance fee and sinking fund for your unit size.",
+      "The maintenance fee and sinking fund for your unit size."
+     ],
+     [
+      "For the office suite (Type A): how the unit is classified, and what that means for your loan and how you can use it.",
+      "办公室套房（Type A）：单位属于什么类别，对贷款和用途有什么影响。",
+      "For the office suite (Type A): how the unit is classified, and what that means for your loan and how you can use it.",
+      "For the office suite (Type A): how the unit is classified, and what that means for your loan and how you can use it.",
+      "For the office suite (Type A): how the unit is classified, and what that means for your loan and how you can use it."
+     ],
+     [
+      "For foreign buyers: whether the unit meets the RM1 million minimum price.",
+      "外国买家：单位有没有达到 RM100 万最低价格。",
+      "For foreign buyers: whether the unit meets the RM1 million minimum price.",
+      "For foreign buyers: whether the unit meets the RM1 million minimum price.",
+      "For foreign buyers: whether the unit meets the RM1 million minimum price."
+     ]
+    ],
+    "inv": {
+     "rate": 4.2,
+     "loan": 90,
+     "years": 35,
+     "psf_low": 2164,
+     "maint_psf": 0.99,
+     "prices": {
+      "Type A — Office Suite": 699000
+     }
+    }
+   }
   },
   "clouthaus": {
    "hook": [
