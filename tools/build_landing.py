@@ -192,7 +192,7 @@ def page(slug, root='../', head_src=None):
         faqh=faqh, video=vblk, layouts=('<section class="lp-sec" id="layouts">%s<h2 data-r="h_lay">%s</h2><div class="lp-tabs">%s</div>%s</section>' % (
             r('nav_layouts', 'span', 'lp-eb'), E(T['h_lay'][0]), tabs, panes)) if lays else '',
         **{k: v for k, v in dict(
-            t_back=r('back'), t_home=r('home', 'em', 'lp-hs'), t_cta=r('cta_bar'), t_tag=r('tag'), t_sp=r('sp', 'small'), t_mo=r('mo'), t_moch=r('mo_ch'), t_wal=r('wa_list'), t_cmp=r('cmp'),
+            t_back=r('back'), t_home=r('home', 'em', 'lp-hs'), t_cta=r('cta_bar'), t_tag=('<span class="hA-tag">%s</span>' % r('tag')) if slug in BEST_SLUGS else '', t_sp=r('sp', 'small'), t_mo=r('mo'), t_moch=r('mo_ch'), t_wal=r('wa_list'), t_cmp=r('cmp'),
             t_ebo=r('nav_overview', 'span', 'lp-eb'), t_hab=rn('h_about', 'h2'), t_eb5=r('eb_five', 'span', 'lp-eb'), t_h5=r(h_five, 'h2'), t_ebd=r('eb_det', 'span', 'lp-eb'), t_hdet=rn('h_det', 'h2'),
             t_ebp=r('nav_price', 'span', 'lp-eb'), t_hp=r('h_price', 'h2'), t_sp2=r('sp', 'small'), t_pnote=r('p_note', 'p'), t_calc=r('calc', 'a', 'lp-map', ' href="%scalculator.html"' % root),
             t_ebl=r('nav_location', 'span', 'lp-eb'), t_maps=r('maps'), t_ebf=r('nav_faq', 'span', 'lp-eb'), t_hfaq=rn('h_faq', 'h2'), t_more=r('more_h', 'h2'),
@@ -231,7 +231,7 @@ BODY = ('<!-- class="hamburger": this page has its own menu -->\n'
         '<div class="lp-menu kn-menu cur" id="knCurMenu">' + _cm.replace('{', '{{').replace('}', '}}').replace('{{root}}', '{root}') + '</div></div></div></div>'
         '<div class="lp-bar"><a class="lp-logo" href="{root}"><img src="{root}images/f304c8479b1fe873.png" alt="Keith Nah"><span><b>Keith Nah</b><small>Malaysia Real Estate</small></span></a>'
         '<nav class="lp-nav">{navh}</nav><a class="lp-cta" href="{wa_price}" target="_blank" rel="noopener" data-cta="lp">{t_cta}</a></div></header>\n<main>\n'
-        '<div class="hA"><div class="hA-r" style="background-image:url(\'{photo}\')" role="img" aria-label="{name}"><span class="hA-tag">{t_tag}</span></div>\n'
+        '<div class="hA"><div class="hA-r" style="background-image:url(\'{photo}\')" role="img" aria-label="{name}">{t_tag}</div>\n'
         '<div class="hA-l"><nav class="lp-crumb" aria-label="Breadcrumb">{crumbs}</nav><div class="lp-bds">{badges}</div><h1>{name}</h1>{hook}<p class="hA-loc">{loc}</p>\n'
         '<div class="hA-p">{t_sp}<b>{price}</b></div><div class="lp-mo">{t_mo}<b>{mo}</b><a href="{root}calculator.html">{t_moch}</a></div>\n'
         '<div class="lp-btns"><a class="lp-wa" href="{wa_price}" target="_blank" rel="noopener" data-cta="lp">{chat}{t_wal}</a><a class="lp-out" href="{root}compare.html">{t_cmp}</a></div></div></div>\n'
@@ -258,10 +258,22 @@ document.addEventListener('DOMContentLoaded',function(){var s=window.knSetLang;i
 apply();})();</script>'''
 
 
-def slugs():
-    import build_foreign as F   # the "Foreign buyer best choice" list
-    return [A.SLUG[F._IDX[n]] for _, names in F.BEST for n in names if F._IDX.get(n) is not None and F._IDX[n] in A.SLUG]
+def _best_names():
+    """The "Foreign buyer best choice" project names, read from tools/build_foreign.py without running it."""
+    import ast
+    src = open(os.path.join(HERE, 'build_foreign.py'), encoding='utf-8').read()
+    for node in ast.parse(src).body:
+        if isinstance(node, ast.Assign) and any(getattr(t, 'id', '') == 'BEST' for t in node.targets):
+            return [n for _, names in ast.literal_eval(node.value) for n in names]
+    return []
 
+
+def slugs():
+    idx = {p['name']: i for i, p in enumerate(A.P)}
+    return [A.SLUG[idx[n]] for n in _best_names() if idx.get(n) is not None and idx[n] in A.SLUG]
+
+
+BEST_SLUGS = set(slugs())   # the "Foreign buyer best choice" tag shows only on these
 
 if __name__ == '__main__':
     if len(sys.argv) > 2:
