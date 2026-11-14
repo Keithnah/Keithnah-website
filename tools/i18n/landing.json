@@ -505,18 +505,18 @@
    "Good fit if you are"
   ],
   "v_not": [
-   "Look elsewhere if you",
-   "这些情况，建议看别的项目",
-   "Look elsewhere if you",
-   "Look elsewhere if you",
-   "Look elsewhere if you"
+   "Also compare other projects if you",
+   "如果你更看重这些，也可以比较其他项目",
+   "Also compare other projects if you",
+   "Also compare other projects if you",
+   "Also compare other projects if you"
   ],
   "v_trade": [
-   "Things to know before you decide",
-   "决定前要知道的事",
-   "Things to know before you decide",
-   "Things to know before you decide",
-   "Things to know before you decide"
+   "Useful facts",
+   "实用资料",
+   "Useful facts",
+   "Useful facts",
+   "Useful facts"
   ],
   "v_inv": [
    "Investment: what rent does it need?",
@@ -615,6 +615,48 @@
    "Ask Keith about these points",
    "Ask Keith about these points",
    "Ask Keith about these points"
+  ],
+  "eb_news": [
+   "News & articles",
+   "新闻与文章",
+   "News & articles",
+   "News & articles",
+   "News & articles"
+  ],
+  "h_news": [
+   "News and articles about {n}",
+   "{n} 相关新闻与文章",
+   "News and articles about {n}",
+   "News and articles about {n}",
+   "News and articles about {n}"
+  ],
+  "k_art": [
+   "Project article",
+   "项目文章",
+   "Project article",
+   "Project article",
+   "Project article"
+  ],
+  "k_note": [
+   "Market note",
+   "市场短评",
+   "Market note",
+   "Market note",
+   "Market note"
+  ],
+  "k_blog": [
+   "Article",
+   "文章",
+   "Article",
+   "Article",
+   "Article"
+  ],
+  "read": [
+   "Read →",
+   "阅读 →",
+   "Read →",
+   "Read →",
+   "Read →"
   ]
  },
  "projects": {
@@ -832,62 +874,55 @@
     ],
     "not": [
      [
-      "Need two or more bedrooms for a family: the largest unit is 657 sqft with 1 room.",
-      "家里需要两间房或以上：最大的单位是 657 平方尺，只有 1 间房。",
-      "Need two or more bedrooms for a family: the largest unit is 657 sqft with 1 room.",
-      "Need two or more bedrooms for a family: the largest unit is 657 sqft with 1 room.",
-      "Need two or more bedrooms for a family: the largest unit is 657 sqft with 1 room."
+      "Need two or more bedrooms: the largest layout is 657 sqft with 1 room.",
+      "需要两间房或以上：最大的户型是 657 平方尺，1 间房。",
+      "Need two or more bedrooms: the largest layout is 657 sqft with 1 room.",
+      "Need two or more bedrooms: the largest layout is 657 sqft with 1 room.",
+      "Need two or more bedrooms: the largest layout is 657 sqft with 1 room."
      ],
      [
-      "Only want freehold: MABA Suitez is leasehold.",
-      "只买永久地契：MABA Suitez 是租赁地契（Leasehold）。",
-      "Only want freehold: MABA Suitez is leasehold.",
-      "Only want freehold: MABA Suitez is leasehold.",
-      "Only want freehold: MABA Suitez is leasehold."
+      "Prefer freehold: MABA Suitez is leasehold.",
+      "偏好永久地契：MABA Suitez 是租赁地契（Leasehold）。",
+      "Prefer freehold: MABA Suitez is leasehold.",
+      "Prefer freehold: MABA Suitez is leasehold.",
+      "Prefer freehold: MABA Suitez is leasehold."
      ],
      [
-      "Need a car park with the unit: car parks are not included.",
-      "一定要配车位：这里的单位不包车位。",
-      "Need a car park with the unit: car parks are not included.",
-      "Need a car park with the unit: car parks are not included.",
-      "Need a car park with the unit: car parks are not included."
-     ],
-     [
-      "Want to move in soon: completion is 60 months after APDL.",
-      "想很快入住：完工期是 APDL 后 60 个月。",
-      "Want to move in soon: completion is 60 months after APDL.",
-      "Want to move in soon: completion is 60 months after APDL.",
-      "Want to move in soon: completion is 60 months after APDL."
+      "Want to move in sooner: completion is 60 months after APDL.",
+      "想更早入住：完工期是 APDL 后 60 个月。",
+      "Want to move in sooner: completion is 60 months after APDL.",
+      "Want to move in sooner: completion is 60 months after APDL.",
+      "Want to move in sooner: completion is 60 months after APDL."
      ]
     ],
     "trade": [
      [
-      "High price per sqft: about RM2,164 – RM2,701 psf (gross). The units are small, so compare the total price and the psf with nearby projects.",
-      "每平方尺价格高：约 RM2,164 – RM2,701 psf（Gross）。单位面积小，要同时比较总价和每平方尺价格。",
-      "High price per sqft: about RM2,164 – RM2,701 psf (gross). The units are small, so compare the total price and the psf with nearby projects.",
-      "High price per sqft: about RM2,164 – RM2,701 psf (gross). The units are small, so compare the total price and the psf with nearby projects.",
-      "High price per sqft: about RM2,164 – RM2,701 psf (gross). The units are small, so compare the total price and the psf with nearby projects."
+      "Price per sqft: about RM2,164 – RM2,701 psf (gross).",
+      "每平方尺价格：约 RM2,164 – RM2,701 psf（Gross）。",
+      "Price per sqft: about RM2,164 – RM2,701 psf (gross).",
+      "Price per sqft: about RM2,164 – RM2,701 psf (gross).",
+      "Price per sqft: about RM2,164 – RM2,701 psf (gross)."
      ],
      [
-      "Fewer car parks than units: 391 bays plus 6 EV bays for 914 units.",
-      "车位比单位少：914 个单位，只有 391 个车位加 6 个电动车位。",
-      "Fewer car parks than units: 391 bays plus 6 EV bays for 914 units.",
-      "Fewer car parks than units: 391 bays plus 6 EV bays for 914 units.",
-      "Fewer car parks than units: 391 bays plus 6 EV bays for 914 units."
+      "Car parks: 391 bays plus 6 EV bays, sold separately from the units.",
+      "车位：391 个车位加 6 个电动车位，不包在单位价格里。",
+      "Car parks: 391 bays plus 6 EV bays, sold separately from the units.",
+      "Car parks: 391 bays plus 6 EV bays, sold separately from the units.",
+      "Car parks: 391 bays plus 6 EV bays, sold separately from the units."
      ],
      [
-      "A long wait: completion is 60 months after APDL, so ask when APDL is expected.",
-      "要等比较久：APDL 后 60 个月完工，要问清楚 APDL 预计什么时候。",
-      "A long wait: completion is 60 months after APDL, so ask when APDL is expected.",
-      "A long wait: completion is 60 months after APDL, so ask when APDL is expected.",
-      "A long wait: completion is 60 months after APDL, so ask when APDL is expected."
+      "Completion: 60 months after APDL.",
+      "完工期：APDL 后 60 个月。",
+      "Completion: 60 months after APDL.",
+      "Completion: 60 months after APDL.",
+      "Completion: 60 months after APDL."
      ],
      [
-      "Foreign buyers: the entry units are below Kuala Lumpur's RM1 million minimum price.",
-      "外国买家：入门单位低于吉隆坡 RM100 万的最低价格。",
-      "Foreign buyers: the entry units are below Kuala Lumpur's RM1 million minimum price.",
-      "Foreign buyers: the entry units are below Kuala Lumpur's RM1 million minimum price.",
-      "Foreign buyers: the entry units are below Kuala Lumpur's RM1 million minimum price."
+      "Foreign buyers: Kuala Lumpur's minimum price is RM1 million; larger units can meet it.",
+      "外国买家：吉隆坡最低价格是 RM100 万，较大的单位可以达到。",
+      "Foreign buyers: Kuala Lumpur's minimum price is RM1 million; larger units can meet it.",
+      "Foreign buyers: Kuala Lumpur's minimum price is RM1 million; larger units can meet it.",
+      "Foreign buyers: Kuala Lumpur's minimum price is RM1 million; larger units can meet it."
      ],
      [
       "Maintenance fee RM0.99 psf: about RM320 a month for Type A and RM650 for Type C.",
@@ -925,13 +960,6 @@
       "The maintenance fee and sinking fund for your unit size.",
       "The maintenance fee and sinking fund for your unit size.",
       "The maintenance fee and sinking fund for your unit size."
-     ],
-     [
-      "For the office suite (Type A): how the unit is classified, and what that means for your loan and how you can use it.",
-      "办公室套房（Type A）：单位属于什么类别，对贷款和用途有什么影响。",
-      "For the office suite (Type A): how the unit is classified, and what that means for your loan and how you can use it.",
-      "For the office suite (Type A): how the unit is classified, and what that means for your loan and how you can use it.",
-      "For the office suite (Type A): how the unit is classified, and what that means for your loan and how you can use it."
      ],
      [
       "For foreign buyers: whether the unit meets the RM1 million minimum price.",

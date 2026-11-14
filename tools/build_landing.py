@@ -204,6 +204,7 @@ def page(slug, root='../', head_src=None):
     if L.get('developer'):
         body = body.replace('<!--DEV-->', '<div class="lp-dev">%s%s</div>' % (r('eb_dev', 'span', 'lp-eb'), r('dev', 'p')))
     body = body.replace('<!--VIEW-->', view, 1)
+    body = body.replace('<!--NEWS-->', news_block(slug, name, area, T, r, rn, root), 1)
     if not plist:
         body = body.replace('<div class="lp-plist"></div>', '')
     js = JS % (json.dumps(T, ensure_ascii=False), json.dumps(LG))
@@ -256,6 +257,70 @@ def view_block(p, L, T, r, rn, root, lays, ex, w, chat):
         w("Hi Keith, before I book %s, can you check the unit, car park, APDL date and maintenance fee for me?"), chat, r('v_wa'))
 
 
+
+def _six_any(d):
+    """{lang: text} (any of the six, English required) -> the six site languages."""
+    zh = d.get('zh-CN')
+    tw = d.get('zh-TW') or (_cc(zh) if zh else None)
+    return [d.get('en'), zh or d['en'], tw or d['en'], d.get('ms') or d['en'], d.get('ja') or d['en'], d.get('ko') or d['en']]
+
+
+def related(slug, name, area, n=6):
+    """News and articles about this project: its own articles first, then market notes and News
+    articles that name the project, then ones about its area. [(kind, {lang: title}, href, date)]"""
+    import datetime
+    import note_links as NL
+    out = []
+    try:
+        arts = json.load(open(os.path.join(HERE, 'project_articles.json'), encoding='utf-8'))
+    except (OSError, ValueError):
+        arts = []
+    for a in arts:
+        if a['project'] == slug:
+            out.append((0, 'art', a['title'], 'article/%s.html' % a['slug'], a['date']))
+    has = lambda text, ph: re.search(r'(?<![A-Za-z])%s(?![A-Za-z])' % re.escape(ph), text, re.I) is not None
+    en = lambda d: d.get('en', '') if isinstance(d, dict) else (d or '')
+    projs = NL.projects()
+    for nt in NL.notes():
+        text = ' '.join(en(nt.get(k)) for k in ('title', 'body', 'take'))
+        sc = 1 if has(text, name) else (2 if slug in [p['slug'] for p in NL.related(nt, projs)] else 0)
+        if sc:
+            out.append((sc, 'note', nt['title'], nt['_page'], nt['date']))
+    try:
+        import news_pages as NP
+        for aid, a in NP.ARTICLES.items():
+            text = html.unescape(' '.join([a['title'], a['intro']] + [p for x in a['sections'] for p in x['paragraphs']]))
+            sc = 1 if has(text, name) else (2 if area and has(html.unescape(a['title']), area) else 0)
+            if sc:
+                t = dict(NP.I.tr(a['title']) or {}, en=html.unescape(a['title']))
+                out.append((sc, 'blog', t, 'article/%s.html' % NP.ART_SLUGS[aid], NP.iso(a['date'])))
+    except Exception:
+        pass
+    def day(d):
+        for f in ('%Y-%m-%d', '%d %b %Y'):
+            try:
+                return datetime.datetime.strptime(d, f).date()
+            except ValueError:
+                pass
+        return datetime.date(2000, 1, 1)
+    out.sort(key=lambda x: (x[0], -day(x[4]).toordinal()))
+    return [(k, t, h, day(d)) for _, k, t, h, d in out[:n]]
+
+
+def news_block(slug, name, area, T, r, rn, root):
+    if os.environ.get('KN_VIEW', '0') != '1':   # preview only until Keith approves
+        return ''
+    items = related(slug, name, area)
+    if not items:
+        return ''
+    cards = ''
+    for n, (kind, title, href, d) in enumerate(items):
+        T['rel%d' % n] = _six_any(title)
+        cards += '<a class="lp-nw" href="%s%s"><small>%s · %s</small>%s<span data-r="read">%s</span></a>' % (
+            root, href, r('k_' + kind), d.strftime('%d %b %Y'), r('rel%d' % n, 'h3'), E(T['read'][0]))
+    return '<section class="lp-sec" id="news">%s%s<div class="lp-nws">%s</div></section>' % (r('eb_news', 'span', 'lp-eb'), rn('h_news', 'h2'), cards)
+
+
 DEFAULT_HEAD = '''<title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="icon" type="image/png" href="{root}images/f304c8479b1fe873.png">
@@ -288,7 +353,7 @@ BODY = ('<!-- class="hamburger": this page has its own menu -->\n'
         '<section class="lp-sec" id="price">{t_ebp}{t_hp}<div class="lp-price"><div class="lp-pbox">{t_sp2}<b>{price}</b>{t_pnote}<div class="lp-row">{wb_list}</div></div>\n'
         '<div class="lp-plist">{plist}{t_calc}</div></div><div class="lp-row">{wb_units}</div></section>\n<!--VIEW-->'
         '<section class="lp-sec" id="location">{t_ebl}<h2>{loc}</h2><div class="lp-loc"><div><p>{loc_text}</p><a class="lp-map" href="{maps}" target="_blank" rel="noopener">{t_maps}</a><div class="lp-row">{wb_view}</div></div><ul>{amen}</ul></div></section>\n'
-        '{video}\n{fb}\n<section class="lp-sec" id="faq">{t_ebf}{t_hfaq}<div class="lp-faq">{faqh}</div><!--DEV--></section>\n'
+        '{video}\n{fb}\n<section class="lp-sec" id="faq">{t_ebf}{t_hfaq}<div class="lp-faq">{faqh}</div><!--DEV--></section>\n<!--NEWS-->\n'
         '<section class="lp-more">{t_more}<div class="lp-nbs">{nearby}</div><div class="lp-links"><a href="{root}compare.html">{t_lc}</a><a href="{root}projects.html">{t_la}</a>'
         '<a href="{root}foreign-buyers.html">{t_lf}</a><a href="{root}calculator.html">{t_lk}</a></div></section>\n</main>\n'
         '<footer class="lp-foot">&copy; 2026 Keith Nah Real Estate &middot; <a href="{root}">keithnah.com</a></footer>')
