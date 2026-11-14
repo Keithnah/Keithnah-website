@@ -101,14 +101,14 @@ def page(slug, root='../'):
     amen = ''.join('<li>%s</li>' % E(a) for a in p.get('amenities') or [])
     faqs = [('Where is %s?' % name, p['loc_text']),
             ('What sizes are available?', 'Units range from %s: %s.' % (p['size'], ', '.join('%s (%s)' % (re.sub(r'\s+—.*', '', l['type']), l['size']) for l in lays[:3]))),
-            ('What is the starting price?', '%s. %s.' % (p['price'], ex.get('Price per Sqft', '')).strip(' .') + '.'),
+            ('What is the starting price?', ('%s. %s.' % (p['price'], ex.get('Price per Sqft', ''))).strip(' .') + '.'),
             ('Is it freehold or leasehold?', '%s.' % p['tenure']),
             ('Who is the developer?', L['developer']),
-            ('When will it be completed?', 'Completion is %s.' % p['completion'][0].lower() + p['completion'][1:] if p['completion'] else ''),
+            ('When will it be completed?', ('Completion is %s.' % (p['completion'][0].lower() + p['completion'][1:])) if p['completion'] else ''),
             ('What is the maintenance fee?', ex.get('Maintenance Fee', '') + '.'),
             ('Can foreigners buy %s?' % name, L['foreign'])]
     faqh = ''.join('<details><summary>%s</summary><p>%s</p></details>' % (E(q), E(a)) for q, a in faqs if a)
-    nearby = ''.join('<a class="lp-nb" href="%s.html"><img src="%s%s" alt="" loading="lazy"><b>%s</b><small>%s</small></a>' % (
+    nearby = ''.join('<a class="lp-nb" href="%s.html"><img src="%s%s" alt=""><b>%s</b><small>%s</small></a>' % (
         A.SLUG.get(k, A.slug(A.P[k]['name'])), root, E(A.PHOTO.get(k, '')), E(A.P[k]['name']), E(A.P[k]['price'])) for k in (p.get('nearby') or [])[:3])
     ld = {'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in faqs if a]}
 
@@ -173,7 +173,7 @@ h1,h2,h3{{font-family:'Playfair Display',Georgia,serif;line-height:1.2}}
 .lp-more{{max-width:1180px;margin:90px auto 0;padding:50px 5vw;border-top:1px solid var(--line)}} .lp-more h2{{font-size:24px;margin-bottom:18px}} .lp-nbs{{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}} .lp-nb{{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}} .lp-nb img{{width:100%;height:160px;object-fit:cover}} .lp-nb b,.lp-nb small{{display:block;padding:0 16px}} .lp-nb b{{padding-top:12px}} .lp-nb small{{color:var(--grey);padding-bottom:14px}}
 .lp-links{{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px}} .lp-links a{{font-weight:700;color:var(--gold)}}
 .lp-foot{{background:#080808;color:rgba(255,255,255,.55);text-align:center;padding:30px 5vw;font-size:13px;margin-top:60px}} .lp-foot a{{color:#fff}}
-.lp-float{{position:fixed;right:18px;bottom:18px;z-index:40;box-shadow:0 10px 30px rgba(37,211,102,.45)}}
+.lp-float{{position:fixed;right:18px;bottom:18px;z-index:40;box-shadow:0 10px 30px rgba(37,211,102,.45);opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .3s,transform .3s}} .lp-float.show{{opacity:1;pointer-events:auto;transform:none}}
 @media(max-width:1100px){{.lp-nav{{display:none}} .lp-bar{{justify-content:space-between}}}}
 @media(max-width:820px){{.lp-nums{{grid-template-columns:1fr 1fr}} .lp-pane.on,.lp-price,.lp-loc{{grid-template-columns:1fr;display:grid}} .lp-pane{{padding:16px}} .lp-pd dl{{grid-template-columns:1fr 1fr}} .lp-nbs{{grid-template-columns:1fr}}
  .lp-hero{{padding:110px 22px 50px;min-height:92vh}} .lp-sec{{padding:64px 20px 0}} .lp-five li{{padding:18px;gap:14px}} .lp-fb{{padding:28px 22px}} .lp-logo small{{display:none}} .lp-cta{{padding:9px 14px;font-size:12.5px}}}}
@@ -198,7 +198,7 @@ h1,h2,h3{{font-family:'Playfair Display',Georgia,serif;line-height:1.2}}
 <section class="lp-more"><h2>Also worth a look nearby</h2><div class="lp-nbs">{nearby}</div><div class="lp-links"><a href="{root}compare.html">Compare projects &rarr;</a><a href="{root}projects.html">All projects &rarr;</a><a href="{root}foreign-buyers.html">Foreign buyers &rarr;</a><a href="{root}calculator.html">Calculators &rarr;</a></div></section>
 <footer class="lp-foot">&copy; 2026 Keith Nah Real Estate &middot; <a href="{root}">keithnah.com</a></footer>
 <a class="lp-wa lp-float" href="{wa_price}" target="_blank" rel="noopener">{chat}<span>WhatsApp Keith</span></a>
-<script>(function(){{var b=document.getElementById('lpBar');function s(){{b.classList.toggle('solid',window.scrollY>60);}}s();window.addEventListener('scroll',s,{{passive:true}});
+<script>(function(){{var b=document.getElementById('lpBar');var f=document.querySelector('.lp-float');function s(){{b.classList.toggle('solid',window.scrollY>60);f.classList.toggle('show',window.scrollY>window.innerHeight*0.8);}}s();window.addEventListener('scroll',s,{{passive:true}});
 document.addEventListener('click',function(e){{var t=e.target.closest('.lp-tab');if(!t)return;var k=t.getAttribute('data-t');document.querySelectorAll('.lp-tab').forEach(function(x){{x.classList.toggle('on',x===t);}});
 document.querySelectorAll('.lp-pane').forEach(function(x){{x.classList.toggle('on',x.getAttribute('data-p')===k);}});}});}})();</script>
 </body>
