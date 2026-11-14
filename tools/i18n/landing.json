@@ -1,0 +1,745 @@
+{
+ "ui": {
+  "nav_overview": [
+   "Overview",
+   "概览",
+   "Gambaran",
+   "概要",
+   "개요"
+  ],
+  "nav_five": [
+   "Key points",
+   "重点",
+   "Perkara utama",
+   "ポイント",
+   "핵심"
+  ],
+  "nav_details": [
+   "Details",
+   "资料",
+   "Butiran",
+   "詳細",
+   "상세"
+  ],
+  "nav_layouts": [
+   "Layouts",
+   "户型",
+   "Pelan",
+   "間取り",
+   "평면도"
+  ],
+  "nav_price": [
+   "Price",
+   "价格",
+   "Harga",
+   "価格",
+   "가격"
+  ],
+  "nav_location": [
+   "Location",
+   "地点",
+   "Lokasi",
+   "立地",
+   "위치"
+  ],
+  "nav_foreign": [
+   "Foreign buyers",
+   "外国买家",
+   "Pembeli asing",
+   "外国人購入者",
+   "외국인 구매자"
+  ],
+  "nav_faq": [
+   "FAQ",
+   "常见问题",
+   "Soalan lazim",
+   "よくある質問",
+   "FAQ"
+  ],
+  "back": [
+   "Back to home website",
+   "返回主网站",
+   "Kembali ke laman utama",
+   "ホームページに戻る",
+   "홈페이지로 돌아가기"
+  ],
+  "home": [
+   "Home",
+   "主页",
+   "Utama",
+   "ホーム",
+   "홈"
+  ],
+  "cta_bar": [
+   "Get the price list",
+   "索取价格表",
+   "Dapatkan senarai harga",
+   "価格表をもらう",
+   "가격표 받기"
+  ],
+  "tag": [
+   "Foreign buyer best choice",
+   "外国买家精选",
+   "Pilihan terbaik pembeli asing",
+   "外国人購入者向けおすすめ",
+   "외국인 구매자 추천"
+  ],
+  "sp": [
+   "Starting price",
+   "起价",
+   "Harga permulaan",
+   "販売価格",
+   "분양가"
+  ],
+  "mo": [
+   "Est. monthly instalment from",
+   "预计月供从",
+   "Anggaran ansuran bulanan dari",
+   "毎月の返済額の目安",
+   "예상 월 상환액"
+  ],
+  "mo_ch": [
+   "Change down payment & rate",
+   "更改首付和利率",
+   "Tukar bayaran muka & kadar",
+   "頭金と金利を変更",
+   "계약금과 금리 변경"
+  ],
+  "wa_list": [
+   "Get the latest price list",
+   "索取最新价格表",
+   "Dapatkan senarai harga terkini",
+   "最新の価格表をもらう",
+   "최신 가격표 받기"
+  ],
+  "cmp": [
+   "Compare projects",
+   "比较项目",
+   "Bandingkan projek",
+   "物件を比較",
+   "프로젝트 비교"
+  ],
+  "f_from": [
+   "From",
+   "起价",
+   "Dari",
+   "価格",
+   "분양가"
+  ],
+  "f_size": [
+   "Size",
+   "面积",
+   "Saiz",
+   "面積",
+   "면적"
+  ],
+  "f_type": [
+   "Type",
+   "户型",
+   "Jenis",
+   "タイプ",
+   "타입"
+  ],
+  "f_ten": [
+   "Tenure",
+   "地契",
+   "Pegangan",
+   "権利形態",
+   "소유 형태"
+  ],
+  "f_comp": [
+   "Completion",
+   "竣工",
+   "Siap",
+   "完成",
+   "준공"
+  ],
+  "h_about": [
+   "About {n}.",
+   "关于 {n}。",
+   "Tentang {n}.",
+   "{n} について。",
+   "{n} 소개."
+  ],
+  "eb_five": [
+   "Before you look",
+   "看房前先了解",
+   "Sebelum anda melihat",
+   "見る前に",
+   "보기 전에"
+  ],
+  "h_five": [
+   "Worth knowing first.",
+   "先知道的重点。",
+   "Perkara yang patut diketahui dahulu.",
+   "最初に知っておきたいこと。",
+   "먼저 알아 두면 좋은 점."
+  ],
+  "h_five5": [
+   "Five things worth knowing first.",
+   "先知道的 5 件事。",
+   "Lima perkara yang patut diketahui dahulu.",
+   "最初に知っておきたい5つのこと。",
+   "먼저 알아 두면 좋은 5가지."
+  ],
+  "eb_det": [
+   "Project details",
+   "项目资料",
+   "Butiran projek",
+   "物件詳細",
+   "프로젝트 상세"
+  ],
+  "h_det": [
+   "{n} at a glance.",
+   "{n} 一览。",
+   "{n} sepintas lalu.",
+   "{n} の概要。",
+   "{n} 한눈에 보기."
+  ],
+  "h_lay": [
+   "Choose a layout to see the plan.",
+   "选一个户型看平面图。",
+   "Pilih pelan untuk melihat susun atur.",
+   "間取りを選んでプランを見る。",
+   "평면도를 선택해 보세요."
+  ],
+  "lay_size": [
+   "Size",
+   "面积",
+   "Saiz",
+   "面積",
+   "면적"
+  ],
+  "lay_layout": [
+   "Layout",
+   "格局",
+   "Susun atur",
+   "間取り",
+   "구조"
+  ],
+  "lay_units": [
+   "Units",
+   "单位数量",
+   "Unit",
+   "戸数",
+   "세대 수"
+  ],
+  "lay_noimg": [
+   "Floor plan available from Keith",
+   "平面图请向 Keith 索取",
+   "Pelan lantai boleh didapati daripada Keith",
+   "間取り図は Keith にお問い合わせください",
+   "평면도는 Keith에게 문의하세요"
+  ],
+  "ask_lay": [
+   "Ask about {t} availability",
+   "询问 {t} 剩余单位",
+   "Tanya ketersediaan {t}",
+   "{t} の空き状況を聞く",
+   "{t} 잔여 세대 문의"
+  ],
+  "h_price": [
+   "Price and running costs.",
+   "价格和持有费用。",
+   "Harga dan kos berjalan.",
+   "価格と維持費。",
+   "가격과 유지비."
+  ],
+  "p_note": [
+   "Prices change as units sell. Ask Keith for the current price list and the units still open.",
+   "单位卖出后价格会变动。请向 Keith 索取最新价格表和剩余单位。",
+   "Harga berubah apabila unit terjual. Minta senarai harga semasa dan unit yang masih ada daripada Keith.",
+   "販売が進むと価格は変わります。最新の価格表と空き住戸は Keith にお問い合わせください。",
+   "판매 상황에 따라 가격이 바뀝니다. 최신 가격표와 남은 세대는 Keith에게 문의하세요."
+  ],
+  "psf": [
+   "Price per sq ft",
+   "每平方尺价格",
+   "Harga sekaki persegi",
+   "平方フィート単価",
+   "평방피트당 가격"
+  ],
+  "maint": [
+   "Maintenance fee",
+   "管理费",
+   "Yuran penyelenggaraan",
+   "管理費",
+   "관리비"
+  ],
+  "park": [
+   "Car parks",
+   "车位",
+   "Tempat letak kereta",
+   "駐車場",
+   "주차"
+  ],
+  "calc": [
+   "Work out the monthly instalment →",
+   "计算每月供款 →",
+   "Kira ansuran bulanan →",
+   "毎月の返済額を計算する →",
+   "월 상환액 계산하기 →"
+  ],
+  "req_list": [
+   "Request the price list",
+   "索取价格表",
+   "Minta senarai harga",
+   "価格表を依頼する",
+   "가격표 요청"
+  ],
+  "chk_units": [
+   "Check available units",
+   "查询剩余单位",
+   "Semak unit yang ada",
+   "空き住戸を確認",
+   "잔여 세대 확인"
+  ],
+  "maps": [
+   "Open in Google Maps →",
+   "在 Google Maps 打开 →",
+   "Buka di Google Maps →",
+   "Google マップで開く →",
+   "Google 지도에서 열기 →"
+  ],
+  "view": [
+   "Book a viewing or video tour",
+   "预约看房或视频看房",
+   "Tempah lawatan atau tontonan video",
+   "見学またはビデオ見学を予約",
+   "방문 또는 영상 투어 예약"
+  ],
+  "h_fb": [
+   "Buying from overseas? Check the unit first.",
+   "人在国外买房？先查清楚单位。",
+   "Membeli dari luar negara? Semak unit dahulu.",
+   "海外から購入しますか？まず住戸を確認しましょう。",
+   "해외에서 구매하시나요? 먼저 세대를 확인하세요."
+  ],
+  "fb_btn": [
+   "Check if a unit meets the minimum",
+   "查单位是否达到门槛",
+   "Semak sama ada unit mencapai minimum",
+   "住戸が最低価格を満たすか確認",
+   "세대가 최저 가격을 충족하는지 확인"
+  ],
+  "fb_link": [
+   "Read the foreign buyer guide",
+   "阅读外国买家指南",
+   "Baca panduan pembeli asing",
+   "外国人購入ガイドを読む",
+   "외국인 구매 가이드 보기"
+  ],
+  "fb_ok": [
+   "Units here start from {p}, at or above the {m} minimum for foreign buyers in {s}. Foreign buyers still need state consent, and Keith confirms each unit before you book.",
+   "这里的单位从 {p} 起，达到 {s} 外国买家 {m} 的最低价格。外国买家仍需州政府批准，下订前 Keith 会为每个单位确认。",
+   "Unit di sini bermula dari {p}, mencapai harga minimum {m} bagi pembeli asing di {s}. Pembeli asing masih memerlukan kelulusan negeri, dan Keith mengesahkan setiap unit sebelum anda menempah.",
+   "この物件は {p} からで、{s} の外国人購入者向け最低価格 {m} を満たしています。州の許可は必要で、予約前に Keith が住戸ごとに確認します。",
+   "이곳 세대는 {p}부터로, {s} 외국인 구매자 최저 가격 {m}을 충족합니다. 주 정부 승인은 여전히 필요하며, 예약 전에 Keith가 세대별로 확인해 드립니다."
+  ],
+  "fb_low": [
+   "Entry units start from {p}, below the {m} minimum for foreign buyers in {s}. Ask Keith which units are priced at or above the minimum before you book.",
+   "入门单位从 {p} 起，低于 {s} 外国买家 {m} 的最低价格。下订前请问 Keith 哪些单位达到门槛。",
+   "Unit permulaan bermula dari {p}, di bawah harga minimum {m} bagi pembeli asing di {s}. Tanya Keith unit mana yang mencapai harga minimum sebelum anda menempah.",
+   "入門住戸は {p} からで、{s} の外国人購入者向け最低価格 {m} を下回ります。予約前に、最低価格を満たす住戸を Keith にお尋ねください。",
+   "기본 세대는 {p}부터로, {s} 외국인 구매자 최저 가격 {m}보다 낮습니다. 예약 전에 최저 가격을 충족하는 세대를 Keith에게 문의하세요."
+  ],
+  "fb_por": [
+   "Prices are on request. The minimum for foreign buyers in {s} is {m}; Keith confirms the price of each unit and whether it qualifies.",
+   "价格请询问。{s} 外国买家的最低价格为 {m}，Keith 会确认每个单位的价格和是否符合。",
+   "Harga atas permintaan. Harga minimum bagi pembeli asing di {s} ialah {m}; Keith mengesahkan harga setiap unit dan sama ada ia layak.",
+   "価格はお問い合わせください。{s} の外国人購入者向け最低価格は {m} です。各住戸の価格と条件を Keith が確認します。",
+   "가격은 문의 바랍니다. {s} 외국인 구매자 최저 가격은 {m}이며, Keith가 세대별 가격과 충족 여부를 확인해 드립니다."
+  ],
+  "h_faq": [
+   "{n} FAQ.",
+   "{n} 常见问题。",
+   "Soalan lazim {n}.",
+   "{n} よくある質問。",
+   "{n} 자주 묻는 질문."
+  ],
+  "q_where": [
+   "Where is {n}?",
+   "{n} 在哪里？",
+   "Di manakah {n}?",
+   "{n} はどこにありますか？",
+   "{n}은 어디에 있나요?"
+  ],
+  "q_size": [
+   "What sizes are available?",
+   "有哪些面积？",
+   "Apakah saiz yang ada?",
+   "どんな広さがありますか？",
+   "어떤 면적이 있나요?"
+  ],
+  "q_price": [
+   "What is the starting price?",
+   "起价是多少？",
+   "Berapakah harga permulaan?",
+   "販売価格はいくらからですか？",
+   "분양가는 얼마부터인가요?"
+  ],
+  "q_ten": [
+   "Is it freehold or leasehold?",
+   "是永久地契还是租赁地契？",
+   "Pegangan bebas atau pajakan?",
+   "フリーホールドですか、リースホールドですか？",
+   "프리홀드인가요, 리스홀드인가요?"
+  ],
+  "q_dev": [
+   "Who is the developer?",
+   "发展商是谁？",
+   "Siapakah pemajunya?",
+   "デベロッパーはどこですか？",
+   "개발사는 어디인가요?"
+  ],
+  "q_comp": [
+   "When will it be completed?",
+   "什么时候竣工？",
+   "Bilakah ia akan siap?",
+   "いつ完成しますか？",
+   "언제 준공되나요?"
+  ],
+  "q_maint": [
+   "What is the maintenance fee?",
+   "管理费是多少？",
+   "Berapakah yuran penyelenggaraan?",
+   "管理費はいくらですか？",
+   "관리비는 얼마인가요?"
+  ],
+  "q_fb": [
+   "Can foreigners buy {n}?",
+   "外国人可以买 {n} 吗？",
+   "Bolehkah warga asing membeli {n}?",
+   "外国人は {n} を購入できますか？",
+   "외국인도 {n}을 살 수 있나요?"
+  ],
+  "eb_dev": [
+   "Developer",
+   "发展商",
+   "Pemaju",
+   "デベロッパー",
+   "개발사"
+  ],
+  "more_h": [
+   "Also worth a look nearby",
+   "附近也值得看看",
+   "Turut berbaloi dilihat berhampiran",
+   "近くのおすすめ物件",
+   "근처에서 함께 볼 만한 곳"
+  ],
+  "l_cmp": [
+   "Compare projects →",
+   "比较项目 →",
+   "Bandingkan projek →",
+   "物件を比較 →",
+   "프로젝트 비교 →"
+  ],
+  "l_all": [
+   "All projects →",
+   "全部项目 →",
+   "Semua projek →",
+   "すべての物件 →",
+   "전체 프로젝트 →"
+  ],
+  "l_fb": [
+   "Foreign buyers →",
+   "外国买家 →",
+   "Pembeli asing →",
+   "外国人購入者 →",
+   "외국인 구매자 →"
+  ],
+  "l_calc": [
+   "Calculators →",
+   "计算器 →",
+   "Kalkulator →",
+   "計算ツール →",
+   "계산기 →"
+  ],
+  "m1": [
+   "RM1 million",
+   "RM100 万",
+   "RM1 juta",
+   "100万リンギット",
+   "100만 링깃"
+  ],
+  "m2": [
+   "RM2 million",
+   "RM200 万",
+   "RM2 juta",
+   "200万リンギット",
+   "200만 링깃"
+  ]
+ },
+ "projects": {
+  "maba-suitez": {
+   "hook": [
+    "160 metres from Merdeka MRT, beside Menara Merdeka Maybank",
+    "离 Merdeka MRT 160 米，就在 Menara Merdeka Maybank 旁边",
+    "160 meter dari MRT Merdeka, bersebelahan Menara Merdeka Maybank",
+    "Merdeka MRT から160メートル、Menara Merdeka Maybank の隣",
+    "Merdeka MRT에서 160미터, Menara Merdeka Maybank 바로 옆"
+   ],
+   "nums": [
+    [
+     "914",
+     [
+      "units in two towers",
+      "个单位，两栋楼",
+      "unit dalam dua menara",
+      "戸、2棟",
+      "세대, 2개 동"
+     ]
+    ],
+    [
+     "54 / 50",
+     [
+      "storeys, Tower A / Tower B",
+      "层，A 栋 / B 栋",
+      "tingkat, Menara A / Menara B",
+      "階建て（A棟／B棟）",
+      "층, A동 / B동"
+     ]
+    ],
+    [
+     "1.328",
+     [
+      "acres of land",
+      "英亩土地",
+      "ekar tanah",
+      "エーカーの敷地",
+      "에이커 부지"
+     ]
+    ],
+    [
+     "160 m",
+     [
+      "to Merdeka MRT",
+      "到 Merdeka MRT",
+      "ke MRT Merdeka",
+      "Merdeka MRT まで",
+      "Merdeka MRT까지"
+     ]
+    ]
+   ],
+   "five": [
+    [
+     [
+      "Two minutes on foot to the MRT",
+      "走路 2 分钟到 MRT",
+      "Dua minit berjalan kaki ke MRT",
+      "MRT まで徒歩2分",
+      "MRT까지 도보 2분"
+     ],
+     [
+      "Merdeka MRT (Kajang line) is about 160 m away. From there Pavilion KL is one station, and TRX and KL Sentral are two.",
+      "Merdeka MRT（Kajang 线）大约 160 米。从这里到 Pavilion KL 一站，到 TRX 和 KL Sentral 两站。",
+      "MRT Merdeka (laluan Kajang) kira-kira 160 m. Dari situ Pavilion KL satu stesen, dan TRX serta KL Sentral dua stesen.",
+      "Merdeka MRT（カジャン線）まで約160 m。そこから Pavilion KL は1駅、TRX と KL Sentral は2駅です。",
+      "Merdeka MRT(카장선)까지 약 160m. 그곳에서 Pavilion KL은 한 정거장, TRX와 KL Sentral은 두 정거장입니다."
+     ]
+    ],
+    [
+     [
+      "Small units, on purpose",
+      "刻意做小单位",
+      "Unit kecil, dengan sengaja",
+      "あえてコンパクトな住戸",
+      "일부러 작게 만든 세대"
+     ],
+     [
+      "Every unit is between 323 and 657 sq ft: office-suite studios, 1+1 room suites and dual-key suites. It is built for city living and renting out, not for families who need three bedrooms.",
+      "所有单位都在 323 至 657 平方尺之间：办公套房单间、1+1 房套房和双钥匙套房。适合城市生活和出租，不适合需要三间房的家庭。",
+      "Setiap unit antara 323 dan 657 kaki persegi: studio suite pejabat, suite 1+1 bilik dan suite dual key. Ia dibina untuk kehidupan bandar dan disewakan, bukan untuk keluarga yang memerlukan tiga bilik tidur.",
+      "すべて323〜657平方フィート：オフィススイートのスタジオ、1+1ルーム、デュアルキー。都市生活や賃貸向けで、3寝室が必要な家族向けではありません。",
+      "모든 세대가 323~657평방피트입니다: 오피스 스위트 스튜디오, 1+1룸, 듀얼키. 도시 생활과 임대용이며, 방 세 개가 필요한 가족용은 아닙니다."
+     ]
+    ],
+    [
+     [
+      "The dual key is the most common type",
+      "双钥匙是最多的户型",
+      "Dual key ialah jenis paling banyak",
+      "デュアルキーが最も多いタイプ",
+      "듀얼키가 가장 많은 타입"
+     ],
+     [
+      "Type C, the 657 sq ft dual-key suite, makes up 377 of the 914 units. It has one room and two bathrooms, so you can live in one part and let the other.",
+      "Type C 是 657 平方尺的双钥匙套房，914 个单位里占 377 个。一房两浴，可以自住一边、出租另一边。",
+      "Type C, suite dual key 657 kaki persegi, merangkumi 377 daripada 914 unit. Ia mempunyai satu bilik dan dua bilik air, jadi anda boleh tinggal di satu bahagian dan menyewakan yang lain.",
+      "657平方フィートのデュアルキー Type C は914戸中377戸。1部屋2バスで、片方に住みもう片方を貸すことができます。",
+      "657평방피트 듀얼키 Type C가 914세대 중 377세대입니다. 방 하나에 욕실 두 개로, 한쪽에 살고 다른 쪽을 임대할 수 있습니다."
+     ]
+    ],
+    [
+     [
+      "Two towers, two sets of sky facilities",
+      "两栋楼，各有空中设施",
+      "Dua menara, dua set kemudahan langit",
+      "2棟それぞれにスカイ施設",
+      "두 개 동, 각각의 스카이 시설"
+     ],
+     [
+      "Tower A has 54 storeys and 534 units, with sky facilities on Levels 53 and 53A. Tower B has 50 storeys and 380 units, with facilities on Levels 47 and 50. Both share the Level 6 podium and its basketball court.",
+      "A 栋 54 层、534 个单位，空中设施在 53 和 53A 层。B 栋 50 层、380 个单位，设施在 47 和 50 层。两栋共享 6 楼的平台设施和篮球场。",
+      "Menara A mempunyai 54 tingkat dan 534 unit, dengan kemudahan langit di Aras 53 dan 53A. Menara B mempunyai 50 tingkat dan 380 unit, dengan kemudahan di Aras 47 dan 50. Kedua-duanya berkongsi podium Aras 6 dan gelanggang bola keranjangnya.",
+      "A棟は54階建て534戸で、53・53A階にスカイ施設。B棟は50階建て380戸で、47・50階に施設。6階のポディウムとバスケットコートは共用です。",
+      "A동은 54층 534세대로 53·53A층에 스카이 시설이 있습니다. B동은 50층 380세대로 47·50층에 시설이 있습니다. 6층 포디움과 농구 코트는 함께 씁니다."
+     ]
+    ],
+    [
+     [
+      "Budget for the running costs",
+      "预算好持有费用",
+      "Belanjawan untuk kos berjalan",
+      "維持費を予算に入れる",
+      "유지비를 예산에 넣으세요"
+     ],
+     [
+      "The maintenance fee is RM0.99 psf including the sinking fund, and car parks are not included with the units (391 bays plus 6 EV bays in the development).",
+      "管理费每平方尺 RM0.99（含偿债基金），车位不包括在单位里（整个项目有 391 个车位，另加 6 个电动车位）。",
+      "Yuran penyelenggaraan RM0.99 sekaki persegi termasuk dana penjelas, dan tempat letak kereta tidak termasuk dengan unit (391 petak serta 6 petak EV dalam pembangunan).",
+      "管理費は修繕積立金込みで1平方フィートあたり RM0.99。駐車場は住戸に含まれません（391台分と EV 用6台分）。",
+      "관리비는 적립금 포함 평방피트당 RM0.99이며, 주차는 세대에 포함되지 않습니다(전체 391면과 EV 6면)."
+     ]
+    ]
+   ],
+   "fit": {
+    "Type A — Office Suite": [
+     "Suits a home office or a first city investment at the lowest entry price.",
+     "适合当家庭办公室，或用最低入场价做第一个城市投资。",
+     "Sesuai untuk pejabat di rumah atau pelaburan bandar pertama pada harga permulaan terendah.",
+     "ホームオフィスや、最も手頃な価格での初めての都市投資に。",
+     "홈오피스나 가장 낮은 가격의 첫 도심 투자에 적합합니다."
+    ],
+    "Type B": [
+     "Suits a single professional or a couple who want a separate room.",
+     "适合单身专业人士，或想要独立房间的情侣。",
+     "Sesuai untuk profesional bujang atau pasangan yang mahukan bilik berasingan.",
+     "個室が欲しい単身の社会人やカップルに。",
+     "별도의 방을 원하는 1인 직장인이나 커플에게 적합합니다."
+    ],
+    "Type C — Dual Key": [
+     "Suits owners who want to live in one part and rent out the other, or rent both.",
+     "适合想自住一边、出租另一边，或两边都出租的业主。",
+     "Sesuai untuk pemilik yang mahu tinggal di satu bahagian dan menyewakan yang lain, atau menyewakan kedua-duanya.",
+     "片方に住んでもう片方を貸したい、または両方を貸したいオーナーに。",
+     "한쪽에 살고 다른 쪽을 임대하거나, 둘 다 임대하려는 분에게 적합합니다."
+    ],
+    "Type C (M) — Dual Key": [
+     "The same dual-key layout, mirrored.",
+     "同样的双钥匙格局，左右对调。",
+     "Susun atur dual key yang sama, dicerminkan.",
+     "同じデュアルキーの左右反転タイプ。",
+     "같은 듀얼키 구조의 좌우 반전형입니다."
+    ]
+   },
+   "units": {
+    "Type A — Office Suite": 249,
+    "Type B": 288,
+    "Type C — Dual Key": 377
+   },
+   "foreign": [
+    "The entry units start from RM699,000, below the RM1 million minimum for foreign buyers in Kuala Lumpur. Larger units can meet the minimum, so Keith checks the exact unit and its price before you book.",
+    "入门单位从 RM699,000 起，低于吉隆坡外国买家 RM100 万的最低价格。较大的单位可以达到门槛，下订前 Keith 会核对实际单位和价格。",
+    "Unit permulaan bermula dari RM699,000, di bawah harga minimum RM1 juta bagi pembeli asing di Kuala Lumpur. Unit yang lebih besar boleh mencapai minimum, jadi Keith menyemak unit dan harganya sebelum anda menempah.",
+    "入門住戸は RM699,000 からで、クアラルンプールの外国人購入者向け最低価格100万リンギットを下回ります。広い住戸は条件を満たせるため、予約前に Keith が住戸と価格を確認します。",
+    "기본 세대는 RM699,000부터로 쿠알라룸푸르 외국인 최저 가격 100만 링깃보다 낮습니다. 큰 세대는 최저 가격을 충족할 수 있으니, 예약 전에 Keith가 세대와 가격을 확인해 드립니다."
+   ],
+   "developer": [
+    "EXSIM is developing MABA Suitez as a joint venture with the Malaysian Basketball Association (MABA), which is why the podium has a full basketball court.",
+    "MABA Suitez 由 EXSIM 和马来西亚篮球总会（MABA）合作开发，所以平台层有一个完整的篮球场。",
+    "EXSIM membangunkan MABA Suitez sebagai usaha sama dengan Persatuan Bola Keranjang Malaysia (MABA), sebab itu podiumnya mempunyai gelanggang bola keranjang penuh.",
+    "MABA Suitez は EXSIM とマレーシアバスケットボール協会（MABA）の共同開発で、そのためポディウムに本格的なバスケットコートがあります。",
+    "MABA Suitez는 EXSIM과 말레이시아 농구협회(MABA)의 합작 개발이라 포디움에 정식 농구 코트가 있습니다."
+   ]
+  },
+  "clouthaus": {
+   "hook": [
+    "Freehold, 30 steps from the Petronas Twin Towers",
+    "永久地契，离 Petronas 双子塔 30 步",
+    "Pegangan bebas, 30 langkah dari Menara Berkembar Petronas",
+    "フリーホールド、ペトロナスツインタワーから30歩",
+    "프리홀드, 페트로나스 트윈타워에서 30걸음"
+   ]
+  },
+  "the-conlay": {
+   "hook": [
+    "Completed, freehold and designed by Kerry Hill Architects",
+    "已完工、永久地契，由 Kerry Hill Architects 设计",
+    "Siap, pegangan bebas dan direka oleh Kerry Hill Architects",
+    "完成済み、フリーホールド、Kerry Hill Architects 設計",
+    "완공, 프리홀드, Kerry Hill Architects 설계"
+   ]
+  },
+  "pavilion-square": {
+   "hook": [
+    "Sky-bridge link to Pavilion Kuala Lumpur, on Jalan Raja Chulan",
+    "空中走廊直通 Pavilion Kuala Lumpur，位于 Jalan Raja Chulan",
+    "Jambatan langit terus ke Pavilion Kuala Lumpur, di Jalan Raja Chulan",
+    "Pavilion Kuala Lumpur とスカイブリッジで直結、Jalan Raja Chulan",
+    "Pavilion Kuala Lumpur와 스카이브리지로 연결, Jalan Raja Chulan"
+   ]
+  },
+  "orion-residence": {
+   "hook": [
+    "A completed freehold tower in the heart of Bukit Bintang",
+    "位于 Bukit Bintang 中心、已完工的永久地契大楼",
+    "Menara pegangan bebas yang telah siap di tengah Bukit Bintang",
+    "Bukit Bintang 中心の完成済みフリーホールドタワー",
+    "Bukit Bintang 중심의 완공된 프리홀드 타워"
+   ]
+  },
+  "golden-crown-residence": {
+   "hook": [
+    "Underground link to the TRX MRT interchange and The Exchange TRX",
+    "地下通道连接 TRX MRT 转换站和 The Exchange TRX",
+    "Laluan bawah tanah ke stesen pertukaran MRT TRX dan The Exchange TRX",
+    "TRX MRT 乗換駅と The Exchange TRX に地下で直結",
+    "TRX MRT 환승역과 The Exchange TRX에 지하로 연결"
+   ]
+  },
+  "imperial-residence-pavilion-damansara-heights": {
+   "hook": [
+    "Only 154 freehold residences in Damansara Heights",
+    "Damansara Heights 只有 154 个永久地契单位",
+    "Hanya 154 kediaman pegangan bebas di Damansara Heights",
+    "Damansara Heights にわずか154戸のフリーホールド住宅",
+    "Damansara Heights의 단 154세대 프리홀드 주거"
+   ]
+  },
+  "royal-suites-pavilion-damansara-heights": {
+   "hook": [
+    "Freehold suites in the 16-acre Pavilion Damansara Heights masterplan",
+    "16 英亩 Pavilion Damansara Heights 总体规划里的永久地契套房",
+    "Suite pegangan bebas dalam pelan induk Pavilion Damansara Heights seluas 16 ekar",
+    "16エーカーの Pavilion Damansara Heights 計画内のフリーホールドスイート",
+    "16에이커 Pavilion Damansara Heights 마스터플랜 속 프리홀드 스위트"
+   ]
+  },
+  "zenia-parkcity-damansara": {
+   "hook": [
+    "55 acres at only 20 homes per acre, in Petaling Jaya",
+    "55 英亩，每英亩只有 20 个单位，位于 Petaling Jaya",
+    "55 ekar dengan hanya 20 rumah seekar, di Petaling Jaya",
+    "55エーカーに1エーカーあたりわずか20戸、Petaling Jaya",
+    "55에이커에 에이커당 단 20세대, Petaling Jaya"
+   ],
+   "foreign": [
+    "Condovillas start from about RM1.3 million, below the RM2 million minimum for foreign buyers in Selangor, while ParkHomes start from about RM2.5 million, above it. Foreign buyers still need state consent, and Keith confirms each unit before you book.",
+    "Condovillas 起价约 RM130 万，低于雪兰莪外国买家 RM200 万的最低价格；ParkHomes 起价约 RM250 万，高于门槛。外国买家仍需州政府批准，下订前 Keith 会为每个单位确认。",
+    "Condovilla bermula dari kira-kira RM1.3 juta, di bawah harga minimum RM2 juta bagi pembeli asing di Selangor, manakala ParkHomes bermula dari kira-kira RM2.5 juta, melebihi minimum. Pembeli asing masih memerlukan kelulusan negeri, dan Keith mengesahkan setiap unit sebelum anda menempah.",
+    "コンドヴィラは約130万リンギットからで、セランゴールの外国人購入者向け最低価格200万リンギットを下回ります。パークホームは約250万リンギットからで、最低価格を上回ります。州の許可は必要で、予約前に Keith が住戸ごとに確認します。",
+    "콘도빌라는 약 130만 링깃부터로 슬랑오르 외국인 최저 가격 200만 링깃보다 낮고, 파크홈은 약 250만 링깃부터로 이를 넘습니다. 주 정부 승인은 여전히 필요하며, 예약 전에 Keith가 세대별로 확인해 드립니다."
+   ]
+  },
+  "the-queenswoodz": {
+   "hook": [
+    "Two towers on a rare 3.44-acre site in Bukit Jalil City",
+    "Bukit Jalil City 难得的 3.44 英亩地段上的两栋大楼",
+    "Dua menara di tapak jarang 3.44 ekar di Bukit Jalil City",
+    "Bukit Jalil City の希少な3.44エーカーの敷地に2棟",
+    "Bukit Jalil City의 귀한 3.44에이커 부지 위 두 개 동"
+   ]
+  }
+ }
+}
