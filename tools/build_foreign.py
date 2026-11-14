@@ -109,7 +109,7 @@ T = {'en': {
     'co1t': 'Stamp duty on the transfer', 'co1d': '8% of the price for foreign buyers (permanent residents excluded), on instruments of transfer from 1 January 2026.',
     'co2t': 'Stamp duty on the loan', 'co2d': '0.5% of the loan amount, if you take a Malaysian housing loan.',
     'co3t': 'Legal fees and state consent', 'co3d': 'Lawyer fees follow a set scale. The state consent fee and processing differ by state; Keith gets you the exact figures.',
-    'co4t': 'Selling later (RPGT)', 'co4d': 'Real property gains tax for non-citizens: 30% if you sell within 5 years, 10% from the 6th year.',
+    'co4t': 'Selling later (RPGT)', 'co4d': 'Real property gains tax for non-citizens: 30% if you sell within 5 years, 10% from the 6th year.', 'co4l': 'See the full RPGT rate table →',
     'co_note': 'A general guide, not tax or legal advice. Rates are set by the government and can change; your lawyer confirms them for your purchase.',
     'st_eb': 'Step by step', 'st_h': 'How buying works for a foreigner',
     'st1t': 'Shortlist', 'st1d': 'Tell Keith your budget, the state and whether you will live in it or rent it out. He shortlists units that clear the minimum.',
@@ -164,7 +164,7 @@ T = {'en': {
     'co1t': '转让印花税', 'co1d': '外国买家（不包括永久居民）为房价的 8%，适用于 2026 年 1 月 1 日起的转让文件。',
     'co2t': '贷款印花税', 'co2d': '如果在马来西亚申请房贷，为贷款额的 0.5%。',
     'co3t': '律师费和州政府批准', 'co3d': '律师费按规定的收费表计算。州政府批准的费用和流程各州不同，Keith 会给你实际数字。',
-    'co4t': '将来出售（产业盈利税 RPGT）', 'co4d': '非公民：5 年内出售为盈利的 30%，第 6 年起为 10%。',
+    'co4t': '将来出售（产业盈利税 RPGT）', 'co4d': '非公民：5 年内出售为盈利的 30%，第 6 年起为 10%。', 'co4l': '查看完整 RPGT 税率表 →',
     'co_note': '以上为一般参考，不是税务或法律意见。税率由政府制定，可能会变，你的律师会为你的交易确认。',
     'st_eb': '一步一步', 'st_h': '外国人买房的流程',
     'st1t': '筛选项目', 'st1d': '告诉 Keith 你的预算、州属，以及自住还是出租。他会筛出达到门槛的单位。',
@@ -240,7 +240,8 @@ more = ''.join('<a class="chip" data-k="%s" href="property/%s.html">%s<em>%s</em
 fpills = '<button type="button" class="pl on" data-f="all">%s</button>' % r('pj_all') + ''.join(
     '<button type="button" class="pl" data-f="%s">%s <em>%d</em></button>' % (k, r('s_' + k), COUNT[k]) for k, *_ in CHECK if COUNT[k])
 
-costs = ''.join('<div class="co"><b data-r="co%dt">%s</b><p data-r="co%dd">%s</p></div>' % (n, E(en['co%dt' % n]), n, E(en['co%dd' % n])) for n in range(1, 5))
+RPGT_LINK = '<a class="co-a" href="calculator.html?tab=rpgt#rpgt_table" data-r="co4l">%s</a>' % E(en['co4l'])
+costs = ''.join('<div class="co"><b data-r="co%dt">%s</b><p data-r="co%dd">%s</p>%s</div>' % (n, E(en['co%dt' % n]), n, E(en['co%dd' % n]), RPGT_LINK if n == 4 else '') for n in range(1, 5))
 steps = ''.join('<li><span>%d</span><div><b data-r="st%dt">%s</b><p data-r="st%dd">%s</p></div></li>' % (n, n, E(en['st%dt' % n]), n, E(en['st%dd' % n])) for n in range(1, 7))
 TIERS = [('Silver', '#8e9aaf', 'USD 150,000', 'RM 600,000', 'mm_y5'), ('Gold', '#c9a227', 'USD 500,000', 'RM 1,000,000', 'mm_y15'),
          ('Platinum', '#5E60CE', 'USD 1,000,000', 'RM 2,000,000', 'mm_y20')]
@@ -284,7 +285,7 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.25;}
 .more{margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;} .more b{font-size:16px;} .more p{font-size:13.5px;color:var(--grey);margin:4px 0 12px;}
 .chips{display:flex;flex-wrap:wrap;gap:8px;} .chip{border:1px solid var(--line);border-radius:100px;padding:7px 14px;font-size:13.5px;font-weight:600;} .chip:hover{border-color:var(--gold);color:var(--gold);} .chip em{font-style:normal;color:var(--grey);font-weight:400;margin-left:6px;font-size:12px;}
 .note{font-size:12.5px;color:var(--grey);margin-top:14px;}
-.cos{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:22px;} .co{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;padding:20px 22px;} .co b{font-size:16.5px;} .co p{color:var(--grey);font-size:14px;margin-top:4px;}
+.cos{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:22px;} .co{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;padding:20px 22px;} .co b{font-size:16.5px;} .co-a{display:inline-block;margin-top:8px;font-size:13.5px;font-weight:700;color:var(--gold);} .co-a:hover{text-decoration:underline;} .co p{color:var(--grey);font-size:14px;margin-top:4px;}
 .steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px;} .steps li{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;gap:14px;}
 .steps span{flex:0 0 36px;height:36px;border-radius:50%;background:var(--gold);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;} .steps b{font-size:16px;} .steps p{color:var(--grey);font-size:13.5px;margin-top:2px;}
 .mm{background:#fff;border:1px solid var(--line);border-radius:28px;padding:44px;display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center;}
