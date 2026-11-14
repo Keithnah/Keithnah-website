@@ -243,6 +243,8 @@
     ['price','down','rate','years'].forEach(function(k){ const v = parseFloat(q.get(k)); if(!isNaN(v)) setVal(k, v); });
     const tb = q.get('tab'), btn = tb && document.querySelector('.calc-opt[data-tab="'+tb+'"]');
     if(btn) btn.click();
+    const hs = btn && location.hash && document.getElementById(location.hash.slice(1));
+    if(hs) setTimeout(function(){ hs.scrollIntoView({behavior:'smooth', block:'start'}); }, 150);   // e.g. ?tab=rpgt#rpgt_table
   } catch(e) {}
   recalc();
 })();
