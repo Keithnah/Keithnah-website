@@ -19,6 +19,9 @@ T = {
     'years': ['Years of experience', '年经验', '年經驗', 'Tahun pengalaman', '年の経験', '년 경력'],
     'sales': ['Personal sales achieved', '个人销售额', '個人銷售額', 'Jualan peribadi dicapai', '個人販売実績', '개인 판매 실적'],
     'clients': ['Clients from 9 countries', '客户来自 9 个国家', '客戶來自 9 個國家', 'Pelanggan dari 9 negara', '9か国のお客様', '9개국 고객'],
+    'proj': ['Projects Across Malaysia', '遍及马来西亚的项目', '遍及馬來西亞的專案', 'Projek Merentasi Malaysia', 'マレーシア全土のプロジェクト', '말레이시아 전역의 프로젝트'],
+    'fee': ['Agent Fee To Buyers', '买家免付代理费', '買家免付代理費', 'Yuran Ejen Kepada Pembeli', '購入者様へのエージェント手数料', '구매자 대상 중개 수수료'],
+    'yt': ['YouTube Followers', 'YouTube 订阅者', 'YouTube 訂閱者', 'Pengikut YouTube', 'YouTubeフォロワー', 'YouTube 구독자'],
     'my': ['Malaysia', '马来西亚', '馬來西亞', 'Malaysia', 'マレーシア', '말레이시아'],
     'sg': ['Singapore', '新加坡', '新加坡', 'Singapura', 'シンガポール', '싱가포르'],
     'cn': ['China', '中国', '中國', 'China', '中国', '중국'],
@@ -49,6 +52,19 @@ MQ_CSS = ('.kab-m{display:flex;flex-direction:column;gap:10px;min-width:0}.kab-l
           '.kab-c img{border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.08)}@media(prefers-reduced-motion:reduce){.kab-r{animation:none}.kab-v{overflow-x:auto}}')
 
 
+def tiles_html(mcls):
+    tile = lambda n, k: '<div class="stat-tile"><h3>%s</h3><span data-kab="%s">%s</span></div>' % (n, k, T[k][0])
+    return ('<div class="stats-inner kab-5">%s%s%s%s%s</div>%s' % (tile('5', 'years'), tile('RM100M+', 'sales'), tile('100+', 'proj'), tile('0%', 'fee'), tile('1000+', 'yt'), marquee('kab-about ' + mcls)))
+
+
+BAND_CSS = ('.kab-band{padding:0!important;background:linear-gradient(160deg,#F7F6FF 0%,#ECEBFB 100%);border-top:1px solid #DEDCF7;border-bottom:1px solid #DEDCF7}'
+            '.kab-band .stats-inner{display:grid;grid-template-columns:repeat(5,1fr);max-width:none}.kab-band .stat-tile{padding:44px 24px;text-align:center;border-right:1px solid #DEDCF7}'
+            '.kab-band .stat-tile:last-child{border-right:0}.kab-band .stat-tile h3{font-family:"Playfair Display",serif;color:#5E60CE;font-size:clamp(26px,3vw,34px);margin:0 0 8px}'
+            '.kab-band .stat-tile span{color:#5f5e74;font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;font-weight:600}'
+            '.kab-band .kab-about{align-items:center;padding:22px 5vw 30px;border-top:1px solid #DEDCF7}.kab-band .kab-about .kab-v{max-width:1180px;width:100%}'
+            '@media(max-width:900px){.kab-band .stats-inner{grid-template-columns:repeat(2,1fr)}.kab-band .stat-tile{border-bottom:1px solid #DEDCF7}.kab-band .stat-tile:last-child{grid-column:1/-1}}')
+
+
 def put(t, start, end, block):
     t = re.sub(re.escape(start) + r'.*?' + re.escape(end), '', t, flags=re.S)
     return t
@@ -73,6 +89,11 @@ ix = ix.replace('</head>', '<style id="kab-css">%s#about .ab-stats{display:grid!
                 '#about .ab-stat{display:flex;flex-direction:column;padding:14px 18px!important}#about .ab-stat b{margin:0!important;font-size:26px!important}'
                 '#about .kab-home{margin:4px 0 18px;max-width:640px}@media(max-width:900px){#about .ab-stats{justify-content:center}#about .kab-home{margin:4px auto 18px;align-items:center}}</style>\n</head>' % MQ_CSS, 1)
 ix = ix.replace('</body>', JS.replace('<script>', '<script id="kab-js">', 1) + '\n</body>', 1)
+ix = re.sub(r'<!-- KN-ABS-BAND:START -->.*?<!-- KN-ABS-BAND:END -->\n?', '', ix, flags=re.S)
+BAND = ('<!-- KN-ABS-BAND:START --><section class="kab-band">%s</section><!-- KN-ABS-BAND:END -->\n' % tiles_html('kab-band-m'))
+i = ix.index('</section>', ix.index('id="about-keith"')) + len('</section>\n')
+ix = ix[:i] + BAND + ix[i:]
+ix = ix.replace('</style>\n</head>', BAND_CSS + '</style>\n</head>', 1) if '<style id="kab-css">' in ix else ix
 open('index.html', 'w', encoding='utf-8').write(ix)
 
 # ---------- about-keith.html ----------
