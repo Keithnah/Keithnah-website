@@ -406,7 +406,7 @@ _register()
 
 
 def link_projects_map():
-    """All projects on a map in View Projects, below the search bar and above the project grid (idempotent)."""
+    """All projects on a map in View Projects, below the project grid and above Best New Launch Lists (idempotent)."""
     ids = [k for k in range(len(P))]
     blk = map_block('Malaysia', ids, '', heading='Map of all new launches')
     blk = blk.replace('<section class="blk">', '<section class="blk pmap-sec" id="projectMap">', 1)
@@ -416,7 +416,9 @@ def link_projects_map():
     p = 'projects.html'
     s = open(p, encoding='utf-8').read()
     s = re.sub(r'<!-- KN-MAP:START -->.*?<!-- KN-MAP:END -->\n?', '', s, flags=re.S)
-    anchor = '<!-- ===================== PROJECT GRID ===================== -->'
+    anchor = '<!-- KN-QUICK:START -->'   # below the project grid (search by state), above Best New Launch Lists
+    if anchor not in s:
+        anchor = '<!-- ===================== PROJECT GRID ===================== -->'
     assert anchor in s
     s = s.replace(anchor, block + anchor, 1)
     open(p, 'w', encoding='utf-8').write(s)
