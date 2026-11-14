@@ -231,9 +231,9 @@ def fix(t, prefix):
             if re.match(r'<a\b[^>]*href="(?:\.\./|/)*%s"' % re.escape(href), a):
                 a = re.sub(r'\s*data-km="[^"]*"', '', a)
                 a = re.sub(r'^<a\b', '<a data-km="%s"' % key, a)
-                a = re.sub(r'>[^<]*</a>$', '>%s</a>' % L[key][0], a)
+                a = re.sub(r'^(<a\b[^>]*>).*</a>$', lambda m: m.group(1) + L[key][0] + '</a>', a, flags=re.S)
         return a
-    nav = re.sub(r'<a\b[^>]*>[^<]*</a>', short, nav)
+    nav = re.sub(r'<a\b[^>]*>(?:<span data-nav="[^"]*">)?[^<]*(?:</span>)?</a>', short, nav)
     nav = re.sub(r'<a\b[^>]*>.*?</a>', group, nav, flags=re.S)
     head = head[:m.start(1)] + nav + head[m.end(1):]
     t = t[:h0] + head + t[h1:]
