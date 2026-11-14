@@ -358,7 +358,8 @@ YT_CSS = ('.yt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(30
           '.yt button{position:absolute;inset:0;margin:auto;width:76px;height:54px;border:0;border-radius:14px;background:rgba(255,0,0,.9);cursor:pointer;display:flex;align-items:center;justify-content:center;}'
           '.yt button svg{width:26px;height:26px;fill:#fff;}'
           '.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}'
-          '.yt-more{display:inline-block;margin-top:14px;color:var(--gold);font-weight:600;font-size:14px;}')
+          '.yt-more{display:inline-block;margin-top:14px;color:var(--gold);font-weight:600;font-size:14px;}'
+          'a.yt{display:block}.yt-ext{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.75);color:#fff;font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:99px}')
 YT_JS = """<script>
 document.querySelectorAll('.yt[data-id]').forEach(function(el){
   el.addEventListener('click', function(){
@@ -401,11 +402,17 @@ def video_block(name, display):
     ids = VIDEOS.get(name) or []
     if not ids:
         return ''
-    cards = ''.join(
-        '<div class="yt" data-id="%s" data-title="%s video tour" role="button" tabindex="0" aria-label="Play %s video">'
-        '<img src="https://i.ytimg.com/vi/%s/hqdefault.jpg" alt="%s video tour by Keith Nah" loading="lazy">'
-        '<button type="button" aria-label="Play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></div>' % (
-            v, E(display), E(display), v, E(display)) for v in ids)
+    def card(v):
+        if VMETA.get(v, {}).get('embed') is False:   # the owner turned off playback on other websites: open it on YouTube
+            return ('<a class="yt" href="https://www.youtube.com/watch?v=%s" target="_blank" rel="noopener" aria-label="Watch the %s video on YouTube">'
+                    '<img src="https://i.ytimg.com/vi/%s/hqdefault.jpg" alt="%s video tour by Keith Nah" loading="lazy">'
+                    '<button type="button" tabindex="-1" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>'
+                    '<span class="yt-ext">Watch on YouTube ↗</span></a>') % (v, E(display), v, E(display))
+        return ('<div class="yt" data-id="%s" data-title="%s video tour" role="button" tabindex="0" aria-label="Play %s video">'
+                '<img src="https://i.ytimg.com/vi/%s/hqdefault.jpg" alt="%s video tour by Keith Nah" loading="lazy">'
+                '<button type="button" aria-label="Play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button></div>') % (
+            v, E(display), E(display), v, E(display))
+    cards = ''.join(card(v) for v in ids)
     return ('<style>%s</style><section class="blk" id="video"><h2>Video Tour</h2><div class="yt-grid">%s</div>'
             '<a class="yt-more" href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener">More videos on Keith\'s YouTube channel →</a></section>%s') % (
         YT_CSS, cards, YT_JS) + video_ld(ids, display)
