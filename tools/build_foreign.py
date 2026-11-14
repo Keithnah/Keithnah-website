@@ -297,7 +297,7 @@ BEST = [('KL City Centre', ['Clouthaus', 'The Conlay', 'MABA Suitez']),
 _IDX = {p['name']: i for i, p in enumerate(A.P)}
 
 
-def bcard(name):
+def bcard(name, area):
     i = _IDX[name]
     p = A.P[i]
     href = 'property/%s.html' % A.SLUG.get(i, A.slug(p['name']))
@@ -310,11 +310,11 @@ def bcard(name):
         price = '<span data-r="pj_from">%s</span> %s' % (E(en['pj_from']), SH.price_tag(money(min(ps)), int(min(ps))))
     else:
         price = '<span data-r="bs_por">%s</span>' % E(en['bs_por'])
-    return ('<a class="pc" href="%s"><span class="pc-i">%s<em data-r="%s">%s</em></span><span class="pc-b"><b>%s</b><small>%s</small>'
-            '<span class="pc-p">%s</span></span></a>') % (href, img, ten, E(en[ten]), E(p['name']), E(p.get('size') or ''), price)
+    return ('<a class="pc" href="%s"><span class="pc-i">%s<em data-r="%s">%s</em></span><span class="pc-b"><i class="bs-a">%s</i><b>%s</b><small>%s</small>'
+            '<span class="pc-p">%s</span></span></a>') % (href, img, ten, E(en[ten]), E(area), E(p['name']), E(p.get('size') or ''), price)
 
 
-best = ''.join('<div class="bs-g"><h3>%s</h3><div class="pg">%s</div></div>' % (E(a), ''.join(bcard(n) for n in names)) for a, names in BEST)
+best = '<div class="pg bs-pg">%s</div>' % ''.join(bcard(n, a) for a, names in BEST for n in names)
 more = ''.join('<a class="chip" data-k="%s" href="property/%s.html">%s<em>%s</em></a>' % (
     k, A.SLUG.get(i, A.slug(A.P[i]['name'])), E(A.P[i]['name']), E(A.PLACES[i][1])) for k, v, i in LARGER)
 fpills = '<button type="button" class="pl on" data-f="all">%s</button>' % r('pj_all') + ''.join(
@@ -385,7 +385,7 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.25;}
 .faq{margin-top:20px;display:flex;flex-direction:column;gap:10px;max-width:900px;} .faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;}
 .faq summary{font-weight:700;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px;} .faq summary:after{content:"+";color:var(--gold);font-size:22px;line-height:1;} .faq details[open] summary:after{content:"\\2212";}
 .faq p{color:var(--grey);font-size:14.5px;margin-top:10px;}
-.co-all{display:flex;align-items:center;gap:14px;margin-top:18px;padding:16px 20px;background:linear-gradient(135deg,#5E60CE,#7b7de0);color:#fff;border-radius:16px;font-weight:700;font-size:15.5px;box-shadow:0 10px 26px rgba(94,96,206,.28);transition:transform .2s,box-shadow .2s;}.co-all:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(94,96,206,.38);} .co-all span{flex:1;}.co-all i{flex:0 0 44px;height:44px;border-radius:12px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;}.co-all svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;} .co-all .co-ar{flex:0 0 22px;transition:transform .2s;} .co-all:hover .co-ar{transform:translateX(4px);}.wcta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:#fff;border:1px solid rgba(37,211,102,.35);border-left:4px solid #25d366;border-radius:16px;padding:18px 22px;margin-top:22px;}.wcta p{flex:1 1 320px;color:var(--ink);font-size:14.5px;font-weight:500;margin:0;} .wcta .bt{flex:0 0 auto;}.bs-g{margin-top:28px;} .bs-g h3{font-family:'Inter',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:10px;} .bs-g h3:after{content:'';flex:1;height:1px;background:var(--line);} .bs-g .pg{grid-template-columns:repeat(3,minmax(0,1fr));} @media(max-width:640px){.bs-g .pg{grid-template-columns:1fr 1fr;}}.cta{background:var(--deep);color:#fff;border-radius:28px;padding:44px;text-align:center;margin:20px 0 30px;} .cta h2{color:#fff;} .cta p{color:rgba(255,255,255,.75);max-width:640px;margin:8px auto 20px;}
+.co-all{display:flex;align-items:center;gap:14px;margin-top:18px;padding:16px 20px;background:linear-gradient(135deg,#5E60CE,#7b7de0);color:#fff;border-radius:16px;font-weight:700;font-size:15.5px;box-shadow:0 10px 26px rgba(94,96,206,.28);transition:transform .2s,box-shadow .2s;}.co-all:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(94,96,206,.38);} .co-all span{flex:1;}.co-all i{flex:0 0 44px;height:44px;border-radius:12px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;}.co-all svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;} .co-all .co-ar{flex:0 0 22px;transition:transform .2s;} .co-all:hover .co-ar{transform:translateX(4px);}.wcta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:#fff;border:1px solid rgba(37,211,102,.35);border-left:4px solid #25d366;border-radius:16px;padding:18px 22px;margin-top:22px;}.wcta p{flex:1 1 320px;color:var(--ink);font-size:14.5px;font-weight:500;margin:0;} .wcta .bt{flex:0 0 auto;}.bs-g{margin-top:28px;} .bs-g h3{font-family:'Inter',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:10px;} .bs-g h3:after{content:'';flex:1;height:1px;background:var(--line);} .bs-pg{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:24px;} .bs-a{font-style:normal;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);} @media(max-width:640px){.bs-pg{grid-template-columns:1fr 1fr;}}.cta{background:var(--deep);color:#fff;border-radius:28px;padding:44px;text-align:center;margin:20px 0 30px;} .cta h2{color:#fff;} .cta p{color:rgba(255,255,255,.75);max-width:640px;margin:8px auto 20px;}
 .disc{font-size:12px;color:var(--grey);padding-bottom:60px;max-width:900px;}
 footer{border-top:1px solid var(--line);padding:26px 5vw;font-size:13px;color:var(--grey);text-align:center;}
 @media(max-width:980px){.fxs{grid-template-columns:repeat(2,1fr);} .pg{grid-template-columns:repeat(2,minmax(0,1fr));} .steps{grid-template-columns:1fr 1fr;} .mm{grid-template-columns:1fr;}}
