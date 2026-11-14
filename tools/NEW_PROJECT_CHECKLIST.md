@@ -8,7 +8,7 @@ When Keith adds a project:
    (KL: centre / west / south / ne; Selangor: pj / kwasa / subang / ssel / klang; Penang: island / mainland).
    An area not listed shows under "Other areas". The View Projects filter, the menu "Search by State" and the
    project sections all read `ZONES`.
-3. Run `python3 tools/build_all.py`.
+3. Run `python3 tools/build_all.py`.  Every project page is built in the new one-project layout (tools/build_landing.py); an optional hook line and curated points can be added in tools/i18n/landing.json "projects".
 4. Keith's project file is **WEBSITE_PROJECT.xlsx** ("the website project file"). It is made from the site data:
    `python3 tools/externalize.py in && python3 tools/export_projects_xlsx.py <scratchpad>/export && python3 tools/externalize.py out`
    It has INDEX (with State / Zone / Area columns), BY STATE, one sheet per state and per project, plus

@@ -1,8 +1,9 @@
 """Project landing pages: the focused, one-project layout for Keith's best choices for foreign buyers.
 
-Run by tools/build_all.py right after build_project_pages.py: for each project in LANDING (the
-"Foreign buyer best choice" list in tools/build_foreign.py) it replaces property/<slug>.html with
-this layout, keeping the head of the generated page (title, canonical, structured data, social tags).
+Run by tools/build_all.py right after build_project_pages.py: for EVERY project (new ones too) it
+replaces property/<slug>.html with this layout, keeping the head of the generated page (title,
+canonical, structured data, social tags). Per-project extras (hook, curated points, notes) are
+optional and live in tools/i18n/landing.json "projects"; a project without them still gets the layout.
 
 The page: a split cover (photo left, details right on a light background), a two-row sticky header
 (Back to home website, language, currency / logo, the project's own sections, WhatsApp), then
@@ -283,7 +284,7 @@ if __name__ == '__main__':
         print('landing page:', out)
     else:
         done = []
-        for s in LANDING:
+        for s in sorted(set(A.SLUG.values())):
             f = 'property/%s.html' % s
             if not os.path.exists(f):
                 continue
