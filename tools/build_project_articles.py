@@ -76,8 +76,8 @@ def page(a, names, others):
         src = '<p class="pa-src">%s %s</p>' % (c.tt('Sources:', {'zh-CN': '资料来源：', 'zh-TW': '資料來源：', 'ms': 'Sumber:', 'ja': '出典：', 'ko': '출처:'}),
                                               ' · '.join('<a href="%s" target="_blank" rel="noopener">%s</a>' % (E(s['url']), E(s['name'])) for s in a['sources']))
     proj = ('<div class="pa-proj"><div><b>%s</b><small>%s</small></div><a href="../property/%s.html">%s</a></div>') % (
-        E(name), c.tt('Prices, layouts, location and FAQ', {'zh-CN': '价格、户型、地点和常见问题', 'zh-TW': '價格、戶型、地點和常見問題'}),
-        a['project'], c.tt('View project →', {'zh-CN': '查看项目 →', 'zh-TW': '查看項目 →'}))
+        E(name), c.tt('Prices, layouts, location and FAQ', {'zh-CN': '价格、户型、地点和常见问题', 'zh-TW': '價格、戶型、地點和常見問題', 'ms': 'Harga, susun atur, lokasi dan soalan lazim', 'ja': '価格、間取り、立地、よくある質問', 'ko': '가격, 타입, 위치, 자주 묻는 질문'}),
+        a['project'], c.tt('View project →', {'zh-CN': '查看项目 →', 'zh-TW': '查看項目 →', 'ms': 'Lihat projek →', 'ja': 'プロジェクトを見る →', 'ko': '프로젝트 보기 →'}))
     more = ''.join('<a class="acard" href="%s.html"><small>%s</small><h3>%s</h3><p>%s</p><span>%s</span></a>' % (
         o['slug'], t(o['cat']), t(o['title']), t(o['intro']), c.tt('Read article →')) for o in others)
     iso = NP.iso(a['date'])
@@ -101,11 +101,11 @@ def page(a, names, others):
   {more}""".format(
         crumbs=NP.crumbs(c, ('../property/%s.html' % a['project'], name), ('', title)), cat=t(a['cat']), h1=h1, iso=iso, date=E(a['date']),
         intro=t(a['intro']), secs=secs, stats=('<div class="art-stats">%s</div>' % stats) if stats else '',
-        l_take=c.tt("Keith's take", {'zh-CN': 'Keith 怎么看', 'zh-TW': 'Keith 怎麼看'}), take=t(a['takeaway']), proj=proj, src=src,
+        l_take=c.tt("Keith's take", {'zh-CN': 'Keith 怎么看', 'zh-TW': 'Keith 怎麼看', 'ms': 'Pandangan Keith', 'ja': 'Keith の見方', 'ko': 'Keith의 생각'}), take=t(a['takeaway']), proj=proj, src=src,
         l_talk=c.tt('Talk to Keith'), l_q=c.tt('Questions about this topic or a project? Keith replies on WhatsApp.'), l_wa=c.tt('WhatsApp Keith'),
         wa=E(NP.wa('Hi Keith, I read "%s" on your website and have a question.' % title)),
         more=('<section class="blk"><h2>%s</h2><div class="acards">%s</div></section>' % (
-            c.tt('More about %s' % name, {'zh-CN': '更多关于 %s' % name, 'zh-TW': '更多關於 %s' % name}), more)) if more else '')
+            c.tt('More about %s' % name, {'zh-CN': '更多关于 %s' % name, 'zh-TW': '更多關於 %s' % name, 'ms': 'Lagi tentang %s' % name, 'ja': '%s の関連記事' % name, 'ko': '%s 관련 기사 더 보기' % name}), more)) if more else '')
     ld = [{'@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'datePublished': iso, 'dateModified': iso,
            'author': {'@type': 'Person', 'name': 'Keith Nah', 'url': SITE + '/about-keith.html'},
            'publisher': {'@type': 'Organization', 'name': 'Keith Nah Real Estate', 'url': SITE + '/', 'logo': {'@type': 'ImageObject', 'url': SITE + '/apple-touch-icon.png'}},

@@ -223,7 +223,7 @@ def view_block(p, L, T, r, rn, root, lays, ex, w, chat):
     pre-booking checklist. Only for projects with a "view" entry in landing.json (facts from the
     project data; nothing invented)."""
     V = L.get('view')
-    if not V or os.environ.get('KN_VIEW', '0') != '1':   # preview only until Keith approves (KN_VIEW=1)
+    if not V:
         return ''
     def lst(key, cls):
         out = ''
@@ -308,8 +308,6 @@ def related(slug, name, area, n=6):
 
 
 def news_block(slug, name, area, T, r, rn, root):
-    if os.environ.get('KN_VIEW', '0') != '1':   # preview only until Keith approves
-        return ''
     items = related(slug, name, area)
     if not items:
         return ''
