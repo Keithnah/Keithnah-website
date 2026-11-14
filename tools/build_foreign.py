@@ -477,8 +477,8 @@ print('foreign-buyers: written')
 
 # ---------- home page: "Foreign buyer best choice" sliding row in place of Featured Projects ----------
 # Same motion as the Free Toolkit row (tools/build_resources.py): a seamless CSS marquee moving at the
-# same speed (about 32 px a second), paused on hover. FB_HOME=1 writes it into index.html (or into
-# FB_HOME_OUT for a preview copy); until Keith approves, the home page is left as it is.
+# same speed (about 32 px a second), paused on hover. It replaces the old Featured Projects slider in index.html (FB_HOME=0 skips it; FB_HOME_OUT writes
+# a preview copy instead). Approved by Keith on 2026-11-14.
 HOME_T = {k: [T[l][k] for l in LANGS] for k in ('bs_eb', 'bs_h', 'fh', 'lh', 'pj_from', 'bs_por', 'bs_landed')}
 HOME_T['hp'] = ['Picked by Keith in the addresses foreign buyers ask about most, from KL City Centre and TRX to Damansara Heights.',
                 'Keith 在外国买家最常问的地点挑选，从 KL City Centre、TRX 到 Damansara Heights。',
@@ -533,7 +533,7 @@ HOME_HTML = ('<!-- KN-FB-HOME:START -->\n<style>'
     DUR, E(en['bs_eb']), E(en['bs_h']), E(HOME_T['hp'][0]), E(HOME_T['all'][0]), hcards,
     hcards.replace('<a class="fbh-c"', '<a class="fbh-c" aria-hidden="true" tabindex="-1"'), json.dumps(HOME_T, ensure_ascii=False))
 
-if os.environ.get('FB_HOME') == '1':
+if os.environ.get('FB_HOME', '1') == '1':
     ix = open('index.html', encoding='utf-8').read()
     if '<!-- KN-FB-HOME:START -->' in ix:
         ix = re.sub(r'<!-- KN-FB-HOME:START -->.*?<!-- KN-FB-HOME:END -->\n', lambda _: HOME_HTML, ix, flags=re.S)
