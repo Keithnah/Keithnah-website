@@ -229,6 +229,7 @@ NEW.update({
              'Dipilih oleh Keith di lokasi yang paling kerap ditanya pembeli asing: KL City Centre, Bukit Bintang, TRX, Damansara Heights dan Petaling Jaya. Keith mengesahkan unit mana yang mencapai harga minimum sebelum anda menempah.',
              '外国人購入者から特に質問の多いエリア（KL City Centre、Bukit Bintang、TRX、Damansara Heights、Petaling Jaya）から Keith が選びました。予約前に、最低価格を満たす住戸を Keith が確認します。',
              '외국인 구매자가 가장 많이 묻는 지역(KL City Centre, Bukit Bintang, TRX, Damansara Heights, Petaling Jaya)에서 Keith가 골랐습니다. 예약 전에 최저 가격을 충족하는 세대를 Keith가 확인해 드립니다.'],
+    'pj_from': ['From', '起价', 'Dari', '価格', '분양가'],
     'bs_por': ['Price on request', '价格请询问', 'Harga atas permintaan', '価格はお問い合わせ', '가격 문의'],
     'bs_landed': ['ParkHomes (landed) from', 'ParkHomes 有地住宅起价', 'ParkHomes (atas tanah) dari', 'ParkHomes（土地付き）', 'ParkHomes(단독) 최저'],
     'w5d': ['Want the latest prices and available units for these projects? Keith sends you the price list and the units open to foreign buyers.',
@@ -473,3 +474,72 @@ if os.path.exists('sitemap.xml') and not os.environ.get('FB_OUT'):
             SITE, _dt.date.today().isoformat()))
         open('sitemap.xml', 'w', encoding='utf-8').write(sm)
 print('foreign-buyers: written')
+
+# ---------- home page: "Foreign buyer best choice" sliding row in place of Featured Projects ----------
+# Same motion as the Free Toolkit row (tools/build_resources.py): a seamless CSS marquee moving at the
+# same speed (about 32 px a second), paused on hover. It replaces the old Featured Projects slider in index.html (FB_HOME=0 skips it; FB_HOME_OUT writes
+# a preview copy instead). Approved by Keith on 2026-11-14.
+HOME_T = {k: [T[l][k] for l in LANGS] for k in ('bs_eb', 'bs_h', 'fh', 'lh', 'pj_from', 'bs_por', 'bs_landed')}
+HOME_T['hp'] = ['Picked by Keith in the addresses foreign buyers ask about most, from KL City Centre and TRX to Damansara Heights.',
+                'Keith 在外国买家最常问的地点挑选，从 KL City Centre、TRX 到 Damansara Heights。',
+                'Keith 在外國買家最常問的地點挑選，從 KL City Centre、TRX 到 Damansara Heights。',
+                'Dipilih oleh Keith di lokasi yang paling kerap ditanya pembeli asing, dari KL City Centre dan TRX hingga Damansara Heights.',
+                '外国人購入者から特に質問の多いエリアから Keith が選びました。KL City Centre、TRX から Damansara Heights まで。',
+                '외국인 구매자가 가장 많이 묻는 지역에서 Keith가 골랐습니다. KL City Centre, TRX부터 Damansara Heights까지.']
+HOME_T['all'] = ['See the Foreign Buyers guide →', '查看外国买家指南 →', '查看外國買家指南 →', 'Lihat panduan Pembeli Asing →', '外国人購入ガイドを見る →', '외국인 구매 가이드 보기 →']
+HOME_T['view'] = ['View project', '查看项目', '查看項目', 'Lihat projek', '物件を見る', '프로젝트 보기']
+
+
+def hcard(name, area):
+    i = _IDX[name]
+    p = A.P[i]
+    ten = 'fh' if (p.get('tenure') or '').lower().startswith('freehold') else 'lh'
+    ps = prices(p['price'])
+    if name.startswith('Zenia'):
+        price = '<span data-fbh="bs_landed">%s</span> %s' % (E(en['bs_landed']), SH.price_tag('RM2,500,000', 2500000))
+    elif ps:
+        price = '<span data-fbh="pj_from">%s</span> %s' % (E(en['pj_from']), SH.price_tag(money(min(ps)), int(min(ps))))
+    else:
+        price = '<span data-fbh="bs_por">%s</span>' % E(en['bs_por'])
+    img = ('<img src="%s" alt="%s" loading="lazy">' % (E(A.PHOTO[i]), E(p['name']))) if A.PHOTO.get(i) else ''
+    return ('<a class="fbh-c" href="property/%s.html"><span class="fbh-i">%s<i data-fbh="%s">%s</i></span><span class="fbh-b"><span class="fbh-a">%s</span>'
+            '<b>%s</b><small>%s</small><span class="fbh-p">%s</span><em><span data-fbh="view">%s</span> &rarr;</em></span></a>') % (
+        A.SLUG.get(i, A.slug(p['name'])), img, ten, E(en[ten]), E(area), E(p['name']), E(p.get('size') or ''), price, E(HOME_T['view'][0]))
+
+
+hcards = ''.join(hcard(n, a) for a, names in BEST for n in names)
+NB = sum(len(v) for _, v in BEST)
+DUR = round(NB * 352 / 32)   # same speed as the Free Toolkit row: 5 cards of 330px + 22px gap in 55 s
+HOME_HTML = ('<!-- KN-FB-HOME:START -->\n<style>'
+             '#projects.fbh{padding:90px 0 80px;overflow:hidden}.fbh-h{max-width:1220px;margin:0 auto 30px;padding:0 5vw;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}'
+             '.fbh-h .eyebrow{display:block;margin-bottom:8px}.fbh-h h2{font-family:"Playfair Display",serif;font-size:clamp(28px,3.6vw,42px);line-height:1.15;margin:0}'
+             '.fbh-h p{color:var(--grey,#5A5A5A);font-size:15px;margin-top:10px;max-width:640px}.fbh-h a{color:var(--gold,#5E60CE);font-weight:700;font-size:14.5px;text-decoration:none;white-space:nowrap}'
+             '.fbh-v{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%%,#000 96%%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%%,#000 96%%,transparent)}'
+             '.fbh-r{display:flex;gap:22px;width:max-content;padding:6px 0 18px;animation:fbhSlide %ds linear infinite}.fbh-v:hover .fbh-r,.fbh-v:focus-within .fbh-r{animation-play-state:paused}'
+             '@keyframes fbhSlide{to{transform:translateX(calc(-50%% - 11px))}}'
+             '.fbh-c{flex:0 0 330px;background:#fff;border-radius:22px;overflow:hidden;text-decoration:none;color:#15142b;box-shadow:0 14px 34px rgba(29,27,79,.09);border:1px solid rgba(21,20,43,.06);transition:transform .3s,box-shadow .3s}'
+             '.fbh-c:hover{transform:translateY(-6px);box-shadow:0 22px 46px rgba(29,27,79,.16)}.fbh-i{position:relative;display:block;height:200px;background:#f3f1fa}'
+             '.fbh-i img{display:block;width:100%%;height:100%%;object-fit:cover}.fbh-i i{position:absolute;left:12px;top:12px;background:rgba(29,27,79,.85);color:#fff;font-style:normal;font-size:11px;font-weight:700;padding:4px 10px;border-radius:99px}'
+             '.fbh-b{display:flex;flex-direction:column;gap:4px;padding:16px 20px 20px}.fbh-a{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#5E60CE)}'
+             '.fbh-b b{font:700 19px/1.3 "Playfair Display",serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.fbh-b small{font-size:13px;color:#5f5e74}'
+             '.fbh-p{font-weight:800;color:#15142b;font-size:15px;margin-top:6px}.fbh-b em{font-style:normal;font-weight:700;font-size:14px;color:var(--gold,#5E60CE);margin-top:6px}'
+             '@media(max-width:600px){.fbh-c{flex-basis:270px}.fbh-i{height:160px}#projects.fbh{padding:64px 0 56px}}@media(prefers-reduced-motion:reduce){.fbh-r{animation:none}.fbh-v{overflow-x:auto}}'
+             '</style>\n<section id="projects" class="fbh"><div class="fbh-h"><div><span class="eyebrow" data-fbh="bs_eb">%s</span><h2 data-fbh="bs_h">%s</h2><p data-fbh="hp">%s</p></div>'
+             '<a href="foreign-buyers.html#best" data-fbh="all">%s</a></div><div class="fbh-v"><div class="fbh-r">%s%s</div></div></section>\n'
+             '<script>(function(){var T=%s,LG=["en","zh-CN","zh-TW","ms","ja","ko"];function f(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}var i=Math.max(0,LG.indexOf(l));'
+             'document.querySelectorAll("[data-fbh]").forEach(function(el){var v=T[el.getAttribute("data-fbh")];if(v)el.textContent=v[i];});}f();'
+             'document.addEventListener("DOMContentLoaded",function(){["knSetLang","setLanguage"].forEach(function(n){var s=window[n];if(typeof s==="function")window[n]=function(){var r=s.apply(this,arguments);f();return r;};});f();});})();</script>\n'
+             '<!-- KN-FB-HOME:END -->\n') % (
+    DUR, E(en['bs_eb']), E(en['bs_h']), E(HOME_T['hp'][0]), E(HOME_T['all'][0]), hcards,
+    hcards.replace('<a class="fbh-c"', '<a class="fbh-c" aria-hidden="true" tabindex="-1"'), json.dumps(HOME_T, ensure_ascii=False))
+
+if os.environ.get('FB_HOME', '1') == '1':
+    ix = open('index.html', encoding='utf-8').read()
+    if '<!-- KN-FB-HOME:START -->' in ix:
+        ix = re.sub(r'<!-- KN-FB-HOME:START -->.*?<!-- KN-FB-HOME:END -->\n', lambda _: HOME_HTML, ix, flags=re.S)
+    else:   # first run: the old Featured Projects slider goes
+        a = ix.index('<!-- ===================== FEATURED PROJECTS ===================== -->')
+        b = ix.index('</section>', ix.index('id="miniTrack"')) + len('</section>\n')
+        ix = ix[:a] + HOME_HTML + ix[b:]
+    open(os.environ.get('FB_HOME_OUT', 'index.html'), 'w', encoding='utf-8').write(ix)
+    print('foreign-buyers: home best-choice row, %d projects, %ds loop' % (NB, DUR))
