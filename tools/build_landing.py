@@ -247,10 +247,9 @@ def view_block(p, L, T, r, rn, root, lays, ex, w, chat):
             opts += '<option value="%d" data-sq="%d" data-est="%d">%s · %s</option>' % (pr, sq, est, E(l['type']), E(l['size']))
         f = lambda k, v, step: '<label>%s<input type="number" data-v="%s" value="%s" step="%s" min="0"></label>' % (r(k), k, v, step)
         calc = ('<div class="lp-inv" data-mp="%s"><h3 data-r="v_inv">%s</h3>%s<div class="lp-invf"><label>%s<select data-v="lay">%s</select></label>%s%s%s%s</div>'
-                '<p class="lp-est" hidden>%s</p><div class="lp-invo"><div>%s<b data-o="inst"></b></div><div>%s<b data-o="maint"></b></div><div class="t">%s<b data-o="be"></b></div>'
-                '<div class="k">%s<b data-o="y5"></b></div></div></div>') % (
+                '<p class="lp-est" hidden>%s</p><div class="lp-invo"><div>%s<b data-o="inst"></b></div><div>%s<b data-o="maint"></b></div><div class="t">%s<b data-o="cost"></b></div></div></div>') % (
             inv['maint_psf'], E(T['v_inv'][0]), r('v_inv_p', 'p'), r('v_lay'), opts, f('v_price', '', 1000), f('v_loan', inv['loan'], 5), f('v_rate', inv['rate'], 0.05), f('v_yrs', inv['years'], 1),
-            r('v_est'), r('v_inst', 'small'), r('v_maint', 'small'), r('v_be', 'small'), r('v_y5', 'small'))
+            r('v_est'), r('v_inst', 'small'), r('v_maint', 'small'), r('v_cost', 'small'))
     return ('<section class="lp-sec" id="view">%s%s<div class="lp-v2"><div class="lp-vc">%s%s</div><div class="lp-vc">%s%s</div></div>'
             '<div class="lp-vc lp-vt">%s%s</div>%s<div class="lp-vc lp-vk">%s%s<div class="lp-row"><a class="lp-wa" href="%s" target="_blank" rel="noopener" data-cta="lp">%s%s</a></div></div></section>') % (
         r('nav_view', 'span', 'lp-eb'), rn('h_view', 'h2'), r('v_suits', 'h3'), suits, r('v_not', 'h3'), nots, r('v_trade', 'h3'), trade, calc, r('v_check', 'h3'), verify,
@@ -367,7 +366,7 @@ apply();
 function inv(){var b=document.querySelector('.lp-inv');if(!b)return;var q=function(k){return b.querySelector('[data-v="'+k+'"]')},o=function(k,v){b.querySelector('[data-o="'+k+'"]').textContent='RM'+Math.round(v).toLocaleString('en-US')};
 var sel=q('lay'),mp=parseFloat(b.getAttribute('data-mp'));function pick(){var op=sel.options[sel.selectedIndex];q('v_price').value=op.value;b.querySelector('.lp-est').hidden=op.getAttribute('data-est')!=='1';calc();}
 function calc(){var op=sel.options[sel.selectedIndex],P=+q('v_price').value||0,L=P*(+q('v_loan').value||0)/100,i=(+q('v_rate').value||0)/1200,n=(+q('v_yrs').value||0)*12;
-var m=n?(i?L*i/(1-Math.pow(1+i,-n)):L/n):0,mt=(+op.getAttribute('data-sq'))*mp;o('inst',m);o('maint',mt);o('be',m+mt);o('y5',P*0.05/12);}
+var m=n?(i?L*i/(1-Math.pow(1+i,-n)):L/n):0,mt=(+op.getAttribute('data-sq'))*mp;o('inst',m);o('maint',mt);o('cost',m+mt);}
 sel.addEventListener('change',pick);b.querySelectorAll('input').forEach(function(x){x.addEventListener('input',calc)});pick();}
 inv();})();</script>'''
 

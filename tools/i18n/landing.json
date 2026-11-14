@@ -519,11 +519,11 @@
    "알아두면 좋은 정보"
   ],
   "v_inv": [
-   "Investment: what rent does it need?",
-   "投资：要租多少才划算？",
-   "Pelaburan: berapa sewa yang diperlukan?",
-   "投資：家賃はいくら必要？",
-   "투자: 월세는 얼마가 필요할까?"
+   "Monthly cost: loan instalment and maintenance",
+   "每月开销：供期和管理费",
+   "Kos bulanan: ansuran pinjaman dan penyelenggaraan",
+   "毎月のコスト：ローン返済と管理費",
+   "월 비용: 대출 상환액과 관리비"
   ],
   "v_inv_p": [
    "Change the numbers to match your unit and your bank's offer. The interest rate is an example only.",
@@ -580,20 +580,6 @@
    "Yuran penyelenggaraan sebulan",
    "毎月の管理費",
    "월 관리비"
-  ],
-  "v_be": [
-   "Rent needed so you don't top up each month (instalment + maintenance)",
-   "要租到这个数，每月才不用自己贴钱（供期 + 管理费）",
-   "Sewa diperlukan supaya anda tidak menambah wang setiap bulan (ansuran + penyelenggaraan)",
-   "毎月の持ち出しをなくすのに必要な家賃（返済＋管理費）",
-   "매달 추가 부담이 없으려면 필요한 월세 (상환액 + 관리비)"
-  ],
-  "v_y5": [
-   "Rent for a 5% gross yield",
-   "5% 毛回报要租到",
-   "Sewa untuk hasil kasar 5%",
-   "表面利回り5%に必要な家賃",
-   "총수익률 5%에 필요한 월세"
   ],
   "v_est": [
    "Estimated from the lowest price per sqft. Ask Keith for this unit's real price.",
@@ -657,6 +643,13 @@
    "Baca →",
    "読む →",
    "읽기 →"
+  ],
+  "v_cost": [
+   "Total a month",
+   "每月总开销",
+   "Jumlah sebulan",
+   "毎月の合計",
+   "월 합계"
   ]
  },
  "projects": {
