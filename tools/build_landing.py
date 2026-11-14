@@ -110,7 +110,14 @@ def page(slug, root='../', head_src=None):
             T['fb'] = [T[key][j].replace('{p}', re.sub(r'^From\s*', '', p['price'])).replace('{m}', T[mn[1]][j]).replace('{s}', st) for j in range(6)]
 
     nav = [('overview', 'nav_overview'), ('five', 'nav_five'), ('details', 'nav_details'), ('layouts', 'nav_layouts'), ('price', 'nav_price'),
-           ('location', 'nav_location'), ('foreign', 'nav_foreign'), ('faq', 'nav_faq')]
+           ('location', 'nav_location'), ('video', 'nav_video'), ('foreign', 'nav_foreign'), ('faq', 'nav_faq')]
+    import build_project_pages as BP   # the Video Tour block of the project pages (tools/project_videos.json)
+    vblk = BP.video_block(name, name)
+    if vblk:
+        vblk = vblk.replace('<section class="blk" id="video"><h2>Video Tour</h2>',
+                            '<section class="lp-sec" id="video"><span class="lp-eb" data-r="nav_video">Video</span><h2 data-r="h_video">%s</h2>' % E(T['h_video'][0]), 1)
+    else:
+        nav = [x for x in nav if x[0] != 'video']
     if not T.get('fb'):
         nav = [x for x in nav if x[0] != 'foreign']
     navh = ''.join('<a href="#%s" data-r="%s">%s</a>' % (k, t, E(T[t][0])) for k, t in nav)
@@ -182,7 +189,7 @@ def page(slug, root='../', head_src=None):
         wb_view=wbtn('view', "Hi Keith, I'd like to book a viewing or a video tour of %s."),
         fb=('<section class="lp-sec" id="foreign"><div class="lp-fb">%s<h2 data-r="h_fb">%s</h2>%s%s<a class="lp-link" href="%sforeign-buyers.html" data-r="fb_link">%s</a></div></section>' % (
             r('nav_foreign', 'span', 'lp-eb'), E(T['h_fb'][0]), r('fb', 'p'), wbtn('fb_btn', 'Hi Keith, I am a foreign buyer. Which units at %s meet the minimum price?'), root, E(T['fb_link'][0]))) if T.get('fb') else '',
-        faqh=faqh, layouts=('<section class="lp-sec" id="layouts">%s<h2 data-r="h_lay">%s</h2><div class="lp-tabs">%s</div>%s</section>' % (
+        faqh=faqh, video=vblk, layouts=('<section class="lp-sec" id="layouts">%s<h2 data-r="h_lay">%s</h2><div class="lp-tabs">%s</div>%s</section>' % (
             r('nav_layouts', 'span', 'lp-eb'), E(T['h_lay'][0]), tabs, panes)) if lays else '',
         **{k: v for k, v in dict(
             t_back=r('back'), t_home=r('home', 'em', 'lp-hs'), t_cta=r('cta_bar'), t_tag=r('tag'), t_sp=r('sp', 'small'), t_mo=r('mo'), t_moch=r('mo_ch'), t_wal=r('wa_list'), t_cmp=r('cmp'),
@@ -236,7 +243,7 @@ BODY = ('<!-- class="hamburger": this page has its own menu -->\n'
         '<section class="lp-sec" id="price">{t_ebp}{t_hp}<div class="lp-price"><div class="lp-pbox">{t_sp2}<b>{price}</b>{t_pnote}<div class="lp-row">{wb_list}</div></div>\n'
         '<div class="lp-plist">{plist}{t_calc}</div></div><div class="lp-row">{wb_units}</div></section>\n'
         '<section class="lp-sec" id="location">{t_ebl}<h2>{loc}</h2><div class="lp-loc"><div><p>{loc_text}</p><a class="lp-map" href="{maps}" target="_blank" rel="noopener">{t_maps}</a><div class="lp-row">{wb_view}</div></div><ul>{amen}</ul></div></section>\n'
-        '{fb}\n<section class="lp-sec" id="faq">{t_ebf}{t_hfaq}<div class="lp-faq">{faqh}</div><!--DEV--></section>\n'
+        '{video}\n{fb}\n<section class="lp-sec" id="faq">{t_ebf}{t_hfaq}<div class="lp-faq">{faqh}</div><!--DEV--></section>\n'
         '<section class="lp-more">{t_more}<div class="lp-nbs">{nearby}</div><div class="lp-links"><a href="{root}compare.html">{t_lc}</a><a href="{root}projects.html">{t_la}</a>'
         '<a href="{root}foreign-buyers.html">{t_lf}</a><a href="{root}calculator.html">{t_lk}</a></div></section>\n</main>\n'
         '<footer class="lp-foot">&copy; 2026 Keith Nah Real Estate &middot; <a href="{root}">keithnah.com</a></footer>')
