@@ -24,7 +24,7 @@ CACHE = os.path.join(HERE, 'og_cache.json')
 FALLBACK = 'images/18c3c17601a2ba81.jpg'   # Kuala Lumpur skyline (home hero)
 SKIP_IMG = ('f304c8479b1fe873', 'images/flags/', 'images/og/', 'ffb01572bcbd138e')   # logo, flags, share images, YouTube icon
 LABEL = {'area': 'New launch guide', 'best': 'Best new launch list', 'article': "Keith's article", 'topic': 'Property articles',
-         'notes': "Keith's market note", 'developer': 'Developer', 'station': 'Near a station', 'vs': 'Side by side', 'guides': 'Free PDF guide'}
+         'notes': "Keith's market note", 'developer': 'Developer', 'station': 'Browse by station', 'vs': 'Side by side', 'guides': 'Free PDF guide'}
 BLOCK = re.compile(r'<!-- KN-OG -->.*?<!-- /KN-OG -->\n?', re.S)
 
 
