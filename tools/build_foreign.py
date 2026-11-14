@@ -191,6 +191,40 @@ T = {'en': {
 }}
 T['zh-TW'] = {k: _cc(v) for k, v in T['zh-CN'].items()}
 T.update(json.load(open(os.path.join(HERE, 'i18n', 'foreign.json'), encoding='utf-8')))  # ms, ja, ko
+
+# calculator links and WhatsApp buttons with a short description: key -> [en, zh-CN, ms, ja, ko]
+NEW = {
+    'co1l': ['Work out stamp duty and legal fees →', '计算印花税和律师费 →', 'Kira duti setem dan yuran guaman →', '印紙税と弁護士費用を計算する →', '인지세와 변호사 비용 계산하기 →'],
+    'co_cal': ['All free calculators: loan, stamp duty, rental yield, RPGT →', '全部免费计算器：房贷、印花税、租金回报、RPGT →', 'Semua kalkulator percuma: pinjaman, duti setem, hasil sewa, RPGT →', '無料計算ツール一覧：ローン、印紙税、利回り、RPGT →', '모든 무료 계산기: 대출, 인지세, 임대 수익률, RPGT →'],
+    'w1d': ['Found a unit you like? Send Keith the project name and he will confirm the minimum price and whether it is open to foreign buyers.',
+            '看中一个单位？把项目名字发给 Keith，他会确认门槛，以及这个单位是否开放给外国买家。',
+            'Jumpa unit yang anda suka? Hantar nama projek kepada Keith dan dia akan mengesahkan harga minimum serta sama ada ia dibuka kepada pembeli asing.',
+            '気になる住戸がありますか？物件名を Keith に送れば、最低価格と外国人が購入できるかを確認します。',
+            '마음에 드는 세대가 있나요? 프로젝트 이름을 Keith에게 보내면 최저 가격과 외국인 구매 가능 여부를 확인해 드립니다.'],
+    'w1b': ['Check a unit with Keith', '请 Keith 查单位', 'Semak unit dengan Keith', 'Keith に住戸を確認', 'Keith에게 세대 확인'],
+    'w2d': ['Keith can prepare a full cost sheet for the unit you like: price, 8% stamp duty, legal fees, loan costs and the first year of maintenance.',
+            'Keith 可以为你看中的单位准备一份完整的费用表：房价、8% 印花税、律师费、贷款费用和第一年的管理费。',
+            'Keith boleh menyediakan helaian kos penuh untuk unit pilihan anda: harga, duti setem 8%, yuran guaman, kos pinjaman dan penyelenggaraan tahun pertama.',
+            'Keith が気になる住戸の費用明細を作成します：価格、8% の印紙税、弁護士費用、ローン費用、初年度の管理費。',
+            'Keith가 마음에 드는 세대의 전체 비용표를 만들어 드립니다: 가격, 8% 인지세, 변호사 비용, 대출 비용, 첫해 관리비.'],
+    'w2b': ['Get my full cost sheet', '索取完整费用表', 'Dapatkan helaian kos penuh', '費用明細をもらう', '전체 비용표 받기'],
+    'w3d': ['Buying from overseas? Keith arranges video viewings and works with lawyers and bankers who handle foreign buyers.',
+            '人在国外？Keith 可以安排视频看房，并配合熟悉外国买家的律师和银行。',
+            'Membeli dari luar negara? Keith mengatur tontonan video dan bekerjasama dengan peguam serta pegawai bank yang mengendalikan pembeli asing.',
+            '海外から購入しますか？Keith がビデオ見学を手配し、外国人購入者に慣れた弁護士や銀行と連携します。',
+            '해외에서 구매하시나요? Keith가 영상 방문을 준비하고 외국인 구매자를 담당하는 변호사, 은행과 함께 진행합니다.'],
+    'w3b': ['Book a video viewing', '预约视频看房', 'Tempah tontonan video', 'ビデオ見学を予約', '영상 방문 예약'],
+    'w4d': ['Planning MM2H and a home together? Keith checks both minimum prices, the MM2H tier and the state, before you shortlist.',
+            '想同时申请 MM2H 和买房？Keith 会在你挑项目前，先帮你核对 MM2H 等级和州属两个门槛。',
+            'Merancang MM2H dan rumah serentak? Keith menyemak kedua-dua harga minimum, peringkat MM2H dan negeri, sebelum anda membuat senarai pendek.',
+            'MM2H と住宅購入を一緒に考えていますか？候補を絞る前に、Keith が MM2H ランクと州の2つの最低価格を確認します。',
+            'MM2H와 주택 구매를 함께 계획하시나요? 후보를 고르기 전에 Keith가 MM2H 등급과 주의 두 가지 최저 가격을 확인해 드립니다.'],
+    'w4b': ['Ask about MM2H and property', '咨询 MM2H 和买房', 'Tanya tentang MM2H dan hartanah', 'MM2H と不動産について相談', 'MM2H와 부동산 문의'],
+}
+for _k, _v in NEW.items():
+    for _l, _s in zip(['en', 'zh-CN', 'ms', 'ja', 'ko'], _v):
+        T[_l][_k] = _s
+    T['zh-TW'][_k] = _cc(_v[1])
 for l in LANGS:   # languages not translated yet show English
     T.setdefault(l, T['en'])
 en = T['en']
@@ -241,7 +275,15 @@ fpills = '<button type="button" class="pl on" data-f="all">%s</button>' % r('pj_
     '<button type="button" class="pl" data-f="%s">%s <em>%d</em></button>' % (k, r('s_' + k), COUNT[k]) for k, *_ in CHECK if COUNT[k])
 
 RPGT_LINK = '<a class="co-a" href="calculator.html?tab=rpgt#rpgt_table" data-r="co4l">%s</a>' % E(en['co4l'])
-costs = ''.join('<div class="co"><b data-r="co%dt">%s</b><p data-r="co%dd">%s</p>%s</div>' % (n, E(en['co%dt' % n]), n, E(en['co%dd' % n]), RPGT_LINK if n == 4 else '') for n in range(1, 5))
+COST_LINK = '<a class="co-a" href="calculator.html?tab=cost" data-r="co1l">%s</a>' % E(en['co1l'])
+costs = ''.join('<div class="co"><b data-r="co%dt">%s</b><p data-r="co%dd">%s</p>%s</div>' % (n, E(en['co%dt' % n]), n, E(en['co%dd' % n]), {1: COST_LINK, 4: RPGT_LINK}.get(n, '')) for n in range(1, 5))
+WAQ = {1: 'Hi Keith, I am a foreign buyer. Can you check if this unit meets the minimum price: ',
+       2: 'Hi Keith, I am a foreign buyer. Please send me a full cost sheet for the unit I like.',
+       3: 'Hi Keith, I am buying from overseas. Can we book a video viewing?',
+       4: 'Hi Keith, I am planning MM2H and buying a home. Can you check both minimum prices for me?'}
+def wcta(n):
+    return ('<div class="wcta"><p data-r="w%dd">%s</p><a class="bt bt-w" href="%s" target="_blank" rel="noopener" data-cta="fb%d">%s<span data-r="w%db">%s</span></a></div>'
+            % (n, E(en['w%dd' % n]), E(waq(WAQ[n])), n, CHAT, n, E(en['w%db' % n])))
 steps = ''.join('<li><span>%d</span><div><b data-r="st%dt">%s</b><p data-r="st%dd">%s</p></div></li>' % (n, n, E(en['st%dt' % n]), n, E(en['st%dd' % n])) for n in range(1, 7))
 TIERS = [('Silver', '#8e9aaf', 'USD 150,000', 'RM 600,000', 'mm_y5'), ('Gold', '#c9a227', 'USD 500,000', 'RM 1,000,000', 'mm_y15'),
          ('Platinum', '#5E60CE', 'USD 1,000,000', 'RM 2,000,000', 'mm_y20')]
@@ -296,7 +338,7 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.25;}
 .faq{margin-top:20px;display:flex;flex-direction:column;gap:10px;max-width:900px;} .faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;}
 .faq summary{font-weight:700;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px;} .faq summary:after{content:"+";color:var(--gold);font-size:22px;line-height:1;} .faq details[open] summary:after{content:"\\2212";}
 .faq p{color:var(--grey);font-size:14.5px;margin-top:10px;}
-.cta{background:var(--deep);color:#fff;border-radius:28px;padding:44px;text-align:center;margin:20px 0 30px;} .cta h2{color:#fff;} .cta p{color:rgba(255,255,255,.75);max-width:640px;margin:8px auto 20px;}
+.co-all{display:inline-block;margin-top:12px;font-weight:700;color:var(--gold);font-size:14.5px;} .co-all:hover{text-decoration:underline;}.wcta{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:#fff;border:1px solid rgba(37,211,102,.35);border-left:4px solid #25d366;border-radius:16px;padding:18px 22px;margin-top:22px;}.wcta p{flex:1 1 320px;color:var(--ink);font-size:14.5px;font-weight:500;margin:0;} .wcta .bt{flex:0 0 auto;}.cta{background:var(--deep);color:#fff;border-radius:28px;padding:44px;text-align:center;margin:20px 0 30px;} .cta h2{color:#fff;} .cta p{color:rgba(255,255,255,.75);max-width:640px;margin:8px auto 20px;}
 .disc{font-size:12px;color:var(--grey);padding-bottom:60px;max-width:900px;}
 footer{border-top:1px solid var(--line);padding:26px 5vw;font-size:13px;color:var(--grey);text-align:center;}
 @media(max-width:980px){.fxs{grid-template-columns:repeat(2,1fr);} .pg{grid-template-columns:repeat(2,minmax(0,1fr));} .steps{grid-template-columns:1fr 1fr;} .mm{grid-template-columns:1fr;}}
@@ -348,11 +390,13 @@ page = '''<!DOCTYPE html>
     <div class="btns"><a class="bt bt-p" href="#check">{bcheck}</a><a class="bt bt-w" href="{wa}" target="_blank" rel="noopener">{chat}{bwa}</a></div></section>
   <section class="fxs">{facts}</section>
   <section class="ck" id="check">{ckeb}<h2 data-r="ck_h">{ckh}</h2>{ckp}<div class="pls">{pills}</div>{card}{cknote}</section>
-  <section class="sec" id="costs">{coeb}<h2 data-r="co_h">{coh}</h2><div class="cos">{costs}</div>{conote}</section>
-  <section class="sec" id="steps">{steb}<h2 data-r="st_h">{sth}</h2><ol class="steps">{steps}</ol></section>
+  {w1}
+  <section class="sec" id="costs">{coeb}<h2 data-r="co_h">{coh}</h2><div class="cos">{costs}</div>{conote}<a class="co-all" href="calculator.html" data-r="co_cal">{cocal}</a>{w2}</section>
+  <section class="sec" id="steps">{steb}<h2 data-r="st_h">{sth}</h2><ol class="steps">{steps}</ol>{w3}</section>
   <section class="sec" id="mm2h"><div class="mm"><div><div class="mm-logo">MM2H</div>{mmeb}<h2 data-r="mm_h">{mmh}</h2>{mmp}
     <div class="mm-l"><a href="mm2h.html">{mmbtn} &rarr;</a><a href="mm2h/mm2h-property-rules-foreign-buyers.html">{mmlib} &rarr;</a><a href="mm2h.html#library">{mmlib2} &rarr;</a></div></div>
     <div class="mts">{tiers}</div></div></section>
+  <div class="wrap0">{w4}</div>
   <section class="sec" id="faq">{fqeb}<h2 data-r="fq_h">{fqh}</h2><div class="faq">{faq}</div></section>
   <section class="cta"><h2 data-r="cta_h">{ctah}</h2>{ctap}<a class="bt bt-w" href="{wa}" target="_blank" rel="noopener">{chat}{bwa}</a></section>
   {disc}
@@ -367,7 +411,7 @@ page = '''<!DOCTYPE html>
            ckeb=r('ck_eb', 'span', 'eb'), ckh=E(en['ck_h']), ckp=r('ck_p', 'p', 'sp'), pills=pills, card=card, cknote=r('ck_note', 'small'),
            pjeb=r('pj_eb', 'span', 'eb'), pjh=E(en['pj_h']), pjp=r('pj_p', 'p', 'sp'), fpills=fpills, grid=grid,
            more=('<div class="more">%s%s<div class="chips">%s</div></div>' % (r('pj_more', 'b'), r('pj_more_p', 'p'), more)) if more else '',
-           pjnote=r('pj_note', 'p', 'note'), coeb=r('co_eb', 'span', 'eb'), coh=E(en['co_h']), costs=costs, conote=r('co_note', 'p', 'note'),
+           pjnote=r('pj_note', 'p', 'note'), w1=wcta(1), w2=wcta(2), w3=wcta(3), w4=wcta(4), cocal=E(en['co_cal']), coeb=r('co_eb', 'span', 'eb'), coh=E(en['co_h']), costs=costs, conote=r('co_note', 'p', 'note'),
            steb=r('st_eb', 'span', 'eb'), sth=E(en['st_h']), steps=steps, mmeb=r('mm_eb', 'span', 'eb'), mmh=E(en['mm_h']), mmp=r('mm_p', 'p'),
            mmbtn=r('mm_btn'), mmlib=r('mm_lib'), mmlib2=r('mm_lib2'), tiers=tiers, fqeb=r('fq_eb', 'span', 'eb'), fqh=E(en['fq_h']), faq=faq,
            ctah=E(en['cta_h']), ctap=r('cta_p', 'p'), disc=r('disc', 'p', 'disc'), js=JS)
