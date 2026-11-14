@@ -482,6 +482,181 @@
    "Tonton lawatan video Keith.",
    "Keith のビデオツアーを見る。",
    "Keith의 영상 투어 보기."
+  ],
+  "nav_view": [
+   "Keith's view",
+   "Keith 分析",
+   "Pandangan Keith",
+   "Keithの分析",
+   "Keith 분석"
+  ],
+  "h_view": [
+   "Is {n} right for you?",
+   "{n} 适合你吗？",
+   "Adakah {n} sesuai untuk anda?",
+   "{n} はあなたに合う？",
+   "{n}, 나에게 맞을까?"
+  ],
+  "v_suits": [
+   "Good fit if you are",
+   "适合这些买家",
+   "Sesuai jika anda",
+   "こんな方に向いています",
+   "이런 분께 적합합니다"
+  ],
+  "v_not": [
+   "Also compare other projects if you",
+   "如果你更看重这些，也可以比较其他项目",
+   "Bandingkan juga projek lain jika anda",
+   "こんな方は他のプロジェクトも比較を",
+   "이런 분은 다른 프로젝트도 비교해 보세요"
+  ],
+  "v_trade": [
+   "Useful facts",
+   "实用资料",
+   "Fakta berguna",
+   "役立つ情報",
+   "알아두면 좋은 정보"
+  ],
+  "v_inv": [
+   "Investment: what rent does it need?",
+   "投资：要租多少才划算？",
+   "Pelaburan: berapa sewa yang diperlukan?",
+   "投資：家賃はいくら必要？",
+   "투자: 월세는 얼마가 필요할까?"
+  ],
+  "v_inv_p": [
+   "Change the numbers to match your unit and your bank's offer. The interest rate is an example only.",
+   "按你的单位和银行的利率改数字。利率只是例子。",
+   "Tukar angka mengikut unit anda dan tawaran bank. Kadar faedah hanya contoh.",
+   "住戸と銀行の条件に合わせて数字を変えてください。金利は一例です。",
+   "세대와 은행 조건에 맞게 숫자를 바꿔 보세요. 금리는 예시입니다."
+  ],
+  "v_lay": [
+   "Layout",
+   "户型",
+   "Susun atur",
+   "間取り",
+   "타입"
+  ],
+  "v_price": [
+   "Price (RM)",
+   "价格（RM）",
+   "Harga (RM)",
+   "価格（RM）",
+   "가격(RM)"
+  ],
+  "v_loan": [
+   "Loan %",
+   "贷款 %",
+   "Pinjaman %",
+   "ローン %",
+   "대출 %"
+  ],
+  "v_rate": [
+   "Interest rate %",
+   "利率 %",
+   "Kadar faedah %",
+   "金利 %",
+   "금리 %"
+  ],
+  "v_yrs": [
+   "Years",
+   "年数",
+   "Tahun",
+   "年数",
+   "기간(년)"
+  ],
+  "v_inst": [
+   "Monthly loan instalment",
+   "每月供期",
+   "Ansuran pinjaman sebulan",
+   "毎月のローン返済",
+   "월 대출 상환액"
+  ],
+  "v_maint": [
+   "Maintenance fee a month",
+   "每月管理费",
+   "Yuran penyelenggaraan sebulan",
+   "毎月の管理費",
+   "월 관리비"
+  ],
+  "v_be": [
+   "Rent needed so you don't top up each month (instalment + maintenance)",
+   "要租到这个数，每月才不用自己贴钱（供期 + 管理费）",
+   "Sewa diperlukan supaya anda tidak menambah wang setiap bulan (ansuran + penyelenggaraan)",
+   "毎月の持ち出しをなくすのに必要な家賃（返済＋管理費）",
+   "매달 추가 부담이 없으려면 필요한 월세 (상환액 + 관리비)"
+  ],
+  "v_y5": [
+   "Rent for a 5% gross yield",
+   "5% 毛回报要租到",
+   "Sewa untuk hasil kasar 5%",
+   "表面利回り5%に必要な家賃",
+   "총수익률 5%에 필요한 월세"
+  ],
+  "v_est": [
+   "Estimated from the lowest price per sqft. Ask Keith for this unit's real price.",
+   "按最低每平方尺价格估算，实际价格请问 Keith。",
+   "Anggaran daripada harga terendah sekaki persegi. Tanya Keith harga sebenar unit ini.",
+   "最低の平方フィート単価から算出した目安です。実際の価格は Keith にお尋ねください。",
+   "최저 평방피트당 가격으로 추정한 값입니다. 실제 가격은 Keith에게 문의하세요."
+  ],
+  "v_check": [
+   "Check these before you book",
+   "下订前要确认的事",
+   "Semak perkara ini sebelum menempah",
+   "予約前に確認すること",
+   "예약 전에 확인할 사항"
+  ],
+  "v_wa": [
+   "Ask Keith about these points",
+   "问 Keith 这些问题",
+   "Tanya Keith tentang perkara ini",
+   "Keith に確認する",
+   "Keith에게 물어보기"
+  ],
+  "eb_news": [
+   "News & articles",
+   "新闻与文章",
+   "Berita & artikel",
+   "ニュースと記事",
+   "뉴스와 기사"
+  ],
+  "h_news": [
+   "News and articles about {n}",
+   "{n} 相关新闻与文章",
+   "Berita dan artikel tentang {n}",
+   "{n} の関連ニュースと記事",
+   "{n} 관련 뉴스와 기사"
+  ],
+  "k_art": [
+   "Project article",
+   "项目文章",
+   "Artikel projek",
+   "プロジェクト記事",
+   "프로젝트 기사"
+  ],
+  "k_note": [
+   "Market note",
+   "市场短评",
+   "Nota pasaran",
+   "マーケットノート",
+   "마켓 노트"
+  ],
+  "k_blog": [
+   "Article",
+   "文章",
+   "Artikel",
+   "記事",
+   "기사"
+  ],
+  "read": [
+   "Read →",
+   "阅读 →",
+   "Baca →",
+   "読む →",
+   "읽기 →"
   ]
  },
  "projects": {
@@ -665,7 +840,146 @@
     "EXSIM membangunkan MABA Suitez sebagai usaha sama dengan Persatuan Bola Keranjang Malaysia (MABA), sebab itu podiumnya mempunyai gelanggang bola keranjang penuh.",
     "MABA Suitez は EXSIM とマレーシアバスケットボール協会（MABA）の共同開発で、そのためポディウムに本格的なバスケットコートがあります。",
     "MABA Suitez는 EXSIM과 말레이시아 농구협회(MABA)의 합작 개발이라 포디움에 정식 농구 코트가 있습니다."
-   ]
+   ],
+   "view": {
+    "suits": [
+     [
+      "An investor who wants a city-centre unit about 160m from Merdeka MRT, from RM699,000 (gross).",
+      "想在市中心、离 Merdeka MRT 约 160 米买投资单位的人，RM699,000 起（Gross）。",
+      "Pelabur yang mahukan unit di pusat bandar kira-kira 160m dari MRT Merdeka, dari RM699,000 (kasar).",
+      "Merdeka MRT から約160mの都心物件を RM699,000（グロス）から求める投資家。",
+      "Merdeka MRT에서 약 160m 거리의 도심 세대를 RM699,000(총액)부터 찾는 투자자."
+     ],
+     [
+      "A business owner who wants a 323 sqft office-suite studio in the city centre.",
+      "想在市中心有一间 323 平方尺办公室套房的老板。",
+      "Pemilik perniagaan yang mahukan studio suite pejabat 323 kaki persegi di pusat bandar.",
+      "都心に323平方フィートのオフィススイートが欲しい経営者。",
+      "도심에 323평방피트 오피스 스위트를 원하는 사업주."
+     ],
+     [
+      "A single professional or a couple who want a separate room (Type B, 1+1).",
+      "想要独立房间的单身专业人士或情侣（Type B，1+1）。",
+      "Profesional bujang atau pasangan yang mahukan bilik berasingan (Jenis B, 1+1).",
+      "個室が欲しい単身の社会人やカップル（Type B、1+1）。",
+      "별도의 방을 원하는 1인 직장인이나 커플 (Type B, 1+1)."
+     ],
+     [
+      "An owner who wants to live in one part and rent out the other (dual-key Type C).",
+      "想自住一边、出租另一边的业主（双钥匙 Type C）。",
+      "Pemilik yang mahu tinggal di satu bahagian dan menyewakan bahagian lain (dual key Jenis C).",
+      "片方に住み、もう片方を貸したいオーナー（デュアルキーの Type C）。",
+      "한쪽에 살고 다른 쪽을 임대하려는 분 (듀얼키 Type C)."
+     ]
+    ],
+    "not": [
+     [
+      "Need two or more bedrooms: the largest layout is 657 sqft with 1 room.",
+      "需要两间房或以上：最大的户型是 657 平方尺，1 间房。",
+      "Perlukan dua bilik tidur atau lebih: susun atur terbesar ialah 657 kaki persegi dengan 1 bilik.",
+      "寝室が2つ以上必要：最大の間取りは657平方フィート、1部屋です。",
+      "침실이 2개 이상 필요한 경우: 가장 큰 타입은 657평방피트, 방 1개입니다."
+     ],
+     [
+      "Prefer freehold: MABA Suitez is leasehold.",
+      "偏好永久地契：MABA Suitez 是租赁地契（Leasehold）。",
+      "Lebih suka pegangan bebas: MABA Suitez ialah pajakan.",
+      "フリーホールドを希望：MABA Suitez はリースホールドです。",
+      "프리홀드를 선호하는 경우: MABA Suitez는 리스홀드입니다."
+     ],
+     [
+      "Want to move in sooner: completion is 60 months after APDL.",
+      "想更早入住：完工期是 APDL 后 60 个月。",
+      "Mahu berpindah lebih awal: siap 60 bulan selepas APDL.",
+      "早く入居したい：完成は APDL から60か月後です。",
+      "빨리 입주하고 싶은 경우: 완공은 APDL 후 60개월입니다."
+     ]
+    ],
+    "trade": [
+     [
+      "Price per sqft: about RM2,164 – RM2,701 psf (gross).",
+      "每平方尺价格：约 RM2,164 – RM2,701 psf（Gross）。",
+      "Harga sekaki persegi: kira-kira RM2,164 – RM2,701 psf (kasar).",
+      "平方フィート単価：約 RM2,164 – RM2,701 psf（グロス）。",
+      "평방피트당 가격: 약 RM2,164 – RM2,701 psf (총액)."
+     ],
+     [
+      "Car parks: 391 bays plus 6 EV bays, sold separately from the units.",
+      "车位：391 个车位加 6 个电动车位，不包在单位价格里。",
+      "Tempat letak kereta: 391 petak serta 6 petak EV, dijual berasingan daripada unit.",
+      "駐車場：391台分と EV 用6台分。住戸とは別売りです。",
+      "주차: 391면과 EV 6면, 세대와 별도로 판매됩니다."
+     ],
+     [
+      "Completion: 60 months after APDL.",
+      "完工期：APDL 后 60 个月。",
+      "Siap: 60 bulan selepas APDL.",
+      "完成：APDL から60か月後。",
+      "완공: APDL 후 60개월."
+     ],
+     [
+      "Foreign buyers: Kuala Lumpur's minimum price is RM1 million; larger units can meet it.",
+      "外国买家：吉隆坡最低价格是 RM100 万，较大的单位可以达到。",
+      "Pembeli asing: harga minimum Kuala Lumpur ialah RM1 juta; unit yang lebih besar boleh mencapainya.",
+      "外国人購入者：クアラルンプールの最低価格は100万リンギット。広い住戸は条件を満たせます。",
+      "외국인 구매자: 쿠알라룸푸르 최저 가격은 100만 링깃이며, 큰 세대는 이를 충족할 수 있습니다."
+     ],
+     [
+      "Maintenance fee RM0.99 psf: about RM320 a month for Type A and RM650 for Type C.",
+      "管理费 RM0.99 psf：Type A 每月约 RM320，Type C 约 RM650。",
+      "Yuran penyelenggaraan RM0.99 psf: kira-kira RM320 sebulan untuk Jenis A dan RM650 untuk Jenis C.",
+      "管理費 RM0.99 psf：Type A は月約 RM320、Type C は約 RM650。",
+      "관리비 RM0.99 psf: Type A는 월 약 RM320, Type C는 약 RM650."
+     ]
+    ],
+    "verify": [
+     [
+      "The exact tower, floor and unit, and its price.",
+      "实际的楼栋、楼层、单位和价格。",
+      "Menara, tingkat dan unit sebenar, serta harganya.",
+      "実際の棟、階、住戸と価格。",
+      "실제 동, 층, 세대와 가격."
+     ],
+     [
+      "Whether you can buy a car park, and its price.",
+      "能不能买车位，车位多少钱。",
+      "Sama ada anda boleh membeli tempat letak kereta, dan harganya.",
+      "駐車場を購入できるか、その価格。",
+      "주차 공간을 구매할 수 있는지, 그 가격."
+     ],
+     [
+      "The expected APDL date, so you know when it should complete.",
+      "APDL 预计日期，才知道什么时候完工。",
+      "Jangkaan tarikh APDL, supaya anda tahu bila ia sepatutnya siap.",
+      "APDL の予定日（いつ完成するかの目安）。",
+      "APDL 예정일 (완공 시기를 알 수 있도록)."
+     ],
+     [
+      "The maintenance fee and sinking fund for your unit size.",
+      "你那个面积的管理费和维修基金。",
+      "Yuran penyelenggaraan dan kumpulan wang penjelas untuk saiz unit anda.",
+      "住戸の広さに応じた管理費と修繕積立金。",
+      "세대 면적에 따른 관리비와 수선충당금."
+     ],
+     [
+      "For foreign buyers: whether the unit meets the RM1 million minimum price.",
+      "外国买家：单位有没有达到 RM100 万最低价格。",
+      "Untuk pembeli asing: sama ada unit mencapai harga minimum RM1 juta.",
+      "外国人購入者：住戸が100万リンギットの最低価格を満たすか。",
+      "외국인 구매자: 세대가 최저 가격 100만 링깃을 충족하는지."
+     ]
+    ],
+    "inv": {
+     "rate": 4.2,
+     "loan": 90,
+     "years": 35,
+     "psf_low": 2164,
+     "maint_psf": 0.99,
+     "prices": {
+      "Type A — Office Suite": 699000
+     }
+    }
+   }
   },
   "clouthaus": {
    "hook": [
