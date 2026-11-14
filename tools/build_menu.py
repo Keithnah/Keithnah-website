@@ -34,6 +34,8 @@ L = {  # key: [en, zh-CN, zh-TW, ms, ja, ko]
     'data': ['Market Data', '市场数据', '市場數據', 'Data Pasaran', 'マーケットデータ', '마켓 데이터'],
     'guide': ['Buying Guide', '买房指南', '買房指南', 'Panduan Membeli', '購入ガイド', '구매 가이드'],
     'foreign': ['Foreign Buyers', '外国买家', '外國買家', 'Pembeli Asing', '外国人購入者', '외국인 구매자'],
+    'topproj': ['Projects', '项目', '項目', 'Projek', '物件', '프로젝트'],
+    'topcmp': ['Compare', '比较', '比較', 'Bandingkan', '比較', '비교'],
     'fcheck': ['Can I Buy? State Check', '我可以买吗？州属查询', '我可以買嗎？州屬查詢', 'Boleh Saya Beli? Semak Negeri', '購入できる？州別チェック', '구매 가능할까? 주별 확인'],
     'fproj': ['Projects for Foreign Buyers', '外国人必看项目', '外國人必看項目', 'Projek untuk Pembeli Asing', '外国人向け物件', '외국인 추천 프로젝트'],
     'fcost': ['Costs & Taxes', '费用和税务', '費用和稅務', 'Kos & Cukai', '費用と税金', '비용 및 세금'],
@@ -139,6 +141,7 @@ CSS = ('<style id="kn-submenu-css">'
        'html{scroll-padding-top:96px}'  # menu links to #sections: keep the section title below the fixed header
        '.knm-g{position:relative;display:inline-flex;align-items:center}.knm-c{display:inline-block;width:6px;height:6px;margin:0 0 3px 7px;pointer-events:none;'
        'border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);opacity:.75;transition:transform .2s}'
+       '@media(min-width:1350px){header nav{gap:clamp(24px,2.2vw,38px)!important;justify-content:center}header nav>a,header nav .knm-g>a{white-space:nowrap}}'
        'header .knm-g>a{margin-right:0!important}.knm-g:hover .knm-c,.knm-g:focus-within .knm-c{transform:translateY(3px) rotate(225deg)}#knMnav .knm-c{display:none}'
        '.knm-d{position:absolute;top:100%;left:50%;transform:translate(-50%,8px);min-width:230px;padding:10px;background:#fff;border-radius:16px;'
        'box-shadow:0 18px 40px rgba(20,18,60,.18);border:1px solid rgba(21,20,43,.08);opacity:0;visibility:hidden;transition:opacity .18s,transform .18s,visibility .18s;z-index:1000}'
@@ -221,6 +224,16 @@ def fix(t, prefix):
         if key not in MENU:
             return a.group(0)
         return '<div class="knm-g">%s<span class="knm-c" aria-hidden="true"></span>%s<!--/knm-g--></div>' % (a.group(0), sub(prefix, MENU[key]))
+    # short main-menu labels: Projects, Compare (the text follows the visitor's language through data-km)
+    def short(m):
+        a = m.group(0)
+        for href, key in (('projects.html', 'topproj'), ('compare.html', 'topcmp')):
+            if re.match(r'<a\b[^>]*href="(?:\.\./|/)*%s"' % re.escape(href), a):
+                a = re.sub(r'\s*data-km="[^"]*"', '', a)
+                a = re.sub(r'^<a\b', '<a data-km="%s"' % key, a)
+                a = re.sub(r'>[^<]*</a>$', '>%s</a>' % L[key][0], a)
+        return a
+    nav = re.sub(r'<a\b[^>]*>[^<]*</a>', short, nav)
     nav = re.sub(r'<a\b[^>]*>.*?</a>', group, nav, flags=re.S)
     head = head[:m.start(1)] + nav + head[m.end(1):]
     t = t[:h0] + head + t[h1:]
