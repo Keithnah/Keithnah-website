@@ -13,6 +13,7 @@ import os
 import re
 import subprocess
 import sys
+import urllib.error
 import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -95,7 +96,31 @@ if __name__ == '__main__':
     if added:
         json.dump(V, open(VF, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
         subprocess.run([sys.executable, os.path.join(HERE, 'fetch_video_meta.py')])
-    print('youtube: %d videos on the channel, %d new on project pages' % (len(videos), len(added)))
+    # can each video play on the site? (the owner can turn off "Allow embedding" in YouTube Studio)
+    MF = os.path.join(HERE, 'video_meta.json')
+    meta = json.load(open(MF, encoding='utf-8')) if os.path.exists(MF) else {}
+    flips = []
+    for vid in sorted({v for vs in V.values() for v in vs}):
+        try:
+            urllib.request.urlopen(urllib.request.Request('https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=%s&format=json' % vid,
+                                                          headers={'User-Agent': 'Mozilla/5.0'}), timeout=20)
+            ok = True
+        except urllib.error.HTTPError as e:
+            ok = e.code not in (401, 403)
+        except OSError:
+            continue
+        m = meta.setdefault(vid, {})
+        if m.get('embed', True) != ok:
+            flips.append((vid, ok))
+        m['embed'] = ok
+    if flips:
+        json.dump(meta, open(MF, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    blocked = [v for v, m in meta.items() if m.get('embed') is False]
+    print('youtube: %d videos on the channel, %d new on project pages, %d embedding changes' % (len(videos), len(added), len(flips)))
+    for v, ok in flips:
+        print('  embedding %s for %s' % ('on' if ok else 'OFF (opens on YouTube)', v))
+    if blocked:
+        print('  embedding off (plays on YouTube only): ' + ', '.join(blocked))
     for n, v, t in added:
         print('  added  %s <- %s (%s)' % (n, v, t[:70]))
     for v, t, h in unmatched:
