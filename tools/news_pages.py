@@ -112,7 +112,7 @@ SHELL = """<!DOCTYPE html>
 <header>
   <a class="logo" href="../"><img src="../images/f304c8479b1fe873.png" alt="Keith Nah logo"><span><b>Keith Nah 鈞晖</b><small>Malaysia Real Estate</small></span></a>
   <nav>{nav}</nav>
-  <div class="hdr-right">{menu}<a class="wa-btn" href="{wa}" target="_blank" rel="noopener">{wasvg}<span>{l_wa}</span></a></div>
+  {right}
 </header>
 <main class="wrap">
 {body}
@@ -121,6 +121,7 @@ SHELL = """<!DOCTYPE html>
 {floatwa}
 {tscript}
 {menujs}
+{artjs}
 <script src="../lead-tracker.js"></script>
 </body>
 </html>
@@ -130,10 +131,19 @@ SHELL = """<!DOCTYPE html>
 def shell(c, title, desc, url, body, ld, og='article', msg='Hi Keith, I have a question about Malaysian property.'):
     import build_project_pages as bp  # shared header, nav and styles
     nav = ''.join('<a href="../{0}"{1}>{2}</a>'.format(h, ' class="active"' if h == 'blog.html' else '', c.tt(n)) for h, n in bp.NAV)
+    import site_header as SH   # the same language, currency and WhatsApp buttons as the main pages
+    right = re.search(r'<div class="nav-right">.*?</div>\n</header>', SH.header('../', 'blog.html', A(wa(msg))), re.S).group(0)[:-len('\n</header>')]
     return SHELL.format(title=A(title), desc=A(desc), url=A(url), og=og, ld=json.dumps(ld, ensure_ascii=False).replace('</', '<\\/'),
-                        css=bp.CSS, pcss=PAGE_CSS + I.MENU_CSS, nav=nav, wa=A(wa(msg)), wasvg=bp.WA_SVG, body=body, menu=I.menu_html(),
+                        css=bp.CSS, pcss=PAGE_CSS + I.MENU_CSS + SH.CSS, nav=nav, right=right, body=body, artjs=ART_JS,
                         l_wa=c.tt('WhatsApp Keith'), l_news=c.tt('News'), l_all=c.tt('All projects'), l_priv=c.tt('Privacy Policy'),
-                        l_terms=c.tt('Terms of Use'), tscript=c.script(), menujs=I.menu_js(), floatwa=FW.float_html(A(wa(msg))))
+                        l_terms=c.tt('Terms of Use'), tscript=c.script(), menujs=SH.js(), floatwa=FW.float_html(A(wa(msg))))
+
+
+# the page's own translations (KN_T, data-t) and dates follow the language picked in the header
+ART_JS = """<script>(function(){function apply(l){if(!window.KN_T)return;document.querySelectorAll('[data-t]').forEach(function(el){var it=KN_T[+el.getAttribute('data-t')];if(it)el.innerHTML=it[l]||it.en;});
+document.querySelectorAll('[data-date]').forEach(function(el){try{el.textContent=new Date(el.getAttribute('data-date')+'T12:00:00').toLocaleDateString(l==='en'?'en-GB':l,{day:'numeric',month:'short',year:'numeric'});}catch(e){}});}
+var s=window.knSetLang;window.knSetLang=function(l){var r=s?s.apply(this,arguments):null;try{apply(localStorage.getItem('kn_lang')||'en')}catch(e){apply(l)}return r;};
+var l='en';try{l=localStorage.getItem('kn_lang')||'en'}catch(e){}apply(l);})();</script>"""
 
 
 def iso(d):
