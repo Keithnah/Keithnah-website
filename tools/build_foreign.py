@@ -287,8 +287,8 @@ def pcard(k, v, i):
 
 grid = ''.join(pcard(*x) for x in OK)
 
-# ---------- Keith's best choices for foreign buyers (shown when FB_BEST=1 until Keith approves) ----------
-SHOW_BEST = os.environ.get('FB_BEST') == '1'
+# ---------- Keith's best choices for foreign buyers (FB_BEST=0 hides the section) ----------
+SHOW_BEST = os.environ.get('FB_BEST', '1') == '1'
 BEST = [('KL City Centre', ['Clouthaus', 'The Conlay', 'MABA Suitez']),
         ('Bukit Bintang', ['Pavilion Square', 'Orion Residence']),
         ('TRX', ['Golden Crown Residence']),
