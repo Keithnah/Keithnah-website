@@ -53,3 +53,9 @@ print('%-24s %s' % ('build_lang_pages.js', (r.stdout.strip().splitlines() or [''
 if r.returncode:
     print(r.stderr[-3000:])
     sys.exit(r.returncode)
+
+# Phone check: every page must fit a phone screen and keep its menu button (tools/check_mobile.js).
+r = subprocess.run(['node', os.path.join(HERE, 'check_mobile.js')], capture_output=True, text=True)
+print('%-24s %s' % ('check_mobile.js', (r.stdout.strip().splitlines() or [''])[-1][:200]))
+if r.returncode:
+    sys.exit(r.returncode)

@@ -45,8 +45,8 @@ def marquee(cls):
         cls, T['clients'][0], chips, chips.replace('<span class="kab-c">', '<span class="kab-c" aria-hidden="true">')))
 
 
-MQ_CSS = ('.kab-m{display:flex;flex-direction:column;gap:10px;min-width:0}.kab-l{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6b6a85;font-weight:700}'
-          '.kab-v{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}'
+MQ_CSS = ('.kab-m{display:flex;flex-direction:column;gap:10px;min-width:0;max-width:100%}#about .ab-top>*,#about .ab-intro{min-width:0}.kab-l{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6b6a85;font-weight:700}'
+          '.kab-v{overflow:hidden;width:100%;max-width:100%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}'
           '.kab-r{display:flex;gap:10px;width:max-content;animation:kabSlide 40s linear infinite}.kab-v:hover .kab-r{animation-play-state:paused}@keyframes kabSlide{to{transform:translateX(calc(-50% - 5px))}}'
           '.kab-c{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #DEDCF7;color:#15142b;font-size:13px;font-weight:600;padding:6px 14px 6px 8px;border-radius:99px;white-space:nowrap}'
           '.kab-c img{border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.08)}@media(prefers-reduced-motion:reduce){.kab-r{animation:none}.kab-v{overflow-x:auto}}')
@@ -87,7 +87,7 @@ else:   # already rebuilt once: put the block back where the stats were
     ix = ix[:i] + home + ix[i:]
 ix = ix.replace('</head>', '<style id="kab-css">%s#about .ab-stats{display:grid!important;grid-template-columns:repeat(3,auto);justify-content:start;gap:12px}'
                 '#about .ab-stat{display:flex;flex-direction:column;padding:14px 18px!important}#about .ab-stat b{margin:0!important;font-size:26px!important}'
-                '#about .kab-home{margin:4px 0 18px;max-width:640px}@media(max-width:900px){#about .ab-stats{justify-content:center}#about .kab-home{margin:4px auto 18px;align-items:center}}</style>\n</head>' % MQ_CSS, 1)
+                '#about .kab-home{margin:4px 0 18px;max-width:640px}@media(max-width:900px){#about .ab-stats{justify-content:center;grid-template-columns:repeat(3,minmax(0,1fr));width:100%%}#about .ab-stat{padding:12px 10px!important;min-width:0}#about .ab-stat b{font-size:20px!important}#about .ab-stat span{font-size:9.5px!important;letter-spacing:.06em!important}#about .kab-home{margin:4px auto 18px;align-items:center}}</style>\n</head>' % MQ_CSS, 1)
 ix = ix.replace('</body>', JS.replace('<script>', '<script id="kab-js">', 1) + '\n</body>', 1)
 ix = re.sub(r'<!-- KN-ABS-BAND:START -->.*?<!-- KN-ABS-BAND:END -->\n?', '', ix, flags=re.S)
 BAND = ('<!-- KN-ABS-BAND:START --><section class="kab-band">%s</section><!-- KN-ABS-BAND:END -->\n' % tiles_html('kab-band-m'))

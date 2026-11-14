@@ -754,6 +754,150 @@
     "Bukit Jalil City の希少な3.44エーカーの敷地に2棟",
     "Bukit Jalil City의 귀한 3.44에이커 부지 위 두 개 동"
    ]
+  },
+  "ascott-star-residence": {
+   "hook": [
+    "Completed freehold homes on Levels 35 to 56, in the heart of KL City Centre",
+    "吉隆坡市中心核心地段，35 至 56 楼的已完工永久地契住宅",
+    "Kediaman pegangan bebas siap di Aras 35 hingga 56, di tengah KL City Centre",
+    "KL City Centre 中心、35〜56階の完成済みフリーホールド住宅",
+    "KL City Centre 중심, 35~56층의 완공된 프리홀드 주거"
+   ]
+  },
+  "branniganz-suites-bukit-bintang": {
+   "hook": [
+    "Next to Berjaya Times Square and the Bukit Bintang Monorail",
+    "紧邻 Berjaya Times Square 和 Bukit Bintang 单轨站",
+    "Bersebelahan Berjaya Times Square dan Monorel Bukit Bintang",
+    "Berjaya Times Square と Bukit Bintang モノレール駅の隣",
+    "Berjaya Times Square와 Bukit Bintang 모노레일 바로 옆"
+   ]
+  },
+  "centrix": {
+   "hook": [
+    "Built directly above Dang Wangi LRT station, on Jalan Ampang",
+    "建在 Dang Wangi LRT 站正上方，位于 Jalan Ampang",
+    "Dibina terus di atas stesen LRT Dang Wangi, di Jalan Ampang",
+    "Dang Wangi LRT 駅の真上、Jalan Ampang 沿い",
+    "Dang Wangi LRT역 바로 위, Jalan Ampang"
+   ]
+  },
+  "core-residence": {
+   "hook": [
+    "Completed freehold towers in TRX, Kuala Lumpur's financial district",
+    "位于吉隆坡金融区 TRX 的已完工永久地契大楼",
+    "Menara pegangan bebas yang telah siap di TRX, daerah kewangan Kuala Lumpur",
+    "クアラルンプールの金融地区 TRX にある完成済みフリーホールドタワー",
+    "쿠알라룸푸르 금융지구 TRX의 완공된 프리홀드 타워"
+   ]
+  },
+  "divine-kl-city-centre": {
+   "hook": [
+    "83 storeys, 400 m from Suria KL City Centre",
+    "83 层高，离 Suria KL City Centre 400 米",
+    "83 tingkat, 400 m dari Suria KL City Centre",
+    "83階建て、Suria KL City Centre から400 m",
+    "83층, Suria KL City Centre에서 400m"
+   ]
+  },
+  "eaton-residence": {
+   "hook": [
+    "Completed, within walking distance of the Petronas Twin Towers",
+    "已完工，走路可到 Petronas 双子塔",
+    "Telah siap, dalam jarak berjalan kaki ke Menara Berkembar Petronas",
+    "完成済み、ペトロナスツインタワーまで徒歩圏",
+    "완공, 페트로나스 트윈타워까지 도보 거리"
+   ]
+  },
+  "jewel-oxley-towers": {
+   "hook": [
+    "Freehold, only 267 units, with direct access to KL City Centre Park",
+    "永久地契，只有 267 个单位，直通 KL City Centre 公园",
+    "Pegangan bebas, hanya 267 unit, dengan akses terus ke Taman KL City Centre",
+    "フリーホールド、わずか267戸、KL City Centre 公園に直結",
+    "프리홀드, 단 267세대, KL City Centre 공원 직통"
+   ]
+  },
+  "phoeniz-suites-kl-city-centre": {
+   "hook": [
+    "A freehold 53-storey tower with dual-key layouts, by EXSIM",
+    "EXSIM 开发的 53 层永久地契大楼，有双钥匙户型",
+    "Menara pegangan bebas 53 tingkat dengan susun atur dual key, oleh EXSIM",
+    "EXSIM による53階建てフリーホールドタワー、デュアルキーあり",
+    "EXSIM의 53층 프리홀드 타워, 듀얼키 구조"
+   ]
+  },
+  "royal-lexis": {
+   "hook": [
+    "Every unit has its own private pool, freehold on Jalan Sultan Ismail",
+    "每个单位都有私人泳池，位于 Jalan Sultan Ismail 的永久地契",
+    "Setiap unit mempunyai kolam renang peribadi, pegangan bebas di Jalan Sultan Ismail",
+    "全戸にプライベートプール、Jalan Sultan Ismail のフリーホールド",
+    "모든 세대에 개인 수영장, Jalan Sultan Ismail의 프리홀드"
+   ]
+  },
+  "so-kl-oxley-towers": {
+   "hook": [
+    "Freehold, home to Malaysia's highest residential swimming pool",
+    "永久地契，拥有全马最高的住宅泳池",
+    "Pegangan bebas, dengan kolam renang kediaman tertinggi di Malaysia",
+    "フリーホールド、マレーシアで最も高い住宅用プール",
+    "프리홀드, 말레이시아에서 가장 높은 주거용 수영장"
+   ]
+  },
+  "sutera-suites": {
+   "hook": [
+    "About 200 m to Kampung Baru LRT, one stop to KL City Centre",
+    "离 Kampung Baru LRT 约 200 米，一站到 KL City Centre",
+    "Kira-kira 200 m ke LRT Kampung Baru, satu stesen ke KL City Centre",
+    "Kampung Baru LRT まで約200 m、KL City Centre まで1駅",
+    "Kampung Baru LRT까지 약 200m, KL City Centre까지 한 정거장"
+   ]
+  },
+  "swnk-houze-bbcc": {
+   "hook": [
+    "Inside BBCC, connected to the Hang Tuah Monorail and Merdeka MRT/LRT",
+    "位于 BBCC 内，连接 Hang Tuah 单轨和 Merdeka MRT/LRT",
+    "Di dalam BBCC, bersambung ke Monorel Hang Tuah dan MRT/LRT Merdeka",
+    "BBCC 内、Hang Tuah モノレールと Merdeka MRT/LRT に接続",
+    "BBCC 내, Hang Tuah 모노레일·Merdeka MRT/LRT와 연결"
+   ]
+  },
+  "times-square-2": {
+   "hook": [
+    "Freehold, right beside Imbi Monorail Station",
+    "永久地契，就在 Imbi 单轨站旁边",
+    "Pegangan bebas, betul-betul bersebelahan Stesen Monorel Imbi",
+    "フリーホールド、Imbi モノレール駅のすぐ隣",
+    "프리홀드, Imbi 모노레일역 바로 옆"
+   ]
+  },
+  "cappella-embassy": {
+   "hook": [
+    "Five towers on 9.12 acres along Jalan Ampang",
+    "Jalan Ampang 沿线 9.12 英亩土地上的五栋大楼",
+    "Lima menara di atas 9.12 ekar di sepanjang Jalan Ampang",
+    "Jalan Ampang 沿いの9.12エーカーに5棟",
+    "Jalan Ampang 9.12에이커 부지의 5개 동"
+   ]
+  },
+  "hanaz-suites": {
+   "hook": [
+    "Freehold suites with a Level 42 sky pool, near the Petronas Twin Towers",
+    "永久地契套房，42 楼有空中泳池，靠近 Petronas 双子塔",
+    "Suite pegangan bebas dengan kolam langit Aras 42, berhampiran Menara Berkembar Petronas",
+    "42階スカイプール付きフリーホールドスイート、ペトロナスツインタワーの近く",
+    "42층 스카이풀을 갖춘 프리홀드 스위트, 페트로나스 트윈타워 인근"
+   ]
+  },
+  "dawn-kl-city-centre": {
+   "hook": [
+    "Freehold, about 385 m on foot to KL City Centre LRT",
+    "永久地契，走路约 385 米到 KL City Centre LRT",
+    "Pegangan bebas, kira-kira 385 m berjalan kaki ke LRT KL City Centre",
+    "フリーホールド、KL City Centre LRT まで徒歩約385 m",
+    "프리홀드, KL City Centre LRT까지 도보 약 385m"
+   ]
   }
  }
 }
