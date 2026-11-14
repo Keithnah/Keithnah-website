@@ -2,7 +2,7 @@
 
 - Home #about: 5 years of experience, RM100M+ personal sales, YouTube followers, and a slowly sliding
   row of the countries Keith's clients come from (flag + name), like the Free Toolkit row.
-- about-keith.html: the stats band on a light background (5 tiles) with the same sliding country row.
+- about-keith.html: the stats band on a light background (4 tiles) with the same sliding country row.
 Texts in six languages, swapped in the browser (kn_lang) like the other generated blocks.
 Safe to run again (blocks between KN-ABS markers are replaced).
 """
@@ -54,15 +54,15 @@ MQ_CSS = ('.kab-m{display:flex;flex-direction:column;gap:10px;min-width:0}.kab-l
 
 def tiles_html(mcls):
     tile = lambda n, k: '<div class="stat-tile"><h3>%s</h3><span data-kab="%s">%s</span></div>' % (n, k, T[k][0])
-    return ('<div class="stats-inner kab-5">%s%s%s%s%s</div>%s' % (tile('5', 'years'), tile('RM100M+', 'sales'), tile('100+', 'proj'), tile('0%', 'fee'), tile('1000+', 'yt'), marquee('kab-about ' + mcls)))
+    return ('<div class="stats-inner kab-5">%s%s%s%s</div>%s' % (tile('5', 'years'), tile('RM100M+', 'sales'), tile('100+', 'proj'), tile('1000+', 'yt'), marquee('kab-about ' + mcls)))
 
 
 BAND_CSS = ('.kab-band{padding:0!important;background:linear-gradient(160deg,#F7F6FF 0%,#ECEBFB 100%);border-top:1px solid #DEDCF7;border-bottom:1px solid #DEDCF7}'
-            '.kab-band .stats-inner{display:grid;grid-template-columns:repeat(5,1fr);max-width:none}.kab-band .stat-tile{padding:44px 24px;text-align:center;border-right:1px solid #DEDCF7}'
+            '.kab-band .stats-inner{display:grid;grid-template-columns:repeat(4,1fr);max-width:none}.kab-band .stat-tile{padding:44px 24px;text-align:center;border-right:1px solid #DEDCF7}'
             '.kab-band .stat-tile:last-child{border-right:0}.kab-band .stat-tile h3{font-family:"Playfair Display",serif;color:#5E60CE;font-size:clamp(26px,3vw,34px);margin:0 0 8px}'
             '.kab-band .stat-tile span{color:#5f5e74;font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;font-weight:600}'
             '.kab-band .kab-about{align-items:center;padding:22px 5vw 30px;border-top:1px solid #DEDCF7}.kab-band .kab-about .kab-v{max-width:1180px;width:100%}'
-            '@media(max-width:900px){.kab-band .stats-inner{grid-template-columns:repeat(2,1fr)}.kab-band .stat-tile{border-bottom:1px solid #DEDCF7}.kab-band .stat-tile:last-child{grid-column:1/-1}}')
+            '@media(max-width:900px){.kab-band .stats-inner{grid-template-columns:repeat(2,1fr)}.kab-band .stat-tile{border-bottom:1px solid #DEDCF7}}')
 
 
 def put(t, start, end, block):
@@ -101,14 +101,14 @@ ak = open('about-keith.html', encoding='utf-8').read()
 ak = re.sub(r'<style id="kab-css">.*?</style>', '', ak, flags=re.S)
 ak = re.sub(r'<script id="kab-js">.*?</script>', '', ak, flags=re.S)
 tiles = ('<div class="stats-inner kab-5"><div class="stat-tile"><h3>5</h3><span data-kab="years">%s</span></div><div class="stat-tile"><h3>RM100M+</h3><span data-kab="sales">%s</span></div>'
-         '<div class="stat-tile"><h3>100+</h3><span>Projects Across Malaysia</span></div><div class="stat-tile"><h3>0%%</h3><span>Agent Fee To Buyers</span></div>'
+         '<div class="stat-tile"><h3>100+</h3><span>Projects Across Malaysia</span></div>'
          '<div class="stat-tile"><h3>1000+</h3><span>YouTube Followers</span></div></div>%s') % (T['years'][0], T['sales'][0], marquee('kab-about'))
-ak = re.sub(r'<section class="keith-stats"[^>]*>.*?</section>', lambda _: '<section class="keith-stats kab-light" style="padding:0;">\n  <!-- KN-ABS:START -->%s<!-- KN-ABS:END -->\n</section>' % tiles, ak, count=1, flags=re.S)
+ak = re.sub(r'<section class="keith-stats[^"]*"[^>]*>.*?</section>', lambda _: '<section class="keith-stats kab-light" style="padding:0;">\n  <!-- KN-ABS:START -->%s<!-- KN-ABS:END -->\n</section>' % tiles, ak, count=1, flags=re.S)
 ak = ak.replace('</head>', '<style id="kab-css">%s.keith-stats.kab-light{background:linear-gradient(160deg,#F7F6FF 0%%,#ECEBFB 100%%)!important;border-top:1px solid #DEDCF7;border-bottom:1px solid #DEDCF7}'
-                '.kab-light .stats-inner.kab-5{grid-template-columns:repeat(5,1fr)!important}.kab-light .stat-tile{border-color:#DEDCF7!important}'
+                '.kab-light .stats-inner.kab-5{grid-template-columns:repeat(4,1fr)!important}.kab-light .stat-tile{border-color:#DEDCF7!important}'
                 '.kab-light .stat-tile h3{color:#5E60CE!important}.kab-light .stat-tile span{color:#5f5e74!important}'
                 '.kab-about{align-items:center;padding:22px 5vw 30px;border-top:1px solid #DEDCF7}.kab-about .kab-v{max-width:1180px;width:100%%}'
-                '@media(max-width:900px){.kab-light .stats-inner.kab-5{grid-template-columns:repeat(2,1fr)!important}.kab-light .stats-inner.kab-5 .stat-tile:last-child{grid-column:1/-1}}</style>\n</head>' % MQ_CSS, 1)
+                '@media(max-width:900px){.kab-light .stats-inner.kab-5{grid-template-columns:repeat(2,1fr)!important}}</style>\n</head>' % MQ_CSS, 1)
 ak = ak.replace('</body>', JS.replace('<script>', '<script id="kab-js">', 1) + '\n</body>', 1)
 open('about-keith.html', 'w', encoding='utf-8').write(ak)
 print('about stats: home + about-keith.html, %d countries' % len(COUNTRIES))
