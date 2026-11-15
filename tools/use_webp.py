@@ -85,8 +85,8 @@ def fix_page(page, s):
     def bg(m):   # background-image:url('x.jpg') in a style attribute or a <style> block
         decl, url = m.group(0), m.group(2)
         p = fs_path(page, url)
-        if not p or not has_webp(p):
-            return decl
+        if not p or not has_webp(p) or ("image-set(url('%s')" % (url[:-4] + '.webp')) in s:
+            return decl   # no smaller WebP, or already done on an earlier run
         layered = decl.replace("url('%s')" % url, "image-set(url('%s') type('image/webp'),url('%s') type('image/jpeg'))" % (url[:-4] + '.webp', url))
         return decl + ';' + layered
     s = re.sub(r"background-image:(\s*(?:linear-gradient\([^;]*?\)\s*,\s*)?)url\('([^']+\.jpg)'\)(?!;background-image:image-set)", bg, s)
