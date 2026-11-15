@@ -38,12 +38,10 @@ CSS = ('.kph{padding:84px 6vw 70px;background:#F9F8F6}.kph-in{max-width:1180px;m
        'font:700 13px Inter,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:8px 14px;border-radius:99px;box-shadow:0 6px 16px rgba(29,27,79,.25)}'
        '.kph-yr b{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#fff;color:#5E60CE;font-size:12px}'
        '.kph-cap{display:block;padding:14px 18px;font:600 14px Inter,sans-serif;color:#15142b}'
-       '.kph-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:22px}.kph-ph{grid-column:span 2;position:relative;display:block;border-radius:18px;overflow:hidden;background:#fff;border:1px solid #DEDCF7}'
-       '.kph-ph:nth-child(4),.kph-ph:nth-child(5){grid-column:span 3}.kph-ph img{display:block;width:100%;height:260px;object-fit:cover;object-position:center 30%;transition:transform .4s}'
-       '.kph-ph:hover img,.kph-card:hover img{transform:scale(1.03)}.kph-card img{transition:transform .4s}'
-       '.kph-ph span{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;font:600 13px Inter,sans-serif;color:#fff;background:linear-gradient(transparent,rgba(21,20,43,.8))}'
-       '@media(max-width:820px){.kph{padding:56px 16px 48px}.kph-top{grid-template-columns:1fr;gap:16px}.kph-grid{grid-template-columns:1fr 1fr;gap:10px}'
-       '.kph-ph,.kph-ph:nth-child(4),.kph-ph:nth-child(5){grid-column:span 1}.kph-ph:nth-child(5){grid-column:span 2}.kph-ph img{height:200px}}')
+       '.kph-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:22px}.kph-ph{display:flex;flex-direction:column;background:#fff;border:1px solid #DEDCF7;border-radius:14px;overflow:hidden;max-width:100%}'
+       '.kph-ph img{display:block;height:172px;width:auto;max-width:100%;object-fit:contain;background:#f3f1fa;transition:opacity .2s}.kph-ph:hover img{opacity:.9}.kph-card:hover img{transform:scale(1.03)}.kph-card img{transition:transform .4s}'
+       '.kph-ph span{display:block;padding:9px 12px;font:600 12.5px Inter,sans-serif;color:#15142b;max-width:0;min-width:100%}'
+       '@media(max-width:820px){.kph{padding:56px 16px 48px}.kph-top{grid-template-columns:1fr;gap:16px}.kph-grid{gap:10px}.kph-ph img{height:132px}.kph-ph span{font-size:11.5px;padding:7px 9px}}')
 
 JS = ('<script>(function(){var T=%s,LG=%s;function f(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}var i=Math.max(0,LG.indexOf(l));'
       'document.querySelectorAll("[data-kph]").forEach(function(el){var v=T[el.getAttribute("data-kph")];if(v)el.textContent=v[i];});}f();'
