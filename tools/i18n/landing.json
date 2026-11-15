@@ -971,7 +971,115 @@
     "Pegangan bebas, 30 langkah dari Menara Berkembar Petronas",
     "フリーホールド、ペトロナスツインタワーから30歩",
     "프리홀드, 페트로나스 트윈타워에서 30걸음"
-   ]
+   ],
+   "view_draft": {
+    "suits": [
+     [
+      "Buyers who want a freehold home in the heart of KL City Centre.",
+      "想在 KL City Centre 中心拥有永久地契单位的买家。",
+      "Buyers who want a freehold home in the heart of KL City Centre.",
+      "Buyers who want a freehold home in the heart of KL City Centre.",
+      "Buyers who want a freehold home in the heart of KL City Centre."
+     ],
+     [
+      "Professionals who work around the Twin Towers.",
+      "在双子塔一带上班的专业人士。",
+      "Professionals who work around the Twin Towers.",
+      "Professionals who work around the Twin Towers.",
+      "Professionals who work around the Twin Towers."
+     ],
+     [
+      "Families or upgraders who need a 2- or 3-bedroom unit in the city.",
+      "需要市中心 2 房或 3 房的家庭和换屋买家。",
+      "Families or upgraders who need a 2- or 3-bedroom unit in the city.",
+      "Families or upgraders who need a 2- or 3-bedroom unit in the city.",
+      "Families or upgraders who need a 2- or 3-bedroom unit in the city."
+     ],
+     [
+      "Foreign buyers: entry prices are above the RM1 million minimum in Kuala Lumpur.",
+      "外国买家：入门价格已超过吉隆坡 RM100 万最低价格。",
+      "Foreign buyers: entry prices are above the RM1 million minimum in Kuala Lumpur.",
+      "Foreign buyers: entry prices are above the RM1 million minimum in Kuala Lumpur.",
+      "Foreign buyers: entry prices are above the RM1 million minimum in Kuala Lumpur."
+     ]
+    ],
+    "not": [
+     [
+      "Need 4 bedrooms or more: the largest layout is 1,216 sqft with 3 bedrooms.",
+      "需要 4 房或以上：最大户型是 1,216 平方尺 3 房。",
+      "Need 4 bedrooms or more: the largest layout is 1,216 sqft with 3 bedrooms.",
+      "Need 4 bedrooms or more: the largest layout is 1,216 sqft with 3 bedrooms.",
+      "Need 4 bedrooms or more: the largest layout is 1,216 sqft with 3 bedrooms."
+     ],
+     [
+      "Want to move in soon: completion is Q1 2029.",
+      "想更早入住：完工期是 2029 年第一季。",
+      "Want to move in soon: completion is Q1 2029.",
+      "Want to move in soon: completion is Q1 2029.",
+      "Want to move in soon: completion is Q1 2029."
+     ]
+    ],
+    "trade": [
+     [
+      "Tenure: freehold.",
+      "地契：永久地契。",
+      "Tenure: freehold.",
+      "Tenure: freehold.",
+      "Tenure: freehold."
+     ],
+     [
+      "11 layouts from 549 to 1,216 sqft, 1 to 3 bedrooms.",
+      "11 种户型，549 至 1,216 平方尺，1 至 3 房。",
+      "11 layouts from 549 to 1,216 sqft, 1 to 3 bedrooms.",
+      "11 layouts from 549 to 1,216 sqft, 1 to 3 bedrooms.",
+      "11 layouts from 549 to 1,216 sqft, 1 to 3 bedrooms."
+     ],
+     [
+      "Prices from about RM1.41 million.",
+      "价格约 RM141 万起。",
+      "Prices from about RM1.41 million.",
+      "Prices from about RM1.41 million.",
+      "Prices from about RM1.41 million."
+     ],
+     [
+      "Completion: Q1 2029.",
+      "完工：2029 年第一季。",
+      "Completion: Q1 2029.",
+      "Completion: Q1 2029.",
+      "Completion: Q1 2029."
+     ]
+    ],
+    "verify": [
+     [
+      "The exact block, floor and unit, and its price.",
+      "实际的楼栋、楼层、单位和价格。",
+      "The exact block, floor and unit, and its price.",
+      "The exact block, floor and unit, and its price.",
+      "The exact block, floor and unit, and its price."
+     ],
+     [
+      "The maintenance fee and sinking fund for your unit size.",
+      "你那个面积的管理费和维修基金。",
+      "The maintenance fee and sinking fund for your unit size.",
+      "The maintenance fee and sinking fund for your unit size.",
+      "The maintenance fee and sinking fund for your unit size."
+     ],
+     [
+      "Car park allocation for your unit.",
+      "你的单位分配几个车位。",
+      "Car park allocation for your unit.",
+      "Car park allocation for your unit.",
+      "Car park allocation for your unit."
+     ],
+     [
+      "Which family layouts (2 and 3 bedrooms) are still available.",
+      "还剩哪些家庭户型（2 房和 3 房）。",
+      "Which family layouts (2 and 3 bedrooms) are still available.",
+      "Which family layouts (2 and 3 bedrooms) are still available.",
+      "Which family layouts (2 and 3 bedrooms) are still available."
+     ]
+    ]
+   }
   },
   "the-conlay": {
    "hook": [
@@ -1007,7 +1115,122 @@
     "Laluan bawah tanah ke stesen pertukaran MRT TRX dan The Exchange TRX",
     "TRX MRT 乗換駅と The Exchange TRX に地下で直結",
     "TRX MRT 환승역과 The Exchange TRX에 지하로 연결"
-   ]
+   ],
+   "view_draft": {
+    "suits": [
+     [
+      "Professionals who work in TRX or the city centre and want the MRT at the door.",
+      "在 TRX 或市中心上班、想要家门口就有 MRT 的专业人士。",
+      "Professionals who work in TRX or the city centre and want the MRT at the door.",
+      "Professionals who work in TRX or the city centre and want the MRT at the door.",
+      "Professionals who work in TRX or the city centre and want the MRT at the door."
+     ],
+     [
+      "Couples who want a partly furnished 1-bedroom home.",
+      "想要附部分家具 1 房单位的情侣。",
+      "Couples who want a partly furnished 1-bedroom home.",
+      "Couples who want a partly furnished 1-bedroom home.",
+      "Couples who want a partly furnished 1-bedroom home."
+     ],
+     [
+      "Small families who need 2 bedrooms near international schools.",
+      "需要 2 房、靠近国际学校的小家庭。",
+      "Small families who need 2 bedrooms near international schools.",
+      "Small families who need 2 bedrooms near international schools.",
+      "Small families who need 2 bedrooms near international schools."
+     ],
+     [
+      "Owners who want two separate entrances (dual-key Type C).",
+      "想要两个独立入口的业主（双钥匙 Type C）。",
+      "Owners who want two separate entrances (dual-key Type C).",
+      "Owners who want two separate entrances (dual-key Type C).",
+      "Owners who want two separate entrances (dual-key Type C)."
+     ]
+    ],
+    "not": [
+     [
+      "Prefer freehold: Golden Crown is leasehold to 2111.",
+      "偏好永久地契：Golden Crown 是租赁地契到 2111 年。",
+      "Prefer freehold: Golden Crown is leasehold to 2111.",
+      "Prefer freehold: Golden Crown is leasehold to 2111.",
+      "Prefer freehold: Golden Crown is leasehold to 2111."
+     ],
+     [
+      "Need 3 bedrooms or more: the largest layout has 2 bedrooms.",
+      "需要 3 房或以上：最大户型是 2 房。",
+      "Need 3 bedrooms or more: the largest layout has 2 bedrooms.",
+      "Need 3 bedrooms or more: the largest layout has 2 bedrooms.",
+      "Need 3 bedrooms or more: the largest layout has 2 bedrooms."
+     ]
+    ],
+    "trade": [
+     [
+      "Underground link to the TRX MRT interchange and The Exchange TRX.",
+      "地下通道连接 TRX MRT 转换站和 The Exchange TRX。",
+      "Underground link to the TRX MRT interchange and The Exchange TRX.",
+      "Underground link to the TRX MRT interchange and The Exchange TRX.",
+      "Underground link to the TRX MRT interchange and The Exchange TRX."
+     ],
+     [
+      "Price per sqft: from about RM2,051 psf (gross).",
+      "每平方尺价格：约 RM2,051 psf 起（Gross）。",
+      "Price per sqft: from about RM2,051 psf (gross).",
+      "Price per sqft: from about RM2,051 psf (gross).",
+      "Price per sqft: from about RM2,051 psf (gross)."
+     ],
+     [
+      "Maintenance fee about RM0.80 psf: about RM499 a month for Type A1.",
+      "管理费约 RM0.80 psf：Type A1 每月约 RM499。",
+      "Maintenance fee about RM0.80 psf: about RM499 a month for Type A1.",
+      "Maintenance fee about RM0.80 psf: about RM499 a month for Type A1.",
+      "Maintenance fee about RM0.80 psf: about RM499 a month for Type A1."
+     ],
+     [
+      "Car parks: 1 per unit, except 30 Type A1 units on Levels 13 to 22.",
+      "车位：每户 1 个，第 13 至 22 层的 30 个 Type A1 除外。",
+      "Car parks: 1 per unit, except 30 Type A1 units on Levels 13 to 22.",
+      "Car parks: 1 per unit, except 30 Type A1 units on Levels 13 to 22.",
+      "Car parks: 1 per unit, except 30 Type A1 units on Levels 13 to 22."
+     ],
+     [
+      "Target completion: December 2026.",
+      "目标完工：2026 年 12 月。",
+      "Target completion: December 2026.",
+      "Target completion: December 2026.",
+      "Target completion: December 2026."
+     ]
+    ],
+    "verify": [
+     [
+      "The exact floor, unit and view, and its price.",
+      "实际的楼层、单位、景观和价格。",
+      "The exact floor, unit and view, and its price.",
+      "The exact floor, unit and view, and its price.",
+      "The exact floor, unit and view, and its price."
+     ],
+     [
+      "Whether your unit comes with a car park.",
+      "你的单位有没有车位。",
+      "Whether your unit comes with a car park.",
+      "Whether your unit comes with a car park.",
+      "Whether your unit comes with a car park."
+     ],
+     [
+      "The furnishing list for your unit.",
+      "你的单位附哪些家具电器。",
+      "The furnishing list for your unit.",
+      "The furnishing list for your unit.",
+      "The furnishing list for your unit."
+     ],
+     [
+      "The latest handover timeline.",
+      "最新的交屋时间。",
+      "The latest handover timeline.",
+      "The latest handover timeline.",
+      "The latest handover timeline."
+     ]
+    ]
+   }
   },
   "imperial-residence-pavilion-damansara-heights": {
    "hook": [
@@ -1041,7 +1264,115 @@
     "Condovilla bermula dari kira-kira RM1.3 juta, di bawah harga minimum RM2 juta bagi pembeli asing di Selangor, manakala ParkHomes bermula dari kira-kira RM2.5 juta, melebihi minimum. Pembeli asing masih memerlukan kelulusan negeri, dan Keith mengesahkan setiap unit sebelum anda menempah.",
     "コンドヴィラは約130万リンギットからで、セランゴールの外国人購入者向け最低価格200万リンギットを下回ります。パークホームは約250万リンギットからで、最低価格を上回ります。州の許可は必要で、予約前に Keith が住戸ごとに確認します。",
     "콘도빌라는 약 130만 링깃부터로 슬랑오르 외국인 최저 가격 200만 링깃보다 낮고, 파크홈은 약 250만 링깃부터로 이를 넘습니다. 주 정부 승인은 여전히 필요하며, 예약 전에 Keith가 세대별로 확인해 드립니다."
-   ]
+   ],
+   "view_draft": {
+    "suits": [
+     [
+      "Families who want space, from 3-bedroom Condovillas to 6-bedroom ParkHomes.",
+      "想要大空间的家庭，从 3 房 Condovilla 到 6 房 ParkHome。",
+      "Families who want space, from 3-bedroom Condovillas to 6-bedroom ParkHomes.",
+      "Families who want space, from 3-bedroom Condovillas to 6-bedroom ParkHomes.",
+      "Families who want space, from 3-bedroom Condovillas to 6-bedroom ParkHomes."
+     ],
+     [
+      "Upgraders moving from a smaller condo.",
+      "从小公寓换大屋的买家。",
+      "Upgraders moving from a smaller condo.",
+      "Upgraders moving from a smaller condo.",
+      "Upgraders moving from a smaller condo."
+     ],
+     [
+      "Buyers who value a low-density township with schools and hospitals nearby.",
+      "重视低密度、附近有学校和医院的城镇环境的买家。",
+      "Buyers who value a low-density township with schools and hospitals nearby.",
+      "Buyers who value a low-density township with schools and hospitals nearby.",
+      "Buyers who value a low-density township with schools and hospitals nearby."
+     ]
+    ],
+    "not": [
+     [
+      "Want a small or entry-level unit: the smallest home is 1,691 sqft.",
+      "想要小单位或入门单位：最小单位是 1,691 平方尺。",
+      "Want a small or entry-level unit: the smallest home is 1,691 sqft.",
+      "Want a small or entry-level unit: the smallest home is 1,691 sqft.",
+      "Want a small or entry-level unit: the smallest home is 1,691 sqft."
+     ],
+     [
+      "Want to move in soon: completion is expected in 2030.",
+      "想更早入住：预计 2030 年完工。",
+      "Want to move in soon: completion is expected in 2030.",
+      "Want to move in soon: completion is expected in 2030.",
+      "Want to move in soon: completion is expected in 2030."
+     ],
+     [
+      "Prefer freehold: Zenia is leasehold until 2124.",
+      "偏好永久地契：Zenia 是租赁地契到 2124 年。",
+      "Prefer freehold: Zenia is leasehold until 2124.",
+      "Prefer freehold: Zenia is leasehold until 2124.",
+      "Prefer freehold: Zenia is leasehold until 2124."
+     ]
+    ],
+    "trade": [
+     [
+      "1,085 homes on 55 acres, about 20 homes per acre.",
+      "55 英亩共 1,085 个单位，每英亩约 20 个。",
+      "1,085 homes on 55 acres, about 20 homes per acre.",
+      "1,085 homes on 55 acres, about 20 homes per acre.",
+      "1,085 homes on 55 acres, about 20 homes per acre."
+     ],
+     [
+      "Condovillas from about RM1.3 million; ParkHomes from about RM2.5 million (gross).",
+      "Condovilla 约 RM130 万起；ParkHome 约 RM250 万起（Gross）。",
+      "Condovillas from about RM1.3 million; ParkHomes from about RM2.5 million (gross).",
+      "Condovillas from about RM1.3 million; ParkHomes from about RM2.5 million (gross).",
+      "Condovillas from about RM1.3 million; ParkHomes from about RM2.5 million (gross)."
+     ],
+     [
+      "Condovilla maintenance fee about RM0.33 psf before the sinking fund.",
+      "Condovilla 管理费约 RM0.33 psf（不含维修基金）。",
+      "Condovilla maintenance fee about RM0.33 psf before the sinking fund.",
+      "Condovilla maintenance fee about RM0.33 psf before the sinking fund.",
+      "Condovilla maintenance fee about RM0.33 psf before the sinking fund."
+     ],
+     [
+      "Foreign buyers: Selangor minimum is RM2 million; ParkHomes start above it.",
+      "外国买家：雪兰莪最低价格是 RM200 万，ParkHome 起价已超过。",
+      "Foreign buyers: Selangor minimum is RM2 million; ParkHomes start above it.",
+      "Foreign buyers: Selangor minimum is RM2 million; ParkHomes start above it.",
+      "Foreign buyers: Selangor minimum is RM2 million; ParkHomes start above it."
+     ]
+    ],
+    "verify": [
+     [
+      "The exact block or row, unit and price.",
+      "实际的楼栋或排屋位置、单位和价格。",
+      "The exact block or row, unit and price.",
+      "The exact block or row, unit and price.",
+      "The exact block or row, unit and price."
+     ],
+     [
+      "Which Condovillas have a private garden.",
+      "哪些 Condovilla 附私人花园。",
+      "Which Condovillas have a private garden.",
+      "Which Condovillas have a private garden.",
+      "Which Condovillas have a private garden."
+     ],
+     [
+      "Car park allocation for your home type.",
+      "你那种单位分配几个车位。",
+      "Car park allocation for your home type.",
+      "Car park allocation for your home type.",
+      "Car park allocation for your home type."
+     ],
+     [
+      "The expected completion date.",
+      "预计完工日期。",
+      "The expected completion date.",
+      "The expected completion date.",
+      "The expected completion date."
+     ]
+    ]
+   }
   },
   "the-queenswoodz": {
    "hook": [
