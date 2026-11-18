@@ -13,19 +13,18 @@ FLOAT_CSS = """
 /* KN-FLOAT:START */
 a.float-wa.float-wa{position:fixed;right:22px;bottom:22px;z-index:60;display:inline-flex;align-items:center;gap:11px;width:auto;height:auto;
   padding:13px 24px 13px 18px;border-radius:100px;background:#25D366;color:#fff;font:700 16px/1 'Inter',system-ui,sans-serif;letter-spacing:0;
-  text-decoration:none;animation:knWaPulse 2.6s ease-in-out infinite;transition:transform .25s ease;}
+  text-decoration:none;transition:transform .25s ease;box-shadow:0 0 0 4px rgba(37,211,102,.18),0 8px 22px rgba(0,0,0,.16);}
+/* the glow pulses on its own layer (opacity only), so it never repaints the page while scrolling */
+a.float-wa.float-wa::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:0 0 0 10px rgba(37,211,102,.12),0 0 30px 10px rgba(37,211,102,.42);opacity:0;animation:knWaGlow 2.6s ease-in-out infinite;will-change:opacity;}
 a.float-wa.float-wa:hover{transform:translateY(-2px) scale(1.03);color:#fff;}
 a.float-wa.float-wa svg{width:26px;height:26px;flex:0 0 26px;fill:#fff;}
 a.float-wa.float-wa .fw-txt{white-space:nowrap;}
-@keyframes knWaPulse{
-  0%,100%{box-shadow:0 0 0 4px rgba(37,211,102,.18),0 0 14px 2px rgba(37,211,102,.30),0 8px 22px rgba(0,0,0,.16);}
-  50%{box-shadow:0 0 0 12px rgba(37,211,102,.10),0 0 30px 10px rgba(37,211,102,.45),0 8px 22px rgba(0,0,0,.16);}
-}
+@keyframes knWaGlow{0%,100%{opacity:.15;}50%{opacity:1;}}
 @media(max-width:600px){a.float-wa.float-wa{right:16px;bottom:16px;padding:11px 18px 11px 14px;font-size:14px;gap:9px;}a.float-wa.float-wa svg{width:22px;height:22px;flex-basis:22px;}}
-@media(prefers-reduced-motion:reduce){a.float-wa.float-wa{animation:none;box-shadow:0 0 0 6px rgba(37,211,102,.18),0 8px 22px rgba(0,0,0,.16);}}
+@media(prefers-reduced-motion:reduce){a.float-wa.float-wa::before{animation:none;opacity:.5;}}
 /* back to top, above the WhatsApp button */
 .kn-fab{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:center;gap:12px;}
-.kn-fab a.float-wa.float-wa{position:static;right:auto;bottom:auto;}
+.kn-fab a.float-wa.float-wa{position:relative;right:auto;bottom:auto;}
 .kn-top{width:48px;height:48px;border-radius:50%;background:#fff;border:1.5px solid #d6d6d6;box-shadow:0 6px 18px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:#555;
   opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility .25s,border-color .2s,color .2s;}
 .kn-top.show{opacity:1;visibility:visible;transform:none;}
@@ -46,8 +45,8 @@ SVG = ('<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d=
 
 TOP_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>'
 TOP_JS = ("<script>(function(){var b=document.getElementById('knTop');if(!b)return;"
-          "function s(){b.classList.toggle('show',(window.pageYOffset||document.documentElement.scrollTop)>300);}"
-          "window.addEventListener('scroll',s,{passive:true});s();"
+          "var on=null,q=false;function s(){q=false;var v=(window.scrollY||0)>300;if(v!==on){on=v;b.classList.toggle('show',v);}}"
+          "window.addEventListener('scroll',function(){if(!q){q=true;requestAnimationFrame(s);}},{passive:true});s();"
           "b.addEventListener('click',function(){var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;window.scrollTo({top:0,behavior:r?'auto':'smooth'});});})();</script>")
 
 
