@@ -1,5 +1,5 @@
 /* keithnah.com silky scrolling. Built by tools/add_silky.py from this file; edit here, then run the build. */
-(function(){if(window.KN_RENDER)return;var s=document.createElement('style');s.textContent="html.sl-on{scroll-behavior:auto!important}\nhtml.sl-on .sl-wait{opacity:0;transform:translate3d(0,30px,0)}\nhtml.sl-on .sl-wait.sl-in{opacity:1;transform:none;transition:opacity 1s cubic-bezier(.16,1,.3,1) var(--d,0s),transform 1.25s cubic-bezier(.16,1,.3,1) var(--d,0s)}\nhtml.sl-on .sl-mask.sl-wait{opacity:1;clip-path:inset(-12% -6% 100% -6%);transform:translate3d(0,40px,0)}\nhtml.sl-on .sl-mask.sl-wait.sl-in{clip-path:inset(-12% -6% -18% -6%);transform:none;transition:clip-path 1.3s cubic-bezier(.16,1,.3,1) var(--d,0s),transform 1.3s cubic-bezier(.16,1,.3,1) var(--d,0s)}\nhtml.sl-on .sl-card{transition:transform .7s cubic-bezier(.16,1,.3,1),box-shadow .7s cubic-bezier(.16,1,.3,1)}\nhtml.sl-on .sl-card:hover{transform:translate3d(0,-6px,0);box-shadow:0 26px 50px -30px rgba(29,27,79,.45)}\nhtml.sl-on img.sl-px{transition:none!important;will-change:transform}\n#sl-bar{position:fixed;left:0;right:0;top:0;height:3px;z-index:9998;background:linear-gradient(90deg,#5E60CE,#a5a7ff);transform:scaleX(0);transform-origin:0 50%;pointer-events:none}\n@media print{#sl-bar{display:none}}";document.head.appendChild(s);})();
+(function(){if(window.KN_RENDER)return;var s=document.createElement('style');s.textContent="html.sl-on{scroll-behavior:auto!important}\nhtml.sl-on .sl-wait{opacity:.5;transform:translate3d(0,26px,0);backface-visibility:hidden}\nhtml.sl-on .sl-wait.sl-in{opacity:1;transform:none;transition:opacity .8s cubic-bezier(.16,1,.3,1) var(--d,0s),transform 1.1s cubic-bezier(.16,1,.3,1) var(--d,0s)}\nhtml.sl-on .sl-mask.sl-wait{opacity:1;clip-path:inset(-12% -6% 100% -6%);transform:translate3d(0,40px,0)}\nhtml.sl-on .sl-mask.sl-wait.sl-in{clip-path:inset(-12% -6% -18% -6%);transform:none;transition:clip-path 1.3s cubic-bezier(.16,1,.3,1) var(--d,0s),transform 1.3s cubic-bezier(.16,1,.3,1) var(--d,0s)}\nhtml.sl-on .sl-card{transition:transform .7s cubic-bezier(.16,1,.3,1),box-shadow .7s cubic-bezier(.16,1,.3,1)}\nhtml.sl-on .sl-card:hover{transform:translate3d(0,-6px,0);box-shadow:0 26px 50px -30px rgba(29,27,79,.45)}\nhtml.sl-on img.sl-px{transition:none!important;will-change:transform}\n#sl-bar{position:fixed;left:0;right:0;top:0;height:3px;z-index:9998;background:linear-gradient(90deg,#5E60CE,#a5a7ff);transform:scaleX(0);transform-origin:0 50%;pointer-events:none}\n@media print{#sl-bar{display:none}}";document.head.appendChild(s);})();
 /* Silky scrolling on every page: smooth mouse-wheel glide on computers, sections and cards rising softly into view,
    photos drifting gently inside their frames, the hero text easing away, and a thin reading-progress bar.
    Phones keep their own native scrolling; everything is off for people who ask for reduced motion. */
@@ -49,7 +49,17 @@
     var end = +m[1].replace(/,/g, ''), t0 = performance.now(); if (end < 2) return; el.style.fontVariantNumeric = 'tabular-nums';
     (function tick(now) { var p = Math.min(1, (now - t0) / 1500), e = 1 - Math.pow(1 - p, 4); el.textContent = p < 1 ? Math.round(end * e).toLocaleString('en-US') + m[2] : o; if (p < 1) requestAnimationFrame(tick); })(t0);
   }
-  function show(el, d) {
+  function imgs(el) { return [].slice.call(el.querySelectorAll('img')); }
+  function warm(el) { imgs(el).forEach(function (im) { if (im.loading === 'lazy') im.loading = 'eager'; }); }
+  function ready(el, cb) {
+    var list = imgs(el).filter(function (im) { return !(im.complete && im.naturalWidth); }), done = false;
+    function go() { if (!done) { done = true; cb(); } }
+    if (!list.length) return go();
+    warm(el); setTimeout(go, 450);
+    Promise.all(list.map(function (im) { return im.decode ? im.decode().catch(function () {}) : Promise.resolve(); })).then(go);
+  }
+  function show(el, d) { ready(el, function () { reveal(el, d); }); }
+  function reveal(el, d) {
     el.style.setProperty('--d', d + 's'); el.classList.add('sl-in');
     [].forEach.call(el.querySelectorAll('b,.stat-num,.ab-n'), count);
     setTimeout(function () { el.classList.remove('sl-wait', 'sl-in', 'sl-mask'); el.style.removeProperty('--d'); }, (d + 1.5) * 1000);
@@ -59,12 +69,13 @@
   function clipBox(el) { for (var p = el.parentElement; p && p !== document.body; p = p.parentElement) { var o = getComputedStyle(p).overflowX; if (o === 'auto' || o === 'scroll' || o === 'hidden') return p; } return null; }
   var grp = new IntersectionObserver(function (es) { es.forEach(function (e) { if (!e.isIntersecting) return; grp.unobserve(e.target); (e.target.__g || []).forEach(function (c, i) { show(c, Math.min(i, 6) * .085); }); }); }, { rootMargin: '100000px 0px -6% 0px', threshold: 0 });
   var SKIP = 'header,nav,footer,dialog,[role=dialog],.kn-fab,.mobile-menu,.hero,.tk,[hidden]';
+  var pre = new IntersectionObserver(function (es) { es.forEach(function (e) { if (!e.isIntersecting) return; pre.unobserve(e.target); warm(e.target); }); }, { rootMargin: '0px 0px 150% 0px', threshold: 0 });
   function onFirst(el) { return firstScan && el.getBoundingClientRect().top < innerHeight; }
   function scan() {
     document.querySelectorAll(ITEM).forEach(function (el) {
       if (seen.has(el) || el.closest(SKIP) || (el.parentElement && el.parentElement.closest('.sl-item'))) return; seen.add(el);
       if (el.matches(CARD)) el.classList.add('sl-card');
-      el.classList.add('sl-item'); if (onFirst(el)) return; el.classList.add('sl-wait');
+      el.classList.add('sl-item'); if (onFirst(el)) return; el.classList.add('sl-wait'); if (el.querySelector('img')) pre.observe(el);
       var box = clipBox(el); if (box) { if (!box.__g) { box.__g = []; grp.observe(box); } box.__g.push(el); } else io.observe(el);
     });
     document.querySelectorAll(TITLE).forEach(function (el) {
