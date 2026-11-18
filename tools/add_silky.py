@@ -19,7 +19,7 @@ src = open(os.path.join(HERE, 'silky_src.js'), encoding='utf-8').read()
 open('silky.js', 'w', encoding='utf-8').write(src)
 v = hashlib.md5(src.encode()).hexdigest()[:8]
 TAG = '<!-- KN-SILKY --><script src="/silky.js?v=%s" defer></script>' % v
-RX = re.compile(r'<!-- KN-SILKY --><script src="/silky\.js[^"]*" defer></script>')
+RX = re.compile(r'<!-- KN-SILKY --><script src="/silky\.js[^"]*" defer(?:="")?></script>\n?')  # language pages are saved by a browser: defer=""
 
 n = 0
 for f in glob.glob('**/*.html', recursive=True):
@@ -28,7 +28,9 @@ for f in glob.glob('**/*.html', recursive=True):
     s = open(f, encoding='utf-8').read()
     if '</body>' not in s:
         continue
-    t = RX.sub(TAG, s) if RX.search(s) else s.replace('</body>', TAG + '\n</body>', 1) if s.count('</body>') == 1 else s[:s.rfind('</body>')] + TAG + '\n' + s[s.rfind('</body>'):]
+    base = RX.sub('', s)
+    k = base.rfind('</body>')
+    t = base[:k] + TAG + '\n' + base[k:]
     if t != s:
         open(f, 'w', encoding='utf-8').write(t)
         n += 1
