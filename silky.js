@@ -115,3 +115,79 @@
   addEventListener('resize', remeasure); addEventListener('load', remeasure); if ('ResizeObserver' in window) new ResizeObserver(remeasure).observe(document.body);
   setTimeout(function () { scan(); measure(); frame(); }, 40);
 })();
+
+/* ---- Depth cards (option B): project and area cards tilt toward the mouse, the photo, tags and text move as separate
+   layers, a soft sheen follows the pointer, a press pushes the card down, and it eases back when the mouse leaves.
+   Cards also stand up from behind as they appear (every device). Adapted from homeinmalaysia.com. ---- */
+(function () {
+  if (window.KN_RENDER || window.self !== window.top || !window.matchMedia || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var CARD = '.card,.proj-card,.cmp-card,.fbh-c,.pc,.ls-card';
+  /* photo, tag and text layers of each card type */
+  var PHOTO = '.proj-media,.cmp-card-media,.fbh-i,.pc-i,.ls-img', IMG = ':scope>img,.proj-photo,.cmp-card-photo,.fbh-i img,.pc-i img,.ls-img img';
+  var TAG = '.proj-badges,.cmp-card-status,.fbh-i>i,.pc-i>em,.ls-n', BODY = '.card-b,.proj-body,.cmp-card-body,.fbh-b,.pc-b,.ls-b';
+  var css = [
+    'html.sl-on.tl-flip :is(.card,.pc,.ls-card,.proj-card,.cmp-card).sl-wait:not(.sl-in):not(.sl-done){transform:perspective(1100px) rotateX(9deg) translate3d(0,40px,0);transform-origin:50% 100%}',
+    '.tl-live{position:relative;z-index:3;will-change:transform;transition:box-shadow .45s cubic-bezier(.16,1,.3,1)!important;box-shadow:0 34px 60px -28px rgba(29,27,79,.55)!important}',
+    '.tl-card .tl-img{translate:var(--ix,0) var(--iy,0);scale:var(--is,1)}',
+    '.tl-card .tl-tag{translate:var(--tx,0) var(--ty,0)}',
+    '.tl-card .tl-body{translate:var(--bx,0) var(--by,0)}',
+    '.tl-sheen{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;transition:opacity .4s ease;border-radius:inherit;background:radial-gradient(320px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.3),rgba(255,255,255,0) 68%)}',
+    '.tl-live .tl-sheen{opacity:1}'
+  ].join('\n');
+  var st0 = document.createElement('style'); st0.textContent = css; document.head.appendChild(st0);
+  /* the stand-up entrance is for pages with a handful of cards; long lists (all projects, compare) rise flat, which scrolls far smoother */
+  if (document.querySelectorAll(CARD).length <= 40) document.documentElement.classList.add('tl-flip');
+  if (!matchMedia('(hover:hover) and (pointer:fine)').matches) return; // phones and tablets keep the 3D entrance only
+
+  var CFG = { rot: 6, lift: 8, zoom: 1.02, img: 8, tag: 5, body: 1.5, is: 1.09 };
+  var active = new Set(), hover = null, running = false, last = 0, mx = -1, my = -1;
+  function st(c) { return c.__tl || (c.__tl = { rx: 0, ry: 0, px: .5, py: .5, trx: 0, try_: 0, tpx: .5, tpy: .5, on: 0, ton: 0, press: 0, tpress: 0 }); }
+  function prep(c) {
+    if (c.__tlp) return; c.__tlp = 1; c.classList.add('tl-card');
+    if (getComputedStyle(c).position === 'static') c.style.position = 'relative';
+    var img = c.querySelector(IMG); if (img) img.classList.add('tl-img');
+    [].forEach.call(c.querySelectorAll(TAG), function (t) { t.classList.add('tl-tag'); });
+    var b = c.querySelector(BODY); if (b) b.classList.add('tl-body');
+    var ph = c.querySelector(PHOTO) || c; if (getComputedStyle(ph).position === 'static') ph.style.position = 'relative';
+    var g = document.createElement('span'); g.className = 'tl-sheen'; g.setAttribute('aria-hidden', 'true'); ph.appendChild(g); c.__sheen = g;
+  }
+  function enter(c) {
+    if (c.classList.contains('sl-wait') && !c.classList.contains('sl-done') && !c.classList.contains('sl-in')) return false; // still appearing
+    prep(c); var s = st(c); if (!active.has(c) || !s.ton) { var r = c.getBoundingClientRect(); s.left = r.left; s.top = r.top; s.w = r.width; s.h = r.height; s.y0 = scrollY; }
+    s.ton = 1; c.classList.add('tl-live'); active.add(c); start(); return true;
+  }
+  function leave(c) { var s = st(c); s.ton = 0; s.trx = s.try_ = 0; s.tpx = s.tpy = .5; s.tpress = 0; }
+  function aim(c) {
+    var s = st(c); if (!s.w) return; var x = Math.max(0, Math.min(1, (mx - s.left) / s.w)), y = Math.max(0, Math.min(1, (my - (s.top - (scrollY - s.y0))) / s.h));
+    s.tpx = x; s.tpy = y; s.try_ = (x - .5) * 2 * CFG.rot; s.trx = (.5 - y) * 2 * CFG.rot;
+  }
+  function draw(c, s) {
+    c.style.transform = 'perspective(1000px) rotateX(' + s.rx.toFixed(3) + 'deg) rotateY(' + s.ry.toFixed(3) + 'deg) translate3d(0,' + (-CFG.lift * s.on).toFixed(2) + 'px,0) scale(' + (1 + (CFG.zoom - 1) * s.on - .018 * s.press).toFixed(4) + ')';
+    var dx = (s.px - .5) * 2 * s.on, dy = (s.py - .5) * 2 * s.on, v = function (n, a) { c.style.setProperty(n, a.toFixed(2) + 'px'); };
+    v('--ix', -dx * CFG.img); v('--iy', -dy * CFG.img); v('--tx', dx * CFG.tag); v('--ty', dy * CFG.tag); v('--bx', dx * CFG.body); v('--by', dy * CFG.body);
+    c.style.setProperty('--is', (1 + (CFG.is - 1) * s.on).toFixed(4));
+    if (c.__sheen) { c.__sheen.style.setProperty('--mx', (s.px * 100).toFixed(1) + '%'); c.__sheen.style.setProperty('--my', (s.py * 100).toFixed(1) + '%'); }
+  }
+  function loop(now) {
+    var dt = Math.max(4, Math.min(40, now - last)); last = now; var k = 1 - Math.exp(-dt / 85), out = 1 - Math.exp(-dt / 150);
+    active.forEach(function (c) {
+      var s = st(c), f = s.ton ? k : out; s.rx += (s.trx - s.rx) * f; s.ry += (s.try_ - s.ry) * f; s.px += (s.tpx - s.px) * f; s.py += (s.tpy - s.py) * f; s.on += (s.ton - s.on) * f; s.press += (s.tpress - s.press) * k; draw(c, s);
+      if (!s.ton && s.on < .004) { active.delete(c); c.classList.remove('tl-live'); c.style.transform = ''; s.rx = s.ry = s.on = 0; ['--ix', '--iy', '--tx', '--ty', '--bx', '--by', '--is'].forEach(function (n) { c.style.removeProperty(n); }); }
+    });
+    if (active.size) requestAnimationFrame(loop); else running = false;
+  }
+  function start() { if (!running) { running = true; last = performance.now(); requestAnimationFrame(loop); } }
+  function track(c) { if (c !== hover) { if (hover) leave(hover); hover = c; } if (c) { if (!active.has(c) || !st(c).ton) enter(c); aim(c); } }
+  function cardAt(t) { var c = t && t.closest ? t.closest(CARD) : null; return c && !c.closest('header,nav,footer,dialog,.mobile-menu') ? c : null; }
+  document.addEventListener('pointermove', function (e) { if (e.pointerType !== 'mouse') return; mx = e.clientX; my = e.clientY; if (scrolling) return; track(cardAt(e.target)); }, { passive: true });
+  document.documentElement.addEventListener('mouseleave', function () { mx = -1; if (hover) { leave(hover); hover = null; } });
+  /* while the page is scrolling the cards stay flat (a card under a resting mouse would otherwise tilt and settle
+     one after another, which costs frames); the tilt comes back with the next mouse move */
+  var scrolling = false, sT = 0;
+  addEventListener('scroll', function () {
+    if (!scrolling) { scrolling = true; if (hover) { leave(hover); hover = null; } }
+    clearTimeout(sT); sT = setTimeout(function () { scrolling = false; }, 160);
+  }, { passive: true });
+  document.addEventListener('pointerdown', function (e) { var c = cardAt(e.target); if (c && active.has(c)) st(c).tpress = 1; });
+  document.addEventListener('pointerup', function () { active.forEach(function (c) { st(c).tpress = 0; }); });
+})();
