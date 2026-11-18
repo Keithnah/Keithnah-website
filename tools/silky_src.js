@@ -41,7 +41,7 @@
   });
 
   /* ---- soft reveals + counters ---- */
-  var ITEM = '.section-head p,.section-head .eyebrow,.keith-portrait,.keith-hero-copy,.stat-tile,.ab-tile,.fbh-c,.ls-card,.video-card,.ftk-c,.why-item,.article-prev-card,.kq-card,.mmh-t,.faq-item,.proj-card,.cmp-card,.article-card,.acard,.card,.pc,.lp-plan,.lp-nw,.lp-row,.art-stat,.nf-item,.bg-stage,.tier-stat,.blk';
+  var ITEM = '.section-head p,.section-head .eyebrow,.keith-portrait,.keith-hero-copy,.stat-tile,.ab-tile,.fbh-c,.ls-card,.video-card,.ftk-c,.why-item,.article-prev-card,.kq-card,.mmh-t,.faq-item,.proj-card,.cmp-card,.article-card,.acard,.card,.pc,.lp-plan,.lp-nw,.lp-row,.art-stat,.nf-item,.bg-stage,.tier-stat,.blk,.kph-ph,[class$="card"],[class*="card "],[class$="-tile"],[class*="-tile "]';
   var CARD = '.fbh-c,.ls-card,.video-card,.article-prev-card,.ftk-c';
   var TITLE = 'h2', seen = new WeakSet(), firstScan = true;
   function count(el) {
