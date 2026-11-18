@@ -80,7 +80,9 @@ def fix_page(page, s):
             return tag
         jpg = sm.group(1)
         return tag.replace(sm.group(0), ' src="%s" onerror="this.onerror=null;this.src=\'%s\'"' % (jpg[:-4] + '.webp', jpg), 1)
-    s = re.sub(r'<img\b[^>]*>', img, s)
+    # <img> tags inside <script> are JavaScript strings: adding an onerror with quotes there breaks the script
+    s = ''.join(part if part.startswith('<script') else re.sub(r'<img\b[^>]*>', img, part)
+                for part in re.split(r'(<script\b.*?</script>)', s, flags=re.S))
 
     def bg(m):   # background-image:url('x.jpg') in a style attribute or a <style> block
         decl, url = m.group(0), m.group(2)
