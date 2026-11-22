@@ -13,7 +13,7 @@ import re
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 os.chdir(ROOT)
-DIRS = ['', 'article', 'area', 'best', 'developer', 'guides', 'mm2h', 'notes', 'property', 'station', 'topic', 'vs']
+DIRS = ['', 'article', 'area', 'best', 'developer', 'guides', 'mm2h', 'notes', 'property', 'station', 'topic', 'understand', 'vs']
 WA = 'https://api.whatsapp.com/send/?phone=60102821568&text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+explore+more+on+Malaysia+Property.&type=phone_number&app_absent=0'
 
 L = {  # key: [en, zh-CN, zh-TW, ms, ja, ko]

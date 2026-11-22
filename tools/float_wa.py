@@ -136,7 +136,7 @@ if __name__ == '__main__':
     pages = sorted(glob.glob('*.html'))
     for p in pages:
         fix_page(p)
-    newer = sorted(glob.glob('notes/*.html') + glob.glob('developer/*.html') + glob.glob('station/*.html') + glob.glob('vs/*.html') + glob.glob('mm2h/*.html'))
+    newer = sorted(glob.glob('notes/*.html') + glob.glob('developer/*.html') + glob.glob('station/*.html') + glob.glob('vs/*.html') + glob.glob('mm2h/*.html') + glob.glob('understand/*.html'))
     for p in newer:   # these generators do not add the floating button themselves
         s = open(p, encoding='utf-8').read()
         if 'class="kn-fab"' not in s:

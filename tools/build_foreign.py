@@ -349,37 +349,49 @@ FAQ_LD = json.dumps({'@context': 'https://schema.org', '@type': 'FAQPage', 'main
 CHAT = svg_wa = '<svg viewBox="0 0 24 24"><path d="M20.5 3.5A11 11 0 0 0 3.2 17.1L2 22l5-1.3A11 11 0 1 0 20.5 3.5z"/></svg>'
 wa_main = waq('Hi Keith, I am a foreign buyer. Can you check which projects I can buy?')
 
+UM_SLUGS = [('malaysia-at-a-glance', 'glance'), ('history', 'history'), ('people-and-religion', 'people'), ('languages', 'languages'), ('food', 'food'),
+            ('festivals-and-holidays', 'festivals'), ('getting-around', 'transport'), ('shopping-malls', 'malls'), ('places-to-visit', 'places'),
+            ('cost-of-living', 'cost'), ('schools-and-healthcare', 'schools'), ('visas-safety-weather', 'visas')]
+UM_ICONS = ['<path d="M9 11a4 4 0 100-8 4 4 0 000 8zM2 21v-1a6 6 0 0112 0v1M17 11a3 3 0 100-6M22 21v-1a5 5 0 00-4-5"/>',
+            '<path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z M9 3v15M15 6v15"/>',
+            '<path d="M4 5h16v11H9l-5 4z"/>',
+            '<path d="M12 3l2.5 5.5L20 9l-4.2 4 1 6L12 16l-4.8 3 1-6L4 9l5.5-.5z"/>',
+            '<path d="M12 2a10 10 0 100 20 10 10 0 000-20zM15 8.5c-.6-1-1.7-1.5-3-1.5-1.7 0-3 .9-3 2.3 0 3 6 1.6 6 4.6 0 1.4-1.3 2.3-3 2.3-1.4 0-2.6-.6-3.1-1.6M12 5.5v13"/>',
+            '<path d="M12 4V2M12 22v-2M4 12H2M22 12h-2M5.6 5.6L4.2 4.2M19.8 19.8l-1.4-1.4M5.6 18.4l-1.4 1.4M19.8 4.2l-1.4 1.4M12 7a5 5 0 100 10 5 5 0 000-10z"/>',
+            '<path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v6l4 2"/>',
+            '<path d="M2 16l20-6-3-2-6 2-6-6H5l3 7-4 1-2-2z"/>']
+
+
 def understand_sec():
-    tiles = ''.join('<div class="umt"><small data-r="f%dl">%s</small><b data-r="f%dv">%s</b><span data-r="f%ds">%s</span></div>' % (
-        n, E(en['f%dl' % n]), n, E(en['f%dv' % n]), n, E(en['f%ds' % n])) for n in range(1, 9))
-    topics = ''.join('<details class="umd"><summary><i>%02d</i><b data-r="t%dh">%s</b><span data-r="t%ds">%s</span></summary>'
-                     '<div class="umb"><p data-r="t%db">%s</p><p class="umy"><strong data-r="um_buy">%s</strong> <span data-r="t%dy">%s</span></p></div></details>' % (
-        n, n, E(en['t%dh' % n]), n, E(en['t%ds' % n]), n, E(en['t%db' % n]), E(en['um_buy']), n, E(en['t%dy' % n])) for n in range(1, 13))
-    return ('<section class="sec" id="understand">%s<h2 data-r="um_h">%s</h2>%s<div class="umf">%s</div><div class="umg">%s</div></section>' % (
-        r('um_eb', 'span', 'eb'), E(en['um_h']), r('um_p', 'p', 'sp'), tiles, topics))
+    tiles = ''.join('<div class="umt"><svg viewBox="0 0 24 24" aria-hidden="true">%s</svg><div><small data-r="f%dl">%s</small><b data-r="f%dv">%s</b><span data-r="f%ds">%s</span></div></div>' % (
+        UM_ICONS[n - 1], n, E(en['f%dl' % n]), n, E(en['f%dv' % n]), n, E(en['f%ds' % n])) for n in range(1, 9))
+    topics = ''.join('<a class="umc" href="understand/%s.html"><span class="umi"><img src="images/understand/%s.jpg" alt="" loading="lazy" width="420" height="280"><i>%02d</i></span>'
+                     '<span class="umx"><b data-r="t%dh">%s</b><span data-r="t%ds">%s</span><em data-r="um_more">%s</em></span></a>' % (
+        slug, pk, n, n, E(en['t%dh' % n]), n, E(en['t%ds' % n]), E(en['um_more'])) for n, (slug, pk) in enumerate(UM_SLUGS, 1))
+    return ('<section class="sec" id="understand">%s<h2 data-r="um_h">%s</h2>%s<div class="umf">%s</div><div class="umg">%s</div>'
+            '<p class="umall"><a href="understand/" data-r="um_all">%s</a></p></section>' % (
+        r('um_eb', 'span', 'eb'), E(en['um_h']), r('um_p', 'p', 'sp'), tiles, topics, E(en['um_all'])))
 
 
-UM_CSS = ('.umf{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 20px;}'
-          '.umt{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 18px;}'
-          '.umt small{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);font-weight:700;}'
-          '.umt b{display:block;font:700 21px "Playfair Display",serif;color:var(--gold);margin:6px 0 4px;}'
-          '.umt span{font-size:13px;color:var(--grey);line-height:1.5;}'
-          '.umg{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:start;}'
-          '.umd{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:box-shadow .3s;}'
-          '.umd[open]{box-shadow:0 16px 36px rgba(29,27,79,.1);border-color:rgba(94,96,206,.35);}'
-          '.umd summary{list-style:none;cursor:pointer;padding:18px 44px 18px 20px;position:relative;}'
-          '.umd summary::-webkit-details-marker{display:none;}'
-          '.umd summary:after{content:"+";position:absolute;right:18px;top:16px;font:700 22px Inter,sans-serif;color:var(--gold);transition:transform .25s;}'
-          '.umd[open] summary:after{transform:rotate(45deg);}'
-          '.umd summary i{display:block;font:700 11.5px Inter,sans-serif;letter-spacing:.14em;color:var(--gold);font-style:normal;margin-bottom:6px;}'
-          '.umd summary b{display:block;font:700 17px "Playfair Display",serif;color:#15142b;margin-bottom:4px;}'
-          '.umd summary span{display:block;font-size:13.5px;color:var(--grey);line-height:1.5;}'
-          '.umb{padding:0 20px 18px;border-top:1px solid var(--line);}'
-          '.umb p{font-size:14.5px;line-height:1.7;color:#2b2a3d;margin-top:14px;}'
-          '.umb .umy{background:#f3f1fa;border-radius:12px;padding:12px 14px;font-size:14px;}'
-          '.umb .umy strong{color:var(--gold);}'
-          '@media(max-width:980px){.umf{grid-template-columns:repeat(2,1fr);}.umg{grid-template-columns:1fr 1fr;}}'
-          '@media(max-width:620px){.umg{grid-template-columns:1fr;}.umt b{font-size:18px;}.umt{padding:14px;}}')
+UM_CSS = ('.umf{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 26px;}'
+          '.umt{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid rgba(17,17,17,.1);border-radius:18px;padding:16px;box-shadow:0 6px 18px rgba(29,27,79,.05);}'
+          '.umt svg{flex:0 0 38px;width:38px;height:38px;padding:8px;border-radius:12px;background:#eeedfb;stroke:#4b4dc0;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}'
+          '.umt small{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#4a4960;font-weight:700;}'
+          '.umt b{display:block;font:700 17px/1.3 Inter,sans-serif;color:#15142b;margin:3px 0 4px;}'
+          '.umt span{display:block;font-size:13px;color:#4a4960;line-height:1.45;}'
+          '.umg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}'
+          '.umc{display:flex;flex-direction:column;background:#fff;border:1px solid rgba(17,17,17,.1);border-radius:18px;overflow:hidden;transition:transform .25s,box-shadow .25s;}'
+          '.umc:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(29,27,79,.12);}'
+          '.umi{position:relative;display:block;aspect-ratio:3/2;background:#e9e8ef;overflow:hidden;}.umi img{width:100%;height:100%;object-fit:cover;}'
+          '.umi i{position:absolute;left:10px;top:10px;background:rgba(17,17,17,.72);color:#fff;font:700 11px Inter,sans-serif;letter-spacing:.12em;padding:4px 9px;border-radius:100px;font-style:normal;}'
+          '.umx{display:flex;flex-direction:column;flex:1;padding:14px 16px 16px;}'
+          '.umx b{font:700 17px "Playfair Display",serif;color:#15142b;margin-bottom:4px;}'
+          '.umx>span{font-size:13.5px;color:#4a4960;line-height:1.5;flex:1;}'
+          '.umx em{margin-top:10px;font-style:normal;font-weight:700;font-size:13px;color:var(--gold);}'
+          '.umall{margin-top:18px;text-align:center;}.umall a{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-weight:700;padding:10px 22px;border-radius:100px;}'
+          '@media(max-width:980px){.umf{grid-template-columns:repeat(2,1fr);}.umg{grid-template-columns:repeat(3,1fr);}}'
+          '@media(max-width:720px){.umg{grid-template-columns:1fr 1fr;gap:12px;}.umx{padding:12px;}.umx b{font-size:15.5px;}.umx>span{font-size:12.5px;}}'
+          '@media(max-width:620px){.umf{gap:10px;}.umt{flex-direction:column;gap:8px;padding:13px;}.umt svg{width:32px;height:32px;flex-basis:32px;padding:6px;}.umt b{font-size:15.5px;}.umt span{font-size:12.5px;}}')
 
 
 CSS = '''
