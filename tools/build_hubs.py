@@ -35,6 +35,68 @@ def js_json(name):
 P = js_json('PROJECT_DETAILS')
 IDX = json.load(open(os.path.join(HERE, 'project_index.json'), encoding='utf-8'))
 HUBS = json.load(open(os.path.join(HERE, 'hubs.json'), encoding='utf-8'))
+# ---- About-the-developer facts (tools/developer_profiles.json, checked against the listed sources) ----
+DEVPROF = {k: v for k, v in json.load(open(os.path.join(HERE, 'developer_profiles.json'), encoding='utf-8')).items() if not k.startswith('_')}
+_DT = {
+    'en': {'dv_about': 'About {d}', 'dv_src': 'Sources', 'dv_chk_h': 'Before you buy from any developer',
+           'dv_c1': 'Visit a project the developer has already completed and look at the finishing, the lifts and how the building has aged.',
+           'dv_c2': 'Ask owners or tenants there about maintenance and how the management handles problems.',
+           'dv_c3': 'Check whether the developer handed over its recent projects on time.',
+           'dv_c4': 'Compare the maintenance fee and facilities with the developer\'s other projects nearby.'},
+    'zh-CN': {'dv_about': '关于 {d}', 'dv_src': '资料来源', 'dv_chk_h': '向任何发展商买房前',
+              'dv_c1': '去看看发展商已完工的项目，留意装修、电梯和大楼老化的情况。',
+              'dv_c2': '问问那里的业主或租客，物业保养和管理处处理问题的情况。',
+              'dv_c3': '查一查发展商近期项目是否准时交屋。',
+              'dv_c4': '把管理费和设施，和同一发展商附近的其他项目比较。'},
+    'ms': {'dv_about': 'Tentang {d}', 'dv_src': 'Sumber', 'dv_chk_h': 'Sebelum membeli daripada mana-mana pemaju',
+           'dv_c1': 'Lawati projek yang telah disiapkan oleh pemaju dan lihat kemasan, lif dan keadaan bangunan selepas beberapa tahun.',
+           'dv_c2': 'Tanya pemilik atau penyewa di sana tentang penyelenggaraan dan cara pengurusan menangani masalah.',
+           'dv_c3': 'Semak sama ada pemaju menyerahkan projek terkininya tepat pada masanya.',
+           'dv_c4': 'Bandingkan yuran penyelenggaraan dan kemudahan dengan projek lain pemaju yang sama berhampiran.'},
+    'ja': {'dv_about': '{d} について', 'dv_src': '出典', 'dv_chk_h': 'どのデベロッパーから買う場合も、その前に',
+           'dv_c1': 'そのデベロッパーの完成済み物件を訪れ、仕上げやエレベーター、建物の経年変化を確認しましょう。',
+           'dv_c2': 'そこのオーナーや入居者に、管理の質やトラブル対応について聞いてみましょう。',
+           'dv_c3': '最近のプロジェクトを予定どおり引き渡したかを確認しましょう。',
+           'dv_c4': '管理費と共用施設を、近くにある同じデベロッパーの他物件と比べましょう。'},
+    'ko': {'dv_about': '{d} 소개', 'dv_src': '출처', 'dv_chk_h': '어느 개발사에서 사든, 그 전에',
+           'dv_c1': '개발사가 이미 완공한 프로젝트를 방문해 마감, 엘리베이터, 건물의 노후 상태를 살펴보세요.',
+           'dv_c2': '그곳의 소유주나 세입자에게 유지관리와 관리사무소의 문제 처리에 대해 물어보세요.',
+           'dv_c3': '최근 프로젝트를 제때 인도했는지 확인하세요.',
+           'dv_c4': '관리비와 부대시설을 같은 개발사의 인근 다른 프로젝트와 비교하세요.'},
+}
+for _slug, _pf in DEVPROF.items():
+    for _n, _fact in enumerate(_pf['facts']):
+        for _l in _DT:
+            _DT[_l]['dvf_%s_%d' % (_slug, _n)] = _fact.get(_l) or _fact['en']
+for _l, _v in _DT.items():
+    HB.T[_l].update(_v)
+try:
+    import opencc
+    _cc = opencc.OpenCC('s2tw').convert
+    HB.T['zh-TW'].update({k: _cc(v) for k, v in _DT['zh-CN'].items()})
+except Exception:
+    HB.T['zh-TW'].update(_DT['zh-CN'])
+DEV_CSS = ('.dv-ab{display:grid;grid-template-columns:1.4fr 1fr;gap:18px}.dv-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 24px}'
+           '.dv-card h2{font-size:clamp(22px,2.6vw,28px);margin-bottom:12px}.dv-card ul{list-style:none;margin:0;padding:0}'
+           '.dv-card li{position:relative;padding:9px 0 9px 26px;border-top:1px solid var(--line);color:#2b2a3d;font-size:15px;line-height:1.6}'
+           '.dv-card li:first-child{border-top:0}.dv-card li:before{content:"";position:absolute;left:4px;top:17px;width:9px;height:9px;border-radius:50%;background:var(--gold)}'
+           '.dv-chk li:before{content:"\\2713";background:none;color:var(--gold);font-weight:700;top:8px;width:auto;height:auto}'
+           '.dv-src{margin-top:12px;font-size:12.5px;color:var(--grey)}.dv-src a{color:var(--gold);text-decoration:underline;margin-right:10px}'
+           '@media(max-width:820px){.dv-ab{grid-template-columns:1fr}.dv-card{padding:18px}}')
+
+
+def dev_about(d, slug):
+    pf = DEVPROF.get(slug)
+    if not pf:
+        return ''
+    facts = ''.join('<li>%s</li>' % TX('dvf_%s_%d' % (slug, n)) for n in range(len(pf['facts'])))
+    src = ' '.join('<a href="%s" target="_blank" rel="noopener nofollow">%s</a>' % (html.escape(x['url']), html.escape(x['name'])) for x in pf['sources'])
+    chk = ''.join('<li>%s</li>' % TX('dv_c%d' % n) for n in range(1, 5))
+    return ('<style>%s</style><section class="sec"><div class="w"><div class="dv-ab"><div class="dv-card">%s<ul>%s</ul><p class="dv-src">%s: %s</p></div>'
+            '<div class="dv-card dv-chk">%s<ul>%s</ul></div></div></div></section>') % (
+        DEV_CSS, TX('dv_about', tag='h2', d=d), facts, TX('dv_src'), src, TX('dv_chk_h', tag='h2'), chk)
+
+
 WA = 'https://api.whatsapp.com/send/?phone=60102821568&text=%s&type=phone_number&app_absent=0'
 
 
@@ -191,13 +253,13 @@ for d, info in HUBS['developers'].items():
     fill = lambda k, v: re.sub(r'\{(\w+)\}', lambda m: str(v.get(m.group(1), m.group(0))), HB.T['en'][k])
     body = '''<main><section class="hero"><div class="w">%s%s%s%s
 <div class="stats"><div class="st"><b>%d</b>%s</div><div class="st"><b>%d</b>%s</div>%s<div class="st"><b>%d</b>%s</div></div></div></section>
-<section class="sec"><div class="w">%s<div class="chips">%s</div>%s</div></section>
+%s<section class="sec"><div class="w">%s<div class="chips">%s</div>%s</div></section>
 <section class="sec faq"><div class="w">%s%s</div></section>
 <section class="w"><div class="cta">%s%s<a href="%s" target="_blank" rel="noopener">WhatsApp Keith</a></div></section></main>%s''' % (
         crumbs(home, ('index.html', TX('dev_crumb')), (None, E(d))), TX('dev_eb', cls='eb', y=Y), TX('dev_h1', tag='h1', d=d, y=Y), TX('dev_p', tag='p', d=d, places=pl),
         len(ix), TX('st_projects', tag='small'), len(states), TX('st_states', tag='small'),
         ('<div class="st"><b>%s</b>%s</div>' % (HB.rm(lo[0]), TX('st_low', tag='small'))) if lo else '', fh, TX('st_fh', tag='small'),
-        TX('dev_all', tag='h2', d=d), chips, groups,
+        dev_about(d, info['slug']), TX('dev_all', tag='h2', d=d), chips, groups,
         TX('faq_dev', tag='h2', d=d), ''.join('<details%s>%s%s</details>' % (' open' if n == 0 else '', q, a) for n, (q, a, *_r) in enumerate(faq)),
         TX('dev_cta', tag='h2', d=d), TX('cta_p', tag='p'), E(wa('Hi Keith, I am looking at %s projects.' % d)), filt)
     ld = [bc_ld(('Home', 'https://keithnah.com/'), ('Developers', 'https://keithnah.com/developer/'), (d, 'https://keithnah.com/developer/%s.html' % info['slug'])),
