@@ -52,6 +52,7 @@ L = {  # key: [en, zh-CN, zh-TW, ms, ja, ko]
     'enq': ['Quick Enquiry', '快速咨询', '快速諮詢', 'Pertanyaan Pantas', 'かんたんお問い合わせ', '빠른 문의'],
     'mm2henq': ['MM2H Enquiry', 'MM2H 咨询', 'MM2H 諮詢', 'Pertanyaan MM2H', 'MM2H のお問い合わせ', 'MM2H 문의'],
     'h2h': ['Compare All Projects', '比较全部项目', '比較全部項目', 'Bandingkan Semua Projek', '全物件を比較', '전체 프로젝트 비교'],
+    'fum': ['Understand Malaysia', '了解马来西亚', '了解馬來西亞', 'Kenali Malaysia', 'マレーシアを知る', '말레이시아 이해하기'],
     'faq': ['Common FAQ', '常见问题', '常見問題', 'Soalan Lazim', 'よくある質問', '자주 묻는 질문'],
     'blogs': ['Blogs', '文章', '文章', 'Blog', 'ブログ', '블로그'],
     'fareas': ['Free Area Guide Download', '免费地区指南下载', '免費地區指南下載', 'Muat Turun Panduan Kawasan Percuma', '無料エリアガイドをダウンロード', '무료 지역 가이드 다운로드'],
@@ -64,10 +65,10 @@ L = {  # key: [en, zh-CN, zh-TW, ms, ja, ko]
 }
 MENU = {
     'projects.html': [('browse', 'projects.html#projSearch'), ('all', 'projects.html#projGrid'), ('state', 'projects.html#projGrid'), ('map', 'projects.html#projectMap'),
-                      ('best', 'best/index.html'), ('dev', 'developer/index.html'), ('station', 'station/index.html'), ('tag', 'projects.html#tagSection')],
+                      ('best', 'best/index.html'), ('dev', 'developer/index.html'), ('station', 'station/index.html')],  # Browse by Tag stays on the projects page, not in the menu
     'compare.html': [('h2h', 'compare.html#cmpFilters'), ('vs', 'vs/index.html'), ('popular', 'compare.html#popular')],
     'foreign-buyers.html': [('fcheck', 'foreign-buyers.html#check'), ('fbest', 'foreign-buyers.html#best'), ('fcost', 'foreign-buyers.html#costs'),
-                            ('fsteps', 'foreign-buyers.html#steps'), ('mm2h', 'mm2h.html'), ('faq', 'foreign-buyers.html#faq')],
+                            ('fsteps', 'foreign-buyers.html#steps'), ('mm2h', 'mm2h.html'), ('fum', 'foreign-buyers.html#understand'), ('faq', 'foreign-buyers.html#faq')],
     'blog.html': [('notes', 'market-notes.html'), ('guide', 'blog.html#buying-guide'), ('data', 'market-data.html'), ('faq', 'blog.html#faq'), ('blogs', 'blog.html#blog')],
     'resources.html': [('fareas', 'resources.html#guides'), ('fmm2h', 'mm2h.html'), ('fwatch', 'https://www.youtube.com/@KeithNahRealEstate/videos'), ('fcalc', 'calculator.html'), ('fadvice', WA)],
     'about-keith.html': [('contact', 'about-keith.html#quickEnquiry')],
