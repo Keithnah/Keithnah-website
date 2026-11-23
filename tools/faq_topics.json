@@ -166,14 +166,23 @@
     "ko": "대출과 자금"
    },
    "desc": {
-    "en": "Margin of finance, approval time, documents and refinancing.",
-    "zh-CN": "贷款成数、批准时间、文件和换贷款。",
-    "ms": "Margin pembiayaan, tempoh kelulusan, dokumen dan pembiayaan semula.",
-    "ja": "融資比率、承認期間、必要書類、借り換え。",
-    "ko": "대출 비율, 승인 기간, 서류, 리파이낸싱."
+    "en": "How much you can borrow, tenure, interest rates, EPF and approval time.",
+    "zh-CN": "可以贷多少、贷款年限、利率、公积金和批准时间。",
+    "ms": "Jumlah pinjaman, tempoh, kadar faedah, KWSP dan tempoh kelulusan.",
+    "ja": "借入可能額、期間、金利、EPF、承認までの期間。",
+    "ko": "대출 가능 금액, 기간, 금리, EPF, 승인 기간."
    },
    "icon": "M3 10h18M5 10v10M19 10v10M12 3l9 5H3zM3 20h18",
-   "ids": []
+   "ids": [
+    "l_ltv",
+    "l_afford",
+    "l_tenure",
+    "l_sbr",
+    "l_epf",
+    "h19",
+    "h4",
+    "h20"
+   ]
   },
   {
    "slug": "selling",
@@ -185,14 +194,21 @@
     "ko": "매도와 갈아타기"
    },
    "desc": {
-    "en": "RPGT, the selling process and whether to sell or buy first.",
-    "zh-CN": "产业盈利税、卖房流程，以及先卖还是先买。",
-    "ms": "RPGT, proses menjual dan sama ada menjual atau membeli dahulu.",
-    "ja": "RPGT、売却の流れ、売るのが先か買うのが先か。",
-    "ko": "RPGT, 매도 절차, 먼저 팔지 먼저 살지."
+    "en": "RPGT, the exemption on your home, reporting to LHDN and how long a sale takes.",
+    "zh-CN": "产业盈利税、自住房豁免、向税务局申报，以及卖房要多久。",
+    "ms": "RPGT, pengecualian rumah sendiri, laporan kepada LHDN dan tempoh jualan.",
+    "ja": "RPGT、自宅の免除、LHDN への申告、売却にかかる期間。",
+    "ko": "RPGT, 거주 주택 면제, LHDN 신고, 매도 소요 기간."
    },
    "icon": "M3 12h13M12 5l7 7-7 7",
    "ids": [
+    "s_rpgt_my",
+    "s_exempt",
+    "h12",
+    "g_foreign-buyers_60",
+    "s_report",
+    "g_subsale_53",
+    "s_time",
     "h47"
    ]
   },
@@ -989,12 +1005,15 @@
     "ko": "부동산 양도소득세(RPGT)란 무엇인가요？"
    },
    "a": {
-    "en": "RPGT is a tax on profit when you sell a property. Rates for foreign owners currently range from 30% if sold within 5 years to 10% thereafter — it doesn't apply if you hold long-term without disposing.",
-    "zh-CN": "RPGT是您出售房产时对利润征收的税。外国业主目前的税率为：5年内出售为30%，之后降至10%——若长期持有不出售则不适用。",
-    "zh-TW": "RPGT是您出售房產時對利潤徵收的稅。外國業主目前的稅率為：5年內出售為30%，之後降至10%——若長期持有不出售則不適用。",
-    "ms": "RPGT ialah cukai ke atas keuntungan apabila anda menjual hartanah. Kadar bagi pemilik asing kini antara 30% jika dijual dalam tempoh 5 tahun hingga 10% selepas itu — ia tidak dikenakan jika anda memegang hartanah dalam jangka panjang tanpa menjual.",
-    "ja": "RPGTは物件を売却した際の利益にかかる税金です。外国人所有者の場合、5年以内の売却で30%、それ以降は10%が適用されます。長期保有して売却しなければ課税されません。",
-    "ko": "RPGT는 부동산을 매도할 때 발생하는 이익에 대한 세금입니다. 외국인 소유자의 경우 현재 5년 이내 매도 시 30%, 이후에는 10%가 적용됩니다. 장기 보유하고 매도하지 않으면 해당되지 않습니다."
+    "en": "RPGT is a tax on the profit when you sell a property. Malaysian citizens and permanent residents pay 30% within 3 years, 20% in the 4th year, 15% in the 5th year and 0% from the 6th. Foreign owners pay 30% within 5 years and 10% from the 6th year.",
+    "zh-CN": "产业盈利税（RPGT）是卖房时对盈利征收的税。马来西亚公民和永久居民 3 年内卖出付 30%，第 4 年 20%，第 5 年 15%，第 6 年起 0%。外国业主 5 年内卖出付 30%，第 6 年起 10%。",
+    "ms": "RPGT ialah cukai atas keuntungan apabila anda menjual hartanah. Warganegara dan pemastautin tetap Malaysia membayar 30% dalam tempoh 3 tahun, 20% pada tahun ke-4, 15% pada tahun ke-5 dan 0% mulai tahun ke-6. Pemilik asing membayar 30% dalam tempoh 5 tahun dan 10% mulai tahun ke-6.",
+    "ja": "RPGT は物件を売却したときの利益にかかる税金です。マレーシア国民と永住者は3年以内30%、4年目20%、5年目15%、6年目以降0%です。外国人オーナーは5年以内30%、6年目以降10%です。",
+    "ko": "RPGT는 부동산을 팔 때 생기는 이익에 붙는 세금입니다. 말레이시아 국민과 영주권자는 3년 이내 30%, 4년차 20%, 5년차 15%, 6년차부터 0%입니다. 외국인 소유자는 5년 이내 30%, 6년차부터 10%입니다."
+   },
+   "src": {
+    "name": "LHDN",
+    "url": "https://www.hasil.gov.my/en/rpgt/real-property-gains-tax-rpgt-rates/"
    }
   },
   "g_foreign-buyers_60": {
@@ -1319,6 +1338,186 @@
     "ms": "Tiada had bilangan hartanah, tetapi setiap pembelian mesti memenuhi ambang harga minimum untuk pembeli asing secara berasingan, dan kelulusan pembiayaan bergantung pada profil hutang keseluruhan anda.",
     "ja": "所有できる不動産の数に上限はありませんが、各購入は外国人購入者向けの最低価格基準を個別に満たす必要があり、融資承認は全体の負債状況によります。",
     "ko": "소유할 수 있는 부동산 수에는 제한이 없지만, 각 구매는 외국인 구매자를 위한 최소 가격 기준을 개별적으로 충족해야 하며, 자금 조달 승인은 전체 부채 프로필에 따라 달라집니다."
+   }
+  },
+  "l_ltv": {
+   "q": {
+    "en": "How much can I borrow for a home in Malaysia?",
+    "zh-CN": "在马来西亚买房可以贷多少？",
+    "ms": "Berapa banyak saya boleh pinjam untuk membeli rumah di Malaysia?",
+    "ja": "マレーシアで住宅ローンはいくら借りられますか？",
+    "ko": "말레이시아에서 주택 대출은 얼마까지 받을 수 있나요?"
+   },
+   "a": {
+    "en": "For your first and second housing loans, Bank Negara sets no fixed cap, and banks commonly lend up to 90% of the price or valuation, whichever is lower. From your third outstanding housing loan, Bank Negara caps the loan at 70% of the property value. The bank still decides the final amount from your income and commitments.",
+    "zh-CN": "第一和第二个房贷，国家银行没有设定固定上限，银行一般最多贷房价或估价（取较低者）的 90%。从第三个仍在供的房贷开始，国家银行规定最多只能贷房产价值的 70%。最终能贷多少，还是由银行根据你的收入和负债决定。",
+    "ms": "Untuk pinjaman perumahan pertama dan kedua, Bank Negara tidak menetapkan had tetap, dan bank biasanya memberi sehingga 90% daripada harga atau nilai, mengikut yang lebih rendah. Mulai pinjaman perumahan ketiga yang masih berjalan, Bank Negara mengehadkan pinjaman kepada 70% daripada nilai hartanah. Jumlah akhir tetap ditentukan oleh bank berdasarkan pendapatan dan komitmen anda.",
+    "ja": "1件目と2件目の住宅ローンには中央銀行の固定上限はなく、銀行は通常、価格と評価額の低い方の最大90%まで融資します。返済中の住宅ローンが3件目以降になると、中央銀行の規制で融資は物件価値の70%までに制限されます。最終的な金額は、収入と借入状況をもとに銀行が決めます。",
+    "ko": "첫 번째와 두 번째 주택 대출에는 중앙은행의 고정 상한이 없으며, 은행은 보통 가격과 감정가 중 낮은 금액의 최대 90%까지 빌려줍니다. 상환 중인 주택 대출이 세 번째부터는 중앙은행 규정에 따라 부동산 가치의 70%까지만 대출됩니다. 최종 금액은 소득과 부채를 보고 은행이 정합니다."
+   },
+   "src": {
+    "name": "Bank Negara Malaysia",
+    "url": "https://www.bnm.gov.my/-/measures-in-promoting-a-stable-and-sustainable-property-market-and-sound-financial-and-debt-management-of-households"
+   }
+  },
+  "l_tenure": {
+   "q": {
+    "en": "What is the longest home loan tenure?",
+    "zh-CN": "房贷最长可以供多少年？",
+    "ms": "Berapakah tempoh pinjaman perumahan paling lama?",
+    "ja": "住宅ローンの最長期間は？",
+    "ko": "주택 대출 기간은 최대 몇 년인가요?"
+   },
+   "a": {
+    "en": "Bank Negara caps housing loans at 35 years. Banks also look at your age, and many want the loan repaid by around 65 to 70, so older buyers may get a shorter tenure and a higher monthly instalment.",
+    "zh-CN": "国家银行规定房贷最长 35 年。银行也会看你的年龄，很多银行要求在 65 至 70 岁左右还清，所以年纪较大的买家可能只能贷较短的年限，每月供款也会较高。",
+    "ms": "Bank Negara mengehadkan tempoh pinjaman perumahan kepada 35 tahun. Bank juga melihat umur anda, dan banyak bank mahu pinjaman selesai sekitar umur 65 hingga 70, jadi pembeli yang lebih berusia mungkin mendapat tempoh lebih pendek dan ansuran bulanan lebih tinggi.",
+    "ja": "中央銀行は住宅ローンの期間を最長35年に制限しています。銀行は年齢も見ており、多くは65〜70歳ごろまでの完済を求めるため、年齢が高い方は期間が短くなり、月々の返済額が高くなることがあります。",
+    "ko": "중앙은행은 주택 대출 기간을 최대 35년으로 제한합니다. 은행은 나이도 보며, 많은 은행이 65~70세 무렵까지 상환을 원하기 때문에 나이가 많은 구매자는 기간이 짧아지고 월 상환액이 높아질 수 있습니다."
+   },
+   "src": {
+    "name": "Bank Negara Malaysia",
+    "url": "https://www.bnm.gov.my/-/measures-to-further-promote-a-sound-and-sustainable-household-sector"
+   }
+  },
+  "l_afford": {
+   "q": {
+    "en": "How do banks decide how much I can borrow?",
+    "zh-CN": "银行怎样决定我能贷多少？",
+    "ms": "Bagaimana bank menentukan jumlah yang boleh saya pinjam?",
+    "ja": "借りられる金額は銀行がどう決めますか？",
+    "ko": "은행은 대출 가능 금액을 어떻게 정하나요?"
+   },
+   "a": {
+    "en": "Under Bank Negara's responsible lending rules, banks must check that you can afford the loan using your net income after statutory deductions such as EPF and tax. They add up your existing monthly commitments and the new instalment, and each bank sets its own limit for this debt service ratio. Clearing small debts before you apply can help.",
+    "zh-CN": "根据国家银行的负责任借贷规定，银行必须用你扣除公积金和税等法定扣除后的净收入，来评估你是否负担得起。银行会把你现有的每月负债加上新的房贷供款一起计算，每家银行对这个偿债比率（DSR）都有自己的上限。申请前先还清小额债务会有帮助。",
+    "ms": "Di bawah peraturan pemberian pinjaman bertanggungjawab Bank Negara, bank mesti memastikan anda mampu membayar berdasarkan pendapatan bersih selepas potongan berkanun seperti KWSP dan cukai. Bank menjumlahkan komitmen bulanan sedia ada dengan ansuran baharu, dan setiap bank menetapkan had nisbah khidmat hutang (DSR) sendiri. Melangsaikan hutang kecil sebelum memohon boleh membantu.",
+    "ja": "中央銀行の責任ある融資のルールにより、銀行は EPF や税金などの法定控除後の手取り収入で返済能力を確認します。既存の毎月の返済に新しいローンの返済額を加えて計算し、この返済比率（DSR）の上限は銀行ごとに決めています。申し込み前に小さな借入を返しておくと有利です。",
+    "ko": "중앙은행의 책임 대출 규정에 따라 은행은 EPF와 세금 등 법정 공제 후의 순소득으로 상환 능력을 확인해야 합니다. 기존 월 부채에 새 대출 상환액을 더해 계산하며, 이 부채상환비율(DSR) 한도는 은행마다 다릅니다. 신청 전에 작은 부채를 정리하면 도움이 됩니다."
+   },
+   "src": {
+    "name": "Bank Negara Malaysia",
+    "url": "https://www.bnm.gov.my/-/responsible-lending-guidelines-ensures-borrowers-affordability"
+   }
+  },
+  "l_sbr": {
+   "q": {
+    "en": "What is the Standardised Base Rate (SBR)?",
+    "zh-CN": "什么是标准基准利率（SBR）？",
+    "ms": "Apakah Kadar Asas Standard (SBR)?",
+    "ja": "標準基準金利（SBR）とは？",
+    "ko": "표준기준금리(SBR)란 무엇인가요?"
+   },
+   "a": {
+    "en": "Since 1 August 2022, new floating-rate home loans in Malaysia are priced as the SBR plus a spread set by the bank. The SBR is linked to Bank Negara's Overnight Policy Rate, so it only changes when the OPR changes. Loans taken before that date stay on the old Base Rate or BLR until they are paid off.",
+    "zh-CN": "自 2022 年 8 月 1 日起，马来西亚新的浮动利率房贷以 SBR 加上银行设定的利差来计算。SBR 和国家银行的隔夜政策利率（OPR）挂钩，只有 OPR 改变时才会变动。在那之前申请的贷款，会继续用旧的基准利率（BR）或基本贷款利率（BLR），直到还清为止。",
+    "ms": "Sejak 1 Ogos 2022, pinjaman perumahan kadar terapung baharu di Malaysia dikira sebagai SBR ditambah margin yang ditetapkan oleh bank. SBR dikaitkan dengan Kadar Dasar Semalaman (OPR) Bank Negara, jadi ia hanya berubah apabila OPR berubah. Pinjaman sebelum tarikh itu kekal pada Kadar Asas atau BLR lama sehingga selesai dibayar.",
+    "ja": "2022年8月1日以降、マレーシアの新規の変動金利住宅ローンは、SBR に銀行が決める上乗せ金利を加えて決まります。SBR は中央銀行の政策金利（OPR）に連動し、OPR が変わったときだけ変わります。それ以前に組んだローンは、完済まで従来の基準金利（BR）または BLR のままです。",
+    "ko": "2022년 8월 1일부터 말레이시아의 신규 변동금리 주택 대출은 SBR에 은행이 정하는 가산금리를 더해 정해집니다. SBR은 중앙은행의 기준금리(OPR)에 연동되어 OPR이 바뀔 때만 변합니다. 그 이전에 받은 대출은 다 갚을 때까지 기존 기준금리(BR)나 BLR을 그대로 씁니다."
+   },
+   "src": {
+    "name": "Bank Negara Malaysia",
+    "url": "https://www.bnm.gov.my/-/pd-revised-reference-rate"
+   }
+  },
+  "l_epf": {
+   "q": {
+    "en": "Can I use my EPF savings for a home?",
+    "zh-CN": "可以用公积金（EPF）买房吗？",
+    "ms": "Bolehkah saya guna simpanan KWSP untuk rumah?",
+    "ja": "EPF（従業員積立基金）を住宅に使えますか？",
+    "ko": "EPF(근로자 연금) 적립금을 주택에 쓸 수 있나요?"
+   },
+   "a": {
+    "en": "Yes, if you are an EPF member. Savings in Akaun Sejahtera (formerly Account 2) can be withdrawn to help buy or build a home, to reduce or settle a housing loan, or to pay monthly instalments. Each option has its own conditions, so check the latest rules with EPF before you plan around it.",
+    "zh-CN": "可以，如果你是公积金会员。Akaun Sejahtera（以前的第二户口）的存款可以提取来买房或建房、减少或还清房贷，或用来付每月供款。每种提款都有自己的条件，计划前请先向公积金局确认最新规定。",
+    "ms": "Ya, jika anda ahli KWSP. Simpanan dalam Akaun Sejahtera (dahulu Akaun 2) boleh dikeluarkan untuk membantu membeli atau membina rumah, mengurangkan atau menyelesaikan pinjaman perumahan, atau membayar ansuran bulanan. Setiap pilihan ada syarat tersendiri, jadi semak peraturan terkini dengan KWSP sebelum merancang.",
+    "ja": "はい、EPF の加入者であれば使えます。Akaun Sejahtera（旧アカウント2）の積立金は、住宅の購入や建築、住宅ローンの減額や完済、毎月の返済に引き出せます。それぞれ条件があるので、計画の前に EPF で最新のルールを確認してください。",
+    "ko": "네, EPF 가입자라면 가능합니다. Akaun Sejahtera(옛 2계좌)의 적립금은 주택 구입이나 건축, 주택 대출 감액이나 상환, 월 상환금 납부에 인출할 수 있습니다. 항목마다 조건이 있으니 계획하기 전에 EPF에서 최신 규정을 확인하세요."
+   },
+   "src": {
+    "name": "MyGOV (EPF accounts)",
+    "url": "https://www.malaysia.gov.my/my/personas/tenaga-kerja-berpengalaman/perancangan-persaraan/jenis-akaun-simpanan-kwsp"
+   }
+  },
+  "s_rpgt_my": {
+   "q": {
+    "en": "How much RPGT do Malaysians pay when they sell?",
+    "zh-CN": "马来西亚人卖房要付多少产业盈利税（RPGT）？",
+    "ms": "Berapa RPGT yang dibayar oleh rakyat Malaysia apabila menjual?",
+    "ja": "マレーシア人が売却するときの RPGT はいくら？",
+    "ko": "말레이시아인은 매도할 때 RPGT를 얼마나 내나요?"
+   },
+   "a": {
+    "en": "For Malaysian citizens and permanent residents, RPGT on the gain is 30% if you sell within 3 years of buying, 20% in the 4th year, 15% in the 5th year, and 0% from the 6th year. The gain is the sale price less the purchase price and allowable costs such as legal fees and stamp duty.",
+    "zh-CN": "马来西亚公民和永久居民卖房时，盈利的产业盈利税是：买入后 3 年内卖出 30%，第 4 年 20%，第 5 年 15%，第 6 年起 0%。盈利是卖价减去买价和可扣除的费用，例如律师费和印花税。",
+    "ms": "Bagi warganegara dan pemastautin tetap Malaysia, RPGT atas keuntungan ialah 30% jika dijual dalam tempoh 3 tahun selepas membeli, 20% pada tahun ke-4, 15% pada tahun ke-5, dan 0% mulai tahun ke-6. Keuntungan ialah harga jualan tolak harga belian dan kos yang dibenarkan seperti yuran guaman dan duti setem.",
+    "ja": "マレーシア国民と永住者の場合、利益にかかる RPGT は、購入から3年以内の売却で30%、4年目20%、5年目15%、6年目以降は0%です。利益は売却価格から購入価格と、弁護士費用や印紙税などの認められた費用を引いた額です。",
+    "ko": "말레이시아 국민과 영주권자의 경우, 이익에 대한 RPGT는 매입 후 3년 이내 매도 시 30%, 4년차 20%, 5년차 15%, 6년차부터 0%입니다. 이익은 매도가에서 매입가와 변호사 비용, 인지세 같은 인정 비용을 뺀 금액입니다."
+   },
+   "src": {
+    "name": "LHDN",
+    "url": "https://www.hasil.gov.my/en/rpgt/real-property-gains-tax-rpgt-rates/"
+   }
+  },
+  "s_exempt": {
+   "q": {
+    "en": "Is there an RPGT exemption when I sell my own home?",
+    "zh-CN": "卖自住的房子有产业盈利税豁免吗？",
+    "ms": "Adakah pengecualian RPGT apabila saya menjual rumah sendiri?",
+    "ja": "自宅を売るときに RPGT の免除はありますか？",
+    "ko": "내가 사는 집을 팔 때 RPGT 면제가 있나요?"
+   },
+   "a": {
+    "en": "Yes. A Malaysian citizen or permanent resident can claim the gain on one private residence as exempt, once in a lifetime. The claim is made on Form CKHT 3 and cannot be changed later, so it is often better saved for a sale with a large gain inside the first five years.",
+    "zh-CN": "有。马来西亚公民或永久居民一生可以申请一次，把出售一间自住房产的盈利列为豁免。申请用 CKHT 3 表格，之后不能更改，所以通常留给头五年内盈利较大的那次出售比较划算。",
+    "ms": "Ya. Warganegara atau pemastautin tetap Malaysia boleh menuntut pengecualian atas keuntungan satu kediaman persendirian, sekali seumur hidup. Tuntutan dibuat melalui Borang CKHT 3 dan tidak boleh diubah kemudian, jadi biasanya lebih baik disimpan untuk jualan dengan keuntungan besar dalam lima tahun pertama.",
+    "ja": "はい。マレーシア国民または永住者は、生涯に一度だけ、自宅1軒の売却益を免除として申請できます。申請は CKHT 3 様式で行い、後から変更できないため、最初の5年以内で利益が大きい売却のために取っておくのが一般的です。",
+    "ko": "네. 말레이시아 국민이나 영주권자는 평생 한 번, 거주 주택 한 채의 매도 이익을 면제로 신청할 수 있습니다. 신청은 CKHT 3 양식으로 하며 나중에 바꿀 수 없으므로, 보통 처음 5년 안에 이익이 큰 매도에 쓰는 것이 좋습니다."
+   },
+   "src": {
+    "name": "LHDN",
+    "url": "https://www.hasil.gov.my/en/rpgt/exemption/"
+   }
+  },
+  "s_report": {
+   "q": {
+    "en": "Do I have to report the sale to LHDN even if no tax is due?",
+    "zh-CN": "即使不用付税，卖房也要向税务局申报吗？",
+    "ms": "Adakah saya perlu melaporkan jualan kepada LHDN walaupun tiada cukai?",
+    "ja": "税金がかからなくても LHDN への申告は必要ですか？",
+    "ko": "세금이 없어도 LHDN에 매도를 신고해야 하나요?"
+   },
+   "a": {
+    "en": "Yes. The seller files Form CKHT 1A and the buyer files Form CKHT 2A within 60 days of the sale, even when the RPGT works out to zero. Since 2025 sellers work out their own RPGT, and the lawyers usually handle the forms as part of the sale.",
+    "zh-CN": "要。即使算出来的产业盈利税是零，卖方也要在出售后 60 天内提交 CKHT 1A 表格，买方提交 CKHT 2A 表格。从 2025 年起，卖方要自己计算产业盈利税，通常律师会在办理买卖时一起处理这些表格。",
+    "ms": "Ya. Penjual menghantar Borang CKHT 1A dan pembeli menghantar Borang CKHT 2A dalam tempoh 60 hari selepas jualan, walaupun RPGT yang dikira ialah sifar. Sejak 2025 penjual mengira RPGT sendiri, dan peguam biasanya menguruskan borang ini sebagai sebahagian daripada urusan jualan.",
+    "ja": "はい。RPGT がゼロになる場合でも、売却から60日以内に売主は CKHT 1A、買主は CKHT 2A を提出します。2025年からは売主が自分で RPGT を計算し、通常は売買の手続きの中で弁護士が書類を扱います。",
+    "ko": "네. RPGT가 0으로 계산되더라도 매도 후 60일 이내에 매도인은 CKHT 1A, 매수인은 CKHT 2A 양식을 제출해야 합니다. 2025년부터는 매도인이 RPGT를 직접 계산하며, 보통 변호사가 매매 절차의 일부로 서류를 처리합니다."
+   },
+   "src": {
+    "name": "NST",
+    "url": "https://www.nst.com.my/amp/property/2025/09/1272512/rpgt-property-transfer-must-be-reported-lhdn-within-60-days"
+   }
+  },
+  "s_time": {
+   "q": {
+    "en": "How long does it take to complete a subsale?",
+    "zh-CN": "卖二手房要多久才能完成？",
+    "ms": "Berapa lama masa untuk menyelesaikan jualan subjualan?",
+    "ja": "中古物件の売却完了までどれくらいかかりますか？",
+    "ko": "재판매 거래 완료까지 얼마나 걸리나요?"
+   },
+   "a": {
+    "en": "After the buyer pays a deposit of usually 10% of the price, including any earnest deposit, and signs the Sale and Purchase Agreement, the balance is commonly due within 3 months, with a 1-month extension at an interest charge. Conditions such as state consent for a foreign buyer can add time before this period starts.",
+    "zh-CN": "买方通常先付房价的 10% 作为订金（包括之前付的诚意金），并签买卖合约，余款一般在 3 个月内付清，可再延长 1 个月但要付利息。如果有附带条件，例如外国买家需要州政府批准，开始计算这段时间前可能要多等一些时间。",
+    "ms": "Selepas pembeli membayar deposit biasanya 10% daripada harga, termasuk deposit cengkeram, dan menandatangani Perjanjian Jual Beli, baki biasanya perlu dibayar dalam tempoh 3 bulan, dengan lanjutan 1 bulan yang dikenakan faedah. Syarat seperti kelulusan negeri bagi pembeli asing boleh menambah masa sebelum tempoh ini bermula.",
+    "ja": "買主が通常価格の10%（先に払った手付金を含む）を支払って売買契約（SPA）に署名した後、残金は一般に3か月以内に支払われ、利息付きで1か月の延長があります。外国人購入者の州の許可などの条件があると、この期間が始まるまでに時間がかかることがあります。",
+    "ko": "매수인이 보통 가격의 10%(앞서 낸 계약금 포함)를 내고 매매계약서(SPA)에 서명하면, 잔금은 일반적으로 3개월 안에 내고 이자를 붙여 1개월 연장할 수 있습니다. 외국인 매수인의 주 정부 승인 같은 조건이 있으면 이 기간이 시작되기 전에 시간이 더 걸릴 수 있습니다."
+   },
+   "src": {
+    "name": "HBA",
+    "url": "https://hba.org.my/articles/lawyers/2006/understanding-1.htm"
    }
   }
  }

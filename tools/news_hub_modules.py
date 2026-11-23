@@ -167,7 +167,7 @@ def build():
               'go();document.addEventListener("DOMContentLoaded",go);var w=window.knSetLang;if(typeof w==="function"){window.knSetLang=function(){var r=w.apply(this,arguments);go();return r;};}'
               'document.querySelectorAll(".nh-tabs button").forEach(function(b){b.onclick=function(){document.querySelectorAll(".nh-tabs button").forEach(function(x){var on=x===b;x.classList.toggle("on",on);x.setAttribute("aria-selected",on)});'
               'document.querySelectorAll(".nh-pane").forEach(function(p){p.hidden=p.getAttribute("data-p")!==b.getAttribute("data-a")});};});})();</script>') % json.dumps(TX, ensure_ascii=False, separators=(',', ':'))
-    return CSS + week + launch + dates + area, tools, script
+    return CSS + week + dates + area, tools, script   # 'New on the site' (launch) removed at Keith's request
 
 
 CSS = '''<style>
