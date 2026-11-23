@@ -94,7 +94,7 @@ left = (K.crumbs([(tx('home', X['home']), 'index.html'), (tx('projects', X['proj
         K.pills([(tx('p_b1', L('Search projects', '搜索项目', 'Cari projek', '物件を検索', '프로젝트 검색')), '#projSearch'),
                  (tx('p_b2', L('All project list', '全部项目列表', 'Senarai semua projek', '全物件リスト', '전체 프로젝트 목록')), '#projGrid'),
                  (tx('p_b3', L('Project map', '项目地图', 'Peta projek', '物件マップ', '프로젝트 지도')), 'map.html'),
-                 (tx('p_b4', L('Station map', '车站地图', 'Peta stesen', '駅マップ', '역 지도')), 'station-map.html'),
+                 (tx('p_b4', L('Station map', '车站地图', 'Peta stesen', '駅マップ', '역 지도')), 'station/index.html#mapsec'),
                  (tx('p_b5', L('Best new launches', '最佳新盘', 'Projek baharu terbaik', '注目の新築', '추천 신규 분양')), 'best/index.html'),
                  (tx('p_b6', L('By developer', '按发展商', 'Mengikut pemaju', 'デベロッパー別', '개발사별')), 'developer/index.html')]))
 stats = K.stats_html([(N_PROJ, tx('n_proj', X['n_proj'])), (N_STATES, tx('n_states', X['n_states'])), (N_DEV, tx('n_dev', X['n_dev'])), (N_STN, tx('n_stn', X['n_stn']))])
