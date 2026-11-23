@@ -57,6 +57,13 @@
     "ms": "The Kingswoodz di Bukit Jalil mempunyai 1,558 unit dalam tiga menara di atas tapak 3.45 ekar, kira-kira 500m dari LRT Awan Besar.",
     "ja": "Bukit Jalil の The Kingswoodz は 3.45 エーカーの敷地に 3 棟・1,558 戸で、LRT Awan Besar 駅から約 500m です。",
     "ko": "Bukit Jalil의 The Kingswoodz는 3.45에이커 부지에 3개 동, 1,558세대로 LRT Awan Besar역에서 약 500m 거리입니다."
+   },
+   {
+    "en": "EXSIM has collected six Malaysia Property Awards from FIABCI Malaysia, and in 2023 won the FIABCI World Prix d'Excellence in the residential high-rise category.",
+    "zh-CN": "EXSIM 曾六次获得 FIABCI 马来西亚的 Malaysia Property Award，并在 2023 年赢得 FIABCI 世界卓越奖（World Prix d'Excellence）高层住宅类别。",
+    "ms": "EXSIM telah meraih enam Anugerah Hartanah Malaysia (Malaysia Property Award) daripada FIABCI Malaysia, dan pada 2023 memenangi FIABCI World Prix d'Excellence bagi kategori kediaman bertingkat tinggi.",
+    "ja": "EXSIM は FIABCI マレーシアの Malaysia Property Award を6回受賞し、2023年には FIABCI World Prix d'Excellence の高層住宅部門で受賞しました。",
+    "ko": "EXSIM은 FIABCI 말레이시아의 Malaysia Property Award를 여섯 차례 받았고, 2023년 FIABCI World Prix d'Excellence 고층 주거 부문에서 수상했습니다."
    }
   ],
   "sources": [
@@ -67,6 +74,56 @@
    {
     "name": "EdgeProp (The Kingswoodz)",
     "url": "https://www.edgeprop.my/new-launches/project/the-kingswoodz-bukit-jalil-48547"
+   },
+   {
+    "name": "EdgeProp (EXSIM profile)",
+    "url": "https://www.edgeprop.my/developer/180/exsim"
+   },
+   {
+    "name": "StarProperty (MPA 2023)",
+    "url": "https://www.starproperty.my/news/16-recipients-take-vaunted-mpa-2023-trophies/124707"
+   },
+   {
+    "name": "EdgeProp (completed projects)",
+    "url": "https://www.edgeprop.my/content/1110427/exsim-thrives-building-unique-projects-prime-locations"
+   }
+  ],
+  "completed": [
+   {
+    "name": "The Treez",
+    "area": "Bukit Jalil",
+    "year": "2013"
+   },
+   {
+    "name": "The Leafz",
+    "area": "Sungai Besi",
+    "year": "2015"
+   },
+   {
+    "name": "Twin Arkz",
+    "area": "Bukit Jalil",
+    "year": "2016"
+   },
+   {
+    "name": "Petalz Residences",
+    "area": "Old Klang Road"
+   },
+   {
+    "name": "The Rainz",
+    "area": "Bukit Jalil"
+   }
+  ],
+  "awards": [
+   {
+    "year": "2023",
+    "title": "FIABCI World Prix d'Excellence, Residential High-Rise",
+    "short": "FIABCI World Prix",
+    "project": "World winner"
+   },
+   {
+    "year": "2023",
+    "title": "Malaysia Property Award (FIABCI Malaysia), Residential High-Rise",
+    "project": "The Rainz @ Bukit Jalil"
    }
   ]
  },

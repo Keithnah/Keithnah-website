@@ -1,0 +1,430 @@
+{
+ "_note": "Developer brand for every project. 'fill' gives the developer of projects whose data had none (checked against news and portal listings, Nov 2026). 'brands' maps a canonical brand to the words that identify it in a project's Developer field (lower case, first match wins, in this order). Restricted projects never get a developer.",
+ "fill": {
+  "brixton-causeway-square": "EXSIM (Causewayz Square @ JBCC)",
+  "the-celestz": "EXSIM",
+  "parkside-residence": "S P Setia (Setia MF SFH Development Sdn Bhd)",
+  "vi-residence": "Green Camour Property Sdn Bhd",
+  "laurel-residence": "UOA Development Bhd",
+  "nara-at-shorea-park": "OSK Property (Aspect Potential Sdn Bhd)",
+  "trinity-rainfora-residences": "Trinity Group",
+  "danau-puchong": "YTL Land & Development",
+  "erica-residence": "Ayer Holdings (Bukit Hitam Development Sdn Bhd)",
+  "loop-residences": "Glomac Bhd (Glomac Al Batha Sdn Bhd)",
+  "the-wyn-residences": "Land & General Bhd",
+  "casa-darcadia": "S P Setia (I&P Alam Impian Sdn Bhd)",
+  "seri-embun": "Eastern & Oriental (E&O)",
+  "myra-senja-subang-2": "Myra (Oriental Interest Bhd, Myra Land Sdn Bhd)",
+  "atwater-corporate-tower": "Paramount Property (Paramount Property Development Sdn Bhd)",
+  "amara-residences": "Puncakdana Group (Luster Ara Sdn Bhd)",
+  "the-arden-bandar-sri-damansara": "TA Global Bhd",
+  "tagbay-suites": "EXSIM"
+ },
+ "brands": [
+  [
+   "exsim",
+   "EXSIM",
+   [
+    "exsim",
+    "mightyprop"
+   ]
+  ],
+  [
+   "sp-setia",
+   "S P Setia",
+   [
+    "s p setia",
+    "sp setia",
+    "setia "
+   ]
+  ],
+  [
+   "pavilion",
+   "Pavilion Group",
+   [
+    "pavilion"
+   ]
+  ],
+  [
+   "ta-global",
+   "TA Global",
+   [
+    "ta global"
+   ]
+  ],
+  [
+   "kerjaya",
+   "Kerjaya Prospek Property",
+   [
+    "kerjaya"
+   ]
+  ],
+  [
+   "chin-hin",
+   "Chin Hin Property",
+   [
+    "chin hin"
+   ]
+  ],
+  [
+   "oxley",
+   "Oxley",
+   [
+    "oxley"
+   ]
+  ],
+  [
+   "paramount",
+   "Paramount Property",
+   [
+    "paramount"
+   ]
+  ],
+  [
+   "sunsuria",
+   "Sunsuria",
+   [
+    "sunsuria"
+   ]
+  ],
+  [
+   "ecoworld",
+   "EcoWorld",
+   [
+    "ecoworld",
+    "eco world"
+   ]
+  ],
+  [
+   "eo",
+   "Eastern & Oriental (E&O)",
+   [
+    "e&o",
+    "eastern & oriental"
+   ]
+  ],
+  [
+   "mah-sing",
+   "Mah Sing",
+   [
+    "mah sing"
+   ]
+  ],
+  [
+   "uoa",
+   "UOA Group",
+   [
+    "uoa"
+   ]
+  ],
+  [
+   "ytl",
+   "YTL Land",
+   [
+    "ytl"
+   ]
+  ],
+  [
+   "gsd",
+   "GSD Land",
+   [
+    "gsd"
+   ]
+  ],
+  [
+   "berjaya",
+   "Berjaya",
+   [
+    "berjaya"
+   ]
+  ],
+  [
+   "rf",
+   "R&F Development",
+   [
+    "r&f"
+   ]
+  ],
+  [
+   "mrcb",
+   "MRCB",
+   [
+    "mrcb"
+   ]
+  ],
+  [
+   "ijm",
+   "IJM Land",
+   [
+    "ijm"
+   ]
+  ],
+  [
+   "wct",
+   "WCT Land",
+   [
+    "wct"
+   ]
+  ],
+  [
+   "malton",
+   "Malton",
+   [
+    "malton"
+   ]
+  ],
+  [
+   "osk",
+   "OSK Property",
+   [
+    "osk"
+   ]
+  ],
+  [
+   "glomac",
+   "Glomac",
+   [
+    "glomac"
+   ]
+  ],
+  [
+   "land-general",
+   "Land & General",
+   [
+    "land & general"
+   ]
+  ],
+  [
+   "ayer",
+   "Ayer Holdings",
+   [
+    "ayer"
+   ]
+  ],
+  [
+   "myra",
+   "Myra (Oriental Interest)",
+   [
+    "myra",
+    "oriental interest"
+   ]
+  ],
+  [
+   "trinity",
+   "Trinity Group",
+   [
+    "trinity"
+   ]
+  ],
+  [
+   "puncakdana",
+   "Puncakdana Group",
+   [
+    "puncakdana"
+   ]
+  ],
+  [
+   "avaland",
+   "Avaland",
+   [
+    "avaland"
+   ]
+  ],
+  [
+   "symphony",
+   "Symphony Life",
+   [
+    "symphony"
+   ]
+  ],
+  [
+   "astaka",
+   "Astaka",
+   [
+    "astaka"
+   ]
+  ],
+  [
+   "crest",
+   "Crest Builder",
+   [
+    "crest builder"
+   ]
+  ],
+  [
+   "brdb",
+   "BRDB",
+   [
+    "brdb"
+   ]
+  ],
+  [
+   "ehsan-bina",
+   "Ehsan Bina Group",
+   [
+    "ehsan bina"
+   ]
+  ],
+  [
+   "melati-ehsan",
+   "Melati Ehsan Group",
+   [
+    "melati ehsan"
+   ]
+  ],
+  [
+   "gsh",
+   "GSH Corporation",
+   [
+    "gsh"
+   ]
+  ],
+  [
+   "golden-eagle",
+   "Golden Eagle Group",
+   [
+    "golden eagle"
+   ]
+  ],
+  [
+   "tsr",
+   "TSR Development",
+   [
+    "tsr"
+   ]
+  ],
+  [
+   "vst",
+   "VST Group",
+   [
+    "vst"
+   ]
+  ],
+  [
+   "aspen",
+   "Aspen Group",
+   [
+    "aspen"
+   ]
+  ],
+  [
+   "welton",
+   "Welton Group",
+   [
+    "welton"
+   ]
+  ],
+  [
+   "ideal",
+   "Ideal Property",
+   [
+    "ideal property"
+   ]
+  ],
+  [
+   "kl-metro",
+   "KL Metro Group",
+   [
+    "kl metro"
+   ]
+  ],
+  [
+   "maxim",
+   "Maxim Global",
+   [
+    "maxim"
+   ]
+  ],
+  [
+   "bsg",
+   "BSG Property",
+   [
+    "bsg"
+   ]
+  ],
+  [
+   "scp",
+   "SCP Group",
+   [
+    "scp"
+   ]
+  ],
+  [
+   "parkcity",
+   "ParkCity Group",
+   [
+    "parkcity"
+   ]
+  ],
+  [
+   "tslaw",
+   "TSLAW Land",
+   [
+    "tslaw"
+   ]
+  ],
+  [
+   "fyt",
+   "FYT Land",
+   [
+    "fyt"
+   ]
+  ],
+  [
+   "serene-impian",
+   "Serene Impian Development",
+   [
+    "serene impian"
+   ]
+  ],
+  [
+   "ocr",
+   "OCR Group",
+   [
+    "ocr"
+   ]
+  ],
+  [
+   "arte",
+   "Arte Corp",
+   [
+    "arte corp"
+   ]
+  ],
+  [
+   "green-camour",
+   "Green Camour Property",
+   [
+    "green camour"
+   ]
+  ],
+  [
+   "core-precious",
+   "Core Precious Development",
+   [
+    "core precious"
+   ]
+  ],
+  [
+   "pinnacle",
+   "Pinnacle Bukit Gambir",
+   [
+    "pinnacle bukit"
+   ]
+  ],
+  [
+   "gaya-kuasa",
+   "Gaya Kuasa",
+   [
+    "gaya kuasa"
+   ]
+  ],
+  [
+   "majestic-gen",
+   "Majestic Gen",
+   [
+    "majestic gen"
+   ]
+  ]
+ ]
+}
