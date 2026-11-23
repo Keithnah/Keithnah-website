@@ -113,7 +113,7 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.2}.w{max-wid
 .ub p.in{font-size:17px;line-height:1.75;color:#24233a;margin-bottom:8px}
 .ub h2{font-size:clamp(22px,2.6vw,28px);margin:30px 0 10px}.ub p{font-size:16px;line-height:1.8;color:#2f2e45}
 .buy{margin:30px 0 0;background:#1d1b4f;color:#fff;border-radius:20px;padding:22px 24px}.buy b{display:block;font:700 12px Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#c9caff;margin-bottom:6px}.buy p{color:#fff;font-size:16px}
-.kf{position:sticky;top:96px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px 20px 8px;box-shadow:0 14px 34px rgba(29,27,79,.07)}
+.ug aside{position:sticky;top:96px}.kf{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px 20px 8px;box-shadow:0 14px 34px rgba(29,27,79,.07)}
 .kf h3{font:700 12px Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .kf div{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line)}.kf svg{flex:0 0 34px;width:34px;height:34px;padding:7px;border-radius:10px;background:var(--soft);stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .kf small{display:block;font-size:12px;font-weight:700;color:#6b6a80;text-transform:uppercase;letter-spacing:.06em}.kf strong{display:block;font-size:15.5px;color:var(--ink);line-height:1.4}
@@ -133,7 +133,7 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.2}.w{max-wid
 .cta{background:#111;color:#fff;border-radius:22px;padding:30px;text-align:center;margin:40px 0 60px}.cta h2{color:#fff;margin-bottom:8px;font-size:clamp(22px,3vw,28px)}.cta p{color:#cfcfe0}
 .cta a{display:inline-block;margin-top:14px;background:#25D366;color:#fff;padding:12px 24px;border-radius:100px;font-weight:700}
 footer{border-top:1px solid var(--line);padding:26px 5vw;font-size:13px;color:var(--grey);text-align:center}
-@media(max-width:900px){.ug{grid-template-columns:1fr;gap:10px}.ug aside{order:-1;margin-bottom:14px}.kf{position:static}.ul{grid-template-columns:repeat(3,1fr)}.ux{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.ug{grid-template-columns:1fr;gap:10px}.ug aside{position:static;order:-1;margin-bottom:14px}.ul{grid-template-columns:repeat(3,1fr)}.ux{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.uh{padding-top:100px}.uph{aspect-ratio:4/3;border-radius:18px}.ul{grid-template-columns:1fr 1fr}.ux{grid-template-columns:1fr}.pn{grid-template-columns:1fr}.pn img{width:64px;height:50px;flex-basis:64px}.ub p{font-size:15.5px}}
 '''
 
@@ -207,9 +207,9 @@ for idx, (n, slug, pk, rel, srcs) in enumerate(TOPICS):
     rels = ''.join('<a href="../%s">%s</a>' % (h, tx(k) if k else E(name)) for h, k, name in rel)
     src = ''.join('<a href="%s" target="_blank" rel="noopener">%s</a>' % (SRC[s][1], E(SRC[s][0])) for s in srcs)
     pv, nx = TOPICS[idx - 1], TOPICS[(idx + 1) % len(TOPICS)]
-    pn = ''.join('<a class="%s" href="%s.html"><img src="../images/understand/%s.jpg" alt="" loading="lazy" width="84" height="62"><span>%s%s</span></a>' % (
+    pn = ''.join('<a class="%s" href="%s.html"><img src="../images/understand/t/%s.jpg" alt="" loading="lazy" decoding="async" width="84" height="62"><span>%s%s</span></a>' % (
         c, t[1], t[2], tx(lab, 'small'), tx('t%dh' % t[0], 'b')) for c, lab, t in (('pv', 'ui_prev', pv), ('nx', 'ui_next', nx)))
-    grid = ''.join('<a href="%s.html"%s><img src="../images/understand/%s.jpg" alt="" loading="lazy" width="300" height="200">%s</a>' % (
+    grid = ''.join('<a href="%s.html"%s><img src="../images/understand/t/%s.jpg" alt="" loading="lazy" decoding="async" width="300" height="200">%s</a>' % (
         t[1], ' class="on" aria-current="page"' if t[0] == n else '', t[2], tx('t%dh' % t[0])) for t in TOPICS)
     body = '''<main>
 <section class="uh"><div class="w">%s%s%s%s
@@ -239,7 +239,7 @@ for idx, (n, slug, pk, rel, srcs) in enumerate(TOPICS):
     written.append(shell('understand/%s.html' % slug, title, desc, body, ld, img))
 
 # ---- index ----
-cards = ''.join('<a href="%s.html"><img src="../images/understand/%s.jpg" alt="" loading="lazy" width="420" height="280"><div class="b"><i>%02d</i>%s%s%s</div></a>' % (
+cards = ''.join('<a href="%s.html"><img src="../images/understand/t/%s.jpg" alt="" loading="lazy" decoding="async" width="420" height="280"><div class="b"><i>%02d</i>%s%s%s</div></a>' % (
     slug, pk, n, tx('t%dh' % n, 'h2'), tx('t%ds' % n, 'p'), tx('ui_open', 'em')) for n, slug, pk, _, _ in TOPICS)
 body = '''<main>
 <section class="uh"><div class="w">%s%s%s%s</div></section>

@@ -365,7 +365,7 @@ UM_ICONS = ['<path d="M9 11a4 4 0 100-8 4 4 0 000 8zM2 21v-1a6 6 0 0112 0v1M17 1
 def understand_sec():
     tiles = ''.join('<div class="umt"><svg viewBox="0 0 24 24" aria-hidden="true">%s</svg><div><small data-r="f%dl">%s</small><b data-r="f%dv">%s</b><span data-r="f%ds">%s</span></div></div>' % (
         UM_ICONS[n - 1], n, E(en['f%dl' % n]), n, E(en['f%dv' % n]), n, E(en['f%ds' % n])) for n in range(1, 9))
-    topics = ''.join('<a class="umc" href="understand/%s.html"><span class="umi"><img src="images/understand/%s.jpg" alt="" loading="lazy" width="420" height="280"><i>%02d</i></span>'
+    topics = ''.join('<a class="umc" href="understand/%s.html"><span class="umi"><img src="images/understand/t/%s.jpg" alt="" loading="lazy" decoding="async" width="420" height="280"><i>%02d</i></span>'
                      '<span class="umx"><b data-r="t%dh">%s</b><span data-r="t%ds">%s</span><em data-r="um_more">%s</em></span></a>' % (
         slug, pk, n, n, E(en['t%dh' % n]), n, E(en['t%ds' % n]), E(en['um_more'])) for n, (slug, pk) in enumerate(UM_SLUGS, 1))
     return ('<section class="sec" id="understand">%s<h2 data-r="um_h">%s</h2>%s<div class="umf">%s</div><div class="umg">%s</div>'
