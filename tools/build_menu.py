@@ -69,7 +69,7 @@ MENU = {
     'compare.html': [('h2h', 'compare.html#cmpFilters'), ('vs', 'vs/index.html'), ('popular', 'compare.html#popular')],
     'foreign-buyers.html': [('fcheck', 'foreign-buyers.html#check'), ('fbest', 'foreign-buyers.html#best'), ('fcost', 'foreign-buyers.html#costs'),
                             ('fsteps', 'foreign-buyers.html#steps'), ('mm2h', 'mm2h.html'), ('fum', 'foreign-buyers.html#understand'), ('faq', 'foreign-buyers.html#faq')],
-    'blog.html': [('notes', 'market-notes.html'), ('guide', 'blog.html#buying-guide'), ('data', 'market-data.html'), ('faq', 'blog.html#faq'), ('blogs', 'blog.html#blog')],
+    'blog.html': [('notes', 'market-notes.html'), ('guide', 'buying-guide.html'), ('data', 'market-data.html'), ('faq', 'faq.html'), ('blogs', 'articles.html')],
     'resources.html': [('fareas', 'resources.html#guides'), ('fmm2h', 'mm2h.html'), ('fwatch', 'https://www.youtube.com/@KeithNahRealEstate/videos'), ('fcalc', 'calculator.html'), ('fadvice', WA)],
     'about-keith.html': [('contact', 'about-keith.html#quickEnquiry')],
 }
