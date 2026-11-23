@@ -8,6 +8,7 @@ tools/build_project_pages.py saves the result to tools/hubs.json and links to th
 tools/build_hubs.py writes developer/, station/ and vs/. Texts for all 6 languages are in T.
 """
 import json
+import os
 import re
 import collections
 
@@ -49,10 +50,18 @@ def text(p):
     return ' '.join(str(p.get(k) or '') for k in ('loc_text', 'overview', 'points', 'selling_points'))
 
 
+_DB = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'developer_brands.json'), encoding='utf-8'))
+RESTRICTED = ['aricia', 'enlace suites ii', 'ayanna', 'est8', 'lunar', 'tangen', 'aurum', 'anya', 'avantro', 'luminar']   # never shown with a developer
+DEV_SLUG = {name: slug for slug, name, _k in _DB['brands']}
+
+
 def brand(p):
-    d = str((p.get('details_extra') or {}).get('Developer', '')).lower()
-    for k, name in BRANDS:
-        if k in d:
+    """The developer brand of a project (tools/developer_brands.json), or '' if unknown or restricted."""
+    if any(r in p['name'].lower() for r in RESTRICTED):
+        return ''
+    d = str((p.get('details_extra') or {}).get('Developer', '') or _DB['fill'].get(slugify(p['name']), '')).lower()
+    for _slug, name, keys in _DB['brands']:
+        if any(k in d for k in keys):
             return name
     return ''
 
@@ -93,7 +102,7 @@ def compute(P, SLUGS, PLACES):
         b = brand(p)
         if b:
             dev[b].append(i)
-    developers = {b: sorted(ix, key=lambda i: P[i]['name'].lower()) for b, ix in dev.items() if len(ix) >= 2}
+    developers = {b: sorted(ix, key=lambda i: P[i]['name'].lower()) for b, ix in dev.items()}
     # stations
     st = collections.defaultdict(lambda: {'lines': set(), 'ix': set()})
     for i, p in enumerate(P):
@@ -128,7 +137,7 @@ def compute(P, SLUGS, PLACES):
         pairs.append({'a': a, 'b': b, 'slug': '%s-vs-%s' % (SLUGS[a], SLUGS[b]), 'area': place(i)[1], 'state': place(i)[0]})
     pairs.sort(key=lambda x: (x['area'].lower(), P[x['a']]['name'].lower(), P[x['b']]['name'].lower()))
     return {
-        'developers': {b: {'slug': slugify(b), 'ix': ix} for b, ix in sorted(developers.items(), key=lambda x: x[0].lower())},
+        'developers': {b: {'slug': DEV_SLUG.get(b) or slugify(b), 'ix': ix} for b, ix in sorted(developers.items(), key=lambda x: (-len(x[1]), x[0].lower()))},
         'stations': {k: dict(v) for k, v in sorted(stations.items(), key=lambda x: x[1]['label'].lower())},
         'pairs': pairs,
     }
@@ -341,6 +350,8 @@ VALS = {
 }
 for _l, _v in VALS.items():
     T[_l].update(_v)
+for _l in T:
+    T[_l]['n_proj1'] = '{n} project' if _l == 'en' else T[_l]['n_proj']
 
 
 def val(s, tag='span', cls=''):
@@ -381,6 +392,8 @@ def js():
 def tx(key, tag='span', cls='', attrs='', **v):
     """An element whose text is T[lang][key] with v filled in; English is written into the HTML."""
     import html as _h
+    if key == 'n_proj' and str(v.get('n')) == '1':
+        key = 'n_proj1'
     s = T['en'][key]
     for k, val in v.items():
         s = s.replace('{%s}' % k, str(val))

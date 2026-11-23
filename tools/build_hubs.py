@@ -64,6 +64,40 @@ _DT = {
            'dv_c3': '최근 프로젝트를 제때 인도했는지 확인하세요.',
            'dv_c4': '관리비와 부대시설을 같은 개발사의 인근 다른 프로젝트와 비교하세요.'},
 }
+_DT2 = {
+    'en': {'dv2_h1': '{d}: Developer Profile & Projects ({y})', 'dv2_p': 'Who {d} is, what it has built, and every {d} project Keith lists in {places}, with starting prices and completion dates.',
+           'dv_since': 'founded', 'dv_listed': 'Listed on Bursa Malaysia', 'dv_track': 'Track record: completed projects', 'dv_awards': 'Awards',
+           'dv_where': 'Where {d} is building', 'dv_from': 'from {p}', 'dv_time': 'Current projects by completion year', 'dv_tba': 'No completion year yet', 'dv_done': 'Completed', 'dv_ltime': 'Projects by launch year', 'dv_lnone': 'Launch year not confirmed',
+           'dv_prices': 'Starting prices across {d} projects', 'dv_prices_n': 'Gross starting prices as shown on each project page. Prices change by phase and unit; ask Keith for the latest.',
+           'dv_others': 'Other developers', 'dev_idx_p2': 'Every developer with a project on keithnah.com, from the biggest to the boutique, each with a profile and all its projects on one page.',
+           'b_dev_all': 'All {n} developers →', 'dv_ontrack': 'on keithnah.com'},
+    'zh-CN': {'dv2_h1': '{d}：发展商简介与项目（{y}）', 'dv2_p': '{d} 是怎样的发展商、建过哪些项目，以及 Keith 在 {places} 列出的所有 {d} 项目，附起价和完工日期。',
+              'dv_since': '成立', 'dv_listed': '马来西亚交易所上市', 'dv_track': '过往成绩：已完工项目', 'dv_awards': '获得的奖项',
+              'dv_where': '{d} 在哪里建房', 'dv_from': '{p} 起', 'dv_time': '目前项目（按完工年份）', 'dv_tba': '尚无完工年份', 'dv_done': '已完工', 'dv_ltime': '项目（按发布年份）', 'dv_lnone': '发布年份待确认',
+              'dv_prices': '{d} 各项目起价', 'dv_prices_n': '起价为各项目页面显示的总价，会随期数和单位变化，最新价格请问 Keith。',
+              'dv_others': '其他发展商', 'dev_idx_p2': '在 keithnah.com 有项目的所有发展商，从大型到精品发展商，每家都有简介和全部项目。',
+              'b_dev_all': '全部 {n} 家发展商 →', 'dv_ontrack': '在 keithnah.com'},
+    'ms': {'dv2_h1': '{d}: Profil Pemaju & Projek ({y})', 'dv2_p': 'Siapa {d}, apa yang telah dibinanya, dan setiap projek {d} yang disenaraikan Keith di {places}, dengan harga permulaan dan tarikh siap.',
+           'dv_since': 'ditubuhkan', 'dv_listed': 'Tersenarai di Bursa Malaysia', 'dv_track': 'Rekod: projek yang telah siap', 'dv_awards': 'Anugerah',
+           'dv_where': 'Di mana {d} sedang membina', 'dv_from': 'dari {p}', 'dv_time': 'Projek semasa mengikut tahun siap', 'dv_tba': 'Tahun siap belum ada', 'dv_done': 'Telah siap', 'dv_ltime': 'Projek mengikut tahun pelancaran', 'dv_lnone': 'Tahun pelancaran belum disahkan',
+           'dv_prices': 'Harga permulaan projek {d}', 'dv_prices_n': 'Harga permulaan kasar seperti di halaman setiap projek. Harga berubah mengikut fasa dan unit; tanya Keith untuk harga terkini.',
+           'dv_others': 'Pemaju lain', 'dev_idx_p2': 'Setiap pemaju yang mempunyai projek di keithnah.com, besar dan kecil, masing-masing dengan profil dan semua projeknya di satu halaman.',
+           'b_dev_all': 'Kesemua {n} pemaju →', 'dv_ontrack': 'di keithnah.com'},
+    'ja': {'dv2_h1': '{d}：デベロッパー概要とプロジェクト（{y}）', 'dv2_p': '{d} はどんな会社か、これまでの実績、そして Keith が {places} で紹介している {d} の全プロジェクトを、開始価格と完成時期とともに。',
+           'dv_since': '設立', 'dv_listed': 'ブルサ・マレーシア上場', 'dv_track': '実績：完成済みプロジェクト', 'dv_awards': '受賞歴',
+           'dv_where': '{d} の開発エリア', 'dv_from': '{p} から', 'dv_time': '完成年別の現行プロジェクト', 'dv_tba': '完成年未定', 'dv_done': '完成済み', 'dv_ltime': '発売年別のプロジェクト', 'dv_lnone': '発売年未確認',
+           'dv_prices': '{d} 各プロジェクトの開始価格', 'dv_prices_n': '各プロジェクトページに表示の総額ベースの開始価格です。期や住戸で変わるため、最新価格は Keith にお問い合わせください。',
+           'dv_others': 'その他のデベロッパー', 'dev_idx_p2': 'keithnah.com にプロジェクトがあるすべてのデベロッパーを、大手からブティック系まで、概要と全プロジェクトとともに紹介します。',
+           'b_dev_all': '全 {n} 社のデベロッパー →', 'dv_ontrack': 'keithnah.com 掲載'},
+    'ko': {'dv2_h1': '{d}: 개발사 소개와 프로젝트 ({y})', 'dv2_p': '{d}는 어떤 회사인지, 무엇을 지었는지, 그리고 Keith가 {places}에서 소개하는 모든 {d} 프로젝트를 시작 가격, 완공 시기와 함께 정리했습니다.',
+           'dv_since': '설립', 'dv_listed': '부르사 말레이시아 상장', 'dv_track': '실적: 완공 프로젝트', 'dv_awards': '수상 경력',
+           'dv_where': '{d}가 짓고 있는 곳', 'dv_from': '{p}부터', 'dv_time': '완공 연도별 현재 프로젝트', 'dv_tba': '완공 연도 미정', 'dv_done': '완공', 'dv_ltime': '출시 연도별 프로젝트', 'dv_lnone': '출시 연도 미확인',
+           'dv_prices': '{d} 프로젝트별 시작 가격', 'dv_prices_n': '각 프로젝트 페이지에 표시된 총액 기준 시작 가격입니다. 단계와 세대에 따라 바뀌니 최신 가격은 Keith에게 문의하세요.',
+           'dv_others': '다른 개발사', 'dev_idx_p2': 'keithnah.com에 프로젝트가 있는 모든 개발사를 대형부터 부티크까지, 소개와 전체 프로젝트와 함께 한 페이지에 모았습니다.',
+           'b_dev_all': '전체 {n}개 개발사 →', 'dv_ontrack': 'keithnah.com 등록'},
+}
+for _l, _v in _DT2.items():
+    _DT[_l].update(_v)
 for _slug, _pf in DEVPROF.items():
     for _n, _fact in enumerate(_pf['facts']):
         for _l in _DT:
@@ -226,53 +260,153 @@ written = []
 home = ('../', TX('home'))
 
 # ---------- developer pages ----------
-for d, info in HUBS['developers'].items():
+DV2_CSS = ('.dvs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:24px}'
+           '.dvs div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px}.dvs b{display:block;font:700 24px Inter,sans-serif;color:#15142b}.dvs small{color:#55546b;font-weight:600;font-size:12.5px}'
+           '.dvs .aw{background:#1d1b4f;border-color:#1d1b4f}.dvs .aw b{color:#fff;font-size:17px;line-height:1.35}.dvs .aw small{color:#c9caff}'
+           '.dv-g2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.dv-tr li b,.dv-aw li b{display:block;color:#15142b}.dv-tr li span,.dv-aw li span{color:#6b6a80;font-size:13.5px}'
+           '.dv-aw li{padding-left:36px!important}.dv-aw li:before{content:"\\1F3C6"!important;background:none!important;width:auto!important;height:auto!important;top:8px!important;left:2px!important;font-size:17px}'
+           '.dv-rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}.dv-rg a{display:block;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;transition:border-color .2s,box-shadow .2s}'
+           '.dv-rg a:hover{border-color:var(--gold);box-shadow:0 10px 24px rgba(29,27,79,.08)}.dv-rg b{display:block;font:700 18px "Playfair Display",serif}.dv-rg small{color:#55546b;font-size:13px;font-weight:600}.dv-rg em{display:block;color:var(--gold);font-style:normal;font-weight:700;font-size:13.5px;margin-top:4px}'
+           '.dv-tl{position:relative;padding-left:26px}.dv-tl:before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(#5E60CE,#c9caff)}'
+           '.dv-yr{position:relative;margin-bottom:18px}.dv-yr:before{content:"";position:absolute;left:-24px;top:4px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--gold)}'
+           '.dv-yr h3{font:700 18px Inter,sans-serif;margin-bottom:8px;color:#15142b}.dv-yr .row{display:flex;flex-wrap:wrap;gap:8px}'
+           '.dv-yr a{display:inline-flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 14px;font-weight:700;font-size:14.5px;transition:border-color .2s}.dv-yr a:hover{border-color:var(--gold)}.dv-yr a small{font-weight:600;color:#6b6a80;font-size:12px}'
+           '.dv-pr{background:#fff;border:1px solid var(--line);border-radius:18px;padding:10px 18px}.dv-pr a{display:grid;grid-template-columns:minmax(0,1fr) 120px;gap:6px 12px;align-items:center;padding:9px 0;border-top:1px solid var(--line);font-size:14.5px}'
+           '.dv-pr a:first-child{border-top:0}.dv-pr a span{font-weight:600}.dv-pr a b{text-align:right;color:#15142b}.dv-pr i{grid-column:1/-1;display:block;height:6px;border-radius:6px;background:#eeedfb;overflow:hidden}.dv-pr i:after{content:"";display:block;height:100%;width:var(--w);background:linear-gradient(90deg,#5E60CE,#8f91ff);border-radius:6px}'
+           '.dv-pr a:hover span{color:var(--gold)}.dv-oth{display:flex;flex-wrap:wrap;gap:8px}.dv-oth a{background:#fff;border:1px solid var(--line);border-radius:100px;padding:8px 14px;font-weight:700;font-size:13.5px}.dv-oth a:hover{border-color:var(--gold);color:var(--gold)}'
+           '.dv-oth a b{color:var(--gold);margin-left:6px}'
+           '@media(max-width:820px){.dv-g2{grid-template-columns:1fr}.dvs{grid-template-columns:1fr 1fr}.dvs b{font-size:20px}}')
+
+
+LAUNCH = {k: v['y'] for k, v in json.load(open(os.path.join(HERE, 'project_launch.json'), encoding='utf-8')).items() if not k.startswith('_')}
+
+
+def comp_year(p):
+    c = str(p.get('completion') or '')
+    if c.lower().startswith('completed'):
+        return 'done'
+    m = re.search(r'(20\d\d)', c)
+    return m.group(1) if m else ''
+
+
+def dev_profile(d, slug):
+    """About, track record and awards (only facts checked against the listed sources), plus the buyer checklist."""
+    chk = ''.join('<li>%s</li>' % TX('dv_c%d' % n) for n in range(1, 5))
+    pf = DEVPROF.get(slug)
+    if not pf:
+        return '<section class="sec"><div class="w"><div class="dv-card dv-chk">%s<ul>%s</ul></div></div></section>' % (TX('dv_chk_h', tag='h2'), chk)
+    facts = ''.join('<li>%s</li>' % TX('dvf_%s_%d' % (slug, n)) for n in range(len(pf['facts'])))
+    src = ' '.join('<a href="%s" target="_blank" rel="noopener nofollow">%s</a>' % (html.escape(x['url']), html.escape(x['name'])) for x in pf['sources'])
+    out = '<section class="sec"><div class="w"><div class="dv-ab"><div class="dv-card">%s<ul>%s</ul><p class="dv-src">%s: %s</p></div><div class="dv-card dv-chk">%s<ul>%s</ul></div></div>' % (
+        TX('dv_about', tag='h2', d=d), facts, TX('dv_src'), src, TX('dv_chk_h', tag='h2'), chk)
+    tr, aw = pf.get('completed') or [], pf.get('awards') or []
+    if tr or aw:
+        out += '<div class="dv-g2">'
+        if tr:
+            out += '<div class="dv-card dv-tr">%s<ul>%s</ul></div>' % (TX('dv_track', tag='h2'), ''.join(
+                '<li><b>%s</b><span>%s</span></li>' % (E(x['name']), E(' · '.join(str(v) for v in (x.get('area'), x.get('year')) if v))) for x in tr))
+        if aw:
+            out += '<div class="dv-card dv-aw">%s<ul>%s</ul></div>' % (TX('dv_awards', tag='h2'), ''.join(
+                '<li><b>%s</b><span>%s</span></li>' % (E('%s %s' % (x.get('year', ''), x['title'])), E(x.get('project', ''))) for x in aw))
+        out += '</div>'
+    return out + '</div></section>'
+
+
+DEVS = list(HUBS['developers'].items())
+for d, info in DEVS:
     ix = info['ix']
+    slug = info['slug']
+    pf = DEVPROF.get(slug) or {}
     places = plain_places(ix)
-    prices = [(HB.price(P[i].get('price')), i) for i in ix if HB.price(P[i].get('price'))]
-    lo = min(prices) if prices else None
+    prices = sorted([(HB.price(P[i].get('price')), i) for i in ix if HB.price(P[i].get('price'))])
+    lo = prices[0] if prices else None
     fh = sum(1 for i in ix if 'freehold' in (P[i].get('tenure') or '').lower())
     states = []
     for i in ix:
-        s = IDX[i]['state']
-        if s not in states:
-            states.append(s)
+        if IDX[i]['state'] not in states:
+            states.append(IDX[i]['state'])
+    # stats strip
+    stats = '<div class="dvs"><div><b>%d</b>%s</div><div><b>%d</b>%s</div>' % (len(ix), TX('st_projects', tag='small'), len(states), TX('st_states', tag='small'))
+    if lo:
+        stats += '<div><b>%s</b>%s</div>' % (HB.rm(lo[0]), TX('st_low', tag='small'))
+    stats += '<div><b>%d</b>%s</div>' % (fh, TX('st_fh', tag='small'))
+    if pf.get('since'):
+        stats += '<div><b>%s</b>%s</div>' % (E(pf['since']), TX('dv_since', tag='small'))
+    if pf.get('listed'):
+        stats += '<div><b>%s</b>%s</div>' % (E(pf['listed']), TX('dv_listed', tag='small'))
+    if pf.get('awards'):
+        a0 = pf['awards'][0]
+        stats += '<div class="aw"><b>🏆 %s</b><small>%s</small></div>' % (E('%s %s' % (a0.get('year', ''), a0.get('short', a0['title']))), E(a0.get('project', '')))
+    stats += '</div>'
+    # where it builds
+    where = ''
+    if len(states) > 1 or len(ix) > 2:
+        cells = ''
+        for st in states:
+            mine = [i for i in ix if IDX[i]['state'] == st]
+            ps = [HB.price(P[i].get('price')) for i in mine if HB.price(P[i].get('price'))]
+            areas = []
+            for i in mine:
+                if IDX[i]['area'] not in areas:
+                    areas.append(IDX[i]['area'])
+            cells += '<a href="#st-%s"><b>%s</b><small>%s · %s</small>%s</a>' % (
+                HB.slugify(st), E(st), TX('n_proj', n=len(mine)), E(', '.join(areas[:3]) + ('…' if len(areas) > 3 else '')),
+                TX('dv_from', tag='em', p=HB.rm(min(ps))) if ps else '')
+        where = '<section class="sec"><div class="w">%s<div class="dv-rg">%s</div></div></section>' % (TX('dv_where', tag='h2', d=d), cells)
+    # timeline by launch year (tools/project_launch.json), newest first
+    yrs = {}
+    for i in ix:
+        yrs.setdefault(LAUNCH.get(IDX[i]['slug'], ''), []).append(i)
+    tl = ''
+    for y in sorted((k for k in yrs if k), reverse=True) + ([''] if '' in yrs else []):
+        tl += '<div class="dv-yr">%s<div class="row">%s</div></div>' % ('<h3>%s</h3>' % y if y else TX('dv_lnone', tag='h3'), ''.join(
+            '<a href="../property/%s.html">%s<small>%s</small></a>' % (IDX[i]['slug'], E(P[i]['name']), E(IDX[i]['area'])) for i in sorted(yrs[y], key=lambda k: P[k]['name'].lower())))
+    timeline = ''   # launch-year list kept off the page for now (data in tools/project_launch.json)
+    # project cards
     groups = ''
-    for s in states:
-        mine = [i for i in ix if IDX[i]['state'] == s]
-        groups += '<div class="grp" data-st="%s"><h3 class="grp">%s <small>· %s</small></h3><div class="cards">%s</div></div>' % (
-            E(s), E(s), TX('n_proj', n=len(mine)), ''.join(card(i) for i in mine))
-    chips = '<button class="chip on" data-f="">%s</button>' % TX('all') + ''.join('<button class="chip" data-f="%s">%s</button>' % (E(s), E(s)) for s in states) if len(states) > 1 else ''
+    for st in states:
+        mine = [i for i in ix if IDX[i]['state'] == st]
+        groups += '<div class="grp" data-st="%s" id="st-%s"><h3 class="grp">%s <small>· %s</small></h3><div class="cards">%s</div></div>' % (
+            E(st), HB.slugify(st), E(st), TX('n_proj', n=len(mine)), ''.join(card(i) for i in mine))
+    chips = '<button class="chip on" data-f="">%s</button>' % TX('all') + ''.join('<button class="chip" data-f="%s">%s</button>' % (E(st), E(st)) for st in states) if len(states) > 1 else ''
     filt = ('<script>document.querySelectorAll(".chip[data-f]").forEach(function(b){b.addEventListener("click",function(){var f=b.getAttribute("data-f");'
             'document.querySelectorAll(".chip[data-f]").forEach(function(x){x.classList.toggle("on",x===b)});document.querySelectorAll(".grp[data-st]").forEach(function(g){g.style.display=!f||g.getAttribute("data-st")===f?"":"none"});});});</script>') if chips else ''
+    # price list
+    plist = ''
+    if len(prices) > 1:
+        top = prices[-1][0]
+        plist = '<section class="sec"><div class="w">%s<div class="dv-pr">%s</div><p class="note">%s</p></div></section>' % (
+            TX('dv_prices', tag='h2', d=d), ''.join('<a href="../property/%s.html" style="--w:%d%%"><span>%s</span><b>%s</b><i></i></a>' % (
+                IDX[i]['slug'], max(6, round(v * 100 / top)), E(P[i]['name']), HB.rm(v)) for v, i in prices), TX('dv_prices_n'))
+    # other developers in the same states
+    oth = [(d2, v2) for d2, v2 in DEVS if d2 != d and {IDX[i]['state'] for i in v2['ix']} & set(states)][:14]
+    others = '<section class="sec"><div class="w">%s<div class="dv-oth">%s</div></div></section>' % (TX('dv_others', tag='h2'), ''.join(
+        '<a href="%s.html">%s<b>%d</b></a>' % (v2['slug'], E(d2), len(v2['ix'])) for d2, v2 in oth)) if oth else ''
     pl = ', '.join(places)
     faq = [(TX('dq1', tag='summary', d=d, y=Y), TX('da1', tag='p', n=len(ix), d=d, places=pl), 'dq1', 'da1', dict(d=d, y=Y), dict(n=len(ix), d=d, places=pl))]
     if lo:
         faq.append((TX('dq2', tag='summary', d=d), TX('da2', tag='p', p=HB.rm(lo[0]), name=P[lo[1]]['name']), 'dq2', 'da2', dict(d=d), dict(p=HB.rm(lo[0]), name=P[lo[1]]['name'])))
     faq.append((TX('dq3', tag='summary', d=d), TX('da3', tag='p', f=fh, n=len(ix), d=d), 'dq3', 'da3', dict(d=d), dict(f=fh, n=len(ix), d=d)))
     fill = lambda k, v: re.sub(r'\{(\w+)\}', lambda m: str(v.get(m.group(1), m.group(0))), HB.T['en'][k])
-    body = '''<main><section class="hero"><div class="w">%s%s%s%s
-<div class="stats"><div class="st"><b>%d</b>%s</div><div class="st"><b>%d</b>%s</div>%s<div class="st"><b>%d</b>%s</div></div></div></section>
-%s<section class="sec"><div class="w">%s<div class="chips">%s</div>%s</div></section>
-<section class="sec faq"><div class="w">%s%s</div></section>
-<section class="w"><div class="cta">%s%s<a href="%s" target="_blank" rel="noopener">WhatsApp Keith</a></div></section></main>%s''' % (
-        crumbs(home, ('index.html', TX('dev_crumb')), (None, E(d))), TX('dev_eb', cls='eb', y=Y), TX('dev_h1', tag='h1', d=d, y=Y), TX('dev_p', tag='p', d=d, places=pl),
-        len(ix), TX('st_projects', tag='small'), len(states), TX('st_states', tag='small'),
-        ('<div class="st"><b>%s</b>%s</div>' % (HB.rm(lo[0]), TX('st_low', tag='small'))) if lo else '', fh, TX('st_fh', tag='small'),
-        dev_about(d, info['slug']), TX('dev_all', tag='h2', d=d), chips, groups,
-        TX('faq_dev', tag='h2', d=d), ''.join('<details%s>%s%s</details>' % (' open' if n == 0 else '', q, a) for n, (q, a, *_r) in enumerate(faq)),
+    body = ('<style>%s%s</style><main><section class="hero"><div class="w">%s%s%s%s%s</div></section>\n'
+            '%s%s%s<section class="sec"><div class="w">%s<div class="chips">%s</div>%s</div></section>%s\n'
+            '<section class="sec faq"><div class="w">%s%s</div></section>%s\n'
+            '<section class="w"><div class="cta">%s%s<a href="%s" target="_blank" rel="noopener">WhatsApp Keith</a></div></section></main>%s') % (
+        DEV_CSS, DV2_CSS, crumbs(home, ('index.html', TX('dev_crumb')), (None, E(d))), TX('dev_eb', cls='eb', y=Y), TX('dv2_h1', tag='h1', d=d, y=Y), TX('dv2_p', tag='p', d=d, places=pl), stats,
+        dev_profile(d, slug), where, timeline, TX('dev_all', tag='h2', d=d), chips, groups, plist,
+        TX('faq_dev', tag='h2', d=d), ''.join('<details%s>%s%s</details>' % (' open' if n == 0 else '', q, a) for n, (q, a, *_r) in enumerate(faq)), others,
         TX('dev_cta', tag='h2', d=d), TX('cta_p', tag='p'), E(wa('Hi Keith, I am looking at %s projects.' % d)), filt)
-    ld = [bc_ld(('Home', 'https://keithnah.com/'), ('Developers', 'https://keithnah.com/developer/'), (d, 'https://keithnah.com/developer/%s.html' % info['slug'])),
+    ld = [bc_ld(('Home', 'https://keithnah.com/'), ('Developers', 'https://keithnah.com/developer/'), (d, 'https://keithnah.com/developer/%s.html' % slug)),
           item_list('%s new launch projects' % d, ix),
           {'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': fill(qk, qv), 'acceptedAnswer': {'@type': 'Answer', 'text': fill(ak, av)}} for (_q, _a, qk, ak, qv, av) in faq]}]
-    written.append(shell('developer/%s.html' % info['slug'], '%s New Launch Projects %d | Keith Nah' % (d, Y),
-                         '%d %s new launch projects in %s: starting prices from %s, tenure and completion dates, with floor plans.' % (len(ix), d, pl, HB.rm(lo[0]) if lo else 'request'),
+    written.append(shell('developer/%s.html' % slug, '%s Developer Profile & Projects %d | Keith Nah' % (d, Y),
+                         '%s: developer profile and %d project%s in %s, from %s. Completion years, tenure and floor plans.' % (d, len(ix), '' if len(ix) == 1 else 's', pl, HB.rm(lo[0]) if lo else 'price on request'),
                          body, ld, 'Hi Keith, I am looking at %s projects.' % d))
 
 body = '<main><section class="hero"><div class="w">%s%s%s</div></section><section class="sec"><div class="w"><div class="idx">%s</div></div></section></main>' % (
-    crumbs(home, (None, TX('dev_crumb'))), TX('dev_idx_h1', tag='h1', y=Y), TX('dev_idx_p', tag='p'),
-    ''.join('<a href="%s.html"><small>%s</small>%s</a>' % (v['slug'], TX('n_proj', n=len(v['ix'])), E(d)) for d, v in HUBS['developers'].items()))
-written.append(shell('developer/index.html', 'New Launch Projects by Developer %d | Keith Nah' % Y, 'Malaysian developers with more than one new launch project on keithnah.com, each with all their projects on one page.',
+    crumbs(home, (None, TX('dev_crumb'))), TX('dev_idx_h1', tag='h1', y=Y), TX('dev_idx_p2', tag='p'),
+    ''.join('<a href="%s.html"><small>%s</small>%s</a>' % (v['slug'], TX('n_proj', n=len(v['ix'])), E(d)) for d, v in DEVS))
+written.append(shell('developer/index.html', 'Property Developers in Malaysia %d: Profiles & Projects | Keith Nah' % Y, 'Every developer with a project on keithnah.com, each with a profile, completion years and all its projects on one page.',
                      body, [bc_ld(('Home', 'https://keithnah.com/'), ('Developers', 'https://keithnah.com/developer/'))], 'Hi Keith, I am looking at new launch projects.'))
 
 # ---------- station pages ----------
@@ -445,7 +579,7 @@ def put(path, start, end, block, anchor_fn):
     open(path, 'w', encoding='utf-8').write(t)
 
 
-dev_chips = ''.join('<a class="hb-chip" href="developer/%s.html">%s %s</a>' % (v['slug'], E(d), '<b>%d</b>' % len(v['ix'])) for d, v in HUBS['developers'].items())
+dev_chips = ''.join('<a class="hb-chip" href="developer/%s.html">%s %s</a>' % (v['slug'], E(d), '<b>%d</b>' % len(v['ix'])) for d, v in HUBS['developers'].items() if len(v['ix']) >= 2) + '<a class="hb-chip" href="developer/">%s</a>' % TX('b_dev_all', n=len(HUBS['developers']))
 stn_chips = ''.join('<a class="hb-chip" href="station/%s.html">🚆 %s</a>' % (s['slug'], E(s['label'])) for _n, s in stations)
 blk = ('<style>%s</style><section class="hb-wrap" id="byDeveloper">%s%s<div class="hb-chips">%s</div>'
        '<h2 style="margin-top:26px">%s</h2>%s<div class="hb-chips">%s</div></section>%s') % (

@@ -74,7 +74,7 @@
 "slug": "brixton-causeway-square",
 "state": "Johor",
 "area": "JB City Centre",
-"dev": ""
+"dev": "EXSIM (Causewayz Square @ JBCC)"
 },
 {
 "name": "Centrix",
@@ -235,7 +235,7 @@
 "slug": "parkside-residence",
 "state": "Kuala Lumpur",
 "area": "Bangsar",
-"dev": ""
+"dev": "S P Setia (Setia MF SFH Development Sdn Bhd)"
 },
 {
 "name": "Pavilion Square",
@@ -333,7 +333,7 @@
 "slug": "tagbay-suites",
 "state": "Melaka",
 "area": "Melaka City",
-"dev": ""
+"dev": "EXSIM"
 },
 {
 "name": "The Aldenz",
@@ -368,7 +368,7 @@
 "slug": "the-celestz",
 "state": "Johor",
 "area": "Kebun Teh",
-"dev": ""
+"dev": "EXSIM"
 },
 {
 "name": "The Conlay",
@@ -424,7 +424,7 @@
 "slug": "vi-residence",
 "state": "Penang",
 "area": "Batu Kawan",
-"dev": ""
+"dev": "Green Camour Property Sdn Bhd"
 },
 {
 "name": "Waterstone",
@@ -494,7 +494,7 @@
 "slug": "laurel-residence",
 "state": "Kuala Lumpur",
 "area": "Bangsar South",
-"dev": ""
+"dev": "UOA Development Bhd"
 },
 {
 "name": "M Aspira",
@@ -655,7 +655,7 @@
 "slug": "nara-at-shorea-park",
 "state": "Selangor",
 "area": "Puchong",
-"dev": ""
+"dev": "OSK Property (Aspect Potential Sdn Bhd)"
 },
 {
 "name": "Avantro Residences",
@@ -669,56 +669,56 @@
 "slug": "trinity-rainfora-residences",
 "state": "Selangor",
 "area": "Puchong",
-"dev": ""
+"dev": "Trinity Group"
 },
 {
 "name": "Danau Puchong",
 "slug": "danau-puchong",
 "state": "Selangor",
 "area": "Puchong",
-"dev": ""
+"dev": "YTL Land & Development"
 },
 {
 "name": "Erica Residence",
 "slug": "erica-residence",
 "state": "Selangor",
 "area": "Puchong",
-"dev": ""
+"dev": "Ayer Holdings (Bukit Hitam Development Sdn Bhd)"
 },
 {
 "name": "Loop Residences",
 "slug": "loop-residences",
 "state": "Selangor",
 "area": "Puchong",
-"dev": ""
+"dev": "Glomac Bhd (Glomac Al Batha Sdn Bhd)"
 },
 {
 "name": "The WYN Residences",
 "slug": "the-wyn-residences",
 "state": "Selangor",
 "area": "Puchong",
-"dev": ""
+"dev": "Land & General Bhd"
 },
 {
 "name": "Casa D'Arcadia",
 "slug": "casa-darcadia",
 "state": "Selangor",
 "area": "Shah Alam",
-"dev": ""
+"dev": "S P Setia (I&P Alam Impian Sdn Bhd)"
 },
 {
 "name": "Seri Embun",
 "slug": "seri-embun",
 "state": "Selangor",
 "area": "Shah Alam",
-"dev": ""
+"dev": "Eastern & Oriental (E&O)"
 },
 {
 "name": "Myra Senja @ Subang 2",
 "slug": "myra-senja-subang-2",
 "state": "Selangor",
 "area": "Shah Alam",
-"dev": ""
+"dev": "Myra (Oriental Interest Bhd, Myra Land Sdn Bhd)"
 },
 {
 "name": "Luminar Residence",
@@ -732,20 +732,20 @@
 "slug": "atwater-corporate-tower",
 "state": "Selangor",
 "area": "Petaling Jaya",
-"dev": ""
+"dev": "Paramount Property (Paramount Property Development Sdn Bhd)"
 },
 {
 "name": "Amara Residences",
 "slug": "amara-residences",
 "state": "Selangor",
 "area": "Ara Damansara",
-"dev": ""
+"dev": "Puncakdana Group (Luster Ara Sdn Bhd)"
 },
 {
 "name": "The Arden Bandar Sri Damansara",
 "slug": "the-arden-bandar-sri-damansara",
 "state": "Selangor",
 "area": "Bandar Sri Damansara",
-"dev": ""
+"dev": "TA Global Bhd"
 }
 ]

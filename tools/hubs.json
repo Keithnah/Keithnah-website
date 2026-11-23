@@ -1,17 +1,11 @@
 {
 "developers": {
-"Chin Hin": {
-"slug": "chin-hin",
-"ix": [
-77,
-17
-]
-},
-"Exsim": {
+"EXSIM": {
 "slug": "exsim",
 "ix": [
 8,
 9,
+10,
 14,
 75,
 74,
@@ -22,20 +16,90 @@
 29,
 35,
 65,
+47,
 48,
 49,
 66,
+52,
 54,
 55,
 56,
 57
 ]
 },
-"Kerjaya": {
+"Sunsuria": {
+"slug": "sunsuria",
+"ix": [
+91,
+90,
+39,
+45
+]
+},
+"Paramount Property": {
+"slug": "paramount",
+"ix": [
+104,
+42,
+51
+]
+},
+"Pavilion Group": {
+"slug": "pavilion",
+"ix": [
+23,
+34,
+41
+]
+},
+"TA Global": {
+"slug": "ta-global",
+"ix": [
+3,
+12,
+106
+]
+},
+"Berjaya": {
+"slug": "berjaya",
+"ix": [
+31,
+58
+]
+},
+"Chin Hin Property": {
+"slug": "chin-hin",
+"ix": [
+77,
+17
+]
+},
+"Eastern & Oriental (E&O)": {
+"slug": "eo",
+"ix": [
+101,
+53
+]
+},
+"GSD Land": {
+"slug": "gsd",
+"ix": [
+15,
+21
+]
+},
+"Kerjaya Prospek Property": {
 "slug": "kerjaya",
 "ix": [
 4,
 43
+]
+},
+"Land & General": {
+"slug": "land-general",
+"ix": [
+27,
+99
 ]
 },
 "Mah Sing": {
@@ -52,26 +116,272 @@
 44
 ]
 },
-"Paramount": {
-"slug": "paramount",
+"Puncakdana Group": {
+"slug": "puncakdana",
 "ix": [
-42,
-51
+105,
+6
 ]
 },
-"Pavilion": {
-"slug": "pavilion",
+"R&F Development": {
+"slug": "rf",
 "ix": [
-23,
-34,
-41
+88,
+87
 ]
 },
-"TA Global": {
-"slug": "ta-global",
+"S P Setia": {
+"slug": "sp-setia",
 "ix": [
-3,
-12
+100,
+33
+]
+},
+"UOA Group": {
+"slug": "uoa",
+"ix": [
+2,
+70
+]
+},
+"Arte Corp": {
+"slug": "arte",
+"ix": [
+79
+]
+},
+"Aspen Group": {
+"slug": "aspen",
+"ix": [
+30
+]
+},
+"Astaka": {
+"slug": "astaka",
+"ix": [
+5
+]
+},
+"Avaland": {
+"slug": "avaland",
+"ix": [
+1
+]
+},
+"Ayer Holdings": {
+"slug": "ayer",
+"ix": [
+97
+]
+},
+"BRDB": {
+"slug": "brdb",
+"ix": [
+0
+]
+},
+"BSG Property": {
+"slug": "bsg",
+"ix": [
+61
+]
+},
+"Core Precious Development": {
+"slug": "core-precious",
+"ix": [
+13
+]
+},
+"Crest Builder": {
+"slug": "crest",
+"ix": [
+11
+]
+},
+"EcoWorld": {
+"slug": "ecoworld",
+"ix": [
+46
+]
+},
+"Ehsan Bina Group": {
+"slug": "ehsan-bina",
+"ix": [
+20
+]
+},
+"FYT Land": {
+"slug": "fyt",
+"ix": [
+68
+]
+},
+"Gaya Kuasa": {
+"slug": "gaya-kuasa",
+"ix": [
+38
+]
+},
+"Glomac": {
+"slug": "glomac",
+"ix": [
+98
+]
+},
+"Golden Eagle Group": {
+"slug": "golden-eagle",
+"ix": [
+22
+]
+},
+"Green Camour Property": {
+"slug": "green-camour",
+"ix": [
+60
+]
+},
+"GSH Corporation": {
+"slug": "gsh",
+"ix": [
+19
+]
+},
+"Ideal Property": {
+"slug": "ideal",
+"ix": [
+37
+]
+},
+"IJM Land": {
+"slug": "ijm",
+"ix": [
+85
+]
+},
+"KL Metro Group": {
+"slug": "kl-metro",
+"ix": [
+40
+]
+},
+"Majestic Gen": {
+"slug": "majestic-gen",
+"ix": [
+82
+]
+},
+"Malton": {
+"slug": "malton",
+"ix": [
+69
+]
+},
+"Maxim Global": {
+"slug": "maxim",
+"ix": [
+50
+]
+},
+"Melati Ehsan Group": {
+"slug": "melati-ehsan",
+"ix": [
+26
+]
+},
+"MRCB": {
+"slug": "mrcb",
+"ix": [
+59
+]
+},
+"Myra (Oriental Interest)": {
+"slug": "myra",
+"ix": [
+102
+]
+},
+"OCR Group": {
+"slug": "ocr",
+"ix": [
+76
+]
+},
+"OSK Property": {
+"slug": "osk",
+"ix": [
+93
+]
+},
+"ParkCity Group": {
+"slug": "parkcity",
+"ix": [
+63
+]
+},
+"Pinnacle Bukit Gambir": {
+"slug": "pinnacle",
+"ix": [
+36
+]
+},
+"SCP Group": {
+"slug": "scp",
+"ix": [
+62
+]
+},
+"Serene Impian Development": {
+"slug": "serene-impian",
+"ix": [
+72
+]
+},
+"Symphony Life": {
+"slug": "symphony",
+"ix": [
+7
+]
+},
+"Trinity Group": {
+"slug": "trinity",
+"ix": [
+95
+]
+},
+"TSLAW Land": {
+"slug": "tslaw",
+"ix": [
+64
+]
+},
+"TSR Development": {
+"slug": "tsr",
+"ix": [
+16
+]
+},
+"VST Group": {
+"slug": "vst",
+"ix": [
+28
+]
+},
+"WCT Land": {
+"slug": "wct",
+"ix": [
+78
+]
+},
+"Welton Group": {
+"slug": "welton",
+"ix": [
+32
+]
+},
+"YTL Land": {
+"slug": "ytl",
+"ix": [
+96
 ]
 }
 },
