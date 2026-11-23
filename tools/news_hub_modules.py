@@ -31,8 +31,9 @@ UI = {
     'np_all': L('See all projects →', '查看全部项目 →', '查看全部項目 →', 'Lihat semua projek →', 'すべてのプロジェクト →', '전체 프로젝트 보기 →'),
     'por': L('Price on Request', '价格请询问', '價格請洽詢', 'Harga atas permintaan', '価格はお問い合わせ', '가격 문의'),
     'kd_e': L('Key dates', '重要日期', '重要日期', 'Tarikh penting', '重要な日程', '주요 일정'),
-    'kd_h': L('Coming up for buyers', '买家要留意的日子', '買家要留意的日子', 'Akan datang untuk pembeli', '購入者が注目する予定', '구매자가 주목할 일정'),
-    'kd_n': L('Target dates can move; Keith updates this list when they do.', '目标日期可能更改，Keith 会随时更新。', '目標日期可能更改，Keith 會隨時更新。',
+    'kd_h': L('Timeline for buyers', '买家时间表', '買家時間表', 'Garis masa untuk pembeli', '購入者のためのタイムライン', '구매자를 위한 타임라인'),
+    'kd_today': L('Today', '今天', '今天', 'Hari ini', '今日', '오늘'),
+    'kd_n': L('Target dates can move; Keith updates this timeline when they do.', '目标日期可能更改，Keith 会随时更新这个时间表。', '目標日期可能更改，Keith 會隨時更新這個時間表。',
               'Tarikh sasaran boleh berubah; Keith akan mengemas kini senarai ini.', '目標日は変わることがあります。変更があれば Keith が更新します。', '목표 날짜는 바뀔 수 있으며, 바뀌면 Keith가 업데이트합니다.'),
     'ar_e': L('By area', '按地区看新闻', '按地區看新聞', 'Mengikut kawasan', 'エリア別', '지역별'),
     'ar_h': L('News where you are looking', '你关注地区的新闻', '你關注地區的新聞', 'Berita di kawasan pilihan anda', '気になるエリアのニュース', '관심 지역 뉴스'),
@@ -41,19 +42,28 @@ UI = {
     'tl_h': L('Work out your numbers', '算一算你的数字', '算一算你的數字', 'Kira angka anda', '数字を確認する', '숫자 계산해 보기'),
     'open': L('Open →', '打开 →', '打開 →', 'Buka →', '開く →', '열기 →'),
 }
-DATES = [
-    (L('12 Dec 2026', '2026年12月12日', '2026年12月12日', '12 Dis 2026', '2026年12月12日', '2026년 12월 12일'), 'Malaysia',
-     L('ECRL passenger services begin (target)', 'ECRL 东海岸铁路客运开通（目标）', 'ECRL 東海岸鐵路客運開通（目標）', 'Perkhidmatan penumpang ECRL bermula (sasaran)', 'ECRL 旅客運行開始（目標）', 'ECRL 여객 운행 시작 (목표)'),
-     L('East Coast Rail Link to Gombak; subject to final approvals.', '东海岸铁路连接鹅唛，仍需最终批准。', '東海岸鐵路連接鵝嘜，仍需最終批准。', 'Laluan Rel Pantai Timur ke Gombak; tertakluk kepada kelulusan akhir.',
-       '東海岸鉄道でゴンバックへ。最終承認が条件です。', '동해안 철도, 곰박까지. 최종 승인이 필요합니다.')),
-    (L('21 Jan 2027', '2027年1月21日', '2027年1月21日', '21 Jan 2027', '2027年1月21日', '2027년 1월 21일'), 'Malaysia',
+# Timeline of key dates: (date for the countdown, day label, year, area, kind, title, note, colour). Past items fade and show "Done".
+TIMELINE = [
+    ('2026-12-12', L('12 Dec', '12月12日', '12月12日', '12 Dis', '12月12日', '12월 12일'), '2026', 'Malaysia', 'rail',
+     L('ECRL passenger services begin', 'ECRL 东海岸铁路客运开通', 'ECRL 東海岸鐵路客運開通', 'Perkhidmatan penumpang ECRL bermula', 'ECRL 旅客運行開始', 'ECRL 여객 운행 시작'),
+     L('Gombak to Kuantan, Kuala Terengganu and Kota Bharu. Target date, subject to final safety approval.', '鹅唛通往关丹、瓜拉登嘉楼和哥打巴鲁。目标日期，仍需最终安全批准。', '鵝嘜通往關丹、瓜拉登嘉樓和哥打巴魯。目標日期，仍需最終安全批准。',
+       'Gombak ke Kuantan, Kuala Terengganu dan Kota Bharu. Tarikh sasaran, tertakluk kepada kelulusan keselamatan akhir.', 'ゴンバックからクアンタン、クアラ・トレンガヌ、コタバルへ。目標日で、最終的な安全承認が条件です。', '곰박에서 콴탄, 쿠알라 트렝가누, 코타바루까지. 목표일이며 최종 안전 승인이 필요합니다.'), '#0b8f6b'),
+    ('2027-01-01', L('1 Jan', '1月1日', '1月1日', '1 Jan', '1月1日', '1월 1일'), '2027', 'Malaysia', 'tax',
+     L('First-home stamp duty: proposed extension', '首购印花税豁免：建议延长', '首購印花稅豁免：建議延長', 'Duti setem rumah pertama: cadangan lanjutan', '初回購入の印紙税免除：延長案', '첫 주택 인지세 면제: 연장안'),
+     L('Budget 2027 proposes the exemption for SPAs signed from 2027 to 2030. Not law until passed.', '2027 年财政预算案建议豁免适用于 2027 至 2030 年签的买卖合约，通过前还不是法律。', '2027 年財政預算案建議豁免適用於 2027 至 2030 年簽的買賣合約，通過前還不是法律。',
+       'Belanjawan 2027 mencadangkan pengecualian bagi SPA ditandatangani dari 2027 hingga 2030. Belum menjadi undang-undang sehingga diluluskan.', '2027年度予算案は2027〜2030年に締結する売買契約への免除を提案。成立するまでは法律ではありません。', '2027년 예산안은 2027~2030년에 체결하는 매매계약에 면제를 제안했습니다. 통과 전까지는 법이 아닙니다.'), '#e8590c'),
+    ('2027-01-21', L('21 Jan', '1月21日', '1月21日', '21 Jan', '1月21日', '1월 21일'), '2027', 'Malaysia', 'rates',
      L('Bank Negara: first OPR meeting of 2027', '国行 2027 年首次议息会议', '國行 2027 年首次議息會議', 'Bank Negara: mesyuarat OPR pertama 2027', 'マレーシア中銀：2027年最初の OPR 会合', '중앙은행: 2027년 첫 OPR 회의'),
-     L('The OPR has been 2.75% since July 2025.', '隔夜政策利率自 2025 年 7 月起为 2.75%。', '隔夜政策利率自 2025 年 7 月起為 2.75%。', 'OPR kekal 2.75% sejak Julai 2025.', 'OPR は 2025 年 7 月から 2.75% です。', 'OPR은 2025년 7월부터 2.75%입니다.')),
-    (L('Feb 2027', '2027年2月', '2027年2月', 'Feb 2027', '2027年2月', '2027년 2월'), 'Johor',
-     L('RTS Link Johor Bahru–Singapore opens (target)', '新山—新加坡 RTS 通车（目标）', '新山—新加坡 RTS 通車（目標）', 'RTS Link Johor Bahru–Singapura dibuka (sasaran)', 'ジョホールバル–シンガポール RTS 開業（目標）', '조호르바루–싱가포르 RTS 개통 (목표)'),
-     L('Bukit Chagar to Woodlands North.', 'Bukit Chagar 至 Woodlands North。', 'Bukit Chagar 至 Woodlands North。', 'Bukit Chagar ke Woodlands North.', 'Bukit Chagar から Woodlands North まで。', 'Bukit Chagar에서 Woodlands North까지.')),
+     L('The OPR has been 2.75% since July 2025.', '隔夜政策利率自 2025 年 7 月起为 2.75%。', '隔夜政策利率自 2025 年 7 月起為 2.75%。', 'OPR kekal 2.75% sejak Julai 2025.', 'OPR は2025年7月から2.75%です。', 'OPR은 2025년 7월부터 2.75%입니다.'), '#5E60CE'),
+    ('2027-02-01', L('Feb', '2月', '2月', 'Feb', '2月', '2월'), '2027', 'Johor', 'rail',
+     L('RTS Link Johor Bahru–Singapore opens', '新山—新加坡 RTS 通车', '新山—新加坡 RTS 通車', 'RTS Link Johor Bahru–Singapura dibuka', 'ジョホールバル–シンガポール RTS 開業', '조호르바루–싱가포르 RTS 개통'),
+     L('Bukit Chagar to Woodlands North. Target month.', 'Bukit Chagar 至 Woodlands North。目标月份。', 'Bukit Chagar 至 Woodlands North。目標月份。', 'Bukit Chagar ke Woodlands North. Bulan sasaran.', 'Bukit Chagar から Woodlands North まで。目標の月です。', 'Bukit Chagar에서 Woodlands North까지. 목표 월입니다.'), '#9333ea'),
+    ('2028-01-01', L('Jan', '1月', '1月', 'Jan', '1月', '1월'), '2028', 'Selangor', 'rail',
+     L('ECRL Phase 2 towards Port Klang', 'ECRL 第二阶段通往巴生港口', 'ECRL 第二階段通往巴生港口', 'ECRL Fasa 2 ke Pelabuhan Klang', 'ECRL 第2期、ポートクラン方面へ', 'ECRL 2단계, 포트 클랑 방향'),
+     L('Serendah, Puncak Alam and Kapar stations. Target.', '士毛月、本地阿南和加埔设站。目标。', '士毛月、本地阿南和加埔設站。目標。', 'Stesen Serendah, Puncak Alam dan Kapar. Sasaran.', 'スレンダ、プンチャック・アラム、カパーに駅。目標です。', '스렌다, 푼착 알람, 카파르 역. 목표입니다.'), '#0b8f6b'),
 ]
-AREA_TX = {'Malaysia': L('Malaysia', '马来西亚', '馬來西亞', 'Malaysia', 'マレーシア', '말레이시아'), 'Johor': L('Johor', '柔佛', '柔佛', 'Johor', 'ジョホール', '조호르')}
+KIND_TX = {'rail': L('Rail', '铁路', '鐵路', 'Rel', '鉄道', '철도'), 'tax': L('Tax', '税务', '稅務', 'Cukai', '税金', '세금'), 'rates': L('Rates', '利率', '利率', 'Kadar', '金利', '금리')}
+AREA_TX = {'Malaysia': L('Malaysia', '马来西亚', '馬來西亞', 'Malaysia', 'マレーシア', '말레이시아'), 'Johor': L('Johor', '柔佛', '柔佛', 'Johor', 'ジョホール', '조호르'), 'Selangor': L('Selangor', '雪兰莪', '雪蘭莪', 'Selangor', 'セランゴール', '슬랑오르')}
 AREAS = [('Kuala Lumpur', 'area/kuala-lumpur.html'), ('Selangor', 'area/selangor.html'), ('Penang', 'area/penang.html'), ('Johor', 'area/johor.html')]
 TOOLS = [('calculator.html', 'M4 3h16v18H4zM8 7h8M8 11h2M12 11h2M8 15h2M12 15h2M8 19h8',
           L('Loan & cost calculator', '贷款与费用计算器', '貸款與費用計算器', 'Kalkulator pinjaman & kos', 'ローンと費用の計算', '대출·비용 계산기'),
@@ -143,10 +153,20 @@ def build():
     launch = ('<section class="nh-sec" id="new-projects"><div class="nh-w"><span class="nh-eb">%s</span><h2 class="nh-h2">%s</h2><div class="nh-proj">%s</div>'
               '<div class="nh-more"><a href="projects.html">%s</a></div></div></section>') % (u('np_e'), u('np_h'), cards, u('np_all')) if cards else ''
     # 4 Key dates
-    rows = ''.join('<div><b>%s</b><span><i>%s</i>%s<small>%s</small></span></div>' % (
-        span('kd%dd' % k, d), span('kd%da' % k, AREA_TX[a]), span('kd%dh' % k, h), span('kd%ds' % k, s)) for k, (d, a, h, s) in enumerate(DATES))
-    dates = ('<section class="nh-sec" id="key-dates"><div class="nh-w"><span class="nh-eb">%s</span><h2 class="nh-h2">%s</h2><div class="nh-dates">%s</div>'
-             '<p class="nh-note">%s</p></div></section>') % (u('kd_e'), u('kd_h'), rows, u('kd_n'))
+    items = ''.join('<li class="tl-i" data-d="%s" style="--c:%s"><div class="tl-dot"></div><div class="tl-when"><b>%s</b><span>%s</span><em class="tl-cd"></em></div>'
+                    '<div class="tl-card"><div class="tl-tags"><i>%s</i><i class="k">%s</i></div><h3>%s</h3><p>%s</p></div></li>' % (
+        iso, c, span('kd%dd' % k, d), y, span('kd%da' % k, AREA_TX[a]), span('kd%dk' % k, KIND_TX[kd]), span('kd%dh' % k, h), span('kd%ds' % k, sn))
+        for k, (iso, d, y, a, kd, h, sn, c) in enumerate(TIMELINE))
+    CD = json.dumps({'days': L('in {n} days', '还有 {n} 天', '還有 {n} 天', 'lagi {n} hari', 'あと{n}日', '{n}일 남음'), 'day1': L('tomorrow', '明天', '明天', 'esok', '明日', '내일'),
+                     'months': L('in {n} months', '还有 {n} 个月', '還有 {n} 個月', 'lagi {n} bulan', 'あと{n}か月', '{n}개월 남음'), 'done': L('Done', '已过', '已過', 'Selesai', '終了', '지남'),
+                     'today0': L('today', '今天', '今天', 'hari ini', '今日', '오늘')}, ensure_ascii=False)
+    dates = ('<section class="tl-sec" id="key-dates"><div class="nh-w"><div class="tl-head"><div><span class="nh-eb">%s</span><h2 class="nh-h2" style="margin-bottom:0">%s</h2></div>'
+             '<span class="tl-now"><i></i>%s · <b></b></span></div><ol class="tl">%s</ol><p class="tl-note">%s</p></div></section>'
+             '<script>(function(){var C=%s;function lg(){var l="en";try{l=document.documentElement.getAttribute("data-page-lang")||localStorage.getItem("kn_lang")||"en"}catch(e){}return C.done[l]?l:"en";}'
+             'function go(){var l=lg(),now=new Date();document.querySelectorAll(".tl-i").forEach(function(li){var d=new Date(li.getAttribute("data-d")+"T00:00:00+08:00"),days=Math.ceil((d-now)/864e5),e=li.querySelector(".tl-cd");'
+             'li.classList.toggle("past",days<0);e.textContent=days<0?C.done[l]:days==0?C.today0[l]:days==1?C.day1[l]:days<60?C.days[l].replace("{n}",days):C.months[l].replace("{n}",Math.round(days/30.4));});'
+             'var n=document.querySelector(".tl-now b");if(n)try{n.textContent=now.toLocaleDateString(l,{day:"numeric",month:"short",year:"numeric"})}catch(x){n.textContent=now.toDateString()}}'
+             'go();var w=window.knSetLang;if(typeof w==="function"){window.knSetLang=function(){var r=w.apply(this,arguments);go();return r;};}})();</script>') % (u('kd_e'), u('kd_h'), u('kd_today'), items, u('kd_n'), CD)
     # 5 By area
     tabs = panes = ''
     for k, (a, href) in enumerate(AREAS):
@@ -191,6 +211,20 @@ CSS = '''<style>
 .nh-tools{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:30px}.nh-tools a{display:flex;flex-direction:column;background:linear-gradient(135deg,#5E60CE,#7c7ee6);color:#fff;border-radius:20px;padding:22px;box-shadow:0 14px 30px rgba(94,96,206,.25);transition:transform .2s}
 .nh-tools a:hover{transform:translateY(-3px)}.nh-tools .ic{width:46px;height:46px;border-radius:13px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}.nh-tools svg{width:24px;height:24px}
 .nh-tools b{font:700 19px 'Playfair Display',serif;margin:14px 0 6px;color:#fff}.nh-tools small{color:#e6e6fb;font-size:14px;line-height:1.5}.nh-tools em{margin-top:14px;font-style:normal;font-weight:700}
+.tl-sec{position:relative;overflow:hidden;isolation:isolate;padding:56px 0 50px;margin-top:40px;background:radial-gradient(600px 300px at 90% 10%,rgba(94,96,206,.20),transparent 65%),radial-gradient(520px 300px at 5% 100%,rgba(186,170,255,.30),transparent 65%),linear-gradient(180deg,#f1effc,#f6f4fb)}
+.tl-sec:before{content:"";position:absolute;inset:0;z-index:-1;background-image:radial-gradient(rgba(94,96,206,.14) 1.2px,transparent 1.4px);background-size:24px 24px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 60%);mask-image:linear-gradient(90deg,transparent,#000 60%)}
+.tl-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}.tl-now{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:100px;padding:8px 14px;font:700 13px Inter,sans-serif;color:#1d1b4f;box-shadow:0 6px 16px rgba(29,27,79,.08)}
+.tl-now i{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:tlp 1.8s infinite}@keyframes tlp{70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.tl{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;position:relative}
+.tl:before{content:"";position:absolute;left:0;right:0;top:9px;height:3px;border-radius:3px;background:linear-gradient(90deg,#5E60CE,#a9abff 70%,rgba(169,171,255,.25))}
+.tl-i{position:relative;padding-top:30px}.tl-dot{position:absolute;top:0;left:0;width:21px;height:21px;border-radius:50%;background:#fff;border:5px solid var(--c);box-shadow:0 4px 10px rgba(29,27,79,.18)}
+.tl-when b{display:block;font:700 26px/1.1 'Playfair Display',serif;color:#15142b}.tl-when span{font:700 13px Inter,sans-serif;color:#77768c;letter-spacing:.08em}
+.tl-cd{display:inline-block;margin-left:8px;font:700 11.5px Inter,sans-serif;font-style:normal;color:#fff;background:var(--c);padding:3px 8px;border-radius:100px;vertical-align:2px}
+.tl-card{margin-top:12px;background:#fff;border-radius:18px;padding:16px;border-top:4px solid var(--c);box-shadow:0 12px 28px rgba(29,27,79,.08);min-height:150px}
+.tl-tags{display:flex;gap:6px;flex-wrap:wrap}.tl-tags i{font:700 10.5px Inter,sans-serif;font-style:normal;letter-spacing:.1em;text-transform:uppercase;color:#55546b;background:#f3f1fa;padding:3px 8px;border-radius:100px}.tl-tags i.k{color:var(--c)}
+.tl-card h3{font:700 16.5px/1.3 'Playfair Display',serif;color:#15142b;margin:10px 0 6px}.tl-card p{font-size:13px;line-height:1.55;color:#55546b;margin:0}
+.tl-i.past{opacity:.45}.tl-note{color:#77768c;font-size:12.5px;margin-top:16px}
+@media(max-width:1000px){.tl{grid-template-columns:1fr;gap:0;padding-left:34px}.tl:before{left:9px;right:auto;top:0;bottom:0;width:3px;height:auto;background:linear-gradient(180deg,#5E60CE,#a9abff 70%,rgba(169,171,255,.25))}.tl-i{padding:0 0 22px}.tl-dot{left:-34px;top:2px}.tl-card{min-height:0}}
 @media(max-width:1000px){.nh-proj,.nh-list{grid-template-columns:1fr 1fr}.nh-dates,.nh-tools{grid-template-columns:1fr}.nh-week{grid-template-columns:1fr}}
 @media(max-width:560px){.nh-list{grid-template-columns:1fr}.nh-proj{gap:10px}.nh-proj b{font-size:15px}.nh-proj span{padding:10px}.nh-lead{padding:22px}}
 </style>'''
