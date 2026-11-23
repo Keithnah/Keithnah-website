@@ -20,7 +20,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 os.chdir(ROOT)
-PAGES = ['index.html', 'projects.html', 'blog.html', 'compare.html', 'calculator.html', 'market-notes.html']
+PAGES = ['index.html', 'projects.html', 'blog.html', 'compare.html', 'calculator.html', 'market-notes.html', 'buying-guide.html', 'faq.html', 'articles.html']
 DATA = 'assets/data'
 MIN = 15000
 EXT = re.compile(r'<script src="assets/data/([a-z0-9-]+\.js)\?v=[0-9a-f]+" data-kn-inline="([^"]*)"></script>')

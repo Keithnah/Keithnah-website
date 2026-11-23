@@ -54,7 +54,7 @@ L = {  # key: [en, zh-CN, zh-TW, ms, ja, ko]
     'h2h': ['Compare All Projects', '比较全部项目', '比較全部項目', 'Bandingkan Semua Projek', '全物件を比較', '전체 프로젝트 비교'],
     'fum': ['Understand Malaysia', '了解马来西亚', '了解馬來西亞', 'Kenali Malaysia', 'マレーシアを知る', '말레이시아 이해하기'],
     'faq': ['Common FAQ', '常见问题', '常見問題', 'Soalan Lazim', 'よくある質問', '자주 묻는 질문'],
-    'blogs': ['Blogs', '文章', '文章', 'Blog', 'ブログ', '블로그'],
+    'blogs': ['Articles', '文章', '文章', 'Artikel', '記事', '기사'],
     'fareas': ['Free Area Guide Download', '免费地区指南下载', '免費地區指南下載', 'Muat Turun Panduan Kawasan Percuma', '無料エリアガイドをダウンロード', '무료 지역 가이드 다운로드'],
     'fmm2h': ['Free MM2H Guide', '免费 MM2H 指南', '免費 MM2H 指南', 'Panduan MM2H Percuma', '無料 MM2H ガイド', '무료 MM2H 가이드'],
     'fwatch': ['Free to Watch', '免费观看视频', '免費觀看影片', 'Tonton Percuma', '無料で動画を見る', '무료 영상 보기'],
@@ -69,7 +69,7 @@ MENU = {
     'compare.html': [('h2h', 'compare.html#cmpFilters'), ('vs', 'vs/index.html'), ('popular', 'compare.html#popular')],
     'foreign-buyers.html': [('fcheck', 'foreign-buyers.html#check'), ('fbest', 'foreign-buyers.html#best'), ('fcost', 'foreign-buyers.html#costs'),
                             ('fsteps', 'foreign-buyers.html#steps'), ('mm2h', 'mm2h.html'), ('fum', 'foreign-buyers.html#understand'), ('faq', 'foreign-buyers.html#faq')],
-    'blog.html': [('notes', 'market-notes.html'), ('guide', 'blog.html#buying-guide'), ('data', 'market-data.html'), ('faq', 'blog.html#faq'), ('blogs', 'blog.html#blog')],
+    'blog.html': [('notes', 'market-notes.html'), ('guide', 'buying-guide.html'), ('data', 'market-data.html'), ('faq', 'faq.html'), ('blogs', 'articles.html')],
     'resources.html': [('fareas', 'resources.html#guides'), ('fmm2h', 'mm2h.html'), ('fwatch', 'https://www.youtube.com/@KeithNahRealEstate/videos'), ('fcalc', 'calculator.html'), ('fadvice', WA)],
     'about-keith.html': [('contact', 'about-keith.html#quickEnquiry')],
 }

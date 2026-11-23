@@ -6,3 +6,5 @@
 - After adding or changing any project: classify it (state, zone, area), rebuild the site, regenerate
   WEBSITE_PROJECT.xlsx and send it to Keith. Steps: `tools/NEW_PROJECT_CHECKLIST.md`.
 - Reply to Keith in Chinese. "给我看先" = preview only; "上线" = publish.
+- "Airbnb" may appear in news/articles, but never in project descriptions (never say a project can do Airbnb).
+  Projects built for short stays (e.g. MABA Suitez, Hanaz Suites) may be described as "short-term rental".

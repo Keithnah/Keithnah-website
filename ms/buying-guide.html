@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="ms" dir="ltr" data-page-lang="ms"><head><base href="/">
+<script id="kn-lang-url">(function(){var M={"zh-CN":"zh","zh-TW":"zh-tw","ms":"ms","ja":"ja","ko":"ko"},R=/^\/(zh|zh-tw|ms|ja|ko)(\/.*)$/,p=location.pathname,m=p.match(R),P=document.documentElement.getAttribute('data-page-lang')||'en',en=m?m[2]:p;
+function u(l){return (l==='en'?'':'/'+M[l])+en+location.search+location.hash;}window.knLangUrl=u;
+var S=Storage.prototype.setItem;function go(l){if(window.KN_RENDER||l===P||(l!=='en'&&!M[l]))return;location.href=u(l);}
+Storage.prototype.setItem=function(k,v){S.apply(this,arguments);if(k==='kn_lang'&&this===window.localStorage)go(String(v));};
+if(P!=='en')['pushState','replaceState'].forEach(function(n){var f=history[n];history[n]=function(s,t,x){if(x!=null&&!/^[a-z]+:|^\//i.test(String(x)))x=new URL(String(x),location.href).href;return f.call(this,s,t,x);};});
+try{if(P!=='en')S.call(localStorage,'kn_lang',P);else if(!window.KN_RENDER){var s=localStorage.getItem('kn_lang');if(s&&M[s])location.replace(u(s));}}catch(e){}})();</script>
+<!-- KN-HREFLANG --><link rel="alternate" hreflang="en" href="https://keithnah.com/buying-guide.html"><link rel="alternate" hreflang="zh-Hans" href="https://keithnah.com/zh/buying-guide.html"><link rel="alternate" hreflang="zh-Hant" href="https://keithnah.com/zh-tw/buying-guide.html"><link rel="alternate" hreflang="ms" href="https://keithnah.com/ms/buying-guide.html"><link rel="alternate" hreflang="ja" href="https://keithnah.com/ja/buying-guide.html"><link rel="alternate" hreflang="ko" href="https://keithnah.com/ko/buying-guide.html"><link rel="alternate" hreflang="x-default" href="https://keithnah.com/buying-guide.html"><link rel="canonical" href="https://keithnah.com/ms/buying-guide.html"><!-- /KN-HREFLANG -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buying property in Malaysia, step by step | Keith Nah</title>
+<meta name="description" content="New property, subsale and the rules for foreign buyers: the key numbers, the stages and the questions buyers ask most.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F9F8F6;
+    --ivory:#FBFAF7;
+    --gold:#5E60CE;
+    --ink:#111111;
+    --grey:#5A5A5A;
+    --line:rgba(17,17,17,0.08);
+    --black:#0C0C0C;
+    --ease:cubic-bezier(.22,.7,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; font-weight:600;
+    line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:700;letter-spacing:0.01em;}
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .eyebrow{font-family:'Inter',sans-serif; text-transform:uppercase; letter-spacing:0.28em; font-size:11px; color:var(--gold); font-weight:500;}
+
+  /* ---------- NAV (matches main site) ---------- */
+  header{
+    position:fixed; top:0; left:0; width:100%; z-index:50;
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+    padding:16px 5vw; background:var(--gold); border-bottom:1px solid rgba(0,0,0,0.12);
+    box-shadow:0 2px 18px rgba(17,17,17,0.08);
+  }
+  .logo{font-family:'Playfair Display',serif; font-size:19px; display:flex; align-items:center; gap:11px; color:#fff;}
+  .logo-mark-img{width:42px; height:42px; border-radius:50%; object-fit:contain;}
+  .logo-text{display:flex; flex-direction:column; line-height:1.15;}
+  .logo-text b{font-weight:800; font-size:21px; color:#fff;}
+  .logo-text small{font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.8); font-weight:500;}
+  nav{display:flex; align-items:center; gap:26px;}
+  nav a{font-size:15px; font-weight:500; position:relative; padding-bottom:4px; white-space:nowrap; color:#fff;}
+  nav a::after{content:''; position:absolute; left:0; bottom:0; width:0; height:2px; background:#fff; transition:width .35s var(--ease);}
+  nav a:hover::after{width:100%;}
+  nav a.active::after{width:100%;}
+  .nav-right{display:flex; align-items:center; gap:12px;}
+  .whatsapp-btn{
+    display:flex; align-items:center; gap:8px; background:#25D366; color:#fff !important;
+    padding:11px 22px; border-radius:100px; font-size:12px; font-weight:600;
+    transition:transform .3s var(--ease), box-shadow .3s; white-space:nowrap;
+  }
+  .whatsapp-btn:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(37,211,102,0.35);}
+  .hamburger{display:none;}
+  .nav-right{display:flex; align-items:center; gap:12px; flex-shrink:0;}
+  .selector{
+    display:flex; align-items:center; gap:6px;
+    font-size:12px; letter-spacing:0.02em; opacity:0.95; cursor:pointer;
+    background:rgba(255,255,255,0.35); border:1px solid rgba(17,17,17,0.15);
+    color:#111;
+    padding:8px 14px; border-radius:100px; white-space:nowrap;
+  }
+  .selector svg{width:13px; height:13px; stroke:#111; fill:none; stroke-width:1.6;}
+  .lang-switch{position:relative;}
+  .lang-menu{
+    display:none; position:absolute; top:calc(100% + 8px); right:0; background:#fff;
+    border:1px solid var(--line); border-radius:12px; box-shadow:0 16px 40px rgba(17,17,17,0.14);
+    min-width:170px; padding:8px; z-index:80;
+  }
+  .lang-menu.open{display:block;}
+  .lang-menu a{
+    display:block; padding:9px 14px; font-size:13px; color:var(--ink); border-radius:8px;
+    cursor:pointer; font-weight:500; transition:background .2s;
+  }
+  .lang-menu a:hover{background:var(--bg);}
+  .lang-menu a.active{color:var(--gold); font-weight:700;}
+
+  /* ---------- HERO ---------- */
+  .journal-hero{
+    padding:170px 5vw 70px; text-align:center; background:#fff;
+    border-bottom:1px solid var(--line);
+  }
+  .journal-hero .eyebrow{display:block; margin-bottom:16px;}
+  .journal-hero h1{font-size:clamp(32px,5vw,58px); margin-bottom:18px;}
+  .journal-hero h1 span{color:var(--gold); font-style:italic;}
+  .journal-hero p{color:var(--grey); font-size:15px; max-width:560px; margin:0 auto; font-weight:500;}
+
+  /* ---------- FILTERS ---------- */
+  .filters{
+    display:flex; gap:10px; flex-wrap:wrap; justify-content:center;
+    padding:26px 5vw; background:var(--ivory); border-bottom:1px solid var(--line);
+    position:sticky; top:74px; z-index:20;
+  }
+  .filter-btn{
+    font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.08em;
+    padding:9px 18px; border-radius:100px; border:1px solid var(--line); background:#fff;
+    cursor:pointer; transition:all .3s var(--ease); color:var(--ink);
+  }
+  .filter-btn.active, .filter-btn:hover{background:#111; border-color:#111; color:#fff;}
+
+  /* ---------- ARTICLE GRID ---------- */
+  .journal-grid{
+    max-width:1240px; margin:0 auto; padding:70px 5vw 110px;
+    display:grid; grid-template-columns:repeat(3,1fr); gap:32px;
+  }
+  .article-card{
+    background:var(--ivory); border:1px solid var(--line); border-top:3px solid var(--gold); border-radius:6px; overflow:hidden;
+    display:flex; flex-direction:column; transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+  }
+  .article-card:hover{transform:translateY(-6px); box-shadow:0 20px 40px rgba(17,17,17,0.1);}
+  .icon-art{width:100%; height:auto; display:block;}
+  .article-cat-text{
+    font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold);
+  }
+
+  /* ---------- ARTICLE READER MODAL ---------- */
+  .reader-overlay{
+    position:fixed; inset:0; z-index:90; background:rgba(12,12,12,0.78);
+    display:none; align-items:flex-start; justify-content:center; padding:70px 20px;
+    overflow-y:auto; backdrop-filter:blur(4px);
+  }
+  .reader-overlay.open{display:flex;}
+  .reader-card{
+    background:#fff; max-width:720px; width:100%; border-radius:8px; overflow:hidden; position:relative;
+    border-top:4px solid var(--gold);
+    box-shadow:0 30px 80px rgba(0,0,0,0.4); animation:readerIn .4s var(--ease) both;
+  }
+  @keyframes readerIn{from{opacity:0; transform:translateY(24px);} to{opacity:1; transform:translateY(0);}}
+  .reader-close{
+    position:absolute; top:18px; right:18px; z-index:3; width:38px; height:38px; border-radius:50%;
+    background:var(--bg); border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
+    cursor:pointer; font-size:18px; font-weight:700; color:#111; transition:background .3s, color .3s;
+  }
+  .reader-close:hover{background:var(--gold); color:#fff;}
+  .reader-content{padding:48px 40px 40px;}
+  .reader-cat{font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--gold); font-weight:700; margin-bottom:10px; display:block;}
+  .reader-content h2{font-size:clamp(24px,3vw,32px); line-height:1.25; margin-bottom:12px;}
+  .reader-date{font-size:12px; color:var(--grey); font-weight:600; margin-bottom:26px; display:block;}
+  .reader-intro{font-size:17px; line-height:1.75; color:#111; font-weight:500; margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid var(--line);}
+  .reader-body p{font-size:15px; line-height:1.85; color:#333; margin-bottom:18px;}
+  .reader-body h3.reader-h2{
+    font-family:'Playfair Display',serif; font-weight:700; font-size:clamp(18px,2.2vw,21px);
+    line-height:1.3; color:#111; margin:30px 0 12px;
+  }
+  .reader-stats{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+    margin:26px 0; padding:20px; background:var(--bg); border:1px solid var(--line); border-radius:8px;
+  }
+  .reader-stat{text-align:center;}
+  .reader-stat-value{font-family:'Playfair Display',serif; font-weight:700; font-size:clamp(18px,2.4vw,24px); color:var(--gold); display:block;}
+  .reader-stat-label{font-size:10.5px; text-transform:uppercase; letter-spacing:0.06em; color:var(--grey); font-weight:600; display:block; margin-top:4px;}
+  .reader-takeaway{
+    margin:28px 0 6px; padding:20px 22px; background:linear-gradient(135deg,#1c1a17,#3a3226);
+    border-radius:8px; color:#fff;
+  }
+  .reader-takeaway-label{font-size:10.5px; text-transform:uppercase; letter-spacing:0.12em; color:var(--gold); font-weight:700; display:block; margin-bottom:8px;}
+  .reader-takeaway p{font-size:14.5px; line-height:1.75; color:rgba(255,255,255,0.92); margin:0;}
+  .reader-cta{
+    margin-top:20px; padding-top:24px; border-top:1px solid var(--line);
+    display:flex; gap:14px; flex-wrap:wrap;
+  }
+
+  @media(max-width:640px){
+    .reader-overlay{padding:0;}
+    .reader-card{border-radius:0; min-height:100vh;}
+    .reader-content{padding:44px 22px 28px;}
+    .reader-stats{grid-template-columns:1fr; gap:10px;}
+  }
+  .article-body{padding:24px; display:flex; flex-direction:column; gap:10px; flex:1;}
+  .article-date{font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold); font-weight:700;}
+  .article-body h3{font-size:18px; line-height:1.32;}
+  .article-body p{font-size:13px; color:var(--grey); line-height:1.55; flex:1;}
+  .article-read{
+    font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--ink); font-weight:700;
+    display:flex; align-items:center; gap:6px; margin-top:6px; cursor:pointer; width:fit-content;
+    border-bottom:1px solid var(--ink); padding-bottom:2px; transition:all .3s;
+  }
+  .article-read:hover{color:var(--gold); border-color:var(--gold);}
+
+  /* ---------- SUBSCRIBE STRIP ---------- */
+  .subscribe{background:var(--black); color:#f2ede2; padding:80px 5vw; text-align:center;}
+  .subscribe h2{color:#fff; font-size:clamp(26px,3.4vw,38px); margin-bottom:16px;}
+  .subscribe p{color:rgba(255,255,255,0.62); font-size:14px; max-width:480px; margin:0 auto 30px; font-weight:500;}
+  .subscribe-actions{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .btn{
+    padding:14px 30px; font-size:12px; text-transform:uppercase; letter-spacing:0.14em; font-weight:700;
+    border-radius:100px; cursor:pointer; border:1px solid transparent; transition:all .35s var(--ease); display:inline-block;
+  }
+  .btn-gold{background:var(--gold); color:#fff;}
+  .btn-gold:hover{background:#fff;}
+  .btn-outline{border-color:rgba(255,255,255,0.4); color:#fff; background:transparent;}
+  .btn-outline:hover{border-color:var(--gold); color:var(--gold);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:#080808; color:rgba(255,255,255,0.5); padding:56px 5vw 30px;}
+  .footer-top{max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; flex-wrap:wrap; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,0.08);}
+  .footer-logo{font-family:'Playfair Display',serif; font-size:20px; color:#fff; display:flex; align-items:center; gap:10px;}
+  .footer-logo-img{width:34px; height:34px; border-radius:50%; object-fit:contain;}
+  .footer-logo em{color:var(--gold); font-style:italic;}
+  .footer-col h5{font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:#fff; margin-bottom:16px;}
+  .footer-col a{display:block; font-size:13px; margin-bottom:10px; color:rgba(255,255,255,0.5); transition:color .3s;}
+  .footer-col a:hover{color:var(--gold);}
+  .footer-bottom{max-width:1180px; margin:24px auto 0; display:flex; justify-content:space-between; font-size:11px; flex-wrap:wrap; gap:10px;}
+
+  .float-wa{
+    position:fixed; bottom:24px; right:24px; z-index:55; background:#25D366; color:#fff;
+    width:54px; height:54px; border-radius:50%; display:none; align-items:center; justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,0.25);
+  }
+
+  @media(max-width:920px){
+    nav, .nav-right .selector{display:none;}
+    .hamburger{display:block; font-size:22px; cursor:pointer; color:#111;}
+    .journal-grid{grid-template-columns:repeat(2,1fr);}
+    .filters{top:64px;}
+    section, .journal-hero{padding-left:6vw; padding-right:6vw;}
+    .float-wa{display:flex;}
+  }
+  @media(max-width:640px){
+    .journal-grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:480px){
+    header{padding:14px 5vw;}
+    .logo-text small{display:none;}
+  }
+  /* ---------- WHATSAPP FLOAT ---------- */
+  .float-wa{
+    position:fixed; bottom:24px; right:24px; z-index:55; background:#25D366; color:#fff;
+    width:54px; height:54px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,0.25); transition:transform .3s cubic-bezier(.22,.7,.2,1);
+  }
+  .float-wa:hover{transform:scale(1.08);}
+
+  /* nav: fits 7 items */
+  nav{gap:clamp(20px,2.3vw,32px) !important;}
+  nav a{font-size:15px;}
+  html[lang="ta"] nav{gap:14px !important;} html[lang="ta"] nav a{font-size:14px;}
+  header{padding-left:3vw !important; padding-right:3vw !important; gap:16px !important;}
+  .nav-right{gap:8px !important;}
+  .selector{padding:8px 11px !important;}
+  .whatsapp-btn{padding:11px 16px !important;}
+  .logo{flex-shrink:0;} .logo-text, .logo-text b{white-space:nowrap;}
+  @media(max-width:1349px){ nav, .nav-right .selector{display:none !important;} .hamburger{display:block !important; font-size:22px; cursor:pointer; color:#fff;} }
+  .lang-menu a{display:flex !important; align-items:center; gap:10px; white-space:nowrap;}
+  #langMenu{min-width:210px;} #currMenu{min-width:275px;}
+  .kn-flag{width:20px; height:15px; flex:0 0 20px; border-radius:2px; object-fit:cover; box-shadow:0 0 0 1px rgba(0,0,0,0.08);}
+  #knLang button, #knCurr button{display:inline-flex; align-items:center; gap:8px;}
+  @media (hover:hover) and (pointer:fine){ .lang-switch::after{content:''; position:absolute; left:0; right:0; top:100%; height:14px;} }
+
+  /* KN-NEWS:CSS:START */
+  .nw-jump{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:34px;}
+  .nw-jump-btn{display:flex;align-items:center;gap:14px;min-width:230px;padding:14px 18px 14px 14px;border-radius:14px;background:var(--gold);color:#fff;text-align:left;box-shadow:0 12px 28px rgba(94,96,206,0.28);transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .3s;}
+  .nw-jump-btn:hover{transform:translateY(-3px);background:#4B4DB8;box-shadow:0 18px 34px rgba(94,96,206,0.38);}
+  .nw-jump-ic{flex:0 0 44px;height:44px;border-radius:12px;background:rgba(255,255,255,0.16);display:flex;align-items:center;justify-content:center;}
+  .nw-jump-ic svg{width:22px;height:22px;}
+  .nw-jump-txt{display:flex;flex-direction:column;flex:1;line-height:1.25;}
+  .nw-jump-txt b{font:700 16px 'Inter',sans-serif;}
+  .nw-jump-txt small{font:500 12.5px 'Inter',sans-serif;color:rgba(255,255,255,0.78);margin-top:3px;}
+  .nw-jump-arrow{font-size:18px;opacity:.85;transition:transform .3s var(--ease);}
+  .nw-jump-btn:hover .nw-jump-arrow{transform:translateY(3px);}
+  @media(max-width:760px){ .nw-jump{gap:10px;} .nw-jump-btn{min-width:0;width:100%;max-width:360px;} }
+  .bt-label{font:700 11px 'Inter',sans-serif;letter-spacing:0.16em;text-transform:uppercase;color:var(--grey);margin:18px 0 0;}
+  .nw-sec{max-width:1240px;margin:0 auto;padding:70px 5vw 10px;scroll-margin-top:80px;}
+  .nw-eyebrow{font:600 11px 'Inter',sans-serif;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+  .nw-h2{font-size:clamp(28px,3.4vw,40px);line-height:1.18;margin-bottom:10px;}
+  .nw-sub{color:var(--grey);font-size:15px;font-weight:500;max-width:720px;margin-bottom:28px;}
+  .bg-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:26px;}
+  .bg-tab{display:grid;grid-template-columns:44px 1fr;grid-template-rows:auto auto;column-gap:14px;align-items:center;text-align:left;padding:18px 20px;border-radius:12px;border:1px solid var(--line);background:#fff;cursor:pointer;font-family:inherit;transition:all .3s var(--ease);}
+  .bg-tab:hover{border-color:var(--gold);}
+  .bg-tab.active{background:var(--gold);border-color:var(--gold);box-shadow:0 14px 30px rgba(94,96,206,0.25);}
+  .bg-tab-icon{grid-row:1/3;width:44px;height:44px;border-radius:50%;background:#EEEEFB;color:var(--gold);display:flex;align-items:center;justify-content:center;}
+  .bg-tab-icon svg{width:22px;height:22px;}
+  .bg-tab-title{font:700 16px 'Inter',sans-serif;color:var(--ink);}
+  .bg-tab-sub{font-size:12.5px;color:var(--grey);font-weight:500;line-height:1.4;}
+  .bg-tab.active .bg-tab-title,.bg-tab.active .bg-tab-sub{color:#fff;}
+  .bg-tab.active .bg-tab-icon{background:rgba(255,255,255,0.18);color:#fff;}
+  .bg-panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:34px 34px 26px;}
+  .bg-h3{font-size:clamp(22px,2.6vw,30px);margin-bottom:22px;}
+  .bg-label{font:700 11px 'Inter',sans-serif;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin:6px 0 12px;}
+  .bg-top{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:26px;margin-bottom:30px;}
+  .bg-short{background:#EEEEFB;border-radius:10px;padding:22px 24px;}
+  .bg-short p:last-child{font-size:15.5px;line-height:1.7;color:#1d1d3a;font-weight:500;}
+  .bg-numbers table{width:100%;border-collapse:collapse;font-size:13.5px;}
+  .bg-numbers th,.bg-numbers td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line);}
+  .bg-numbers th{width:38%;font-weight:700;color:var(--ink);}
+  .bg-numbers td{color:#333;font-weight:500;}
+  .bg-steps{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:18px;counter-reset:none;}
+  .bg-steps a{display:flex;flex-direction:column;gap:6px;padding:12px;border-radius:10px;background:var(--bg);border:1px solid var(--line);height:100%;font-size:12.5px;font-weight:600;color:var(--ink);}
+  .bg-steps a:hover{border-color:var(--gold);}
+  .bg-steps b{width:26px;height:26px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;}
+  .bg-stages{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:30px;}
+  .bg-stage{border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:10px;padding:18px 20px;scroll-margin-top:90px;}
+  .bg-stage-num{font:700 11px 'Inter',sans-serif;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+  .bg-stage h4{font-size:18px;margin-bottom:10px;}
+  .bg-stage ul{margin-left:18px;} .bg-stage li{font-size:14px;color:#333;font-weight:500;margin-bottom:7px;line-height:1.55;}
+  .bg-faqs{margin-bottom:26px;}
+  .bg-faq{border-bottom:1px solid var(--line);}
+  .bg-faq summary{cursor:pointer;list-style:none;padding:14px 30px 14px 0;font-weight:700;font-size:15px;position:relative;}
+  .bg-faq summary::-webkit-details-marker{display:none;}
+  .bg-faq summary::after{content:'+';position:absolute;right:4px;top:12px;font-size:20px;color:var(--gold);}
+  .bg-faq[open] summary::after{content:'\2212';}
+  .bg-faq p{padding:0 0 16px;color:#333;font-size:14.5px;font-weight:500;line-height:1.65;}
+  .bg-cta{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:#111;color:#fff;border-radius:12px;padding:20px 24px;}
+  .bg-cta p{font-family:'Playfair Display',serif;font-size:20px;}
+  .bg-wa{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:12px 22px;border-radius:100px;font-size:13px;font-weight:600;}
+  .bg-note{margin-top:14px;font-size:12px;color:var(--grey);font-weight:500;}
+  .nf-list{columns:2;column-gap:36px;}
+  .nf-item{border-bottom:1px solid var(--line);break-inside:avoid;-webkit-column-break-inside:avoid;}
+  .nf-sec:not(.nf-open) .nf-more{display:none;}
+  .nf-q{width:100%;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;text-align:left;background:none;border:0;padding:16px 0;cursor:pointer;font:700 15px 'Inter',sans-serif;color:var(--ink);}
+  .nf-q i{font-style:normal;color:var(--gold);font-size:20px;line-height:1;transition:transform .25s;}
+  .nf-item.open .nf-q i{transform:rotate(45deg);}
+  .nf-a{display:none;padding:0 0 16px;} .nf-item.open .nf-a{display:block;}
+  .nf-a p{color:#333;font-size:14.5px;font-weight:500;line-height:1.65;}
+  .nf-btns{text-align:center;margin-top:24px;}
+  .nf-toggle{font:600 13px 'Inter',sans-serif;padding:12px 26px;border-radius:100px;border:1px solid #111;background:transparent;color:#111;cursor:pointer;}
+  .nf-toggle:hover{background:#111;color:#fff;}
+  .bt-sec{padding-bottom:0;}
+  .bt-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;}
+  .bt-chip{display:inline-flex;align-items:center;gap:10px;font:600 14.5px 'Inter',sans-serif;color:var(--ink);background:#EFE7DA;border:1px solid transparent;border-radius:6px;padding:12px 16px;cursor:pointer;transition:all .25s var(--ease);}
+  .bt-chip em{font-style:normal;font-size:12px;font-weight:700;color:#6b6257;}
+  .bt-chip:hover{border-color:#111;}
+  a.article-read{color:inherit;}
+  .bt-chip.active{background:#111;color:#fff;} .bt-chip.active em{color:rgba(255,255,255,0.7);}
+  .bt-all{background:#fff;border-color:var(--line);}
+  .journal-grid{padding-top:36px;}
+  @media(max-width:900px){
+    .bg-tabs{grid-template-columns:1fr;}
+    .bg-top{grid-template-columns:1fr;}
+    .bg-steps{grid-template-columns:repeat(3,1fr);}
+    .bg-stages{grid-template-columns:1fr;}
+    .nf-list{columns:1;}
+    .bg-panel{padding:24px 18px 20px;}
+    .nw-sec{padding:50px 16px 6px;}
+  }
+  @media(max-width:480px){ .bg-steps{grid-template-columns:repeat(2,1fr);} .bt-chip{font-size:13.5px;padding:10px 13px;} }
+  /* KN-NEWS:CSS:END */
+</style>
+<link rel="icon" type="image/png" href="images/d795398568d23a46.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- KN-LD:START --><!-- KN-LD:END -->
+<style id="kn-logo-link">header a.logo{color:inherit;text-decoration:none;cursor:pointer;}</style>
+<style id="kn-submenu-css">html{scroll-padding-top:96px}.knm-g{position:relative;display:inline-flex;align-items:center}.knm-c{display:inline-block;width:6px;height:6px;margin:0 0 3px 7px;pointer-events:none;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg);opacity:.75;transition:transform .2s}@media(min-width:1350px){header nav{gap:clamp(24px,2.2vw,38px)!important;justify-content:center}header nav>a,header nav .knm-g>a{white-space:nowrap}}header .knm-g>a{margin-right:0!important}.knm-g:hover .knm-c,.knm-g:focus-within .knm-c{transform:translateY(3px) rotate(225deg)}#knMnav .knm-c{display:none}.knm-d{position:absolute;top:100%;left:50%;transform:translate(-50%,8px);min-width:230px;padding:10px;background:#fff;border-radius:16px;box-shadow:0 18px 40px rgba(20,18,60,.18);border:1px solid rgba(21,20,43,.08);opacity:0;visibility:hidden;transition:opacity .18s,transform .18s,visibility .18s;z-index:1000}.knm-d:before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}.knm-g:hover .knm-d,.knm-g:focus-within .knm-d{opacity:1;visibility:visible;transform:translate(-50%,4px)}header nav .knm-d a,.knm-d a{display:block!important;margin:0!important;padding:10px 14px!important;border-radius:10px;color:#15142b!important;font-size:14px!important;font-weight:600!important;letter-spacing:0!important;text-transform:none!important;white-space:nowrap;text-decoration:none!important;opacity:1!important}.knm-d a:after{display:none!important}.knm-d a:hover{background:#f1efff;color:#5E60CE!important}#knMnav .knm-g{display:block}#knMnav .knm-d{position:static;transform:none;opacity:1;visibility:visible;background:none;box-shadow:none;border:0;padding:0 0 6px;min-width:0}#knMnav .knm-d a{color:rgba(255,255,255,.78)!important;font-size:14.5px!important;font-weight:500!important;padding:9px 4px 9px 18px!important;border-bottom:0!important;border-radius:0}#knMnav .knm-d a:hover{background:none;color:#fff!important}nav.nw-jump{display:flex!important}.kn-links a.knm-ms{padding-left:22px!important;font-size:14.5px!important;opacity:.8;border-bottom:0!important}#knDrawer .kn-links a:not(.knm-ms){color:#b9b4ff!important;font-weight:600}#knDrawer .kn-links a.knm-ms{color:#fff!important}#knMnav .kn-mlinks>a,#knMnav .kn-mlinks>.knm-g>a{color:#b9b4ff!important;font-weight:600}#knMnav .knm-d a{color:#fff!important}.knm-st{display:flex;align-items:center}.knm-st>a{flex:1}.knm-ar{width:7px;height:7px;margin:0 12px 0 4px;border-right:1.6px solid #15142b;border-top:1.6px solid #15142b;transform:rotate(45deg);flex:0 0 auto;pointer-events:none}.knm-st:hover>a{background:#f1efff;color:#5E60CE!important}.knm-fly{position:absolute;left:calc(100% + 8px);top:0;width:720px;display:flex;background:#fff;border-radius:16px;box-shadow:0 18px 40px rgba(20,18,60,.18);border:1px solid rgba(21,20,43,.08);opacity:0;visibility:hidden;transition:opacity .15s,visibility .15s;text-align:left}.knm-fly:before{content:"";position:absolute;left:-14px;top:0;bottom:0;width:14px}.knm-st:hover .knm-fly,.knm-st:focus-within .knm-fly{opacity:1;visibility:visible}.knm-fl{width:200px;flex:0 0 200px;padding:10px;border-right:1px solid #eeecf6}header nav .knm-d a.knm-fs{display:flex!important;justify-content:space-between;align-items:center;gap:8px}.knm-d a em{font-style:normal;font-size:11.5px;color:#8b8aa0;font-weight:600}a.knm-fs.on{background:#f1efff;color:#5E60CE!important}.knm-fr{flex:1;padding:14px 16px 16px;max-height:min(560px,72vh);overflow:auto}.knm-fp{display:none}.knm-fp.on{display:block}header nav .knm-d a.knm-fall{display:inline-block!important;color:#5E60CE!important;font-size:13px!important;padding:6px 10px!important;margin-bottom:6px!important}.knm-cols{display:block}.knm-col{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 14px;padding-bottom:8px;margin-bottom:6px;border-bottom:1px solid #f0eef8}.knm-col:last-child{border-bottom:0;margin-bottom:0}.knm-col .knm-fz{grid-column:1/-1}header nav .knm-d a.knm-fz{font-size:11px!important;font-weight:700!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:#a0782c!important;padding:10px 10px 6px!important;white-space:normal!important;line-height:1.4}header nav .knm-d a.knm-fa{display:flex!important;justify-content:space-between;gap:8px;font-weight:650!important;color:#15142b!important;white-space:normal;font-size:14.5px!important}#knMnav .knm-fly,#knMnav .knm-ar{display:none!important}@media(max-width:1349px){.knm-fly{display:none!important}}header .knm-d,header .knm-fly{background:linear-gradient(160deg,#F7F6FF 0%,#ECEBFB 100%)!important;border-color:#DEDCF7!important}header .knm-fl{background:rgba(94,96,206,.08)!important;border-right-color:#DEDCF7!important;border-radius:16px 0 0 16px}header .knm-d a:hover,header .knm-st:hover>a,header a.knm-fs.on{background:#5E60CE!important;color:#fff!important}header a.knm-fs.on em,header .knm-d a:hover em{color:rgba(255,255,255,.8)!important}header .knm-col{border-bottom-color:#DEDCF7!important}</style><style id="kn-float">
+/* KN-FLOAT:START */
+a.float-wa.float-wa{position:fixed;right:22px;bottom:22px;z-index:60;display:inline-flex;align-items:center;gap:11px;width:auto;height:auto;
+  padding:13px 24px 13px 18px;border-radius:100px;background:#25D366;color:#fff;font:700 16px/1 'Inter',system-ui,sans-serif;letter-spacing:0;
+  text-decoration:none;transition:transform .25s ease;box-shadow:0 0 0 4px rgba(37,211,102,.18),0 8px 22px rgba(0,0,0,.16);}
+/* the glow pulses on its own layer (opacity only), so it never repaints the page while scrolling */
+a.float-wa.float-wa::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:0 0 0 10px rgba(37,211,102,.12),0 0 30px 10px rgba(37,211,102,.42);opacity:0;animation:knWaGlow 2.6s ease-in-out infinite;will-change:opacity;}
+a.float-wa.float-wa:hover{transform:translateY(-2px) scale(1.03);color:#fff;}
+a.float-wa.float-wa svg{width:26px;height:26px;flex:0 0 26px;fill:#fff;}
+a.float-wa.float-wa .fw-txt{white-space:nowrap;}
+@keyframes knWaGlow{0%,100%{opacity:.15;}50%{opacity:1;}}
+@media(max-width:600px){a.float-wa.float-wa{right:16px;bottom:16px;padding:11px 18px 11px 14px;font-size:14px;gap:9px;}a.float-wa.float-wa svg{width:22px;height:22px;flex-basis:22px;}}
+@media(prefers-reduced-motion:reduce){a.float-wa.float-wa::before{animation:none;opacity:.5;}}
+/* back to top, above the WhatsApp button */
+.kn-fab{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.kn-fab a.float-wa.float-wa{position:relative;right:auto;bottom:auto;}
+.kn-top{width:48px;height:48px;border-radius:50%;background:#fff;border:1.5px solid #d6d6d6;box-shadow:0 6px 18px rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;color:#555;
+  opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility .25s,border-color .2s,color .2s;}
+.kn-top.show{opacity:1;visibility:visible;transform:none;}
+.kn-top:hover{border-color:var(--gold,#5E60CE);color:var(--gold,#5E60CE);}
+.kn-top svg{width:20px;height:20px;}
+@media(max-width:600px){.kn-fab{right:16px;bottom:16px;gap:10px;}.kn-top{width:44px;height:44px;}}
+@media(prefers-reduced-motion:reduce){.kn-top{transition:none;}}
+/* phones: the header WhatsApp button would push the menu button off screen; the floating button stays */
+@media(max-width:560px){header .whatsapp-btn,header .wa-btn,.nav-right .whatsapp-btn{display:none!important;}.hamburger{margin-left:auto;padding:6px 4px;}}
+/* KN-FLOAT:END */
+</style>
+<!-- KN-GA --><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-6WFGZZ4FTC"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}if(!window.KN_RENDER){gtag('js',new Date());gtag('config','G-6WFGZZ4FTC',{content_group:document.documentElement.getAttribute('data-page-lang')||'en'});}</script><script>if(!window.KN_RENDER){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zchi5vsr4l");}</script><!-- /KN-GA -->
+<!-- KN-OG --><meta property="og:type" content="website"><meta property="og:title" content="Buying property in Malaysia, step by step | Keith Nah"><meta property="og:description" content="New property, subsale and the rules for foreign buyers: the key numbers, the stages and the questions buyers ask most."><meta property="og:image" content="https://keithnah.com/images/og/buying-guide.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://keithnah.com/images/og/buying-guide.jpg"><!-- /KN-OG -->
+<style data-kv="" aria-pressed="false" aria-label="Simpan">.kv-h{position:absolute;top:12px;right:12px;z-index:5;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.93);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.18);cursor:pointer;padding:0;transition:transform .15s}.kv-h:hover{transform:scale(1.08)}.kv-h svg,.kv-sv svg,.kv-pill svg{width:21px;height:21px;fill:none;stroke:#15142b;stroke-width:2}.kv-h.on svg,.kv-sv.on svg{fill:#ff3b5c;stroke:#ff3b5c}.kv-h.pop svg{animation:kvPop .35s}@keyframes kvPop{50%{transform:scale(1.35)}}.kv-sv{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;border:1.5px solid #d9d6ea;background:#fff;font:700 14px Inter,sans-serif;color:#15142b;cursor:pointer}.kv-sv.on{border-color:#ff3b5c;color:#ff3b5c}.kv-pill{position:fixed;left:20px;bottom:24px;z-index:61;display:none;align-items:center;gap:8px;background:#15142b;color:#fff;border:0;cursor:pointer;font:700 14px Inter,sans-serif;padding:12px 18px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.3)}.kv-pill.show{display:flex}.kv-pill svg{width:18px;height:18px;fill:#ff3b5c;stroke:#ff3b5c}.kv-pill i{font-style:normal;background:#ff3b5c;border-radius:999px;padding:1px 8px;font-size:12px}.kv-bg{position:fixed;inset:0;background:rgba(10,10,30,.45);z-index:9998;display:none}.kv-bg.show{display:block}.kv-d{position:fixed;right:0;top:0;bottom:0;width:min(400px,100%);background:#fff;z-index:9999;box-shadow:-20px 0 60px rgba(0,0,0,.2);display:flex;flex-direction:column;font-family:Inter,sans-serif;color:#15142b;transform:translateX(105%);transition:transform .3s ease}.kv-d.show{transform:none}.kv-d .hd{display:flex;justify-content:space-between;align-items:center;padding:22px 22px 10px}.kv-d h3{font:700 24px "Playfair Display",Georgia,serif;margin:0}.kv-d .x{border:0;background:none;font-size:30px;line-height:1;color:#999;cursor:pointer}.kv-d p.s{margin:0 22px 10px;color:#5f5e74;font-size:13px;line-height:1.5}.kv-l{flex:1;overflow:auto;padding:0 22px}.kv-e{color:#5f5e74;font-size:14px;padding:30px 0;text-align:center}.kv-i{display:grid;grid-template-columns:84px 1fr 30px;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #eee}.kv-i img{width:84px;height:64px;object-fit:cover;border-radius:10px;background:#eee}.kv-i a{color:inherit;text-decoration:none}.kv-i b{display:block;font-size:15px;line-height:1.3}.kv-i small{color:#5f5e74;font-size:12px;display:block}.kv-i em{font-style:normal;color:#5E60CE;font-weight:700;font-size:13px}.kv-i button{border:0;background:none;cursor:pointer;padding:0}.kv-i button svg{width:22px;height:22px;fill:#ff3b5c;stroke:#ff3b5c}.kv-a{padding:16px 22px 22px;display:grid;gap:10px}.kv-a a{text-align:center;padding:14px;border-radius:14px;font-weight:700;font-size:14.5px;text-decoration:none}.kv-a .w{background:#25D366;color:#fff;box-shadow:0 10px 24px rgba(37,211,102,.3)}.kv-a .c{border:1.5px solid #d9d6ea;color:#15142b}.kv-a .c[hidden]{display:none}@media(max-width:600px){.kv-pill{left:14px;bottom:18px;padding:11px 15px}}</style></head>
+<body>
+
+<header id="siteHeader">
+  <a class="logo" href="/ms/" aria-label="Keith Nah Real Estate home">
+    <img class="logo-mark-img" src="images/f304c8479b1fe873.png" alt="Keith Nah logo">
+    <div class="logo-text"><b>Keith Nah 鈞晖</b><small>Malaysia Real Estate</small></div>
+  </a>
+  <nav>
+    <a href="/ms/">Utama</a>
+    <div class="knm-g"><a data-km="topproj" href="/ms/projects.html">Projek</a><span class="knm-c" aria-hidden="true"></span><div class="knm-d"><a class="knm-s" href="/ms/projects.html#projSearch" data-km="browse">Semak Imbas Projek</a><a class="knm-s" href="/ms/projects.html#projGrid" data-km="all">Senarai Semua Projek</a><div class="knm-st"><a class="knm-s" href="/ms/projects.html#projGrid" data-km="state">Lihat Mengikut Negeri</a><i class="knm-ar" aria-hidden="true"></i><div class="knm-fly"><div class="knm-fl"><a class="knm-fs on" data-fs="0" href="/ms/projects.html#Kuala%20Lumpur"><span data-kst="Kuala Lumpur">Kuala Lumpur</span><em>48</em></a><a class="knm-fs" data-fs="1" href="/ms/projects.html#Selangor"><span data-kst="Selangor">Selangor</span><em>33</em></a><a class="knm-fs" data-fs="2" href="/ms/projects.html#Penang"><span data-kst="Penang">Pulau Pinang</span><em>12</em></a><a class="knm-fs" data-fs="3" href="/ms/projects.html#Johor"><span data-kst="Johor">Johor</span><em>9</em></a><a class="knm-fs" data-fs="4" href="/ms/projects.html#Melaka"><span data-kst="Melaka">Melaka</span><em>1</em></a><a class="knm-fs" data-fs="5" href="/ms/projects.html#Sabah"><span data-kst="Sabah">Sabah</span><em>2</em></a><a class="knm-fs" data-fs="6" href="/ms/projects.html#Terengganu"><span data-kst="Terengganu">Terengganu</span><em>1</em></a><a class="knm-fs" data-fs="7" href="/ms/projects.html#Kelantan"><span data-kst="Kelantan">Kelantan</span><em>1</em></a></div><div class="knm-fr"><div class="knm-fp on" data-fp="0"><a class="knm-fall" href="/ms/projects.html#Kuala%20Lumpur"><span data-kall="Kuala Lumpur">Semua Kuala Lumpur</span> (48) →</a><div class="knm-cols"><div class="knm-col"><a class="knm-fz" href="/ms/projects.html#Kuala%20Lumpur/zone%3Acentre" data-kz="centre">Pusat Bandar</a><a class="knm-fa" href="/ms/area/kl-city-centre.html">KL City Centre<em>15</em></a><a class="knm-fa" href="/ms/area/bukit-bintang.html">Bukit Bintang<em>5</em></a><a class="knm-fa" href="/ms/area/trx.html">TRX<em>2</em></a></div><div class="knm-col"><a class="knm-fz" href="/ms/projects.html#Kuala%20Lumpur/zone%3Awest" data-kz="west">KL Barat</a><a class="knm-fa" href="/ms/area/bangsar.html">Bangsar<em>4</em></a><a class="knm-fa" href="/ms/area/damansara-heights.html">Damansara Heights<em>3</em></a><a class="knm-fa" href="/ms/area/bangsar-south.html">Bangsar South<em>1</em></a><a class="knm-fa" href="/ms/area/mont-kiara.html">Mont Kiara<em>1</em></a><a class="knm-fa" href="/ms/area/north-kiara.html">North Kiara<em>1</em></a><a class="knm-fa" href="/ms/area/pantai-sentral-park.html">Pantai Sentral Park<em>1</em></a><a class="knm-fa" href="/ms/area/segambut.html">Segambut<em>1</em></a></div><div class="knm-col"><a class="knm-fz" href="/ms/projects.html#Kuala%20Lumpur/zone%3Asouth" data-kz="south">KL Selatan</a><a class="knm-fa" href="/ms/area/bukit-jalil.html">Bukit Jalil<em>7</em></a><a class="knm-fa" href="/ms/area/old-klang-road.html">Old Klang Road<em>2</em></a><a class="knm-fa" href="/ms/area/seputeh.html">Seputeh<em>2</em></a><a class="knm-fa" href="/ms/area/taman-desa.html">Taman Desa<em>2</em></a><a class="knm-fa" href="/ms/area/oug.html">OUG<em>1</em></a></div></div></div><div class="knm-fp" data-fp="1"><a class="knm-fall" href="/ms/projects.html#Selangor"><span data-kall="Selangor">Semua Selangor</span> (33) →</a><div class="knm-cols"><div class="knm-col"><a class="knm-fz" href="/ms/projects.html#Selangor/zone%3Apj" data-kz="pj">PJ &amp; Damansara</a><a class="knm-fa" href="/ms/area/petaling-jaya.html">Petaling Jaya<em>7</em></a><a class="knm-fa" href="/ms/area/ara-damansara.html">Ara Damansara<em>2</em></a><a class="knm-fa" href="/ms/area/damansara-damai.html">Damansara Damai<em>1</em></a><a class="knm-fa" href="/ms/area/damansara-perdana.html">Damansara Perdana<em>1</em></a></div><div class="knm-col"><a class="knm-fz" href="/ms/projects.html#Selangor/zone%3Akwasa" data-kz="kwasa">Kwasa &amp; Sungai Buloh</a><a class="knm-fa" href="/ms/area/kwasa-damansara.html">Kwasa Damansara<em>6</em></a><a class="knm-fa" href="/ms/area/bandar-sri-damansara.html">Bandar Sri Damansara<em>3</em></a></div><div class="knm-col"><a class="knm-fz" href="/ms/projects.html#Selangor/zone%3Asubang" data-kz="subang">Subang &amp; Shah Alam</a><a class="knm-fa" href="/ms/area/shah-alam.html">Shah Alam<em>3</em></a><a class="knm-fa" href="/ms/area/subang-jaya.html">Subang Jaya<em>2</em></a></div><div class="knm-col"><a class="knm-fz" href="/ms/projects.html#Selangor/zone%3Assel" data-kz="ssel">Selangor Selatan</a><a class="knm-fa" href="/ms/area/puchong.html">Puchong<em>8</em></a></div></div></div><div class="knm-fp" data-fp="2"><a class="knm-fall" href="/ms/projects.html#Penang"><span data-kall="Penang">Semua Pulau Pinang</span> (12) →</a><div class="knm-cols"><div class="knm-col"><a class="knm-fz" href="/ms/projects.html#Penang/zone%3Aisland" data-kz="island">Pulau Pinang</a><a class="knm-fa" href="/ms/area/george-town.html">George Town<em>3</em></a><a class="knm-fa" href="/ms/area/gelugor.html">Gelugor<em>2</em></a><a class="knm-fa" href="/ms/area/bayan-lepas.html">Bayan Lepas<em>1</em></a><a class="knm-fa" href="/ms/area/paya-terubong.html">Paya Terubong<em>1</em></a><a class="knm-fa" href="/ms/area/tanjung-bungah.html">Tanjung Bungah<em>1</em></a></div><div class="knm-col"><a class="knm-fz" href="/ms/projects.html#Penang/zone%3Amainland" data-kz="mainland">Seberang Perai</a><a class="knm-fa" href="/ms/area/batu-kawan.html">Batu Kawan<em>4</em></a></div></div></div><div class="knm-fp" data-fp="3"><a class="knm-fall" href="/ms/projects.html#Johor"><span data-kall="Johor">Semua Johor</span> (9) →</a><div class="knm-cols"><div class="knm-col knm-one"><a class="knm-fa" href="/ms/area/jb-city-centre.html">JB City Centre<em>7</em></a><a class="knm-fa" href="/ms/area/kebun-teh.html">Kebun Teh<em>2</em></a></div></div></div><div class="knm-fp" data-fp="4"><a class="knm-fall" href="/ms/projects.html#Melaka"><span data-kall="Melaka">Semua Melaka</span> (1) →</a><div class="knm-cols"><div class="knm-col knm-one"><a class="knm-fa" href="/ms/area/melaka-city.html">Melaka City<em>1</em></a></div></div></div><div class="knm-fp" data-fp="5"><a class="knm-fall" href="/ms/projects.html#Sabah"><span data-kall="Sabah">Semua Sabah</span> (2) →</a><div class="knm-cols"><div class="knm-col knm-one"><a class="knm-fa" href="/ms/area/kota-kinabalu.html">Kota Kinabalu<em>2</em></a></div></div></div><div class="knm-fp" data-fp="6"><a class="knm-fall" href="/ms/projects.html#Terengganu"><span data-kall="Terengganu">Semua Terengganu</span> (1) →</a><div class="knm-cols"><div class="knm-col knm-one"><a class="knm-fa" href="/ms/area/kuala-terengganu.html">Kuala Terengganu<em>1</em></a></div></div></div><div class="knm-fp" data-fp="7"><a class="knm-fall" href="/ms/projects.html#Kelantan"><span data-kall="Kelantan">Semua Kelantan</span> (1) →</a><div class="knm-cols"><div class="knm-col knm-one"><a class="knm-fa" href="/ms/area/kubang-kerian.html">Kubang Kerian<em>1</em></a></div></div></div></div></div></div><a class="knm-s" href="/ms/projects.html#projectMap" data-km="map">Peta Projek</a><a class="knm-s" href="/ms/best/index.html" data-km="best">Projek Baharu Terbaik</a><a class="knm-s" href="/ms/developer/index.html" data-km="dev">Lihat Mengikut Pemaju</a><a class="knm-s" href="/ms/station/index.html" data-km="station">Lihat Mengikut Stesen</a></div><!--/knm-g--></div>
+    <div class="knm-g"><a data-km="topcmp" href="/ms/compare.html">Bandingkan</a><span class="knm-c" aria-hidden="true"></span><div class="knm-d"><a class="knm-s" href="/ms/compare.html#cmpFilters" data-km="h2h">Bandingkan Semua Projek</a><a class="knm-s" href="/ms/vs/index.html" data-km="vs">Projek lawan Projek</a><a class="knm-s" href="/ms/compare.html#popular" data-km="popular">Perbandingan Popular</a></div><!--/knm-g--></div>
+    <div class="knm-g"><a href="/ms/foreign-buyers.html" data-km="foreign">Pembeli Asing</a><span class="knm-c" aria-hidden="true"></span><div class="knm-d"><a class="knm-s" href="/ms/foreign-buyers.html#check" data-km="fcheck">Boleh Saya Beli? Semak Negeri</a><a class="knm-s" href="/ms/foreign-buyers.html#best" data-km="fbest">Pilihan Terbaik Keith</a><a class="knm-s" href="/ms/foreign-buyers.html#costs" data-km="fcost">Kos &amp; Cukai</a><a class="knm-s" href="/ms/foreign-buyers.html#steps" data-km="fsteps">Cara Membeli</a><a class="knm-s" href="/ms/mm2h.html" data-km="mm2h">Panduan MM2H</a><a class="knm-s" href="/ms/foreign-buyers.html#understand" data-km="fum">Kenali Malaysia</a><a class="knm-s" href="/ms/foreign-buyers.html#faq" data-km="faq">Soalan Lazim</a></div><!--/knm-g--></div>
+    <div class="knm-g"><a href="/ms/blog.html" class="active">Berita</a><span class="knm-c" aria-hidden="true"></span><div class="knm-d"><a class="knm-s" href="/ms/market-notes.html" data-km="notes">Nota Pasaran Keith</a><a class="knm-s" href="/ms/buying-guide.html" data-km="guide">Panduan Membeli</a><a class="knm-s" href="/ms/market-data.html" data-km="data">Data Pasaran</a><a class="knm-s" href="/ms/faq.html" data-km="faq">Soalan Lazim</a><a class="knm-s" href="/ms/articles.html" data-km="blogs">Artikel</a></div><!--/knm-g--></div>
+    <div class="knm-g"><a href="/ms/resources.html">Kit Percuma</a><span class="knm-c" aria-hidden="true"></span><div class="knm-d"><a class="knm-s" href="/ms/resources.html#guides" data-km="fareas">Muat Turun Panduan Kawasan Percuma</a><a class="knm-s" href="/ms/mm2h.html" data-km="fmm2h">Panduan MM2H Percuma</a><a class="knm-s" href="https://www.youtube.com/@KeithNahRealEstate/videos" target="_blank" rel="noopener" data-km="fwatch">Tonton Percuma</a><a class="knm-s" href="/ms/calculator.html" data-km="fcalc">Kalkulator Percuma</a><a class="knm-s" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+explore+more+on+Malaysia+Property.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener" data-km="fadvice">Nasihat Percuma Satu-ke-Satu</a></div><!--/knm-g--></div>
+    <div class="knm-g"><a href="/ms/about-keith.html">Tentang Keith</a><span class="knm-c" aria-hidden="true"></span><div class="knm-d"><a class="knm-s" href="/ms/about-keith.html#quickEnquiry" data-km="contact">Hubungi Keith</a></div><!--/knm-g--></div>
+  </nav>
+  <div class="nav-right">
+    <div class="lang-switch" id="langSwitch">
+      <span class="selector" id="langSelectorBtn" onclick="toggleLangMenu(event)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9z"></path></svg><span id="langSelectorLabel">Bahasa Malaysia</span></span>
+      <div class="lang-menu" id="langMenu">
+        <a onclick="setLanguage('en')"><img class="kn-flag" src="images/flags/gb.svg" alt="" width="20" height="15">English</a>
+        <a onclick="setLanguage('zh-CN')"><img class="kn-flag" src="images/flags/cn.svg" alt="" width="20" height="15">简体中文</a>
+        <a onclick="setLanguage('zh-TW')"><img class="kn-flag" src="images/flags/tw.svg" alt="" width="20" height="15">繁體中文</a>
+        <a onclick="setLanguage('ms')" class="active"><img class="kn-flag" src="images/flags/my.svg" alt="" width="20" height="15">Bahasa Malaysia</a>
+        <a onclick="setLanguage('ja')"><img class="kn-flag" src="images/flags/jp.svg" alt="" width="20" height="15">日本語</a>
+        <a onclick="setLanguage('ko')"><img class="kn-flag" src="images/flags/kr.svg" alt="" width="20" height="15">한국어</a>
+      </div>
+    </div>
+    <div class="lang-switch" id="currSwitch">
+      <span class="selector" id="currSelectorBtn" onclick="toggleCurrMenu(event)"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="5"></circle><circle cx="16" cy="16" r="5"></circle></svg><span id="currSelectorLabel">MYR</span></span>
+      <div class="lang-menu" id="currMenu">
+        <a onclick="setCurrency('MYR')" class="active"><img class="kn-flag" src="images/flags/my.svg" alt="" width="20" height="15">MYR — Malaysian Ringgit</a>
+        <a onclick="setCurrency('USD')"><img class="kn-flag" src="images/flags/us.svg" alt="" width="20" height="15">USD — US Dollar</a>
+        <a onclick="setCurrency('SGD')"><img class="kn-flag" src="images/flags/sg.svg" alt="" width="20" height="15">SGD — Singapore Dollar</a>
+        <a onclick="setCurrency('CNY')"><img class="kn-flag" src="images/flags/cn.svg" alt="" width="20" height="15">CNY — Chinese Yuan</a>
+        <a onclick="setCurrency('JPY')"><img class="kn-flag" src="images/flags/jp.svg" alt="" width="20" height="15">JPY — Japanese Yen</a>
+        <a onclick="setCurrency('KRW')"><img class="kn-flag" src="images/flags/kr.svg" alt="" width="20" height="15">KRW — Korean Won</a>
+      </div>
+    </div>
+    <a class="whatsapp-btn wa-link" data-wa-msg="(KNRE) Hi Keith, I would like to explore more on Malaysia Property." href="https://wa.me/60102821568?text=(KNRE)%20Hi%20Keith%2C%20I%20would%20like%20to%20explore%20more%20on%20Malaysia%20Property." target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.2L2 22l4.9-1.3c1.5.8 3.3 1.3 5.1 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4.4 15 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"></path></svg>
+      WhatsApp Keith
+    </a>
+    <span class="hamburger" onclick="knToggleMenu()">☰</span>
+  </div>
+</header>
+
+<style>
+.nv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:22px;}
+.nv-card{margin:0;}
+.nv-yt{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;cursor:pointer;box-shadow:0 14px 34px rgba(17,17,17,.12);}
+.nv-yt img{width:100%;height:100%;object-fit:cover;transition:transform .4s;} .nv-yt:hover img{transform:scale(1.03);}
+.nv-yt button{position:absolute;inset:0;margin:auto;width:76px;height:54px;border:0;border-radius:14px;background:rgba(255,0,0,.9);cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.nv-yt button svg{width:26px;height:26px;fill:#fff;}
+.nv-yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.nv-card figcaption{font:600 16px 'Playfair Display',serif;margin-top:12px;}
+.nv-more{display:inline-block;margin-top:16px;color:var(--gold);font-weight:600;font-size:14px;}
+</style><style>nav.nw-jump.nw-tabs{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;max-width:1240px;margin:34px auto 0}nav.nw-tabs .nw-jump-btn{min-width:0!important;padding:14px 14px 14px 12px;gap:12px}nav.nw-tabs .nw-jump-txt{min-width:0}nav.nw-tabs .nw-jump-arrow{display:none}nav.nw-tabs .nw-jump-txt small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.nw-tabs .nw-jump-btn.on{background:#1d1b4f;box-shadow:0 14px 30px rgba(29,27,79,.25)}.nw-tabs .nw-jump-txt b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.journal-hero + #market-notes, .journal-hero ~ .mn{padding-top:56px}.nw-sub-hero{padding-bottom:38px}.nw-sub-hero h1{font-size:clamp(34px,5vw,58px)}.nw-back{display:inline-block;margin-bottom:14px;color:var(--gold);font-weight:700;font-size:14px}.nw-more{display:flex;justify-content:center;margin-top:26px}.nw-more a{display:inline-flex;align-items:center;gap:8px;background:#5E60CE;color:#fff;font-weight:700;padding:13px 26px;border-radius:100px;box-shadow:0 12px 26px rgba(94,96,206,.28);transition:transform .2s,box-shadow .2s}.nw-more a:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(94,96,206,.36)}.nw-gcards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}.nw-gcards a{display:block;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;transition:border-color .2s,box-shadow .2s}.nw-gcards a:hover{border-color:var(--gold);box-shadow:0 14px 30px rgba(29,27,79,.1)}.nw-gcards b{display:block;font:700 19px "Playfair Display",serif;margin:10px 0 6px}.nw-gcards small{color:var(--grey);font-size:14px;line-height:1.55;display:block}.nw-gcards em{display:inline-block;margin-top:12px;color:var(--gold);font-style:normal;font-weight:700;font-size:13.5px}.nw-gcards .ic{width:44px;height:44px;border-radius:12px;background:#eeedfb;display:flex;align-items:center;justify-content:center;color:#5E60CE}.nw-gcards .ic svg{width:24px;height:24px}@media(max-width:1100px){nav.nw-jump.nw-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:760px){nav.nw-jump.nw-tabs{grid-template-columns:1fr 1fr;gap:10px}nav.nw-tabs .nw-jump-btn:last-child{grid-column:1/-1}.nw-gcards{grid-template-columns:1fr}}@media(max-width:420px){.nw-tabs .nw-jump-btn{padding:12px}.nw-tabs .nw-jump-ic{display:none}}</style><section class="journal-hero nw-sub-hero"><a class="nw-back" href="/ms/blog.html"><span data-nwh="back">← Berita</span></a><span class="eyebrow">Panduan Membeli</span><h1>Buying property in Malaysia, step by step</h1><p>New property, subsale and the rules for foreign buyers: the key numbers, the stages and the questions buyers ask most.</p><nav class="nw-jump nw-tabs" aria-label="News sections"><a class="nw-jump-btn" href="/ms/market-notes.html"><span class="nw-jump-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h11l3 3v13H5z"></path><path d="M9 10h6M9 14h6M9 18h3"></path></svg></span><span class="nw-jump-txt"><b><span data-nwh="mn">Nota Pasaran</span></b><small><span data-nwh="mn_s">Pandangan harian Keith</span></small></span><span class="nw-jump-arrow" aria-hidden="true">→</span></a><a class="nw-jump-btn on" aria-current="page" href="/ms/buying-guide.html"><span class="nw-jump-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V9l8-6 8 6v12"></path><path d="M9 21v-6h6v6"></path></svg></span><span class="nw-jump-txt"><b>Panduan Membeli</b><small>Panduan langkah demi langkah</small></span><span class="nw-jump-arrow" aria-hidden="true">→</span></a><!-- KN-NDJ:START --><a class="nw-jump-btn" href="/ms/market-data.html"><span class="nw-jump-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"></path></svg></span><span class="nw-jump-txt"><b><span data-kd="nd_eb">Market Data</span></b><small><span data-kd="nd_js">Prices by area</span></small></span><span class="nw-jump-arrow" aria-hidden="true">→</span></a><!-- KN-NDJ:END --><a class="nw-jump-btn" href="/ms/faq.html"><span class="nw-jump-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 015 .5c0 1.7-2.5 2-2.5 3.5"></path><circle cx="12" cy="17" r=".6" fill="currentColor"></circle></svg></span><span class="nw-jump-txt"><b>Soalan Lazim</b><small>46 answers</small></span><span class="nw-jump-arrow" aria-hidden="true">→</span></a><a class="nw-jump-btn" href="/ms/articles.html"><span class="nw-jump-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M8 9h8M8 13h8M8 17h5"></path></svg></span><span class="nw-jump-txt"><b><span data-nwh="art">Artikel</span></b><small>Articles by topic</small></span><span class="nw-jump-arrow" aria-hidden="true">→</span></a></nav></section>
+<section class="nw-sec bg-sec" id="buying-guide">
+  <div class="bg-tabs" role="tablist"><button type="button" class="bg-tab active" role="tab" aria-selected="true" data-guide="new-property"><span class="bg-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V9l8-6 8 6v12"></path><path d="M9 21v-6h6v6"></path><path d="M15 3h3v4"></path></svg></span><span class="bg-tab-title">Membeli Hartanah Baharu</span><span class="bg-tab-sub">Projek baharu dan dalam pembinaan yang dibeli daripada pemaju</span></button><button type="button" class="bg-tab" role="tab" aria-selected="false" data-guide="subsale"><span class="bg-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path><circle cx="12" cy="14" r="2"></circle><path d="M12 16v3"></path></svg></span><span class="bg-tab-title">Membeli Hartanah Subsale</span><span class="bg-tab-sub">Rumah siap yang dibeli daripada pemilik sedia ada</span></button><button type="button" class="bg-tab" role="tab" aria-selected="false" data-guide="foreign-buyers"><span class="bg-tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg></span><span class="bg-tab-title">Warga Asing Membeli Hartanah</span><span class="bg-tab-sub">Peraturan, kos dan langkah untuk pembeli bukan warganegara</span></button></div>
+    <div class="bg-panel" id="new-property" role="tabpanel" data-no-currency="">
+      <h3 class="bg-h3">Membeli hartanah baharu di Malaysia</h3>
+      <div class="bg-top">
+        <div class="bg-short"><p class="bg-label">Jawapan ringkas</p><p>Pembelian projek baharu mengikut laluan undang-undang yang tetap. Anda membayar yuran tempahan, menandatangani Perjanjian Jual Beli (SPA) berkanun pemaju dengan 10% dibayar, kemudian bank membayar pemaju secara berperingkat mengikut kemajuan pembinaan. Pemaju mesti menyerahkan rumah dalam 36 bulan bagi kondominium (24 bulan bagi rumah bertanah) atau membayar ganti rugi lewat serah, dan mesti membaiki kecacatan selama 24 bulan selepas penyerahan.</p></div>
+        <div class="bg-numbers"><p class="bg-label">Angka utama</p><table><tbody><tr><th scope="row">Perjanjian Jual Beli (SPA)</th><td>Borang berkanun di bawah Akta Pemajuan Perumahan: Jadual H untuk strata (kondominium), Jadual G untuk rumah bertanah. Pemaju tidak boleh mengubah syaratnya sehingga merugikan anda.</td></tr><tr><th scope="row">Dibayar semasa menandatangani SPA</th><td>10% daripada harga, termasuk yuran tempahan yang telah dibayar</td></tr><tr><th scope="row">Yuran tempahan</th><td>Biasanya 2% hingga 3%, dikira sebahagian daripada 10%</td></tr><tr><th scope="row">Tarikh akhir penyerahan</th><td>36 bulan bagi strata, 24 bulan bagi rumah bertanah, dikira dari tarikh SPA</td></tr><tr><th scope="row">Ganti rugi lewat serah (LAD)</th><td>10% setahun daripada harga belian, dikira dari tarikh anda membayar yuran tempahan</td></tr><tr><th scope="row">Tempoh liabiliti kecacatan</th><td>24 bulan dari milikan kosong; pemaju mesti membaiki dalam 30 hari selepas notis bertulis anda</td></tr><tr><th scope="row">Sebelum anda menerima kunci</th><td>Perakuan Siap dan Pematuhan (CCC), serta bekalan air dan elektrik yang telah disambung</td></tr><tr><th scope="row">Jika berlaku masalah</th><td>Tribunal Tuntutan Pembeli Rumah mendengar tuntutan sehingga RM50,000 dengan yuran pemfailan yang kecil</td></tr></tbody></table></div>
+      </div>
+      <p class="bg-label">Enam peringkat, dari awal hingga akhir</p>
+      <ol class="bg-steps"><li><a href="/ms/buying-guide.html#new-property-stage-1"><b>1</b><span>Senarai pendek dan semakan</span></a></li><li><a href="/ms/buying-guide.html#new-property-stage-2"><b>2</b><span>Tempah dan uruskan pinjaman</span></a></li><li><a href="/ms/buying-guide.html#new-property-stage-3"><b>3</b><span>Tandatangani SPA dan perjanjian pinjaman</span></a></li><li><a href="/ms/buying-guide.html#new-property-stage-4"><b>4</b><span>Bayar berperingkat semasa pembinaan</span></a></li><li><a href="/ms/buying-guide.html#new-property-stage-5"><b>5</b><span>Milikan kosong dan penyerahan</span></a></li><li><a href="/ms/buying-guide.html#new-property-stage-6"><b>6</b><span>Selepas anda menerima kunci</span></a></li></ol>
+      <div class="bg-stages"><article class="bg-stage" id="new-property-stage-1"><div class="bg-stage-num">Peringkat 1</div><h4>Senarai pendek dan semakan</h4><ul><li>Semak nombor lesen dan permit iklan pemaju, yang mesti dipaparkan pada setiap iklan, di laman web kementerian perumahan.</li><li>Sahkan jenis hakmilik tanah: kediaman atau komersial. Pangsapuri servis di atas tanah komersial biasanya membayar kadar komersial untuk utiliti dan cukai taksiran.</li><li>Bandingkan harga sekaki persegi dan yuran penyelenggaraan dengan projek siap berdekatan, dan semak projek lalu serta rekod penyerahan pemaju.</li><li>Minta senarai harga penuh, rebat dan apa yang termasuk: petak kereta, kelengkapan terbina dan promosi yuran guaman.</li></ul></article><article class="bg-stage" id="new-property-stage-2"><div class="bg-stage-num">Peringkat 2</div><h4>Tempah dan uruskan pinjaman</h4><ul><li>Tandatangani borang tempahan dan bayar yuran tempahan. Baca syarat bayaran balik dahulu: sesetengah pemaju menahan sebahagian yuran jika anda membatalkan.</li><li>Mohon kepada dua atau tiga bank serentak. Bank melihat nisbah khidmat hutang anda (hutang bulanan berbanding pendapatan).</li><li>Bank Negara menghadkan pinjaman kepada 70% untuk pinjaman rumah ketiga dan seterusnya; rumah pertama dan kedua biasanya boleh sehingga 90%.</li><li>Sediakan kad pengenalan atau pasport, slip gaji atau penyata cukai terkini, dan penyata bank tiga hingga enam bulan.</li></ul></article><article class="bg-stage" id="new-property-stage-3"><div class="bg-stage-num">Peringkat 3</div><h4>Tandatangani SPA dan perjanjian pinjaman</h4><ul><li>Tandatangani SPA dalam tempoh yang dinyatakan dalam borang tempahan, dan bayar baki sehingga 10% daripada harga.</li><li>Semak nombor unit, keluasan, petak kereta, jadual bayaran dan tarikh penyerahan dalam SPA sebelum menandatangani.</li><li>Tandatangani perjanjian pinjaman dengan peguam bank. Duti setem pinjaman ialah 0.5% daripada jumlah pinjaman.</li><li>Pemaju sering menanggung yuran guaman SPA dalam promosi; yuran guaman pinjaman biasanya ditanggung anda.</li></ul></article><article class="bg-stage" id="new-property-stage-4"><div class="bg-stage-num">Peringkat 4</div><h4>Bayar berperingkat semasa pembinaan</h4><ul><li>Pemaju mengebil mengikut peringkat pembinaan, seperti dalam jadual bayaran SPA.</li><li>Bank anda membayar setiap ansuran terus kepada pemaju selepas arkitek mengesahkan peringkat tersebut.</li><li>Anda hanya membayar faedah atas jumlah yang telah dikeluarkan, jadi ansuran bermula kecil dan meningkat mengikut kemajuan pembinaan.</li><li>Simpan setiap bil kemajuan dan resit bayaran: anda memerlukannya untuk peringkat akhir dan sebarang tuntutan.</li></ul></article><article class="bg-stage" id="new-property-stage-5"><div class="bg-stage-num">Peringkat 5</div><h4>Milikan kosong dan penyerahan</h4><ul><li>Pemaju menghantar notis milikan kosong selepas CCC dikeluarkan dan bekalan air serta elektrik disambung.</li><li>Bayar jumlah akhir yang perlu, kemudian ambil kunci dan dokumen penyerahan.</li><li>Periksa unit dengan teliti pada hari itu, ambil gambar setiap kecacatan dan serahkan senarai kecacatan bertulis.</li><li>Yuran penyelenggaraan, kumpulan wang penjelas, utiliti dan (apabila dikeluarkan) cukai taksiran bermula dari milikan kosong.</li></ul></article><article class="bg-stage" id="new-property-stage-6"><div class="bg-stage-num">Peringkat 6</div><h4>Selepas anda menerima kunci</h4><ul><li>Selama 24 bulan, pemaju mesti membaiki kecacatan yang anda laporkan secara bertulis dalam 30 hari selepas notis.</li><li>Jika tidak, anda boleh membaikinya sendiri selepas memberi notis dan menuntut kosnya, atau membawa kes ke Tribunal Tuntutan Pembeli Rumah.</li><li>Bagi kondominium, Badan Pengurusan Bersama menguruskan bangunan sehingga hakmilik strata dikeluarkan dan Perbadanan Pengurusan mengambil alih.</li><li>Tuntut ganti rugi lewat serah jika penyerahan berlaku selepas tarikh akhir dalam SPA anda.</li></ul></article></div>
+      <p class="bg-label">Soalan pembeli</p>
+      <div class="bg-faqs"><details class="bg-faq"><summary>Adakah yuran tempahan dipulangkan jika saya membatalkan?</summary><p>Bergantung pada borang tempahan. Sebelum SPA ditandatangani, banyak pemaju memulangkan yuran sepenuhnya atau menahan caj pentadbiran yang kecil. Baca syarat pembatalan sebelum membayar dan simpan resitnya.</p></details><details class="bg-faq"><summary>Berapa banyak saya boleh tuntut untuk lewat serah?</summary><p>Ganti rugi lewat serah ialah 10% setahun daripada harga belian, dikira dari tarikh yuran tempahan dibayar sehingga milikan kosong. Bagi kondominium RM800,000 yang diserahkan tiga bulan lewat, jumlahnya kira-kira RM20,000.</p></details><details class="bg-faq"><summary>Berapa lama tempoh liabiliti kecacatan?</summary><p>24 bulan dari milikan kosong. Laporkan kecacatan secara bertulis; pemaju mesti membaikinya dalam 30 hari selepas notis anda.</p></details><details class="bg-faq"><summary>Di mana saya boleh membuat aduan tentang pemaju?</summary><p>Mulakan dengan aduan bertulis kepada pemaju. Jika gagal, failkan tuntutan di Tribunal Tuntutan Pembeli Rumah (sehingga RM50,000) atau adukan kepada kementerian perumahan. Tuntutan yang lebih besar dibawa ke mahkamah.</p></details><details class="bg-faq"><summary>Patutkah saya membeli projek baharu atau unit subsale?</summary><p>Projek baharu biasanya memerlukan bayaran awal yang lebih rendah dan dibayar berperingkat, tetapi anda perlu menunggu dua hingga empat tahun dan bergantung pada pemaju. Unit subsale sedia diduduki dan boleh diperiksa, tetapi bayaran awal lebih tinggi dan diambil dalam keadaan sedia ada. Ramai pelabur memilih projek baharu untuk pertumbuhan modal, dan subsale untuk pendapatan sewa segera.</p></details></div>
+      <div class="bg-cta"><p>Tersekat pada satu langkah? Tanya Keith terus.</p><a class="bg-wa wa-link" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I+have+a+question+about+buying+new+property.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.44.79 3.06 1.2 4.72 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0012.04 2z"></path></svg><span>WhatsApp Keith</span></a></div>
+      <p class="bg-note">Angka setakat November 2026. Peraturan dan kadar berubah; sahkan butiran pembelian anda dengan Keith atau peguam anda sebelum membuat keputusan.</p>
+    </div>
+    <div class="bg-panel" id="subsale" role="tabpanel" hidden="" data-no-currency="">
+      <h3 class="bg-h3">Membeli hartanah subsale di Malaysia</h3>
+      <div class="bg-top">
+        <div class="bg-short"><p class="bg-label">Jawapan ringkas</p><p>Subsale ialah rumah siap yang dibeli daripada pemilik semasa. Kebanyakan risiko diselesaikan sebelum anda membayar apa-apa: semak hakmilik, tunggakan pemilik dan keadaan unit dahulu. Kemudian anda membayar deposit cengkeram (biasanya 2% hingga 3%) untuk menahan unit, menandatangani SPA dengan 10% dibayar, dan peguam menyelesaikan jual beli dalam kira-kira tiga bulan.</p></div>
+        <div class="bg-numbers"><p class="bg-label">Angka utama</p><table><tbody><tr><th scope="row">Deposit cengkeram</th><td>Biasanya 2% hingga 3% bersama surat tawaran, ditambah hingga 10% semasa menandatangani SPA</td></tr><tr><th scope="row">Tempoh penyelesaian</th><td>Biasanya 3 bulan dari SPA (atau dari tarikh kelulusan diberi), ditambah lanjutan 1 bulan dengan faedah lewat bayar, lazimnya 8% setahun</td></tr><tr><th scope="row">Duti setem pindah milik</th><td>Warganegara dan PR: 1% bagi RM100,000 pertama, 2% sehingga RM500,000, 3% sehingga RM1,000,000 dan 4% selebihnya, atas harga atau nilai pasaran yang lebih tinggi. Warga asing: 8% rata bagi kediaman mulai 1 Jan 2026</td></tr><tr><th scope="row">Duti setem pinjaman</th><td>0.5% daripada jumlah pinjaman</td></tr><tr><th scope="row">Wang tahanan RPGT</th><td>Peguam anda menahan 3% daripada harga (7% jika penjual bukan warganegara Malaysia) dan membayarnya kepada LHDN dalam 60 hari</td></tr><tr><th scope="row">Kelulusan negeri</th><td>Diperlukan bagi hakmilik pajakan, hakmilik dengan sekatan kepentingan, dan pembeli asing; boleh memakan masa beberapa minggu atau bulan</td></tr><tr><th scope="row">Komisen ejen</th><td>Sehingga 3% daripada harga, biasanya dibayar oleh penjual</td></tr><tr><th scope="row">Semak sebelum membuat tawaran</th><td>Carian hakmilik, kaveat dan gadaian, tunggakan penyelenggaraan dan cukai taksiran, penyewaan dan keadaan unit</td></tr></tbody></table></div>
+      </div>
+      <p class="bg-label">Enam peringkat, dari awal hingga akhir</p>
+      <ol class="bg-steps"><li><a href="/ms/buying-guide.html#subsale-stage-1"><b>1</b><span>Semak sebelum membuat tawaran</span></a></li><li><a href="/ms/buying-guide.html#subsale-stage-2"><b>2</b><span>Buat tawaran dan bayar deposit</span></a></li><li><a href="/ms/buying-guide.html#subsale-stage-3"><b>3</b><span>Tandatangani SPA</span></a></li><li><a href="/ms/buying-guide.html#subsale-stage-4"><b>4</b><span>Kelulusan dan dokumen pinjaman</span></a></li><li><a href="/ms/buying-guide.html#subsale-stage-5"><b>5</b><span>Penyelesaian</span></a></li><li><a href="/ms/buying-guide.html#subsale-stage-6"><b>6</b><span>Menerima kunci</span></a></li></ol>
+      <div class="bg-stages"><article class="bg-stage" id="subsale-stage-1"><div class="bg-stage-num">Peringkat 1</div><h4>Semak sebelum membuat tawaran</h4><ul><li>Minta peguam membuat carian hakmilik tanah: nama pemilik, jenis hakmilik, gadaian bank, kaveat dan sekatan seperti status Bumiputera atau Rizab Melayu.</li><li>Tanya sama ada hakmilik strata individu telah dikeluarkan. Tanpanya, pindah milik memerlukan kebenaran pemaju dan mengambil masa lebih lama.</li><li>Semak tunggakan: penyelenggaraan dan kumpulan wang penjelas, cukai tanah, cukai taksiran dan bil utiliti. Persetujui secara bertulis bahawa penjual menjelaskannya.</li><li>Periksa unit pada waktu siang: kebocoran, keretakan, tekanan air, pendawaian dan sebarang ubah suai yang mungkin memerlukan kelulusan.</li></ul></article><article class="bg-stage" id="subsale-stage-2"><div class="bg-stage-num">Peringkat 2</div><h4>Buat tawaran dan bayar deposit</h4><ul><li>Tulis surat tawaran dengan harga, perabot yang termasuk, tempoh penyelesaian dan "tertakluk kepada kelulusan pinjaman".</li><li>Bayar deposit cengkeram, biasanya 2% hingga 3%, kepada ejen atau peguam sebagai pemegang amanah, bukan terus kepada penjual.</li><li>Mohon pinjaman sekarang. Bank akan menghantar penilai, dan pinjaman berdasarkan harga atau nilaian yang lebih rendah.</li><li>Jika nilaian rendah, anda membayar perbezaannya secara tunai atau berunding semula.</li></ul></article><article class="bg-stage" id="subsale-stage-3"><div class="bg-stage-num">Peringkat 3</div><h4>Tandatangani SPA</h4><ul><li>Tandatangani SPA, biasanya dalam dua hingga tiga minggu selepas tawaran, dan bayar baki sehingga 10% daripada harga.</li><li>Peguam anda menyetemkan SPA dan memfailkan borang RPGT dengan LHDN.</li><li>Peguam anda menahan 3% daripada harga (7% jika penjual bukan warganegara) untuk RPGT penjual.</li><li>Yuran guaman mengikut skala Perintah Saraan Peguam Cara. Gunakan kalkulator kami untuk menganggarkannya.</li></ul></article><article class="bg-stage" id="subsale-stage-4"><div class="bg-stage-num">Peringkat 4</div><h4>Kelulusan dan dokumen pinjaman</h4><ul><li>Jika perlu, peguam anda memohon kelulusan negeri atau kebenaran pemaju atau pihak pengurusan untuk pindah milik.</li><li>Tandatangani perjanjian pinjaman. Bank anda memberi aku janji untuk membayar baki semasa penyelesaian.</li><li>Bayar duti setem bagi Memorandum Pindah Milik dan pinjaman.</li><li>Jika penjual masih mempunyai pinjaman, bank anda melunaskannya terus dan bakinya diberi kepada penjual.</li></ul></article><article class="bg-stage" id="subsale-stage-5"><div class="bg-stage-num">Peringkat 5</div><h4>Penyelesaian</h4><ul><li>Baki harga mesti dibayar dalam tempoh penyelesaian, biasanya 3 bulan ditambah lanjutan 1 bulan.</li><li>Jika bank lewat membayar, faedah biasanya dikenakan sekitar 8% setahun bagi tempoh lanjutan.</li><li>Peguam anda mendaftarkan pindah milik (Borang 14A) dan gadaian bank (Borang 16A) di pejabat tanah. Pendaftaran boleh mengambil beberapa bulan.</li></ul></article><article class="bg-stage" id="subsale-stage-6"><div class="bg-stage-num">Peringkat 6</div><h4>Menerima kunci</h4><ul><li>Penjual menyerahkan milikan kosong dan kunci selepas harga penuh dibayar.</li><li>Ambil bacaan meter dan pindahkan akaun air, elektrik dan internet ke nama anda.</li><li>Daftar di pejabat pengurusan dan kemas kini nama bagi cukai tanah dan cukai taksiran.</li><li>Simpan dokumen yang telah disetemkan dan hakmilik akhir dengan selamat: anda memerlukannya apabila menjual.</li></ul></article></div>
+      <p class="bg-label">Soalan pembeli</p>
+      <div class="bg-faqs"><details class="bg-faq"><summary>Berapa deposit yang perlu dibayar untuk hartanah subsale?</summary><p>Biasanya 2% hingga 3% sebagai deposit cengkeram bersama tawaran, kemudian baki sehingga 10% semasa menandatangani SPA. Baki 90% dibayar semasa penyelesaian, biasanya melalui pinjaman bank.</p></details><details class="bg-faq"><summary>Berapa lama proses subsale?</summary><p>Kira-kira tiga bulan dari SPA hingga penyelesaian, ditambah lanjutan sebulan jika perlu. Hakmilik yang memerlukan kelulusan negeri atau pemaju boleh mengambil masa lebih lama.</p></details><details class="bg-faq"><summary>Mengapa peguam saya menahan 3% untuk LHDN?</summary><p>Undang-undang mewajibkan pembeli menahan sebahagian harga supaya Cukai Keuntungan Harta Tanah (RPGT) penjual terlindung: 3% bagi penjual warganegara dan 7% bagi penjual bukan warganegara. Ia dibayar kepada LHDN dalam 60 hari dan diambil kira dalam cukai penjual.</p></details><details class="bg-faq"><summary>Apa yang perlu disemak sebelum membeli hartanah subsale?</summary><p>Hakmilik (pemilik, gadaian, kaveat dan sekatan), sama ada hakmilik strata telah dikeluarkan, tunggakan pemilik, sebarang penyewaan dan keadaan unit, termasuk kelulusan ubah suai.</p></details><details class="bg-faq"><summary>Siapa yang membayar komisen ejen?</summary><p>Biasanya penjual. Had maksimum di sisi undang-undang ialah 3% daripada harga. Jika anda melantik ejen sendiri untuk mencari hartanah, persetujui yurannya secara bertulis dahulu.</p></details></div>
+      <div class="bg-cta"><p>Tersekat pada satu langkah? Tanya Keith terus.</p><a class="bg-wa wa-link" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I+have+a+question+about+buying+subsale+property.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.44.79 3.06 1.2 4.72 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0012.04 2z"></path></svg><span>WhatsApp Keith</span></a></div>
+      <p class="bg-note">Angka setakat November 2026. Peraturan dan kadar berubah; sahkan butiran pembelian anda dengan Keith atau peguam anda sebelum membuat keputusan.</p>
+    </div>
+    <div class="bg-panel" id="foreign-buyers" role="tabpanel" hidden="" data-no-currency="">
+      <h3 class="bg-h3">Warga asing membeli hartanah di Malaysia</h3>
+      <div class="bg-top">
+        <div class="bg-short"><p class="bg-label">Jawapan ringkas</p><p>Warga asing boleh memiliki rumah pegangan bebas dan pajakan di Malaysia, tetapi hanya melebihi harga minimum yang ditetapkan oleh setiap negeri, dan setiap pembelian memerlukan kelulusan negeri. Mulai 1 Januari 2026, pindah milik kediaman kepada bukan warganegara dikenakan duti setem rata 8%. Bank biasanya memberi pinjaman 50% hingga 70% daripada harga.</p></div>
+        <div class="bg-numbers"><p class="bg-label">Angka utama</p><table><tbody><tr><th scope="row">Siapa yang dikira pembeli asing</th><td>Sesiapa yang bukan warganegara Malaysia. Penduduk tetap membayar kadar duti setem tempatan; semak sama ada had dan peraturan kelulusan negeri anda terpakai kepada anda</td></tr><tr><th scope="row">Harga belian minimum</th><td>Ditetapkan oleh setiap negeri: Kuala Lumpur RM1,000,000; Selangor RM2,000,000; Johor RM1,000,000 bagi strata dan RM2,000,000 bagi rumah bertanah; Pulau Pinang berbeza mengikut pulau, tanah besar dan jenis hartanah</td></tr><tr><th scope="row">Apa yang tidak boleh dibeli</th><td>Tanah Rizab Melayu, lot Bumiputera, rumah kos rendah dan sederhana, dan unit di bawah harga minimum negeri</td></tr><tr><th scope="row">Kelulusan negeri</th><td>Diperlukan bagi setiap pembelian oleh warga asing; pindah milik tanpanya adalah tidak sah. Peguam memohon selepas SPA, dan yuran serta tempoh berbeza mengikut negeri</td></tr><tr><th scope="row">Duti setem pindah milik</th><td>8% rata bagi hartanah kediaman mulai 1 Jan 2026, ditambah 0.5% bagi pinjaman</td></tr><tr><th scope="row">Pinjaman perumahan</th><td>Lazimnya 50% hingga 70% daripada harga, bergantung pada bank dan negara sumber pendapatan anda</td></tr><tr><th scope="row">Cukai pendapatan sewa</th><td>Bukan pemastautin membayar 30% rata atas pendapatan sewa di Malaysia dan memfailkan penyata tahunan</td></tr><tr><th scope="row">RPGT semasa menjual</th><td>30% daripada keuntungan dalam 5 tahun, 10% mulai tahun ke-6; pembeli menahan 7% daripada harga</td></tr></tbody></table></div>
+      </div>
+      <p class="bg-label">Enam peringkat, dari awal hingga akhir</p>
+      <ol class="bg-steps"><li><a href="/ms/buying-guide.html#foreign-buyers-stage-1"><b>1</b><span>Sahkan kelayakan anda</span></a></li><li><a href="/ms/buying-guide.html#foreign-buyers-stage-2"><b>2</b><span>Bajet dan pembiayaan</span></a></li><li><a href="/ms/buying-guide.html#foreign-buyers-stage-3"><b>3</b><span>Tempah dan tandatangani SPA</span></a></li><li><a href="/ms/buying-guide.html#foreign-buyers-stage-4"><b>4</b><span>Dapatkan kelulusan negeri</span></a></li><li><a href="/ms/buying-guide.html#foreign-buyers-stage-5"><b>5</b><span>Penyelesaian dan pindah milik</span></a></li><li><a href="/ms/buying-guide.html#foreign-buyers-stage-6"><b>6</b><span>Memiliki, menyewa dan menjual</span></a></li></ol>
+      <div class="bg-stages"><article class="bg-stage" id="foreign-buyers-stage-1"><div class="bg-stage-num">Peringkat 1</div><h4>Sahkan kelayakan anda</h4><ul><li>Semak harga minimum bagi negeri dan jenis hartanah yang anda mahu. Harga sebelum rebat mungkin tidak diambil kira.</li><li>Pastikan unit tidak terletak di tanah Rizab Melayu, bukan lot Bumiputera dan bukan rumah kos rendah atau sederhana.</li><li>Tanya sama ada pemaju atau hakmilik memerlukan kelulusan tambahan bagi pembeli asing.</li></ul></article><article class="bg-stage" id="foreign-buyers-stage-2"><div class="bg-stage-num">Peringkat 2</div><h4>Bajet dan pembiayaan</h4><ul><li>Peruntukkan kira-kira 10% hingga 12% di atas harga: duti setem 8%, yuran guaman, yuran kelulusan dan kos pinjaman.</li><li>Minta prakelulusan daripada bank yang memberi pinjaman kepada warganegara anda: biasanya 50% hingga 70% daripada harga.</li><li>Sediakan pasport, bukti pendapatan (slip gaji, surat tawaran kerja atau penyata cukai), penyata bank dan laporan kredit dari negara asal anda.</li><li>Simpan rekod wang yang dihantar ke Malaysia: anda memerlukannya untuk menghantar hasil jualan pulang kelak.</li></ul></article><article class="bg-stage" id="foreign-buyers-stage-3"><div class="bg-stage-num">Peringkat 3</div><h4>Tempah dan tandatangani SPA</h4><ul><li>Bayar yuran tempahan (projek baharu) atau deposit cengkeram (subsale).</li><li>Tandatangani SPA, biasanya dinyatakan tertakluk kepada kelulusan negeri, dan bayar baki sehingga 10%.</li><li>Anda boleh menandatangani melalui peguam atau dengan surat kuasa wakil jika berada di luar negara.</li></ul></article><article class="bg-stage" id="foreign-buyers-stage-4"><div class="bg-stage-num">Peringkat 4</div><h4>Dapatkan kelulusan negeri</h4><ul><li>Peguam anda memohon kepada pihak berkuasa negeri selepas SPA ditandatangani.</li><li>Ia boleh mengambil masa dari beberapa minggu hingga beberapa bulan, bergantung pada negeri.</li><li>Tempoh penyelesaian dalam SPA biasanya hanya bermula selepas kelulusan diberi.</li></ul></article><article class="bg-stage" id="foreign-buyers-stage-5"><div class="bg-stage-num">Peringkat 5</div><h4>Penyelesaian dan pindah milik</h4><ul><li>Bayar baki harga melalui pinjaman bank atau dana yang dihantar dari luar negara.</li><li>Bayar duti setem 8% bagi pindah milik. Peguam anda mendaftarkan hartanah atas nama anda.</li><li>Ambil kunci dan uruskan utiliti serta akaun pengurusan.</li></ul></article><article class="bg-stage" id="foreign-buyers-stage-6"><div class="bg-stage-num">Peringkat 6</div><h4>Memiliki, menyewa dan menjual</h4><ul><li>Bayar yuran penyelenggaraan, kumpulan wang penjelas, cukai tanah dan cukai taksiran setiap tahun.</li><li>Jika anda menyewakannya, semak peraturan bangunan tentang sewaan jangka pendek dan isytiharkan pendapatan sewa: bukan pemastautin membayar 30%.</li><li>Apabila menjual, RPGT ialah 30% daripada keuntungan dalam 5 tahun dan 10% mulai tahun ke-6. Memegang lebih lama menjimatkan cukai.</li></ul></article></div>
+      <p class="bg-label">Soalan pembeli</p>
+      <div class="bg-faqs"><details class="bg-faq"><summary>Berapakah harga minimum bagi warga asing?</summary><p>Bergantung pada negeri: RM1,000,000 di Kuala Lumpur, RM2,000,000 di Selangor, dan di Johor RM1,000,000 bagi strata dan RM2,000,000 bagi rumah bertanah. Pulau Pinang menetapkan had berbeza bagi pulau, tanah besar dan setiap jenis hartanah. Sentiasa sahkan peraturan terkini sebelum menempah.</p></details><details class="bg-faq"><summary>Berapa duti setem yang dibayar oleh warga asing?</summary><p>8% rata daripada harga bagi hartanah kediaman yang dipindah milik mulai 1 Januari 2026 (rakyat Malaysia membayar 1% hingga 4% secara berperingkat). Terdapat juga duti setem 0.5% bagi pinjaman.</p></details><details class="bg-faq"><summary>Adakah penduduk tetap dikira sebagai warga asing?</summary><p>Bagi duti setem, PR Malaysia membayar kadar tempatan. Bagi harga minimum dan kelulusan, peraturan berbeza mengikut negeri, jadi semak dengan peguam sebelum menempah.</p></details><details class="bg-faq"><summary>Bolehkah warga asing mendapat pinjaman perumahan di Malaysia?</summary><p>Boleh. Beberapa bank memberi pinjaman kepada warga asing, biasanya 50% hingga 70% daripada harga, bergantung pada kewarganegaraan, sumber pendapatan dan sejarah kredit anda.</p></details><details class="bg-faq"><summary>Berapa RPGT yang dibayar warga asing semasa menjual?</summary><p>30% daripada keuntungan jika dijual dalam 5 tahun, dan 10% mulai tahun ke-6. Peguam pembeli menahan 7% daripada harga untuk LHDN.</p></details></div>
+      <div class="bg-cta"><p>Tersekat pada satu langkah? Tanya Keith terus.</p><a class="bg-wa wa-link" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I+have+a+question+about+foreigners+buying+property.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.44.79 3.06 1.2 4.72 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0012.04 2z"></path></svg><span>WhatsApp Keith</span></a></div>
+      <p class="bg-note">Angka setakat November 2026. Peraturan dan kadar berubah; sahkan butiran pembelian anda dengan Keith atau peguam anda sebelum membuat keputusan.</p>
+    </div>
+</section><!-- ===================== SUBSCRIBE / CONTACT STRIP ===================== -->
+<section class="subscribe">
+  <h2>Jangan terlepas kemas kini pasaran.</h2>
+  <p>Mesej Keith terus di WhatsApp untuk pelancaran projek terkini dan pandangan pasaran, atau ikuti di YouTube.</p>
+  <div class="subscribe-actions"><a href="https://wa.me/60102821568?text=(KNRE)%20Hi%20Keith%2C%20I%20would%20like%20to%20explore%20more%20on%20Malaysia%20Property." target="_blank" rel="noopener" class="btn btn-gold wa-link" data-wa-msg="(KNRE) Hi Keith, I would like to explore more on Malaysia Property.">WhatsApp Keith</a>
+    <a href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener" class="btn btn-outline">Tonton di YouTube</a></div>
+</section>
+
+<!-- ===================== ARTICLE READER ===================== -->
+<div class="reader-overlay" id="readerOverlay" onclick="if(event.target===this) closeArticle()">
+  <div class="reader-card">
+    <div class="reader-close" onclick="closeArticle()">×</div>
+    <div class="reader-content">
+      <span class="reader-cat" id="readerCat"></span>
+      <h2 id="readerTitle"></h2>
+      <span class="reader-date" id="readerDate"></span>
+      <div class="reader-body" id="readerBody"></div>
+      <div class="reader-cta"><a href="https://wa.me/60102821568?text=(KNRE)%20Hi%20Keith%2C%20I%20would%20like%20to%20know%20more%20about%20this%20article." target="_blank" rel="noopener" class="btn btn-gold wa-link" data-wa-msg="(KNRE) Hi Keith, I would like to know more about this article.">Tanya Keith Tentang Ini</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="knf"><style>footer.knf{background:#080808!important;color:rgba(255,255,255,.5)!important;padding:56px 5vw 30px!important;text-align:left!important;border:0!important;font-family:Inter,system-ui,sans-serif;font-size:13px;margin:0}.knf a{text-decoration:none}.knf-top{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08)}.knf-logo{font-family:"Playfair Display",Georgia,serif;font-size:20px;color:#fff;display:flex;align-items:center;gap:10px}.knf-logo img{width:34px;height:34px;border-radius:50%;object-fit:contain}.knf-logo em{color:#5E60CE;font-style:italic}.knf-tag{font-size:12px;max-width:270px;color:rgba(255,255,255,.4);margin:14px 0 0;line-height:1.6}.knf-ren{font-size:11px;color:rgba(255,255,255,.35);margin:10px 0 0;letter-spacing:.04em}.knf-so{display:flex;gap:12px;margin-top:20px}.knf-so a{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;transition:transform .2s,box-shadow .2s}.knf-so a svg{width:21px;height:21px}.knf-so a:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,.45)}.knf-fb{background:#1877F2}.knf-yt{background:#FF0000}.knf-ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}.knf-col h5{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#fff;margin:0 0 16px;font-weight:700}.knf-col a{display:block;font-size:13px;margin-bottom:10px;color:rgba(255,255,255,.5);transition:color .3s}.knf-col a:hover{color:#8f91ff}.knf-bot{max-width:1180px;margin:24px auto 0;display:flex;justify-content:space-between;font-size:11px;letter-spacing:.04em;flex-wrap:wrap;gap:10px}@media(max-width:700px){.knf-top{display:grid;grid-template-columns:1fr 1fr;gap:28px 20px}.knf-top>div:first-child{grid-column:1/-1}}</style><div class="knf-top"><div><div class="knf-logo"><img src="images/f304c8479b1fe873.png" alt="Keith Nah logo" width="34" height="34" loading="lazy"><span>Keith Nah 鈞晖 <em>| Real Estate</em></span></div><p class="knf-tag" data-kf="tag">Hartanah premium Kuala Lumpur — KL City Centre, TRX, Bukit Bintang, Bangsar dan sekitarnya.</p><p class="knf-ren">REN 60517 · IQI Global</p><div class="knf-so"><a class="knf-fb" href="https://www.facebook.com/KeithNahRealEstate" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3z"></path></svg></a><a class="knf-yt" href="https://www.youtube.com/@KeithNahRealEstate" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3L10 15z"></path></svg></a><a class="knf-ig" href="https://www.instagram.com/keithnah_/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.7 4.7 0 0 0 12 7.3zm0 7.7a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm6-7.9a1.1 1.1 0 1 1-1.1-1.1A1.1 1.1 0 0 1 18 7.1zM21 8a5.4 5.4 0 0 0-1.5-3.8A5.4 5.4 0 0 0 15.7 2.7C14.2 2.6 9.8 2.6 8.3 2.7A5.4 5.4 0 0 0 4.5 4.2 5.4 5.4 0 0 0 3 8c-.1 1.5-.1 6.5 0 8a5.4 5.4 0 0 0 1.5 3.8 5.4 5.4 0 0 0 3.8 1.5c1.5.1 5.9.1 7.4 0a5.4 5.4 0 0 0 3.8-1.5A5.4 5.4 0 0 0 21 16c.1-1.5.1-6.5 0-8zm-2 9.7a3 3 0 0 1-1.7 1.7c-1.2.5-4 .4-5.3.4s-4.1.1-5.3-.4A3 3 0 0 1 5 17.7c-.5-1.2-.4-4-.4-5.3s-.1-4.1.4-5.3A3 3 0 0 1 6.7 5.4C7.9 4.9 10.7 5 12 5s4.1-.1 5.3.4A3 3 0 0 1 19 7.1c.5 1.2.4 4 .4 5.3s.1 4.1-.4 5.3z"></path></svg></a></div></div><div class="knf-col"><h5 data-kf="h_ex">Teroka</h5><a href="/ms/projects.html" data-kf="projects">Semua Projek</a><a href="/ms/find-my-home.html" data-kf="quiz">Cari Rumah Saya</a><a href="/ms/compare.html" data-kf="compare">Bandingkan Projek</a><a href="/ms/calculator.html" data-kf="calc">Kalkulator Pinjaman</a><a href="/ms/mm2h.html" data-kf="mm2h">Panduan MM2H</a></div><div class="knf-col"><h5 data-kf="h_in">Wawasan</h5><a href="/ms/market-notes.html" data-kf="notes">Nota Pasaran</a><a href="/ms/market-data.html" data-kf="data">Data Pasaran</a><a href="/ms/blog.html" data-kf="journal">Jurnal</a><a href="/ms/best/index.html" data-kf="best">Projek Baharu Terbaik</a><a href="/ms/resources.html" data-kf="kit">Kit Percuma</a></div><div class="knf-col"><h5 data-kf="h_ar">Kawasan Popular</h5><a href="/ms/area/kl-city-centre.html">KL City Centre</a><a href="/ms/area/bukit-bintang.html">Bukit Bintang</a><a href="/ms/area/trx.html">TRX</a><a href="/ms/area/bangsar.html">Bangsar</a><a href="/ms/area/penang.html">Penang</a><a href="/ms/area/jb-city-centre.html">Johor Bahru</a></div><div class="knf-col"><h5 data-kf="h_ab">Tentang</h5><a href="/ms/about-keith.html" data-kf="about">Tentang Keith</a><a href="https://wa.me/60102821568?text=Hi%20Keith%2C%20I%20would%20like%20to%20explore%20more%20on%20Malaysia%20Property." target="_blank" rel="noopener" data-kf="wa">WhatsApp Keith</a><a href="/ms/privacy-policy.html" data-kf="priv">Dasar Privasi</a><a href="/ms/terms-of-use.html" data-kf="terms">Terma Penggunaan</a></div></div><div class="knf-bot"><span data-kf="copy">© 2026 Keith Nah Real Estate. Hak cipta terpelihara.</span><span data-kf="loc">Kuala Lumpur, Malaysia</span></div><script>(function(){var T={"tag": ["Premium Kuala Lumpur real estate — KL City Centre, TRX, Bukit Bintang, Bangsar and beyond.", "吉隆坡优质房产 — KL City Centre、TRX、Bukit Bintang、Bangsar 及更多地区。", "吉隆坡優質房產 — KL City Centre、TRX、Bukit Bintang、Bangsar 及更多地區。", "Hartanah premium Kuala Lumpur — KL City Centre, TRX, Bukit Bintang, Bangsar dan sekitarnya.", "クアラルンプールの上質な不動産 — KL City Centre、TRX、Bukit Bintang、Bangsar など。", "쿠알라룸푸르 프리미엄 부동산 — KL City Centre, TRX, Bukit Bintang, Bangsar 등."], "h_ex": ["Explore", "浏览", "瀏覽", "Teroka", "探す", "둘러보기"], "h_in": ["Insights", "市场资讯", "市場資訊", "Wawasan", "インサイト", "인사이트"], "h_ar": ["Popular Areas", "热门地区", "熱門地區", "Kawasan Popular", "人気エリア", "인기 지역"], "h_ab": ["About", "关于", "關於", "Tentang", "概要", "소개"], "projects": ["All Projects", "全部项目", "全部項目", "Semua Projek", "すべての物件", "전체 프로젝트"], "quiz": ["Find My Home", "帮我找房", "幫我找房", "Cari Rumah Saya", "おうち探し", "내 집 찾기"], "compare": ["Compare Projects", "项目对比", "項目對比", "Bandingkan Projek", "物件を比較", "프로젝트 비교"], "calc": ["Loan Calculator", "房贷计算器", "房貸計算器", "Kalkulator Pinjaman", "ローン計算機", "대출 계산기"], "mm2h": ["MM2H Guide", "MM2H 指南", "MM2H 指南", "Panduan MM2H", "MM2H ガイド", "MM2H 가이드"], "notes": ["Market Notes", "每日市场短评", "每日市場短評", "Nota Pasaran", "マーケットノート", "마켓 노트"], "data": ["Market Data", "市场数据", "市場數據", "Data Pasaran", "マーケットデータ", "마켓 데이터"], "journal": ["The Journal", "房产资讯", "房產資訊", "Jurnal", "ジャーナル", "저널"], "best": ["Best New Launches", "精选新盘", "精選新盤", "Projek Baharu Terbaik", "おすすめ新築物件", "추천 신규 분양"], "kit": ["Free Toolkit", "免费工具包", "免費工具包", "Kit Percuma", "無料ツールキット", "무료 툴킷"], "about": ["About Keith", "关于 Keith", "關於 Keith", "Tentang Keith", "Keith について", "Keith 소개"], "wa": ["WhatsApp Keith", "WhatsApp Keith", "WhatsApp Keith", "WhatsApp Keith", "Keith に WhatsApp", "Keith에게 WhatsApp"], "priv": ["Privacy Policy", "隐私政策", "隱私權政策", "Dasar Privasi", "プライバシーポリシー", "개인정보 처리방침"], "terms": ["Terms of Use", "使用条款", "使用條款", "Terma Penggunaan", "利用規約", "이용약관"], "copy": ["© 2026 Keith Nah Real Estate. All rights reserved.", "© 2026 Keith Nah Real Estate. 版权所有。", "© 2026 Keith Nah Real Estate. 版權所有。", "© 2026 Keith Nah Real Estate. Hak cipta terpelihara.", "© 2026 Keith Nah Real Estate. All rights reserved.", "© 2026 Keith Nah Real Estate. 모든 권리 보유."], "loc": ["Kuala Lumpur, Malaysia", "马来西亚 吉隆坡", "馬來西亞 吉隆坡", "Kuala Lumpur, Malaysia", "マレーシア・クアラルンプール", "말레이시아 쿠알라룸푸르"]},L=["en", "zh-CN", "zh-TW", "ms", "ja", "ko"];function f(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}var i=L.indexOf(l);if(i<0)i=0;document.querySelectorAll("[data-kf]").forEach(function(x){var v=T[x.getAttribute("data-kf")];if(v)x.textContent=v[i];});}f();document.addEventListener("DOMContentLoaded",function(){var s=window.setLanguage;if(typeof s==="function")window.setLanguage=function(){var r=s.apply(this,arguments);f();return r;};f();});})();</script></footer>
+
+<script src="assets/data/buying-guide-1.js?v=568e37969e" data-kn-inline=""></script>
+
+<div class="kn-fab"><button type="button" class="kn-top" id="knTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"></path></svg></button><a class="float-wa" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+explore+more+on+Malaysia+Property.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener" aria-label="Chat with Keith on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38c1.44.79 3.06 1.2 4.72 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0012.04 2zm5.82 14.06c-.24.68-1.42 1.3-1.95 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.3-.13.58.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.41.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.68.79 1.97.94.29.14.48.21.55.33.07.12.07.7-.17 1.38z"></path></svg><span class="fw-txt">Chat with Keith</span></a></div><!--/kn-fab--><script>(function(){var b=document.getElementById('knTop');if(!b)return;var on=null,q=false;function s(){q=false;var v=(window.scrollY||0)>300;if(v!==on){on=v;b.classList.toggle('show',v);}}window.addEventListener('scroll',function(){if(!q){q=true;requestAnimationFrame(s);}},{passive:true});s();b.addEventListener('click',function(){var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;window.scrollTo({top:0,behavior:r?'auto':'smooth'});});})();</script>
+<script>
+  // ---- Language switcher (site-wide, shared with home page) ----
+  const LANG_NAMES = {"en": "English", "zh-CN": "简体中文", "zh-TW": "繁體中文", "ms": "Bahasa Malaysia", "ja": "日本語", "ko": "한국어"};
+  let currentLang = 'en';
+
+  function setLanguage(lang){
+    currentLang = lang;
+    const label = document.getElementById('langSelectorLabel');
+    if(label) label.textContent = LANG_NAMES[lang] || 'English';
+
+    document.querySelectorAll('.lang-menu a').forEach(a => a.classList.remove('active'));
+    const idx = Object.keys(LANG_NAMES).indexOf(lang);
+    const menuLinks = document.querySelectorAll('#langMenu a');
+    if(menuLinks[idx]) menuLinks[idx].classList.add('active');
+
+    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+    try { localStorage.setItem('kn_lang', lang); } catch(e) {}
+
+    const menu = document.getElementById('langMenu');
+    if(menu) menu.classList.remove('open');
+
+    if (typeof applyCtaLanguage === 'function') applyCtaLanguage();
+  }
+
+  function toggleLangMenu(e){
+    e.stopPropagation();
+    document.getElementById('langMenu').classList.toggle('open');
+  }
+
+  (function initLang(){
+    let saved = 'en';
+    try { saved = localStorage.getItem('kn_lang') || 'en'; } catch(e) {}
+    if (!(saved in LANG_NAMES)) saved = 'en';
+    setLanguage(saved);
+  })();
+
+  // ---- Currency switcher (site-wide, shared with home page) ----
+  const EXCHANGE_RATES = { MYR: 1, USD: 0.21, SGD: 0.285, CNY: 1.52, JPY: 31.5, KRW: 290 };
+  const CURRENCY_SYMBOL = { MYR: 'RM', USD: 'US$', SGD: 'S$', CNY: 'CN¥', JPY: 'JP¥', KRW: '₩' };
+  let currentCurrency = 'MYR';
+
+  function formatPrice(myrValue, currency, approx){
+    const rate = EXCHANGE_RATES[currency] || 1;
+    const converted = myrValue * rate;
+    const symbol = CURRENCY_SYMBOL[currency] || currency;
+    let display;
+    if(converted >= 1000000){ display = (converted/1000000).toFixed(2) + 'M'; }
+    else { display = Math.round(converted/1000) + 'K'; }
+    return (approx ? '~' : '') + symbol + ' ' + display;
+  }
+
+  function setCurrency(cur){
+    currentCurrency = cur;
+    document.querySelectorAll('[data-price-myr]').forEach(el => {
+      const myrValue = parseFloat(el.getAttribute('data-price-myr'));
+      const approx = el.getAttribute('data-approx') === '1';
+      el.textContent = formatPrice(myrValue, cur, approx);
+    });
+    const label = document.getElementById('currSelectorLabel');
+    if(label) label.textContent = cur;
+    document.querySelectorAll('#currMenu a').forEach(a => a.classList.remove('active'));
+    const menuLinks = document.querySelectorAll('#currMenu a');
+    const idx = Object.keys(CURRENCY_SYMBOL).indexOf(cur);
+    if(menuLinks[idx]) menuLinks[idx].classList.add('active');
+    try { localStorage.setItem('kn_currency', cur); } catch(e) {}
+    const menu = document.getElementById('currMenu');
+    if(menu) menu.classList.remove('open');
+  }
+
+  function toggleCurrMenu(e){
+    e.stopPropagation();
+    document.getElementById('currMenu').classList.toggle('open');
+  }
+
+  (function initCurrency(){
+    let saved = 'MYR';
+    try { saved = localStorage.getItem('kn_currency') || 'MYR'; } catch(e) {}
+    setCurrency(saved);
+  })();
+
+  document.addEventListener('click', function(e){
+    const switcher = document.getElementById('langSwitch');
+    if(switcher && !switcher.contains(e.target)){
+      const m = document.getElementById('langMenu');
+      if(m) m.classList.remove('open');
+    }
+    const currSwitcher = document.getElementById('currSwitch');
+    if(currSwitcher && !currSwitcher.contains(e.target)){
+      const m = document.getElementById('currMenu');
+      if(m) m.classList.remove('open');
+    }
+  });
+</script>
+
+
+<script>
+// ---- Site-wide currency: convert every "RM ..." amount in page text (cards, popups, tables) ----
+(function(){
+  const orig = new WeakMap();
+  const RE = /(?<![A-Za-z])RM\s?(\d[\d,]*(?:\.\d+)?)\s?(K|M|mil|million)?(?![A-Za-z])/g;
+  function toMyr(n, u){
+    n = parseFloat(String(n).replace(/,/g,''));
+    if(!u) return n;
+    u = u.toLowerCase();
+    return u === 'k' ? n*1e3 : n*1e6;
+  }
+  function fmt(v, cur){
+    const rate = (typeof EXCHANGE_RATES !== 'undefined' && EXCHANGE_RATES[cur]) || 1;
+    const sym = (typeof CURRENCY_SYMBOL !== 'undefined' && CURRENCY_SYMBOL[cur]) || cur;
+    const c = v * rate;
+    let s;
+    if(c >= 1e6) s = (c/1e6).toFixed(2) + 'M';
+    else if(c >= 1e4) s = Math.round(c/1000) + 'K';
+    else if(c >= 1000) s = (c/1000).toFixed(1) + 'K';
+    else s = c < 10 ? c.toFixed(2) : String(Math.round(c));
+    return sym + ' ' + s;
+  }
+  window.knApplyCurrency = function(root, force){
+    const cur = force || ((typeof currentCurrency !== 'undefined') ? currentCurrency : 'MYR');
+    const w = document.createTreeWalker(root || document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        const p = n.parentNode;
+        if(!p || /^(SCRIPT|STYLE|TEXTAREA|NOSCRIPT)$/.test(p.nodeName)) return NodeFilter.FILTER_REJECT;
+        if(p.closest && p.closest('#currMenu,#currSwitch,[data-no-currency]')) return NodeFilter.FILTER_REJECT;
+        return (orig.has(n) || /RM\s?\d/.test(n.nodeValue)) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const nodes = [];
+    while(w.nextNode()) nodes.push(w.currentNode);
+    nodes.forEach(function(n){
+      if(!orig.has(n)) orig.set(n, n.nodeValue);
+      const o = orig.get(n);
+      n.nodeValue = (cur === 'MYR') ? o : o.replace(RE, function(m, num, u){ return fmt(toMyr(num, u), cur); });
+    });
+  };
+  function wrap(name){
+    if(typeof window[name] !== 'function') return;
+    const f = window[name];
+    window[name] = function(){ const r = f.apply(this, arguments); try{ knApplyCurrency(); }catch(e){} return r; };
+  }
+  ['setCurrency','openDetailModal','selectLayout','renderTable','applyProjFilter','applyFilters'].forEach(wrap);
+  knApplyCurrency();
+})();
+</script>
+
+<script src="assets/data/buying-guide-2.js?v=1384b71267" data-kn-inline=""></script>
+<style>
+#knDrawer{position:fixed;inset:0;z-index:2147483000;display:none}
+#knDrawer.open{display:block}
+#knDrawer .kn-bg{position:absolute;inset:0;background:rgba(10,10,30,.55)}
+#knDrawer .kn-panel{position:absolute;top:0;right:0;bottom:0;width:min(82vw,340px);background:#1d1b4f;color:#fff;padding:20px 22px 28px;overflow-y:auto;box-shadow:-8px 0 30px rgba(0,0,0,.35);font-family:inherit}
+html[dir="rtl"] #knDrawer .kn-panel{right:auto;left:0}
+#knDrawer .kn-close{display:block;margin-left:auto;background:none;border:0;color:#fff;font-size:30px;line-height:1;cursor:pointer;padding:4px 8px}
+#knDrawer .kn-links a{display:block;color:#fff;text-decoration:none;font-size:17px;letter-spacing:.04em;padding:15px 4px;border-bottom:1px solid rgba(255,255,255,.12)}
+#knDrawer .kn-links a.active{color:#b9b4ff;font-weight:600}
+#knDrawer .kn-sub{margin:22px 0 8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#a9a6d6}
+#knDrawer .kn-chips{display:flex;flex-wrap:wrap;gap:8px}
+#knDrawer .kn-chips button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer}
+#knDrawer .kn-wa{display:block;margin-top:24px;text-align:center;background:#25d366;color:#fff;text-decoration:none;border-radius:999px;padding:13px;font-weight:600}
+</style>
+<div id="knDrawer" aria-hidden="true"><div class="kn-bg" onclick="knToggleMenu(false)"></div><div class="kn-panel"><button class="kn-close" type="button" aria-label="Close" onclick="knToggleMenu(false)">×</button><div class="kn-links" id="knLinks"></div><div class="kn-sub">Language</div><div class="kn-chips" id="knLang"></div><div class="kn-sub">Currency</div><div class="kn-chips" id="knCurr"></div><a class="kn-wa" id="knWa" target="_blank" rel="noopener" href="https://api.whatsapp.com/send/?phone=60102821568&amp;text=%28KNRE%29+Hi+Keith%2C+I+would+like+to+explore+more+on+Malaysia+Property.&amp;type=phone_number&amp;app_absent=0">WhatsApp Keith</a></div></div>
+<script>
+function knToggleMenu(force){
+  var d=document.getElementById('knDrawer'); if(!d) return;
+  var open=(typeof force==='boolean')?force:!d.classList.contains('open');
+  if(open){
+    var L=document.getElementById('knLinks'); L.innerHTML='';
+    var cur=(location.pathname.split('/').pop()||'index.html');
+    document.querySelectorAll('header nav a').forEach(function(a){ if(a.closest('.knm-fly'))return;
+      var h=a.getAttribute('href')||''; if(h==='#home') h='index.html';
+      var c=document.createElement('a'); c.href=h; c.textContent=a.textContent; if(a.classList.contains('knm-s')) c.className='knm-ms';
+      if(h===cur||(cur===''&&h==='index.html')) c.className='active';
+      c.addEventListener('click',function(){ knToggleMenu(false); });
+      L.appendChild(c);
+      if(false){ var m2=document.createElement('a'); m2.href='mm2h.html'; m2.textContent='MM2H 第二家园'; if(cur==='mm2h.html') m2.className='active'; L.appendChild(m2); }
+    });
+    var lg=document.getElementById('knLang'); lg.innerHTML='';
+    document.querySelectorAll('#langMenu a').forEach(function(a){
+      var b=document.createElement('button'); b.type='button'; b.innerHTML=a.innerHTML;
+      b.onclick=function(){ a.click(); knToggleMenu(false); }; lg.appendChild(b);
+    });
+    var cu=document.getElementById('knCurr'); cu.innerHTML='';
+    document.querySelectorAll('#currMenu a').forEach(function(a){
+      var b=document.createElement('button'); b.type='button'; var fl=a.querySelector('img'); b.innerHTML=(fl?fl.outerHTML:'')+a.textContent.trim().split(' ')[0];
+      b.onclick=function(){ a.click(); knToggleMenu(false); }; cu.appendChild(b);
+    });
+    var w=document.querySelector('header .whatsapp-btn'); var kw=document.getElementById('knWa');
+    if(w&&w.href) kw.href=w.href;
+  }
+  d.classList.toggle('open',open); d.setAttribute('aria-hidden',open?'false':'true');
+  document.body.style.overflow=open?'hidden':'';
+}
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') knToggleMenu(false); });
+</script>
+<script id="kn-menu-hover">
+/* Language and currency menus: one open at a time; on computers they open on hover */
+(function(){
+  var P=[['langSwitch','langMenu'],['currSwitch','currMenu']];
+  var hover=window.matchMedia && matchMedia('(hover:hover) and (pointer:fine)').matches;
+  function closeAll(keep){ P.forEach(function(p){ if(p[1]!==keep){ var m=document.getElementById(p[1]); if(m) m.classList.remove('open'); } }); }
+  P.forEach(function(p){
+    var s=document.getElementById(p[0]), m=document.getElementById(p[1]); if(!s||!m) return;
+    s.addEventListener('click', function(e){
+      closeAll(p[1]);
+      if(hover && !m.contains(e.target)){ e.stopPropagation(); m.classList.add('open'); }
+    }, true);
+    if(hover){
+      s.addEventListener('mouseenter', function(){ closeAll(p[1]); m.classList.add('open'); });
+      s.addEventListener('mouseleave', function(){ m.classList.remove('open'); });
+      m.addEventListener('click', function(){ m.classList.remove('open'); });
+    }
+  });
+  document.addEventListener('click', function(e){ if(!e.target.closest('.lang-switch')) closeAll(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeAll(); });
+})();
+</script>
+<!-- KN-NEWS:JS:START -->
+<script src="assets/data/buying-guide-3.js?v=35d5ff14a7" data-kn-inline=""></script>
+<!-- KN-NEWS:JS:END -->
+<script src="lead-tracker.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>(function(){var T={"en":{"art":"Articles","mn":"Market Notes","mn_s":"Keith’s daily take","g_more":"Open the Buying Guide","f_more":"See all {n} answers","b_more":"See all {n} articles","back":"← News","gn":"New property","gs":"Subsale","gf":"Foreign buyers","gn_p":"Buying from a developer: booking, SPA, loan and handover.","gs_p":"Buying from an owner: offer, searches, loan and transfer.","gf_p":"The minimum price, state consent and the costs for foreigners.","open":"Read the guide →"},"zh-CN":{"art":"文章","mn":"每日市场短评","mn_s":"Keith 每日观点","g_more":"打开买房指南","f_more":"查看全部 {n} 个问答","b_more":"查看全部 {n} 篇文章","back":"← 新闻","gn":"新楼盘","gs":"二手房","gf":"外国买家","gn_p":"向发展商购买：订房、买卖合约、贷款和交屋。","gs_p":"向屋主购买：出价、查册、贷款和过户。","gf_p":"最低价格、州政府批准和外国人的费用。","open":"阅读指南 →"},"zh-TW":{"art":"文章","mn":"每日市場短評","mn_s":"Keith 每日觀點","g_more":"打開買房指南","f_more":"查看全部 {n} 個問答","b_more":"查看全部 {n} 篇文章","back":"← 新聞","gn":"新樓盤","gs":"二手房","gf":"外國買家","gn_p":"向發展商購買：訂房、買賣合約、貸款和交屋。","gs_p":"向屋主購買：出價、查冊、貸款和過戶。","gf_p":"最低價格、州政府批准和外國人的費用。","open":"閱讀指南 →"},"ms":{"art":"Artikel","mn":"Nota Pasaran","mn_s":"Pandangan harian Keith","g_more":"Buka Panduan Membeli","f_more":"Lihat kesemua {n} jawapan","b_more":"Lihat kesemua {n} artikel","back":"← Berita","gn":"Hartanah baharu","gs":"Subjualan","gf":"Pembeli asing","gn_p":"Membeli daripada pemaju: tempahan, SPA, pinjaman dan serahan kunci.","gs_p":"Membeli daripada pemilik: tawaran, carian, pinjaman dan pindah milik.","gf_p":"Harga minimum, kelulusan negeri dan kos untuk warga asing.","open":"Baca panduan →"},"ja":{"art":"記事","mn":"マーケットノート","mn_s":"Keith の毎日の視点","g_more":"購入ガイドを開く","f_more":"全 {n} 件の回答を見る","b_more":"全 {n} 本の記事を見る","back":"← ニュース","gn":"新築","gs":"中古","gf":"外国人購入者","gn_p":"デベロッパーから購入：予約、SPA、ローン、引き渡し。","gs_p":"オーナーから購入：オファー、登記確認、ローン、名義変更。","gf_p":"最低購入価格、州の許可、外国人の費用。","open":"ガイドを読む →"},"ko":{"art":"기사","mn":"마켓 노트","mn_s":"Keith의 매일 코멘트","g_more":"구매 가이드 열기","f_more":"답변 {n}개 모두 보기","b_more":"기사 {n}개 모두 보기","back":"← 뉴스","gn":"신규 분양","gs":"재판매","gf":"외국인 구매자","gn_p":"개발사에서 구매: 예약, SPA, 대출, 인도.","gs_p":"소유주에게 구매: 제안, 등기 확인, 대출, 이전.","gf_p":"최저 가격, 주 정부 승인, 외국인 비용.","open":"가이드 읽기 →"}};function lg(){var l="en";try{l=document.documentElement.getAttribute("data-page-lang")||localStorage.getItem("kn_lang")||"en"}catch(e){}return T[l]?l:"en";}function go(){var l=lg();document.querySelectorAll("[data-nwh]").forEach(function(e){var s=T[l][e.getAttribute("data-nwh")]||T.en[e.getAttribute("data-nwh")];if(s)e.textContent=s.replace("{n}",e.getAttribute("data-n")||"");});}go();document.addEventListener("DOMContentLoaded",go);var w=window.knSetLang;if(typeof w==="function"){window.knSetLang=function(){var r=w.apply(this,arguments);go();return r;};}})();</script>
+<script id="kn-submenu-js">(function(){var ST={"Kuala Lumpur": ["Kuala Lumpur", "吉隆坡", "吉隆坡", "Kuala Lumpur", "クアラルンプール", "쿠알라룸푸르"], "Selangor": ["Selangor", "雪兰莪", "雪蘭莪", "Selangor", "セランゴール", "슬랑오르"], "Penang": ["Penang", "槟城", "檳城", "Pulau Pinang", "ペナン", "페낭"], "Johor": ["Johor", "柔佛", "柔佛", "Johor", "ジョホール", "조호르"], "Melaka": ["Melaka", "马六甲", "馬六甲", "Melaka", "マラッカ", "믈라카"], "Sabah": ["Sabah", "沙巴", "沙巴", "Sabah", "サバ", "사바"], "Terengganu": ["Terengganu", "登嘉楼", "登嘉樓", "Terengganu", "トレンガヌ", "트렝가누"], "Kelantan": ["Kelantan", "吉兰丹", "吉蘭丹", "Kelantan", "クランタン", "클란탄"]},ZL={"ssel": ["South Selangor", "南雪兰莪", "南雪蘭莪", "Selangor Selatan", "セランゴール南部", "슬랑오르 남부"], "kwasa": ["Kwasa & Sungai Buloh", "Kwasa & 双溪毛糯", "Kwasa & 雙溪毛糯", "Kwasa & Sungai Buloh", "Kwasa・Sungai Buloh", "Kwasa & Sungai Buloh"], "west": ["West KL", "吉隆坡西区", "吉隆坡西區", "KL Barat", "KL 西部", "KL 서부"], "subang": ["Subang & Shah Alam", "梳邦 & 莎阿南", "梳邦 & 莎阿南", "Subang & Shah Alam", "Subang・Shah Alam", "Subang & Shah Alam"], "pj": ["PJ & Damansara", "八打灵再也 & Damansara", "八打靈再也 & Damansara", "PJ & Damansara", "PJ・Damansara", "PJ & Damansara"], "centre": ["City Centre", "市中心", "市中心", "Pusat Bandar", "都心部", "도심"], "south": ["South KL", "吉隆坡南区", "吉隆坡南區", "KL Selatan", "KL 南部", "KL 남부"], "klang": ["Klang", "巴生", "巴生", "Klang", "Klang", "Klang"], "north": ["North Selangor", "北雪兰莪", "北雪蘭莪", "Selangor Utara", "セランゴール北部", "슬랑오르 북부"], "other": ["Other areas", "其他地区", "其他地區", "Kawasan lain", "その他のエリア", "기타 지역"], "island": ["Penang Island", "槟岛", "檳島", "Pulau Pinang", "ペナン島", "페낭 섬"], "ne": ["North & East KL", "吉隆坡东北区", "吉隆坡東北區", "KL Utara & Timur", "KL 北部・東部", "KL 북부·동부"], "mainland": ["Penang Mainland", "槟城威省", "檳城威省", "Seberang Perai", "ペナン本土側", "페낭 본토"]},AO=["All {s}", "全部{s}", "全部{s}", "Semua {s}", "{s}のすべて", "{s} 전체"],T={"browse": ["Browse Projects", "浏览项目", "瀏覽項目", "Semak Imbas Projek", "物件を探す", "프로젝트 둘러보기"], "all": ["All Project List", "全部项目列表", "全部項目列表", "Senarai Semua Projek", "全物件リスト", "전체 프로젝트 목록"], "short": ["Project Shortlist", "帮我挑项目", "幫我挑項目", "Senarai Pendek Projek", "おすすめ物件診断", "프로젝트 추천"], "dev": ["Browse by Developer", "按发展商浏览", "按發展商瀏覽", "Lihat Mengikut Pemaju", "デベロッパー別に見る", "개발사별 보기"], "station": ["Browse by Station", "按车站浏览", "按車站瀏覽", "Lihat Mengikut Stesen", "駅別に見る", "역별 보기"], "tag": ["Browse by Tag", "按标签浏览", "按標籤瀏覽", "Lihat Mengikut Tag", "タグ別に見る", "태그별 보기"], "state": ["Browse by State", "按州属浏览", "按州屬瀏覽", "Lihat Mengikut Negeri", "州別に見る", "주별 보기"], "best": ["Best New Launches", "精选新盘", "精選新盤", "Projek Baharu Terbaik", "おすすめ新築物件", "추천 신규 분양"], "map": ["Project Map", "项目地图", "項目地圖", "Peta Projek", "物件マップ", "프로젝트 지도"], "cmp": ["Compare Side by Side", "并排比较", "並排比較", "Banding Sebelah-menyebelah", "並べて比較", "나란히 비교"], "popular": ["Popular Comparisons", "热门比较", "熱門比較", "Perbandingan Popular", "人気の比較", "인기 비교"], "vs": ["Project vs Project", "项目对决", "項目對決", "Projek lawan Projek", "物件 vs 物件", "프로젝트 vs 프로젝트"], "journal": ["The Journal", "房产资讯", "房產資訊", "Jurnal", "ジャーナル", "저널"], "notes": ["Keith's Market Notes", "Keith 每日市场短评", "Keith 每日市場短評", "Nota Pasaran Keith", "Keith のマーケットノート", "Keith의 마켓 노트"], "data": ["Market Data", "市场数据", "市場數據", "Data Pasaran", "マーケットデータ", "마켓 데이터"], "guide": ["Buying Guide", "买房指南", "買房指南", "Panduan Membeli", "購入ガイド", "구매 가이드"], "foreign": ["Foreign Buyers", "外国买家", "外國買家", "Pembeli Asing", "外国人購入者", "외국인 구매자"], "topproj": ["Projects", "项目", "項目", "Projek", "物件", "프로젝트"], "topcmp": ["Compare", "比较", "比較", "Bandingkan", "比較", "비교"], "fcheck": ["Can I Buy? State Check", "我可以买吗？州属查询", "我可以買嗎？州屬查詢", "Boleh Saya Beli? Semak Negeri", "購入できる？州別チェック", "구매 가능할까? 주별 확인"], "fproj": ["Projects for Foreign Buyers", "外国人必看项目", "外國人必看項目", "Projek untuk Pembeli Asing", "外国人向け物件", "외국인 추천 프로젝트"], "fbest": ["Keith's Best Choices", "外国买家精选", "外國買家精選", "Pilihan Terbaik Keith", "Keith のおすすめ物件", "Keith 추천 프로젝트"], "fcost": ["Costs & Taxes", "费用和税务", "費用和稅務", "Kos & Cukai", "費用と税金", "비용 및 세금"], "fsteps": ["How Buying Works", "购买流程", "購買流程", "Cara Membeli", "購入の流れ", "구매 절차"], "videos": ["Videos", "视频", "影片", "Video", "動画", "동영상"], "kit": ["All Free Tools", "全部免费工具", "全部免費工具", "Semua Alat Percuma", "無料ツール一覧", "모든 무료 도구"], "calc": ["Loan Calculator", "房贷计算器", "房貸計算器", "Kalkulator Pinjaman", "ローン計算機", "대출 계산기"], "quiz": ["Find My Home Quiz", "帮我找房问答", "幫我找房問答", "Kuiz Cari Rumah", "おうち探し診断", "내 집 찾기 퀴즈"], "mm2h": ["MM2H Guide", "MM2H 第二家园", "MM2H 第二家園", "Panduan MM2H", "MM2H ガイド", "MM2H 가이드"], "lib": ["MM2H Library", "MM2H 文章库", "MM2H 文章庫", "Perpustakaan MM2H", "MM2H ライブラリー", "MM2H 라이브러리"], "areas": ["Area Guides", "地区指南", "地區指南", "Panduan Kawasan", "エリアガイド", "지역 가이드"], "about": ["Meet Keith", "认识 Keith", "認識 Keith", "Kenali Keith", "Keith について", "Keith 소개"], "enq": ["Quick Enquiry", "快速咨询", "快速諮詢", "Pertanyaan Pantas", "かんたんお問い合わせ", "빠른 문의"], "mm2henq": ["MM2H Enquiry", "MM2H 咨询", "MM2H 諮詢", "Pertanyaan MM2H", "MM2H のお問い合わせ", "MM2H 문의"], "h2h": ["Compare All Projects", "比较全部项目", "比較全部項目", "Bandingkan Semua Projek", "全物件を比較", "전체 프로젝트 비교"], "fum": ["Understand Malaysia", "了解马来西亚", "了解馬來西亞", "Kenali Malaysia", "マレーシアを知る", "말레이시아 이해하기"], "faq": ["Common FAQ", "常见问题", "常見問題", "Soalan Lazim", "よくある質問", "자주 묻는 질문"], "blogs": ["Articles", "文章", "文章", "Artikel", "記事", "기사"], "fareas": ["Free Area Guide Download", "免费地区指南下载", "免費地區指南下載", "Muat Turun Panduan Kawasan Percuma", "無料エリアガイドをダウンロード", "무료 지역 가이드 다운로드"], "fmm2h": ["Free MM2H Guide", "免费 MM2H 指南", "免費 MM2H 指南", "Panduan MM2H Percuma", "無料 MM2H ガイド", "무료 MM2H 가이드"], "fwatch": ["Free to Watch", "免费观看视频", "免費觀看影片", "Tonton Percuma", "無料で動画を見る", "무료 영상 보기"], "fcalc": ["Free Calculator", "免费计算器", "免費計算器", "Kalkulator Percuma", "無料計算ツール", "무료 계산기"], "fadvice": ["Free One-to-One Advice", "免费一对一咨询", "免費一對一諮詢", "Nasihat Percuma Satu-ke-Satu", "無料の個別相談", "무료 1:1 상담"], "contact": ["Contact Keith", "联系 Keith", "聯絡 Keith", "Hubungi Keith", "Keith に連絡", "Keith에게 연락"], "wa": ["WhatsApp Keith", "WhatsApp Keith", "WhatsApp Keith", "WhatsApp Keith", "WhatsApp で相談", "WhatsApp 문의"]},LG=["en","zh-CN","zh-TW","ms","ja","ko"];function f(){var l="en";try{l=localStorage.getItem("kn_lang")||"en"}catch(e){}var i=Math.max(0,LG.indexOf(l));document.querySelectorAll("[data-km]").forEach(function(a){var v=T[a.getAttribute("data-km")];if(v)a.textContent=v[i];});document.querySelectorAll("[data-kst]").forEach(function(a){var v=ST[a.getAttribute("data-kst")];if(v)a.textContent=v[i];});document.querySelectorAll("[data-kz]").forEach(function(a){var v=ZL[a.getAttribute("data-kz")];if(v)a.textContent=v[i];});document.querySelectorAll("[data-kall]").forEach(function(a){var v=ST[a.getAttribute("data-kall")];a.textContent=AO[i].replace("{s}",v?v[i]:a.getAttribute("data-kall"));});}f();document.addEventListener("mouseover",function(e){var s=e.target.closest&&e.target.closest(".knm-fs");if(!s)return;var fly=s.closest(".knm-fly"),k=s.getAttribute("data-fs");fly.querySelectorAll(".knm-fs").forEach(function(x){x.classList.toggle("on",x===s);});fly.querySelectorAll(".knm-fp").forEach(function(x){x.classList.toggle("on",x.getAttribute("data-fp")===k);});});document.addEventListener("DOMContentLoaded",function(){["knSetLang","setLanguage"].forEach(function(n){var s=window[n];if(typeof s==="function")window[n]=function(){var r=s.apply(this,arguments);f();return r;};});f();});})();</script><script src="assets/kn-saved.js?v=c59d3bf2e2" defer=""></script>
+<!-- KN-SILKY --><script src="/silky.js?v=a4c6ff55" defer=""></script>
+
+
+<button type="button" class="kv-pill"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.5-9.2C1 8.2 3.4 4.5 7 4.5c2 0 3.4 1.1 5 3 1.6-1.9 3-3 5-3 3.6 0 6 3.7 4.5 7.3C19.5 16.4 12 21 12 21z"></path></svg>Disimpan <i>0</i></button><div class="kv-bg"></div><aside class="kv-d" aria-label="Saved projects"></aside></body></html>
