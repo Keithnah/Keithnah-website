@@ -26,6 +26,7 @@ L = {  # key: [en, zh-CN, zh-TW, ms, ja, ko]
     'state': ['Browse by State', '按州属浏览', '按州屬瀏覽', 'Lihat Mengikut Negeri', '州別に見る', '주별 보기'],
     'best': ['Best New Launches', '精选新盘', '精選新盤', 'Projek Baharu Terbaik', 'おすすめ新築物件', '추천 신규 분양'],
     'map': ['Project Map', '项目地图', '項目地圖', 'Peta Projek', '物件マップ', '프로젝트 지도'],
+    'stmap': ['Station Map', '车站地图', '車站地圖', 'Peta Stesen', '駅マップ', '역 지도'],
     'cmp': ['Compare Side by Side', '并排比较', '並排比較', 'Banding Sebelah-menyebelah', '並べて比較', '나란히 비교'],
     'popular': ['Popular Comparisons', '热门比较', '熱門比較', 'Perbandingan Popular', '人気の比較', '인기 비교'],
     'vs': ['Project vs Project', '项目对决', '項目對決', 'Projek lawan Projek', '物件 vs 物件', '프로젝트 vs 프로젝트'],
@@ -64,7 +65,7 @@ L = {  # key: [en, zh-CN, zh-TW, ms, ja, ko]
  'wa': ['WhatsApp Keith', 'WhatsApp Keith', 'WhatsApp Keith', 'WhatsApp Keith', 'WhatsApp で相談', 'WhatsApp 문의'],
 }
 MENU = {
-    'projects.html': [('browse', 'projects.html#projSearch'), ('all', 'projects.html#projGrid'), ('map', 'projects.html#projectMap'),
+    'projects.html': [('browse', 'projects.html#projSearch'), ('all', 'projects.html#projGrid'), ('map', 'map.html'), ('stmap', 'station-map.html'),
                       ('best', 'best/index.html'), ('dev', 'developer/index.html'), ('station', 'station/index.html')],  # Browse by Tag stays on the projects page, not in the menu
     'compare.html': [('h2h', 'compare.html#cmpFilters'), ('vs', 'vs/index.html'), ('popular', 'compare.html#popular')],
     'foreign-buyers.html': [('fcheck', 'foreign-buyers.html#check'), ('fbest', 'foreign-buyers.html#best'), ('fcost', 'foreign-buyers.html#costs'),
