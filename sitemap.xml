@@ -7532,4 +7532,26 @@
   <url><loc>https://keithnah.com/ms/faq-owning.html</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://keithnah.com/ja/faq-owning.html</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://keithnah.com/ko/faq-owning.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url>
+    <loc>https://keithnah.com/map.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url><loc>https://keithnah.com/zh/map.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/zh-tw/map.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/ms/map.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/ja/map.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/ko/map.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url>
+    <loc>https://keithnah.com/station-map.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url><loc>https://keithnah.com/zh/station-map.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/zh-tw/station-map.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/ms/station-map.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/ja/station-map.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/ko/station-map.html</loc><lastmod>2026-11-23</lastmod></url>
 </urlset>
