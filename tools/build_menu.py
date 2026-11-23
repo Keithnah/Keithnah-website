@@ -65,7 +65,7 @@ L = {  # key: [en, zh-CN, zh-TW, ms, ja, ko]
  'wa': ['WhatsApp Keith', 'WhatsApp Keith', 'WhatsApp Keith', 'WhatsApp Keith', 'WhatsApp で相談', 'WhatsApp 문의'],
 }
 MENU = {
-    'projects.html': [('browse', 'projects.html#projSearch'), ('all', 'projects.html#projGrid'), ('map', 'map.html'), ('stmap', 'station-map.html'),
+    'projects.html': [('browse', 'projects.html#projSearch'), ('all', 'projects.html#projGrid'), ('map', 'map.html'),
                       ('best', 'best/index.html'), ('dev', 'developer/index.html'), ('station', 'station/index.html')],  # Browse by Tag stays on the projects page, not in the menu
     'compare.html': [('h2h', 'compare.html#cmpFilters'), ('vs', 'vs/index.html'), ('popular', 'compare.html#popular')],
     'foreign-buyers.html': [('fcheck', 'foreign-buyers.html#check'), ('fbest', 'foreign-buyers.html#best'), ('fcost', 'foreign-buyers.html#costs'),
