@@ -67,31 +67,31 @@ _DT = {
 _DT2 = {
     'en': {'dv2_h1': '{d}: Developer Profile & Projects ({y})', 'dv2_p': 'Who {d} is, what it has built, and every {d} project Keith lists in {places}, with starting prices and completion dates.',
            'dv_since': 'founded', 'dv_listed': 'Listed on Bursa Malaysia', 'dv_track': 'Track record: completed projects', 'dv_awards': 'Awards',
-           'dv_where': 'Where {d} is building', 'dv_from': 'from {p}', 'dv_time': 'Current projects by completion year', 'dv_tba': 'No completion year yet', 'dv_done': 'Completed',
+           'dv_where': 'Where {d} is building', 'dv_from': 'from {p}', 'dv_time': 'Current projects by completion year', 'dv_tba': 'No completion year yet', 'dv_done': 'Completed', 'dv_ltime': 'Projects by launch year', 'dv_lnone': 'Launch year not confirmed',
            'dv_prices': 'Starting prices across {d} projects', 'dv_prices_n': 'Gross starting prices as shown on each project page. Prices change by phase and unit; ask Keith for the latest.',
            'dv_others': 'Other developers', 'dev_idx_p2': 'Every developer with a project on keithnah.com, from the biggest to the boutique, each with a profile and all its projects on one page.',
            'b_dev_all': 'All {n} developers →', 'dv_ontrack': 'on keithnah.com'},
     'zh-CN': {'dv2_h1': '{d}：发展商简介与项目（{y}）', 'dv2_p': '{d} 是怎样的发展商、建过哪些项目，以及 Keith 在 {places} 列出的所有 {d} 项目，附起价和完工日期。',
               'dv_since': '成立', 'dv_listed': '马来西亚交易所上市', 'dv_track': '过往成绩：已完工项目', 'dv_awards': '获得的奖项',
-              'dv_where': '{d} 在哪里建房', 'dv_from': '{p} 起', 'dv_time': '目前项目（按完工年份）', 'dv_tba': '尚无完工年份', 'dv_done': '已完工',
+              'dv_where': '{d} 在哪里建房', 'dv_from': '{p} 起', 'dv_time': '目前项目（按完工年份）', 'dv_tba': '尚无完工年份', 'dv_done': '已完工', 'dv_ltime': '项目（按发布年份）', 'dv_lnone': '发布年份待确认',
               'dv_prices': '{d} 各项目起价', 'dv_prices_n': '起价为各项目页面显示的总价，会随期数和单位变化，最新价格请问 Keith。',
               'dv_others': '其他发展商', 'dev_idx_p2': '在 keithnah.com 有项目的所有发展商，从大型到精品发展商，每家都有简介和全部项目。',
               'b_dev_all': '全部 {n} 家发展商 →', 'dv_ontrack': '在 keithnah.com'},
     'ms': {'dv2_h1': '{d}: Profil Pemaju & Projek ({y})', 'dv2_p': 'Siapa {d}, apa yang telah dibinanya, dan setiap projek {d} yang disenaraikan Keith di {places}, dengan harga permulaan dan tarikh siap.',
            'dv_since': 'ditubuhkan', 'dv_listed': 'Tersenarai di Bursa Malaysia', 'dv_track': 'Rekod: projek yang telah siap', 'dv_awards': 'Anugerah',
-           'dv_where': 'Di mana {d} sedang membina', 'dv_from': 'dari {p}', 'dv_time': 'Projek semasa mengikut tahun siap', 'dv_tba': 'Tahun siap belum ada', 'dv_done': 'Telah siap',
+           'dv_where': 'Di mana {d} sedang membina', 'dv_from': 'dari {p}', 'dv_time': 'Projek semasa mengikut tahun siap', 'dv_tba': 'Tahun siap belum ada', 'dv_done': 'Telah siap', 'dv_ltime': 'Projek mengikut tahun pelancaran', 'dv_lnone': 'Tahun pelancaran belum disahkan',
            'dv_prices': 'Harga permulaan projek {d}', 'dv_prices_n': 'Harga permulaan kasar seperti di halaman setiap projek. Harga berubah mengikut fasa dan unit; tanya Keith untuk harga terkini.',
            'dv_others': 'Pemaju lain', 'dev_idx_p2': 'Setiap pemaju yang mempunyai projek di keithnah.com, besar dan kecil, masing-masing dengan profil dan semua projeknya di satu halaman.',
            'b_dev_all': 'Kesemua {n} pemaju →', 'dv_ontrack': 'di keithnah.com'},
     'ja': {'dv2_h1': '{d}：デベロッパー概要とプロジェクト（{y}）', 'dv2_p': '{d} はどんな会社か、これまでの実績、そして Keith が {places} で紹介している {d} の全プロジェクトを、開始価格と完成時期とともに。',
            'dv_since': '設立', 'dv_listed': 'ブルサ・マレーシア上場', 'dv_track': '実績：完成済みプロジェクト', 'dv_awards': '受賞歴',
-           'dv_where': '{d} の開発エリア', 'dv_from': '{p} から', 'dv_time': '完成年別の現行プロジェクト', 'dv_tba': '完成年未定', 'dv_done': '完成済み',
+           'dv_where': '{d} の開発エリア', 'dv_from': '{p} から', 'dv_time': '完成年別の現行プロジェクト', 'dv_tba': '完成年未定', 'dv_done': '完成済み', 'dv_ltime': '発売年別のプロジェクト', 'dv_lnone': '発売年未確認',
            'dv_prices': '{d} 各プロジェクトの開始価格', 'dv_prices_n': '各プロジェクトページに表示の総額ベースの開始価格です。期や住戸で変わるため、最新価格は Keith にお問い合わせください。',
            'dv_others': 'その他のデベロッパー', 'dev_idx_p2': 'keithnah.com にプロジェクトがあるすべてのデベロッパーを、大手からブティック系まで、概要と全プロジェクトとともに紹介します。',
            'b_dev_all': '全 {n} 社のデベロッパー →', 'dv_ontrack': 'keithnah.com 掲載'},
     'ko': {'dv2_h1': '{d}: 개발사 소개와 프로젝트 ({y})', 'dv2_p': '{d}는 어떤 회사인지, 무엇을 지었는지, 그리고 Keith가 {places}에서 소개하는 모든 {d} 프로젝트를 시작 가격, 완공 시기와 함께 정리했습니다.',
            'dv_since': '설립', 'dv_listed': '부르사 말레이시아 상장', 'dv_track': '실적: 완공 프로젝트', 'dv_awards': '수상 경력',
-           'dv_where': '{d}가 짓고 있는 곳', 'dv_from': '{p}부터', 'dv_time': '완공 연도별 현재 프로젝트', 'dv_tba': '완공 연도 미정', 'dv_done': '완공',
+           'dv_where': '{d}가 짓고 있는 곳', 'dv_from': '{p}부터', 'dv_time': '완공 연도별 현재 프로젝트', 'dv_tba': '완공 연도 미정', 'dv_done': '완공', 'dv_ltime': '출시 연도별 프로젝트', 'dv_lnone': '출시 연도 미확인',
            'dv_prices': '{d} 프로젝트별 시작 가격', 'dv_prices_n': '각 프로젝트 페이지에 표시된 총액 기준 시작 가격입니다. 단계와 세대에 따라 바뀌니 최신 가격은 Keith에게 문의하세요.',
            'dv_others': '다른 개발사', 'dev_idx_p2': 'keithnah.com에 프로젝트가 있는 모든 개발사를 대형부터 부티크까지, 소개와 전체 프로젝트와 함께 한 페이지에 모았습니다.',
            'b_dev_all': '전체 {n}개 개발사 →', 'dv_ontrack': 'keithnah.com 등록'},
@@ -278,6 +278,9 @@ DV2_CSS = ('.dvs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px
            '@media(max-width:820px){.dv-g2{grid-template-columns:1fr}.dvs{grid-template-columns:1fr 1fr}.dvs b{font-size:20px}}')
 
 
+LAUNCH = {k: v['y'] for k, v in json.load(open(os.path.join(HERE, 'project_launch.json'), encoding='utf-8')).items() if not k.startswith('_')}
+
+
 def comp_year(p):
     c = str(p.get('completion') or '')
     if c.lower().startswith('completed'):
@@ -350,16 +353,15 @@ for d, info in DEVS:
                 HB.slugify(st), E(st), TX('n_proj', n=len(mine)), E(', '.join(areas[:3]) + ('…' if len(areas) > 3 else '')),
                 TX('dv_from', tag='em', p=HB.rm(min(ps))) if ps else '')
         where = '<section class="sec"><div class="w">%s<div class="dv-rg">%s</div></div></section>' % (TX('dv_where', tag='h2', d=d), cells)
-    # timeline by completion year
+    # timeline by launch year (tools/project_launch.json), newest first
     yrs = {}
     for i in ix:
-        yrs.setdefault(comp_year(P[i]), []).append(i)
+        yrs.setdefault(LAUNCH.get(IDX[i]['slug'], ''), []).append(i)
     tl = ''
-    for y in (['done'] if 'done' in yrs else []) + sorted(k for k in yrs if k and k != 'done') + ([''] if '' in yrs else []):
-        tl += '<div class="dv-yr">%s<div class="row">%s</div></div>' % (
-            TX('dv_done', tag='h3') if y == 'done' else '<h3>%s</h3>' % y if y else TX('dv_tba', tag='h3'), ''.join(
-            '<a href="../property/%s.html">%s<small>%s</small></a>' % (IDX[i]['slug'], E(P[i]['name']), E(IDX[i]['area'] + ('' if y else ' · ' + str(P[i].get('completion') or '')))) for i in sorted(yrs[y], key=lambda k: P[k]['name'].lower())))
-    timeline = '<section class="sec"><div class="w">%s<div class="dv-tl">%s</div></div></section>' % (TX('dv_time', tag='h2'), tl) if len(ix) > 1 else ''
+    for y in sorted((k for k in yrs if k), reverse=True) + ([''] if '' in yrs else []):
+        tl += '<div class="dv-yr">%s<div class="row">%s</div></div>' % ('<h3>%s</h3>' % y if y else TX('dv_lnone', tag='h3'), ''.join(
+            '<a href="../property/%s.html">%s<small>%s</small></a>' % (IDX[i]['slug'], E(P[i]['name']), E(IDX[i]['area'])) for i in sorted(yrs[y], key=lambda k: P[k]['name'].lower())))
+    timeline = '<section class="sec"><div class="w">%s<div class="dv-tl">%s</div></div></section>' % (TX('dv_ltime', tag='h2'), tl) if len(ix) > 1 else ''
     # project cards
     groups = ''
     for st in states:
