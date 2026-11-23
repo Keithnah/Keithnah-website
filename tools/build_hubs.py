@@ -361,7 +361,7 @@ for d, info in DEVS:
     for y in sorted((k for k in yrs if k), reverse=True) + ([''] if '' in yrs else []):
         tl += '<div class="dv-yr">%s<div class="row">%s</div></div>' % ('<h3>%s</h3>' % y if y else TX('dv_lnone', tag='h3'), ''.join(
             '<a href="../property/%s.html">%s<small>%s</small></a>' % (IDX[i]['slug'], E(P[i]['name']), E(IDX[i]['area'])) for i in sorted(yrs[y], key=lambda k: P[k]['name'].lower())))
-    timeline = '<section class="sec"><div class="w">%s<div class="dv-tl">%s</div></div></section>' % (TX('dv_ltime', tag='h2'), tl) if len(ix) > 1 else ''
+    timeline = ''   # launch-year list kept off the page for now (data in tools/project_launch.json)
     # project cards
     groups = ''
     for st in states:
