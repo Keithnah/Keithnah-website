@@ -122,7 +122,7 @@ T = {'en': {
     'mm_p': 'Buying a home does not give you a visa. MM2H is a separate long-stay pass of 5, 15 or 20 years, and each tier has its own minimum property price on top of the state minimum.',
     'mm_fd': 'Fixed deposit', 'mm_pp': 'Property from', 'mm_vd': 'Visa', 'mm_y5': '5 years', 'mm_y15': '15 years', 'mm_y20': '20 years',
     'mm_btn': 'Read the MM2H guide', 'mm_lib': 'MM2H and property: two minimum prices', 'mm_lib2': 'All MM2H articles',
-    'fq_eb': 'FAQ', 'fq_h': 'Questions foreign buyers ask Keith',
+    'fq_eb': 'FAQ', 'fq_h': 'Questions foreign buyers ask Keith', 'fq_all': 'See all foreign buyer questions →',
     'q1': 'Can foreigners buy property in Malaysia?', 'a1': 'Yes. Foreigners can buy freehold and leasehold homes if the price meets the state minimum and the state gives consent. Bumiputera lots, low-cost and affordable housing are not open to foreigners.',
     'q2': 'Is there a minimum price?', 'a2': 'Yes, each state sets one, for example RM1 million in Kuala Lumpur and RM2 million in Selangor. Use the checker above, and ask Keith to confirm the exact figure for the unit you like.',
     'q3': 'Can I get a housing loan as a foreigner?', 'a3': 'Some Malaysian banks do lend to foreigners. The financing margin is usually lower than for Malaysians and depends on your income, country and the bank. Keith can introduce you to bankers who handle foreign buyers.',
@@ -177,7 +177,7 @@ T = {'en': {
     'mm_p': '买房本身不会给你签证。MM2H 是另外申请的 5、15 或 20 年长期签证，每个等级除了州属门槛之外，还有自己的最低购房价格。',
     'mm_fd': '定期存款', 'mm_pp': '购房最低', 'mm_vd': '签证', 'mm_y5': '5 年', 'mm_y15': '15 年', 'mm_y20': '20 年',
     'mm_btn': '阅读 MM2H 指南', 'mm_lib': 'MM2H 和房产：两个最低价格', 'mm_lib2': '全部 MM2H 文章',
-    'fq_eb': '常见问题', 'fq_h': '外国买家常问 Keith 的问题',
+    'fq_eb': '常见问题', 'fq_h': '外国买家常问 Keith 的问题', 'fq_all': '查看外国买家的全部问题 →',
     'q1': '外国人可以在马来西亚买房吗？', 'a1': '可以。只要价格达到州属最低价格并获得州政府批准，外国人可以买永久地契和租赁地契的房子。土著保留单位、低价和可负担房屋不开放给外国人。',
     'q2': '有最低价格吗？', 'a2': '有，每个州都有，例如吉隆坡 RM100 万、雪兰莪 RM200 万。可以用上面的查询，再请 Keith 确认你看中单位的实际门槛。',
     'q3': '外国人可以申请房贷吗？', 'a3': '部分马来西亚银行愿意贷款给外国人。贷款成数通常比马来西亚人低，要看你的收入、国家和银行。Keith 可以介绍处理外国买家的银行经理。',
@@ -498,7 +498,7 @@ page = '''<!DOCTYPE html>
     <div class="mts">{tiers}</div></div></section>
   {umsec}
   <div class="wrap0">{w4}</div>
-  <section class="sec" id="faq">{fqeb}<h2 data-r="fq_h">{fqh}</h2><div class="faq">{faq}</div></section>
+  <section class="sec" id="faq">{fqeb}<h2 data-r="fq_h">{fqh}</h2><div class="faq">{faq}</div><p style="margin-top:14px"><a href="faq-foreign-buyers.html" data-r="fq_all" style="color:var(--gold);font-weight:700">See all foreign buyer questions →</a></p></section>
   <section class="cta"><h2 data-r="cta_h">{ctah}</h2>{ctap}<a class="bt bt-w" href="{wa}" target="_blank" rel="noopener">{chat}{bwa}</a></section>
   {disc}
 </main>

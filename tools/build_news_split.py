@@ -149,7 +149,7 @@ def landing(fname, active, eyebrow_key, eyebrow, h1, lead, body, title, desc):
     head = re.sub(r'(<meta property="og:description" content=")[^"]*', lambda m: m.group(1) + desc, head, count=1)
     head = re.sub(r'<!-- KN-LD:START -->.*?<!-- KN-LD:END -->', '<!-- KN-LD:START --><!-- KN-LD:END -->', head, flags=re.S)
     top = ('<section class="journal-hero nw-sub-hero"><a class="nw-back" href="blog.html">%s</a><span class="eyebrow">%s</span><h1>%s</h1><p>%s</p>%s</section>\n' % (
-        nwh('back', '← News'), eyebrow, h1, lead, nav_for(active)))
+        nwh('back', '← News'), eyebrow, h1, lead, ''))
     page = head + SEC_CSS + CSS + top + body + suffix.replace('</body>', HUB_TX + '\n</body>', 1)
     open(fname, 'w', encoding='utf-8').write(page)
 
@@ -159,10 +159,6 @@ landing('buying-guide.html', 'buying-guide.html', 'g', 'Buying Guide', 'Buying p
         'New property, subsale and the rules for foreign buyers: the key numbers, the stages and the questions buyers ask most.',
         strip_head(guide), 'Malaysia Property Buying Guide: New, Subsale & Foreign Buyers | Keith Nah',
         'Step-by-step guides to buying property in Malaysia: new launches, subsale homes and the rules and costs for foreign buyers.')
-landing('faq.html', 'faq.html', 'f', 'FAQ', 'Common questions about buying property in Malaysia',
-        'Answers to what buyers ask Keith most often, from foreign ownership and loans to taxes, tenure and handover.',
-        strip_head(faq), 'Malaysia Property FAQ: %d Answers for Buyers | Keith Nah' % n_faq,
-        '%d answers to the questions buyers ask most about Malaysian property: foreign ownership, loans, stamp duty, tenure and more.' % n_faq)
 landing('articles.html', 'articles.html', 'b', nwh('art', 'Articles'), 'Latest property news and insights',
         'Every article by topic: market outlook, new launch reviews, area guides, foreign buyer rules and more.',
         strip_head(blog) + '\n<div class="filters" id="filters" hidden></div>\n' + grid, 'Malaysia Property Articles: News & Insights | Keith Nah',
