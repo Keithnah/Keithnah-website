@@ -68,8 +68,8 @@ CSS = '''
 .mn-take span{display:block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
 .mn-take p{font-size:14.5px;line-height:1.75;font-weight:600;color:#1d1b4f;white-space:pre-line;}
 .mn-l{display:flex;flex-wrap:wrap;gap:10px;}
-.mn-l a{font-size:13px;font-weight:700;padding:9px 16px;border-radius:100px;border:1px solid var(--line);background:#fff;transition:all .25s;}
-.mn-l a:first-child{background:#111;color:#fff;border-color:#111;} .mn-l a:hover{border-color:var(--gold);color:var(--gold);} .mn-l a:first-child:hover{background:var(--gold);color:#fff;border-color:var(--gold);}
+.mn-l a{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;padding:10px 18px;border-radius:100px;border:1.5px solid #5E60CE;background:#eeedfb;color:#3d3fb0;transition:all .25s;} .mn-l a:after{content:"→";}
+.mn-l a:first-child{background:#5E60CE;color:#fff;border-color:#5E60CE;} .mn-l a:hover{background:#5E60CE;color:#fff;} .mn-l a:first-child:hover{background:#4547b8;border-color:#4547b8;}
 .mn-p{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;margin-top:14px;font-size:12px;font-weight:700;color:var(--grey);}
 .mn-p span{letter-spacing:.08em;text-transform:uppercase;font-size:11px;} .mn-p a{font-size:13px;font-weight:700;color:var(--gold);background:#f3f1fa;border-radius:100px;padding:6px 13px;} .mn-p a:hover{background:var(--gold);color:#fff;}
 .mn-list{display:flex;flex-direction:column;gap:12px;}
@@ -457,7 +457,7 @@ def ticker():
     for n in NOTES:
         if n['date'] in days:
             items.append(n)
-    data = [{'d': n['date'], 'a': n['area'], 't': n['title'], 'k': k_all[id(n)], 'u': n['_page']} for n in items]
+    data = [{'d': n['date'], 'a': n['area'], 't': n['title'], 'k': k_all[id(n)], 'u': 'market-notes.html#n-%s-%d' % (n['date'], k_all[id(n)])} for n in items]
     lab = {'en': ['Market Notes', 'Live'], 'zh-CN': ['每日市场短评', '最新'], 'zh-TW': ['每日市場短評', '最新'], 'ms': ['Nota Pasaran', 'Terkini'],
            'ja': ['マーケットノート', '最新'], 'ko': ['마켓 노트', '최신']}
     def item_html(x, l):
