@@ -27,6 +27,8 @@ m = re.search(r'<!-- KN-MAP:START -->.*?var P=', t, re.S)
 P, _ = json.JSONDecoder().raw_decode(t[m.end():])
 IDX = {p['name']: p for p in json.load(open(os.path.join(HERE, 'project_index.json'), encoding='utf-8'))}
 for p in P:
+    if p.get('i') and not p['i'].endswith('.webp') and os.path.exists(re.sub(r'\.(jpe?g|png)$', '.webp', p['i'])):
+        p['i'] = re.sub(r'\.(jpe?g|png)$', '.webp', p['i'])
     p['st'] = (IDX.get(p['n']) or {}).get('state', '')
     mm = re.search(r'([\d.]+)\s*([MK])', p.get('p') or '')
     p['v'] = round(float(mm.group(1)) * (1e6 if mm.group(2) == 'M' else 1e3)) if mm else 0
@@ -154,7 +156,8 @@ rl.onclick=function(){if(map.hasLayer(rail)){map.removeLayer(rail);rl.classList.
 
 SM_JS = '''var LN="",R=1000,ring=null,sel=-1,sl=L.layerGroup().addTo(map),PM=[];
 P.forEach(function(p,j){PM[j]=L.circleMarker([p.lat,p.lng],{radius:5,color:"#fff",weight:1.5,fillColor:"#5E60CE",fillOpacity:.85}).bindTooltip(p.n).on("click",function(){showP(j)}).addTo(map);});
-function inR(s){return P.map(function(p,j){return {p:p,j:j,d:dist(p.lat,p.lng,s.lat,s.lng)}}).filter(function(x){return x.d<=R}).sort(function(a,b){return a.d-b.d});}
+ST.forEach(function(s){s._p=P.map(function(p,j){return {p:p,j:j,d:dist(p.lat,p.lng,s.lat,s.lng)}}).filter(function(x){return x.d<=1500}).sort(function(a,b){return a.d-b.d});});
+function inR(s){return s._p.filter(function(x){return x.d<=R});}
 var LINES=Object.keys(LC).filter(function(l){return ST.some(function(s){return s.l==l})});
 function chips(){cL.innerHTML='<button data-v=""'+(LN?'':' class="on"')+'>'+u("all_lines")+'</button>'+LINES.map(function(l){return '<button data-v="'+l+'"'+(LN==l?' class="on"':'')+'><span style="color:'+LC[l]+'">&#9679;</span> '+l+'</button>'}).join("");
 lg_.innerHTML=LINES.map(function(l){return '<span><i style="background:'+LC[l]+'"></i>'+l+'</span>'}).join("")+'<span><i style="background:#5E60CE"></i>'+u("project")+'</span>';q.placeholder=u("search_s");toph.textContent=u("top");mnote.textContent=u("note");}
