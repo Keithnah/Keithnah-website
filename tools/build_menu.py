@@ -64,7 +64,7 @@ L = {  # key: [en, zh-CN, zh-TW, ms, ja, ko]
  'wa': ['WhatsApp Keith', 'WhatsApp Keith', 'WhatsApp Keith', 'WhatsApp Keith', 'WhatsApp で相談', 'WhatsApp 문의'],
 }
 MENU = {
-    'projects.html': [('browse', 'projects.html#projSearch'), ('all', 'projects.html#projGrid'), ('state', 'projects.html#projGrid'), ('map', 'projects.html#projectMap'),
+    'projects.html': [('browse', 'projects.html#projSearch'), ('all', 'projects.html#projGrid'), ('map', 'projects.html#projectMap'),
                       ('best', 'best/index.html'), ('dev', 'developer/index.html'), ('station', 'station/index.html')],  # Browse by Tag stays on the projects page, not in the menu
     'compare.html': [('h2h', 'compare.html#cmpFilters'), ('vs', 'vs/index.html'), ('popular', 'compare.html#popular')],
     'foreign-buyers.html': [('fcheck', 'foreign-buyers.html#check'), ('fbest', 'foreign-buyers.html#best'), ('fcost', 'foreign-buyers.html#costs'),
@@ -198,7 +198,7 @@ def sub(prefix, items):
         full = href if href.startswith('http') else prefix + href
         ext = ' target="_blank" rel="noopener"' if href.startswith('http') else ''
         link = '<a class="knm-s" href="%s"%s data-km="%s">%s</a>' % (full.replace('&', '&amp;'), ext, k, L[k][0])
-        out += ('<div class="knm-st">%s<i class="knm-ar" aria-hidden="true"></i>%s</div>' % (link, flyout(prefix))) if k == 'state' else link
+        out += ('<div class="knm-st">%s<i class="knm-ar" aria-hidden="true"></i>%s</div>' % (link, flyout(prefix))) if k == 'all' else link  # the state flyout sits on All Project List
     return '<div class="knm-d">%s</div>' % out
 
 
