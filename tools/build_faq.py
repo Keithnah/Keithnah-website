@@ -223,7 +223,7 @@ body = '''<main><section class="fx-hero"><div class="fx"><a class="fx-back" href
 <section class="fx-pop">%s%s%s</section>%s</div></main>''' % (
     tx('back'), tx('eb', 'span', 'fx-eb'), tx('h1', 'h1'), tx('lead', 'p'), E(EN['search']), tx('go'), tx('none'), cards,
     tx('pop_eb', 'span', 'fx-eb'), tx('pop_h', 'h2'), ''.join(acc(i) for i in pop), cta())
-all_ids = [i for t in TOP for i in t['ids']]
+all_ids = list(dict.fromkeys(i for t in TOP for i in t['ids']))   # a question can sit in two topics; count it once
 ld = {'@context': 'https://schema.org', '@graph': [
     {'@type': 'CollectionPage', 'name': 'Malaysia Property FAQ by Topic', 'url': SITE + 'faq.html'},
     {'@type': 'ItemList', 'itemListElement': [{'@type': 'ListItem', 'position': k + 1, 'url': SITE + 'faq-%s.html' % t['slug'], 'name': t['name']['en']} for k, t in enumerate(TOP)]},
