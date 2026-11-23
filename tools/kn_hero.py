@@ -73,9 +73,19 @@ def stats_html(stats):
     return ''.join('<div><b>%s</b><small>%s</small></div>' % s for s in stats)
 
 
+def _webp(src):
+    """Use the .webp copy of a photo when the site has one (paths are relative to the page; ../ is stripped to check)."""
+    import os
+    import re
+    w = re.sub(r'\.(jpe?g|png)$', '.webp', src)
+    here = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), re.sub(r'^(\.\./)+', '', w))
+    return w if w != src and os.path.exists(here) else src
+
+
 def hero(left, imgs, stats_inner, below=''):
     """left: the text column (crumbs, eyebrow, h1, paragraphs, pills). imgs: 3 image paths. stats_inner: the stats card content."""
     imgs = (list(imgs) + list(imgs))[:3] if imgs else []
+    imgs = [_webp(i) for i in imgs]
     ph = ''.join('<img src="%s" alt="" %s decoding="async" width="900" height="600">' % (E(s), 'fetchpriority="high"' if i == 0 else 'loading="lazy"') for i, s in enumerate(imgs))
     return ('<!-- KNB-HERO --><section class="knb"><div class="knb-in"><div>%s</div><div class="knb-ph">%s<div class="knb-sc">%s</div></div></div>%s</section>' % (
         left, ph, stats_inner, ('<div class="knb-below">%s</div>' % below) if below else ''))
