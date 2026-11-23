@@ -26,7 +26,8 @@
    "EXSIM",
    [
     "exsim",
-    "mightyprop"
+    "mightyprop",
+    "fyt land"
    ]
   ],
   [
@@ -361,13 +362,6 @@
    "TSLAW Land",
    [
     "tslaw"
-   ]
-  ],
-  [
-   "fyt",
-   "FYT Land",
-   [
-    "fyt"
    ]
   ],
   [
