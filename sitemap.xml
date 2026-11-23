@@ -45,6 +45,39 @@
   <url><loc>https://keithnah.com/ja/blog.html</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://keithnah.com/ko/blog.html</loc><lastmod>2026-11-23</lastmod></url>
   <url>
+    <loc>https://keithnah.com/buying-guide.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url><loc>https://keithnah.com/zh/buying-guide.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/zh-tw/buying-guide.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/ms/buying-guide.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/ja/buying-guide.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/ko/buying-guide.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url>
+    <loc>https://keithnah.com/faq.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url><loc>https://keithnah.com/zh/faq.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/zh-tw/faq.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/ms/faq.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/ja/faq.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/ko/faq.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url>
+    <loc>https://keithnah.com/articles.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url><loc>https://keithnah.com/zh/articles.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/zh-tw/articles.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/ms/articles.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/ja/articles.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/ko/articles.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url>
     <loc>https://keithnah.com/calculator.html</loc>
     <lastmod>2026-11-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -4659,6 +4692,17 @@
   <url><loc>https://keithnah.com/ms/article/the-arden-bandar-sri-damansara-is-it-worth-buying.html</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://keithnah.com/ja/article/the-arden-bandar-sri-damansara-is-it-worth-buying.html</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://keithnah.com/ko/article/the-arden-bandar-sri-damansara-is-it-worth-buying.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url>
+    <loc>https://keithnah.com/article/the-arden-bandar-sri-damansara-layouts-which-one-fits-you.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url><loc>https://keithnah.com/zh/article/the-arden-bandar-sri-damansara-layouts-which-one-fits-you.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/zh-tw/article/the-arden-bandar-sri-damansara-layouts-which-one-fits-you.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/ms/article/the-arden-bandar-sri-damansara-layouts-which-one-fits-you.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/ja/article/the-arden-bandar-sri-damansara-layouts-which-one-fits-you.html</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://keithnah.com/ko/article/the-arden-bandar-sri-damansara-layouts-which-one-fits-you.html</loc><lastmod>2026-11-23</lastmod></url>
   <url>
     <loc>https://keithnah.com/article/the-arden-bandar-sri-damansara-neighbourhood-guide.html</loc>
     <lastmod>2026-11-23</lastmod>

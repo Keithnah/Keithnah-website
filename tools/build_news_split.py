@@ -21,6 +21,7 @@ SITE = 'https://keithnah.com/'
 t = open('blog.html', encoding='utf-8').read()
 if '<!-- KN-NWHUB -->' in t:
     raise SystemExit('news split: blog.html is already the hub; run build_news_page.py first')
+open(os.path.join(HERE, 'news_full.html'), 'w', encoding='utf-8').write(t)   # the full page, restored at the start of the next build
 
 
 def cut(start, end, s=None):
@@ -58,7 +59,7 @@ PAGES = {'#buying-guide': 'buying-guide.html', '#market-data': 'market-data.html
 
 
 def nav_for(active, root=''):
-    n = nav
+    n = re.sub(r'(href="#blog">.*?<b>)Blog(</b>)', r'\1<span data-nwh="art">Articles</span>\2', nav, count=1, flags=re.S)
     for a, b in PAGES.items():
         n = n.replace('href="%s"' % a, 'href="%s%s"' % (root, b))
     n = n.replace('&darr;', '&rarr;').replace('<nav class="nw-jump" aria-label="On this page">',
@@ -84,18 +85,18 @@ CSS = ('<style>'
        '@media(max-width:760px){nav.nw-jump.nw-tabs{grid-template-columns:1fr 1fr;gap:10px}nav.nw-tabs .nw-jump-btn:last-child{grid-column:1/-1}.nw-gcards{grid-template-columns:1fr}}'
        '@media(max-width:420px){.nw-tabs .nw-jump-btn{padding:12px}.nw-tabs .nw-jump-ic{display:none}}'
        '</style>')
-HUB_TX = ('<script>(function(){var T={"en":{"mn":"Market Notes","mn_s":"Keith’s daily take","g_more":"Open the Buying Guide","f_more":"See all {n} answers","b_more":"See all {n} articles",'
+HUB_TX = ('<script>(function(){var T={"en":{"art":"Articles","mn":"Market Notes","mn_s":"Keith’s daily take","g_more":"Open the Buying Guide","f_more":"See all {n} answers","b_more":"See all {n} articles",'
           '"back":"← News","gn":"New property","gs":"Subsale","gf":"Foreign buyers","gn_p":"Buying from a developer: booking, SPA, loan and handover.",'
           '"gs_p":"Buying from an owner: offer, searches, loan and transfer.","gf_p":"The minimum price, state consent and the costs for foreigners.","open":"Read the guide →"},'
-          '"zh-CN":{"mn":"每日市场短评","mn_s":"Keith 每日观点","g_more":"打开买房指南","f_more":"查看全部 {n} 个问答","b_more":"查看全部 {n} 篇文章","back":"← 新闻","gn":"新楼盘","gs":"二手房","gf":"外国买家",'
+          '"zh-CN":{"art":"文章","mn":"每日市场短评","mn_s":"Keith 每日观点","g_more":"打开买房指南","f_more":"查看全部 {n} 个问答","b_more":"查看全部 {n} 篇文章","back":"← 新闻","gn":"新楼盘","gs":"二手房","gf":"外国买家",'
           '"gn_p":"向发展商购买：订房、买卖合约、贷款和交屋。","gs_p":"向屋主购买：出价、查册、贷款和过户。","gf_p":"最低价格、州政府批准和外国人的费用。","open":"阅读指南 →"},'
-          '"zh-TW":{"mn":"每日市場短評","mn_s":"Keith 每日觀點","g_more":"打開買房指南","f_more":"查看全部 {n} 個問答","b_more":"查看全部 {n} 篇文章","back":"← 新聞","gn":"新樓盤","gs":"二手房","gf":"外國買家",'
+          '"zh-TW":{"art":"文章","mn":"每日市場短評","mn_s":"Keith 每日觀點","g_more":"打開買房指南","f_more":"查看全部 {n} 個問答","b_more":"查看全部 {n} 篇文章","back":"← 新聞","gn":"新樓盤","gs":"二手房","gf":"外國買家",'
           '"gn_p":"向發展商購買：訂房、買賣合約、貸款和交屋。","gs_p":"向屋主購買：出價、查冊、貸款和過戶。","gf_p":"最低價格、州政府批准和外國人的費用。","open":"閱讀指南 →"},'
-          '"ms":{"mn":"Nota Pasaran","mn_s":"Pandangan harian Keith","g_more":"Buka Panduan Membeli","f_more":"Lihat kesemua {n} jawapan","b_more":"Lihat kesemua {n} artikel","back":"← Berita","gn":"Hartanah baharu","gs":"Subjualan","gf":"Pembeli asing",'
+          '"ms":{"art":"Artikel","mn":"Nota Pasaran","mn_s":"Pandangan harian Keith","g_more":"Buka Panduan Membeli","f_more":"Lihat kesemua {n} jawapan","b_more":"Lihat kesemua {n} artikel","back":"← Berita","gn":"Hartanah baharu","gs":"Subjualan","gf":"Pembeli asing",'
           '"gn_p":"Membeli daripada pemaju: tempahan, SPA, pinjaman dan serahan kunci.","gs_p":"Membeli daripada pemilik: tawaran, carian, pinjaman dan pindah milik.","gf_p":"Harga minimum, kelulusan negeri dan kos untuk warga asing.","open":"Baca panduan →"},'
-          '"ja":{"mn":"マーケットノート","mn_s":"Keith の毎日の視点","g_more":"購入ガイドを開く","f_more":"全 {n} 件の回答を見る","b_more":"全 {n} 本の記事を見る","back":"← ニュース","gn":"新築","gs":"中古","gf":"外国人購入者",'
+          '"ja":{"art":"記事","mn":"マーケットノート","mn_s":"Keith の毎日の視点","g_more":"購入ガイドを開く","f_more":"全 {n} 件の回答を見る","b_more":"全 {n} 本の記事を見る","back":"← ニュース","gn":"新築","gs":"中古","gf":"外国人購入者",'
           '"gn_p":"デベロッパーから購入：予約、SPA、ローン、引き渡し。","gs_p":"オーナーから購入：オファー、登記確認、ローン、名義変更。","gf_p":"最低購入価格、州の許可、外国人の費用。","open":"ガイドを読む →"},'
-          '"ko":{"mn":"마켓 노트","mn_s":"Keith의 매일 코멘트","g_more":"구매 가이드 열기","f_more":"답변 {n}개 모두 보기","b_more":"기사 {n}개 모두 보기","back":"← 뉴스","gn":"신규 분양","gs":"재판매","gf":"외국인 구매자",'
+          '"ko":{"art":"기사","mn":"마켓 노트","mn_s":"Keith의 매일 코멘트","g_more":"구매 가이드 열기","f_more":"답변 {n}개 모두 보기","b_more":"기사 {n}개 모두 보기","back":"← 뉴스","gn":"신규 분양","gs":"재판매","gf":"외국인 구매자",'
           '"gn_p":"개발사에서 구매: 예약, SPA, 대출, 인도.","gs_p":"소유주에게 구매: 제안, 등기 확인, 대출, 이전.","gf_p":"최저 가격, 주 정부 승인, 외국인 비용.","open":"가이드 읽기 →"}};'
           'function lg(){var l="en";try{l=document.documentElement.getAttribute("data-page-lang")||localStorage.getItem("kn_lang")||"en"}catch(e){}return T[l]?l:"en";}'
           'function go(){var l=lg();document.querySelectorAll("[data-nwh]").forEach(function(e){var s=T[l][e.getAttribute("data-nwh")]||T.en[e.getAttribute("data-nwh")];'
@@ -128,6 +129,7 @@ f_head = re.search(r'<section class="nw-sec nf-sec"[^>]*>(\s*<p class="nw-eyebro
 faq_prev = ('<section class="nw-sec nf-sec" id="faq" data-no-currency>%s<div class="nf-list nf-prev" id="nfList">%s</div><div class="nw-more"><a href="faq.html">%s →</a></div></section>' % (
     f_head, ''.join(items[:6]), nwh('f_more', 'See all {n} answers', n_faq)))
 cards = re.findall(r'  <div class="article-card".*?\n  </div>\n', grid, re.S)
+blog = blog.replace('<p class="nw-eyebrow">Blog</p>', '<p class="nw-eyebrow"><span data-nwh="art">Articles</span></p>', 1)
 blog_prev = (re.sub(r'\s*<p class="bt-label">.*?</div>', '', blog, count=1, flags=re.S).replace('\n</section>', '', 1) +
              '<div class="journal-grid" id="journalGrid">\n%s</div><div class="nw-more"><a href="articles.html">%s →</a></div>\n</section>\n' % (
                  ''.join(cards[:6]), nwh('b_more', 'See all {n} articles', n_art)))
@@ -161,9 +163,9 @@ landing('faq.html', 'faq.html', 'f', 'FAQ', 'Common questions about buying prope
         'Answers to what buyers ask Keith most often, from foreign ownership and loans to taxes, tenure and handover.',
         strip_head(faq), 'Malaysia Property FAQ: %d Answers for Buyers | Keith Nah' % n_faq,
         '%d answers to the questions buyers ask most about Malaysian property: foreign ownership, loans, stamp duty, tenure and more.' % n_faq)
-landing('articles.html', 'articles.html', 'b', 'Blog', 'Latest property news and insights',
+landing('articles.html', 'articles.html', 'b', nwh('art', 'Articles'), 'Latest property news and insights',
         'Every article by topic: market outlook, new launch reviews, area guides, foreign buyer rules and more.',
-        strip_head(blog) + '\n<div class="filters" id="filters" hidden></div>\n' + grid, 'Malaysia Property Blog: News & Insights | Keith Nah',
+        strip_head(blog) + '\n<div class="filters" id="filters" hidden></div>\n' + grid, 'Malaysia Property Articles: News & Insights | Keith Nah',
         'Articles on the Malaysian property market by topic: new launch reviews, area guides, foreign buyer rules, costs and the market outlook.')
 open('blog.html', 'w', encoding='utf-8').write(hub)
 print('news split: hub + buying-guide.html, faq.html (%d answers), articles.html (%d articles)' % (n_faq, n_art))

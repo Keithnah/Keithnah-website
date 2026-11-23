@@ -38209,11 +38209,18 @@
     },
     "paragraphs": [
      {
-      "en": "The Arden Bandar Sri Damansara has one layout, 495 – 1,615 sqft, with Office Suites. Prices: From RM542,000 (Gross). Price per sqft: From RM1,100 psf (Gross).",
-      "zh-CN": "The Arden Bandar Sri Damansara 只有一种户型，面积 495 – 1,615 平方英尺，Office Suites。价格：起价 RM542,000 （总价）。每平方尺价格：每平方英尺 RM1,100 起（总价）。",
-      "ms": "The Arden Bandar Sri Damansara mempunyai satu susun atur, 495 – 1,615 kaki persegi, dengan Office Suites. Harga: Dari RM542,000 (Kasar). Harga sekaki persegi: Dari RM1,100 sekaki persegi (Kasar).",
-      "ja": "The Arden Bandar Sri Damansara の間取りは1タイプ、広さは 495 – 1,615 平方フィート、Office Suites。価格：RM542,000 ～（総額）。平方フィート単価：1平方フィートあたりRM1,100から（総額）。",
-      "ko": "The Arden Bandar Sri Damansara는 단일 타입으로 면적은 495 – 1,615 평방피트, Office Suites입니다. 가격: RM542,000 부터 (총액). 평방피트당 가격: 평방피트당 RM1,100부터(총액)."
+      "en": "The Arden Bandar Sri Damansara has 10 layouts, 495 – 1,615 sqft, with Office Suites. Prices: From RM542,000 (Gross). Price per sqft: From RM1,100 psf (Gross).",
+      "zh-CN": "The Arden Bandar Sri Damansara 有 10 种户型，面积 495 – 1,615 平方英尺，Office Suites。价格：起价 RM542,000 （总价）。每平方尺价格：每平方英尺 RM1,100 起（总价）。",
+      "ms": "The Arden Bandar Sri Damansara mempunyai 10 susun atur, 495 – 1,615 kaki persegi, dengan Office Suites. Harga: Dari RM542,000 (Kasar). Harga sekaki persegi: Dari RM1,100 sekaki persegi (Kasar).",
+      "ja": "The Arden Bandar Sri Damansara の間取りは 10 タイプ、広さは 495 – 1,615 平方フィート、Office Suites。価格：RM542,000 ～（総額）。平方フィート単価：1平方フィートあたりRM1,100から（総額）。",
+      "ko": "The Arden Bandar Sri Damansara에는 10가지 타입이 있으며 면적은 495 – 1,615 평방피트, Office Suites입니다. 가격: RM542,000 부터 (총액). 평방피트당 가격: 평방피트당 RM1,100부터(총액)."
+     },
+     {
+      "en": "The layouts: Type A1 (495 sqft), Type A2 (495 sqft), Type B (560 sqft), Type C (786 sqft), Type D (829 sqft), Type E (883 sqft), Type F1 (958 sqft), Type G (1,087 sqft), Type H (1,615 sqft), Type I (1,313 sqft).",
+      "zh-CN": "户型包括：户型 A1 (495 平方英尺)、户型 A2 (495 平方英尺)、户型 B (560 平方英尺)、户型 C (786 平方英尺)、户型 D (829 平方英尺)、户型 E (883 平方英尺)、户型 F1 (958 平方英尺)、户型 G (1,087 平方英尺)、户型 H (1,615 平方英尺)、户型 I (1,313 平方英尺)。",
+      "ms": "Susun atur: Jenis A1 (495 kaki persegi), Jenis A2 (495 kaki persegi), Jenis B (560 kaki persegi), Jenis C (786 kaki persegi), Jenis D (829 kaki persegi), Jenis E (883 kaki persegi), Jenis F1 (958 kaki persegi), Jenis G (1,087 kaki persegi), Jenis H (1,615 kaki persegi), Jenis I (1,313 kaki persegi).",
+      "ja": "間取り：タイプ A1 (495 平方フィート)、タイプ A2 (495 平方フィート)、タイプ B (560 平方フィート)、タイプ C (786 平方フィート)、タイプ D (829 平方フィート)、タイプ E (883 平方フィート)、タイプ F1 (958 平方フィート)、タイプ G (1,087 平方フィート)、タイプ H (1,615 平方フィート)、タイプ I (1,313 平方フィート)。",
+      "ko": "타입: 타입 A1 (495 평방피트), 타입 A2 (495 평방피트), 타입 B (560 평방피트), 타입 C (786 평방피트), 타입 D (829 평방피트), 타입 E (883 평방피트), 타입 F1 (958 평방피트), 타입 G (1,087 평방피트), 타입 H (1,615 평방피트), 타입 I (1,313 평방피트)."
      }
     ]
    },
@@ -38290,9 +38297,9 @@
     }
    },
    {
-    "value": "1",
+    "value": "10",
     "label": {
-     "en": "layout",
+     "en": "layouts",
      "zh-CN": "种户型",
      "ms": "susun atur",
      "ja": "間取りタイプ",
@@ -38310,182 +38317,197 @@
   "sources": []
  },
  {
-  "slug": "the-arden-bandar-sri-damansara-neighbourhood-guide",
+  "slug": "the-arden-bandar-sri-damansara-layouts-which-one-fits-you",
   "project": "the-arden-bandar-sri-damansara",
   "date": "14 Nov 2026",
   "auto": true,
   "cat": {
-   "en": "Neighbourhood Guide",
-   "zh-CN": "生活圈指南",
-   "ms": "Panduan Kejiranan",
-   "ja": "周辺ガイド",
-   "ko": "생활권 가이드"
+   "en": "Layout Guide",
+   "zh-CN": "户型比较",
+   "ms": "Panduan Susun Atur",
+   "ja": "間取り比較",
+   "ko": "타입 비교"
   },
   "title": {
-   "en": "Living at The Arden Bandar Sri Damansara: A Neighbourhood Guide",
-   "zh-CN": "住在 The Arden Bandar Sri Damansara：生活圈指南",
-   "ms": "Tinggal di The Arden Bandar Sri Damansara: Panduan Kejiranan",
-   "ja": "The Arden Bandar Sri Damansara の暮らし：周辺ガイド",
-   "ko": "The Arden Bandar Sri Damansara에서의 생활: 생활권 가이드"
+   "en": "The Arden Bandar Sri Damansara Layouts: Which One Fits You?",
+   "zh-CN": "The Arden Bandar Sri Damansara 户型怎么选？哪个适合你",
+   "ms": "Susun Atur The Arden Bandar Sri Damansara: Mana Satu Sesuai untuk Anda?",
+   "ja": "The Arden Bandar Sri Damansara の間取り比較：どれがあなたに合う？",
+   "ko": "The Arden Bandar Sri Damansara 타입 비교: 어떤 타입이 나에게 맞을까?"
   },
   "intro": {
-   "en": "What is it like to live at The Arden Bandar Sri Damansara in Bandar Sri Damansara? Here is a guide to getting around, the places nearby, the home itself and who will enjoy living here.",
-   "zh-CN": "住在 Bandar Sri Damansara 的 The Arden Bandar Sri Damansara 是怎样的？这篇介绍交通、附近的地方、单位本身，以及适合住在这里的人。",
-   "ms": "Bagaimana rasanya tinggal di The Arden Bandar Sri Damansara di Bandar Sri Damansara? Ini panduan tentang pengangkutan, tempat berdekatan, rumahnya dan siapa yang akan suka tinggal di sini.",
-   "ja": "Bandar Sri Damansara の The Arden Bandar Sri Damansara での暮らしはどんなもの？アクセス、周辺の施設、住戸、向いている方をご紹介します。",
-   "ko": "Bandar Sri Damansara의 The Arden Bandar Sri Damansara에서의 생활은 어떨까요? 교통, 주변 시설, 세대, 그리고 이곳에 살기 좋은 분을 소개합니다."
+   "en": "The Arden Bandar Sri Damansara has 10 layouts, from 495 – 1,615 sqft. Here is a side-by-side look at each type, its rooms and, where it is published, the monthly maintenance fee.",
+   "zh-CN": "The Arden Bandar Sri Damansara 有 10 种户型，面积从 495 – 1,615 sqft。这篇把每个户型的面积、房间和管理费（有公布的话）放在一起比较。",
+   "ms": "The Arden Bandar Sri Damansara mempunyai 10 susun atur, dari 495 – 1,615 sqft. Ini perbandingan setiap jenis, biliknya dan, jika diterbitkan, yuran penyelenggaraan bulanan.",
+   "ja": "The Arden Bandar Sri Damansara には 495 – 1,615 sqft の 10 タイプの間取りがあります。各タイプの部屋数と、公表されている場合は毎月の管理費を並べて比較します。",
+   "ko": "The Arden Bandar Sri Damansara에는 495 – 1,615 sqft의 10가지 타입이 있습니다. 각 타입의 방 구성과, 공개된 경우 월 관리비를 나란히 비교합니다."
   },
   "sections": [
    {
     "h2": {
-     "en": "Getting around",
-     "zh-CN": "交通",
-     "ms": "Pengangkutan",
-     "ja": "アクセス",
-     "ko": "교통"
+     "en": "Type A1: 495 sqft",
+     "zh-CN": "Type A1：495 平方英尺",
+     "ms": "Jenis A1: 495 kaki persegi",
+     "ja": "Type A1：495 平方フィート",
+     "ko": "Type A1: 495 평방피트"
     },
     "paragraphs": [
      {
-      "en": "The Arden is at Damansara Avenue in Bandar Sri Damansara, with highways towards Kepong, Desa ParkCity and Petaling Jaya.",
-      "zh-CN": "The Arden 位于 Bandar Sri Damansara 的 Damansara Avenue，有大道通往 Kepong、Desa ParkCity 和八打灵再也。",
-      "ms": "The Arden terletak di Damansara Avenue, Bandar Sri Damansara, dengan lebuhraya ke Kepong, Desa ParkCity dan Petaling Jaya.",
-      "ja": "The ArdenはBandar Sri DamansaraのDamansara Avenueにあり、Kepong、Desa ParkCity、ペタリンジャヤへの高速道路があります。",
-      "ko": "The Arden은 Bandar Sri Damansara Damansara Avenue에 있으며 Kepong, Desa ParkCity, 페탈링자야로 가는 고속도로가 있습니다."
+      "en": "Office Suite. An office suite floor plan at The Arden. Maintenance fee: about RM322 a month.",
+      "zh-CN": "Office 套房。The Arden 的办公套房平面图。管理费每月约 RM322。",
+      "ms": "Office Suite. Pelan lantai suite pejabat di The Arden. Yuran penyelenggaraan: kira-kira RM322 sebulan.",
+      "ja": "Office スイート。The Arden のオフィススイートの間取り図です。管理費は月約 RM322。",
+      "ko": "Office 스위트. The Arden의 오피스 스위트 평면도입니다. 관리비는 월 약 RM322입니다."
      }
     ]
    },
    {
     "h2": {
-     "en": "Places nearby",
-     "zh-CN": "附近有什么",
-     "ms": "Tempat berdekatan",
-     "ja": "周辺の施設",
-     "ko": "주변 시설"
+     "en": "Type A2: 495 sqft",
+     "zh-CN": "Type A2：495 平方英尺",
+     "ms": "Jenis A2: 495 kaki persegi",
+     "ja": "Type A2：495 平方フィート",
+     "ko": "Type A2: 495 평방피트"
     },
     "paragraphs": [
      {
-      "en": "Around The Arden Bandar Sri Damansara you will find Damansara Avenue, Bandar Sri Damansara, Kepong, Desa ParkCity.",
-      "zh-CN": "The Arden Bandar Sri Damansara 附近有：Damansara Avenue、Bandar Sri Damansara、Kepong、Desa ParkCity。",
-      "ms": "Di sekitar The Arden Bandar Sri Damansara terdapat Damansara Avenue, Bandar Sri Damansara, Kepong, Desa ParkCity.",
-      "ja": "The Arden Bandar Sri Damansara の周辺には Damansara Avenue、Bandar Sri Damansara、Kepong、Desa ParkCity があります。",
-      "ko": "The Arden Bandar Sri Damansara 주변에는 Damansara Avenue, Bandar Sri Damansara, Kepong, Desa ParkCity 등이 있습니다."
+      "en": "Office Suite. An office suite floor plan at The Arden. Maintenance fee: about RM322 a month.",
+      "zh-CN": "Office 套房。The Arden 的办公套房平面图。管理费每月约 RM322。",
+      "ms": "Office Suite. Pelan lantai suite pejabat di The Arden. Yuran penyelenggaraan: kira-kira RM322 sebulan.",
+      "ja": "Office スイート。The Arden のオフィススイートの間取り図です。管理費は月約 RM322。",
+      "ko": "Office 스위트. The Arden의 오피스 스위트 평면도입니다. 관리비는 월 약 RM322입니다."
      }
     ]
    },
    {
     "h2": {
-     "en": "The home",
-     "zh-CN": "单位介绍",
-     "ms": "Rumahnya",
-     "ja": "住戸について",
-     "ko": "세대 소개"
+     "en": "Type B: 560 sqft",
+     "zh-CN": "Type B：560 平方英尺",
+     "ms": "Jenis B: 560 kaki persegi",
+     "ja": "Type B：560 平方フィート",
+     "ko": "Type B: 560 평방피트"
     },
     "paragraphs": [
      {
-      "en": "Every home at The Arden Bandar Sri Damansara is Type G, 1,087 sqft, with Office Suite.",
-      "zh-CN": "The Arden Bandar Sri Damansara 的单位都是 Type G，面积 1,087 平方英尺，Office 套房。",
-      "ms": "Setiap rumah di The Arden Bandar Sri Damansara ialah Jenis G, 1,087 kaki persegi, dengan Office Suite.",
-      "ja": "The Arden Bandar Sri Damansara の住戸はすべて Type G、1,087 平方フィート、Office スイート。",
-      "ko": "The Arden Bandar Sri Damansara의 모든 세대는 Type G, 1,087 평방피트, Office 스위트입니다."
+      "en": "Office Suite. An office suite floor plan at The Arden. Maintenance fee: about RM364 a month.",
+      "zh-CN": "Office 套房。The Arden 的办公套房平面图。管理费每月约 RM364。",
+      "ms": "Office Suite. Pelan lantai suite pejabat di The Arden. Yuran penyelenggaraan: kira-kira RM364 sebulan.",
+      "ja": "Office スイート。The Arden のオフィススイートの間取り図です。管理費は月約 RM364。",
+      "ko": "Office 스위트. The Arden의 오피스 스위트 평면도입니다. 관리비는 월 약 RM364입니다."
      }
     ]
    },
    {
     "h2": {
-     "en": "Facilities and highlights",
-     "zh-CN": "设施和亮点",
-     "ms": "Kemudahan dan tarikan",
-     "ja": "施設と特徴",
-     "ko": "시설과 특징"
+     "en": "Type C: 786 sqft",
+     "zh-CN": "Type C：786 平方英尺",
+     "ms": "Jenis C: 786 kaki persegi",
+     "ja": "Type C：786 平方フィート",
+     "ko": "Type C: 786 평방피트"
     },
     "paragraphs": [
      {
-      "en": "Freehold commercial title",
-      "zh-CN": "永久地契商业地契",
-      "ms": "Hak milik komersial pegangan bebas",
-      "ja": "自由保有権の商業用タイトル",
-      "ko": "프리홀드 상업용 소유권"
-     },
-     {
-      "en": "Office suites from 495 sqft",
-      "zh-CN": "办公套房 495 平方英尺起",
-      "ms": "Suite pejabat dari 495 kaki persegi",
-      "ja": "495平方フィートからのオフィススイート",
-      "ko": "495평방피트부터의 오피스 스위트"
-     },
-     {
-      "en": "Facilities on Levels 1 to 4",
-      "zh-CN": "第 1 至 4 层设施",
-      "ms": "Kemudahan di Aras 1 hingga 4",
-      "ja": "1〜4階に施設",
-      "ko": "1~4층 시설"
+      "en": "Office Suite. An office suite floor plan at The Arden. Maintenance fee: about RM511 a month.",
+      "zh-CN": "Office 套房。The Arden 的办公套房平面图。管理费每月约 RM511。",
+      "ms": "Office Suite. Pelan lantai suite pejabat di The Arden. Yuran penyelenggaraan: kira-kira RM511 sebulan.",
+      "ja": "Office スイート。The Arden のオフィススイートの間取り図です。管理費は月約 RM511。",
+      "ko": "Office 스위트. The Arden의 오피스 스위트 평면도입니다. 관리비는 월 약 RM511입니다."
      }
     ]
    },
    {
     "h2": {
-     "en": "Who will enjoy living here",
-     "zh-CN": "适合住在这里的人",
-     "ms": "Siapa yang akan suka tinggal di sini",
-     "ja": "こんな方に向いています",
-     "ko": "이곳에 살기 좋은 분"
+     "en": "Type D: 829 sqft",
+     "zh-CN": "Type D：829 平方英尺",
+     "ms": "Jenis D: 829 kaki persegi",
+     "ja": "Type D：829 平方フィート",
+     "ko": "Type D: 829 평방피트"
     },
     "paragraphs": [
      {
-      "en": "Business Owners: Office suites from 495 sqft.",
-      "zh-CN": "企业主：495 平方英尺起的办公套房。",
-      "ms": "Pemilik Perniagaan: Suite pejabat dari 495 kaki persegi.",
-      "ja": "事業オーナー：495平方フィートからのオフィススイート。",
-      "ko": "사업주: 495평방피트부터의 오피스 스위트."
-     },
+      "en": "Office Suite. An office suite floor plan at The Arden. Maintenance fee: about RM539 a month.",
+      "zh-CN": "Office 套房。The Arden 的办公套房平面图。管理费每月约 RM539。",
+      "ms": "Office Suite. Pelan lantai suite pejabat di The Arden. Yuran penyelenggaraan: kira-kira RM539 sebulan.",
+      "ja": "Office スイート。The Arden のオフィススイートの間取り図です。管理費は月約 RM539。",
+      "ko": "Office 스위트. The Arden의 오피스 스위트 평면도입니다. 관리비는 월 약 RM539입니다."
+     }
+    ]
+   },
+   {
+    "h2": {
+     "en": "Type E: 883 sqft",
+     "zh-CN": "Type E：883 平方英尺",
+     "ms": "Jenis E: 883 kaki persegi",
+     "ja": "Type E：883 平方フィート",
+     "ko": "Type E: 883 평방피트"
+    },
+    "paragraphs": [
      {
-      "en": "Investors: Freehold office space in Bandar Sri Damansara.",
-      "zh-CN": "投资者：Bandar Sri Damansara 的永久地契办公空间。",
-      "ms": "Pelabur: Ruang pejabat pegangan bebas di Bandar Sri Damansara.",
-      "ja": "投資家：Bandar Sri Damansaraの自由保有権オフィス。",
-      "ko": "투자자: Bandar Sri Damansara의 프리홀드 사무 공간."
+      "en": "Office Suite. An office suite floor plan at The Arden. Maintenance fee: about RM574 a month.",
+      "zh-CN": "Office 套房。The Arden 的办公套房平面图。管理费每月约 RM574。",
+      "ms": "Office Suite. Pelan lantai suite pejabat di The Arden. Yuran penyelenggaraan: kira-kira RM574 sebulan.",
+      "ja": "Office スイート。The Arden のオフィススイートの間取り図です。管理費は月約 RM574。",
+      "ko": "Office 스위트. The Arden의 오피스 스위트 평면도입니다. 관리비는 월 약 RM574입니다."
+     }
+    ]
+   },
+   {
+    "h2": {
+     "en": "Which one to choose",
+     "zh-CN": "怎么选",
+     "ms": "Mana satu yang patut dipilih",
+     "ja": "どれを選ぶか",
+     "ko": "어떤 타입을 고를까"
+    },
+    "paragraphs": [
+     {
+      "en": "Other layouts: Type F1 (958 sqft), Type G (1,087 sqft), Type H (1,615 sqft), Type I (1,313 sqft). Choose a smaller layout for a lower entry price, or a larger one for more space and rooms. Whichever you choose, check the exact unit, floor and price before you book.",
+      "zh-CN": "其他户型：户型 F1 (958 平方英尺)、户型 G (1,087 平方英尺)、户型 H (1,615 平方英尺)、户型 I (1,313 平方英尺)。想要较低的入场价，可以选小户型；想要更大的空间和更多房间，就选大户型。不管选哪个，下订前都要确认实际单位、楼层和价格。",
+      "ms": "Susun atur lain: Jenis F1 (958 kaki persegi), Jenis G (1,087 kaki persegi), Jenis H (1,615 kaki persegi), Jenis I (1,313 kaki persegi). Pilih susun atur kecil untuk harga permulaan lebih rendah, atau yang lebih besar untuk ruang dan bilik lebih banyak. Apa pun pilihan anda, semak unit, tingkat dan harga sebenar sebelum menempah.",
+      "ja": "その他の間取り：タイプ F1 (958 平方フィート)、タイプ G (1,087 平方フィート)、タイプ H (1,615 平方フィート)、タイプ I (1,313 平方フィート)。手頃な価格なら小さめの間取り、広さと部屋数なら大きめの間取りがおすすめです。どれを選んでも、予約前に実際の住戸、階、価格を確認してください。",
+      "ko": "기타 타입: 타입 F1 (958 평방피트), 타입 G (1,087 평방피트), 타입 H (1,615 평방피트), 타입 I (1,313 평방피트). 낮은 진입 가격을 원하면 작은 타입, 더 넓은 공간과 방을 원하면 큰 타입을 고르세요. 어떤 타입이든 예약 전에 실제 세대, 층, 가격을 확인하세요."
      }
     ]
    }
   ],
   "stats": [
    {
-    "value": "495 – 1,615 sqft",
+    "value": "10",
     "label": {
-     "en": "built-up size",
-     "zh-CN": "面积",
-     "ms": "keluasan binaan",
-     "ja": "専有面積",
-     "ko": "전용 면적"
+     "en": "layouts",
+     "zh-CN": "种户型",
+     "ms": "susun atur",
+     "ja": "間取りタイプ",
+     "ko": "타입"
     }
    },
    {
-    "value": "Bandar Sri Damansara",
+    "value": "495 sqft",
     "label": {
-     "en": "area",
-     "zh-CN": "地区",
-     "ms": "kawasan",
-     "ja": "エリア",
-     "ko": "지역"
+     "en": "smallest layout",
+     "zh-CN": "最小户型",
+     "ms": "susun atur terkecil",
+     "ja": "最小の間取り",
+     "ko": "가장 작은 타입"
     }
    },
    {
-    "value": "RM542,000",
+    "value": "1,615 sqft",
     "label": {
-     "en": "starting price",
-     "zh-CN": "起价",
-     "ms": "harga permulaan",
-     "ja": "開始価格",
-     "ko": "시작 가격"
+     "en": "largest layout",
+     "zh-CN": "最大户型",
+     "ms": "susun atur terbesar",
+     "ja": "最大の間取り",
+     "ko": "가장 큰 타입"
     }
    }
   ],
   "takeaway": {
-   "en": "If you would like to see The Arden Bandar Sri Damansara or the area around it, WhatsApp me and I will arrange a viewing or a video tour.",
-   "zh-CN": "想看看 The Arden Bandar Sri Damansara 或附近环境，WhatsApp 我，我帮你安排看房或视频导览。",
-   "ms": "Jika anda ingin melihat The Arden Bandar Sri Damansara atau kawasan sekitarnya, WhatsApp saya dan saya akan aturkan lawatan atau lawatan video.",
-   "ja": "The Arden Bandar Sri Damansara や周辺を見てみたい方は WhatsApp でご連絡ください。内覧やビデオツアーを手配します。",
-   "ko": "The Arden Bandar Sri Damansara나 주변을 보고 싶으시면 WhatsApp 주세요. 방문이나 영상 투어를 준비해 드리겠습니다."
+   "en": "The right layout depends on how you will use the home. Tell me your plan and I will suggest the layout and floor that fit, with the latest prices.",
+   "zh-CN": "选哪个户型，要看你打算怎么用这个家。告诉我你的计划，我帮你建议合适的户型和楼层，并附上最新价格。",
+   "ms": "Susun atur yang sesuai bergantung pada cara anda menggunakan rumah ini. Beritahu saya rancangan anda dan saya akan cadangkan susun atur dan tingkat yang sesuai, dengan harga terkini.",
+   "ja": "どの間取りが合うかは住まいの使い方次第です。計画を教えていただければ、合う間取りと階を最新価格とともにご提案します。",
+   "ko": "어떤 타입이 맞는지는 집을 어떻게 쓸지에 달려 있습니다. 계획을 알려 주시면 맞는 타입과 층을 최신 가격과 함께 추천해 드리겠습니다."
   },
   "sources": []
  }
