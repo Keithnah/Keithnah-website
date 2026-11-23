@@ -133,8 +133,10 @@ blog = blog.replace('<p class="nw-eyebrow">Blog</p>', '<p class="nw-eyebrow"><sp
 blog_prev = (re.sub(r'\s*<p class="bt-label">.*?</div>', '', blog, count=1, flags=re.S).replace('\n</section>', '', 1) +
              '<div class="journal-grid" id="journalGrid">\n%s</div><div class="nw-more"><a href="articles.html">%s →</a></div>\n</section>\n' % (
                  ''.join(cards[:6]), nwh('b_more', 'See all {n} articles', n_art)))
-hub = (prefix + SEC_CSS + CSS + hub_hero + notes + '\n<!-- KN-NWHUB -->\n' + guide_prev + nd + '\n' + faq_prev + '\n' + videos + '\n' + blog_prev +
-       '<div class="filters" id="filters" hidden></div>\n' + suffix.replace('</body>', HUB_TX + '\n</body>', 1))
+import news_hub_modules  # noqa: E402
+nh_top, nh_tools, nh_js = news_hub_modules.build()
+hub = (prefix + SEC_CSS + CSS + hub_hero + nh_top + '\n<!-- KN-NWHUB -->\n' + guide_prev + nd + '\n' + faq_prev + '\n' + videos + '\n' + blog_prev +
+       nh_tools + '<div class="filters" id="filters" hidden></div>\n' + suffix.replace('</body>', HUB_TX + nh_js + '\n</body>', 1))
 
 
 # ---- landing pages ----
