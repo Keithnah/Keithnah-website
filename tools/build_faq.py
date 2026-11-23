@@ -77,6 +77,9 @@ try:
             T['zh-TW']['a_' + qid] = x['a']['zh-TW']
 except Exception:
     T['zh-TW'] = dict(T['zh-CN'])
+for l in T:
+    T[l]['nq1'] = T[l]['nq'].replace('{n}', '1')
+T['en']['nq1'] = '1 question'
 EN = T['en']
 POPULAR = ['h1', 'h11', 'h6', 'h12']  # filled up with first questions of the topics below
 TODAY = datetime.date.today()
@@ -111,17 +114,20 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.2}
 .fx-search input{flex:1;min-width:0;border:0;outline:0;font:500 16px Inter,sans-serif;background:none;color:var(--ink)}.fx-search button{background:var(--gold);color:#fff;border:0;border-radius:100px;padding:11px 20px;font:700 14px Inter,sans-serif;cursor:pointer}
 .fx-none{display:none;text-align:center;color:var(--grey);margin:18px 0}
 .fx-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:34px 0 10px}
-.fx-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;transition:border-color .2s,box-shadow .2s,transform .2s}
+.fx-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:border-color .2s,box-shadow .2s,transform .2s}
 .fx-card:hover{border-color:var(--gold);box-shadow:0 16px 34px rgba(29,27,79,.12);transform:translateY(-3px)}
 .fq-ic{width:46px;height:46px;border-radius:13px;background:#eeedfb;display:flex;align-items:center;justify-content:center;color:var(--gold)}.fq-ic svg{width:24px;height:24px}
-.fx-card>b{font:700 19px 'Playfair Display',serif;margin:14px 0 4px}.fx-card>small{color:var(--grey);font-size:13.5px;line-height:1.5}.fx-card .n{display:inline-block;background:var(--soft);color:var(--gold);font:700 11.5px Inter,sans-serif;padding:3px 9px;border-radius:100px;margin:8px 0 0}
-.fx-card ul{list-style:none;margin:12px 0 0;border-top:1px solid rgba(21,20,43,.08)}.fx-card li{font-size:13px;color:#2f2e45;padding:7px 0;border-bottom:1px dashed rgba(21,20,43,.08)}
-.fx-card em{margin-top:auto;padding-top:12px;color:var(--gold);font-style:normal;font-weight:700;font-size:13.5px}
+.fx-ch{background:linear-gradient(135deg,#1d1b4f,#34318a);color:#fff;padding:20px 20px 18px}.fx-ch .fq-ic{background:rgba(255,255,255,.14);color:#fff}
+.fx-ch b{display:block;font:700 20px 'Playfair Display',serif;margin:14px 0 4px;color:#fff}.fx-ch small{display:block;color:#d6d6f3;font-size:13.5px;line-height:1.5}.fx-ch .n{display:inline-block;background:#fff;color:#3d3fb0;font:700 11.5px Inter,sans-serif;padding:3px 10px;border-radius:100px;margin:10px 0 0}
+.fx-card ul{list-style:none;margin:4px 20px 0}.fx-card li{font-size:13px;color:#2f2e45;padding:7px 0;border-bottom:1px dashed rgba(21,20,43,.08)}
+.fx-card em{margin-top:auto;padding:12px 20px 18px;color:var(--gold);font-style:normal;font-weight:700;font-size:13.5px}
 .fx-pop{margin:30px 0 40px}.fx-pop h2,.fx-sec h2{font-size:clamp(24px,3vw,32px);margin:8px 0 16px}
 .fx-g2{display:grid;grid-template-columns:270px minmax(0,1fr);gap:34px;align-items:start;padding:30px 0 30px}
 .fx-toc{display:block;position:sticky;top:96px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;max-height:calc(100vh - 120px);overflow:auto}
 .fx-toc b{display:block;font:700 12px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}.fx-toc a{display:flex;gap:8px;white-space:normal;line-height:1.4;font-size:13px;padding:7px 0;color:#2f2e45;border-top:1px solid rgba(21,20,43,.06)}.fx-toc a i{font-style:normal;color:var(--gold);font-weight:800}
-.fx-tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:22px}.fx-tabs a{background:#fff;border:1px solid rgba(21,20,43,.12);border-radius:100px;padding:8px 15px;font:700 13px Inter,sans-serif}.fx-tabs a.on{background:#1d1b4f;color:#fff;border-color:#1d1b4f}
+.fx-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;max-width:980px;margin:26px auto 0;background:#fff;border:1px solid rgba(21,20,43,.1);border-radius:20px;padding:8px;box-shadow:0 10px 28px rgba(29,27,79,.06)}
+.fx-tabs a{display:flex;align-items:center;gap:10px;border-radius:14px;padding:10px 12px;font:700 13.5px Inter,sans-serif;color:var(--ink);text-align:left;line-height:1.25}.fx-tabs a:hover{background:var(--soft)}
+.fx-tabs .fq-ic{flex:0 0 32px;width:32px;height:32px;border-radius:10px}.fx-tabs .fq-ic svg{width:18px;height:18px}.fx-tabs a.on{background:#1d1b4f;color:#fff}.fx-tabs a.on .fq-ic{background:rgba(255,255,255,.16);color:#fff}
 .fx-q{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 22px;margin-bottom:12px;scroll-margin-top:100px}.fx-q h3{display:flex;gap:12px;font:700 18px Inter,sans-serif}.fx-q h3 i{font-style:normal;color:var(--gold);font-weight:800;flex:0 0 auto}
 .fx-q p{margin:10px 0 0;color:#2f2e45;line-height:1.75;font-size:15.5px}.fx-q .src{margin-top:10px;font-size:12.5px;color:#77768c}.fx-q .src a{color:var(--gold);text-decoration:underline}
 .fx-acc{background:#fff;border:1px solid var(--line);border-radius:16px;margin-bottom:10px}.fx-acc summary{cursor:pointer;list-style:none;padding:15px 44px 15px 18px;position:relative;font-weight:700;font-size:15px}.fx-acc summary::-webkit-details-marker{display:none}
@@ -130,6 +136,7 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.2}
 .cta{background:#111;color:#fff;border-radius:22px;padding:30px;text-align:center;margin:30px 0 60px}.cta h2{color:#fff;margin-bottom:8px;font-size:clamp(22px,3vw,28px)}.cta p{color:#cfcfe0}
 .cta a{display:inline-block;margin-top:14px;background:#25D366;color:#fff;padding:12px 24px;border-radius:100px;font-weight:700}
 footer{border-top:1px solid var(--line);padding:26px 5vw;font-size:13px;color:var(--grey);text-align:center}
+@media(max-width:760px){.fx-tabs{grid-template-columns:1fr 1fr}.fx-tabs a{padding:9px 10px;font-size:13px}}
 @media(max-width:980px){.fx-grid{grid-template-columns:1fr 1fr}.fx-g2{grid-template-columns:1fr}.fx-toc{position:static;max-height:none}}
 @media(max-width:600px){.fx-grid{grid-template-columns:1fr}.fx-hero{padding-top:110px}}
 '''
@@ -201,9 +208,9 @@ written = []
 cards = ''
 for t in TOP:
     n = len(t['ids'])
-    cards += '<a class="fx-card" data-fq href="faq-%s.html">%s<b>%s</b>%s%s<ul>%s</ul>%s</a>' % (
+    cards += '<a class="fx-card" data-fq href="faq-%s.html"><div class="fx-ch">%s<b>%s</b>%s%s</div><ul>%s</ul>%s</a>' % (
         t['slug'], icon(t['icon']), tx('tn_' + t['slug']), tx('td_' + t['slug'], 'small'),
-        tx('nq', 'span', 'n', n=n) if n else tx('soon', 'span', 'n'),
+        (tx('nq1', 'span', 'n') if n == 1 else tx('nq', 'span', 'n', n=n)) if n else tx('soon', 'span', 'n'),
         ''.join('<li>%s</li>' % tx('q_' + i) for i in t['ids'][:3]), tx('all', 'em'))
 pop = []
 for i in POPULAR + [t['ids'][0] for t in TOP if t['ids']]:
@@ -228,7 +235,7 @@ written.append(shell('faq.html', 'Malaysia Property FAQ: %d Answers by Topic | K
 # ---- topic pages ----
 for k, t in enumerate(TOP):
     s, ids = t['slug'], t['ids']
-    tabs = ''.join('<a href="faq-%s.html"%s>%s</a>' % (o['slug'], ' class="on" aria-current="page"' if o is t else '', tx('tn_' + o['slug'])) for o in TOP)
+    tabs = ''.join('<a href="faq-%s.html"%s>%s%s</a>' % (o['slug'], ' class="on" aria-current="page"' if o is t else '', icon(o['icon']), tx('tn_' + o['slug'])) for o in TOP)
     if ids:
         toc = ''.join('<a href="#q%02d"><i>Q%02d</i>%s</a>' % (n, n, tx('q_' + i)) for n, i in enumerate(ids, 1))
         items = ''.join('<article class="fx-q" id="q%02d" data-fq><h3><i>Q%02d</i>%s</h3>%s<div class="src">%s%s</div></article>' % (
@@ -238,12 +245,12 @@ for k, t in enumerate(TOP):
         main = '<div class="fx-g2"><nav class="fx-toc" aria-label="Questions">%s%s</nav><div><p class="fx-none" id="fxNone">%s</p>%s</div></div>' % (tx('toc', 'b'), toc, tx('none'), items)
     else:
         main = '<div class="fx-soon" style="margin:30px 0">%s</div>' % tx('soon', 'p')
-    others = ''.join('<a class="fx-card" href="faq-%s.html">%s<b>%s</b>%s%s</a>' % (o['slug'], icon(o['icon']), tx('tn_' + o['slug']), tx('td_' + o['slug'], 'small'), tx('all', 'em'))
+    others = ''.join('<a class="fx-card" href="faq-%s.html"><div class="fx-ch">%s<b>%s</b>%s</div>%s</a>' % (o['slug'], icon(o['icon']), tx('tn_' + o['slug']), tx('td_' + o['slug'], 'small'), tx('all', 'em'))
                      for o in (TOP[(k + 1) % len(TOP)], TOP[(k + 2) % len(TOP)], TOP[(k + 3) % len(TOP)], TOP[(k + 4) % len(TOP)]))
     body = '''<main><section class="fx-hero"><div class="fx"><a class="fx-back" href="faq.html">%s</a>%s%s%s
 <div class="fx-search"><span aria-hidden="true">&#128269;</span><input id="fxS" type="search" placeholder="%s" aria-label="Search"><button type="button" id="fxGo">%s</button></div><div class="fx-tabs">%s</div></div></section>
 <div class="fx">%s<section class="fx-sec">%s<div class="fx-grid">%s</div></section>%s</div></main>''' % (
-        tx('hub'), tx('nq', 'span', 'fx-eb', n=len(ids)) if ids else tx('soon', 'span', 'fx-eb'), tx('h1_t', 'h1', t=t['name']['en']), tx('td_' + s, 'p'),
+        tx('hub'), (tx('nq1', 'span', 'fx-eb') if len(ids) == 1 else tx('nq', 'span', 'fx-eb', n=len(ids))) if ids else tx('soon', 'span', 'fx-eb'), tx('h1_t', 'h1', t=t['name']['en']), tx('td_' + s, 'p'),
         E(EN['search_t']), tx('go'), tabs, main, tx('topics', 'h2'), others, cta())
     url = SITE + 'faq-%s.html' % s
     ld = {'@context': 'https://schema.org', '@graph': ([faq_ld(ids, url)] if ids else []) + [
@@ -314,10 +321,10 @@ print('faq: hub + %d topic pages, %d questions, blocks on %d related pages' % (l
 
 # ---- home page: topic cards above the questions; 6 questions shown, the rest on the FAQ pages ----
 HOME_CSS = ('<style>#faq .hf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:1100px;margin:26px auto 26px}'
-            '#faq .hf-grid a{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid rgba(21,20,43,.1);border-radius:16px;padding:14px 16px;text-align:left;transition:border-color .2s,box-shadow .2s,transform .2s}'
-            '#faq .hf-grid a:hover{border-color:#5E60CE;box-shadow:0 12px 26px rgba(29,27,79,.1);transform:translateY(-2px)}'
-            '#faq .hf-grid .fq-ic{flex:0 0 42px;width:42px;height:42px;border-radius:12px;background:#eeedfb;display:flex;align-items:center;justify-content:center;color:#5E60CE}#faq .hf-grid svg{width:22px;height:22px}'
-            '#faq .hf-grid b{display:block;font:700 15px Inter,sans-serif;color:#15142b}#faq .hf-grid small{display:block;font:600 12.5px Inter,sans-serif;color:#5E60CE}'
+            '#faq .hf-grid a{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#1d1b4f,#34318a);border:1px solid transparent;box-shadow:0 10px 24px rgba(29,27,79,.16);border-radius:16px;padding:14px 16px;text-align:left;transition:border-color .2s,box-shadow .2s,transform .2s}'
+            '#faq .hf-grid a:hover{box-shadow:0 16px 32px rgba(29,27,79,.26);transform:translateY(-2px)}'
+            '#faq .hf-grid .fq-ic{flex:0 0 42px;width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;color:#fff}#faq .hf-grid svg{width:22px;height:22px}'
+            '#faq .hf-grid b{display:block;font:700 15px Inter,sans-serif;color:#fff}#faq .hf-grid small{display:block;font:600 12.5px Inter,sans-serif;color:#c9caff}'
             '#faq .faq-list .faq-item:nth-child(n+7){display:none!important}#faq .faq-more-wrap,#faq [data-i18n="faq_more_btn"]{display:none!important}'
             '#faq .hf-all{text-align:center;margin:18px 0 6px}#faq .hf-all a{display:inline-block;background:#5E60CE;color:#fff;font:700 15px Inter,sans-serif;padding:13px 26px;border-radius:100px;box-shadow:0 12px 26px rgba(94,96,206,.28)}'
             '@media(max-width:900px){#faq .hf-grid{grid-template-columns:1fr 1fr}}@media(max-width:480px){#faq .hf-grid{gap:8px}#faq .hf-grid a{padding:12px}#faq .hf-grid .fq-ic{display:none}}</style>')
@@ -325,7 +332,7 @@ for l in T:
     T[l]['hf_all'] = {'en': 'See all {n} questions by topic →', 'zh-CN': '按主题查看全部 {n} 个问题 →', 'zh-TW': '按主題查看全部 {n} 個問題 →', 'ms': 'Lihat kesemua {n} soalan mengikut topik →',
                       'ja': 'トピック別に全 {n} 件の質問を見る →', 'ko': '주제별로 질문 {n}개 모두 보기 →'}[l].replace('{n}', str(len(all_ids)))
     for t in TOP:
-        T[l]['hn_' + t['slug']] = T[l]['nq'].replace('{n}', str(len(t['ids']))) if t['ids'] else T[l]['soon']
+        T[l]['hn_' + t['slug']] = (T[l]['nq1'] if len(t['ids']) == 1 else T[l]['nq'].replace('{n}', str(len(t['ids'])))) if t['ids'] else T[l]['soon']
 grid = ''.join('<a href="faq-%s.html">%s<span>%s%s</span></a>' % (t['slug'], icon(t['icon']), tx('tn_' + t['slug'], 'b'), tx('hn_' + t['slug'], 'small')) for t in TOP)
 keys = {'hf_all'} | {'tn_' + t['slug'] for t in TOP} | {'hn_' + t['slug'] for t in TOP}
 HOME = ('<!-- KN-HFAQ:START -->%s<div class="hf-grid">%s</div>%s<!-- KN-HFAQ:END -->' % (
