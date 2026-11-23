@@ -203,7 +203,7 @@ for idx, (n, slug, pk, rel, srcs) in enumerate(TOPICS):
     img = 'images/understand/%s.jpg' % pk
     facts = ''.join('<div><svg viewBox="0 0 24 24" aria-hidden="true">%s</svg><span>%s%s</span></div>' % (
         ICONS[i], tx('p%dk%dl' % (n, i), 'small'), tx('p%dk%dv' % (n, i), 'strong')) for i in range(1, 5))
-    secs = ''.join(tx('p%ds%dh' % (n, i), 'h2') + tx('p%ds%dp' % (n, i), 'p') for i in range(1, 4))
+    secs = ''.join(tx('p%ds%dh' % (n, i), 'h2') + tx('p%ds%dp' % (n, i), 'p') for i in range(1, 20) if 'p%ds%dh' % (n, i) in EN)
     rels = ''.join('<a href="../%s">%s</a>' % (h, tx(k) if k else E(name)) for h, k, name in rel)
     src = ''.join('<a href="%s" target="_blank" rel="noopener">%s</a>' % (SRC[s][1], E(SRC[s][0])) for s in srcs)
     pv, nx = TOPICS[idx - 1], TOPICS[(idx + 1) % len(TOPICS)]
