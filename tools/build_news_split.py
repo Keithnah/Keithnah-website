@@ -12,7 +12,7 @@ sections on every run, so this script always starts from the full page. Translat
 copies of blog.html, so they keep its translation scripts; tools/build_lang_pages.js makes the language copies.
 """
 import os
-import re
+import re, json
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 os.chdir(os.path.dirname(HERE))
@@ -108,8 +108,10 @@ def nwh(key, en, n=None):
     return '<span data-nwh="%s"%s>%s</span>' % (key, ' data-n="%d"' % n if n is not None else '', en.replace('{n}', str(n) if n is not None else ''))
 
 
-_m = re.search(r'(\d+) answers</small>', hero)
-n_faq = int(_m.group(1)) if _m else faq.count('class="nf-item"')
+# the FAQ is now the by-topic hub (build_faq.py): count its questions once each, like build_faq does
+_ft = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'faq_topics.json'), encoding='utf-8'))
+n_faq = len(dict.fromkeys(i for t in _ft['topics'] for i in t['ids']))
+hero = re.sub(r'\d+ answers</small>', '%d answers</small>' % n_faq, hero)
 n_art = grid.count('class="article-card"')
 
 # ---- the hub (blog.html): hero first, then the notes and a preview of each section ----
