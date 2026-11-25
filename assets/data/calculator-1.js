@@ -213,7 +213,7 @@
     $('a_sqft').textContent = num(sqft,2); $('a_sqm').textContent = num(sqm,2); $('a_ping').textContent = num(ping,2);
     const upf = sqft > 0 ? totalV / sqft : 0, ups = sqm > 0 ? totalV / sqm : 0, upp = ping > 0 ? totalV / ping : 0;
     $('up_sqft').textContent = 'RM ' + num(upf,2); $('up_sqm').textContent = 'RM ' + num(ups,0); $('up_ping').textContent = 'RM ' + num(upp,0);
-    const RATE = {MYR:1, USD:0.21, SGD:0.285, CNY:1.52, JPY:31.5, KRW:290,TWD:6.8,HKD:1.64}, SYM = {MYR:'RM', USD:'US$', SGD:'S$', CNY:'CN¥', JPY:'JP¥', KRW:'₩',TWD:'NT$',HKD:'HK$'};
+    const RATE = Object.assign({MYR:1, USD:0.243, SGD:0.314, CNY:1.61, JPY:38.8, KRW:325,TWD:7.9,HKD:1.9}, window.KN_FX || {}), SYM = {MYR:'RM', USD:'US$', SGD:'S$', CNY:'CN¥', TWD:'NT$',HKD:'HK$', JPY:'JP¥', KRW:'₩'};
     const f = $('cv_from').value, t = $('cv_to').value, per = RATE[t] / RATE[f], conv = parse($('cv_amt').value) * per;
     $('cv_out').textContent = num(conv, (t === 'JPY' || t === 'KRW') ? 0 : 2) + ' ' + t;
     $('cv_rate').textContent = '1 ' + f + ' = ' + per.toFixed(4) + ' ' + t;

@@ -35,3 +35,24 @@ for f in glob.glob('**/*.html', recursive=True):
         open(f, 'w', encoding='utf-8').write(t)
         n += 1
 print('silky: silky.js v%s; pages updated: %d' % (v, n))
+
+# daily exchange rates (tools/fx_src.js -> /fx.js), same pages, KN-FX marker
+fx = open(os.path.join(HERE, 'fx_src.js'), encoding='utf-8').read()
+open('fx.js', 'w', encoding='utf-8').write(fx)
+fv = hashlib.md5(fx.encode()).hexdigest()[:8]
+FTAG = '<!-- KN-FX --><script src="/fx.js?v=%s" defer></script>' % fv
+FRX = re.compile(r'<!-- KN-FX --><script src="/fx\.js[^"]*" defer(?:="")?></script>\n?')
+fn = 0
+for f in glob.glob('**/*.html', recursive=True):
+    if f.startswith(('tools/', 'vendor/', 'node_modules/', 'downloads/', 'tg/')) or os.path.basename(f).startswith('preview-'):
+        continue
+    s = open(f, encoding='utf-8').read()
+    if '</body>' not in s or 'KRW' not in s:
+        continue
+    base = FRX.sub('', s)
+    k = base.rfind('</body>')
+    t = base[:k] + FTAG + '\n' + base[k:]
+    if t != s:
+        open(f, 'w', encoding='utf-8').write(t)
+        fn += 1
+print('fx: fx.js v%s; pages updated: %d' % (fv, fn))
