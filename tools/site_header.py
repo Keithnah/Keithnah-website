@@ -16,7 +16,7 @@ NAV = [('', 'Home'), ('projects.html', 'View Projects'), ('compare.html', 'Compa
 LANGS = [('en', 'gb', 'English'), ('zh-CN', 'cn', '简体中文'), ('zh-TW', 'tw', '繁體中文'), ('ms', 'my', 'Bahasa Malaysia'),
          ('ja', 'jp', '日本語'), ('ko', 'kr', '한국어')]
 CURS = [('MYR', 'my', 'Malaysian Ringgit'), ('USD', 'us', 'US Dollar'), ('SGD', 'sg', 'Singapore Dollar'),
-        ('CNY', 'cn', 'Chinese Yuan'), ('JPY', 'jp', 'Japanese Yen'), ('KRW', 'kr', 'Korean Won')]
+        ('CNY', 'cn', 'Chinese Yuan'), ('JPY', 'jp', 'Japanese Yen'), ('KRW', 'kr', 'Korean Won'), ('TWD', 'tw', 'New Taiwan Dollar'), ('HKD', 'hk', 'Hong Kong Dollar')]
 NAV_TR = {
  "Home": {
   "zh-CN": "首页",
@@ -120,7 +120,7 @@ main .wa-btn{white-space:normal;max-width:100%;text-align:center;justify-content
 JS = """<script>
 (function(){
 var NT=%s, LN=%s, CN=%s;
-var RATE={MYR:1,USD:0.21,SGD:0.285,CNY:1.52,JPY:31.5,KRW:290}, SYM={MYR:'RM',USD:'US$',SGD:'S$',CNY:'CN\\u00a5',JPY:'JP\\u00a5',KRW:'\\u20a9'};window.KN_RATE=RATE;window.KN_SYM=SYM;
+var RATE={MYR:1,USD:0.21,SGD:0.285,CNY:1.52,JPY:31.5,KRW:290,TWD:6.8,HKD:1.64}, SYM={MYR:'RM',USD:'US$',SGD:'S$',CNY:'CN\\u00a5',JPY:'JP\\u00a5',KRW:'\\u20a9',TWD:'NT$',HKD:'HK$'};window.KN_RATE=RATE;window.KN_SYM=SYM;
 function get(k,d){try{return localStorage.getItem(k)||d}catch(e){return d}}
 function put(k,v){try{localStorage.setItem(k,v)}catch(e){}}
 function navText(lang){document.querySelectorAll('[data-nav]').forEach(function(el){var k=el.getAttribute('data-nav');el.textContent=(lang!=='en'&&NT[k]&&NT[k][lang])||k;});}

@@ -1785,9 +1785,9 @@
     SGD: 0.285,
     CNY: 1.52,
     JPY: 31.5,
-    KRW: 290
+    KRW: 290, TWD: 6.8, HKD: 1.64
   };
-  const CURRENCY_SYMBOL = { MYR: 'RM', USD: 'US$', SGD: 'S$', CNY: 'CN¥', JPY: 'JP¥', KRW: '₩' };
+  const CURRENCY_SYMBOL = { MYR: 'RM', USD: 'US$', SGD: 'S$', CNY: 'CN¥', JPY: 'JP¥', KRW: '₩', TWD: 'NT$', HKD: 'HK$' };
   let currentCurrency = 'MYR';
 
   function formatPrice(myrValue, currency, approx){

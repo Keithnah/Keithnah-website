@@ -329,7 +329,7 @@ def mo_block(p, name):
     wa = 'https://api.whatsapp.com/send/?phone=60102821568&text=%s&type=phone_number&app_absent=0' % quote_plus(
         "(KNRE) Hi Keith, I'm interested in %s and would like to know the loan options." % name)
     years = ''.join('<option value="%d"%s>%d</option>' % (y, ' selected' if y == MO_DEF['years'] else '', y) for y in (35, 30, 25, 20, 15, 10))
-    curs = ''.join('<option value="%s">%s</option>' % (c, c) for c in ('MYR', 'USD', 'SGD', 'CNY', 'JPY', 'KRW'))
+    curs = ''.join('<option value="%s">%s</option>' % (c, c) for c in ('MYR', 'USD', 'SGD', 'CNY', 'JPY', 'KRW', 'TWD', 'HKD'))
     pills = ''.join('<button type="button" data-d="%d"%s>%d%%</button>' % (d, ' class="on"' if d == MO_DEF['down'] else '', d) for d in (10, 20, 30, 40))
     return ('<style>%s</style><section class="blk" id="loanCalc"><h2>Monthly Instalment Estimate</h2><div class="mo-box"><div class="mo-in">'
             '<label><span>Property price</span><div class="mo-f"><em>RM</em><input id="moPrice" inputmode="numeric" value="%s" aria-label="Property price"></div></label>'
