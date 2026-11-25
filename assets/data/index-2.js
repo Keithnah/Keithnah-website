@@ -1781,13 +1781,13 @@
   // Approximate indicative rates relative to 1 MYR. For reference only, not live rates.
   const EXCHANGE_RATES = {
     MYR: 1,
-    USD: 0.21,
-    SGD: 0.285,
-    CNY: 1.52,
-    JPY: 31.5,
-    KRW: 290, TWD: 6.8, HKD: 1.64
-  };
-  const CURRENCY_SYMBOL = { MYR: 'RM', USD: 'US$', SGD: 'S$', CNY: 'CN¥', JPY: 'JP¥', KRW: '₩', TWD: 'NT$', HKD: 'HK$' };
+    USD: 0.243,
+    SGD: 0.314,
+    CNY: 1.61,
+    JPY: 38.8,
+    KRW: 325, TWD: 7.9, HKD: 1.9
+  }; window.KN_RATES_MAIN = EXCHANGE_RATES;
+  const CURRENCY_SYMBOL = { MYR: 'RM', USD: 'US$', SGD: 'S$', CNY: 'CN¥', TWD: 'NT$', HKD: 'HK$', JPY: 'JP¥', KRW: '₩' };
   let currentCurrency = 'MYR';
 
   function formatPrice(myrValue, currency, approx){

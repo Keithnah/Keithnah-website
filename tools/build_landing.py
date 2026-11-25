@@ -332,7 +332,7 @@ DEFAULT_HEAD = '''<title>{title}</title>
 CSS = open(os.path.join(HERE, 'landing.css'), encoding='utf-8').read()
 
 LANGS_MENU = [('en', 'gb', 'English'), ('zh-CN', 'cn', '简体中文'), ('zh-TW', 'tw', '繁體中文'), ('ms', 'my', 'Bahasa Malaysia'), ('ja', 'jp', '日本語'), ('ko', 'kr', '한국어')]
-CURS_MENU = [('MYR', 'my', 'Malaysian Ringgit'), ('USD', 'us', 'US Dollar'), ('SGD', 'sg', 'Singapore Dollar'), ('CNY', 'cn', 'Chinese Yuan'), ('JPY', 'jp', 'Japanese Yen'), ('KRW', 'kr', 'Korean Won'), ('TWD', 'tw', 'New Taiwan Dollar'), ('HKD', 'hk', 'Hong Kong Dollar')]
+CURS_MENU = [('MYR', 'my', 'Malaysian Ringgit'), ('USD', 'us', 'US Dollar'), ('SGD', 'sg', 'Singapore Dollar'), ('CNY', 'cn', 'Chinese Yuan'), ('TWD', 'tw', 'New Taiwan Dollar'), ('HKD', 'hk', 'Hong Kong Dollar'), ('JPY', 'jp', 'Japanese Yen'), ('KRW', 'kr', 'Korean Won')]
 _lm = ''.join('<a data-v="%s" onclick="knSetLang(\'%s\')"><img src="{root}images/flags/%s.svg" alt="" width="20" height="15">%s</a>' % (c, c, f, n) for c, f, n in LANGS_MENU)
 _cm = ''.join('<a data-v="%s" onclick="knSetCur(\'%s\')"><img src="{root}images/flags/%s.svg" alt="" width="20" height="15"><b>%s</b> %s</a>' % (c, c, f, c, n) for c, f, n in CURS_MENU)
 

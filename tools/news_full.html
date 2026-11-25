@@ -417,12 +417,12 @@ a.float-wa.float-wa .fw-txt{white-space:nowrap;}
         <a onclick="setCurrency('USD')"><img class="kn-flag" src="images/flags/us.svg" alt="" width="20" height="15">USD — US Dollar</a>
         <a onclick="setCurrency('SGD')"><img class="kn-flag" src="images/flags/sg.svg" alt="" width="20" height="15">SGD — Singapore Dollar</a>
         <a onclick="setCurrency('CNY')"><img class="kn-flag" src="images/flags/cn.svg" alt="" width="20" height="15">CNY — Chinese Yuan</a>
-        <a onclick="setCurrency('JPY')"><img class="kn-flag" src="images/flags/jp.svg" alt="" width="20" height="15">JPY — Japanese Yen</a>
-        <a onclick="setCurrency('KRW')"><img class="kn-flag" src="images/flags/kr.svg" alt="" width="20" height="15">KRW — Korean Won</a>
 
         <a onclick="setCurrency('TWD')"><img class="kn-flag" src="images/flags/tw.svg" alt="" width="20" height="15">TWD — New Taiwan Dollar</a>
 
         <a onclick="setCurrency('HKD')"><img class="kn-flag" src="images/flags/hk.svg" alt="" width="20" height="15">HKD — Hong Kong Dollar</a>
+        <a onclick="setCurrency('JPY')"><img class="kn-flag" src="images/flags/jp.svg" alt="" width="20" height="15">JPY — Japanese Yen</a>
+        <a onclick="setCurrency('KRW')"><img class="kn-flag" src="images/flags/kr.svg" alt="" width="20" height="15">KRW — Korean Won</a>
       </div>
     </div>
     <a class="whatsapp-btn wa-link" data-wa-msg="(KNRE) Hi Keith, I would like to explore more on Malaysia Property." href="https://wa.me/60102821568" target="_blank" rel="noopener">
@@ -1017,8 +1017,8 @@ document.querySelectorAll('.nv-yt[data-id]').forEach(function(el){
   })();
 
   // ---- Currency switcher (site-wide, shared with home page) ----
-  const EXCHANGE_RATES = { MYR: 1, USD: 0.21, SGD: 0.285, CNY: 1.52, JPY: 31.5, KRW: 290, TWD: 6.8, HKD: 1.64 };
-  const CURRENCY_SYMBOL = { MYR: 'RM', USD: 'US$', SGD: 'S$', CNY: 'CN¥', JPY: 'JP¥', KRW: '₩', TWD: 'NT$', HKD: 'HK$' };
+  const EXCHANGE_RATES = { MYR: 1, USD: 0.243, SGD: 0.314, CNY: 1.61, JPY: 38.8, KRW: 325, TWD: 7.9, HKD: 1.9 }; window.KN_RATES_MAIN = EXCHANGE_RATES;
+  const CURRENCY_SYMBOL = { MYR: 'RM', USD: 'US$', SGD: 'S$', CNY: 'CN¥', TWD: 'NT$', HKD: 'HK$', JPY: 'JP¥', KRW: '₩' };
   let currentCurrency = 'MYR';
 
   function formatPrice(myrValue, currency, approx){
